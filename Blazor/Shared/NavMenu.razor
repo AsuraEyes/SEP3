@@ -1,7 +1,8 @@
 ﻿@using SEP3_Blazor.Data
-@using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
+@*@using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
 
 @inject AuthenticationStateProvider AuthenticationStateProvider
+*@
 @inject NavigationManager NavigationManager
 
 <div class="top-row pl-4 navbar navbar-dark">
@@ -19,7 +20,7 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="">
+            <NavLink class="nav-link" href="Login">
                 <span class="oi oi-plus" aria-hidden="true"></span> Golden Game List
             </NavLink>
         </li>
@@ -63,7 +64,7 @@
         Password = "";
         try
         {
-            ((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            //((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             //NavigationManager.NavigateTo("/");
         }
         catch (Exception ){}

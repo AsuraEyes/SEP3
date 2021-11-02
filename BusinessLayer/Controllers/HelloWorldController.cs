@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
 {
+    [ApiController]
+    [Route ("[controller]")]
     public class HelloWorldController : Controller
     {
         private readonly IUserService UserService;

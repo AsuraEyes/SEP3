@@ -98,7 +98,7 @@ using global::Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\Maggie\RiderProjects\SEP3\Blazor\Pages\Index.razor"
+#line 16 "C:\Users\Maggie\RiderProjects\SEP3\Blazor\Pages\Index.razor"
  
     string helloWorldAnswer = "nothing";
     IUserService UserService;
@@ -113,6 +113,7 @@ using global::Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

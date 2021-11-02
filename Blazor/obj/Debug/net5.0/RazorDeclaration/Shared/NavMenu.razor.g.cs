@@ -89,13 +89,6 @@ using SEP3_Blazor.Data;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\Maggie\RiderProjects\SEP3\Blazor\Shared\NavMenu.razor"
-using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider;
-
-#line default
-#line hidden
-#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,7 +97,7 @@ using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\Users\Maggie\RiderProjects\SEP3\Blazor\Shared\NavMenu.razor"
+#line 45 "C:\Users\Maggie\RiderProjects\SEP3\Blazor\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -127,7 +120,7 @@ using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
         Password = "";
         try
         {
-            ((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            //((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             //NavigationManager.NavigateTo("/");
         }
         catch (Exception ){}
@@ -138,7 +131,6 @@ using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }
 }
 #pragma warning restore 1591

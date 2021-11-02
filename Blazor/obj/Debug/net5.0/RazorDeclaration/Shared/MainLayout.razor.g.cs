@@ -95,13 +95,15 @@ using Shared;
     [CascadingParameter]
     protected Task<AuthenticationState> AuthStat { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected  override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
         //var user = (await AuthStat).User;
         //if (user.Identity != null && !user.Identity.IsAuthenticated)
         //{
-            NavigationManager.NavigateTo("/");
+        Console.WriteLine("before");
+            //NavigationManager.NavigateTo("/Login");
+        Console.WriteLine("after");
        //}
     }
 

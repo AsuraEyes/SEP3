@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAP_csharp", "SOAP_csharp\SOAP_csharp.csproj", "{4FB7CE09-8386-42A3-9194-8A72CAD613AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation_Layer", "Presentation_Layer\Presentation_Layer.csproj", "{ED4822D0-418B-4E15-9A14-34BED9A96762}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{4FB7CE09-8386-42A3-9194-8A72CAD613AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB7CE09-8386-42A3-9194-8A72CAD613AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB7CE09-8386-42A3-9194-8A72CAD613AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
