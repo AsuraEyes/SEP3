@@ -1,0 +1,43 @@
+﻿@page "/DetailsGoldengameList/{Id:int}"
+@using Models
+@using Data
+
+@inject IGoldenGameListService GoldenGameListService
+@inject NavigationManager NavigationManager
+<div>
+    <button class="btn btn-outline-dark" @onclick="@Back">
+        Back
+    </button>
+    <br/>
+    <br/>
+    <h3>Details of @goldenGameListToShow.Name</h3>
+    <br/>
+    <h4>Game Info:</h4>
+    <h6>ID: @goldenGameListToShow.Id</h6>
+    <h6>Complexity Level : @goldenGameListToShow.ComplexityLevel </h6>
+    <h6>Time Estimation: @goldenGameListToShow.TimeEstimation</h6>
+    <h6>Number Players: @goldenGameListToShow.NoPlayers</h6>
+    <h6>Description: @goldenGameListToShow.Description</h6>
+    <h6>Age Target : @goldenGameListToShow.AgeTarget </h6>
+    <h6>Link Tutorial Game: @goldenGameListToShow.LinkTutorialGame</h6>
+    <h6>Needed Equipment: @goldenGameListToShow.NeededEquipment</h6>
+    <br/>
+</div>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private GoldenGameList goldenGameListToShow;
+
+    protected override async Task OnInitializedAsync()
+    {
+        goldenGameListToShow = GoldenGameListService.GetAllGoldenGameLists(Id);
+    }
+
+    private void Back()
+    {
+        NavigationManager.NavigateTo("/ViewGoldenGameLists");
+    }
+}
