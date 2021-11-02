@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace DefaultNamespace
+namespace BusinessLayer.Data
 {
     public interface IUserService
     {
-        Task<String> helloWorld();
+        Task<String> HelloWorld();
     }
 }

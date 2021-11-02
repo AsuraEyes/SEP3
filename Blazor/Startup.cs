@@ -23,15 +23,15 @@ namespace SEP3_Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IGoldenGameListService, GoldenGameListServiceJson>();
+            //services.AddScoped<IGoldenGameListService, GoldenGameListServiceJson>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<AuthenticationStateProvider, AuthenticationStateProvider>();
+            //services.AddScoped<AuthenticationStateProvider, AuthenticationStateProvider>();
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("LoggedInOnly", a => a.RequireAuthenticatedUser().RequireClaim("Role", "ADMIN", "MEMBER", "PLAYER"));
-                options.AddPolicy("AdminOnly", a => a.RequireAuthenticatedUser().RequireClaim("Role", "ADMIN"));
-            });
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("LoggedInOnly", a => a.RequireAuthenticatedUser().RequireClaim("Role", "ADMIN", "MEMBER", "PLAYER"));
+            //    options.AddPolicy("AdminOnly", a => a.RequireAuthenticatedUser().RequireClaim("Role", "ADMIN"));
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
