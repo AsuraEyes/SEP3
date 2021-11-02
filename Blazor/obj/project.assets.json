@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP/Blazor/Blazor.csproj",
+      "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP3/Blazor/Blazor.csproj",
       "projectName": "Blazor",
-      "projectPath": "/Users/shadow_asura/RiderProjects/SEP/Blazor/Blazor.csproj",
+      "projectPath": "/Users/shadow_asura/RiderProjects/SEP3/Blazor/Blazor.csproj",
       "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-      "outputPath": "/Users/shadow_asura/RiderProjects/SEP/Blazor/obj/",
+      "outputPath": "/Users/shadow_asura/RiderProjects/SEP3/Blazor/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"
