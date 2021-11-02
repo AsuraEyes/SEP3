@@ -15,10 +15,10 @@ namespace SEP3_Blazor.Data
 
         public UserService()
         {
-            HttpClientHandler clienthandler = new HttpClientHandler();
-            clienthandler.ServerCertificateCustomValidationCallback =
-                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
-            Client = new HttpClient(clienthandler);
+            //HttpClientHandler clienthandler = new HttpClientHandler();
+           // clienthandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            //Client = new HttpClient(clienthandler);
+            Client = new HttpClient();
         }
 
         public async Task<string> helloWorld()
