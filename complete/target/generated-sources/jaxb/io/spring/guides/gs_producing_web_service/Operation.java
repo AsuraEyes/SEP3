@@ -13,34 +13,38 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for currency.
+ * <p>Java class for operation.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="currency"&gt;
+ * &lt;simpleType name="operation"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="GBP"/&gt;
- *     &lt;enumeration value="EUR"/&gt;
- *     &lt;enumeration value="PLN"/&gt;
+ *     &lt;enumeration value="GET"/&gt;
+ *     &lt;enumeration value="DELETE"/&gt;
+ *     &lt;enumeration value="POST"/&gt;
+ *     &lt;enumeration value="PATCH"/&gt;
+ *     &lt;enumeration value="GETALL"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  * 
  */
-@XmlType(name = "currency")
+@XmlType(name = "operation")
 @XmlEnum
-public enum Currency {
+public enum Operation {
 
-    GBP,
-    EUR,
-    PLN;
+    GET,
+    DELETE,
+    POST,
+    PATCH,
+    GETALL;
 
     public String value() {
         return name();
     }
 
-    public static Currency fromValue(String v) {
+    public static Operation fromValue(String v) {
         return valueOf(v);
     }
 
