@@ -18,9 +18,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Hello World! works">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,7 +245,7 @@
       <workItem from="1635848021851" duration="2024000" />
       <workItem from="1635851239444" duration="1514000" />
       <workItem from="1636108901093" duration="288000" />
-      <workItem from="1636109257536" duration="1459000" />
+      <workItem from="1636109257536" duration="1747000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -284,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636110199014</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="works part2">
+      <created>1636111003133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636111003133</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +318,7 @@
     <MESSAGE value="business server not working&#10;localhost redirected you too many times" />
     <MESSAGE value="BusinessLayer - Presentation_Layer is fucking working dude" />
     <MESSAGE value="Hello World! works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hello World! works" />
+    <MESSAGE value="works part2" />
+    <option name="LAST_COMMIT_MESSAGE" value="works part2" />
   </component>
 </project>
