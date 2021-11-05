@@ -18,7 +18,7 @@ namespace BusinessLayer.Data
         public async Task<String> GetMessageAsync()
         {
             getMessageRequest getMessageRequest = new getMessageRequest();
-            getMessageRequest.name = " asd";
+            getMessageRequest.name = "message2";
             getMessageRequest1 getMessageRequest1 = new getMessageRequest1(getMessageRequest);
             getMessageResponse1 getMessageResponse1 = new getMessageResponse1();
             getMessageResponse1 = messagePort.getMessageAsync(getMessageRequest1).Result;

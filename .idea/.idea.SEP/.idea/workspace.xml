@@ -18,90 +18,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/v16/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/Connected Services/MessageServerReference/ConnectedService.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.Private.ServiceModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.Duplex.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.Http.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.NetTcp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.Primitives.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.Security.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/System.ServiceModel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" afterDir="false" />
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Hello World! works">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Blazor.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Blazor.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Blazor.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Blazor.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Blazor.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Models/ViewGoldenGameList.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Models/ViewGoldenGameList.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/ISOAPWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/ISOAPWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/SOAPWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/SOAPWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.runtimeconfig.dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/ref/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/ref/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/ref/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/ref/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/SOAP_csharp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/SOAP_csharp.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/SOAP_csharp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/SOAP_csharp.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOAP_csharp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SOAP_csharp/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +247,7 @@
       <workItem from="1635848021851" duration="2024000" />
       <workItem from="1635851239444" duration="1514000" />
       <workItem from="1636108901093" duration="288000" />
-      <workItem from="1636109257536" duration="621000" />
+      <workItem from="1636109257536" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -359,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635864085141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Hello World! works">
+      <created>1636110199014</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636110199014</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +312,7 @@
     <MESSAGE value="patches on PoC, C# Business server not running, either Rest or SOAP" />
     <MESSAGE value="business server not working&#10;localhost redirected you too many times" />
     <MESSAGE value="BusinessLayer - Presentation_Layer is fucking working dude" />
-    <option name="LAST_COMMIT_MESSAGE" value="BusinessLayer - Presentation_Layer is fucking working dude" />
+    <MESSAGE value="Hello World! works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hello World! works" />
   </component>
 </project>
