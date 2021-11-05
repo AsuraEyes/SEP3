@@ -5,8 +5,6 @@ namespace BusinessLayer.Data
 {
     public interface ISOAPWebService
     {
-        Task Execute();
-        Task<HttpWebRequest> GetWebRequest();
-        Task<string> HelloWorld(string param);
+        Task<string> HelloWorld();
     }
 }
