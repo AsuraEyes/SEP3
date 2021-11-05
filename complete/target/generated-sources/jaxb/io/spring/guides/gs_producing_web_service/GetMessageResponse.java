@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 public class GetMessageResponse {
 
     @XmlElement(required = true)
-    protected String message;
+    protected Message message;
 
     /**
      * Gets the value of the message property.
@@ -52,7 +52,7 @@ public class GetMessageResponse {
      *     {@link String }
      *     
      */
-    public String getMessage() {
+    public Message getMessage() {
         return message;
     }
 
@@ -64,7 +64,7 @@ public class GetMessageResponse {
      *     {@link String }
      *     
      */
-    public void setMessage(String value) {
+    public void setMessage(Message value) {
         this.message = value;
     }
 

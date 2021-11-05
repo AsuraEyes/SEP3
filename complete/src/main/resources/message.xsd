@@ -12,7 +12,7 @@
     <xs:element name="getMessageResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="message" type="xs:string"/>
+                <xs:element name="message" type="tns:message"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

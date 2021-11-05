@@ -1,6 +1,7 @@
 package com.example.producingwebservice;
 
 import io.spring.guides.gs_producing_web_service.Country;
+import io.spring.guides.gs_producing_web_service.Message;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,16 +11,18 @@ public class MessageRepository
 {
   private String title;
   private String body;
+  private Message message;
 
   @PostConstruct
   public void initData()
   {
-    title = "Hello";
-    body = "World";
+    message = new Message();
+    message.setName("Hello");
+    message.setBody("World!");
   }
 
-  public String get(String request)
+  public Message get()
   {
-    return title + " " + body;
+    return message;
   }
 }
