@@ -1,14 +1,15 @@
 ﻿using System.Threading.Tasks;
 
-namespace DefaultNamespace
+namespace BusinessLayer.Data
 {
     public class UserService : IUserService
 
     {
-        public async Task<string> helloWorld()
+        public async Task<string> HelloWorld()
         {
-            string answer = "verified";
-            return await (SOAPWebService).helloWorld(answer);
+            
+            ISOAPWebService webService = new SOAPWebService();
+            return await webService.HelloWorld();
         }
     }
 }

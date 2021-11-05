@@ -1,0 +1,44 @@
+<changelist name="Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]" date="1635853949537" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2. 11. 2021 12:52 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Blazor/obj/Debug/net5.0/Blazor.assets.cache" />
+    <option name="AFTER_PATH" value="Blazor/obj/Debug/net5.0/Blazor.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/Blazor.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Blazor/obj/Debug/net5.0/Blazor.RazorComponent.input.cache" />
+    <option name="AFTER_PATH" value="Blazor/obj/Debug/net5.0/Blazor.RazorComponent.input.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/Blazor.RazorComponent.input.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SOAP_csharp/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="SOAP_csharp/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/project.nuget.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.assets.cache" />
+    <option name="AFTER_PATH" value="SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/SOAP_csharp.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.csproj.AssemblyReference.cache" />
+    <option name="AFTER_PATH" value="SOAP_csharp/obj/Debug/net5.0/SOAP_csharp.csproj.AssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/SOAP_csharp.csproj.AssemblyReference.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="BusinessLayer/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="BusinessLayer/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/project.nuget1.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" />
+    <option name="AFTER_PATH" value="BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/BusinessLayer.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Blazor/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="Blazor/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52_[Changes]/project.nuget2.cache" />
+  </binary>
+</changelist>

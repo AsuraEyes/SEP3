@@ -7,6 +7,6 @@ namespace Data
     public interface IUserService
     {
         User ValidateUser(string UserName, string Password);
-        Task<String> helloWorld();
+        Task<string> helloWorld();
     }
 }

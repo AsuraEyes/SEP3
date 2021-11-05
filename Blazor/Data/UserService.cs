@@ -64,7 +64,7 @@ namespace SEP3_Blazor.Data
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e);
+                Console.WriteLine(e);
                 throw;
             }
         }
