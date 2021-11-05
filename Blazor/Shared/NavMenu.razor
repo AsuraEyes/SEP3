@@ -1,7 +1,8 @@
 ﻿@using SEP3_Blazor.Data
-@using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
+@*@using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider
 
 @inject AuthenticationStateProvider AuthenticationStateProvider
+*@
 @inject NavigationManager NavigationManager
 
 <div class="top-row pl-4 navbar navbar-dark">
@@ -14,18 +15,18 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="Index" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="ViewGoldenGameList">
+            <NavLink class="nav-link" href="Login">
                 <span class="oi oi-plus" aria-hidden="true"></span> Golden Game List
             </NavLink>
         </li>
     <AuthorizeView Policy="AdminOnly">
                 <li class="nav-item px-3">
-                    <NavLink class="nav-link" href="AddGame">
+                    <NavLink class="nav-link" href="">
                         <span class="oi oi-plus" aria-hidden="true"></span> Game
                     </NavLink>
                 </li>
@@ -63,8 +64,8 @@
         Password = "";
         try
         {
-            ((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
+            //((AAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            //NavigationManager.NavigateTo("/");
         }
         catch (Exception ){}
     }

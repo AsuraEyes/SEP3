@@ -1,7 +1,26 @@
 @page "/"
+@using global::Data
+@inject NavigationManager NavigationManager
 
 <h1>BOOK & PLAY</h1>
 
 Welcome to your new bording games app.
 
+<button @onclick="helloWorld"></button>
+
+<p>@helloWorldAnswer</p>
+
 <Login>Login</Login>
+
+@code
+{
+    string helloWorldAnswer = "nothing";
+    IUserService UserService;
+
+    public async Task<string> helloWorld()
+    {
+        helloWorldAnswer = await UserService.helloWorld();
+        return helloWorldAnswer;
+    }
+   
+}

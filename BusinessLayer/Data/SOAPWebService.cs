@@ -4,16 +4,16 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace DefaultNamespace
+namespace BusinessLayer.Data
 {
-    public class SOAPWebService
+    public class SOAPWebService : ISOAPWebService
     {
         /// <summary>
          /// Execute a Soap WebService call
          /// </summary>
-         public static void Execute()
+         public async Task Execute()
          {
-             HttpWebRequest request = GetWebRequest();
+             HttpWebRequest request = await GetWebRequest();
              XmlDocument soapEnvelopeXml = new XmlDocument();
              soapEnvelopeXml.LoadXml(@"<?xml version=""1.0"" encoding=""utf-8""?>
              <soap:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
@@ -36,30 +36,27 @@ namespace DefaultNamespace
                  }
              }
          }
-         /// <summary>
+
+
+        /// <summary>
          /// Create a soap webrequest to [Url]
          /// </summary>
          /// <returns></returns>
-         public async static HttpWebRequest GetWebRequest()
+         public async Task<HttpWebRequest> GetWebRequest()
          {
-             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@"http://localhost:9999/ws");
+             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@"http://localhost:8080/ws");
              webRequest.Headers.Add(@"SOAP:Action");
              webRequest.ContentType = "text/xml;charset=\"utf-8\"";
              webRequest.Accept = "text/xml";
              webRequest.Method = "GET";
              return webRequest;
          }
-        public async Task<string> helloWorld(string param)
+        public async Task<string> HelloWorld(string param)
         {
-            string answerXml = await GetWebRequest();
-            string answer = await deserializeXml(answerXml);
-            return param + " - " + answer;
+            //WebRequest answerXml = await GetWebRequest();
+            //string answer = await deserializeXml(answerXml);
+            return param + " - " + "answer";
         }
-        
-        public static void Main(string[] args)
-         {
-             Execute();
-         }
 
         private async Task<string> deserializeXml(string xml)
         {

@@ -1,0 +1,27 @@
+@page "/"
+@using global::Data
+@using SEP3_Blazor.Data
+@inject NavigationManager NavigationManager
+
+<h1>BOOK & PLAY</h1>
+
+Welcome to your new bording games app.
+
+<button @onclick="helloWorld"></button>
+
+<p>@helloWorldAnswer</p>
+
+<Login>Login</Login>
+
+@code
+{
+    string helloWorldAnswer = "nothing";
+    IUserService UserService = new UserService();
+
+    public async Task<string> helloWorld()
+    {
+        helloWorldAnswer = await UserService.helloWorld();
+        return helloWorldAnswer;
+    }
+   
+}
