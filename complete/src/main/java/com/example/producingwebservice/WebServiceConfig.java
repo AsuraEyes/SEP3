@@ -4,6 +4,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ws.config.annotation.EnableWs;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
@@ -23,30 +24,31 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		return new ServletRegistrationBean<>(servlet, "/ws/*");
 	}
 
-//	@Bean(name = "countries")
-//	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
-//		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-//		wsdl11Definition.setPortTypeName("CountriesPort");
-//		wsdl11Definition.setLocationUri("/ws");
-//		wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
-//		wsdl11Definition.setSchema(countriesSchema);
-//		return wsdl11Definition;
-//	}
-
-	@Bean(name = "message")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
+	@Bean(name = "countries")
+	//@Scope("Singleton")
+	public DefaultWsdl11Definition defaultWsdl11Definition1(XsdSchema countriesSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("MessagePort");
+		wsdl11Definition.setPortTypeName("CountriesPort");
 		wsdl11Definition.setLocationUri("/ws");
 		wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
 		wsdl11Definition.setSchema(countriesSchema);
 		return wsdl11Definition;
 	}
 
-//	@Bean
-//	public XsdSchema countriesSchema() {
-//		return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
-//	}
+	@Bean(name = "message")
+	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema messageSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("MessagePort");
+		wsdl11Definition.setLocationUri("/ws");
+		wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
+		wsdl11Definition.setSchema(messageSchema);
+		return wsdl11Definition;
+	}
+
+	@Bean
+	public XsdSchema countriesSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
+	}
 
 	@Bean
 	public XsdSchema messageSchema() {

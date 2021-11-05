@@ -26,7 +26,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
   @ResponsePayload
   public GetMessageResponse getMessage(@RequestPayload GetMessageRequest request) {
     GetMessageResponse response = new GetMessageResponse();
-    response.setMessage(messageRepository.get(request.getName()));
+    response.setMessage(messageRepository.get());
 
     return response;
   }
