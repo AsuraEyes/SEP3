@@ -18,105 +18,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/v16/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.RazorAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.RazorAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.RazorComponent.input.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.RazorComponent.output.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/Blazor.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Models/ViewGoldenGameList.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/obj/Release/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/BusinessLayer.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/BusinessLayer.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/BusinessLayer.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/obj/Release/net5.0/BusinessLayer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/obj/Release/net5.0/PresentationLayer.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/obj/Release/net5.0/PresentationLayer.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/obj/Release/net5.0/PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PresentationLayer/obj/Release/net5.0/PresentationLayer.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Data/ISOAPMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Data/SOAPMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Models/message.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.RazorAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.RazorAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.RazorComponent.input.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.RazorComponent.output.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/Presentation_Layer.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Release/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Release/net5.0/SOAP_csharp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Release/net5.0/SOAP_csharp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Release/net5.0/SOAP_csharp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOAP_csharp/obj/Release/net5.0/SOAP_csharp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Connected Services/MessageServerReference/ConnectedService.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Connected Services/MessageServerReference/ConnectedService.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Connected Services/MessageServerReference/Reference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Connected Services/MessageServerReference/Reference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/HelloWorldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/HelloWorldController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/ISOAPWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/ISOAPWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/SOAPWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/SOAPWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/BusinessLayer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/Connected Services/MessageServerReference/ConnectedService.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/Connected Services/MessageServerReference/ConnectedService.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/ref/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/bin/Debug/net5.0/ref/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/ref/BusinessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/ref/BusinessLayer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationLayer/obj/Debug/net5.0/PresentationLayer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" afterDir="false" />
-    </list>
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,10 +28,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/RiderProjects/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
