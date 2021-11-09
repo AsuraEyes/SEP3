@@ -5,6 +5,6 @@ namespace BusinessLayer.Data
 {
     public interface IUserService
     {
-        Task<String> HelloWorld();
+        //Task<String> HelloWorld();
     }
 }

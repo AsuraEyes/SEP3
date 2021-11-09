@@ -26,7 +26,24 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
   @ResponsePayload
   public GetMessageResponse getMessage(@RequestPayload GetMessageRequest request) {
     GetMessageResponse response = new GetMessageResponse();
-    response.setMessage(messageRepository.get(request.getName()));
+    switch (request.getOperation()){
+      case GET :
+        response.setMessage(messageRepository.getMessage(request.getId()));
+        break;
+      case POST:
+        response.setNotification(messageRepository.add(request.getMessage()));
+        break;
+      case PATCH:
+        response.setNotification(messageRepository.update(request.getMessage()));
+        break;
+      case GETALL:
+        response.setMessagesList(messageRepository.getMessages());
+        break;
+      case DELETE:
+        response.setNotification(messageRepository.delete(request.getId()));
+
+    }
+
 
     return response;
   }

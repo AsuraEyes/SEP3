@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Presentation_Layer.Data;
 using SEP3_Blazor.Data;
 
 namespace Presentation_Layer
@@ -30,6 +31,7 @@ namespace Presentation_Layer
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IUserService, UserService>();
+            services.AddScoped<ISOAPMessage, SOAPMessage>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

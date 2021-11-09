@@ -28,21 +28,75 @@ namespace MessageServerReference
     public partial class getMessageRequest
     {
         
-        private string nameField;
+        private int idField;
+        
+        private operation operationField;
+        
+        private message messageField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string name
+        public int id
         {
             get
             {
-                return this.nameField;
+                return this.idField;
             }
             set
             {
-                this.nameField = value;
+                this.idField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public operation operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public message message
+        {
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public enum operation
+    {
+        
+        /// <remarks/>
+        GET,
+        
+        /// <remarks/>
+        DELETE,
+        
+        /// <remarks/>
+        POST,
+        
+        /// <remarks/>
+        PATCH,
+        
+        /// <remarks/>
+        GETALL,
     }
     
     /// <remarks/>
@@ -52,14 +106,28 @@ namespace MessageServerReference
     public partial class message
     {
         
+        private int idField;
+        
         private string nameField;
         
         private string bodyField;
-
- 
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string name
         {
             get
@@ -73,7 +141,7 @@ namespace MessageServerReference
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string body
         {
             get
@@ -96,6 +164,10 @@ namespace MessageServerReference
         
         private message messageField;
         
+        private string notificationField;
+        
+        private message[] messagesListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public message message
@@ -107,6 +179,35 @@ namespace MessageServerReference
             set
             {
                 this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Notification
+        {
+            get
+            {
+                return this.notificationField;
+            }
+            set
+            {
+                this.notificationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("messages", IsNullable=false)]
+        public message[] messagesList
+        {
+            get
+            {
+                return this.messagesListField;
+            }
+            set
+            {
+                this.messagesListField = value;
             }
         }
     }
