@@ -1,27 +1,143 @@
 @page "/"
 @using global::Data
+@using Presentation_Layer.Data
+@using Presentation_Layer.Models
 @using SEP3_Blazor.Data
 @inject NavigationManager NavigationManager
+@inject ISOAPMessage SoapMessage
 
-<h1>BOOK & PLAY</h1>
+<h1>BOOK & PLAY - CRUD demo</h1>
+
+<h2 style="color:red;">@title</h2>
 
 Welcome to your new bording games app.
+<br/>
 
-<button @onclick="helloWorld"></button>
+    <h3 style="color:green">Add Message</h3>
 
-<p>@helloWorldAnswer</p>
+    <EditForm Model="@message" OnValidSubmit="@AddMessageAsync">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group">
+            Message part1:
+            <InputText type="text" @bind-Value="message.name"/>
+            part 2:
+            <InputText type="text" @bind-Value="message.body"/>
+            <button class="btn btn-outline-dark" type="submit">Create</button>
+        </div>
+    </EditForm>
+
+
+@if (messageToEdit != null)
+{
+    <h3 style="color:green">Edit Message</h3>
+    <EditForm Model="@messageToEdit" OnValidSubmit="@Save">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group">
+            Message part1:
+            <InputText @bind-Value="messageToEdit.name"/>
+            part 2:
+            <InputText @bind-Value="messageToEdit.body"/>
+            <button class="btn btn-outline-dark" type="submit">Edit</button>
+        </div>
+    </EditForm>
+}
+else
+{
+    <h3>Choose a message to edit</h3>
+}
+
+<br/>
+<h3>Message List</h3>
+@if (messageList == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!messageList.Any())
+{
+    <p>
+        <em>No messages exist. Please add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Click to replace title</th>
+            <th>id</th>
+            <th>Part1</th>
+            <th>Part2</th>
+            <th>Remove</th>
+            <th>Edit</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in messageList)
+        {
+            <tr>
+                <td><button @onclick="@(() => ChangeTitle(item.id))">
+                                            <i class="oi oi-arrow-top" style="color:red"></i>
+                                        </button></td>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.body</td>
+                <td>
+                    <button @onclick="@(() => RemoveMessageAsync(item.id))">
+                        <i class="oi oi-trash" style="color:red"></i>
+                    </button>
+                </td>
+                <td>
+                    <button @onclick="@(() => messageToEdit = messageList.FirstOrDefault(t => t.id == item.id))">
+                        <i class="oi oi-pencil" style="color:#1b6ec2"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+        </tbody>
+        </table>
+}
 
 <Login>Login</Login>
 
 @code
 {
-    string helloWorldAnswer = "nothing";
-    IUserService UserService = new UserService();
+    private string title = "Hello World";
+    private message message = new message();
+    private message messageToEdit;
+    private IList<message> messageList;
 
-    public async Task<string> helloWorld()
+    protected override async Task OnInitializedAsync()
     {
-        helloWorldAnswer = await UserService.helloWorld();
-        return helloWorldAnswer;
+        messageList = await SoapMessage.GetMessagesAsync();
+        messageToEdit = null;
     }
-   
+    
+    public async Task AddMessageAsync()
+    {
+        await SoapMessage.AddMessageAsync(message);
+        await OnInitializedAsync();
+    }
+
+    public async Task RemoveMessageAsync(int id)
+    {
+        message messageToRemove = messageList.First(t => t.id == id);
+        await SoapMessage.RemoveMessageAsync(messageToRemove);
+        await OnInitializedAsync();
+    }
+
+    public async Task ChangeTitle(int id)
+    {
+        await SoapMessage.GetMessageAsync(id);
+    }
+    
+    public async Task Save()
+    {
+        await SoapMessage.UpdateMessageAsync(messageToEdit);
+        messageToEdit = null;
+    }
 }

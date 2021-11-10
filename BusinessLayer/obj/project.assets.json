@@ -1200,26 +1200,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\em_du\\.nuget\\packages\\": {}
+    "/Users/shadow_asura/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\em_du\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\em_du\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\em_du\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\em_du\\RiderProjects\\SEP3\\BusinessLayer\\obj\\",
+      "projectPath": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/BusinessLayer.csproj",
+      "packagesPath": "/Users/shadow_asura/.nuget/packages/",
+      "outputPath": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\em_du\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1277,7 +1275,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }
