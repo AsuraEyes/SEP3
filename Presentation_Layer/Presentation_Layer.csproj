@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="Presentation_Layer.csproj.DotSettings.user" />
+      <Content Include="PresentationLayer.csproj.DotSettings.user" />
     </ItemGroup>
 
 </Project>
