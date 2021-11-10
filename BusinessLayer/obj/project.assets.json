@@ -1205,11 +1205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/BusinessLayer.csproj",
+      "projectUniqueName": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BusinessLayer/BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/BusinessLayer.csproj",
+      "projectPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BusinessLayer/BusinessLayer.csproj",
       "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-      "outputPath": "/Users/shadow_asura/RiderProjects/SEP3/BusinessLayer/obj/",
+      "outputPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BusinessLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP3/SOAP_csharp/SOAP_csharp.csproj",
+      "projectUniqueName": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/SOAP_csharp/SOAP_csharp.csproj",
       "projectName": "SOAP_csharp",
-      "projectPath": "/Users/shadow_asura/RiderProjects/SEP3/SOAP_csharp/SOAP_csharp.csproj",
+      "projectPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/SOAP_csharp/SOAP_csharp.csproj",
       "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-      "outputPath": "/Users/shadow_asura/RiderProjects/SEP3/SOAP_csharp/obj/",
+      "outputPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/SOAP_csharp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"

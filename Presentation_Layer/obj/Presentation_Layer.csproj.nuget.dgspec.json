@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/Presentation_Layer.csproj": {}
+    "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj": {}
   },
   "projects": {
-    "/Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/Presentation_Layer.csproj": {
+    "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/Presentation_Layer.csproj",
+        "projectUniqueName": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj",
         "projectName": "Presentation_Layer",
-        "projectPath": "/Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/Presentation_Layer.csproj",
+        "projectPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj",
         "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-        "outputPath": "/Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/obj/",
+        "outputPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"
