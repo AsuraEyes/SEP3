@@ -154,17 +154,17 @@ $$
         SELECT COUNT(*)
             INTO current_number_of_participants
             FROM participants
-            WHERE event_id = NEW.id;
+            WHERE event_id = NEW.event_id;
 
         UPDATE book_and_play.event
             SET number_of_participants = current_number_of_participants
-            WHERE id = NEW.id;
+            WHERE id = NEW.event_id;
         RETURN NEW;
     END;
 $$;
 
 CREATE TRIGGER update_number_of_participants_trigger
     AFTER INSERT
-    ON book_and_play.event
+    ON book_and_play.participants
     FOR EACH ROW
     EXECUTE FUNCTION update_number_of_participants();
