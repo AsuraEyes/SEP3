@@ -11,13 +11,6 @@ CREATE TABLE role(
     name VARCHAR (100) NOT NULL
 );
 
-DROP TABLE IF EXISTS phone;
-CREATE TABLE phone(
-    country_code VARCHAR(10),
-    number VARCHAR (20),
-    PRIMARY KEY (country_code, number)
-);
-
 DROP TABLE IF EXISTS "user";
 CREATE TABLE "user"(
     username VARCHAR (255) PRIMARY KEY,
@@ -28,8 +21,8 @@ CREATE TABLE "user"(
     phone_country_code VARCHAR (10),
     phone_number VARCHAR (20),
     email_address VARCHAR (255),
-    FOREIGN KEY (role_id) REFERENCES role (id) ON UPDATE CASCADE,
-    FOREIGN KEY (phone_country_code, phone_number) REFERENCES phone (country_code, number)  ON UPDATE CASCADE ON DELETE CASCADE
+    requested_promotion BOOLEAN DEFAULT FALSE NOT NULL,
+    FOREIGN KEY (role_id) REFERENCES role (id) ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS event_category;
@@ -48,6 +41,7 @@ CREATE TABLE event(
     address_street_number VARCHAR (20) NOT NULL,
     address_apartment_number VARCHAR (20),
     max_number_of_participants INTEGER NOT NULL,
+    number_of_participants INTEGER NOT NULL DEFAULT 0,
     event_category_id INTEGER NOT NULL,
     organizer VARCHAR (255) NOT NULL,
     FOREIGN KEY (event_category_id) REFERENCES event_category(id),
@@ -127,3 +121,50 @@ CREATE TABLE event_game_list(
     FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE,
     FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
 );
+
+
+CREATE OR REPLACE FUNCTION put_event_organizer_to_participants_and_organizers()
+    RETURNS TRIGGER
+    LANGUAGE plpgsql
+AS
+$$
+        BEGIN
+        INSERT INTO book_and_play.organizers (event_id, user_username)
+        VALUES (NEW.id, NEW.organizer);
+
+        INSERT INTO book_and_play.participants(event_id, user_username)
+        VALUES (NEW.id, NEW.organizer);
+        RETURN NEW;
+    END;
+$$;
+
+CREATE TRIGGER put_event_organizer_to_participants_and_organizers_trigger
+    AFTER INSERT
+    ON book_and_play.event
+    FOR EACH ROW
+    EXECUTE FUNCTION put_event_organizer_to_participants_and_organizers();
+
+CREATE OR REPLACE FUNCTION update_number_of_participants()
+    RETURNS TRIGGER
+    LANGUAGE plpgsql
+AS
+$$
+    DECLARE current_number_of_participants INTEGER;
+        BEGIN
+        SELECT COUNT(*)
+            INTO current_number_of_participants
+            FROM participants
+            WHERE event_id = NEW.id;
+
+        UPDATE book_and_play.event
+            SET number_of_participants = current_number_of_participants
+            WHERE id = NEW.id;
+        RETURN NEW;
+    END;
+$$;
+
+CREATE TRIGGER update_number_of_participants_trigger
+    AFTER INSERT
+    ON book_and_play.event
+    FOR EACH ROW
+    EXECUTE FUNCTION update_number_of_participants();
