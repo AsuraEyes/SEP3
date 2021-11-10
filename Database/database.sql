@@ -29,21 +29,21 @@ CREATE TABLE "user"(
     phone_number VARCHAR (20),
     email_address VARCHAR (255),
     FOREIGN KEY (role_id) REFERENCES role (id) ON UPDATE CASCADE,
-    FOREIGN KEY (phone_country_code, phone_number) REFERENCES phone (country_code, number)  ON UPDATE CASCADE
+    FOREIGN KEY (phone_country_code, phone_number) REFERENCES phone (country_code, number)  ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS event_category;
 CREATE TABLE event_category(
     id SERIAL PRIMARY KEY,
-    name VARCHAR (100)
+    name VARCHAR (100) NOT NULL
 );
 
 DROP TABLE IF EXISTS event;
 CREATE TABLE event(
     id SERIAL PRIMARY KEY,
     name VARCHAR (255) NOT NULL,
-    start_time DATE NOT NULL,
-    end_time DATE,
+    start_time timestamp NOT NULL,
+    end_time timestamp,
     address_street_name VARCHAR (255) NOT NULL,
     address_street_number VARCHAR (20) NOT NULL,
     address_apartment_number VARCHAR (20),
