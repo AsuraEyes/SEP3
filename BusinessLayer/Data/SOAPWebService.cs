@@ -57,7 +57,7 @@ namespace BusinessLayer.Data
 
         public async Task EditMessageAsync(message message)
         {
-            response = await getResponse(0, operation.DELETE, message);
+            response = await getResponse(0, operation.PATCH, message);
         }
 
         public async Task<string> HelloWorld()
