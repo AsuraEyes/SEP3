@@ -115,12 +115,15 @@ else
     {
         messageList = await SoapMessage.GetMessagesAsync();
         messageToEdit = null;
+        message.body = "";
+        message.name = "";
     }
     
     public async Task AddMessageAsync()
     {
         await SoapMessage.AddMessageAsync(message);
         await OnInitializedAsync();
+       
     }
 
     public async Task RemoveMessageAsync(int id)
@@ -132,7 +135,9 @@ else
 
     public async Task ChangeTitle(int id)
     {
-        await SoapMessage.GetMessageAsync(id);
+        message messageToTittle = await SoapMessage.GetMessageAsync(id);
+        title = messageToTittle.name + " " + messageToTittle.body;
+
     }
     
     public async Task Save()
