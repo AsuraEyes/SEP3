@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/complete/producing-web-service-complete.iml" filepath="$PROJECT_DIR$/complete/producing-web-service-complete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/complete/BusinessLayer[Java].iml" filepath="$PROJECT_DIR$/complete/BusinessLayer[Java].iml" />
     </modules>
   </component>
 </project>

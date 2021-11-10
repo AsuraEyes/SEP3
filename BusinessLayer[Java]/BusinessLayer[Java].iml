@@ -5,9 +5,9 @@
       <configuration>
         <webroots />
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/java" />
-          <root url="file://$MODULE_DIR$/src/main/resources" />
-          <root url="file://$MODULE_DIR$/target/generated-sources/jaxb" />
+          <root url="file://$MODULE_DIR$/../complete/src/main/java" />
+          <root url="file://$MODULE_DIR$/../complete/src/main/resources" />
+          <root url="file://$MODULE_DIR$/../complete/target/generated-sources/jaxb" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -16,16 +16,16 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/target/classes" />
-    <output-test url="file://$MODULE_DIR$/target/test-classes" />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/jaxb" isTestSource="false" generated="true" />
-      <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/test-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
+    <output url="file://$MODULE_DIR$/../complete/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../complete/target/test-classes" />
+    <content url="file://$MODULE_DIR$/../complete">
+      <sourceFolder url="file://$MODULE_DIR$/../complete/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../complete/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../complete/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../complete/target/generated-sources/jaxb" isTestSource="false" generated="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../complete/${project.build.directory}/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../complete/${project.build.directory}/test-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../complete/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

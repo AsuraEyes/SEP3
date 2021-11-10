@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="producing-web-service-complete" />
+        <module name="BusinessLayer[Java]" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="producing-web-service-complete" target="1.8" />
+      <module name="BusinessLayer[Java]" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="producing-web-service-complete" options="-parameters" />
+      <module name="BusinessLayer[Java]" options="-parameters" />
     </option>
   </component>
 </project>
