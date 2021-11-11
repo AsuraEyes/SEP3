@@ -17,7 +17,7 @@ CREATE TABLE "user"(
     password VARCHAR (255) NOT NULL,
     first_name VARCHAR (255),
     last_name VARCHAR (255),
-    role_id INTEGER NOT NULL,
+    role_id INTEGER NOT NULL DEFAULT 2,
     phone_country_code VARCHAR (10),
     phone_number VARCHAR (20),
     email_address VARCHAR (255),
