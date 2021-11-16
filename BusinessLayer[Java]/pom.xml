@@ -27,6 +27,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.1</version>
+		</dependency>
 		<!-- tag::springws[] -->
 		<dependency>
 			<groupId>wsdl4j</groupId>
@@ -78,8 +83,7 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>${project.basedir}/src/main/resources/countries.xsd</source>
-						<source>${project.basedir}/src/main/resources/message.xsd</source>
+						<source>${project.basedir}/src/main/resources/bookAndPlay.xsd</source>
 					</sources>
 				</configuration>
 			</plugin>

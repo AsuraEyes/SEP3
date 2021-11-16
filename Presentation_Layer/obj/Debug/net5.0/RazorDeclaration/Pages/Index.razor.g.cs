@@ -119,52 +119,49 @@ using SEP3_Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 108 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\Pages\Index.razor"
+#line 124 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\Pages\Index.razor"
  
     private string title = "Hello World";
-    private message message = new message();
-    private message messageToEdit;
-    private IList<message> messageList;
+    private Game Game = new Game();
+    private Game GameToEdit;
+    private IList<Game> GameList;
 
     protected override async Task OnInitializedAsync()
     {
-        messageList = await SoapMessage.GetMessagesAsync();
-        messageToEdit = null;
-        message.body = "";
-        message.name = "";
+        GameList = await SoapGame.GetGamesAsync();
+        GameToEdit = null;
     }
     
-    public async Task AddMessageAsync()
+    public async Task AddGameAsync()
     {
-        await SoapMessage.AddMessageAsync(message);
+        await SoapGame.AddGameAsync(Game);
         await OnInitializedAsync();
-       
     }
 
-    public async Task RemoveMessageAsync(int id)
+    public async Task RemoveGameAsync(int id)
     {
-        message messageToRemove = messageList.First(t => t.id == id);
-        await SoapMessage.RemoveMessageAsync(messageToRemove);
+        Game GameToRemove = GameList.First(t => t.id == id);
+        await SoapGame.RemoveGameAsync(GameToRemove);
         await OnInitializedAsync();
     }
 
     public async Task ChangeTitle(int id)
     {
-        message messageToTittle = await SoapMessage.GetMessageAsync(id);
-        title = messageToTittle.name + " " + messageToTittle.body;
+        Game GameToTittle = await SoapGame.GetGameAsync(id);
+        title = GameToTittle.name;
 
     }
     
     public async Task Save()
     {
-        await SoapMessage.UpdateMessageAsync(messageToEdit);
-        messageToEdit = null;
+        await SoapGame.UpdateGameAsync(GameToEdit);
+        GameToEdit = null;
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISOAPMessage SoapMessage { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISOAPGame SoapGame { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

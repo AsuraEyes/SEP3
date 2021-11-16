@@ -31,7 +31,7 @@ namespace Presentation_Layer
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IUserService, UserService>();
-            services.AddScoped<ISOAPMessage, SOAPMessage>();
+            services.AddScoped<ISOAPGame, SOAPGame>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

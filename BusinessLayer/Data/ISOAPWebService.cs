@@ -2,16 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using MessageServerReference;
+using BookAndPlaySOAP;
+
 
 namespace BusinessLayer.Data
 {
     public interface ISOAPWebService
     {
-        Task<message> GetMessageAsync(int id);
-        Task AddMessageAsync(message message);
-        Task<IList<message>> GetMessagesAsync();
-        Task RemoveMessageAsync(int id);
-        Task EditMessageAsync(message message);
+        Task<Game> GetGameAsync(int id);
+        Task AddGameAsync(Game game);
+        Task<IList<Game>> GetGamesAsync();
+        Task<IList<Game>> GetUserGamesAsync(User user);
+        Task RemoveGameAsync(int id);
+        Task EditGameAsync(Game game);
     }
 }

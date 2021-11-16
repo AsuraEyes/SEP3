@@ -65,7 +65,6 @@ C:\Users\em_du\RiderProjects\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.p
 C:\Users\em_du\RiderProjects\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.genruntimeconfig.cache
 C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\appsettings.json
-C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\Connected Services\MessageServerReference\ConnectedService.json
 C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\BusinessLayer.exe
 C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\BusinessLayer.deps.json
 C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\BusinessLayer.runtimeconfig.json
@@ -99,3 +98,4 @@ C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.genruntimeconfig.cache
+C:\Users\em_du\Documents\SEP3\BusinessLayer\bin\Debug\net5.0\Connected Services\BookAndPlaySOAP\ConnectedService.json

@@ -5,68 +5,66 @@ using System.Net;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using System.Xml;
-using MessageServerReference;
+using BookAndPlaySOAP;
 
 namespace BusinessLayer.Data
 {
     public class SOAPWebService : ISOAPWebService
     {
-        private MessagePort messagePort;
-        private getMessageResponse1 response;
+        private BookAndPlayPort port;
+        private SOAPResponse1 response;
 
         public SOAPWebService()
         {
-            messagePort = new MessagePortClient();
+            port = new BookAndPlayPortClient();
         }
 
-        private async Task<getMessageResponse1> getResponse(int id, operation name, message message)
+        private async Task<SOAPResponse1> getResponse(int id, Operation name, Game game, User user)
         {
-            getMessageRequest getMessageRequest = new getMessageRequest();
-            getMessageRequest.id = id;
-            getMessageRequest.operation = name;
-            getMessageRequest.message = message;
-            getMessageRequest1 getMessageRequest1 = new getMessageRequest1(getMessageRequest);
-            getMessageResponse1 getMessageResponse1 = new getMessageResponse1();
-            getMessageResponse1 = messagePort.getMessageAsync(getMessageRequest1).Result;
-            return getMessageResponse1;
+            SOAPRequest soapRequest = new SOAPRequest();
+            soapRequest.id = id;
+            soapRequest.Operation = name;
+            soapRequest.Game = game;
+            soapRequest.User = user;
+            SOAPRequest1 soapRequest1 = new SOAPRequest1(soapRequest);
+            SOAPResponse1 soapResponse1 = new SOAPResponse1();
+            soapResponse1 = port.SOAPAsync(soapRequest1).Result;
+            return soapResponse1;
         }
-        public async Task<message> GetMessageAsync(int id)
+        public async Task<Game> GetGameAsync(int id)
         {
-            response = await getResponse(id, operation.GET, null);
-            message message = response.getMessageResponse.message;
+            response = await getResponse(id, Operation.GET, null, null);
+            Game game = response.SOAPResponse.Game;
 
-            return  message;
+            return  game;
         }
 
-        public async Task  AddMessageAsync(message message)
+        public async Task  AddGameAsync(Game game)
         {
-            response = await getResponse(0, operation.POST, message);
+            response = await getResponse(0, Operation.POST, game, null);
             //return response.getMessageResponse.Notification;
         }
 
-        public async Task<IList<message>> GetMessagesAsync()
+        public async Task<IList<Game>> GetGamesAsync()
         {
-            response = await getResponse(0, operation.GETALL, null);
-            return response.getMessageResponse.messagesList;
+            response = await getResponse(0, Operation.GETALL, null, null);
+            return response.SOAPResponse.GameList.gameList;
         }
 
-        public async Task RemoveMessageAsync(int id)
+        public async Task<IList<Game>> GetUserGamesAsync(User user)
         {
-            response = await getResponse(id, operation.DELETE, null);
+            response = await getResponse(0, Operation.GETALL, null, user);
+            return response.SOAPResponse.GameList.gameList;
         }
 
-        public async Task EditMessageAsync(message message)
+        public async Task RemoveGameAsync(int id)
         {
-            response = await getResponse(0, operation.PATCH, message);
+            response = await getResponse(id, Operation.DELETE, null, null);
         }
 
-        public async Task<string> HelloWorld()
+        public async Task EditGameAsync(Game game)
         {
-            //WebRequest answerXml = await GetWebRequest();
-            //string answer = await deserializeXml(answerXml);
-            return "GetMessageAsync().Result";
+            response = await getResponse(0, Operation.PATCH, game, null);
         }
-
-       
     }
 }

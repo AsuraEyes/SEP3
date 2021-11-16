@@ -4,7 +4,7 @@
 @using Presentation_Layer.Models
 @using SEP3_Blazor.Data
 @inject NavigationManager NavigationManager
-@inject ISOAPMessage SoapMessage
+@inject ISOAPGame SoapGame
 
 <h1>BOOK & PLAY - CRUD demo</h1>
 
@@ -13,53 +13,53 @@
 Welcome to your new bording games app.
 <br/>
 
-    <h3 style="color:green">Add Message</h3>
+    <h3 style="color:green">Add Game</h3>
 
-    <EditForm Model="@message" OnValidSubmit="@AddMessageAsync">
+    <EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
-            Message part1:
-            <InputText type="text" @bind-Value="message.name"/>
+            Game part1:
+            <InputText type="text" @bind-Value="Game.name"/>
             part 2:
-            <InputText type="text" @bind-Value="message.body"/>
+            <InputText type="text" @bind-Value="Game.shortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Create</button>
         </div>
     </EditForm>
 
 
-@if (messageToEdit != null)
+@if (GameToEdit != null)
 {
-    <h3 style="color:green">Edit Message</h3>
-    <EditForm Model="@messageToEdit" OnValidSubmit="@Save">
+    <h3 style="color:green">Edit Game</h3>
+    <EditForm Model="@GameToEdit" OnValidSubmit="@Save">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
-            Message part1:
-            <InputText @bind-Value="messageToEdit.name"/>
+            Game part1:
+            <InputText @bind-Value="GameToEdit.name"/>
             part 2:
-            <InputText @bind-Value="messageToEdit.body"/>
+            <InputText @bind-Value="GameToEdit.shortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Edit</button>
         </div>
     </EditForm>
 }
 else
 {
-    <h3>Choose a message to edit</h3>
+    <h3>Choose a Game to edit</h3>
 }
 
 <br/>
-<h3>Message List</h3>
-@if (messageList == null)
+<h3>Game List</h3>
+@if (GameList == null)
 {
     <p>
         <em>Loading...</em>
     </p>
 }
-else if (!messageList.Any())
+else if (!GameList.Any())
 {
     <p>
-        <em>No messages exist. Please add some.</em>
+        <em>No Games exist. Please add some.</em>
     </p>
 }
 else
@@ -68,16 +68,24 @@ else
         <thead>
         <tr>
             <th>Click to replace title</th>
-            <th>id</th>
-            <th>Part1</th>
-            <th>Part2</th>
+                <th>id</th>
+                <th>name</th>
+                <th>complexity</th>
+                <th>timeEstimation</th>
+                <th>minNumberOfPlayers</th>
+                <th>maxNumberOfPlayers</th>
+                <th>shorthescription</th>
+                <th>neededEquipment</th>
+                <th>minAge</th>
+                <th>maxAge</th>
+                <th>tutorial</th>
             <th>Remove</th>
             <th>Edit</th>
 
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in messageList)
+        @foreach (var item in GameList)
         {
             <tr>
                 <td><button @onclick="@(() => ChangeTitle(item.id))">
@@ -85,14 +93,22 @@ else
                                         </button></td>
                 <td>@item.id</td>
                 <td>@item.name</td>
-                <td>@item.body</td>
+                <td>@item.complexity</td>
+                <td>@item.timeEstimation</td>
+                <td>@item.minNumberOfPlayers</td>
+                <td>@item.maxNumberOfPlayers</td>
+                <td>@item.shortDescription</td>
+                <td>@item.neededEquipment</td>
+                <td>@item.minAge</td>
+                <td>@item.maxAge</td>
+                <td>@item.tutorial</td>
                 <td>
-                    <button @onclick="@(() => RemoveMessageAsync(item.id))">
+                    <button @onclick="@(() => RemoveGameAsync(item.id))">
                         <i class="oi oi-trash" style="color:red"></i>
                     </button>
                 </td>
                 <td>
-                    <button @onclick="@(() => messageToEdit = messageList.FirstOrDefault(t => t.id == item.id))">
+                    <button @onclick="@(() => GameToEdit = GameList.FirstOrDefault(t => t.id == item.id))">
                         <i class="oi oi-pencil" style="color:#1b6ec2"></i>
                     </button>
                 </td>
@@ -107,42 +123,39 @@ else
 @code
 {
     private string title = "Hello World";
-    private message message = new message();
-    private message messageToEdit;
-    private IList<message> messageList;
+    private Game Game = new Game();
+    private Game GameToEdit;
+    private IList<Game> GameList;
 
     protected override async Task OnInitializedAsync()
     {
-        messageList = await SoapMessage.GetMessagesAsync();
-        messageToEdit = null;
-        message.body = "";
-        message.name = "";
+        GameList = await SoapGame.GetGamesAsync();
+        GameToEdit = null;
     }
     
-    public async Task AddMessageAsync()
+    public async Task AddGameAsync()
     {
-        await SoapMessage.AddMessageAsync(message);
+        await SoapGame.AddGameAsync(Game);
         await OnInitializedAsync();
-       
     }
 
-    public async Task RemoveMessageAsync(int id)
+    public async Task RemoveGameAsync(int id)
     {
-        message messageToRemove = messageList.First(t => t.id == id);
-        await SoapMessage.RemoveMessageAsync(messageToRemove);
+        Game GameToRemove = GameList.First(t => t.id == id);
+        await SoapGame.RemoveGameAsync(GameToRemove);
         await OnInitializedAsync();
     }
 
     public async Task ChangeTitle(int id)
     {
-        message messageToTittle = await SoapMessage.GetMessageAsync(id);
-        title = messageToTittle.name + " " + messageToTittle.body;
+        Game GameToTittle = await SoapGame.GetGameAsync(id);
+        title = GameToTittle.name;
 
     }
     
     public async Task Save()
     {
-        await SoapMessage.UpdateMessageAsync(messageToEdit);
-        messageToEdit = null;
+        await SoapGame.UpdateGameAsync(GameToEdit);
+        GameToEdit = null;
     }
 }
