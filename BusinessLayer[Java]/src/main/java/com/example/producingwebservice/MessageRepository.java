@@ -91,6 +91,15 @@ public class MessageRepository
 
   public Message getMessage(int id)
   {
-    return list.get(id);
+    Message getMessage = new Message();
+    for (Message message: list)
+    {
+      if(message.getId() == id)
+      {
+        getMessage = message;
+      }
+
+    }
+    return getMessage;
   }
 }

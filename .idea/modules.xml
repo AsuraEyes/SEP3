@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/complete/BusinessLayer[Java].iml" filepath="$PROJECT_DIR$/complete/BusinessLayer[Java].iml" />
+      <module fileurl="file://$PROJECT_DIR$/BusinessLayer[Java]/producing-web-service-complete.iml" filepath="$PROJECT_DIR$/BusinessLayer[Java]/producing-web-service-complete.iml" />
     </modules>
   </component>
 </project>
