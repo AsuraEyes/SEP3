@@ -89,9 +89,9 @@ public class GameDAO implements Games
     return gameList;
   }
 
-  public GameList readAllUserGameList(User user){
+  public GameList readAllUserGameList(String username){
     gameList.getGameList().clear();
-    gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", user.getUsername()));
+    gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
     return gameList;
   }
 

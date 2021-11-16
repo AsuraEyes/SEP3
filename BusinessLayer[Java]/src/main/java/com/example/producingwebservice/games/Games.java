@@ -8,7 +8,7 @@ public interface Games
 {
   Game create(Game game);
   GameList readAllGGL();
-  GameList readAllUserGameList(User user);
+  GameList readAllUserGameList(String username);
   void delete(int id);
   Game get(int id);
   void patch(Game game);
