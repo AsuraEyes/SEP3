@@ -32,8 +32,8 @@ namespace REST
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "REST", Version = "v1"});
             });
-            services.AddSingleton<IUserService, UserService>();
-            services.AddSingleton<ISOAPWebService, SOAPWebService>();
+            services.AddSingleton<IUserWebService, UserWebService>();
+            services.AddSingleton<IGameWebService, GameWebService>();
 
         }
 

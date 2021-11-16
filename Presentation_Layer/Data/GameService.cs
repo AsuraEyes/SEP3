@@ -8,12 +8,12 @@ using Presentation_Layer.Models;
 
 namespace Presentation_Layer.Data
 {
-    public class SOAPGame : ISOAPGame
+    public class GameService : IGameService
     {
         private string uri = "https://localhost:5003";
         private readonly HttpClient client;
 
-        public SOAPGame()
+        public GameService()
         {
             client = new HttpClient();
         }

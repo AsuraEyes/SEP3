@@ -5,7 +5,7 @@ using Presentation_Layer.Models;
 
 namespace Presentation_Layer.Data
 {
-    public interface ISOAPGame
+    public interface IGameService
     {
         Task<Game> GetGameAsync(int id);
         Task AddGameAsync(Game Game);
