@@ -11,7 +11,7 @@ namespace SEP3_Blazor.Data
     public class UserService : IUserService
     {
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5003/HelloWorld";
+        private readonly string url = "https://localhost:5001";
 
         public UserService()
         {

@@ -119,7 +119,7 @@ using SEP3_Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 124 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor"
+#line 122 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor"
  
     private string title = "Hello World";
     private Game Game = new Game();

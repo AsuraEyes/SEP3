@@ -10,7 +10,7 @@ namespace Presentation_Layer.Data
 {
     public class GameService : IGameService
     {
-        private string uri = "https://localhost:5003";
+        private string uri = "https://localhost:5001";
         private readonly HttpClient client;
 
         public GameService()

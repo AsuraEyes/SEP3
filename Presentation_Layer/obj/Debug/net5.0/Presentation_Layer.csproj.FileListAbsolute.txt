@@ -276,3 +276,5 @@ C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_L
 /Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb
 /Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.genruntimeconfig.cache
 /Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CopyComplete
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs
