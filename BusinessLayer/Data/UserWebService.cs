@@ -2,7 +2,7 @@
 
 namespace BusinessLayer.Data
 {
-    public class UserService : IUserService
+    public class UserWebService : IUserWebService
 
     {
        /*public async Task<string> HelloWorld()

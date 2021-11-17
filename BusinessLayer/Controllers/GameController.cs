@@ -12,9 +12,9 @@ namespace REST.Controllers
     public class GameController : Controller
     {
         //private readonly IUserService UserService;
-        private ISOAPWebService soapWebService;
+        private IGameWebService soapWebService;
 
-        public GameController(ISOAPWebService soapWebService)
+        public GameController(IGameWebService soapWebService)
         {
             this.soapWebService = soapWebService;
         }
@@ -53,10 +53,10 @@ namespace REST.Controllers
             }
         }
         
-        [HttpGet]
+       /* [HttpGet]
         [Route("/UserGames")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesAsync([FromBody]User user)
+            GetUserGamesAsync([FromBody]String user)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace REST.Controllers
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
-        }
+        }*/
         
         [HttpDelete]
         [Route("{id:int}")]

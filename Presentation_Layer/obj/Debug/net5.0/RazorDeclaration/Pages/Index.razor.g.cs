@@ -161,7 +161,7 @@ using SEP3_Blazor.Data;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISOAPGame SoapGame { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IGameService SoapGame { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

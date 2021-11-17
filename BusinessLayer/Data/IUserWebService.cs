@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Data
 {
-    public interface IUserService
+    public interface IUserWebService
     {
         //Task<String> HelloWorld();
     }
