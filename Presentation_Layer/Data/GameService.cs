@@ -10,7 +10,7 @@ namespace Presentation_Layer.Data
 {
     public class GameService : IGameService
     {
-        private string uri = "https://localhost:5000";
+        private string uri = "https://localhost:5001";
         private readonly HttpClient client;
 
         public GameService()
@@ -71,7 +71,7 @@ namespace Presentation_Layer.Data
 
         public async Task RemoveGameAsync(Game Game)
         {
-            await client.DeleteAsync($"{uri}/Game/{Game.Id}");
+            await client.DeleteAsync($"{uri}/Game/{Game.id}");
         }
         
     }
