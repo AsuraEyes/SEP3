@@ -6,30 +6,33 @@
 @inject NavigationManager NavigationManager
 
 <AuthorizeView>
-
     <NotAuthorized>
-
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" placeholder="username" @bind-value="UserName"/>
+        <div class="remove_margin" style="color:#A6583C">@errorMessage</div>
+        <div class="form-group remove_margin">
+            <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
+            <label class="form__label" for="username">Username</label>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" placeholder="password" @bind-value="Password"/>
+        
+        
+        <div class="form-group remove_margin">
+            <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
+            <label class="form__label" for="password">Password</label>
         </div>
-        <div style="color:red">@errorMessage</div>
-        <button @onclick="PerformLogin" class="btn-dark">LOGIN</button>
 
+
+        <a class="login_logout" href="" @onclick="PerformLogin">
+            <span class="oi oi-account-login" aria-hidden="true"></span></a>
     </NotAuthorized>
-
     <Authorized>
-        <h5> Hello @context.User.Identity.Name! </h5>
+        <p class="remove_margin">Hello, @username !</p>
+        <a class="login_logout" href="" @onclick="PerformLogout">
+            <span class="oi oi-account-logout" aria-hidden="true"></span></a>
     </Authorized>
-
 </AuthorizeView>
+
 @code {
-    private string UserName;
-    private string Password;
+    private string username;
+    private string password;
     private string errorMessage;
 
     public async Task PerformLogin()
@@ -37,9 +40,7 @@
         errorMessage = "";
         try
         {
-            ((AuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(UserName, Password);
-            UserName = "";
-            Password = "";
+            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -48,6 +49,19 @@
         }
     }
 
+    public async Task PerformLogout()
+    {
+        errorMessage = "";
+        username = "";
+        password = "";
+        try
+        {
+            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
-    
-}
+}}

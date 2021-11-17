@@ -165,59 +165,114 @@ C:/Users/em_du/RiderProjects/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentati
 /Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb
 /Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.genruntimeconfig.cache
 /Users/shadow_asura/RiderProjects/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CopyComplete
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\appsettings.json
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.StaticWebAssets.xml
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.exe
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.deps.json
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.runtimeconfig.json
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.runtimeconfig.dev.json
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\ref\Presentation_Layer.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.pdb
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.Views.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\bin\Debug\net5.0\Presentation_Layer.Views.pdb
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.csproj.AssemblyReference.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.AssemblyInfoInputs.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.AssemblyInfo.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.csproj.CoreCompileInputs.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorComponent.input.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorComponent.output.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Presentation_Layer.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.TagHelpers.input.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.TagHelpers.output.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorCoreGenerate.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorAssemblyInfo.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorAssemblyInfo.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\staticwebassets\Presentation_Layer.StaticWebAssets.Manifest.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\staticwebassets\Presentation_Layer.StaticWebAssets.xml
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\scopedcss\bundle\Presentation_Layer.styles.css
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\scopedcss\projectbundle\Presentation_Layer.bundle.scp.css
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorTargetAssemblyInfo.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.RazorTargetAssemblyInfo.cs
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.Views.pdb
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\ref\Presentation_Layer.dll
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.pdb
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.genruntimeconfig.cache
-C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.csproj.CopyComplete
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/appsettings.Development.json
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/appsettings.json
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.StaticWebAssets.xml
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.exe
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.deps.json
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.runtimeconfig.json
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.runtimeconfig.dev.json
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.AssemblyInfoInputs.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.AssemblyInfo.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CoreCompileInputs.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorComponent.input.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorComponent.output.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.input.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.output.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorCoreGenerate.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/App.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Counter.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/_Imports.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorAssemblyInfo.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorAssemblyInfo.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/staticwebassets/Presentation_Layer.StaticWebAssets.Manifest.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/staticwebassets/Presentation_Layer.StaticWebAssets.xml
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/bundle/Presentation_Layer.styles.css
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/projectbundle/Presentation_Layer.bundle.scp.css
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorTargetAssemblyInfo.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorTargetAssemblyInfo.cs
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.genruntimeconfig.cache
+C:/Users/em_du/Documents/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CopyComplete
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/appsettings.Development.json
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/appsettings.json
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.StaticWebAssets.xml
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.deps.json
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.runtimeconfig.json
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.runtimeconfig.dev.json
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.AssemblyInfoInputs.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.AssemblyInfo.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CoreCompileInputs.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.MvcApplicationPartsAssemblyInfo.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorComponent.input.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorComponent.output.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.input.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.output.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorCoreGenerate.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/App.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Counter.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/_Imports.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorAssemblyInfo.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorAssemblyInfo.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/staticwebassets/Presentation_Layer.StaticWebAssets.Manifest.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/staticwebassets/Presentation_Layer.StaticWebAssets.xml
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/Shared/MainLayout.razor.rz.scp.css
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/bundle/Presentation_Layer.styles.css
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/scopedcss/projectbundle/Presentation_Layer.bundle.scp.css
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorTargetAssemblyInfo.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorTargetAssemblyInfo.cs
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.genruntimeconfig.cache
+/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.CopyComplete
