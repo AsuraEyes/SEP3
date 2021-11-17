@@ -25,11 +25,13 @@ public class EventDAO implements Events{
 
     @Override
     public EventList readByDate() {
-        return null;
+        eventList.getEventList().clear();
+        return eventList;
     }
 
     @Override
     public EventList readByCategory() {
-        return null;
+        eventList.getEventList().clear();
+        return eventList;
     }
 }
