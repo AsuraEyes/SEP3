@@ -1,0 +1,68 @@
+@page "/Login"
+
+@inject NavigationManager NavigationManager
+
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="remove_margin" style="color:red">@errorMessage</div>
+        <div class="form-group remove_margin">
+            <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
+            <label class="form__label" for="username">Username</label>
+        </div>
+        
+        
+        <div class="form-group remove_margin">
+            <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
+            <label class="form__label" for="password">Password</label>
+        </div>
+
+
+        <a class="login_logout" href="" @onclick="PerformLogin">
+            <span class="oi oi-account-login" aria-hidden="true"></span>
+            Login
+        </a>
+    </NotAuthorized>
+    <Authorized>
+        <p class="remove_margin">Hello, @username !</p>
+        <a class="login_logout" href="" @onclick="PerformLogout">
+            <span class="oi oi-account-logout" aria-hidden="true"></span>
+            Log out
+        </a>
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    private string username;
+    private string password;
+    private string errorMessage;
+
+    public async Task PerformLogin()
+    {
+        errorMessage = "";
+        try
+        {
+            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+        }
+    }
+
+    public async Task PerformLogout()
+    {
+        errorMessage = "";
+        username = "";
+        password = "";
+        try
+        {
+            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            
+        }
+    }
+}
