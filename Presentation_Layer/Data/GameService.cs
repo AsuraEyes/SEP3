@@ -71,7 +71,7 @@ namespace Presentation_Layer.Data
 
         public async Task RemoveGameAsync(Game Game)
         {
-            await client.DeleteAsync($"{uri}/Game/{Game.id}");
+            await client.DeleteAsync($"{uri}/Game/{Game.Id}");
         }
         
     }

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Presentation_Layer.Pages
+namespace LoginComponent
 {
     #line hidden
     using System;
@@ -82,6 +82,13 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Pages\Login.razor"
+using Presentation_Layer.Authentication;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -91,7 +98,7 @@ using Presentation_Layer.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Pages\Login.razor"
+#line 38 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Pages\Login.razor"
        
     private string username;
     private string password;
@@ -102,7 +109,7 @@ using Presentation_Layer.Shared;
         errorMessage = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -118,7 +125,7 @@ using Presentation_Layer.Shared;
         password = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -130,6 +137,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

@@ -29,12 +29,12 @@ namespace Presentation_Layer.Authentication
             var identity = new ClaimsIdentity();
             if (cachedUser == null)
             {
-                string userAsJson = await isRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
+                /*string userAsJson = await isRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
                 if (!string.IsNullOrEmpty(userAsJson))
-                {
+                /*{
                     User tmp = JsonSerializer.Deserialize<User>(userAsJson);
                     ValidateLogin(tmp.Username, tmp.Password);
-                }
+                }*/
             }
             else
             {

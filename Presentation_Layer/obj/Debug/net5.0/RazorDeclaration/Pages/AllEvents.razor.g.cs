@@ -82,6 +82,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AllEvents")]
     public partial class AllEvents : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

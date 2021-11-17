@@ -82,6 +82,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AllUsers")]
     public partial class AllUsers : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

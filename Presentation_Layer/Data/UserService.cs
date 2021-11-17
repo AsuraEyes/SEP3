@@ -15,7 +15,7 @@ namespace SEP3_Blazor.Data
         
 
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5000";
+        private readonly string url = "https://localhost:5001";
 
         public UserService()
         {
@@ -29,21 +29,21 @@ namespace SEP3_Blazor.Data
                 new User
                 {
                     Password = "123456",
-                    RoleId = 4,
+                    RoleId = 3,
                     Username = "Maggie"
 
                 },
                 new User
                 {
                     Password = "admin",
-                    RoleId = 4,
+                    RoleId = 1,
                     Username = "admin"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 2,
+                    RoleId = 3,
                     Username = "Kim"
 
                 },

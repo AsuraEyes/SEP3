@@ -1,6 +1,8 @@
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
 
+@using LoginComponent
+
 <div class="page">
     <div class="sidebar">
         <NavMenu/>
@@ -8,8 +10,7 @@
 
     <div class="main">
         <div class="top-row px-4">
-            <!--<Login/>-->
-            <a href="/Login">Login</a>
+            <Login/>
         </div>
 
         <div class="content px-4">
@@ -18,12 +19,14 @@
     </div>
 </div>
 
-@code{
 
-    protected override async Task OnInitializedAsync()
+@code{
+    /*protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        NavigationManager.NavigateTo("/");
+        Console.WriteLine("here");
+        NavigationManager.NavigateTo("/GGL");
+        Console.WriteLine("here again");
     }
-
+    */
 }

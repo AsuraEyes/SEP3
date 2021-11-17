@@ -15,7 +15,8 @@ Welcome to your new bording games app.
 
     <h3 style="color:green">Add Game</h3>
 
-    <EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
+<!--
+<EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
@@ -26,10 +27,12 @@ Welcome to your new bording games app.
             <button class="btn btn-outline-dark" type="submit">Create</button>
         </div>
     </EditForm>
+-->
 
 
 @if (GameToEdit != null)
 {
+    
     <h3 style="color:green">Edit Game</h3>
     <EditForm Model="@GameToEdit" OnValidSubmit="@Save">
         <DataAnnotationsValidator/>
@@ -115,7 +118,7 @@ else
             </tr>
         }
         </tbody>
-        </table>
+    </table>
 }
 
 @code
@@ -124,12 +127,13 @@ else
     private Game Game = new Game();
     private Game GameToEdit;
     private IList<Game> GameList;
-
-    protected override async Task OnInitializedAsync()
+    
+    /*protected override async Task OnInitializedAsync()
     {
         GameList = await SoapGame.GetGamesAsync();
         GameToEdit = null;
     }
+    */
     
     public async Task AddGameAsync()
     {

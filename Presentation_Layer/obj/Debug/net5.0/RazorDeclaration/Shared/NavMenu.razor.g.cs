@@ -90,7 +90,7 @@ using Presentation_Layer.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Shared\NavMenu.razor"
+#line 110 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

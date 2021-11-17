@@ -82,6 +82,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ChangePositionRequests")]
     public partial class ChangePositionRequests : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
