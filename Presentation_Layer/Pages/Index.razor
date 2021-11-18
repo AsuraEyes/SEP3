@@ -15,30 +15,33 @@ Welcome to your new bording games app.
 
     <h3 style="color:green">Add Game</h3>
 
-    <EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
+<!--
+<EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
             Game part1:
-            <InputText type="text" @bind-Value="Game.name"/>
+            <InputText type="text" @bind-Value="Game.Name"/>
             part 2:
-            <InputText type="text" @bind-Value="Game.shortDescription"/>
+            <InputText type="text" @bind-Value="Game.ShortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Create</button>
         </div>
     </EditForm>
+-->
 
 
 @if (GameToEdit != null)
 {
+    
     <h3 style="color:green">Edit Game</h3>
     <EditForm Model="@GameToEdit" OnValidSubmit="@Save">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
             Game part1:
-            <InputText @bind-Value="GameToEdit.name"/>
+            <InputText @bind-Value="GameToEdit.Name"/>
             part 2:
-            <InputText @bind-Value="GameToEdit.shortDescription"/>
+            <InputText @bind-Value="GameToEdit.ShortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Edit</button>
         </div>
     </EditForm>
@@ -88,34 +91,34 @@ else
         @foreach (var item in GameList)
         {
             <tr>
-                <td><button @onclick="@(() => ChangeTitle(item.id))">
+                <td><button @onclick="@(() => ChangeTitle(item.Id))">
                                             <i class="oi oi-arrow-top" style="color:red"></i>
                                         </button></td>
-                <td>@item.id</td>
-                <td>@item.name</td>
-                <td>@item.complexity</td>
-                <td>@item.timeEstimation</td>
-                <td>@item.minNumberOfPlayers</td>
-                <td>@item.maxNumberOfPlayers</td>
-                <td>@item.shortDescription</td>
-                <td>@item.neededEquipment</td>
-                <td>@item.minAge</td>
-                <td>@item.maxAge</td>
-                <td>@item.tutorial</td>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Complexity</td>
+                <td>@item.TimeEstimation</td>
+                <td>@item.MinNumberOfPlayers</td>
+                <td>@item.MaxNumberOfPlayers</td>
+                <td>@item.ShortDescription</td>
+                <td>@item.NeededEquipment</td>
+                <td>@item.MinAge</td>
+                <td>@item.MaxAge</td>
+                <td>@item.Tutorial</td>
                 <td>
-                    <button @onclick="@(() => RemoveGameAsync(item.id))">
+                    <button @onclick="@(() => RemoveGameAsync(item.Id))">
                         <i class="oi oi-trash" style="color:red"></i>
                     </button>
                 </td>
                 <td>
-                    <button @onclick="@(() => GameToEdit = GameList.FirstOrDefault(t => t.id == item.id))">
+                    <button @onclick="@(() => GameToEdit = GameList.FirstOrDefault(t => t.Id == item.Id))">
                         <i class="oi oi-pencil" style="color:#1b6ec2"></i>
                     </button>
                 </td>
             </tr>
         }
         </tbody>
-        </table>
+    </table>
 }
 
 <Login>Login</Login>
@@ -126,12 +129,13 @@ else
     private Game Game = new Game();
     private Game GameToEdit;
     private IList<Game> GameList;
-
-    protected override async Task OnInitializedAsync()
+    
+    /*protected override async Task OnInitializedAsync()
     {
         GameList = await SoapGame.GetGamesAsync();
         GameToEdit = null;
     }
+    */
     
     public async Task AddGameAsync()
     {
@@ -141,7 +145,7 @@ else
 
     public async Task RemoveGameAsync(int id)
     {
-        Game GameToRemove = GameList.First(t => t.id == id);
+        Game GameToRemove = GameList.First(t => t.Id == id);
         await SoapGame.RemoveGameAsync(GameToRemove);
         await OnInitializedAsync();
     }
@@ -149,7 +153,7 @@ else
     public async Task ChangeTitle(int id)
     {
         Game GameToTittle = await SoapGame.GetGameAsync(id);
-        title = GameToTittle.name;
+        title = GameToTittle.Name;
 
     }
     

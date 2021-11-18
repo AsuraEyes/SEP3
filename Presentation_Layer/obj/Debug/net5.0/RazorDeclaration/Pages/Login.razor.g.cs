@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Presentation_Layer.Pages
+namespace LoginComponent
 {
     #line hidden
     using System;
@@ -13,71 +13,132 @@ namespace Presentation_Layer.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 1 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 1 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 2 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 2 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 3 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 3 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 4 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 4 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 5 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 5 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 6 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 6 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 7 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 7 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 8 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
+========
+#line 8 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 9 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Presentation_Layer;
+========
+#line 9 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+using SEP3_Blazor;
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\_Imports.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 10 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Presentation_Layer.Shared;
+========
+#line 10 "C:\Users\em_du\Documents\SEP3\Blazor\_Imports.razor"
+using Shared;
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 2 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Pages\Login.razor"
+using Presentation_Layer.Authentication;
+========
+#line 2 "C:\Users\em_du\Documents\SEP3\Blazor\Pages\Login.razor"
+using SEP3_Blazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\em_du\Documents\SEP3\Blazor\Pages\Login.razor"
+using AuthenticationStateProvider = SEP3_Blazor.Data.AuthenticationStateProvider;
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
 
 #line default
 #line hidden
@@ -91,7 +152,11 @@ using Presentation_Layer.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\Pages\Login.razor"
+<<<<<<<< HEAD:Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+#line 38 "C:\Users\Maggie\RiderProjects\SEP3\Presentation_Layer\Pages\Login.razor"
+========
+#line 30 "C:\Users\em_du\Documents\SEP3\Blazor\Pages\Login.razor"
+>>>>>>>> origin/master:Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
        
     private string username;
     private string password;
@@ -102,7 +167,7 @@ using Presentation_Layer.Shared;
         errorMessage = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -118,7 +183,7 @@ using Presentation_Layer.Shared;
         password = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -130,6 +195,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

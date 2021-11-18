@@ -1,16 +1,20 @@
 @page "/Login"
+@using Presentation_Layer.Authentication
+@namespace LoginComponent
+
 
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="remove_margin" style="color:red">@errorMessage</div>
+        <div class="remove_margin" style="color:#A6583C">@errorMessage</div>
         <div class="form-group remove_margin">
             <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
             <label class="form__label" for="username">Username</label>
         </div>
-        
-        
+
+
         <div class="form-group remove_margin">
             <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
             <label class="form__label" for="password">Password</label>
@@ -41,7 +45,7 @@
         errorMessage = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -57,7 +61,7 @@
         password = "";
         try
         {
-            //((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

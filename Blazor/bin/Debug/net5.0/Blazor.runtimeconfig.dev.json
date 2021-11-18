@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "/Users/shadow_asura/.dotnet/store/|arch|/|tfm|",
-      "/Users/shadow_asura/.nuget/packages"
-    ]
-  }
-}

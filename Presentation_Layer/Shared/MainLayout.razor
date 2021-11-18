@@ -1,4 +1,7 @@
 @inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+@using LoginComponent
 
 <div class="page">
     <div class="sidebar">
@@ -15,3 +18,15 @@
         </div>
     </div>
 </div>
+
+
+@code{
+    /*protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Console.WriteLine("here");
+        NavigationManager.NavigateTo("/GGL");
+        Console.WriteLine("here again");
+    }
+    */
+}

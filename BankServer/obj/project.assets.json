@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\em_du\\.nuget\\packages\\": {}
+    "C:\\Users\\Maggie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\em_du\\Documents\\SEP3\\BankServer\\BankServer.csproj",
+      "projectUniqueName": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\BankServer.csproj",
       "projectName": "BankServer",
-      "projectPath": "C:\\Users\\em_du\\Documents\\SEP3\\BankServer\\BankServer.csproj",
-      "packagesPath": "C:\\Users\\em_du\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\em_du\\Documents\\SEP3\\BankServer\\obj\\",
+      "projectPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\BankServer.csproj",
+      "packagesPath": "C:\\Users\\Maggie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\em_du\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maggie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -254,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

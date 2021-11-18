@@ -5,13 +5,14 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Data;
+using Presentation_Layer.Models;
 
 namespace SEP3_Blazor.Data
 {
     public class UserService : IUserService
     {
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5003/HelloWorld";
+        private readonly string url = "https://localhost:5001";
 
         public UserService()
         {
@@ -37,6 +38,11 @@ namespace SEP3_Blazor.Data
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public User ValidateUser(string userName, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

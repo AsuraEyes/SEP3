@@ -1,15 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Presentation_Layer.Authentication;
 using Presentation_Layer.Data;
 using SEP3_Blazor.Data;
 
@@ -32,6 +35,15 @@ namespace Presentation_Layer
             services.AddServerSideBlazor();
             services.AddSingleton<IUserService, UserService>();
             services.AddScoped<IGameService, GameService>();
+            services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Organizer", a => a.RequireAuthenticatedUser().RequireClaim("Level", "3"));
+                options.AddPolicy("Player", a => a.RequireAuthenticatedUser().RequireClaim("Level", "2"));
+                options.AddPolicy("Administrator", a => a.RequireAuthenticatedUser().RequireClaim("Level", "1"));
+                
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

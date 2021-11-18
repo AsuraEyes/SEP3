@@ -126,11 +126,11 @@ using SEP3_Blazor.Data;
     private Game GameToEdit;
     private IList<Game> GameList;
 
-    protected override async Task OnInitializedAsync()
+    /*protected override async Task OnInitializedAsync()
     {
         GameList = await SoapGame.GetGamesAsync();
         GameToEdit = null;
-    }
+    }*/
     
     public async Task AddGameAsync()
     {
