@@ -1,12 +1,14 @@
-@page "/"
-@using global::Data
+@page "/{id:int}"
+
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
-@using SEP3_Blazor.Data
+
 @inject NavigationManager NavigationManager
 @inject IGameService SoapGame
 
 <h1>BOOK & PLAY - CRUD demo</h1>
+
+<h2>Event Id: @id</h2>
 
 <h2 style="color:red;">@title</h2>
 
@@ -125,6 +127,8 @@ else
 
 @code
 {
+    [Parameter]
+    public int id { get; set; }
     private string title = "Hello World";
     private Game Game = new Game();
     private Game GameToEdit;

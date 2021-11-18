@@ -123,7 +123,8 @@ CREATE TABLE event_game_list(
 );
 
 SELECT * FROM event
-WHERE number_of_participants < max_number_of_participants AND event_category_id = 2 AND name ILIKE '%Spa%' AND start_time > now();
+WHERE number_of_participants < max_number_of_participants AND event_category_id = 2 AND start_time > now()
+ORDER BY id;
 
 
 CREATE OR REPLACE FUNCTION put_event_organizer_to_participants_and_organizers()
