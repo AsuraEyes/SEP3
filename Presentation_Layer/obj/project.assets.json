@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Maggie\\.nuget\\packages\\": {}
+    "C:\\Users\\em_du\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
+      "projectUniqueName": "C:\\Users\\em_du\\Documents\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
       "projectName": "Presentation_Layer",
-      "projectPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
-      "packagesPath": "C:\\Users\\Maggie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\Presentation_Layer\\obj\\",
+      "projectPath": "C:\\Users\\em_du\\Documents\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
+      "packagesPath": "C:\\Users\\em_du\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\em_du\\Documents\\SEP3\\Presentation_Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Maggie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\em_du\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

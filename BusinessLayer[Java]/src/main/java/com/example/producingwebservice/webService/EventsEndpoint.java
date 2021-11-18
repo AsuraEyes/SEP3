@@ -40,7 +40,8 @@ public class EventsEndpoint
         //eventsDAO.patch(request.getEvent());
         break;
       case GETALL:
-          response.setEventList(eventsDAO.searchAndFilter("byCategorybyAvailabilitybyDate", 2));
+          response.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
+              request.getId()));
         break;
       case DELETE:
        // eventsDAO.delete(request.getId());

@@ -34,6 +34,7 @@ namespace REST
             });
             services.AddSingleton<IUserWebService, UserWebService>();
             services.AddSingleton<IGameWebService, GameWebService>();
+            services.AddSingleton<IEventWebService, EventWebService>();
 
         }
 

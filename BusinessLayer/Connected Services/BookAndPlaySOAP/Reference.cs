@@ -1025,6 +1025,8 @@ namespace BookAndPlaySOAP
         
         private int idField;
         
+        private string filterField;
+        
         private Operation operationField;
         
         private Event eventField;
@@ -1045,6 +1047,20 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Operation Operation
         {
             get
@@ -1058,7 +1074,7 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public Event Event
         {
             get

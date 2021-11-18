@@ -33,5 +33,21 @@ namespace REST.Controllers
                 return  StatusCode(500, e.Message);
             }
         }
+        
+        [HttpGet]
+        [Route("/FilteredEvents{filter}/{category}")]
+        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync(int category, string filter)
+        {
+            try
+            {
+                IList<Event> filteredEventsAsync = await EventWebService.GetFilteredEventsAsync(filter, category);
+                return Ok(filteredEventsAsync);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return  StatusCode(500, e.Message);
+            }
+        }
     }
 }

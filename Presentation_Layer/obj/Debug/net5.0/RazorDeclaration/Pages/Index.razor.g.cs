@@ -119,18 +119,19 @@ using SEP3_Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 124 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\Pages\Index.razor"
+#line 127 "C:\Users\em_du\Documents\SEP3\Presentation_Layer\Pages\Index.razor"
  
     private string title = "Hello World";
     private Game Game = new Game();
     private Game GameToEdit;
     private IList<Game> GameList;
-
+    
     /*protected override async Task OnInitializedAsync()
     {
         GameList = await SoapGame.GetGamesAsync();
         GameToEdit = null;
-    }*/
+    }
+    */
     
     public async Task AddGameAsync()
     {
@@ -140,7 +141,7 @@ using SEP3_Blazor.Data;
 
     public async Task RemoveGameAsync(int id)
     {
-        Game GameToRemove = GameList.First(t => t.id == id);
+        Game GameToRemove = GameList.First(t => t.Id == id);
         await SoapGame.RemoveGameAsync(GameToRemove);
         await OnInitializedAsync();
     }
@@ -148,7 +149,7 @@ using SEP3_Blazor.Data;
     public async Task ChangeTitle(int id)
     {
         Game GameToTittle = await SoapGame.GetGameAsync(id);
-        title = GameToTittle.name;
+        title = GameToTittle.Name;
 
     }
     
