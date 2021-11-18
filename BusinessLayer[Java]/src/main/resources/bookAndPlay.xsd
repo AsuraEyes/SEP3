@@ -16,6 +16,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:int"/>
+                <xs:element name="filter" type="xs:string"/>
                 <xs:element name="Operation" type="tns:Operation"/>
                 <xs:element name="Event" type="tns:Event"/>
             </xs:sequence>
@@ -87,8 +88,8 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="Event">
-        <xs:sequence>
+    <xs:complexType name="Event" >
+        <xs:sequence >
             <xs:element name="id" type="xs:int"/>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="startTime" type="xs:dateTime"/>

@@ -1,5 +1,7 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.events.EventDAO;
+import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.GameDAO;
 import com.example.producingwebservice.games.Games;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +15,12 @@ public class DAOConfig
     @Scope("singleton")
     public Games GameDAO() {
         return new GameDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public Events EventDAO() {
+        return new EventDAO();
     }
 
     @Bean(name="jdbcUrl")

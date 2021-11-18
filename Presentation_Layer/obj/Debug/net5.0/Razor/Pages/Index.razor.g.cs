@@ -530,9 +530,12 @@ else
 #line default
 #line hidden
 #nullable disable
-            __builder.OpenElement(110, "Login");
-            __builder.AddContent(111, "Login");
-            __builder.CloseElement();
+            __builder.OpenComponent<Presentation_Layer.Pages.Login>(110);
+            __builder.AddAttribute(111, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddContent(112, "Login");
+            }
+            ));
+            __builder.CloseComponent();
         }
         #pragma warning restore 1998
 #nullable restore
