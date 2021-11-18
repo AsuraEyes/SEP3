@@ -124,7 +124,7 @@ using SEP3_Blazor.Data;
     private string title = "Hello World";
     private Game Game = new Game();
     private Game GameToEdit;
-    private IList<Game> GameList;
+    private IList<Game> GameList = new List<Game>();
     
     /*protected override async Task OnInitializedAsync()
     {
