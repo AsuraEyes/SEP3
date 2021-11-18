@@ -25,5 +25,16 @@ namespace Presentation_Layer.Data
             });
             return Events;
         }
+        
+        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category)
+        {
+            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents{filter}/{category}");
+            var Event = await stringAsync;
+            var Events = JsonSerializer.Deserialize<List<Event>>(Event, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return Events;
+        }
     }
 }

@@ -7,5 +7,6 @@ namespace Presentation_Layer.Data
     public interface IEventService
     {
         Task<IList<Event>> GetEventsAsync();
+        Task<IList<Event>> GetFilteredEventsAsync(string filter, int category);
     }
 }
