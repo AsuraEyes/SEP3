@@ -1,6 +1,30 @@
 @page "/AllEvents"
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
+
+@inject NavigationManager NavigationManager
+@inject IEventService RestEvent
+
 <h3>AllEvents</h3>
+<div class="container">
+    @foreach (var item in Events)
+    {
+        <div class="box">
+            <div class="content">
+                <h3>@item.Name</h3>
+                <p>@item.StartTime</p>
+                <p>@item.EndTime</p>
+            </div>
+        </div>
+    }
+</div>
 
 @code {
+    private Event Event;
+    private IList<Event> Events;
     
+    protected override async Task OnInitializedAsync()
+    {
+        Events = await RestEvent.GetEventsAsync();
+    }
 }
