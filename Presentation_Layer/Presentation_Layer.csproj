@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <Content Include="PresentationLayer.csproj.DotSettings.user" />
+      <Content Remove="Pages\CreateEvent.razor" />
     </ItemGroup>
 
 </Project>
