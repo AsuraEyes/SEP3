@@ -13,84 +13,84 @@ namespace Presentation_Layer.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 1 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 2 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 3 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 4 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 5 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 6 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 7 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 8 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 9 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Presentation_Layer;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/_Imports.razor"
+#line 10 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\_Imports.razor"
 using Presentation_Layer.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/AllEvents.razor"
+#line 2 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\AllEvents.razor"
 using Presentation_Layer.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/AllEvents.razor"
+#line 3 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\AllEvents.razor"
 using Presentation_Layer.Data;
 
 #line default
@@ -105,14 +105,53 @@ using Presentation_Layer.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/AllEvents.razor"
+#line 38 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\AllEvents.razor"
        
     private Event Event;
     private IList<Event> Events;
+    private IList<Event> EventsToShow;
+    private string? Search;
+    private int? categoryId;
     
     protected override async Task OnInitializedAsync()
     {
         Events = await RestEvent.GetEventsAsync();
+        EventsToShow = Events;
+    }
+    
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        Search = null;
+        try
+        {
+            Search = changeEventArgs.Value.ToString();
+        }
+        catch (Exception)
+        {
+    // ignored
+        }
+        ExecuteFilter();
+    }
+
+    private void FilterByCategory(ChangeEventArgs changeEventArgs)
+    {
+        categoryId = null;
+        try
+        {
+            categoryId = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    // ignored
+    }
+
+    private void ExecuteFilter()
+    {
+        EventsToShow = Events.Where(a => (Search != null && a.Name.Contains(Search) || Search == null)
+            && (categoryId != null && a.CategoryId == categoryId || categoryId == null)).ToList();
     }
 
 #line default

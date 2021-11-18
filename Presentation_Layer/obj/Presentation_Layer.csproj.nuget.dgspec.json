@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj": {}
+    "C:\\Users\\Anca\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj": {}
   },
   "projects": {
-    "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj": {
+    "C:\\Users\\Anca\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj",
+        "projectUniqueName": "C:\\Users\\Anca\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
         "projectName": "Presentation_Layer",
-        "projectPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Presentation_Layer.csproj",
-        "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-        "outputPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/",
+        "projectPath": "C:\\Users\\Anca\\RiderProjects\\SEP3\\Presentation_Layer\\Presentation_Layer.csproj",
+        "packagesPath": "C:\\Users\\Anca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anca\\RiderProjects\\SEP3\\Presentation_Layer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Anca\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
