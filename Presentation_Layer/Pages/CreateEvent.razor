@@ -1,0 +1,63 @@
+@page "/CreateEvent"
+@using Presentation_Layer.Data
+@using Presentation_Layer.Models
+<h3>CreateEvent</h3>
+
+@attribute [Authorize(Policy = "AdminOnly")]
+
+@inject IEventService EventService
+@inject NavigationManager NavigationManager 
+
+<h3>CreateEvent</h3>
+
+<EditForm Model="@newEvent" OnValidSubmit="@CreateNewEvent">
+     <DataAnnotationsValidator/>
+     <ValidationSummary/>
+     <div class="form-group">
+         Id:<br/>
+         <InputText @bind-Value="newEvent.Id"/>
+     </div>
+     <div class="form-group">
+         Name:<br/>
+         <InputText @bind-Value="newEvent.Name"/>
+     </div>
+     <div class="form-group">
+         Address:<br/>
+         <InputText @bind-Value="newEvent.Address"/>
+     </div>
+     <div class="form-group">
+         Day:<br/>
+         <InputText @bind-Value="newEvent.Day"/>
+     </div>
+     <div class="form-group">
+         Start Time:<br/>
+         <InputText @bind-Value="newEvent.StartTime"/>
+     </div>
+     <div class="form-group">
+         End Time:<br/>
+         <InputText @bind-Value="newEvent.EndTime"/>
+     </div>
+    <div class="form-group">
+        Category Id:<br/>
+        <InputSelect @bind-Value="newEvent.CategoryId">
+            <option value="">Select category</option>
+            <option value="adult">Adult</option>
+            <option value="children">Children</option>
+            <option value="family">Family</option>
+        </InputSelect>
+    </div>
+    
+     <p class="actions">
+         <button class="btn btn-outline-dark" type="submit">Create</button>
+     </p>
+    
+      <p class="actions">
+          <button class="btn btn-outline-dark" type="submit">Save</button>
+      </p>
+</EditForm>
+
+@code {
+    private readonly Event newEvent = new();
+    
+    private void 
+}
