@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
@@ -8,7 +9,7 @@ namespace Presentation_Layer.Data
 {
     public class EventService : IEventService
     {
-        private string uri = "https://localhost:5001";
+        private string uri = "https://localhost:5003";
         private readonly HttpClient Client;
         
         public EventService()
@@ -17,7 +18,18 @@ namespace Presentation_Layer.Data
         }
         public async Task<IList<Event>> GetEventsAsync()
         {
-            var stringAsync = Client.GetStringAsync(uri + "/Games");
+            var stringAsync = Client.GetStringAsync(uri + "/Events");
+            var Event = await stringAsync;
+            var Events = JsonSerializer.Deserialize<List<Event>>(Event, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return Events;
+        }
+        
+        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category)
+        {
+            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents{filter}/{category}");
             var Event = await stringAsync;
             var Events = JsonSerializer.Deserialize<List<Event>>(Event, new JsonSerializerOptions
             {

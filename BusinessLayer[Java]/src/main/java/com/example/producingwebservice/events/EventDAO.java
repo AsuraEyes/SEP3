@@ -87,7 +87,7 @@ public class EventDAO implements Events {
         eventList.getEventList().clear();
         String statement = "SELECT * FROM event";
 
-        if(!filter.equals("")){
+        if(!filter.equals("all")){
           statement += " WHERE ";
           if(filter.contains("byDate"))
           {
@@ -104,11 +104,11 @@ public class EventDAO implements Events {
           if(statement.endsWith("AND"))
           {
             statement = statement.substring(0, statement.length() - 4);
-            statement +=";";
+            statement +=" ORDER BY id;";
           }
         }
         else
-          statement +=";";
+          statement +=" ORDER BY id;";
       System.out.println(statement);
 
         eventList.getEventList().addAll(helper().map(new EventMapper(), statement));
