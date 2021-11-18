@@ -105,14 +105,53 @@ using Presentation_Layer.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/AllEvents.razor"
+#line 38 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/AllEvents.razor"
        
     private Event Event;
     private IList<Event> Events;
+    private IList<Event> EventsToShow;
+    private string? Search;
+    private int? categoryId;
     
     protected override async Task OnInitializedAsync()
     {
         Events = await RestEvent.GetEventsAsync();
+        EventsToShow = Events;
+    }
+    
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        Search = null;
+        try
+        {
+            Search = changeEventArgs.Value.ToString();
+        }
+        catch (Exception)
+        {
+    // ignored
+        }
+        ExecuteFilter();
+    }
+
+    private void FilterByCategory(ChangeEventArgs changeEventArgs)
+    {
+        categoryId = null;
+        try
+        {
+            categoryId = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    // ignored
+    }
+
+    private void ExecuteFilter()
+    {
+        EventsToShow = Events.Where(a => (Search != null && a.Name.Contains(Search) || Search == null)
+            && (categoryId != null && a.CategoryId == categoryId || categoryId == null)).ToList();
     }
 
 #line default

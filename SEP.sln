@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{61EF379F-6188-48B1-8DE1-0FB4F3F4E88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{1EFF09CC-A1C0-4A9A-8778-80E12C9CD14C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation_Layer", "Presentation_Layer\Presentation_Layer.csproj", "{ED4822D0-418B-4E15-9A14-34BED9A96762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankServer", "BankServer\BankServer.csproj", "{D1B59DC8-3DF1-480C-A1BC-096526942B5E}"
@@ -18,10 +16,6 @@ Global
 		{61EF379F-6188-48B1-8DE1-0FB4F3F4E88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61EF379F-6188-48B1-8DE1-0FB4F3F4E88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61EF379F-6188-48B1-8DE1-0FB4F3F4E88B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1EFF09CC-A1C0-4A9A-8778-80E12C9CD14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1EFF09CC-A1C0-4A9A-8778-80E12C9CD14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1EFF09CC-A1C0-4A9A-8778-80E12C9CD14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1EFF09CC-A1C0-4A9A-8778-80E12C9CD14C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4822D0-418B-4E15-9A14-34BED9A96762}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -90,7 +90,7 @@ using Presentation_Layer.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 110 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/NavMenu.razor"
+#line 112 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -105,6 +105,7 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591
