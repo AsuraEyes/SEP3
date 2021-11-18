@@ -5,9 +5,25 @@
 @inject NavigationManager NavigationManager
 @inject IEventService RestEvent
 
-<h3>AllEvents</h3>
+<h2>AllEvents</h2>
+<p>
+    Search: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width: 150px"/> 
+    Date:
+    <select class="selectpicker" style="width: 125px" @bind="">
+        <option>-- All --</option>
+        <option>All Upcomming</option>
+    </select>
+    Category:
+        <select class="selectpicker" style="width: 125px" @bind="@Event.CategoryId" @oninput="@(arg => FilterByCategory(arg))">
+            <option>-- All --</option>
+            <option value="@Event.CategoryId = 1">Children</option>
+            <option value="@Event.CategoryId = 2">Adults</option>
+            <option value="@Event.CategoryId = 3">Family</option>
+        </select>
+</p>
+
 <div class="container">
-    @foreach (var item in Events)
+    @foreach (var item in EventsToShow)
     {
         <div class="box">
             <div class="content">
@@ -22,9 +38,48 @@
 @code {
     private Event Event;
     private IList<Event> Events;
+    private IList<Event> EventsToShow;
+    private string? Search;
+    private int? categoryId;
     
     protected override async Task OnInitializedAsync()
     {
         Events = await RestEvent.GetEventsAsync();
+        EventsToShow = Events;
+    }
+    
+    private void FilterByName(ChangeEventArgs changeEventArgs)
+    {
+        Search = null;
+        try
+        {
+            Search = changeEventArgs.Value.ToString();
+        }
+        catch (Exception)
+        {
+    // ignored
+        }
+        ExecuteFilter();
+    }
+
+    private void FilterByCategory(ChangeEventArgs changeEventArgs)
+    {
+        categoryId = null;
+        try
+        {
+            categoryId = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    // ignored
+    }
+
+    private void ExecuteFilter()
+    {
+        EventsToShow = Events.Where(a => (Search != null && a.Name.Contains(Search) || Search == null)
+            && (categoryId != null && a.CategoryId == categoryId || categoryId == null)).ToList();
     }
 }

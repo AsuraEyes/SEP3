@@ -82,6 +82,13 @@ using Presentation_Layer.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor"
+using LoginComponent;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -90,15 +97,16 @@ using Presentation_Layer.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor"
+#line 23 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor"
       
-
-    protected override async Task OnInitializedAsync()
+    /*protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        NavigationManager.NavigateTo("/");
+        Console.WriteLine("here");
+        NavigationManager.NavigateTo("/GGL");
+        Console.WriteLine("here again");
     }
-
+    */
 
 #line default
 #line hidden
