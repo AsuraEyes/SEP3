@@ -15,12 +15,13 @@ namespace BusinessLayer.Data
             Port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPEventResponse1> getEventResponse(int id, Operation name, Event ev)
+        private async Task<SOAPEventResponse1> getEventResponse(int id, Operation name, Event ev, string filter)
         {
             SOAPEventRequest soapEventRequest = new SOAPEventRequest();
             soapEventRequest.id = id;
             soapEventRequest.Operation = name;
             soapEventRequest.Event = ev;
+            soapEventRequest.filter = filter;
             SOAPEventRequest1 soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
             SOAPEventResponse1 soapEventResponse1 = new SOAPEventResponse1();
             soapEventResponse1 = Port.SOAPEventAsync(soapEventRequest1).Result;
@@ -29,7 +30,13 @@ namespace BusinessLayer.Data
 
         public async Task<IList<Event>> GetEventsAsync()
         {
-            Response = await getEventResponse(0, Operation.GETALL, null);
+            Response = await getEventResponse(0, Operation.GETALL, null, "");
+            return Response.SOAPEventResponse.eventList;
+        }
+
+        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category)
+        {
+            Response = await getEventResponse(category, Operation.GETALL, null, filter);
             return Response.SOAPEventResponse.eventList;
         }
     }

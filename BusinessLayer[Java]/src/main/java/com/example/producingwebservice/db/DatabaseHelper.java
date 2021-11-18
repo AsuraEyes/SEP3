@@ -2,6 +2,7 @@ package com.example.producingwebservice.db;
 
 import org.postgresql.Driver;
 
+import javax.xml.datatype.DatatypeConfigurationException;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class DatabaseHelper<T> {
 			} else {
 				return null;
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | DatatypeConfigurationException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
 	}
@@ -75,7 +76,7 @@ public class DatabaseHelper<T> {
 			}
 
 			return allMessages;
-		} catch (SQLException e) {
+		} catch (SQLException | DatatypeConfigurationException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
 	}
