@@ -1,6 +1,15 @@
 @page "/MyEvents"
+@inject NavigationManager NavigationManager
 <h3>MyEvents</h3>
 
+<p class="actions">
+    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
+</p>
+
 @code {
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"CreateEvent");
+    }
     
 }

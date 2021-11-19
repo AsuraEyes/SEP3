@@ -90,6 +90,19 @@ using Presentation_Layer.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 9 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\MyEvents.razor"
+       
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"CreateEvent");
+    }
+    
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

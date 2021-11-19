@@ -2,6 +2,7 @@
 
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
+@using System.ComponentModel.DataAnnotations
 
 @attribute [Authorize(Policy = "Organizer")]
 
@@ -14,23 +15,18 @@
      <DataAnnotationsValidator/>
      <ValidationSummary/>
      <div class="form-group">
-         Id:<br/>
-         <InputText @bind-Value="newEvent.Id"/>
-         <ValidationMessage For = "@(() =>newEvent.Id)"/>
-     </div>
-     <div class="form-group">
          Name:<br/>
          <InputText @bind-Value="newEvent.Name"/>
          <ValidationMessage For = "@(() =>newEvent.Name)"/>
      </div>
      <div class="form-group">
-         Start Time:<br/>
-         <InputText @bind-Value="newEvent.StartTime"/>
+         Start Time: <br/>
+       <input class="form-control" asp-for="DateTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" />
          <ValidationMessage For = "@(() =>newEvent.StartTime)"/>
      </div>
      <div class="form-group">
          End Time:<br/>
-         <InputText @bind-Value="newEvent.EndTime"/>
+         <input class = "form-control" asp-for = "DateTime" asp-format = "{0:yyyy-MM-ddTHH:mm}"/>
      </div>
      <div class="form-group">
          Address Street Name:<br/>
@@ -48,12 +44,12 @@
      </div>
      <div class="form-group">
          Max number of participants:<br/>
-         <InputText @bind-Value="newEvent.MaxNumberOfParticipants"/>
+         <InputNumber @bind-Value="newEvent.MaxNumberOfParticipants"/>
          <ValidationMessage For = "@(() =>newEvent.MaxNumberOfParticipants)"/>
      </div>
      <div class="form-group">
          Number of participants:<br/>
-         <InputText @bind-Value="newEvent.NumberOfParticipants"/>
+         <InputNumber @bind-Value="newEvent.NumberOfParticipants"/>
          <ValidationMessage For = "@(() =>newEvent.NumberOfParticipants)"/>
      </div>
      <div class="form-group">
@@ -68,12 +64,9 @@
      </div>
     
      <p class="actions">
-         <button class="btn btn-outline-dark" type="submit">Create</button>
+         <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
      </p>
-    
-      <p class="actions">
-          <button class="btn btn-outline-dark" type="submit">Save</button>
-      </p>
+     
 </EditForm>
 
 
@@ -87,5 +80,10 @@
         NavigationManager.NavigateTo("/AllEvents");
         
     }
-
+    
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"MyEvents");
+    }
+    
 }

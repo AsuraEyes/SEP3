@@ -119,7 +119,7 @@ using Microsoft.VisualBasic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\AllEvents.razor"
+#line 96 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\AllEvents.razor"
        
     private IList<Event> EventsToShow = new List<Event>();
     private string Search;
@@ -177,6 +177,12 @@ using Microsoft.VisualBasic;
     {
         NavigationManager.NavigateTo($"EventInfo/{id}");
     }
+    
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"CreateEvent");
+    }
+    
 
 #line default
 #line hidden

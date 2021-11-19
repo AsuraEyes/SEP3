@@ -97,7 +97,14 @@ using Presentation_Layer.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\CreateEvent.razor"
+#line 5 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\CreateEvent.razor"
+using System.ComponentModel.DataAnnotations;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\CreateEvent.razor"
            [Authorize(Policy = "Organizer")]
 
 #line default
@@ -112,7 +119,7 @@ using Presentation_Layer.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\CreateEvent.razor"
+#line 73 "C:\Users\Anca\RiderProjects\SEP3\Presentation_Layer\Pages\CreateEvent.razor"
        
 
     private Event newEvent = new Event();
@@ -123,7 +130,12 @@ using Presentation_Layer.Models;
         NavigationManager.NavigateTo("/AllEvents");
         
     }
-
+    
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"MyEvents");
+    }
+    
 
 #line default
 #line hidden

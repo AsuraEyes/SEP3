@@ -9,6 +9,11 @@
 
 <h2>AllEvents</h2>
 
+<p class="actions">
+    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
+</p>
+
+
 <p>
     <!--Search: <input type="text"  style="width: 150px"/> -->
     Date:
@@ -86,6 +91,8 @@
 </table>
 -->
 
+
+
 @code {
     private IList<Event> EventsToShow = new List<Event>();
     private string Search;
@@ -143,4 +150,10 @@
     {
         NavigationManager.NavigateTo($"EventInfo/{id}");
     }
+    
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"CreateEvent");
+    }
+    
 }
