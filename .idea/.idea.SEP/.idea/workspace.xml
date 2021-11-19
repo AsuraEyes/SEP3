@@ -20,64 +20,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="e">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2021__12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2021__12_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2021_14_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_15_11_2021_14_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__07_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__07_55__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__10_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__10_45__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__15_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__15_50__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" afterDir="false" />
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Page CreateEvent, Event(add requirements) its ok- problem (I)EventService">
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/CreateEvent.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/BankServer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/BankServer.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/BankServer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/BankServer.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/Debug/net5.0/BankServer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/Debug/net5.0/BankServer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/Debug/net5.0/BankServer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/Debug/net5.0/BankServer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/BusinessLayer.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/Debug/net5.0/BusinessLayer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IEventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/AllEvents.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/AllEvents.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/AllUsers.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/AllUsers.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/EventInfo.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/EventInfo.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/GGL.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/GGL.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/GameList.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/GameList.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ManageAccount.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ManageAccount.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/MyEvents.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/MyEvents.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Payment.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Payment.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/RequestsForGGL.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/RequestsForGGL.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Presentation_Layer.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.RazorCoreGenerate.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.TagHelpers.output.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/App.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/AllEvents.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/AllEvents.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/AllUsers.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/AllUsers.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/ChangePositionRequests.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/ChangePositionRequests.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Error.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/EventInfo.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/EventInfo.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/GGL.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/GGL.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/GameList.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/GameList.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/ManageAccount.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/ManageAccount.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/MyEvents.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/MyEvents.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Payment.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Payment.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/RequestsForGGL.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/RequestsForGGL.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/_Imports.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +65,8 @@
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/CreateEvent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/CreateEvent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -379,7 +352,7 @@
       <workItem from="1637146100213" duration="9740000" />
       <workItem from="1637177091159" duration="119000" />
       <workItem from="1637261363280" duration="6263000" />
-      <workItem from="1637302940037" duration="6127000" />
+      <workItem from="1637302940037" duration="7941000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -465,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637229639668</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Page CreateEvent, Event(add requirements) its ok- problem (I)EventService">
+      <created>1637310766763</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637310766763</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,6 +483,7 @@
     <MESSAGE value="removed Blazor project" />
     <MESSAGE value="e" />
     <MESSAGE value="Boxes and new page created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boxes and new page created" />
+    <MESSAGE value="Page CreateEvent, Event(add requirements) its ok- problem (I)EventService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Page CreateEvent, Event(add requirements) its ok- problem (I)EventService" />
   </component>
 </project>
