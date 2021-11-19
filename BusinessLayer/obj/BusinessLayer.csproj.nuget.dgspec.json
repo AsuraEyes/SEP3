@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj": {}
+    "C:\\Users\\Anca\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Anca\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Anca\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Maggie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Anca\\RiderProjects\\SEP3\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Anca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anca\\RiderProjects\\SEP3\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Maggie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Anca\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

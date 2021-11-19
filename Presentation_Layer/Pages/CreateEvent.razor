@@ -1,0 +1,91 @@
+@page "/CreateEvent"
+
+@using Presentation_Layer.Data
+@using Presentation_Layer.Models
+
+@attribute [Authorize(Policy = "Organizer")]
+
+@inject IEventService EventService
+@inject NavigationManager NavigationManager
+
+<h3>Create Event</h3>
+
+ <EditForm Model="@newEvent" OnValidSubmit="@CreateNewEvent">
+     <DataAnnotationsValidator/>
+     <ValidationSummary/>
+     <div class="form-group">
+         Id:<br/>
+         <InputText @bind-Value="newEvent.Id"/>
+         <ValidationMessage For = "@(() =>newEvent.Id)"/>
+     </div>
+     <div class="form-group">
+         Name:<br/>
+         <InputText @bind-Value="newEvent.Name"/>
+         <ValidationMessage For = "@(() =>newEvent.Name)"/>
+     </div>
+     <div class="form-group">
+         Start Time:<br/>
+         <InputText @bind-Value="newEvent.StartTime"/>
+         <ValidationMessage For = "@(() =>newEvent.StartTime)"/>
+     </div>
+     <div class="form-group">
+         End Time:<br/>
+         <InputText @bind-Value="newEvent.EndTime"/>
+     </div>
+     <div class="form-group">
+         Address Street Name:<br/>
+         <InputText @bind-Value="newEvent.AddressStreetName"/>
+         <ValidationMessage For = "@(() =>newEvent.AddressStreetName)"/>
+     </div>
+     <div class="form-group">
+         Address Street Number:<br/>
+         <InputText @bind-Value="newEvent.AddressStreetNumber"/>
+         <ValidationMessage For = "@(() =>newEvent.AddressStreetNumber)"/>
+     </div>
+     <div class="form-group">
+         Address Apartment Number:<br/>
+         <InputText @bind-Value="newEvent.AddressApartmentNumber"/>
+     </div>
+     <div class="form-group">
+         Max number of participants:<br/>
+         <InputText @bind-Value="newEvent.MaxNumberOfParticipants"/>
+         <ValidationMessage For = "@(() =>newEvent.MaxNumberOfParticipants)"/>
+     </div>
+     <div class="form-group">
+         Number of participants:<br/>
+         <InputText @bind-Value="newEvent.NumberOfParticipants"/>
+         <ValidationMessage For = "@(() =>newEvent.NumberOfParticipants)"/>
+     </div>
+     <div class="form-group">
+         Event category:<br/>
+         <InputSelect @bind-Value="newEvent.EventCategory">
+             <option value="">Select category</option>
+             <option value="categoryOptions[1]">Children</option>
+             <option value="categoryOptions[2]">Adult</option>
+             <option value="categoryOptions[3]">Family</option>
+         </InputSelect>
+         <ValidationMessage For = "@(() =>newEvent.EventCategory)"/>
+     </div>
+    
+     <p class="actions">
+         <button class="btn btn-outline-dark" type="submit">Create</button>
+     </p>
+    
+      <p class="actions">
+          <button class="btn btn-outline-dark" type="submit">Save</button>
+      </p>
+</EditForm>
+
+
+@code {
+
+    private Event newEvent = new Event();
+
+    private void CreateNewEvent()
+    {
+        EventService.CreateEvent(newEvent);
+        NavigationManager.NavigateTo("/AllEvents");
+        
+    }
+
+}

@@ -59,5 +59,13 @@ namespace Presentation_Layer.Data
             return pagedList;
         }
 
+        public IList<Event> GetEvents()
+        {
+           
+        }
+
+        public void CreateEvent(Event event)
+        {
+
+        }
     }
-}
