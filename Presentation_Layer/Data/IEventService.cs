@@ -11,5 +11,7 @@ namespace Presentation_Layer.Data
         int GetNumberOfPages(IList<Event> allEvents);
 
         IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage);
+        
+        Task CreateEvent(Event Event);
     }
 }
