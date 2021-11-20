@@ -193,24 +193,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/shadow_asura/.nuget/packages/": {}
+    "C:\\Users\\Maggie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BankServer/BankServer.csproj",
+      "projectUniqueName": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\BankServer.csproj",
       "projectName": "BankServer",
-      "projectPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BankServer/BankServer.csproj",
-      "packagesPath": "/Users/shadow_asura/.nuget/packages/",
-      "outputPath": "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/BankServer/obj/",
+      "projectPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\BankServer.csproj",
+      "packagesPath": "C:\\Users\\Maggie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maggie\\RiderProjects\\SEP3\\BankServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/shadow_asura/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Maggie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -252,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

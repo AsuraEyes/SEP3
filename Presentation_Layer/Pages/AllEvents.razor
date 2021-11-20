@@ -106,7 +106,7 @@
     {
         EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
         numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
-        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 2);
+        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 1);
     }
     
     private async Task DateFilter(ChangeEventArgs args)

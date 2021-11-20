@@ -6,8 +6,7 @@ namespace BusinessLayer.Data
 
     {
        /*public async Task<string> HelloWorld()
-        {
-            
+        {            
             ISOAPWebService webService = new SOAPWebService();
             return await webService.HelloWorld();
         }*/

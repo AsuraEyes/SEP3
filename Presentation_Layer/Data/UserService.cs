@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Data;
@@ -15,13 +16,10 @@ namespace SEP3_Blazor.Data
         
 
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5001";
+        private readonly string url = "https://localhost:5003";
 
         public UserService()
         {
-            //HttpClientHandler clienthandler = new HttpClientHandler();
-           // clienthandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
-            //Client = new HttpClient(clienthandler);
             Client = new HttpClient();
             
             users = new[]
@@ -81,8 +79,33 @@ namespace SEP3_Blazor.Data
             }
         }
         
-        public User ValidateUser(string userName, string password)
+        public async Task<User> ValidateUser(string userName, string password)
         {
+            try
+            {
+                string UserAsJson = JsonSerializer.Serialize(new User {Username = userName, Password = password});
+                HttpContent content = new StringContent(UserAsJson,
+                    Encoding.UTF8,
+                    "application/json");
+                
+                var UserValidationResponseMessage = await Client.PostAsync(url + "/User", content);
+                if (UserValidationResponseMessage.IsSuccessStatusCode)
+                {
+                    var stringAsync = Client.GetStringAsync(url + "/User/Validate");
+                    var UserSerialized = await stringAsync;
+                    var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                    });
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
             User first = users.FirstOrDefault(user => user.Username.Equals(userName));
             if (first == null)
             {
