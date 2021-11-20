@@ -151,6 +151,12 @@ using Microsoft.VisualBasic;
                     filter = filter.Replace(filteringOptions[i-1], "");
                 }
             }
+            if (int.Parse(args.Value.ToString()) != 0)
+            {
+                filter += filteringOptions[4];
+                categoryId = int.Parse(args.Value.ToString());
+            }
+            else filter = filter.Replace(filteringOptions[4], string.Empty);
         }
         catch (Exception)
         {

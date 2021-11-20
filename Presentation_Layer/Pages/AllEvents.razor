@@ -22,7 +22,7 @@
         <option value=@filteringOptions[0]>All Upcomming</option>
     </Select>
     Category:
-    <Select class="selectpicker" @oninput="@(arg => CategoryFilter(arg))">
+    <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))">
         <option value=@categoryOptions[0]>-- All --</option>
         <option value=@categoryOptions[1] >Children</option>
         <option value=@categoryOptions[2]>Adults</option>
@@ -124,6 +124,12 @@
                     filter = filter.Replace(filteringOptions[i-1], "");
                 }
             }
+            if (int.Parse(args.Value.ToString()) != 0)
+            {
+                filter += filteringOptions[4];
+                categoryId = int.Parse(args.Value.ToString());
+            }
+            else filter = filter.Replace(filteringOptions[4], string.Empty);
         }
         catch (Exception)
         {

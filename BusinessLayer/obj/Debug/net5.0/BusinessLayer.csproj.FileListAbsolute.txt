@@ -142,4 +142,3 @@ C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
 C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.genruntimeconfig.cache
-C:\Users\em_du\Documents\SEP3\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CopyComplete
