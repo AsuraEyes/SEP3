@@ -330,3 +330,5 @@ C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_L
 C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.Views.pdb
 C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.genruntimeconfig.cache
 C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Presentation_Layer.csproj.CopyComplete
+C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\RazorDeclaration\Pages\EventInfo.razor.g.cs
+C:\Users\em_du\Documents\SEP3\Presentation_Layer\obj\Debug\net5.0\Razor\Pages\EventInfo.razor.g.cs
