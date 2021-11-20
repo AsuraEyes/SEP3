@@ -1,0 +1,26 @@
+Index: Presentation_Layer/Pages/CreateEvent.razor
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@page \"/CreateEvent\"\r\n@using Presentation_Layer.Data\r\n@using Presentation_Layer.Models\r\n<h3>CreateEvent</h3>\r\n\r\n@attribute [Authorize(Policy = \"AdminOnly\")]\r\n\r\n@inject IEventService EventService\r\n@inject NavigationManager NavigationManager \r\n\r\n<h3>CreateEvent</h3>\r\n\r\n<EditForm Model=\"@newEvent\" OnValidSubmit=\"@CreateNewEvent\">\r\n     <DataAnnotationsValidator/>\r\n     <ValidationSummary/>\r\n     <div class=\"form-group\">\r\n         Id:<br/>\r\n         <InputText @bind-Value=\"newEvent.Id\"/>\r\n     </div>\r\n     <div class=\"form-group\">\r\n         Name:<br/>\r\n         <InputText @bind-Value=\"newEvent.Name\"/>\r\n     </div>\r\n     <div class=\"form-group\">\r\n         Address:<br/>\r\n         <InputText @bind-Value=\"newEvent.Address\"/>\r\n     </div>\r\n     <div class=\"form-group\">\r\n         Day:<br/>\r\n         <InputText @bind-Value=\"newEvent.Day\"/>\r\n     </div>\r\n     <div class=\"form-group\">\r\n         Start Time:<br/>\r\n         <InputText @bind-Value=\"newEvent.StartTime\"/>\r\n     </div>\r\n     <div class=\"form-group\">\r\n         End Time:<br/>\r\n         <InputText @bind-Value=\"newEvent.EndTime\"/>\r\n     </div>\r\n    <div class=\"form-group\">\r\n        Category Id:<br/>\r\n        <InputSelect @bind-Value=\"newEvent.CategoryId\">\r\n            <option value=\"\">Select category</option>\r\n            <option value=\"adult\">Adult</option>\r\n            <option value=\"children\">Children</option>\r\n            <option value=\"family\">Family</option>\r\n        </InputSelect>\r\n    </div>\r\n    \r\n     <p class=\"actions\">\r\n         <button class=\"btn btn-outline-dark\" type=\"submit\">Create</button>\r\n     </p>\r\n    \r\n      <p class=\"actions\">\r\n          <button class=\"btn btn-outline-dark\" type=\"submit\">Save</button>\r\n      </p>\r\n</EditForm>\r\n\r\n@code {\r\n    private readonly Event newEvent = new();\r\n    \r\n    private void \r\n}
+===================================================================
+diff --git a/Presentation_Layer/Pages/CreateEvent.razor b/Presentation_Layer/Pages/CreateEvent.razor
+--- a/Presentation_Layer/Pages/CreateEvent.razor	
++++ b/Presentation_Layer/Pages/CreateEvent.razor	
+@@ -10,7 +10,8 @@
+ 
+ <h3>CreateEvent</h3>
+ 
+-<EditForm Model="@newEvent" OnValidSubmit="@CreateNewEvent">
++<!--OnValidSubmit="/*CreateNewEvent*/"-->
++<EditForm Model="@newEvent" >
+      <DataAnnotationsValidator/>
+      <ValidationSummary/>
+      <div class="form-group">
+@@ -59,5 +60,5 @@
+ @code {
+     private readonly Event newEvent = new();
+     
+-    private void 
++    //private void 
+ }
+\ No newline at end of file
