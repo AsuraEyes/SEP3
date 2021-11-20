@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -13,10 +14,12 @@ namespace REST.Controllers
     public class UserController : Controller
     {
         private IUserWebService UserWebService;
+        private IUserMiddlepoint UserMiddlepoint;
 
-        public UserController(IUserWebService userWebService)
+        public UserController(IUserWebService userWebService, IUserMiddlepoint userMiddlepoint)
         {
-            this.UserWebService = userWebService;
+            UserWebService = userWebService;
+            UserMiddlepoint = userMiddlepoint;
         }
         
         [HttpPost]
@@ -26,7 +29,7 @@ namespace REST.Controllers
             try
             {
                 //call validation class
-                await UserWebService.ValidateUserAsync(user);
+                await UserMiddlepoint.ValidateUserAsync(user);
                 return Ok();
             }
             catch (Exception e)
@@ -38,11 +41,12 @@ namespace REST.Controllers
 
         [HttpGet]
         [Route("/User/Validate")]
-        public async Task<ActionResult<string>> GetValidatedUser()
+        public async Task<ActionResult<User>> GetValidatedUser()
         {
             try
             {
-                string user = await UserWebService.GetValidatedUser();
+                User user = await UserMiddlepoint.GetValidatedUser();
+                Console.WriteLine("controller: "+user.role);
                 return Ok(user);
             }
             catch (Exception e)

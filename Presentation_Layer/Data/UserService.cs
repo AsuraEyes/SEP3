@@ -27,35 +27,35 @@ namespace SEP3_Blazor.Data
                 new User
                 {
                     Password = "123456",
-                    RoleId = 3,
+                    Role = 3,
                     Username = "Maggie"
 
                 },
                 new User
                 {
                     Password = "admin",
-                    RoleId = 1,
+                    Role = 1,
                     Username = "admin"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 3,
+                    Role = 3,
                     Username = "Kim"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 2,
+                    Role = 2,
                     Username = "someone"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 2,
+                    Role = 2,
                     Username = "nobody"
                 }
             }.ToList();
@@ -91,14 +91,23 @@ namespace SEP3_Blazor.Data
                 var UserValidationResponseMessage = await Client.PostAsync(url + "/User", content);
                 if (UserValidationResponseMessage.IsSuccessStatusCode)
                 {
+                    Console.WriteLine("we go here!");
                     var stringAsync = Client.GetStringAsync(url + "/User/Validate");
                     var UserSerialized = await stringAsync;
                     var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
                     {
                         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                     });
+                    Console.WriteLine("user service: "+User.Role);
+                    if (User == null)
+                    {
+                        throw new Exception("Username or password incorrect.");
+                    }
+
+                    Console.WriteLine(User.Role);
+                    
+                    return User;
                 }
-                
             }
             catch (Exception e)
             {
@@ -106,6 +115,7 @@ namespace SEP3_Blazor.Data
                 throw;
             }
             
+            /*
             User first = users.FirstOrDefault(user => user.Username.Equals(userName));
             if (first == null)
             {
@@ -117,7 +127,8 @@ namespace SEP3_Blazor.Data
                 throw new Exception("Incorrect password");
             }
 
-            return first;
+            return first;*/
+            return null;
         }
     }
 }

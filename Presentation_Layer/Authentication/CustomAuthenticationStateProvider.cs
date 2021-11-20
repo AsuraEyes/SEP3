@@ -82,7 +82,7 @@ namespace Presentation_Layer.Authentication
         {
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.Username));
-            claims.Add(new Claim("Level", user.RoleId.ToString()));
+            claims.Add(new Claim("Level", user.Role.ToString()));
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;

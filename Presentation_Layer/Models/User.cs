@@ -10,7 +10,7 @@ namespace Presentation_Layer.Models
         
         public string LastName{ get; set; }
         
-        public int RoleId{ get; set; }
+        public int Role{ get; set; }
         
         public string PhoneCountryCode{ get; set; }
         

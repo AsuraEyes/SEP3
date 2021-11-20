@@ -5,7 +5,8 @@ namespace Presentation_Layer.Models
 {
     public class Event
     {
-        [Required]public int Id{ get; set; }
+        [Required]
+        public int Id{ get; set; }
         
         [Required]public string Name{ get; set; }
         
