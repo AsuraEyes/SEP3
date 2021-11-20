@@ -7,6 +7,7 @@
 @attribute [Authorize(Policy = "Organizer")]
 
 @inject IEventService EventService
+@inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 
 <h3>Create Event</h3>
@@ -93,7 +94,8 @@
         {
             newEvent.EndTime = newEvent.StartTime;
         }
-        EventService.CreateEvent(newEvent);
+        //EventService.CreateEvent(newEvent);
+        await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
     }
 }

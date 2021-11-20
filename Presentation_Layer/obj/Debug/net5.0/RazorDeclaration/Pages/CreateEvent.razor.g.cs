@@ -119,21 +119,14 @@ using System.ComponentModel.DataAnnotations;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 80 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/CreateEvent.razor"
+#line 81 "/Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/CreateEvent.razor"
        
     private DateTime Date = DateTime.Today;
     private DateTime StartTime = DateTime.Now;
-    private DateTime EndTime = DateTime.Now;
+    private DateTime EndTime;
     private Event newEvent = new Event();
     private DateTime DateTime;
 
-    private void CreateNewEvent()
-    {
-        EventService.CreateEvent(newEvent);
-        NavigationManager.NavigateTo("/AllEvents");
-        
-    }
-    
     private async Task CreateEventAsync()
     {
         newEvent.StartTime = Date.Date.Add(StartTime.TimeOfDay);
@@ -143,6 +136,8 @@ using System.ComponentModel.DataAnnotations;
         {
             newEvent.EndTime = newEvent.StartTime;
         }
+        //EventService.CreateEvent(newEvent);
+        await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
     }
 
@@ -150,6 +145,7 @@ using System.ComponentModel.DataAnnotations;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IEventService EventService { get; set; }
     }
 }
