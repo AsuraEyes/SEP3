@@ -152,7 +152,7 @@ using Microsoft.VisualBasic;
                 }
             }
         }
-        catch (Exception )
+        catch (Exception)
         {
         }
         EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
