@@ -8,5 +8,10 @@ namespace Presentation_Layer.Data
     {
         Task<IList<Event>> GetEventsAsync();
         Task<IList<Event>> GetFilteredEventsAsync(string filter, int category);
+        int GetNumberOfPages(IList<Event> allEvents);
+
+        IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage);
+        
+        Task CreateEvent(Event Event);
     }
 }
