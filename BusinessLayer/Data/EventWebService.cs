@@ -29,6 +29,11 @@ namespace BusinessLayer.Data
             return soapEventResponse1;
         }
 
+        public async Task CreateEventAsync(Event Event)
+        {
+            Response = await getEventResponse(0, Operation.POST, Event, "");
+        }
+
         public async Task<IList<Event>> GetEventsAsync()
         {
             Response = await getEventResponse(0, Operation.GETALL, null, "");

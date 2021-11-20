@@ -55,11 +55,6 @@
          <ValidationMessage For = "@(() =>newEvent.MaxNumberOfParticipants)"/>
      </div>
      <div class="form-group">
-         Number of participants:<br/>
-         <InputNumber @bind-Value="newEvent.NumberOfParticipants" style="width: 75px"/>
-         <ValidationMessage For = "@(() =>newEvent.NumberOfParticipants)"/>
-     </div>
-     <div class="form-group">
          Event category:<br/>
          <InputSelect @bind-Value="newEvent.EventCategory">
              <option value="">Select category</option>
