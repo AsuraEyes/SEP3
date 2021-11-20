@@ -1,31 +1,45 @@
 @page "/AllEvents"
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
+@using System.Reflection
+@using Microsoft.VisualBasic
 
 @inject NavigationManager NavigationManager
 @inject IEventService RestEvent
 
 <h2>AllEvents</h2>
-<p>
-    Search: <input type="text" @oninput="@(arg => FilterByName(arg))" style="width: 150px"/> 
-    Date:
-    <select class="selectpicker" style="width: 125px" >
-        <option>-- All --</option>
-        <option>All Upcomming</option>
-    </select>
-    Category:
-        <select class="selectpicker" style="width: 125px" @bind="@Event.CategoryId" @oninput="@(arg => FilterByCategory(arg))">
-            <option>-- All --</option>
-            <option value="@Event.CategoryId = 1">Children</option>
-            <option value="@Event.CategoryId = 2">Adults</option>
-            <option value="@Event.CategoryId = 3">Family</option>
-        </select>
+
+<p class="actions">
+    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
 </p>
+
+
+<p>
+    <!--Search: <input type="text"  style="width: 150px"/> -->
+    Date:
+    <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))">
+        <option value=@filteringOptions[1]>-- All --</option>
+        <option value=@filteringOptions[0]>All Upcomming</option>
+    </Select>
+    Category:
+    <Select class="selectpicker" @oninput="@(arg => CategoryFilter(arg))">
+        <option value=@categoryOptions[0]>-- All --</option>
+        <option value=@categoryOptions[1] >Children</option>
+        <option value=@categoryOptions[2]>Adults</option>
+        <option value=@categoryOptions[3]>Family</option>
+    </Select>
+    Available
+    <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))">
+        <option value=@filteringOptions[3]>-- All --</option>
+        <option value=@filteringOptions[2]>Available</option>
+    </Select>
+</p>
+
 
 <div class="container">
     @foreach (var item in EventsToShow)
     {
-        <div class="box" @onclick="@(() => Edit(item.Id))">
+        <div @onclick="@(() => NavigateToEvent(@item.Id))" class="box">
             <div class="content">
                 <h3>@item.Name</h3>
                 <p>@item.StartTime</p>
@@ -35,56 +49,111 @@
     }
 </div>
 
+<div>
+    @if (numberOfPages > 1)
+    {
+       for (int i = 0; i < numberOfPages; i++)
+       {
+           <a> -@(i+1)- </a>
+       } 
+    }
+</div>
+
+
+
+<!--
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Number of Participants</th>
+            <th>Max Number of Participants</th>
+            <th>Event Category</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in EventsToShow)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.StartTime</td>
+                <td>@item.EndTime</td>
+                <td>@item.NumberOfParticipants</td>
+                <td>@item.MaxNumberOfParticipants</td>
+                <td>@item.EventCategory</td>
+            </tr>
+        }
+        </tbody>
+</table>
+-->
+
+
+
 @code {
-    private Event Event;
-    private IList<Event> Events;
     private IList<Event> EventsToShow = new List<Event>();
-    private string? Search;
-    private int? categoryId;
-    
+    private string Search;
+    private int categoryId;
+    private string filter ="all";
+    private IList<int> categoryOptions = new List<int>() {0, 1, 2, 3};
+    private IList<string> filteringOptions = new List<string>() {"byDate", "noDate", "byAvailability", "noAvailability", "byCategory", "noCategory"};
+    private int numberOfPages;
+
     protected override async Task OnInitializedAsync()
     {
-        Events = await RestEvent.GetEventsAsync();
-        EventsToShow = Events;
+        EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
+        numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
+        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 2);
     }
     
-    private void FilterByName(ChangeEventArgs changeEventArgs)
+    private async Task DateFilter(ChangeEventArgs args)
     {
-        Search = null;
         try
         {
-            Search = changeEventArgs.Value.ToString();
+            for (int i = 0; i < filteringOptions.Count; i++)
+            {
+                if (args.Value.ToString().Equals(filteringOptions[i]) && i%2 == 0)
+                {
+                    filter += filteringOptions[i];
+                }
+                else if (args.Value.ToString().Equals(filteringOptions[i]) && i%2 ==1)
+                {
+                    filter = filter.Replace(filteringOptions[i-1], "");
+                }
+            }
         }
-        catch (Exception)
+        catch (Exception )
         {
-    // ignored
         }
-        ExecuteFilter();
+        EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
     }
 
-    private void FilterByCategory(ChangeEventArgs changeEventArgs)
+    private async Task CategoryFilter(ChangeEventArgs args)
     {
-        categoryId = null;
         try
         {
-            categoryId = int.Parse(changeEventArgs.Value.ToString());
+            if (int.Parse(args.Value.ToString()) != 0)
+            {
+                filter += filteringOptions[4];
+                categoryId = int.Parse(args.Value.ToString());
+            }
+            else filter = filter.Replace(filteringOptions[4], string.Empty);
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    // ignored
+        catch(Exception ){}
+        EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
     }
 
-    private void ExecuteFilter()
-    {
-        EventsToShow = Events.Where(a => (Search != null && a.Name.Contains(Search) || Search == null)
-            && (categoryId != null && a.CategoryId == categoryId || categoryId == null)).ToList();
-    }
-    
-    private void Edit(int id)
+    private async Task NavigateToEvent(int id)
     {
         NavigationManager.NavigateTo($"EventInfo/{id}");
     }
+    
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo($"CreateEvent");
+    }
+    
 }

@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1" date="1637234035914" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 18. 11. 2021 12:13 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" />
+    <option name="AFTER_PATH" value="BusinessLayer/bin/Debug/net5.0/BusinessLayer.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1/BusinessLayer.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" />
+    <option name="AFTER_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1/Presentation_Layer.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="BusinessLayer/bin/Debug/net5.0/BusinessLayer.exe" />
+    <option name="AFTER_PATH" value="BusinessLayer/bin/Debug/net5.0/BusinessLayer.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1/BusinessLayer.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" />
+    <option name="AFTER_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13_[Changes]1/Presentation_Layer.Views.dll" />
+  </binary>
+</changelist>

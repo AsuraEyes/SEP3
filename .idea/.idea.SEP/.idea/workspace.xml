@@ -20,24 +20,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="removed Blazor project">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Fixed input fields">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/bin/Debug/net5.0/ref/Presentation_Layer.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/CreateEvent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/CreateEvent.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/CreateEvent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/CreateEvent.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Presentation_Layer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,49 +47,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Data/UserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1D/InputBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/2B/InputRadio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/Razor/Pages/_Host.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Data/UserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1F/InputDate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BankServer/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/obj/Debug/net5.0/RazorDeclaration/Pages/ChangePositionRequests.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -351,6 +323,7 @@
       <workItem from="1637074490368" duration="982000" />
       <workItem from="1637146100213" duration="9740000" />
       <workItem from="1637177091159" duration="119000" />
+      <workItem from="1637331296557" duration="7252000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -436,7 +409,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637229639668</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Boxes and new page created">
+      <created>1637233750740</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637233750740</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed fixes">
+      <created>1637247744656</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637247744656</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fixed input fields">
+      <created>1637401747352</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1637401747352</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,6 +466,9 @@
     <MESSAGE value="authentication presentation layer" />
     <MESSAGE value="Authentication done, login done but hard coded users. &#10;Pages in Blazor done without content. &#10;Commented out code from Index.razor that was throwing exceptions" />
     <MESSAGE value="removed Blazor project" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed Blazor project" />
+    <MESSAGE value="Boxes and new page created" />
+    <MESSAGE value="fixed fixes" />
+    <MESSAGE value="Fixed input fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed input fields" />
   </component>
 </project>

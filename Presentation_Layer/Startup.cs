@@ -35,6 +35,7 @@ namespace Presentation_Layer
             services.AddServerSideBlazor();
             services.AddSingleton<IUserService, UserService>();
             services.AddScoped<IGameService, GameService>();
+            services.AddScoped<IEventService, EventService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>
