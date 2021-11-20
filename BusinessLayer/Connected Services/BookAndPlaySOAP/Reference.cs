@@ -36,7 +36,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPUserRequest
     {
         
-        private int idField;
+        private string usernameField;
         
         private Operation operationField;
         
@@ -44,15 +44,15 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
+        public string username
         {
             get
             {
-                return this.idField;
+                return this.usernameField;
             }
             set
             {
-                this.idField = value;
+                this.usernameField = value;
             }
         }
         
@@ -122,7 +122,7 @@ namespace BookAndPlaySOAP
         
         private string lastNameField;
         
-        private string roleField;
+        private int roleField;
         
         private string phoneCountryCodeField;
         
@@ -192,7 +192,7 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string role
+        public int role
         {
             get
             {
