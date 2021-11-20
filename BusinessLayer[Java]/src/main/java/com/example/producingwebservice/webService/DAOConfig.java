@@ -4,6 +4,8 @@ import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.GameDAO;
 import com.example.producingwebservice.games.Games;
+import com.example.producingwebservice.users.UserDAO;
+import com.example.producingwebservice.users.Users;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -21,6 +23,12 @@ public class DAOConfig
     @Scope("singleton")
     public Events EventDAO() {
         return new EventDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public Users UserDAO() {
+        return new UserDAO();
     }
 
     @Bean(name="jdbcUrl")
