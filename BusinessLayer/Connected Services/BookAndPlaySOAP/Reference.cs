@@ -853,7 +853,6 @@ namespace BookAndPlaySOAP
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
     public partial class SOAPGameRequest
     {
-        
         private int idField;
         
         private string userNameField;
