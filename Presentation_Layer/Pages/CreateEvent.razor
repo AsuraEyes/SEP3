@@ -33,8 +33,7 @@
      </div>
      <div class="form-group">
          End Time:<br/>
-         <input id="txtTime" type="time" required @bind-value="EndTime" />
-         <ValidationMessage For="@(() => EndTime)" />
+         <input id="txtTime" type="time" required @bind-value="EndTime" visible="false"/>
      </div>
      <div class="form-group">
          Address Street Name:<br/>

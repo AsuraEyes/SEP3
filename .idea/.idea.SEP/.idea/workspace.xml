@@ -20,10 +20,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Created confirmation">
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1D/InputBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/2B/InputRadio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1F/InputDate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -308,7 +305,8 @@
       <workItem from="1637074490368" duration="982000" />
       <workItem from="1637146100213" duration="9740000" />
       <workItem from="1637177091159" duration="119000" />
-      <workItem from="1637331296557" duration="8335000" />
+      <workItem from="1637331296557" duration="9022000" />
+      <workItem from="1637422153127" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -422,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637402396688</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="moved validation function to EventService.cs">
+      <created>1637421386954</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637421386954</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,6 +467,7 @@
     <MESSAGE value="fixed fixes" />
     <MESSAGE value="Fixed input fields" />
     <MESSAGE value="Created confirmation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created confirmation" />
+    <MESSAGE value="moved validation function to EventService.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved validation function to EventService.cs" />
   </component>
 </project>
