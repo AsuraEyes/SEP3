@@ -89,11 +89,6 @@
     {
         newEvent.StartTime = Date.Date.Add(StartTime.TimeOfDay);
         newEvent.EndTime = Date.Date.Add(EndTime.TimeOfDay);
-        var diff = newEvent.EndTime.Subtract(newEvent.StartTime).TotalMinutes;
-        if (diff < 0)
-        {
-            newEvent.EndTime = newEvent.StartTime;
-        }
         //EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
