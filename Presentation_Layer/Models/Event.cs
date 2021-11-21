@@ -21,7 +21,9 @@ namespace Presentation_Layer.Models
         
         public string AddressApartmentNumber{ get; set; }
         
-        [Required]public int MaxNumberOfParticipants{ get; set; }
+        [Required]
+        [Range(2, int.MaxValue ,ErrorMessage = "Please enter a number bigger than {2}")]
+        public int MaxNumberOfParticipants{ get; set; }
         
         [Required]public int NumberOfParticipants{ get; set; }
         
