@@ -11,63 +11,62 @@
 @inject NavigationManager NavigationManager
 
 <h3>Create Event</h3>
+<EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        Name:<br/>
+        <InputText @bind-Value="newEvent.Name"/>
+        <ValidationMessage For="@(() => newEvent.Name)"/>
+    </div>
+    <div class="form-group">
+        Date: <br/>
+        <InputDate @bind-Value="Date">
+            <ValidationMessage For="@(() => Date)"/>
+        </InputDate>
+    </div>
+    <div class="form-group">
+        Start Time: <br/>
+        <input id="txtTime" type="time" required @bind-value="StartTime"/>
+        <ValidationMessage For="@(() => StartTime)"/>
+    </div>
+    <div class="form-group" aria-hidden="True">
+        End Time:<br/>
+        <input id="txtTime" type="time" required @bind-value="EndTime">
+    </div>
+    <div class="form-group">
+        Address Street Name:<br/>
+        <InputText @bind-Value="newEvent.AddressStreetName"/>
+        <ValidationMessage For="@(() => newEvent.AddressStreetName)"/>
+    </div>
+    <div class="form-group">
+        Address Street Number:<br/>
+        <InputText @bind-Value="newEvent.AddressStreetNumber"/>
+        <ValidationMessage For="@(() => newEvent.AddressStreetNumber)"/>
+    </div>
+    <div class="form-group">
+        Address Apartment Number:<br/>
+        <InputText @bind-Value="newEvent.AddressApartmentNumber"/>
+    </div>
+    <div class="form-group">
+        Max number of participants:<br/>
+        <InputNumber @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
+        <ValidationMessage For="@(() => newEvent.MaxNumberOfParticipants)"/>
+    </div>
+    <div class="form-group">
+        Event category:<br/>
+        <InputSelect @bind-Value="newEvent.EventCategory">
+            <option value="">Select category</option>
+            <option value="@categoryOptions[1]">Children</option>
+            <option value="@categoryOptions[2]">Adult</option>
+            <option value="@categoryOptions[3]">Family</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => newEvent.EventCategory)"/>
+    </div>
 
- <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
-     <DataAnnotationsValidator/>
-     <div class="form-group">
-         Name:<br/>
-         <InputText @bind-Value="newEvent.Name"/>
-         <ValidationMessage For = "@(() =>newEvent.Name)"/>
-     </div>
-     <div class="form-group">
-         Date: <br/>
-         <InputDate @bind-Value="Date">
-             <ValidationMessage For="@(() => Date)"/>
-         </InputDate>
-     </div>
-     <div class="form-group">
-         Start Time: <br/>
-         <input id="txtTime" type="time" required @bind-value="StartTime" />
-         <ValidationMessage For="@(() => StartTime)" />
-     </div>
-     <div class="form-group"  aria-hidden="True">
-         End Time:<br/>
-         <input id="txtTime" type="time" required @bind-value="EndTime">
-     </div>
-     <div class="form-group">
-         Address Street Name:<br/>
-         <InputText @bind-Value="newEvent.AddressStreetName"/>
-         <ValidationMessage For = "@(() =>newEvent.AddressStreetName)"/>
-     </div>
-     <div class="form-group">
-         Address Street Number:<br/>
-         <InputText @bind-Value="newEvent.AddressStreetNumber"/>
-         <ValidationMessage For = "@(() =>newEvent.AddressStreetNumber)"/>
-     </div>
-     <div class="form-group">
-         Address Apartment Number:<br/>
-         <InputText @bind-Value="newEvent.AddressApartmentNumber"/>
-     </div>
-     <div class="form-group">
-         Max number of participants:<br/>
-         <InputNumber @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
-         <ValidationMessage For = "@(() =>newEvent.MaxNumberOfParticipants)"/>
-     </div>
-     <div class="form-group">
-         Event category:<br/>
-         <InputSelect @bind-Value="newEvent.EventCategory">
-             <option value="">Select category</option>
-             <option value="@categoryOptions[1]">Children</option>
-             <option value="@categoryOptions[2]">Adult</option>
-             <option value="@categoryOptions[3]">Family</option>
-         </InputSelect>
-         <ValidationMessage For = "@(() =>newEvent.EventCategory)"/>
-     </div>
-    
-     <p class="actions">
-         <button class="btn btn-outline-dark" type="submit">Create</button>
-     </p>
-     
+    <p class="actions">
+        <button class="btn btn-outline-dark" type="submit">Create</button>
+    </p>
+
 </EditForm>
 
 
@@ -87,4 +86,5 @@
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
     }
+
 }
