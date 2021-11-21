@@ -14,7 +14,6 @@
 
  <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
      <DataAnnotationsValidator/>
-     <ValidationSummary/>
      <div class="form-group">
          Name:<br/>
          <InputText @bind-Value="newEvent.Name"/>
@@ -84,7 +83,7 @@
     {
         newEvent.StartTime = Date.Date.Add(StartTime.TimeOfDay);
         newEvent.EndTime = Date.Date.Add(EndTime.TimeOfDay);
-        await EventService.CreateEvent(newEvent);
+        //await EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
     }
