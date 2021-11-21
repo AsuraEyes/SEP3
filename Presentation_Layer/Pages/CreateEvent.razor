@@ -3,12 +3,15 @@
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
 @using System.ComponentModel.DataAnnotations
+@using System.Security.Claims
+@using Presentation_Layer.Authentication
 
 @attribute [Authorize(Policy = "Organizer")]
 
 @inject IEventService EventService
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider Auth
 
 <h3>Create Event</h3>
 <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
@@ -80,6 +83,8 @@
 
     private async Task CreateEventAsync()
     {
+        newEvent.Organizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        Console.WriteLine(newEvent.Organizer);
         newEvent.StartTime = Date.Date.Add(StartTime.TimeOfDay);
         newEvent.EndTime = Date.Date.Add(EndTime.TimeOfDay);
         await EventService.CreateEvent(newEvent);

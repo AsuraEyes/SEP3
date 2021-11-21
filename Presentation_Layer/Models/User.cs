@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Presentation_Layer.Models
 {
     public class User

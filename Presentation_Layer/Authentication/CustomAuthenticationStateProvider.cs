@@ -70,7 +70,7 @@ namespace Presentation_Layer.Authentication
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
         }
 
-        public void Logout()
+        public async Task Logout()
         {
             cachedUser = null;
             var user = new ClaimsPrincipal(new ClaimsIdentity());
