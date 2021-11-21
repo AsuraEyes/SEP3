@@ -24,7 +24,7 @@ namespace Presentation_Layer.Models
         
         [Required]public int NumberOfParticipants{ get; set; }
         
-        [Required]public string EventCategory{ get; set; }
+        [Required]public int EventCategory{ get; set; }
 
     }
 }
