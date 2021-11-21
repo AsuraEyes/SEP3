@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,7 @@ namespace REST
             services.AddSingleton<IUserWebService, UserWebService>();
             services.AddSingleton<IGameWebService, GameWebService>();
             services.AddSingleton<IEventWebService, EventWebService>();
+            services.AddSingleton<IUserMiddlepoint, UserMiddlepoint>();
 
         }
 

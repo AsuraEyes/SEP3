@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1" date="1637420708788" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 20/11/2021, 16:04 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" />
+    <option name="AFTER_PATH" value="Presentation_Layer/bin/Debug/net5.0/Presentation_Layer.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1/Presentation_Layer.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" />
+    <option name="AFTER_PATH" value="Presentation_Layer/obj/Debug/net5.0/ref/Presentation_Layer.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1/Presentation_Layer.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" />
+    <option name="AFTER_PATH" value="Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1/Presentation_Layer.Views.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" />
+    <option name="AFTER_PATH" value="Presentation_Layer/obj/Debug/net5.0/Presentation_Layer.Views.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021,_16_04_[Changes]1/Presentation_Layer.Views.dll" />
+  </binary>
+</changelist>

@@ -47,7 +47,7 @@ namespace Presentation_Layer.Authentication
 
         //public async Task ValidateLogin(string username, string password)
 
-        public void ValidateLogin(string username, string password)
+        public async Task ValidateLogin(string username, string password)
         {
             Console.WriteLine("Validating log in");
             if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
@@ -57,7 +57,7 @@ namespace Presentation_Layer.Authentication
             try
             {
                 //User user = await userService.ValidateUserAsync(username, password);
-                User user = userService.ValidateUser(username, password);
+                User user = await userService.ValidateUser(username, password);
                 identity = SetupClaimsForUser(user);
                 string serialisedData = JsonSerializer.Serialize(user);
                 isRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);
@@ -82,7 +82,7 @@ namespace Presentation_Layer.Authentication
         {
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.Username));
-            claims.Add(new Claim("Level", user.RoleId.ToString()));
+            claims.Add(new Claim("Level", user.Role.ToString()));
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;

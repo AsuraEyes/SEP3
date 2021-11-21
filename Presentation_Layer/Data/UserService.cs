@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Data;
@@ -15,13 +16,10 @@ namespace SEP3_Blazor.Data
         
 
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5001";
+        private readonly string url = "https://localhost:5003";
 
         public UserService()
         {
-            //HttpClientHandler clienthandler = new HttpClientHandler();
-           // clienthandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
-            //Client = new HttpClient(clienthandler);
             Client = new HttpClient();
             
             users = new[]
@@ -29,35 +27,35 @@ namespace SEP3_Blazor.Data
                 new User
                 {
                     Password = "123456",
-                    RoleId = 3,
+                    Role = 3,
                     Username = "Maggie"
 
                 },
                 new User
                 {
                     Password = "admin",
-                    RoleId = 1,
+                    Role = 1,
                     Username = "admin"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 3,
+                    Role = 3,
                     Username = "Kim"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 2,
+                    Role = 2,
                     Username = "someone"
 
                 },
                 new User
                 {
                     Password = "123",
-                    RoleId = 2,
+                    Role = 2,
                     Username = "nobody"
                 }
             }.ToList();
@@ -81,8 +79,43 @@ namespace SEP3_Blazor.Data
             }
         }
         
-        public User ValidateUser(string userName, string password)
+        public async Task<User> ValidateUser(string userName, string password)
         {
+            try
+            {
+                string UserAsJson = JsonSerializer.Serialize(new User {Username = userName, Password = password});
+                HttpContent content = new StringContent(UserAsJson,
+                    Encoding.UTF8,
+                    "application/json");
+                
+                var UserValidationResponseMessage = await Client.PostAsync(url + "/User", content);
+                if (UserValidationResponseMessage.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("we go here!");
+                    var stringAsync = Client.GetStringAsync(url + "/User/Validate");
+                    var UserSerialized = await stringAsync;
+                    var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                    });
+                    Console.WriteLine("user service: "+User.Role);
+                    if (User == null)
+                    {
+                        throw new Exception("Username or password incorrect.");
+                    }
+
+                    Console.WriteLine(User.Role);
+                    
+                    return User;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
+            /*
             User first = users.FirstOrDefault(user => user.Username.Equals(userName));
             if (first == null)
             {
@@ -94,7 +127,8 @@ namespace SEP3_Blazor.Data
                 throw new Exception("Incorrect password");
             }
 
-            return first;
+            return first;*/
+            return null;
         }
     }
 }

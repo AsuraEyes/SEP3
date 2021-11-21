@@ -14,7 +14,6 @@
 
  <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
      <DataAnnotationsValidator/>
-     <ValidationSummary/>
      <div class="form-group">
          Name:<br/>
          <InputText @bind-Value="newEvent.Name"/>
@@ -31,10 +30,9 @@
          <input id="txtTime" type="time" required @bind-value="StartTime" />
          <ValidationMessage For="@(() => StartTime)" />
      </div>
-     <div class="form-group">
+     <div class="form-group"  aria-hidden="True">
          End Time:<br/>
-         <input id="txtTime" type="time" required @bind-value="EndTime" />
-         <ValidationMessage For="@(() => EndTime)" />
+         <input id="txtTime" type="time" required @bind-value="EndTime">
      </div>
      <div class="form-group">
          Address Street Name:<br/>
@@ -56,23 +54,18 @@
          <ValidationMessage For = "@(() =>newEvent.MaxNumberOfParticipants)"/>
      </div>
      <div class="form-group">
-         Number of participants:<br/>
-         <InputNumber @bind-Value="newEvent.NumberOfParticipants" style="width: 75px"/>
-         <ValidationMessage For = "@(() =>newEvent.NumberOfParticipants)"/>
-     </div>
-     <div class="form-group">
          Event category:<br/>
          <InputSelect @bind-Value="newEvent.EventCategory">
              <option value="">Select category</option>
-             <option value="categoryOptions[1]">Children</option>
-             <option value="categoryOptions[2]">Adult</option>
-             <option value="categoryOptions[3]">Family</option>
+             <option value="@categoryOptions[1]">Children</option>
+             <option value="@categoryOptions[2]">Adult</option>
+             <option value="@categoryOptions[3]">Family</option>
          </InputSelect>
          <ValidationMessage For = "@(() =>newEvent.EventCategory)"/>
      </div>
     
      <p class="actions">
-         <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
+         <button class="btn btn-outline-dark" type="submit">Create</button>
      </p>
      
 </EditForm>
@@ -84,17 +77,13 @@
     private DateTime EndTime;
     private Event newEvent = new Event();
     private DateTime DateTime;
+    private IList<int> categoryOptions = new List<int>() {0, 1, 2, 3};
 
     private async Task CreateEventAsync()
     {
         newEvent.StartTime = Date.Date.Add(StartTime.TimeOfDay);
         newEvent.EndTime = Date.Date.Add(EndTime.TimeOfDay);
-        var diff = newEvent.EndTime.Subtract(newEvent.StartTime).TotalMinutes;
-        if (diff < 0)
-        {
-            newEvent.EndTime = newEvent.StartTime;
-        }
-        //EventService.CreateEvent(newEvent);
+        await EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");
     }

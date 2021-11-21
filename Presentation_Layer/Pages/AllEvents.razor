@@ -10,7 +10,7 @@
 <h2>AllEvents</h2>
 
 <p class="actions">
-    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">Create</button>
+    <button @onclick="@(() => CreateEventAsync())" class="oi oi-plus" type="submit" >Create</button>
 </p>
 
 
@@ -24,7 +24,7 @@
     Category:
     <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))">
         <option value=@categoryOptions[0]>-- All --</option>
-        <option value=@categoryOptions[1] >Children</option>
+        <option value=@categoryOptions[1]>Children</option>
         <option value=@categoryOptions[2]>Adults</option>
         <option value=@categoryOptions[3]>Family</option>
     </Select>
@@ -106,7 +106,7 @@
     {
         EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
         numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
-        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 2);
+        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 1);
     }
     
     private async Task DateFilter(ChangeEventArgs args)

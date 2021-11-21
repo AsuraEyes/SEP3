@@ -63,9 +63,14 @@ namespace Presentation_Layer.Data
 
         public async Task CreateEvent(Event Event)
         {
+            var diff = Event.EndTime.Subtract(Event.StartTime).TotalMinutes;
+            if (diff < 0)
+            {
+                Event.EndTime = Event.StartTime;
+            }
             string EventAsJson = JsonSerializer.Serialize(Event);
             HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync("Event", content);
+            await Client.PostAsync(uri+"/Event", content);
         }
         
     }

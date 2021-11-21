@@ -34,7 +34,7 @@ public class EventsEndpoint
        // response.setEvent(eventsDAO.get(request.getId()));
         break;
       case POST:
-        //eventsDAO.create(request.getEvent());
+        eventsDAO.create(request.getEvent());
         break;
       case PATCH:
         //eventsDAO.patch(request.getEvent());

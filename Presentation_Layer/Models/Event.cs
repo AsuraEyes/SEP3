@@ -5,9 +5,11 @@ namespace Presentation_Layer.Models
 {
     public class Event
     {
-        [Required]public int Id{ get; set; }
+        [Required]
+        public int Id{ get; set; }
         
         [Required]public string Name{ get; set; }
+        
         
         [Required]public DateTime StartTime{ get; set; }
         
@@ -23,7 +25,7 @@ namespace Presentation_Layer.Models
         
         [Required]public int NumberOfParticipants{ get; set; }
         
-        [Required]public string EventCategory{ get; set; }
+        [Required]public int EventCategory{ get; set; }
 
     }
 }
