@@ -543,7 +543,7 @@ namespace BookAndPlaySOAP
         
         private int eventCategoryField;
         
-        private User organizerField;
+        private string organizerField;
         
         private User[] participantsField;
         
@@ -693,7 +693,7 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public User organizer
+        public string organizer
         {
             get
             {
@@ -853,6 +853,7 @@ namespace BookAndPlaySOAP
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
     public partial class SOAPGameRequest
     {
+        
         private int idField;
         
         private string userNameField;
