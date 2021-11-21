@@ -541,7 +541,7 @@ namespace BookAndPlaySOAP
         
         private int numberOfParticipantsField;
         
-        private string eventCategoryField;
+        private int eventCategoryField;
         
         private User organizerField;
         
@@ -679,7 +679,7 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string eventCategory
+        public int eventCategory
         {
             get
             {

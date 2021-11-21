@@ -70,7 +70,7 @@ namespace Presentation_Layer.Data
             }
             string EventAsJson = JsonSerializer.Serialize(Event);
             HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync("Event", content);
+            await Client.PostAsync(uri+"/Event", content);
         }
         
     }

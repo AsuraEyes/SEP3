@@ -49,5 +49,25 @@ namespace REST.Controllers
                 return  StatusCode(500, e.Message);
             }
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Event>> CreateEventAsync([FromBody] Event Event)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await EventWebService.CreateEventAsync(Event);
+                return Ok(Event);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

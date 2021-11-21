@@ -43,6 +43,6 @@ public class DAOConfig
 
     @Bean(name="password")
     public String password() {
-        return "";
+        return "CoDex21";
     }
 }

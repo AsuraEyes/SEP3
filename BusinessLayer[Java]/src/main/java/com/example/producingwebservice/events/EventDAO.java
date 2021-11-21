@@ -4,16 +4,15 @@ import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
 import com.example.producingwebservice.games.GameDAO;
 import io.spring.guides.gs_producing_web_service.*;
-import org.springframework.aop.scope.ScopedProxyUtils;
 
 import javax.annotation.Resource;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -43,7 +42,7 @@ public class EventDAO implements Events {
 
     private static Event createEvent(int id, String name, Date startTimeStamp, Date endTimeStamp,String addressStreetName,
                                      String addressStreetNumber, String addressApartmentNumber, int maxNumberOfParticipants,
-                                     int numberOfParticipants, String eventCategory, User organizer, UserList participants,
+                                     int numberOfParticipants, int eventCategory, User organizer, UserList participants,
                                      UserList organizers, EventGameList gameList)
 
 
@@ -82,7 +81,20 @@ public class EventDAO implements Events {
         event.setGameList(gameList);
         return event;
     }
-    
+
+    public Event create(Event event){
+        String username = "boardgameGeek";
+        Timestamp startTime = new Timestamp(event.getStartTime().toGregorianCalendar().getTimeInMillis());
+        Timestamp endTime = new Timestamp(event.getEndTime().toGregorianCalendar().getTimeInMillis());
+
+        helper().executeUpdate(
+                "INSERT INTO event(name, start_time, end_time, address_street_name, address_street_number, address_apartment_number, max_number_of_participants, event_category_id, organizer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                event.getName(), startTime, endTime, event.getAddressStreetName(), event.getAddressStreetNumber(),
+                event.getAddressApartmentNumber(), event.getMaxNumberOfParticipants(), event.getEventCategory(),
+                username);
+        return event;
+    }
+
     public EventList searchAndFilter(String filter, int category){
         eventList.getEventList().clear();
         String statement = "SELECT * FROM event";
@@ -128,7 +140,7 @@ public class EventDAO implements Events {
              String addressApartmentNumber = rs.getString("address_apartment_number");
              int maxNumberOfParticipants = rs.getInt("max_number_of_participants");
              int numberOfParticipants = rs.getInt("number_of_participants");
-             String eventCategory = rs.getString("event_category_id");
+             int eventCategory = rs.getInt("event_category_id");
              String organizer =  rs.getString("organizer");
              //User organizer;
              UserList participants;
