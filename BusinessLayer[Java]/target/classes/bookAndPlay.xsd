@@ -99,8 +99,8 @@
             <xs:element name="addressApartmentNumber" type="xs:string"/>
             <xs:element name="maxNumberOfParticipants" type="xs:int"/>
             <xs:element name="numberOfParticipants" type="xs:int"/>
-            <xs:element name="eventCategory" type="xs:string"/>
-            <xs:element name="organizer" type="tns:User"/>
+            <xs:element name="eventCategory" type="xs:int"/>
+            <xs:element name="organizer" type="xs:string"/>
             <xs:element name="participants" type="tns:UserList"/>
             <xs:element name="organizers" type="tns:UserList"/>
             <xs:element name="gameList" type="tns:EventGameList"/>

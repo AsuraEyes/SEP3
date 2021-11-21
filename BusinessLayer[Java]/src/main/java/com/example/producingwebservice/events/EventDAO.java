@@ -42,7 +42,7 @@ public class EventDAO implements Events {
 
     private static Event createEvent(int id, String name, Date startTimeStamp, Date endTimeStamp,String addressStreetName,
                                      String addressStreetNumber, String addressApartmentNumber, int maxNumberOfParticipants,
-                                     int numberOfParticipants, int eventCategory, User organizer, UserList participants,
+                                     int numberOfParticipants, int eventCategory, String organizer, UserList participants,
                                      UserList organizers, EventGameList gameList)
 
 
@@ -84,13 +84,14 @@ public class EventDAO implements Events {
 
     public Event create(Event event){
         String username = "boardgameGeek";
+        int p = 0;
         Timestamp startTime = new Timestamp(event.getStartTime().toGregorianCalendar().getTimeInMillis());
         Timestamp endTime = new Timestamp(event.getEndTime().toGregorianCalendar().getTimeInMillis());
 
         helper().executeUpdate(
-                "INSERT INTO event(name, start_time, end_time, address_street_name, address_street_number, address_apartment_number, max_number_of_participants, event_category_id, organizer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO event(name, start_time, end_time, address_street_name, address_street_number, address_apartment_number, max_number_of_participants, number_of_participants, event_category_id, organizer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 event.getName(), startTime, endTime, event.getAddressStreetName(), event.getAddressStreetNumber(),
-                event.getAddressApartmentNumber(), event.getMaxNumberOfParticipants(), event.getEventCategory(),
+                event.getAddressApartmentNumber(), event.getMaxNumberOfParticipants(), p, event.getEventCategory(),
                 username);
         return event;
     }
