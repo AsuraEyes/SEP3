@@ -12,7 +12,7 @@ namespace Presentation_Layer.Models
         
         [Required]public DateTime StartTime{ get; set; }
         
-        public DateTime EndTime{ get; set; }
+        [Range(StartTime, )]public DateTime EndTime{ get; set; }
         
         [Required]public string AddressStreetName{ get; set; }
         
