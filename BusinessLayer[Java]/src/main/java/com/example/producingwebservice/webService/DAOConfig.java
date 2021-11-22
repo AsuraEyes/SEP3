@@ -1,5 +1,7 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.categories.Categories;
+import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.GameDAO;
@@ -29,6 +31,12 @@ public class DAOConfig
     @Scope("singleton")
     public Users UserDAO() {
         return new UserDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public Categories CategoryDAO() {
+        return new CategoryDAO();
     }
 
     @Bean(name="jdbcUrl")

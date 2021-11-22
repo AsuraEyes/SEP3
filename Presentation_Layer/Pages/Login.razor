@@ -45,7 +45,7 @@
         errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
@@ -61,7 +61,7 @@
         password = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

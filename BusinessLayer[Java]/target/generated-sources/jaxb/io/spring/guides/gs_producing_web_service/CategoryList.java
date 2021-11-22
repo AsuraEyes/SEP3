@@ -12,22 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EventGameList complex type.
+ * <p>Java class for CategoryList complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="EventGameList"&gt;
+ * &lt;complexType name="CategoryList"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="user" type="{http://spring.io/guides/gs-producing-web-service}User"/&gt;
- *         &lt;element name="gameList" type="{http://spring.io/guides/gs-producing-web-service}Game" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="categoryList" type="{http://spring.io/guides/gs-producing-web-service}Category" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,67 +35,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EventGameList", propOrder = {
-    "user",
-    "gameList"
+@XmlType(name = "CategoryList", propOrder = {
+    "categoryList"
 })
-public class EventGameList {
+public class CategoryList {
 
-    @XmlElement(required = true)
-    protected User user;
-    protected List<Game> gameList;
+    protected List<Category> categoryList;
 
     /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
-     */
-    public void setUser(User value) {
-        this.user = value;
-    }
-
-    /**
-     * Gets the value of the gameList property.
+     * Gets the value of the categoryList property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the gameList property.
+     * This is why there is not a <CODE>set</CODE> method for the categoryList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getGameList().add(newItem);
+     *    getCategoryList().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Game }
+     * {@link Category }
      * 
      * 
      */
-    public List<Game> getGameList() {
-        if (gameList == null) {
-            gameList = new ArrayList<Game>();
+    public List<Category> getCategoryList() {
+        if (categoryList == null) {
+            categoryList = new ArrayList<Category>();
         }
-        return this.gameList;
+        return this.categoryList;
     }
 
 }

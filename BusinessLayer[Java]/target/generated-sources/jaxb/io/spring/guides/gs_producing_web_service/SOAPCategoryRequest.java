@@ -26,10 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Operation" type="{http://spring.io/guides/gs-producing-web-service}Operation"/&gt;
- *         &lt;element name="Game" type="{http://spring.io/guides/gs-producing-web-service}Game"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,62 +37,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
-    "userName",
-    "operation",
-    "game"
+    "operation"
 })
-@XmlRootElement(name = "SOAPGameRequest")
-public class SOAPGameRequest {
+@XmlRootElement(name = "SOAPCategoryRequest")
+public class SOAPCategoryRequest {
 
-    protected int id;
-    @XmlElement(required = true)
-    protected String userName;
     @XmlElement(name = "Operation", required = true)
     @XmlSchemaType(name = "string")
     protected Operation operation;
-    @XmlElement(name = "Game", required = true)
-    protected Game game;
-
-    /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
-
-    /**
-     * Gets the value of the userName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * Sets the value of the userName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUserName(String value) {
-        this.userName = value;
-    }
 
     /**
      * Gets the value of the operation property.
@@ -119,30 +68,6 @@ public class SOAPGameRequest {
      */
     public void setOperation(Operation value) {
         this.operation = value;
-    }
-
-    /**
-     * Gets the value of the game property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Game }
-     *     
-     */
-    public Game getGame() {
-        return game;
-    }
-
-    /**
-     * Sets the value of the game property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Game }
-     *     
-     */
-    public void setGame(Game value) {
-        this.game = value;
     }
 
 }
