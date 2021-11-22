@@ -1,5 +1,7 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.categories.Categories;
+import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.GameDAO;
@@ -31,6 +33,12 @@ public class DAOConfig
         return new UserDAO();
     }
 
+    @Bean
+    @Scope("singleton")
+    public Categories CategoryDAO() {
+        return new CategoryDAO();
+    }
+
     @Bean(name="jdbcUrl")
     public String jdbcUrl() {
         return "jdbc:postgresql://localhost:5432/postgres?currentSchema=book_and_play";
@@ -43,6 +51,6 @@ public class DAOConfig
 
     @Bean(name="password")
     public String password() {
-        return "CoDex21";
+        return "SQLdatabaze";
     }
 }

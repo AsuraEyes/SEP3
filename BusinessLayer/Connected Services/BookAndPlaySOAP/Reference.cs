@@ -27,6 +27,10 @@ namespace BookAndPlaySOAP
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request);
     }
     
     /// <remarks/>
@@ -472,6 +476,46 @@ namespace BookAndPlaySOAP
             set
             {
                 this.approvedField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class Category
+    {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
             }
         }
     }
@@ -1031,6 +1075,10 @@ namespace BookAndPlaySOAP
         
         private Event eventField;
         
+        private int currentPageField;
+        
+        private int resultsPerPageField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id
@@ -1084,6 +1132,34 @@ namespace BookAndPlaySOAP
             set
             {
                 this.eventField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int currentPage
+        {
+            get
+            {
+                return this.currentPageField;
+            }
+            set
+            {
+                this.currentPageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int resultsPerPage
+        {
+            get
+            {
+                return this.resultsPerPageField;
+            }
+            set
+            {
+                this.resultsPerPageField = value;
             }
         }
     }
@@ -1185,6 +1261,95 @@ namespace BookAndPlaySOAP
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPCategoryRequest
+    {
+        
+        private Operation operationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPCategoryResponse
+    {
+        
+        private Category[] categoryListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("categoryList", IsNullable=false)]
+        public Category[] CategoryList
+        {
+            get
+            {
+                return this.categoryListField;
+            }
+            set
+            {
+                this.categoryListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPCategoryRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest;
+        
+        public SOAPCategoryRequest1()
+        {
+        }
+        
+        public SOAPCategoryRequest1(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
+        {
+            this.SOAPCategoryRequest = SOAPCategoryRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPCategoryResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse;
+        
+        public SOAPCategoryResponse1()
+        {
+        }
+        
+        public SOAPCategoryResponse1(BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse)
+        {
+            this.SOAPCategoryResponse = SOAPCategoryResponse;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     public interface BookAndPlayPortChannel : BookAndPlaySOAP.BookAndPlayPort, System.ServiceModel.IClientChannel
     {
@@ -1272,6 +1437,19 @@ namespace BookAndPlaySOAP
             BookAndPlaySOAP.SOAPEventRequest1 inValue = new BookAndPlaySOAP.SOAPEventRequest1();
             inValue.SOAPEventRequest = SOAPEventRequest;
             return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request)
+        {
+            return base.Channel.SOAPCategoryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
+        {
+            BookAndPlaySOAP.SOAPCategoryRequest1 inValue = new BookAndPlaySOAP.SOAPCategoryRequest1();
+            inValue.SOAPCategoryRequest = SOAPCategoryRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPCategoryAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

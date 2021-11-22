@@ -21,7 +21,6 @@ public class EventDAO implements Events {
     private final EventList eventList;
     private GameDAO gameDAO;
 
-
     @Resource(name = "jdbcUrl")
     private String jdbcUrl;
 
@@ -94,8 +93,9 @@ public class EventDAO implements Events {
         return event;
     }
 
-    public EventList searchAndFilter(String filter, int category){
+    public EventList searchAndFilter(String filter, int category, int currentPage, int resultsPerPage){
         eventList.getEventList().clear();
+        EventList pagedEventList = new EventList();
         String statement = "SELECT * FROM event";
 
         if(!filter.equals("all")){
@@ -123,8 +123,20 @@ public class EventDAO implements Events {
       System.out.println(statement);
 
         eventList.getEventList().addAll(helper().map(new EventMapper(), statement));
-        return eventList;
+
+        //cut out the ; in the end
+        statement = statement.substring(0, statement.length()-1);
+
+        statement += " LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
+        pagedEventList.getEventList().addAll(helper().map(new EventMapper(), statement));
+
+        return pagedEventList;
     }
+
+    public int getNumberOfPages(int resultsPerPage){
+        return (int) Math.ceil(eventList.getEventList().size() / (float)resultsPerPage);
+    }
+
 
     private static class EventMapper implements DataMapper<Event> {
         public Event create(ResultSet rs)
