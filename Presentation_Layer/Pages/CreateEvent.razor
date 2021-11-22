@@ -85,7 +85,6 @@
     {
         newEvent.Organizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         
-        Console.WriteLine(newEvent.Organizer);
         newEvent.StartTime = Date.Add(StartTime.TimeOfDay);
         newEvent.EndTime = Date.Add(EndTime.TimeOfDay);
         await EventService.CreateEvent(newEvent);
