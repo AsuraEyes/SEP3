@@ -20,17 +20,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="create event thingies">
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/UserPrefs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/BankServer-Debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/BusinessLayer-Debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/Presentation_Layer-Debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Resources/App.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Resources/App.resx" afterDir="false" />
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Fixed event error messages">
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/wwwroot/site.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +335,7 @@
       <workItem from="1637401762678" duration="11203000" />
       <workItem from="1637503651163" duration="7000" />
       <workItem from="1637503784474" duration="846000" />
-      <workItem from="1637507942079" duration="2958000" />
+      <workItem from="1637507942079" duration="3879000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -489,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637510894303</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed event error messages">
+      <created>1637573030655</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1637573030655</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,6 +538,7 @@
     <MESSAGE value="fixed" />
     <MESSAGE value="event range changed" />
     <MESSAGE value="create event thingies" />
-    <option name="LAST_COMMIT_MESSAGE" value="create event thingies" />
+    <MESSAGE value="Fixed event error messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed event error messages" />
   </component>
 </project>
