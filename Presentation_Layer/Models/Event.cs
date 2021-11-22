@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation_Layer.Models
 {
@@ -9,8 +10,7 @@ namespace Presentation_Layer.Models
         public int Id{ get; set; }
         
         [Required]public string Name{ get; set; }
-        
-        
+
         [Required]public DateTime StartTime{ get; set; }
         
         public DateTime EndTime{ get; set; }
@@ -20,8 +20,10 @@ namespace Presentation_Layer.Models
         [Required]public string AddressStreetNumber{ get; set; }
         
         public string AddressApartmentNumber{ get; set; }
+        public string Organizer { get; set; }
         
         [Required]
+        [Range(2, int.MaxValue ,ErrorMessage = "Please enter a number bigger than 2")]
         public int MaxNumberOfParticipants{ get; set; }
         
         [Required]public int NumberOfParticipants{ get; set; }

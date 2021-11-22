@@ -15,19 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OneTimeFee complex type.
+ * <p>Java class for Category complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="OneTimeFee"&gt;
+ * &lt;complexType name="Category"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="amount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="event" type="{http://spring.io/guides/gs-producing-web-service}Event"/&gt;
- *         &lt;element name="userUsername" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,20 +35,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OneTimeFee", propOrder = {
+@XmlType(name = "Category", propOrder = {
     "id",
-    "amount",
-    "event",
-    "userUsername"
+    "name"
 })
-public class OneTimeFee {
+public class Category {
 
     protected int id;
-    protected int amount;
     @XmlElement(required = true)
-    protected Event event;
-    @XmlElement(required = true)
-    protected String userUsername;
+    protected String name;
 
     /**
      * Gets the value of the id property.
@@ -69,67 +62,27 @@ public class OneTimeFee {
     }
 
     /**
-     * Gets the value of the amount property.
-     * 
-     */
-    public int getAmount() {
-        return amount;
-    }
-
-    /**
-     * Sets the value of the amount property.
-     * 
-     */
-    public void setAmount(int value) {
-        this.amount = value;
-    }
-
-    /**
-     * Gets the value of the event property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Event }
-     *     
-     */
-    public Event getEvent() {
-        return event;
-    }
-
-    /**
-     * Sets the value of the event property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Event }
-     *     
-     */
-    public void setEvent(Event value) {
-        this.event = value;
-    }
-
-    /**
-     * Gets the value of the userUsername property.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUserUsername() {
-        return userUsername;
+    public String getName() {
+        return name;
     }
 
     /**
-     * Sets the value of the userUsername property.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUserUsername(String value) {
-        this.userUsername = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }
