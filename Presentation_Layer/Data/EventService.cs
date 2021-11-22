@@ -41,25 +41,25 @@ namespace Presentation_Layer.Data
             return Events;
         }
 
-        public int GetNumberOfPages(IList<Event> allEvents)
-        {
-            return (int) Math.Ceiling(allEvents.Count / 9.00);
-        }
+        // public int GetNumberOfPages(IList<Event> allEvents)
+        // {
+        //     return (int) Math.Ceiling(allEvents.Count / 9.00);
+        // }
 
-        public IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage)
-        {
-            //current page starts at 1
-            IList<Event> pagedList = new List<Event>();
-            for (int i = 0 + (currentPage - 1) * 9; i < currentPage * 9; i++)
-            {
-                if (i < allEvents.Count)
-                {
-                    pagedList.Add(allEvents[i]);
-                }
-            }
-
-            return pagedList;
-        }
+        // public IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage)
+        // {
+        //     //current page starts at 1
+        //     IList<Event> pagedList = new List<Event>();
+        //     for (int i = 0 + (currentPage - 1) * 9; i < currentPage * 9; i++)
+        //     {
+        //         if (i < allEvents.Count)
+        //         {
+        //             pagedList.Add(allEvents[i]);
+        //         }
+        //     }
+        //
+        //     return pagedList;
+        // }
 
         public async Task CreateEvent(Event Event)
         {

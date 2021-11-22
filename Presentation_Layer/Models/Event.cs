@@ -21,7 +21,8 @@ namespace Presentation_Layer.Models
         
         public string AddressApartmentNumber{ get; set; }
         
-        [Required]public int MaxNumberOfParticipants{ get; set; }
+        [Required]
+        public int MaxNumberOfParticipants{ get; set; }
         
         [Required]public int NumberOfParticipants{ get; set; }
         

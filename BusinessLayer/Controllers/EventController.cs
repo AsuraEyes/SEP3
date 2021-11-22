@@ -38,9 +38,11 @@ namespace REST.Controllers
         [Route("/FilteredEvents{filter}/{category}")]
         public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync(int category, string filter)
         {
+            int currentPage = 1;
+            int resultsPerPage = 9;
             try
             {
-                IList<Event> filteredEventsAsync = await EventWebService.GetFilteredEventsAsync(filter, category);
+                IList<Event> filteredEventsAsync = await EventWebService.GetFilteredEventsAsync(filter, category, currentPage, resultsPerPage);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)
