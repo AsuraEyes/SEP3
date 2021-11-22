@@ -2,10 +2,7 @@ package com.example.producingwebservice.categories;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
-import io.spring.guides.gs_producing_web_service.Category;
-import io.spring.guides.gs_producing_web_service.Event;
-import io.spring.guides.gs_producing_web_service.Game;
-import io.spring.guides.gs_producing_web_service.GameList;
+import io.spring.guides.gs_producing_web_service.*;
 
 import javax.annotation.Resource;
 import java.sql.ResultSet;
@@ -15,6 +12,7 @@ import java.util.ArrayList;
 public class CategoryDAO implements Categories
 {
   private DatabaseHelper<Category> helper;
+  private CategoryList categoryList;
 
   @Resource(name="jdbcUrl")
   private String jdbcUrl;
@@ -26,7 +24,7 @@ public class CategoryDAO implements Categories
   private String password;
 
   public CategoryDAO(){
-
+    categoryList = new CategoryList();
   }
 
   private DatabaseHelper<Category> helper(){
@@ -42,6 +40,13 @@ public class CategoryDAO implements Categories
     return newCategory;
   }
 
+  @Override public CategoryList getCategories()
+  {
+    categoryList.getCategoryList().clear();
+    categoryList.getCategoryList().addAll(helper().map(new CategoryMapper(),"SELECT * FROM event_category;"));
+    return categoryList;
+  }
+
   private static class CategoryMapper implements DataMapper<Category>
   {
     public Category create(ResultSet rs) throws SQLException
@@ -51,4 +56,6 @@ public class CategoryDAO implements Categories
       return createCategory(id, name);
     }
     }
+
+
 }

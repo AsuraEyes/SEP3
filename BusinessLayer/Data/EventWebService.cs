@@ -39,7 +39,7 @@ namespace BusinessLayer.Data
             return Response.SOAPEventResponse.eventList;
         }
 
-        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category)
+        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage)
         {
             Response = await getEventResponse(category, Operation.GETALL, null, filter);
             return Response.SOAPEventResponse.eventList;
