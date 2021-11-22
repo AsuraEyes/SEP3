@@ -19,6 +19,8 @@
                 <xs:element name="filter" type="xs:string"/>
                 <xs:element name="Operation" type="tns:Operation"/>
                 <xs:element name="Event" type="tns:Event"/>
+                <xs:element name="currentPage" type="xs:int"/>
+                <xs:element name="resultsPerPage" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
