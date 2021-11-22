@@ -2,7 +2,6 @@ package com.example.producingwebservice.events;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
-import com.example.producingwebservice.games.GameDAO;
 import io.spring.guides.gs_producing_web_service.Event;
 import io.spring.guides.gs_producing_web_service.EventGameList;
 import io.spring.guides.gs_producing_web_service.EventList;
@@ -21,7 +20,6 @@ import java.util.GregorianCalendar;
 public class EventDAO implements Events {
     private final EventList eventList;
     private DatabaseHelper<Event> helper;
-    private GameDAO gameDAO;
 
     @Resource(name = "jdbcUrl")
     private String jdbcUrl;
