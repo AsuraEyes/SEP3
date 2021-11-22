@@ -33,6 +33,14 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="SOAPCategoryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Operation" type="tns:Operation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:simpleType name="Operation">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GET"/>
@@ -69,6 +77,14 @@
                 <xs:element name="notification" type="xs:string"/>
                 <xs:element name="user" type="tns:User"/>
                 <xs:element name="userList" type="tns:UserList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CategoryList" type="tns:CategoryList"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -172,5 +188,18 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+
+    <xs:complexType name="Category">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CategoryList">
+        <xs:sequence>
+            <xs:element name="categoryList" maxOccurs="unbounded" minOccurs="0" type="tns:Category"/>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>

@@ -11,7 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class GameDAO implements Games
-{ private DatabaseHelper<Game> helper;
+{
+  private DatabaseHelper<Game> helper;
   private GameList gameList;
 
   @Resource(name="jdbcUrl")

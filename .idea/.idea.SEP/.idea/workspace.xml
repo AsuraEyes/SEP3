@@ -20,16 +20,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="updated BussinessLayer web reference">
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/categories/Categories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/categories/CategoryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/categories/Categories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/categories/CategoryDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/CategoryList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/message_schema.2WwuOw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/05f0cbad-8c70-4dcb-8aa7-e5ce962e4548/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/events/EventDAO$EventMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/events/EventDAO$EventMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/events/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/events/EventDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/DAOConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/DAOConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/resources/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/resources/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc.xjb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc.xjb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc.xjb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc.xjb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventGameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventGameList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/MonthlyFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/MonthlyFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/OneTimeFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/OneTimeFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +125,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Presentation_Layer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BusinessLayer: WebApplication">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -322,7 +367,8 @@
       <workItem from="1637316018776" duration="6330000" />
       <workItem from="1637401762678" duration="11203000" />
       <workItem from="1637503651163" duration="7000" />
-      <workItem from="1637503784474" duration="5436000" />
+      <workItem from="1637503784474" duration="6306000" />
+      <workItem from="1637567659990" duration="2245000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -443,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637504864809</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="custom user name auth stuff login fix error">
+      <created>1637510460442</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637510460442</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,6 +539,7 @@
     <MESSAGE value="Vadlidate username presentation layer connection" />
     <MESSAGE value="gimme gitignore" />
     <MESSAGE value="updated BussinessLayer web reference" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated BussinessLayer web reference" />
+    <MESSAGE value="custom user name auth stuff login fix error" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom user name auth stuff login fix error" />
   </component>
 </project>

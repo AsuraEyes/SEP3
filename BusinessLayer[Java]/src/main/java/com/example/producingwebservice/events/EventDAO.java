@@ -21,7 +21,6 @@ public class EventDAO implements Events {
     private final EventList eventList;
     private GameDAO gameDAO;
 
-
     @Resource(name = "jdbcUrl")
     private String jdbcUrl;
 
