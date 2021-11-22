@@ -20,9 +20,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="">
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="create event thingies">
+      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/UserPrefs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/BankServer-Debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/BusinessLayer-Debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/SEP/xs/project-cache/Presentation_Layer-Debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Resources/App.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Resources/App.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,28 +49,31 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/20/ValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1D/InputBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/2B/InputRadio.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/B/DisplayAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f41cb29cb794b5595adb557f61fcbef1bae00/b9/13c720a0/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/0/TimestampAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19076b5d71454cc9bb0c4d254daec64518000/85/7ffa23a5/IJSRuntime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/9/CustomValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/17/MinLengthAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/20/ValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/31/ValidationMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/1B/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/2B/InputRadio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f41cb29cb794b5595adb557f61fcbef1bae00/b9/13c720a0/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99b8e7aafc8d4b439dcc39a3176f54012d600/1F/InputDate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19076b5d71454cc9bb0c4d254daec64518000/10/43d9bdb8/IJSInProcessRuntime.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19076b5d71454cc9bb0c4d254daec64518000/85/7ffa23a5/IJSRuntime.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/9/CustomValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19076b5d71454cc9bb0c4d254daec64518000/A/JSRuntimeExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/17/MinLengthAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
@@ -329,7 +340,7 @@
       <workItem from="1637401762678" duration="11203000" />
       <workItem from="1637503651163" duration="7000" />
       <workItem from="1637503784474" duration="846000" />
-      <workItem from="1637507942079" duration="1249000" />
+      <workItem from="1637507942079" duration="2958000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -471,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637507618036</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="create event thingies">
+      <created>1637510894303</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1637510894303</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,6 +535,7 @@
     <MESSAGE value="fixed validation error" />
     <MESSAGE value="fixed" />
     <MESSAGE value="event range changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="event range changed" />
+    <MESSAGE value="create event thingies" />
+    <option name="LAST_COMMIT_MESSAGE" value="create event thingies" />
   </component>
 </project>

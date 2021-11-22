@@ -148,7 +148,7 @@ public class EventDAO implements Events {
 
             return createEvent(id, name, startTime,endTime,addressStreetName,
                addressStreetNumber, addressApartmentNumber,maxNumberOfParticipants,
-          numberOfParticipants,eventCategory, null,null,
+          numberOfParticipants,eventCategory, organizer,null,
                null, null);
         }
     }

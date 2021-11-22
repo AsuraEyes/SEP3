@@ -15,18 +15,20 @@ namespace Presentation_Layer.Models
         
         public DateTime EndTime{ get; set; }
         
-        [Required]public string AddressStreetName{ get; set; }
+        [Required(ErrorMessage = "The Address Street Name is required.")]
+        public string AddressStreetName{ get; set; }
         
-        [Required]public string AddressStreetNumber{ get; set; }
+        [Required(ErrorMessage = "The Address Street Number is required.")]
+        public string AddressStreetNumber{ get; set; }
         
         public string AddressApartmentNumber{ get; set; }
         public string Organizer { get; set; }
         
-        [Required]
-        [Range(2, int.MaxValue ,ErrorMessage = "Please enter a number bigger than 2")]
+        [Required(ErrorMessage = "Max number of participants field is required.")]
+        [Range(2, int.MaxValue, ErrorMessage = "Please enter a number greater than 1.")]
         public int MaxNumberOfParticipants{ get; set; }
         
-        [Required]public int NumberOfParticipants{ get; set; }
+        public int NumberOfParticipants{ get; set; }
         
         [Required]public int EventCategory{ get; set; }
 
