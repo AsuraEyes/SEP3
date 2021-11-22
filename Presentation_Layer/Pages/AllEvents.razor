@@ -106,8 +106,8 @@
     protected override async Task OnInitializedAsync()
     {
         EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
-        numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
-        EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 1);
+        //numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
+       //EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 1);
     }
     
     private async Task DateFilter(ChangeEventArgs args)
