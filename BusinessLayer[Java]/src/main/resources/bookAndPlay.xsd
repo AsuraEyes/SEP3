@@ -66,6 +66,7 @@
     <xs:element name="SOAPEventResponse">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="currentPage" type="xs:int"/>
                 <xs:element name="notification" type="xs:string"/>
                 <xs:element name="event" type="tns:Event"/>
                 <xs:element name="eventList" type="tns:EventList"/>
