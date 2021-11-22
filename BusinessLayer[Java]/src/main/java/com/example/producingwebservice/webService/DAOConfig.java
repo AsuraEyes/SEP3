@@ -13,8 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class DAOConfig
-{
+public class DAOConfig {
     @Bean
     @Scope("singleton")
     public Games GameDAO() {
@@ -39,17 +38,17 @@ public class DAOConfig
         return new CategoryDAO();
     }
 
-    @Bean(name="jdbcUrl")
+    @Bean(name = "jdbcUrl")
     public String jdbcUrl() {
         return "jdbc:postgresql://localhost:5432/postgres?currentSchema=book_and_play";
     }
 
-    @Bean(name="username")
+    @Bean(name = "username")
     public String username() {
         return "postgres";
     }
 
-    @Bean(name="password")
+    @Bean(name = "password")
     public String password() {
         return "SQLdatabaze";
     }
