@@ -41,7 +41,7 @@ public class EventsEndpoint
         break;
       case GETALL:
           response.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
-              request.getId()));
+              request.getId(), request.));
         break;
       case DELETE:
        // eventsDAO.delete(request.getId());
