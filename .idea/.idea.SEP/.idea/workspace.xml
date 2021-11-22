@@ -20,12 +20,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="Fixed event error messages">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/wwwroot/site.ico" afterDir="false" />
+    <list default="true" id="eea724f3-0430-4687-a7d4-789aa9d85920" name="Changes" comment="changed navbar and site icon">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_02.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/producing-web-service-complete.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/producing-web-service-complete.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3f41cb29cb794b5595adb557f61fcbef1bae00/b9/13c720a0/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/0/TimestampAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP3/Presentation_Layer/Pages/_Host.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19076b5d71454cc9bb0c4d254daec64518000/85/7ffa23a5/IJSRuntime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/9/CustomValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/17/MinLengthAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -335,7 +336,7 @@
       <workItem from="1637401762678" duration="11203000" />
       <workItem from="1637503651163" duration="7000" />
       <workItem from="1637503784474" duration="846000" />
-      <workItem from="1637507942079" duration="3879000" />
+      <workItem from="1637507942079" duration="4671000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -491,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637573030655</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="changed navbar and site icon">
+      <created>1637574211724</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1637574211724</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,6 +547,7 @@
     <MESSAGE value="event range changed" />
     <MESSAGE value="create event thingies" />
     <MESSAGE value="Fixed event error messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed event error messages" />
+    <MESSAGE value="changed navbar and site icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed navbar and site icon" />
   </component>
 </project>
