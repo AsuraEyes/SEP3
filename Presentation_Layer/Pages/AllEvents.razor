@@ -15,7 +15,7 @@
 
 @* @context.User.Identity.Name *@
 <p class="actions">
-    <button @onclick="@(() => CreateEventAsync())" class="oi oi-plus" type="submit" >Create</button>
+    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit"><i class="oi oi-plus"></i> Create</button>
 </p>
 
 
@@ -65,11 +65,23 @@
 <div class="container">
     @foreach (var item in eventList)
     {
-        <div @onclick="@(() => NavigateToEvent(@item.Id))" class="box">
-            <div class="content">
-                <h3>@item.Id @item.Name</h3>
-                <p>@item.StartTime</p>
-                <p>@item.EndTime</p>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.StartTime</p>
+                @if (item.AddressApartmentNumber != null)
+                {
+                    <p>@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                }
+                else
+                {
+                    <p>@item.AddressStreetName @item.AddressStreetNumber</p>
+                }
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-primary col-sm-6" @onclick="@(() => NavigateToEvent(item.Id))">
+                    More
+                </button>
             </div>
         </div>
     }

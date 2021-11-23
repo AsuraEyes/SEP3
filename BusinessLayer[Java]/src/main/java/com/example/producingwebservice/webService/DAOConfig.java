@@ -50,6 +50,6 @@ public class DAOConfig {
 
     @Bean(name = "password")
     public String password() {
-        return "SQLdatabaze";
+        return "CoDex21";
     }
 }
