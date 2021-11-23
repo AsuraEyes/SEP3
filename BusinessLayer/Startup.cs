@@ -39,6 +39,8 @@ namespace REST
             services.AddSingleton<IUserMiddlepoint, UserMiddlepoint>();
             services.AddSingleton<IEventMiddlePoint, EventMiddlePoint>();
             services.AddSingleton<ICategoryWebService, CategoryWebService>();
+            services.AddSingleton<IParticipantWebService, ParticipantWebService>();
+            services.AddSingleton<IOrganizerWebService, OrganizerWebService>();
 
         }
 

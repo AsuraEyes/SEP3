@@ -9,4 +9,5 @@ public interface Events {
     //int getNumberOfPages(int resultsPerPage);
 
     Event create(Event event);
+    Event get(int id);
 }

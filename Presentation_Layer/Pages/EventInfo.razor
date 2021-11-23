@@ -1,7 +1,39 @@
 @page "/EventInfo/{Id:int}"
-<h3>EventInfo</h3>
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
 
-<h2>@Id</h2>
+@inject IParticipantService participantService;
+@inject IOrganizerService organizerService;
+@inject IEventService eventService;
+@inject ICategoryService categoryService;
+
+<h3>Event @selectedEvent.Name Info </h3>
+
+<p>Time: @selectedEvent.StartTime - @selectedEvent.EndTime</p>
+<p>Address: @selectedEvent.AddressStreetName, @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+<p>Category: @category.Name </p>
+
+<h3>Organizers</h3>
+@foreach (string organizer in organizers)
+{
+    <ul>
+        @if (organizer.Equals(selectedEvent.Organizer))
+        {
+            <li><b>@organizer</b></li>
+        }
+        else
+        {
+            <li>@organizer</li>
+        }
+    </ul>
+}
+<h3>Participants</h3>
+@foreach (string participant in participants)
+{
+    <ul>
+        <li>@participant</li>
+    </ul>
+}
 
 <p class="actions">
     <button class="btn btn-outline-dark" type="submit">Join</button>
@@ -9,5 +41,20 @@
 
 @code {
     [Parameter] public int Id { get; set; }
-    
+    private Event selectedEvent = new Event();
+    private IList<string> participants = new List<string>();
+    private IList<string> organizers = new List<string>();
+    private IList<Category> categories = new List<Category>();
+    private Category category = new Category();
+
+    protected override async Task OnInitializedAsync()
+    {
+      
+        categories = await categoryService.GetCategoriesAsync();
+   
+        selectedEvent = await eventService.GetEventAsync(Id);
+        participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        category =  categories.FirstOrDefault(a => a.Id == selectedEvent.EventCategory);
+    }
 }

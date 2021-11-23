@@ -52,6 +52,22 @@ namespace REST.Controllers
                 return  StatusCode(500, e.Message);
             }
         }
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<ActionResult<Event>> GetEventAsync(int id)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            try
+            {
+                var response = await EventWebService.GetEventAsync(id);
+                return Ok(response);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
 
         [HttpPost]
         public async Task<ActionResult<Event>> CreateEventAsync([FromBody] Event Event)
