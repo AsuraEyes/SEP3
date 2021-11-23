@@ -8,6 +8,12 @@
 @inject ICategoryService categoryService;
 @inject IEventGameListService eventGameListService;
 
+@if (categories.Count == 0)
+{
+    <div class="spinner"></div>
+}
+else
+{
 <h3>Event @selectedEvent.Name Info </h3>
 
 <p>Time: @selectedEvent.StartTime - @selectedEvent.EndTime</p>
@@ -44,9 +50,10 @@
     </ul>
 }
 
-<p class="actions">
-    <button class="btn btn-outline-success" type="submit">Join</button>
-</p>
+    <p class="actions">
+        <button class="btn btn-outline-success" type="submit">Join</button>
+    </p>
+}
 
 @code {
     [Parameter] public int Id { get; set; }
