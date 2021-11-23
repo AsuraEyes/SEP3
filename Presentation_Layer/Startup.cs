@@ -36,6 +36,7 @@ namespace Presentation_Layer
             services.AddSingleton<IUserService, UserService>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IEventService, EventService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>

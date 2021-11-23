@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -12,10 +13,12 @@ namespace REST.Controllers
     public class EventController : Controller
     {
         private IEventWebService EventWebService;
+        private IEventMiddlePoint eventMiddlePoint;
 
-        public EventController(IEventWebService EventWebService)
+        public EventController(IEventWebService EventWebService, IEventMiddlePoint eventMiddlePoint)
         {
             this.EventWebService = EventWebService;
+            this.eventMiddlePoint = eventMiddlePoint;
         }
 
         [HttpGet]
@@ -35,14 +38,12 @@ namespace REST.Controllers
         }
         
         [HttpGet]
-        [Route("/FilteredEvents{filter}/{category}")]
-        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync(int category, string filter)
+        [Route("/FilteredEvents/{byDate}/{byAvailability}/{currentPage}/{categoryId}")]
+        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync(bool byDate, bool byAvailability, int currentPage, int categoryId)
         {
-            int currentPage = 1;
-            int resultsPerPage = 9;
             try
             {
-                IList<Event> filteredEventsAsync = await EventWebService.GetFilteredEventsAsync(filter, category, currentPage, resultsPerPage);
+                EventList filteredEventsAsync = await eventMiddlePoint.eventFilter(byDate, byAvailability, currentPage, categoryId);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)

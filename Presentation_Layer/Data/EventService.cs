@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Presentation_Layer.Models;
+using Presentation_Layer.Pages;
 
 namespace Presentation_Layer.Data
 {
@@ -29,15 +30,14 @@ namespace Presentation_Layer.Data
             return Events;
         }
 
-        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category)
+        public async Task<EventList> GetFilteredEventsAsync(Boolean byDate, Boolean byAvailability, int currentPage, int categoryId)
         {
-            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents{filter}/{category}");
-            var Event = await stringAsync;
-            var Events = JsonSerializer.Deserialize<List<Event>>(Event, new JsonSerializerOptions
+            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents/{byDate}/{byAvailability}/{currentPage}/{categoryId}");
+            var EventList = await stringAsync;
+            EventList Events = JsonSerializer.Deserialize<EventList>(EventList, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-
             return Events;
         }
 

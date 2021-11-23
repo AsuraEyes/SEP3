@@ -15,13 +15,15 @@ namespace BusinessLayer.Data
             Port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPEventResponse1> getEventResponse(int id, Operation name, Event ev, string filter)
+        private async Task<SOAPEventResponse1> getEventResponse(int id, Operation name, Event ev, string filter, int currentPage, int resultsPerPage)
         {
             SOAPEventRequest soapEventRequest = new SOAPEventRequest();
             soapEventRequest.id = id;
             soapEventRequest.Operation = name;
             soapEventRequest.Event = ev;
             soapEventRequest.filter = filter;
+            soapEventRequest.currentPage = currentPage;
+            soapEventRequest.resultsPerPage = resultsPerPage;
             Console.WriteLine("filter:"+filter);
             SOAPEventRequest1 soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
             SOAPEventResponse1 soapEventResponse1 = Port.SOAPEventAsync(soapEventRequest1).Result;
@@ -30,19 +32,27 @@ namespace BusinessLayer.Data
 
         public async Task CreateEventAsync(Event Event)
         {
-            Response = await getEventResponse(0, Operation.POST, Event, "");
+            Response = await getEventResponse(0, Operation.POST, Event, "", 0, 0);
         }
 
         public async Task<IList<Event>> GetEventsAsync()
         {
-            Response = await getEventResponse(0, Operation.GETALL, null, "");
+            Response = await getEventResponse(0, Operation.GETALL, null, "",0,0);
+            return Response.SOAPEventResponse.eventList.eventList;
+        }
+
+        public async Task<EventList> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage)
+        {
+            Response = await getEventResponse(category, Operation.GETALL, null, filter, currentPage, resultsPerPage);
             return Response.SOAPEventResponse.eventList;
         }
 
-        public async Task<IList<Event>> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage)
-        {
-            Response = await getEventResponse(category, Operation.GETALL, null, filter);
-            return Response.SOAPEventResponse.eventList;
-        }
+        // public async Task<int> GetNumberOfPages(string filter, int category, int currentPage, int resultsPerPage)
+        // {
+        //     Response = await getEventResponse(category, Operation.GETALL, null, filter, currentPage, resultsPerPage);
+        //     return Response.SOAPEventResponse.numberOfPages;
+        // }
+
+
     }
 }

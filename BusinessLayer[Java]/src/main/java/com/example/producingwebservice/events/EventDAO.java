@@ -82,9 +82,9 @@ public class EventDAO implements Events {
         event.setNumberOfParticipants(numberOfParticipants);
         event.setEventCategory(eventCategory);
         event.setOrganizer(organizer);
-        event.setParticipants(participants);
-        event.setOrganizers(organizers);
-        event.setGameList(gameList);
+//        event.setParticipants(participants);
+//        event.setOrganizers(organizers);
+//        event.setGameList(gameList);
         return event;
     }
 
@@ -103,8 +103,11 @@ public class EventDAO implements Events {
     public EventList searchAndFilter(String filter, int category, int currentPage, int resultsPerPage){
         eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
-        String statement = "SELECT COUNT(*) FROM event";
 
+        //counting the number of elements based on the applied filters
+
+        String statement = "SELECT COUNT(*) FROM event ";
+      System.out.println(filter);
         String appendToStatement = "";
         if(!filter.equals("all")){
             appendToStatement += " WHERE ";
@@ -122,7 +125,7 @@ public class EventDAO implements Events {
           }
           if(appendToStatement.endsWith("AND"))
           {
-              appendToStatement = statement.substring(0, statement.length() - 4);
+              appendToStatement = appendToStatement.substring(0, appendToStatement.length() - 4);
               //appendToStatement +=" GROUP BY id ORDER BY id;";
               appendToStatement +=";";
           }
@@ -132,28 +135,34 @@ public class EventDAO implements Events {
             appendToStatement +=";";
         }
 
-      System.out.println(statement+appendToStatement);
+        System.out.println(statement+appendToStatement);
+
+        //retrieving the number of elements
 
         //eventList.getEventList().addAll(helper().map(new EventMapper(), statement+appendToStatement));
         eventListLength = (integerHelper().mapSingle(new IntegerMapper(), statement+appendToStatement));
         System.out.println(eventListLength);
 
         //cut out the ; in the end, change count to select
-        statement = "SELECT * FROM event"+appendToStatement.substring(0, appendToStatement.length()-1);
+
+        statement = "SELECT * FROM event "+appendToStatement.substring(0, appendToStatement.length()-1);
+
         //add pagination
-        statement += " LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
-        System.out.println(statement);
+
+        statement += " ORDER by id LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
+
         pagedEventList.getEventList().addAll(eventHelper().map(new EventMapper(), statement));
+        pagedEventList.setNumberOfPages((int)Math.ceil(eventListLength/ (float)resultsPerPage));
 
         System.out.println(statement);
 
         return pagedEventList;
     }
 
-    public int getNumberOfPages(int resultsPerPage){
-        //return (int) Math.ceil(eventList.getEventList().size() / (float)resultsPerPage);
-        return (int) Math.ceil(eventListLength/ (float)resultsPerPage);
-    }
+//    public int getNumberOfPages(int resultsPerPage){
+//        //return (int) Math.ceil(eventList.getEventList().size() / (float)resultsPerPage);
+//        return (int) Math.ceil(eventListLength/ (float)resultsPerPage);
+//    }
 
     private static class IntegerMapper implements DataMapper<Integer> {
         public Integer create(ResultSet rs)
