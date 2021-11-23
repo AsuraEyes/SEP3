@@ -34,10 +34,10 @@ public class ParticipantEndpoint
           //response.setUser(participantsDAO.get(request.getUsername()));
           break;
         case POST:
-          //usersDAO.create(request.getUser());
+          participantsDAO.join(request.getEventId(), request.getUsername());
           break;
         case PATCH:
-          //usersDAO.patch(request.getEvent());
+            participantsDAO.withdraw(request.getEventId(), request.getUsername());
           break;
         case GETALL:
         response.getParticipantList().addAll(participantsDAO.getParticipantList(request.getEventId()));

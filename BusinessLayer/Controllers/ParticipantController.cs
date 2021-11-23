@@ -33,5 +33,41 @@ namespace REST.Controllers
                     return StatusCode(500, e.Message);
                 }
             }
+
+            [HttpPost]
+            [Route("/{id}")]
+            public async Task JoinEventResult(int id, [FromBody] string username)
+            {
+                if (!ModelState.IsValid)
+                {
+                    BadRequest(ModelState);
+                }
+
+                try
+                {
+                    await ParticipantWebService.JoinEventAsync(id, username);
+                    Created($"/{id}", "username");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    StatusCode(500, e.Message);
+                }
+            }
+
+            [HttpPatch]
+            [Route("/{id}")]
+            public async Task WithdrawEventAsync(int id, [FromBody] string username)
+            {
+                try
+                {
+                    await ParticipantWebService.WithdrawEventAsync(id, username);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
     }
 }

@@ -31,5 +31,15 @@ namespace BusinessLayer.Data
             response = await GetParticipantResponse(Operation.GETALL, eventId, "");
             return response.SOAPParticipantResponse.participantList;
         }
+        
+        public async Task JoinEventAsync(int id, string username)
+        {
+            response = await GetParticipantResponse(Operation.POST, id, username);
+        }
+        
+        public async Task WithdrawEventAsync(int id, string username)
+        {
+            response = await GetParticipantResponse(Operation.PATCH, id, username);
+        }
     }
 }

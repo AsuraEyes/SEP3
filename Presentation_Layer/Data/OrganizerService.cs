@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -24,6 +25,18 @@ namespace Presentation_Layer.Data
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
             return organizersList;
+        }
+        
+        public async Task JoinEvent(int id, string username)
+        {
+            var participantAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(participantAsJson, Encoding.UTF8, "application/json");
+            await Client.PostAsync(uri + $"/Organizer/{id}", content);
+        }
+        
+        public async Task WithdrawEvent(int id, string username)
+        {
+            await Client.DeleteAsync($"{uri}/Organizer/{id}/{username}");
         }
     }
 }

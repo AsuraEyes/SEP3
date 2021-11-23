@@ -51,6 +51,16 @@ public class ParticipantDAO implements Participants
     }
   }
 
+  public void join (int eventId, String username){
+    System.out.println(username);
+    helper().executeUpdate("INSERT INTO participants(event_id, user_username) VALUES (?, ?)", eventId, username);
+  }
+
+  public void withdraw (int eventId, String username){
+    System.out.println(username);
+    helper().executeUpdate("DELETE FROM participants WHERE event_id = ? AND user_username = ?", eventId, username);
+  }
+
   public ArrayList<String> getParticipantList(int eventId){
     participantList.clear();
     participantList.addAll(helper().map(new ParticipantMapper(), "SELECT user_username FROM participants WHERE event_id = ?", eventId));

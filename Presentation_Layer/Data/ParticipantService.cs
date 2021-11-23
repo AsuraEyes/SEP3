@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -25,5 +26,20 @@ namespace Presentation_Layer.Data
             });
             return ParticipantsList;
         }
+        
+        public async Task JoinEvent(int id, string username)
+        {
+            var participantAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(participantAsJson, Encoding.UTF8, "application/json");
+            await Client.PostAsync(uri+$"/{id}", content);
+        }
+        
+        public async Task WithdrawEvent(int id, string username)
+        {
+            var participantAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(participantAsJson, Encoding.UTF8, "application/json");
+            await Client.PatchAsync(uri+$"/{id}", content);
+        }
+
     }
 }
