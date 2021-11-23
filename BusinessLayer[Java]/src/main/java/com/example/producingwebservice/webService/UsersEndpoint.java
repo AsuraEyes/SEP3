@@ -32,14 +32,14 @@ public class UsersEndpoint {
                 usersDAO.create(request.getUser());
                 break;
             case PATCH:
-                //eventsDAO.patch(request.getEvent());
+                //usersDAO.patch(request.getEvent());
                 break;
             case GETALL:
-                //response.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
+                //usersDAO.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
                 //    request.getId()));
                 break;
             case DELETE:
-                // eventsDAO.delete(request.getId());
+                // usersDAO.delete(request.getId());
         }
         return response;
     }
