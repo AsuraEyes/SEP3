@@ -66,6 +66,7 @@
     <xs:element name="SOAPEventResponse">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="currentPage" type="xs:int"/>
                 <xs:element name="notification" type="xs:string"/>
                 <xs:element name="event" type="tns:Event"/>
                 <xs:element name="eventList" type="tns:EventList"/>
@@ -120,9 +121,9 @@
             <xs:element name="numberOfParticipants" type="xs:int"/>
             <xs:element name="eventCategory" type="xs:int"/>
             <xs:element name="organizer" type="xs:string"/>
-            <xs:element name="participants" type="tns:UserList"/>
-            <xs:element name="organizers" type="tns:UserList"/>
-            <xs:element name="gameList" type="tns:EventGameList"/>
+<!--            <xs:element name="participants" type="tns:UserList"/>-->
+<!--            <xs:element name="organizers" type="tns:UserList"/>-->
+<!--            <xs:element name="gameList" type="tns:EventGameList"/>-->
         </xs:sequence>
     </xs:complexType>
 
@@ -172,6 +173,7 @@
 
     <xs:complexType name="EventList">
         <xs:sequence>
+            <xs:element name="numberOfPages" type="xs:int"/>
             <xs:element name="eventList" maxOccurs="unbounded" minOccurs="0" type="tns:Event">
             </xs:element>
         </xs:sequence>

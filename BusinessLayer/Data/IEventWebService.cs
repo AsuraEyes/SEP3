@@ -8,6 +8,7 @@ namespace BusinessLayer.Data
     {
         Task CreateEventAsync(Event Event);
         Task<IList<Event>> GetEventsAsync();
-        Task<IList<Event>> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage);
+        Task<EventList> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage);
+        //Task<int> GetNumberOfPages(string filter, int category, int currentPage, int resultsPerPage);
     }
 }

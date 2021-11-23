@@ -524,38 +524,38 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class EventGameList
+    public partial class EventList
     {
         
-        private User userField;
+        private int numberOfPagesField;
         
-        private Game[] gameListField;
+        private Event[] eventListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public User user
+        public int numberOfPages
         {
             get
             {
-                return this.userField;
+                return this.numberOfPagesField;
             }
             set
             {
-                this.userField = value;
+                this.numberOfPagesField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("gameList", Order=1)]
-        public Game[] gameList
+        [System.Xml.Serialization.XmlElementAttribute("eventList", Order=1)]
+        public Event[] eventList
         {
             get
             {
-                return this.gameListField;
+                return this.eventListField;
             }
             set
             {
-                this.gameListField = value;
+                this.eventListField = value;
             }
         }
     }
@@ -588,12 +588,6 @@ namespace BookAndPlaySOAP
         private int eventCategoryField;
         
         private string organizerField;
-        
-        private User[] participantsField;
-        
-        private User[] organizersField;
-        
-        private EventGameList gameListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -746,50 +740,6 @@ namespace BookAndPlaySOAP
             set
             {
                 this.organizerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("userList", IsNullable=false)]
-        public User[] participants
-        {
-            get
-            {
-                return this.participantsField;
-            }
-            set
-            {
-                this.participantsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=12)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("userList", IsNullable=false)]
-        public User[] organizers
-        {
-            get
-            {
-                return this.organizersField;
-            }
-            set
-            {
-                this.organizersField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public EventGameList gameList
-        {
-            get
-            {
-                return this.gameListField;
-            }
-            set
-            {
-                this.gameListField = value;
             }
         }
     }
@@ -1171,14 +1121,32 @@ namespace BookAndPlaySOAP
     public partial class SOAPEventResponse
     {
         
+        private int currentPageField;
+        
         private string notificationField;
         
         private Event eventField;
         
-        private Event[] eventListField;
+        private EventList eventListField;
+        
+        private int numberOfPagesField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int currentPage
+        {
+            get
+            {
+                return this.currentPageField;
+            }
+            set
+            {
+                this.currentPageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string notification
         {
             get
@@ -1192,7 +1160,7 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Event @event
         {
             get
@@ -1206,9 +1174,8 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("eventList", IsNullable=false)]
-        public Event[] eventList
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public EventList eventList
         {
             get
             {
@@ -1217,6 +1184,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.eventListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int numberOfPages
+        {
+            get
+            {
+                return this.numberOfPagesField;
+            }
+            set
+            {
+                this.numberOfPagesField = value;
             }
         }
     }

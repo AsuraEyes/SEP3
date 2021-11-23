@@ -42,7 +42,7 @@ public class EventsEndpoint
       case GETALL:
           response.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
               request.getId(), request.getCurrentPage(), request.getResultsPerPage()));
-          response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
+          //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
         break;
       case DELETE:
        // eventsDAO.delete(request.getId());
