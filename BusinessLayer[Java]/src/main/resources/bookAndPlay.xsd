@@ -65,6 +65,16 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="SOAPEventGameListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="eventId" type="xs:int"/>
+                <xs:element name="Operation" type="tns:Operation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:simpleType name="Operation">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GET"/>
@@ -131,6 +141,14 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="CategoryList" type="tns:CategoryList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPEventGameListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gameList" type="tns:GameList"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -228,13 +246,13 @@
             </xs:sequence>
         </xs:complexType>
 
-        <xs:complexType name="EventGameList">
-            <xs:sequence>
-                <xs:element name="user" type="tns:User"/>
-                <xs:element name="gameList" maxOccurs="unbounded" minOccurs="0" type="tns:Game">
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
+<!--        <xs:complexType name="EventGameList">-->
+<!--            <xs:sequence>-->
+<!--                <xs:element name="username" type="xs:string"/>-->
+<!--                <xs:element name="gameList" maxOccurs="unbounded" minOccurs="0" type="tns:Game">-->
+<!--                </xs:element>-->
+<!--            </xs:sequence>-->
+<!--        </xs:complexType>-->
 
     <xs:complexType name="Category">
         <xs:sequence>

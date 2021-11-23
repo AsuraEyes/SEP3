@@ -41,6 +41,7 @@ namespace REST
             services.AddSingleton<ICategoryWebService, CategoryWebService>();
             services.AddSingleton<IParticipantWebService, ParticipantWebService>();
             services.AddSingleton<IOrganizerWebService, OrganizerWebService>();
+            services.AddSingleton<IEventGameListWebService, EventGameListWebService>();
 
         }
 

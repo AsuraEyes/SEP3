@@ -1,5 +1,7 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.EventGameList.EventGameListDAO;
+import com.example.producingwebservice.EventGameList.EventGameLists;
 import com.example.producingwebservice.categories.Categories;
 import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
@@ -52,6 +54,12 @@ public class DAOConfig {
     @Scope("singleton")
     public Organizers OrganizerDAO() {
         return new OrganizerDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public EventGameLists EventGameListDAO() {
+        return new EventGameListDAO();
     }
 
     @Bean(name = "jdbcUrl")

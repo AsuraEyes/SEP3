@@ -48,8 +48,7 @@ public class EventDAO implements Events {
 
     private static Event createEvent(int id, String name, Date startTimeStamp, Date endTimeStamp,String addressStreetName,
                                      String addressStreetNumber, String addressApartmentNumber, int maxNumberOfParticipants,
-                                     int numberOfParticipants, int eventCategory, String organizer, UserList participants,
-                                     UserList organizers, EventGameList gameList)
+                                     int numberOfParticipants, int eventCategory, String organizer)
 
 
     {
@@ -189,15 +188,14 @@ public class EventDAO implements Events {
              int numberOfParticipants = rs.getInt("number_of_participants");
              int eventCategory = rs.getInt("event_category_id");
              String organizer =  rs.getString("organizer");
-             //User organizer;
-             UserList participants;
-             UserList organizers;
-             EventGameList gameList;
+//             User organizer;
+////             UserList participants;
+////             UserList organizers;
+
 
             return createEvent(id, name, startTime,endTime,addressStreetName,
                addressStreetNumber, addressApartmentNumber,maxNumberOfParticipants,
-          numberOfParticipants,eventCategory, organizer,null,
-               null, null);
+          numberOfParticipants,eventCategory, organizer);
         }
     }
 }

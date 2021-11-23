@@ -6,6 +6,7 @@
 @inject IOrganizerService organizerService;
 @inject IEventService eventService;
 @inject ICategoryService categoryService;
+@inject IEventGameListService eventGameListService;
 
 <h3>Event @selectedEvent.Name Info </h3>
 
@@ -35,6 +36,14 @@
     </ul>
 }
 
+<h3>Games</h3>
+@foreach (Game game in allEventGameList)
+{
+    <ul>
+        <li>@game.Name</li>
+    </ul>
+}
+
 <p class="actions">
     <button class="btn btn-outline-success" type="submit">Join</button>
 </p>
@@ -46,12 +55,12 @@
     private IList<string> organizers = new List<string>();
     private IList<Category> categories = new List<Category>();
     private Category category = new Category();
+    private IList<Game> allEventGameList = new List<Game>();
 
     protected override async Task OnInitializedAsync()
     {
-      
         categories = await categoryService.GetCategoriesAsync();
-   
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
         selectedEvent = await eventService.GetEventAsync(Id);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);

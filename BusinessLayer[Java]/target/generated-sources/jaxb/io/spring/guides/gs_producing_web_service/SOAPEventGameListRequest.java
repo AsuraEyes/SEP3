@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="eventId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="Operation" type="{http://spring.io/guides/gs-producing-web-service}Operation"/&gt;
- *         &lt;element name="User" type="{http://spring.io/guides/gs-producing-web-service}User"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,19 +40,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "username",
-    "operation",
-    "user"
+    "eventId",
+    "operation"
 })
-@XmlRootElement(name = "SOAPUserRequest")
-public class SOAPUserRequest {
+@XmlRootElement(name = "SOAPEventGameListRequest")
+public class SOAPEventGameListRequest {
 
     @XmlElement(required = true)
     protected String username;
+    protected int eventId;
     @XmlElement(name = "Operation", required = true)
     @XmlSchemaType(name = "string")
     protected Operation operation;
-    @XmlElement(name = "User", required = true)
-    protected User user;
 
     /**
      * Gets the value of the username property.
@@ -79,6 +78,22 @@ public class SOAPUserRequest {
     }
 
     /**
+     * Gets the value of the eventId property.
+     * 
+     */
+    public int getEventId() {
+        return eventId;
+    }
+
+    /**
+     * Sets the value of the eventId property.
+     * 
+     */
+    public void setEventId(int value) {
+        this.eventId = value;
+    }
+
+    /**
      * Gets the value of the operation property.
      * 
      * @return
@@ -100,30 +115,6 @@ public class SOAPUserRequest {
      */
     public void setOperation(Operation value) {
         this.operation = value;
-    }
-
-    /**
-     * Gets the value of the user property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets the value of the user property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
-     */
-    public void setUser(User value) {
-        this.user = value;
     }
 
 }

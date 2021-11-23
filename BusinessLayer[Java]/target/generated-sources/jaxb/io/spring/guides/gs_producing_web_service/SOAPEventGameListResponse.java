@@ -25,8 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="notification" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="game" type="{http://spring.io/guides/gs-producing-web-service}Game"/&gt;
  *         &lt;element name="gameList" type="{http://spring.io/guides/gs-producing-web-service}GameList"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -38,67 +36,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "notification",
-    "game",
     "gameList"
 })
-@XmlRootElement(name = "SOAPGameResponse")
-public class SOAPGameResponse {
+@XmlRootElement(name = "SOAPEventGameListResponse")
+public class SOAPEventGameListResponse {
 
-    @XmlElement(required = true)
-    protected String notification;
-    @XmlElement(required = true)
-    protected Game game;
     @XmlElement(required = true)
     protected GameList gameList;
-
-    /**
-     * Gets the value of the notification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNotification() {
-        return notification;
-    }
-
-    /**
-     * Sets the value of the notification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotification(String value) {
-        this.notification = value;
-    }
-
-    /**
-     * Gets the value of the game property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Game }
-     *     
-     */
-    public Game getGame() {
-        return game;
-    }
-
-    /**
-     * Sets the value of the game property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Game }
-     *     
-     */
-    public void setGame(Game value) {
-        this.game = value;
-    }
 
     /**
      * Gets the value of the gameList property.
