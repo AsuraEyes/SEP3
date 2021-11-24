@@ -111,12 +111,12 @@
                 if (currentPage == i)
                 {
                     <li class="page-item active">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                        <a class="page-link">@i</a>
                     </li>
                 }
                 else
                 {
-                    <li class="page-item"><a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a></li>
+                    <li class="page-item"><a class="page-link" @onclick="@click">@i</a></li>
                 }
             }
             if (currentPage < numberOfPages)
@@ -296,6 +296,12 @@
     {
         var previous = currentPage - 1;
         NavigationManager.NavigateTo($"AllEvents/{previous}");
+        await OnInitializedAsync();
+    }
+    
+    private async Task click()
+    {
+        NavigationManager.NavigateTo($"AllEvents/{currentPage}");
         await OnInitializedAsync();
     }
 }
