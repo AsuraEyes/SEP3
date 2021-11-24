@@ -37,7 +37,7 @@ namespace REST.Controllers
         }
         
         [HttpPost]
-        [Route("/{id}")]
+        [Route("/Organizers/{id}")]
         public async Task JoinEventResult(int id, [FromBody] string username)
         {
             if (!ModelState.IsValid)
@@ -58,7 +58,7 @@ namespace REST.Controllers
         }
 
         [HttpPatch]
-        [Route("/{id}")]
+        [Route("/Organizers/{id}")]
         public async Task WithdrawEventAsync(int id, [FromBody] string username)
         {
             try

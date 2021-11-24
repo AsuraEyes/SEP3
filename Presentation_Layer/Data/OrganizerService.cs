@@ -31,14 +31,14 @@ namespace Presentation_Layer.Data
         {
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync(uri + $"/{id}", content);
+            await Client.PostAsync(uri + $"/Organizers/{id}", content);
         }
         
         public async Task WithdrawEvent(int id, string username)
         {
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await Client.PatchAsync(uri + $"/{id}", content);
+            await Client.PatchAsync(uri + $"/Organizers/{id}", content);
         }
     }
 }

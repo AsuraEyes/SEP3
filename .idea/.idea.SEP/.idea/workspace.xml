@@ -20,29 +20,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Added joining/withdrawing from event">
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8fd030e8-6f39-48e4-8619-364e7bd47fab/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IOrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/OrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/OrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/organizers/OrganizerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/organizers/OrganizerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/organizers/Organizers.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/organizers/Organizers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/participants/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/participants/ParticipantDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/OrganizerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/OrganizerEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/organizers/OrganizerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/organizers/OrganizerDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/organizers/Organizers.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/organizers/Organizers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/participants/ParticipantDAO$ParticipantMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/participants/ParticipantDAO$ParticipantMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/participants/ParticipantDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/participants/ParticipantDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IOrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/OrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/OrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +73,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Presentation_Layer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BusinessLayer: WebApplication">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -361,6 +340,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
+      <workItem from="1637742394056" duration="898000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -544,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637683584282</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="changes">
+      <created>1637742632879</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1637742632879</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="BusinessLayer - Presentation_Layer is fucking working dude" />
     <MESSAGE value="Hello World! works" />
     <MESSAGE value="works part2" />
     <MESSAGE value="works3" />
@@ -593,6 +579,7 @@
     <MESSAGE value="added event gameList view java to blazor" />
     <MESSAGE value="r" />
     <MESSAGE value="Added joining/withdrawing from event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added joining/withdrawing from event" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>
