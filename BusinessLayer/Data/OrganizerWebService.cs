@@ -32,5 +32,14 @@ namespace BusinessLayer.Data
             return response.SOAPOrganizerResponse.organizerList;
         }
         
+        public async Task CoOrganizeEvent(int id, string username)
+        {
+            response = await GetOrganizerResponse(Operation.POST, id, username);
+        }
+        
+        public async Task WithdrawEventAsync(int id, string username)
+        {
+            response = await GetOrganizerResponse(Operation.PATCH, id, username);
+        }
     }
 }

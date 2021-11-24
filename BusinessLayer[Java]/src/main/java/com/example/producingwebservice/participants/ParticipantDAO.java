@@ -28,10 +28,7 @@ public class ParticipantDAO implements Participants
   }
 
   private static String createParticipant(String username) {
-    String user = "";
-    user = username;
-
-    return user;
+    return username;
   }
 
   private DatabaseHelper<String> helper() {
@@ -52,12 +49,10 @@ public class ParticipantDAO implements Participants
   }
 
   public void join (int eventId, String username){
-    System.out.println(username);
     helper().executeUpdate("INSERT INTO participants(event_id, user_username) VALUES (?, ?)", eventId, username);
   }
 
   public void withdraw (int eventId, String username){
-    System.out.println(username);
     helper().executeUpdate("DELETE FROM participants WHERE event_id = ? AND user_username = ?", eventId, username);
   }
 

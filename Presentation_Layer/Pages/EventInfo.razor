@@ -1,6 +1,6 @@
 @page "/EventInfo/{Id:int}"
-@using Presentation_Layer.Models
 @using Presentation_Layer.Data
+@using Presentation_Layer.Models
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
 
@@ -18,81 +18,116 @@
 }
 else
 {
-<h3>@selectedEvent.Name</h3>
+    <h3>@selectedEvent.Name</h3>
 
-<p>Time: @selectedEvent.StartTime - @selectedEvent.EndTime</p>
-@if (selectedEvent.AddressApartmentNumber != null)
-                {
-                    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
-                }
-                else
-                {
-                    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
-                }<p>Category: @category.Name </p>
-
-<h3>Organizers</h3>
-@foreach (var organizer in organizers)
-{
-    <ul>
-        @if (organizer.Equals(selectedEvent.Organizer))
-        {
-            <li><b>@organizer</b></li>
-        }
-        else
-        {
-            <li>@organizer</li>
-        }
-    </ul>
-}
-<h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
-@foreach (var participant in participants)
-{
-    <ul>
-        <li>@participant</li>
-    </ul>
-}
-    if (!selectedEvent.Organizer.Equals(username)&& participants.Count!= selectedEvent.MaxNumberOfParticipants)
+    if (selectedEvent.EndTime.Subtract(selectedEvent.StartTime).TotalMinutes < 0)
     {
-        if (participants.Contains(username) && participants.Count!= selectedEvent.MaxNumberOfParticipants)
+        <p>Time: @selectedEvent.StartTime.ToString("f")</p>
+    }
+    else
+    {
+        <p>Time: @selectedEvent.StartTime.ToString("f") - @selectedEvent.EndTime.ToString("t")</p>
+    }
+    
+    if (selectedEvent.AddressApartmentNumber != null)
+    {
+    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+        
+    }
+    else
+    {
+    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
+    }
+    <p>Category: @category.Name </p>
+
+    <h3>Organizers</h3>
+    foreach (var organizer in organizers)
+    {
+        <ul>
+            @if (organizer.Equals(selectedEvent.Organizer))
+            {
+                <li>
+                    <b>@organizer</b>
+                </li>
+            }
+            else
+            {
+                <li>@organizer</li>
+            }
+        </ul>
+    }
+    <AuthorizeView Policy="Organizer">
+        @if (participants.Contains(username))
         {
-            <p class="actions">
-                <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEvent">Withdraw</button>
-            </p>
+            if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
+            {
+                <p class="actions">
+                    <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsCoOrganizer">Withdraw</button>
+                </p>
+            }
+            else if (!username.Equals(selectedEvent.Organizer))
+            {
+                <p class="actions">
+                    <button class="btn btn-outline-success" type="submit" @onclick="@CoOrganizeEvent">Co-Organize</button>
+                </p>
+            }
         }
-        else if (participants.Count == selectedEvent.MaxNumberOfParticipants)
-        {
-            <p class="actions">
-                <button class="btn btn-outline-secondary" type="submit" @onclick="@JoinEvent" disabled>Join</button>
-            </p>
-        }
-        else
-        {
-            <p class="actions">
-                <button class="btn btn-outline-success" type="submit" @onclick="@JoinEvent">Join</button>
-            </p>
-        }
+    </AuthorizeView>
+    <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
+    foreach (var participant in participants)
+    {
+        <ul>
+            <li>@participant</li>
+        </ul>
+    }
+    if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
+    {
+        <p class="actions">
+            <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEvent">Withdraw</button>
+        </p>
+    }
+    else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
+    {
+        <p class="actions">
+            <button class="btn btn-secondary btn-lg" type="submit" disabled>Join</button>
+        </p>
+    }
+    else if (!username.Equals(selectedEvent.Organizer))
+    {
+        <p class="actions">
+            <button class="btn btn-outline-success" type="submit" @onclick="@JoinEvent">Join</button>
+        </p>
     }
 
     <h3>Games</h3>
-@foreach (Game game in allEventGameList)
-{
-    <ul>
-        <li>@game.Name</li>
-    </ul>
-}
+    foreach (var game in allEventGameList)
+    {
+        <ul>
+            <li>@game.Name</li>
+        </ul>
+    }
     
+    if (username.Equals(selectedEvent.Organizer))
+    {
+        <p class="actions">
+            <button class="btn btn-outline-danger" type="submit" @onclick="@CancelEvent">Cancel</button>
+        </p>
+    }
 }
 
 @code {
-    [Parameter] public int Id { get; set; }
-    private Event selectedEvent = new Event();
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private Event selectedEvent = new();
     private IList<string> participants = new List<string>();
     private IList<string> organizers = new List<string>();
     private IList<Category> categories = new List<Category>();
-    private Category category = new Category();
+    private Category category = new();
     private IList<Game> allEventGameList = new List<Game>();
     string username;
-    
+
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
@@ -101,9 +136,9 @@ else
         selectedEvent = await eventService.GetEventAsync(Id);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);
-        category =  categories.FirstOrDefault(a => a.Id == selectedEvent.EventCategory);
+        category = categories.FirstOrDefault(a => a.Id == selectedEvent.EventCategory);
     }
-    
+
     private async Task JoinEvent()
     {
         await participantService.JoinEvent(Id, username);
@@ -115,4 +150,23 @@ else
         await participantService.WithdrawEvent(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
     }
+
+    private async Task CoOrganizeEvent()
+    {
+        await organizerService.CoOrganizeEvent(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+    }
+
+    private async Task WithdrawEventAsCoOrganizer()
+    {
+        await organizerService.WithdrawEvent(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+    }
+    
+    private async Task CancelEvent()
+    {
+        //await eventService.CancelEvent(selectedEvent);
+        NavigationManager.NavigateTo("MyEvents");
+    }
+
 }
