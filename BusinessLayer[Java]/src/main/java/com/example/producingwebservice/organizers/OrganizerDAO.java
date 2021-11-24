@@ -31,10 +31,7 @@ public class OrganizerDAO implements Organizers
   }
 
   private static String createOrganizer(String username) {
-    String user = "";
-    user = username;
-
-    return user;
+    return username;
   }
 
   private DatabaseHelper<String> helper() {
@@ -52,6 +49,14 @@ public class OrganizerDAO implements Organizers
 
       return createOrganizer(username);
     }
+  }
+
+  public void organize (int eventId, String username){
+    helper().executeUpdate("INSERT INTO organizers(event_id, user_username) VALUES (?, ?)", eventId, username);
+  }
+
+  public void withdraw (int eventId, String username){
+    helper().executeUpdate("DELETE FROM organizers WHERE event_id = ? AND user_username = ?", eventId, username);
   }
 
   public ArrayList<String> getOrganizerList(int eventId){
