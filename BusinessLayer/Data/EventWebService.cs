@@ -58,7 +58,10 @@ namespace BusinessLayer.Data
         //     Response = await getEventResponse(category, Operation.GETALL, null, filter, currentPage, resultsPerPage);
         //     return Response.SOAPEventResponse.numberOfPages;
         // }
-
-
+        
+        public async Task CancelEventAsync(int id)
+        {
+            Response = await getEventResponse(0, Operation.DELETE, null, "", 0, 0);
+        }
     }
 }

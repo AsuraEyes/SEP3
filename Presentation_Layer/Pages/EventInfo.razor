@@ -149,6 +149,7 @@ else
     {
         await participantService.WithdrawEvent(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
     }
 
     private async Task CoOrganizeEvent()

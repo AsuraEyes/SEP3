@@ -45,7 +45,7 @@ public class EventsEndpoint
           //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
         break;
       case DELETE:
-       // eventsDAO.delete(request.getId());
+       eventsDAO.cancel(request.getId());
     }
     return response;
   }
