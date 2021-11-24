@@ -104,7 +104,9 @@
             }
             else
             {
-                <li class="page-item"><a class="page-link" @onclick="@previous">Previous</a></li>
+                <li class="page-item">
+                    <a class="page-link" @onclick="@previous">Previous</a>
+                </li>
             }
             for (var i = 1; i <= numberOfPages; i++)
             {
@@ -116,12 +118,16 @@
                 }
                 else
                 {
-                    <li class="page-item"><a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
+                    </li>
                 }
             }
             if (currentPage < numberOfPages)
             {
-                <li class="page-item"><a class="page-link" @onclick="@next">Next</a></li>
+                <li class="page-item">
+                    <a class="page-link" @onclick="@next">Next</a>
+                </li>
             }
             else
             {
