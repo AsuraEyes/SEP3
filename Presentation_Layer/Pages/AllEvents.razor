@@ -84,7 +84,7 @@
                 }
             </div>
             <div class="card-footer text-center">
-                <button class="btn btn-info" @onclick="@(() => NavigateToEvent(item.Id))">
+                <button class="btn btn-primary" @onclick="@(() => NavigateToEvent(item.Id))">
                     More
                 </button>
             </div>
@@ -121,7 +121,7 @@
             }
             if (currentPage < numberOfPages)
             {
-                <li class="page-item"><a class="page-link"  @onclick="@next">Next</a></li>
+                <li class="page-item"><a class="page-link" @onclick="@next">Next</a></li>
             }
             else
             {
