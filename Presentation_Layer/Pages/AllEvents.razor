@@ -68,11 +68,11 @@
                 <h5 class="card-title">@item.Name</h5>
                 @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
                 {
-                    <p class="card-text">Time: @item.StartTime.ToString("g")</p>
+                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
                 }
                 else
                 {
-                    <p class="card-text">Time: @item.StartTime.ToString("g") - @item.EndTime.ToString("t")</p>
+                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
                 }
                 @if (item.AddressApartmentNumber != null)
                 {
