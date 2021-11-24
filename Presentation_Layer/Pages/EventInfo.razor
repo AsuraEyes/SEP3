@@ -40,64 +40,70 @@ else
     }
     <p>Category: @category.Name </p><br/>
 
-    <h3>Organizers</h3>
-    foreach (var organizer in organizers)
-    {
-        <ul>
-            @if (organizer.Equals(selectedEvent.Organizer))
-            {
-                <li>
-                    <b>@organizer</b>
-                </li>
-            }
-            else
-            {
-                <li>@organizer</li>
-            }
-        </ul>
-    }
-    <AuthorizeView Policy="Organizer">
-        @if (participants.Contains(username))
+    <br/>
+    <div class="col-sm-6">
+        <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
+        @foreach (var participant in participants)
         {
-            if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
-            {
-                <p class="actions">
-                    <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsCoOrganizer">Withdraw</button>
-                </p>
-            }
-            else if (!username.Equals(selectedEvent.Organizer))
-            {
-                <p class="actions">
-                    <button class="btn btn-outline-success" type="submit" @onclick="@CoOrganizeEvent">Co-Organize</button>
-                </p>
-            }
+            <ul>
+                <li>@participant</li>
+            </ul>
         }
-    </AuthorizeView>
-    <br/><h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
-    foreach (var participant in participants)
-    {
-        <ul>
-            <li>@participant</li>
-        </ul>
-    }
-    if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
-    {
-        <p class="actions">
-            <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEvent">Withdraw</button>
-        </p>
-    }
-    else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
-    {
-        <p class="actions">
-            <button class="btn btn-secondary btn-lg" type="submit" disabled>Join</button>
-        </p>
-    }
-    else if (!username.Equals(selectedEvent.Organizer))
-    {
-        <p class="actions">
-            <button class="btn btn-outline-success" type="submit" @onclick="@JoinEvent">Join</button>
-        </p>
-    }
+        @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
+        {
+            <p class="actions">
+                <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEvent">Withdraw</button>
+            </p>
+        }
+        else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
+        {
+            <p class="actions">
+                <button class="btn btn-secondary btn-lg" type="submit" disabled>Join</button>
+            </p>
+        }
+        else if (!username.Equals(selectedEvent.Organizer))
+        {
+            <p class="actions">
+                <button class="btn btn-outline-success" type="submit" @onclick="@JoinEvent">Join</button>
+            </p>
+        }
+        </div>
+    
+    <div class="col-sm-6">
+        <h3>Organizers</h3>
+        @foreach (var organizer in organizers)
+        {
+            <ul>
+                @if (organizer.Equals(selectedEvent.Organizer))
+                {
+                    <li>
+                        <b>@organizer</b>
+                    </li>
+                }
+                else
+                {
+                    <li>@organizer</li>
+                }
+            </ul>
+        }
+        <AuthorizeView Policy="Organizer">
+            @if (participants.Contains(username))
+            {
+                if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
+                {
+                    <p class="actions">
+                        <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsCoOrganizer">Withdraw</button>
+                    </p>
+                }
+                else if (!username.Equals(selectedEvent.Organizer))
+                {
+                    <p class="actions">
+                        <button class="btn btn-outline-success" type="submit" @onclick="@CoOrganizeEvent">Co-Organize</button>
+                    </p>
+                }
+            }
+        </AuthorizeView>
+    </div>
 
     <br/><h3>Games</h3>
     foreach (var game in allEventGameList)
@@ -109,7 +115,7 @@ else
     
     if (username.Equals(selectedEvent.Organizer))
     {
-        <p class="actions">
+        <br/><p class="actions">
             <button class="btn btn-outline-danger" type="submit" @onclick="@CancelEvent">Cancel</button>
         </p>
     }
