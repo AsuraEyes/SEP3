@@ -12,7 +12,7 @@
 @* @context.User.Identity.Name *@
 <AuthorizeView Policy="Organizer">
     <p class="actions">
-        <button @onclick="@CreateEventAsync" class="btn btn-primary" type="submit"><i class="oi oi-plus"></i> Create</button>
+        <button @onclick="@CreateEventAsync" class="btn btn-outline-secondary" type="submit"><i class="oi oi-plus"></i> Create</button>
     </p>
 </AuthorizeView>
 
@@ -60,49 +60,78 @@
 </p>
 
 
-<div class="row">
+<div class="card-deck">
     @foreach (var item in eventList)
     {
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
-                    {
-                        <p class="card-text">Time: @item.StartTime.ToString("g")</p>
-                    }
-                    else
-                    {
-                        <p class="card-text">Time: @item.StartTime.ToString("g") - @item.EndTime.ToString("t")</p>
-                    }
-                    @if (item.AddressApartmentNumber != null)
-                    {
-                        <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
-                    }
-                    else
-                    {
-                        <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
-                    }
-                </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-info" @onclick="@(() => NavigateToEvent(item.Id))">
-                        More
-                    </button>
-                </div>
-                </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                {
+                    <p class="card-text">Time: @item.StartTime.ToString("g")</p>
+                }
+                else
+                {
+                    <p class="card-text">Time: @item.StartTime.ToString("g") - @item.EndTime.ToString("t")</p>
+                }
+                @if (item.AddressApartmentNumber != null)
+                {
+                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                }
+                else
+                {
+                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                }
             </div>
-            }
+            <div class="card-footer text-center">
+                <button class="btn btn-info" @onclick="@(() => NavigateToEvent(item.Id))">
+                    More
+                </button>
+            </div>
         </div>
-
-<div>
-    @if (numberOfPages > 1)
-    {
-        for (var i = 1; i <= numberOfPages; i++)
-        {
-            <span><a href="AllEvents/@i" @onclick="@Filter"> -@i- </a>|</span>
-        }
     }
-</div>
+</div><br/>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        @if (numberOfPages > 1)
+        {
+            if (currentPage == 1)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link" @onclick="@previous">Previous</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item"><a class="page-link" @onclick="@previous">Previous</a></li>
+            }
+            for (var i = 1; i <= numberOfPages; i++)
+            {
+                if (currentPage == i)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item"><a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a></li>
+                }
+            }
+            if (currentPage < numberOfPages)
+            {
+                <li class="page-item"><a class="page-link"  @onclick="@next">Next</a></li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <a class="page-link" @onclick="@previous">Next</a>
+                </li>
+            }
+        }
+    </ul>
+</nav>
 
 
 @* <table class="table"> *@
@@ -143,8 +172,10 @@
 
     private bool byAvailability;
     private bool byDate;
+    
     private int numberOfPages;
     private int categoryId;
+    
     private IList<Category> categories = new List<Category>();
     private EventList events = new();
     private Event[] eventList = {};
@@ -253,5 +284,18 @@
     {
         NavigationManager.NavigateTo("CreateEvent");
     }
-
+    
+    private async Task next()
+    {
+        var next = currentPage + 1;
+        NavigationManager.NavigateTo($"AllEvents/{next}");
+        await OnInitializedAsync();
+    }
+    
+    private async Task previous()
+    {
+        var previous = currentPage - 1;
+        NavigationManager.NavigateTo($"AllEvents/{previous}");
+        await OnInitializedAsync();
+    }
 }
