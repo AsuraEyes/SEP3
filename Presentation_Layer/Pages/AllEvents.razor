@@ -1,11 +1,7 @@
 @page "/AllEvents"
 @page "/AllEvents/{currentPage:int}"
-
-
-@using Presentation_Layer.Models
 @using Presentation_Layer.Data
-@using System.Reflection
-@using Microsoft.VisualBasic
+@using Presentation_Layer.Models
 
 @inject NavigationManager NavigationManager
 @inject IEventService RestEvent
@@ -14,9 +10,11 @@
 <h2>AllEvents</h2>
 
 @* @context.User.Identity.Name *@
-<p class="actions">
-    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit"><i class="oi oi-plus"></i> Create</button>
-</p>
+<AuthorizeView Policy="Organizer">
+    <p class="actions">
+        <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit"><i class="oi oi-plus"></i> Create</button>
+    </p>
+</AuthorizeView>
 
 
 @* <p> *@
@@ -46,9 +44,9 @@
         <option value="true">All Upcomming</option>
     </Select>
     Category:
-    <Select class="selectpicker" @oninput="@(FilterByCategory)" >
+    <Select class="selectpicker" @oninput="@(FilterByCategory)">
         <option value="0">-- All --</option>
-        @foreach (Category category in categories)
+        @foreach (var category in categories)
         {
             <option value=@category.Id>@category.Name</option>
         }
@@ -68,18 +66,25 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@item.Name</h5>
-                <p class="card-text">@item.StartTime</p>
-                @if (item.AddressApartmentNumber != null)
+                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
                 {
-                    <p>@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                    <p class="card-text">Time: @item.StartTime.ToString("g")</p>
                 }
                 else
                 {
-                    <p>@item.AddressStreetName @item.AddressStreetNumber</p>
+                    <p class="card-text">Time: @item.StartTime.ToString("g") - @item.EndTime.ToString("t")</p>
+                }
+                @if (item.AddressApartmentNumber != null)
+                {
+                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                }
+                else
+                {
+                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
                 }
             </div>
             <div class="card-footer text-center">
-                <button class="btn btn-primary col-sm-6" @onclick="@(() => NavigateToEvent(item.Id))">
+                <button class="btn btn-info col-sm-6" @onclick="@(() => NavigateToEvent(item.Id))">
                     More
                 </button>
             </div>
@@ -90,14 +95,12 @@
 <div>
     @if (numberOfPages > 1)
     {
-       for (int i = 1; i <= numberOfPages; i++)
-       {
-           <span><a href="AllEvents/@i" @onclick="@Filter" >  -@i- </a>|</span>
-       } 
+        for (var i = 1; i <= numberOfPages; i++)
+        {
+            <span><a href="AllEvents/@i" @onclick="@Filter"> -@i- </a>|</span>
+        }
     }
 </div>
-
-
 
 
 @* <table class="table"> *@
@@ -135,26 +138,25 @@
 
     [Parameter]
     public int currentPage { get; set; }
-    
-    private bool byAvailability = false;
-    private bool byDate = false;
+
+    private bool byAvailability;
+    private bool byDate;
     private int numberOfPages;
-    private int categoryId = 0;
+    private int categoryId;
     private IList<Category> categories = new List<Category>();
-    private EventList events = new EventList();
-    private Event[] eventList = new Event[]{};
-    
-    
-    
+    private EventList events = new();
+    private Event[] eventList = {};
+
+
     private string Search;
     private string filter = "all";
-    private IList<int> categoryOptions = new List<int>() {0, 1, 2, 3};
-    private IList<string> filteringOptions = new List<string>() {"byDate", "noDate", "byAvailability", "noAvailability", "byCategory", "noCategory"};
+    private IList<int> categoryOptions = new List<int> {0, 1, 2, 3};
+    private IList<string> filteringOptions = new List<string> {"byDate", "noDate", "byAvailability", "noAvailability", "byCategory", "noCategory"};
 
 
     protected override async Task OnInitializedAsync()
     {
-       if(currentPage<1) currentPage = 1;
+        if (currentPage < 1) currentPage = 1;
         categories = await CategoryService.GetCategoriesAsync();
         await Filter();
 
@@ -178,7 +180,6 @@
         }
         else byDate = false;
         await Filter();
-       
     }
 
     private async Task FilterByAvailability(ChangeEventArgs args)
@@ -248,7 +249,7 @@
 
     private async Task CreateEventAsync()
     {
-        NavigationManager.NavigateTo($"CreateEvent");
+        NavigationManager.NavigateTo("CreateEvent");
     }
 
 }

@@ -784,7 +784,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <IntrospectionStateNumber>857</IntrospectionStateNumber>
+      <IntrospectionStateNumber>882</IntrospectionStateNumber>
       <StartupTime>1636646975</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
@@ -801,7 +801,7 @@ false Zulu
 13654||-9223372036854775808|U|G
 13654||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>858</IntrospectionStateNumber>
+      <IntrospectionStateNumber>883</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|24601|24602|1
 sequence|table|24608|24609|1
@@ -811,43 +811,34 @@ sequence|table|24640|24641|1
 sequence|table|24687|24688|1
 </Relations>
     </database>
-    <role id="3" parent="1" name="pg_database_owner">
-      <ObjectId>6171</ObjectId>
-    </role>
-    <role id="4" parent="1" name="pg_execute_server_program">
+    <role id="3" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
     </role>
-    <role id="5" parent="1" name="pg_monitor">
+    <role id="4" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
       <RoleGrants>3374
 3375
 3377</RoleGrants>
     </role>
-    <role id="6" parent="1" name="pg_read_all_data">
-      <ObjectId>6181</ObjectId>
-    </role>
-    <role id="7" parent="1" name="pg_read_all_settings">
+    <role id="5" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="8" parent="1" name="pg_read_all_stats">
+    <role id="6" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="9" parent="1" name="pg_read_server_files">
+    <role id="7" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_signal_backend">
+    <role id="8" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="11" parent="1" name="pg_stat_scan_tables">
+    <role id="9" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
     </role>
-    <role id="12" parent="1" name="pg_write_all_data">
-      <ObjectId>6182</ObjectId>
-    </role>
-    <role id="13" parent="1" name="pg_write_server_files">
+    <role id="10" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
     </role>
-    <role id="14" parent="1" name="postgres">
+    <role id="11" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <CreateDb>1</CreateDb>
       <CreateRole>1</CreateRole>
@@ -855,6 +846,15 @@ sequence|table|24687|24688|1
       <SuperRole>1</SuperRole>
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
+    </role>
+    <role id="12" parent="1" name="pg_database_owner">
+      <ObjectId>6171</ObjectId>
+    </role>
+    <role id="13" parent="1" name="pg_read_all_data">
+      <ObjectId>6181</ObjectId>
+    </role>
+    <role id="14" parent="1" name="pg_write_all_data">
+      <ObjectId>6182</ObjectId>
     </role>
     <tablespace id="15" parent="1" name="pg_default">
       <ObjectId>1663</ObjectId>
@@ -870,7 +870,7 @@ sequence|table|24687|24688|1
       <ObjectId>24576</ObjectId>
       <StateNumber>766</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>858</IntrospectionStateNumber>
+      <IntrospectionStateNumber>883</IntrospectionStateNumber>
     </schema>
     <schema id="18" parent="2" name="information_schema">
       <ObjectId>13654</ObjectId>

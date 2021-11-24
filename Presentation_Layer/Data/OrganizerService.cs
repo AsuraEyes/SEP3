@@ -27,16 +27,18 @@ namespace Presentation_Layer.Data
             return organizersList;
         }
         
-        public async Task JoinEvent(int id, string username)
+        public async Task CoOrganizeEvent(int id, string username)
         {
-            var participantAsJson = JsonSerializer.Serialize(username);
-            HttpContent content = new StringContent(participantAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync(uri + $"/Organizer/{id}", content);
+            var organizerAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
+            await Client.PostAsync(uri + $"/{id}", content);
         }
         
         public async Task WithdrawEvent(int id, string username)
         {
-            await Client.DeleteAsync($"{uri}/Organizer/{id}/{username}");
+            var organizerAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
+            await Client.PatchAsync(uri + $"/{id}", content);
         }
     }
 }
