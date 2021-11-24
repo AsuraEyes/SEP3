@@ -38,7 +38,7 @@ else
     {
     <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
     }
-    <p>Category: @category.Name </p>
+    <p>Category: @category.Name </p><br/>
 
     <h3>Organizers</h3>
     foreach (var organizer in organizers)
@@ -73,7 +73,7 @@ else
             }
         }
     </AuthorizeView>
-    <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
+    <br/><h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
     foreach (var participant in participants)
     {
         <ul>
@@ -99,7 +99,7 @@ else
         </p>
     }
 
-    <h3>Games</h3>
+    <br/><h3>Games</h3>
     foreach (var game in allEventGameList)
     {
         <ul>
