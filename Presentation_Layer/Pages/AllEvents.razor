@@ -105,7 +105,7 @@
             else
             {
                 <li class="page-item">
-                    <a class="page-link" @onclick="@previous">Previous</a>
+                    <a class="page-link" @onclick="@previous" href="#">Previous</a>
                 </li>
             }
             for (var i = 1; i <= numberOfPages; i++)
@@ -126,7 +126,7 @@
             if (currentPage < numberOfPages)
             {
                 <li class="page-item">
-                    <a class="page-link" @onclick="@next">Next</a>
+                    <a class="page-link" @onclick="@next" href="#">Next</a>
                 </li>
             }
             else
