@@ -111,12 +111,12 @@
                 if (currentPage == i)
                 {
                     <li class="page-item active">
-                        <a class="page-link">@i</a>
+                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
                     </li>
                 }
                 else
                 {
-                    <li class="page-item"><a class="page-link" @onclick="@click">@i</a></li>
+                    <li class="page-item"><a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a></li>
                 }
             }
             if (currentPage < numberOfPages)
@@ -299,9 +299,4 @@
         await OnInitializedAsync();
     }
     
-    private async Task click()
-    {
-        NavigationManager.NavigateTo($"AllEvents/{currentPage}");
-        await OnInitializedAsync();
-    }
 }
