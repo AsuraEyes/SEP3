@@ -63,7 +63,7 @@
 <div class="row">
     @foreach (var item in eventList)
     {
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">@item.Name</h5>
@@ -85,7 +85,7 @@
                     }
                 </div>
                 <div class="card-footer text-center">
-                    <button class="btn btn-info col-sm-6" @onclick="@(() => NavigateToEvent(item.Id))">
+                    <button class="btn btn-info" @onclick="@(() => NavigateToEvent(item.Id))">
                         More
                     </button>
                 </div>
