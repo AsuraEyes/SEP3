@@ -31,7 +31,7 @@ public class EventsEndpoint
     SOAPEventResponse response = new SOAPEventResponse();
     switch (request.getOperation()){
       case GET:
-       // response.setEvent(eventsDAO.get(request.getId()));
+        response.setEvent(eventsDAO.get(request.getId()));
         break;
       case POST:
         eventsDAO.create(request.getEvent());

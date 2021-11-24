@@ -37,6 +37,9 @@ namespace Presentation_Layer
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IParticipantService, ParticipantService>();
+            services.AddScoped<IOrganizerService, OrganizerService>();
+            services.AddScoped<IEventGameListService, EventGameListService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>
@@ -44,7 +47,14 @@ namespace Presentation_Layer
                 options.AddPolicy("Organizer", a => a.RequireAuthenticatedUser().RequireClaim("Level", "3"));
                 options.AddPolicy("Player", a => a.RequireAuthenticatedUser().RequireClaim("Level", "2"));
                 options.AddPolicy("Administrator", a => a.RequireAuthenticatedUser().RequireClaim("Level", "1"));
-                
+                options.AddPolicy("PlayerOrOrganizer", a => 
+                    a.RequireAuthenticatedUser().RequireAssertion(context =>
+                    {
+                        Claim levelClaim = context.User.FindFirst(claim => claim.Type.Equals("Level"));
+                        if (levelClaim == null) return false;
+                        //2 (Player), 3 (Organizer)
+                        return int.Parse(levelClaim.Value) >= 2;
+                    }));
             });
         }
 

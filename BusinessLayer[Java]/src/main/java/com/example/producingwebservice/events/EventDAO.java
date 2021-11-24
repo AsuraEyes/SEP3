@@ -21,7 +21,7 @@ public class EventDAO implements Events {
     private DatabaseHelper<Integer> integerHelper;
     private final EventList eventList;
     private int eventListLength;
-    private GameDAO gameDAO;
+//    private GameDAO gameDAO;
 
     @Resource(name = "jdbcUrl")
     private String jdbcUrl;
@@ -48,8 +48,7 @@ public class EventDAO implements Events {
 
     private static Event createEvent(int id, String name, Date startTimeStamp, Date endTimeStamp,String addressStreetName,
                                      String addressStreetNumber, String addressApartmentNumber, int maxNumberOfParticipants,
-                                     int numberOfParticipants, int eventCategory, String organizer, UserList participants,
-                                     UserList organizers, EventGameList gameList)
+                                     int numberOfParticipants, int eventCategory, String organizer)
 
 
     {
@@ -100,6 +99,10 @@ public class EventDAO implements Events {
         return event;
     }
 
+  public Event get(int id) {
+    return eventHelper().mapSingle(new EventMapper(), "SELECT * FROM event WHERE id = ?", id);
+  }
+
     public EventList searchAndFilter(String filter, int category, int currentPage, int resultsPerPage){
         eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
@@ -141,9 +144,8 @@ public class EventDAO implements Events {
 
         //eventList.getEventList().addAll(helper().map(new EventMapper(), statement+appendToStatement));
         eventListLength = (integerHelper().mapSingle(new IntegerMapper(), statement+appendToStatement));
-        System.out.println(eventListLength);
 
-        //cut out the ; in the end, change count to select
+        //cut out the ";" in the end, change count to select
 
         statement = "SELECT * FROM event "+appendToStatement.substring(0, appendToStatement.length()-1);
 
@@ -186,15 +188,14 @@ public class EventDAO implements Events {
              int numberOfParticipants = rs.getInt("number_of_participants");
              int eventCategory = rs.getInt("event_category_id");
              String organizer =  rs.getString("organizer");
-             //User organizer;
-             UserList participants;
-             UserList organizers;
-             EventGameList gameList;
+//             User organizer;
+////             UserList participants;
+////             UserList organizers;
+
 
             return createEvent(id, name, startTime,endTime,addressStreetName,
                addressStreetNumber, addressApartmentNumber,maxNumberOfParticipants,
-          numberOfParticipants,eventCategory, null,null,
-               null, null);
+          numberOfParticipants,eventCategory, organizer);
         }
     }
 }

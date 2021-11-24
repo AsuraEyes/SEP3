@@ -66,6 +66,13 @@ public class GameDAO implements Games {
         return gameList;
     }
 
+    public GameList readAllEventGameList(int eventId) {
+        gameList.getGameList().clear();
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM event_game_list l, game g WHERE l.game_id = g.id AND event_id = ?", eventId));
+
+        return gameList;
+    }
+
     public GameList readAllUserGameList(String username) {
         gameList.getGameList().clear();
         gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));

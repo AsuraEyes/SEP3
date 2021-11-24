@@ -40,6 +40,17 @@ namespace Presentation_Layer.Data
             });
             return Events;
         }
+        
+        public async Task<Event> GetEventAsync(int id)
+        {
+            var stringAsync = Client.GetStringAsync(uri + $"/Event/{id}");
+            var eventString = await stringAsync;
+            var Event = JsonSerializer.Deserialize<Event>(eventString, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return Event;
+        }
 
         // public int GetNumberOfPages(IList<Event> allEvents)
         // {

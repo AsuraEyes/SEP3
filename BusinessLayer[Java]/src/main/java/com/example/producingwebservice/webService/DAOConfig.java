@@ -1,11 +1,17 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.EventGameList.EventGameListDAO;
+import com.example.producingwebservice.EventGameList.EventGameLists;
 import com.example.producingwebservice.categories.Categories;
 import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.GameDAO;
 import com.example.producingwebservice.games.Games;
+import com.example.producingwebservice.organizers.OrganizerDAO;
+import com.example.producingwebservice.organizers.Organizers;
+import com.example.producingwebservice.participants.ParticipantDAO;
+import com.example.producingwebservice.participants.Participants;
 import com.example.producingwebservice.users.UserDAO;
 import com.example.producingwebservice.users.Users;
 import org.springframework.context.annotation.Bean;
@@ -36,6 +42,24 @@ public class DAOConfig {
     @Scope("singleton")
     public Categories CategoryDAO() {
         return new CategoryDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public Participants ParticipantDAO() {
+        return new ParticipantDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public Organizers OrganizerDAO() {
+        return new OrganizerDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public EventGameLists EventGameListDAO() {
+        return new EventGameListDAO();
     }
 
     @Bean(name = "jdbcUrl")

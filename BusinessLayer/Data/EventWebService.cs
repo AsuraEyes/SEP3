@@ -47,6 +47,12 @@ namespace BusinessLayer.Data
             return Response.SOAPEventResponse.eventList;
         }
 
+        public async Task<Event> GetEventAsync(int id)
+        {
+            Response = await getEventResponse(id, Operation.GET, null, "", 0, 0);
+            return Response.SOAPEventResponse.Event;
+        }
+
         // public async Task<int> GetNumberOfPages(string filter, int category, int currentPage, int resultsPerPage)
         // {
         //     Response = await getEventResponse(category, Operation.GETALL, null, filter, currentPage, resultsPerPage);
