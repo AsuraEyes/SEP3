@@ -122,8 +122,6 @@ CREATE TABLE event_game_list(
     FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
 );
 
-SELECT  FROM event_game_list l, game g WHERE l.game_id = g.id AND event_id = 2;
-
 
 CREATE OR REPLACE FUNCTION put_event_organizer_to_participants_and_organizers()
     RETURNS TRIGGER

@@ -92,7 +92,8 @@
     {
        for (int i = 1; i <= numberOfPages; i++)
        {
-           <span><a href="AllEvents/@i" @onclick="@Filter" >  -@i- </a>|</span>
+          <span><a href="AllEvents/@i" @onclick="Filter" >  -@i- </a>|</span>
+           //<button @onclick="Filter">-@i-</button>
        } 
     }
 </div>
