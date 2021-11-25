@@ -91,26 +91,60 @@
     }
 </div>
 
-<ul class="pagination justify-content-center">
+<div>
     @if (numberOfPages > 1)
     {
         for (var i = 1; i <= numberOfPages; i++)
         {
-            if (currentPage == i)
+            <span><a href="AllEvents/@i" @onclick="@Filter"> -@i- </a>|</span>
+        }
+    }
+</div>
+
+<ul class="pagination justify-content-center">
+        @if (numberOfPages > 1)
+        {
+            if (currentPage == 1)
             {
-                <li class="page-item active">
-                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
                 </li>
             }
             else
             {
                 <li class="page-item">
-                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    <a class="page-link" @onclick="@Previous" href="#">Previous</a>
                 </li>
             }
+            for (var i = 1; i <= numberOfPages; i++)
+            {
+                if (currentPage == 1)
+                {
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" @onclick="@Previous" href="#">Previous</a>
+                    </li>
+                }
+                if (currentPage == i)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    </li>
+                }
+            }
         }
-    }
-</ul>
+    </ul>
 
 
 @* <table class="table"> *@
@@ -267,7 +301,7 @@
         NavigationManager.NavigateTo("CreateEvent");
     }
     
-    /*private async Task Next()
+    private async Task Next()
     {
         var next = currentPage + 1;
         NavigationManager.NavigateTo($"AllEvents/{next}");
@@ -279,6 +313,6 @@
         var previous = currentPage - 1;
         NavigationManager.NavigateTo($"AllEvents/{previous}");
         await OnInitializedAsync();
-    }*/
+    }
     
 }
