@@ -83,6 +83,5 @@ namespace Presentation_Layer.Data
         {
             await Client.DeleteAsync($"{uri}/Events/{Event.Id}");
         }
-        
     }
 }
