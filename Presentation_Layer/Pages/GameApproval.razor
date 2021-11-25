@@ -1,0 +1,83 @@
+@page "/GameApproval"
+@page "/GameApproval/{Id:int}"
+
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
+
+@inject NavigationManager NavigationManager
+@inject IGameService gameService
+
+<h3>Game Approval</h3>
+<EditForm Model="@game" OnValidSubmit="@Approve">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="form-group">
+        Name:<br/>
+        <InputText @bind-Value="game.Name"/>
+        <ValidationMessage For="@(() => game.Name)"/>
+    </div>
+    <div class="form-group">
+        Complexity: 
+        <InputNumber @bind-Value="game.Complexity" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.Complexity)"/>
+    </div>
+    <div class="form-group">
+        Estimated time: 
+        <InputNumber @bind-Value="game.TimeEstimation" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.TimeEstimation)"/>
+    </div>
+    <div class="form-group">
+        Player amount:<br/>
+        Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>-
+        Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
+    </div>
+    <div class="form-group">Short Description:<br/>
+        <InputTextArea @bind-Value="game.ShortDescription" style="width: 250px"/>
+    </div>
+    <div class="form-group">
+        Needed equipment:<br/>
+        <InputTextArea @bind-Value="game.NeededEquipment" style="width: 250px"/>
+    </div>
+    <div class="form-group">
+        Age range:<br/>
+        Min: <InputNumber @bind-Value="game.MinAge" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinAge)"/> -
+        Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
+    </div>
+    <div class="form-group">
+        Turtorial:<br/> 
+        <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
+    </div>
+    
+    <br/>
+    <p class="actions">
+        <button type="button" class="btn btn-primary" @onclick="Approve">Create</button>
+        <button type="button" class="btn btn-danger" @onclick="Disapprove">Save</button>
+    </p>
+</EditForm>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Game game = new Game();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        game = await gameService.GetGameAsync(Id);
+    }
+
+    private async Task Approve()
+    {
+        // await gameService.UpdateGameAsync(game);
+        NavigationManager.NavigateTo("RequestsForGGL");
+    }
+    
+    private async Task Disapprove()
+    {
+        await gameService.RemoveGameAsync(game);
+        NavigationManager.NavigateTo("RequestsForGGL");
+    }
+}

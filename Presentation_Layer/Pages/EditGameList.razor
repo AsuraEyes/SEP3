@@ -1,0 +1,19 @@
+@page "/EditGameList"
+
+@inject NavigationManager NavigationManager
+
+<h3>EditGameList</h3>
+
+<p class="actions">
+        <button @onclick="@SuggestGameAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Suggest
+        </button>
+</p>
+
+@code {
+        private async Task SuggestGameAsync()
+        {
+                NavigationManager.NavigateTo("CreateGame");
+        }
+    
+}

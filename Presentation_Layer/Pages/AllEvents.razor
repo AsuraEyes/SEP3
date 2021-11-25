@@ -89,54 +89,28 @@
             </div>
         </div>
     }
-</div><br/>
+</div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        @if (numberOfPages > 1)
+<ul class="pagination justify-content-center">
+    @if (numberOfPages > 1)
+    {
+        for (var i = 1; i <= numberOfPages; i++)
         {
-            if (currentPage == 1)
+            if (currentPage == i)
             {
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
+                <li class="page-item active">
+                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
                 </li>
             }
             else
             {
                 <li class="page-item">
-                    <a class="page-link" @onclick="@Previous" href="#">Previous</a>
-                </li>
-            }
-            for (var i = 1; i <= numberOfPages; i++)
-            {
-                if (currentPage == i)
-                {
-                    <li class="page-item active">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="page-item">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
-                    </li>
-                }
-            }
-            if (currentPage < numberOfPages)
-            {
-                <li class="page-item">
-                    <a class="page-link" @onclick="@Next" href="#">Next</a>
-                </li>
-            }
-            else
-            {
-                <li class="page-item disabled">
-                    <a class="page-link">Next</a>
+                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
                 </li>
             }
         }
-    </ul>
-</nav>
+    }
+</ul>
 
 
 @* <table class="table"> *@
@@ -218,6 +192,7 @@
         }
         else byDate = false;
         await Filter();
+        currentPage = 1;
     }
 
     private async Task FilterByAvailability(ChangeEventArgs args)
@@ -228,12 +203,14 @@
         }
         else byAvailability = false;
         await Filter();
+        currentPage = 1;
     }
 
     private async Task FilterByCategory(ChangeEventArgs args)
     {
         categoryId = int.Parse(args.Value.ToString());
         await Filter();
+        currentPage = 1;
     }
 
 
@@ -290,7 +267,7 @@
         NavigationManager.NavigateTo("CreateEvent");
     }
     
-    private async Task Next()
+    /*private async Task Next()
     {
         var next = currentPage + 1;
         NavigationManager.NavigateTo($"AllEvents/{next}");
@@ -302,6 +279,6 @@
         var previous = currentPage - 1;
         NavigationManager.NavigateTo($"AllEvents/{previous}");
         await OnInitializedAsync();
-    }
+    }*/
     
 }
