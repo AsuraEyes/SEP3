@@ -104,32 +104,8 @@
 <ul class="pagination justify-content-center">
         @if (numberOfPages > 1)
         {
-            if (currentPage == 1)
-            {
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-            }
-            else
-            {
-                <li class="page-item">
-                    <a class="page-link" @onclick="@Previous" href="#">Previous</a>
-                </li>
-            }
             for (var i = 1; i <= numberOfPages; i++)
             {
-                if (currentPage == 1)
-                {
-                    <li class="page-item disabled">
-                        <a class="page-link">Previous</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="page-item">
-                        <a class="page-link" @onclick="@Previous" href="#">Previous</a>
-                    </li>
-                }
                 if (currentPage == i)
                 {
                     <li class="page-item active">
@@ -301,6 +277,7 @@
         NavigationManager.NavigateTo("CreateEvent");
     }
     
+    /*
     private async Task Next()
     {
         var next = currentPage + 1;
@@ -313,6 +290,6 @@
         var previous = currentPage - 1;
         NavigationManager.NavigateTo($"AllEvents/{previous}");
         await OnInitializedAsync();
-    }
+    }*/
     
 }
