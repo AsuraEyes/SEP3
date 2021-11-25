@@ -96,12 +96,12 @@
     {
         for (var i = 1; i <= numberOfPages; i++)
         {
-            <span><a href="AllEvents/@i" @onclick="@Filter"> -@i- </a>|</span>
+            <span><a href="AllEvents/@i" @onclick="@OnInitializedAsync"> -@i- </a>|</span>
         }
     }
 </div>
 
-@*<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center">
         @if (numberOfPages > 1)
         {
             for (var i = 1; i <= numberOfPages; i++)
@@ -111,7 +111,7 @@
                 </li>
             }
         }
-    </ul>*@
+    </ul>
 
 
 @* <table class="table"> *@
@@ -183,6 +183,7 @@
         events = await RestEvent.GetFilteredEventsAsync(byDate, byAvailability, currentPage, categoryId);
         numberOfPages = events.NumberOfPages;
         eventList = events.eventList;
+        currentPage = 1;
     }
 
     private async Task FilterByDate(ChangeEventArgs args)
