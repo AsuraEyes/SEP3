@@ -20,17 +20,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGameAdmin.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" afterDir="false" />
-    </list>
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixed input field size" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +71,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -370,7 +361,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="37240000" />
+      <workItem from="1637742394056" duration="37556000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -694,7 +685,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637824416847</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="My parts and apparently almost everyone's parts">
+      <created>1637844778688</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1637844778688</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Changed button names">
+      <created>1637844837411</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1637844837411</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fixed input field size">
+      <created>1637844931252</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1637844931253</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,9 +730,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="create event thingies" />
-    <MESSAGE value="Fixed event error messages" />
-    <MESSAGE value="filtering implementation blazor to database" />
     <MESSAGE value="added event gameList view java to blazor" />
     <MESSAGE value="r" />
     <MESSAGE value="Added joining/withdrawing from event" />
@@ -743,6 +752,9 @@
     <MESSAGE value="fixes applied" />
     <MESSAGE value="changed navbar and head title of website" />
     <MESSAGE value="correct name for pagination methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct name for pagination methods" />
+    <MESSAGE value="My parts and apparently almost everyone's parts" />
+    <MESSAGE value="Changed button names" />
+    <MESSAGE value="fixed input field size" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed input field size" />
   </component>
 </project>
