@@ -19,8 +19,7 @@
             <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
             <label class="form__label" for="password">Password</label>
         </div>
-
-
+        
         <a class="login_logout" href="" @onclick="PerformLogin">
             <span class="oi oi-account-login" aria-hidden="true"></span>
             Login
@@ -42,15 +41,14 @@
 
     public async Task PerformLogin()
     {
-        errorMessage = "";
         try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            errorMessage = e.Message;
+            errorMessage = "Username or password incorrect";
         }
     }
 

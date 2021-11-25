@@ -92,25 +92,25 @@
 </div>
 
 <ul class="pagination justify-content-center">
-    @if (numberOfPages > 1)
-    {
-        for (var i = 1; i <= numberOfPages; i++)
+        @if (numberOfPages > 1)
         {
-            if (currentPage == i)
+            for (var i = 1; i <= numberOfPages; i++)
             {
-                <li class="page-item active">
-                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
-                </li>
-            }
-            else
-            {
-                <li class="page-item">
-                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
-                </li>
+                if (currentPage == i)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                    </li>
+                }
             }
         }
-    }
-</ul>
+    </ul>
 
 
 @* <table class="table"> *@
@@ -267,7 +267,8 @@
         NavigationManager.NavigateTo("CreateEvent");
     }
     
-    /*private async Task Next()
+    /*
+    private async Task Next()
     {
         var next = currentPage + 1;
         NavigationManager.NavigateTo($"AllEvents/{next}");
