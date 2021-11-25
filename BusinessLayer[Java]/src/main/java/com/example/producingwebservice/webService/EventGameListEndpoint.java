@@ -23,6 +23,7 @@ public class EventGameListEndpoint
   public EventGameListEndpoint(EventGameLists dao) {
     this.eventGameListDAO = dao;
   }
+  //working stuff
 
   @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPEventGameListRequest")
   @ResponsePayload

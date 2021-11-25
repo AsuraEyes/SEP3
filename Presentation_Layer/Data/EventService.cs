@@ -74,14 +74,14 @@ namespace Presentation_Layer.Data
 
         public async Task CreateEvent(Event Event)
         {
-            var diff = Event.EndTime.Subtract(Event.StartTime).TotalMinutes;
-            if (diff < 0)
-            {
-                Event.EndTime = Event.StartTime;
-            }
-            string EventAsJson = JsonSerializer.Serialize(Event);
+            var EventAsJson = JsonSerializer.Serialize(Event);
             HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync(uri+"/Event", content);
+            await Client.PostAsync($"{uri}/Event", content);
+        }
+        
+        public async Task CancelEvent(Event Event)
+        {
+            await Client.DeleteAsync($"{uri}/Events/{Event.Id}");
         }
         
     }

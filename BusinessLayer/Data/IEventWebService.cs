@@ -11,5 +11,6 @@ namespace BusinessLayer.Data
         Task<EventList> GetFilteredEventsAsync(string filter, int category, int currentPage, int resultsPerPage);
         //Task<int> GetNumberOfPages(string filter, int category, int currentPage, int resultsPerPage);
         Task<Event> GetEventAsync(int id);
+        Task CancelEventAsync(int id);
     }
 }

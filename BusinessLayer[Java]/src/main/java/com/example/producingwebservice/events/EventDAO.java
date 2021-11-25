@@ -173,6 +173,11 @@ public class EventDAO implements Events {
         }
     }
 
+    public void cancel(int id) {
+        System.out.println(id);
+        eventHelper().executeUpdate("DELETE FROM event WHERE id = ?", id);
+    }
+
     private static class EventMapper implements DataMapper<Event> {
         public Event create(ResultSet rs)
             throws SQLException
