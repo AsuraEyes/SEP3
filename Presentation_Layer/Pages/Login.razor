@@ -5,26 +5,11 @@
 
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime JSRuntime
 
 <AuthorizeView>
     <NotAuthorized>
-        @*<div class="remove_margin" style="color:#A6583C">@errorMessage</div>
-        <div class="form-group remove_margin">
-            <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
-            <label class="form__label" for="username">Username</label>
-        </div>
-
-
-        <div class="form-group remove_margin">
-            <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
-            <label class="form__label" for="password">Password</label>
-        </div>
-        
-        <a class="login_logout" href="" @onclick="PerformLogin">
-            <span class="oi oi-account-login" aria-hidden="true"></span>
-            Login
-        </a>*@
-        <button class="btn btn-primary" @onclick="LoginAsync">
+        <button class="btn btn-outline-primary" @onclick="OpenAsync">
             <i class="oi oi-person"></i>
         </button>
         @if (showModal)
@@ -33,8 +18,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">New message</h5>
-                            <button type="button" @onclick="CloseAsync">
+                            <h5 class="modal-title">Sign in</h5>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -52,8 +37,8 @@
                         </div>
                         <div class="remove_margin" style="color:red">@errorMessage</div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" @onclick="CreateAccountAsync">Create Account</button>
-                            <button type="button" class="btn btn-primary" @onclick="PerformLogin">Login</button>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccountAsync">Create Account</button>
+                            <button type="button" class="btn btn-outline-primary" @onclick="PerformLogin">Login</button>
                         </div>
                     </div>
                 </div>
@@ -61,11 +46,29 @@
         }
     </NotAuthorized>
     <Authorized>
-        <p class="remove_margin">Hello, @username !</p>
-        <a class="login_logout" href="" @onclick="PerformLogout">
-            <span class="oi oi-account-logout" aria-hidden="true"></span>
-            Log out
-        </a>
+        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+            @username <i class="oi oi-person"></i>
+        </button>
+                @if (showModal)
+                {
+                    <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirmation</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to log out?</p>
+                                </div>
+                                <div class="remove_margin" style="color:red">@errorMessage</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">Cancel</button>
+                                    <button type="button" class="btn btn-outline-danger" @onclick="PerformLogout">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
     </Authorized>
 </AuthorizeView>
 
@@ -75,18 +78,19 @@
     private string password;
     private string errorMessage;
 
-    private async Task LoginAsync()
+    private async Task OpenAsync()
     {
         showModal = true;
     }
     
     private async Task CloseAsync()
     {
-        showModal = true;
+        showModal = false;
     }
 
-    private async Task PerformLogin()
+   private async Task PerformLogin()
     {
+       showModal = false;
         try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
@@ -103,6 +107,7 @@
         errorMessage = "";
         username = "";
         password = "";
+        showModal = false;
         try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
@@ -116,6 +121,7 @@
 
     private async Task CreateAccountAsync()
     {
+        showModal = false;
         NavigationManager.NavigateTo("CreateAccount");
     }
 }
