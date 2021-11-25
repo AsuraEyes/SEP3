@@ -20,9 +20,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixed redundancy">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="redundant pagination removed">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +46,14 @@
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -371,28 +373,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="41357000" />
-    </task>
-    <task id="LOCAL-00008" summary="database">
-      <created>1636457623411</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1636457623412</updated>
-    </task>
-    <task id="LOCAL-00009" summary="c# changes">
-      <created>1636551371863</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1636551371863</updated>
-    </task>
-    <task id="LOCAL-00010" summary="authentication presentation layer">
-      <created>1637160317844</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1637160317844</updated>
+      <workItem from="1637742394056" duration="43462000" />
     </task>
     <task id="LOCAL-00011" summary="Authentication done, login done but hard coded users. &#10;Pages in Blazor done without content. &#10;Commented out code from Index.razor that was throwing exceptions">
       <created>1637177164815</created>
@@ -716,7 +697,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637848309888</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="random change">
+      <created>1637852939067</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1637852939068</updated>
+    </task>
+    <task id="LOCAL-00058" summary="pagination fix">
+      <created>1637860758525</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1637860758526</updated>
+    </task>
+    <task id="LOCAL-00059" summary="redundant pagination removed">
+      <created>1637860857230</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1637860857232</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -740,9 +742,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Card css finished" />
-    <MESSAGE value="Beautification" />
-    <MESSAGE value="added break line to event info" />
     <MESSAGE value="event info updated" />
     <MESSAGE value="pagination fixed with bootstrap css added" />
     <MESSAGE value="pagination fixed" />
@@ -765,6 +764,9 @@
     <MESSAGE value="list fixed" />
     <MESSAGE value="Made the category picker in create event the correct way" />
     <MESSAGE value="fixed redundancy" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed redundancy" />
+    <MESSAGE value="random change" />
+    <MESSAGE value="pagination fix" />
+    <MESSAGE value="redundant pagination removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="redundant pagination removed" />
   </component>
 </project>
