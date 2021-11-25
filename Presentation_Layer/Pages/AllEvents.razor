@@ -99,13 +99,13 @@
                 if (currentPage == i)
                 {
                     <li class="page-item active">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
                     </li>
                 }
                 else
                 {
                     <li class="page-item">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
                     </li>
                 }
             }
@@ -168,7 +168,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (currentPage < 1) currentPage = 1;
+        if (currentPage < 1)
+        {
+            currentPage = 1;
+        }
+        
         categories = await CategoryService.GetCategoriesAsync();
         await Filter();
 
@@ -182,6 +186,7 @@
         events = await RestEvent.GetFilteredEventsAsync(byDate, byAvailability, currentPage, categoryId);
         numberOfPages = events.NumberOfPages;
         eventList = events.eventList;
+        currentPage = 1;
     }
 
     private async Task FilterByDate(ChangeEventArgs args)
@@ -191,8 +196,8 @@
             byDate = true;
         }
         else byDate = false;
-        await Filter();
         currentPage = 1;
+        await Filter();
     }
 
     private async Task FilterByAvailability(ChangeEventArgs args)
