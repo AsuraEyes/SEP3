@@ -10,4 +10,5 @@ public interface Events {
 
     Event create(Event event);
     Event get(int id);
+    void cancel(int id);
 }

@@ -54,6 +54,7 @@ public class ParticipantDAO implements Participants
 
   public void withdraw (int eventId, String username){
     helper().executeUpdate("DELETE FROM participants WHERE event_id = ? AND user_username = ?", eventId, username);
+    helper().executeUpdate("DELETE FROM organizers WHERE event_id = ? AND user_username = ?", eventId, username);
   }
 
   public ArrayList<String> getParticipantList(int eventId){

@@ -12,7 +12,6 @@ namespace Presentation_Layer.Models
         [Required]public string Name{ get; set; }
 
         [Required]
-        [BindProperty, DisplayFormat(DataFormatString = "{0:dd-MM-yyyy HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime StartTime{ get; set; }
 
         public DateTime EndTime{ get; set; }

@@ -1,6 +1,13 @@
 @page "/GameList"
 <h3>GameList</h3>
+@inject NavigationManager NavigationManager
+<button @onclick="@EditAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Edit
+        </button>
 
 @code {
-    
+    private async Task EditAsync()
+    {
+        NavigationManager.NavigateTo("EditGameList");
+    }
 }

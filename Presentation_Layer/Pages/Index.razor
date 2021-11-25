@@ -4,7 +4,7 @@
 @using Presentation_Layer.Models
 
 @inject NavigationManager NavigationManager
-@inject IGameService SoapGame
+@inject IGameService gameService
 
 <h1>BOOK & PLAY - CRUD demo</h1>
 
@@ -15,7 +15,7 @@ Welcome to your new bording games app.
 
     <h3 style="color:green">Add Game</h3>
 
-<!--
+
 <EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
@@ -27,7 +27,6 @@ Welcome to your new bording games app.
             <button class="btn btn-outline-dark" type="submit">Create</button>
         </div>
     </EditForm>
--->
 
 
 @if (GameToEdit != null)
@@ -91,9 +90,11 @@ else
         @foreach (var item in GameList)
         {
             <tr>
-                <td><button @onclick="@(() => ChangeTitle(item.Id))">
-                                            <i class="oi oi-arrow-top" style="color:red"></i>
-                                        </button></td>
+                <td>
+                    <button @onclick="@(() => ChangeTitle(item.Id))">
+                        <i class="oi oi-arrow-top" style="color:red"></i>
+                    </button>
+                </td>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Complexity</td>
@@ -132,34 +133,33 @@ else
     
     /*protected override async Task OnInitializedAsync()
     {
-        GameList = await SoapGame.GetGamesAsync();
-        GameToEdit = null;
-    }
-    */
+        GameList = await gameService.GetGamesAsync();
+        //GameToEdit = null;
+    }*/
     
     public async Task AddGameAsync()
     {
-        await SoapGame.AddGameAsync(Game);
+        await gameService.AddGameAsync(Game);
         await OnInitializedAsync();
     }
 
     public async Task RemoveGameAsync(int id)
     {
         Game GameToRemove = GameList.First(t => t.Id == id);
-        await SoapGame.RemoveGameAsync(GameToRemove);
+        await gameService.RemoveGameAsync(GameToRemove);
         await OnInitializedAsync();
     }
 
     public async Task ChangeTitle(int id)
     {
-        Game GameToTittle = await SoapGame.GetGameAsync(id);
+        Game GameToTittle = await gameService.GetGameAsync(id);
         title = GameToTittle.Name;
 
     }
     
     public async Task Save()
     {
-        await SoapGame.UpdateGameAsync(GameToEdit);
+        await gameService.UpdateGameAsync(GameToEdit);
         GameToEdit = null;
     }
 }

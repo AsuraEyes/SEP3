@@ -68,15 +68,6 @@ CREATE TABLE one_time_fee(
     FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS organizers;
-CREATE TABLE organizers(
-    event_id INTEGER NOT NULL,
-    user_username VARCHAR (255) NOT NULL,
-    PRIMARY KEY (event_id, user_username),
-    FOREIGN KEY (user_username) REFERENCES "user"(username) ON DELETE CASCADE,
-    FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
-);
-
 DROP TABLE IF EXISTS participants;
 CREATE TABLE participants(
     event_id INTEGER NOT NULL,
@@ -84,6 +75,15 @@ CREATE TABLE participants(
     PRIMARY KEY (event_id, user_username),
     FOREIGN KEY (user_username) REFERENCES "user"(username) ON DELETE CASCADE,
     FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS organizers;
+CREATE TABLE organizers(
+    event_id INTEGER NOT NULL,
+    user_username VARCHAR (255) NOT NULL,
+    PRIMARY KEY (event_id, user_username),
+    FOREIGN KEY (user_username) REFERENCES "user"(username) ON DELETE CASCADE,
+    FOREIGN KEY (event_id) REFERENCES event(id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS game;
@@ -117,12 +117,9 @@ CREATE TABLE event_game_list(
     user_username VARCHAR (255) NOT NULL,
     event_id INTEGER NOT NULL,
     PRIMARY KEY (game_id, user_username, event_id),
-    FOREIGN KEY (user_username) REFERENCES "user"(username) ON DELETE CASCADE,
-    FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE,
-    FOREIGN KEY (event_id) REFERENCES event (id) ON DELETE CASCADE
+    FOREIGN KEY (user_username, event_id) REFERENCES organizers(user_username, event_id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE
 );
-
-SELECT  FROM event_game_list l, game g WHERE l.game_id = g.id AND event_id = 2;
 
 
 CREATE OR REPLACE FUNCTION put_event_organizer_to_participants_and_organizers()

@@ -1,6 +1,16 @@
 @page "/GGL"
+@inject NavigationManager NavigationManager
+
 <h3>GGL</h3>
+<p class="actions">
+        <button @onclick="@AddGameAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Add
+        </button>
+</p>
 
 @code {
-    
+        private async Task AddGameAsync()
+        {
+                NavigationManager.NavigateTo("CreateGameAdmin");
+        }
 }
