@@ -88,5 +88,27 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        
+        [HttpDelete]
+        [Route("/Events/{id}")]
+        public async Task<ActionResult<Event>> CancelEventAsync(int id)
+        {
+            Console.WriteLine(id);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await EventWebService.CancelEventAsync(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }
