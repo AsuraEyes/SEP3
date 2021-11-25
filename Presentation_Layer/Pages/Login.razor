@@ -8,7 +8,7 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="remove_margin" style="color:#A6583C">@errorMessage</div>
+        @*<div class="remove_margin" style="color:#A6583C">@errorMessage</div>
         <div class="form-group remove_margin">
             <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
             <label class="form__label" for="username">Username</label>
@@ -23,7 +23,42 @@
         <a class="login_logout" href="" @onclick="PerformLogin">
             <span class="oi oi-account-login" aria-hidden="true"></span>
             Login
-        </a>
+        </a>*@
+        <button class="btn btn-primary" @onclick="LoginAsync">
+            <i class="oi oi-person"></i>
+        </button>
+        @if (showModal)
+        {
+            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">New message</h5>
+                            <button type="button" @onclick="CloseAsync">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="username" class="col-form-label">Username:</label>
+                                    <input class="form-control" id="username" type="text" placeholder="username" @bind-value="username"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Password</label>
+                                    <input class="form-control" id="password" type="password" placeholder="password" @bind-value="password"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="remove_margin" style="color:red">@errorMessage</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" @onclick="CreateAccountAsync">Create Account</button>
+                            <button type="button" class="btn btn-primary" @onclick="PerformLogin">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </NotAuthorized>
     <Authorized>
         <p class="remove_margin">Hello, @username !</p>
@@ -35,11 +70,22 @@
 </AuthorizeView>
 
 @code {
+    private bool showModal = false;
     private string username;
     private string password;
     private string errorMessage;
 
-    public async Task PerformLogin()
+    private async Task LoginAsync()
+    {
+        showModal = true;
+    }
+    
+    private async Task CloseAsync()
+    {
+        showModal = true;
+    }
+
+    private async Task PerformLogin()
     {
         try
         {
@@ -52,7 +98,7 @@
         }
     }
 
-    public async Task PerformLogout()
+    private async Task PerformLogout()
     {
         errorMessage = "";
         username = "";
@@ -66,5 +112,10 @@
         {
             
         }
+    }
+
+    private async Task CreateAccountAsync()
+    {
+        NavigationManager.NavigateTo("CreateAccount");
     }
 }
