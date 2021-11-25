@@ -104,7 +104,7 @@
             else
             {
                 <li class="page-item">
-                    <a class="page-link" @onclick="@previous" href="#">Previous</a>
+                    <a class="page-link" @onclick="@Previous" href="#">Previous</a>
                 </li>
             }
             for (var i = 1; i <= numberOfPages; i++)
@@ -125,7 +125,7 @@
             if (currentPage < numberOfPages)
             {
                 <li class="page-item">
-                    <a class="page-link" @onclick="@next" href="#">Next</a>
+                    <a class="page-link" @onclick="@Next" href="#">Next</a>
                 </li>
             }
             else
@@ -290,14 +290,14 @@
         NavigationManager.NavigateTo("CreateEvent");
     }
     
-    private async Task next()
+    private async Task Next()
     {
         var next = currentPage + 1;
         NavigationManager.NavigateTo($"AllEvents/{next}");
         await OnInitializedAsync();
     }
     
-    private async Task previous()
+    private async Task Previous()
     {
         var previous = currentPage - 1;
         NavigationManager.NavigateTo($"AllEvents/{previous}");
