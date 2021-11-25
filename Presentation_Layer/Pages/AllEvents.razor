@@ -91,16 +91,6 @@
     }
 </div>
 
-<div>
-    @if (numberOfPages > 1)
-    {
-        for (var i = 1; i <= numberOfPages; i++)
-        {
-            <span><a href="AllEvents/@i" @onclick="@Filter"> -@i- </a>|</span>
-        }
-    }
-</div>
-
 <ul class="pagination justify-content-center">
         @if (numberOfPages > 1)
         {
