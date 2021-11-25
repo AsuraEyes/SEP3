@@ -35,11 +35,12 @@ public class GamesEndpoint {
                 gamesDAO.patch(request.getGame());
                 break;
             case GETALL:
-                if (request.getUserName().equals(""))
+                if (request.getUserName().equals("")) {
                     response.setGameList(gamesDAO.readAllGGL());
-//                else
-//                    response.setGameList(gamesDAO.readAllUserGameList(request.getUserName()));
-
+                }
+                else{
+                    response.setGameList(gamesDAO.readAllUserGameList(request.getUserName()));
+                }
 //                    response.setGameList(gamesDAO.readAllEventGameList(
 //                        request.getId()));
                 break;
