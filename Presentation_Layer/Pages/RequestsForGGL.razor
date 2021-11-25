@@ -15,15 +15,15 @@
  }
  else
  {
-     <ul>
      @foreach (var item in GameList)
          {
              if (item.Approved == false)
              {
-                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                 <ul>
+                     <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                 </ul>
              }
          }
-     </ul>
  }
 
 @code {
