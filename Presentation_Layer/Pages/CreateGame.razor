@@ -60,7 +60,6 @@
     
     private async Task CreateAsOrganizer()
     {
-        game.Approved = false;
         await gameService.AddGameAsync(game);
         NavigationManager.NavigateTo("EditGameList");
     }
