@@ -20,7 +20,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixed input field size" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="changed input field size" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -361,14 +361,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="37556000" />
-    </task>
-    <task id="LOCAL-00001" summary="new repo">
-      <created>1635850119210</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1635850119210</updated>
+      <workItem from="1637742394056" duration="38034000" />
     </task>
     <task id="LOCAL-00002" summary="patches on PoC, C# Business server not running, either Rest or SOAP">
       <created>1635858348266</created>
@@ -706,7 +699,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637844931253</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="changed input field size">
+      <created>1637845038114</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1637845038121</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -730,7 +730,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added event gameList view java to blazor" />
     <MESSAGE value="r" />
     <MESSAGE value="Added joining/withdrawing from event" />
     <MESSAGE value="changes" />
@@ -755,6 +754,7 @@
     <MESSAGE value="My parts and apparently almost everyone's parts" />
     <MESSAGE value="Changed button names" />
     <MESSAGE value="fixed input field size" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed input field size" />
+    <MESSAGE value="changed input field size" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed input field size" />
   </component>
 </project>
