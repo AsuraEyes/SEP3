@@ -46,7 +46,7 @@
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
         }
-        catch (Exception e)
+        catch (Exception)
         {
             errorMessage = "Username or password incorrect";
         }
