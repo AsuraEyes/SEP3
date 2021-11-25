@@ -1,12 +1,12 @@
 @page "/GameList"
 <h3>GameList</h3>
 @inject NavigationManager NavigationManager
-<button @onclick="@AddGameAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Add
+<button @onclick="@EditAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Edit
         </button>
 
 @code {
-    private async Task AddGameAsync()
+    private async Task EditAsync()
     {
         NavigationManager.NavigateTo("CreateGameAdmin");
     }
