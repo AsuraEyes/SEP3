@@ -87,5 +87,10 @@ namespace Presentation_Layer.Authentication
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;
         }
+
+        public User GetCachedUser()
+        {
+            return cachedUser;
+        }
     }
 }
