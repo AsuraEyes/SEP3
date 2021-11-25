@@ -90,9 +90,10 @@ namespace REST.Controllers
         }
         
         [HttpDelete]
-        [Route("{id:int}")]
-        public async Task<ActionResult<Event>> CreateEventAsync(int id)
+        [Route("/Events/{id}")]
+        public async Task<ActionResult<Event>> CancelEventAsync(int id)
         {
+            Console.WriteLine(id);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

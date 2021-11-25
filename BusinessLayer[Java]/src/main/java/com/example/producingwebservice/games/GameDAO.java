@@ -62,7 +62,7 @@ public class GameDAO implements Games {
 
     public GameList readAllGGL() {
         gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = true"));
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game"));
         return gameList;
     }
 

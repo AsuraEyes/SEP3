@@ -1,0 +1,52 @@
+@page "/GameInfo"
+@page "/GameInfo/{Id:int}"
+
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
+
+@inject NavigationManager NavigationManager
+@inject IGameService gameService
+
+<h3>Game Information</h3>
+<p>Name: @game.Name</p>
+<p>Complezity: @game.Complexity</p>
+<p>Playing time: @game.TimeEstimation</p>
+<p>Player amount: @game.MinNumberOfPlayers - @game.MaxNumberOfPlayers</p>
+@if (game.ShortDescription != null)
+{
+    <p>Short Description: @game.ShortDescription</p>
+}
+@if (game.NeededEquipment != null)
+{
+    <p>Needed equipment: @game</p>
+}
+@if (game.MinAge != 0 || game.MaxAge != 0)
+{
+    if (game.MaxAge == 0)
+    {
+        <p>Age range: @game.MinAge+</p>
+    }
+    else
+    {
+        <p>Age range: @game.MinAge - @game.MaxAge</p>
+    }
+}
+@if (game.Tutorial != null)
+{
+    <p>Turtorial: @game.Tutorial</p>
+}
+<button type="button" class="btn btn-primary">Approve</button>
+<button type="button" class="btn btn-danger">Disapprove</button>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Game game = new Game();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        game = await gameService.GetGameAsync(Id);
+    }
+}

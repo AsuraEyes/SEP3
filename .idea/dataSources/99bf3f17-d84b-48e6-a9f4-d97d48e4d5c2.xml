@@ -785,7 +785,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <IntrospectionStateNumber>685</IntrospectionStateNumber>
+      <IntrospectionStateNumber>695</IntrospectionStateNumber>
       <StartupTime>1637755470</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
@@ -802,7 +802,7 @@ false Zulu
 13338||-9223372036854775808|U|G
 13338||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>686</IntrospectionStateNumber>
+      <IntrospectionStateNumber>696</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17321|17323|1
 sequence|table|17344|17346|1
@@ -879,6 +879,7 @@ sequence|table|17435|17437|1
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
+      <IntrospectionStateNumber>696</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="adminpack">
@@ -987,5 +988,146 @@ sequence|table|17435|17437|1
       <Handler>pg_catalog.spghandler</Handler>
       <HandlerId>334</HandlerId>
     </access-method>
+    <sequence id="31" parent="14" name="event_category_id_seq">
+      <ObjectId>17344</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>649</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="32" parent="14" name="event_id_seq">
+      <ObjectId>17352</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>650</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="33" parent="14" name="game_id_seq">
+      <ObjectId>17435</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>655</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="34" parent="14" name="monthly_fee_id_seq">
+      <ObjectId>17374</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>651</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="35" parent="14" name="one_time_fee_id_seq">
+      <ObjectId>17387</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>652</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="36" parent="14" name="role_id_seq">
+      <ObjectId>17321</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>647</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <object-type id="37" parent="14" name="one_two_three_type">
+      <ObjectId>17319</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>646</StateNumber>
+      <SubKind>domain</SubKind>
+      <Definition>integer</Definition>
+      <NotNull>1</NotNull>
+      <BaseTypeId>23</BaseTypeId>
+      <SubCategory>numeric</SubCategory>
+    </object-type>
+    <table id="38" parent="14" name="event">
+      <ObjectId>17354</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>650</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="39" parent="14" name="event_category">
+      <ObjectId>17346</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>650</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="40" parent="14" name="event_game_list">
+      <ObjectId>17462</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>657</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="41" parent="14" name="game">
+      <ObjectId>17437</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>656</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="42" parent="14" name="game_list">
+      <ObjectId>17447</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>656</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="43" parent="14" name="monthly_fee">
+      <ObjectId>17376</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>651</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="44" parent="14" name="one_time_fee">
+      <ObjectId>17389</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>652</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="45" parent="14" name="organizers">
+      <ObjectId>17420</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>654</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="46" parent="14" name="participants">
+      <ObjectId>17405</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>653</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="47" parent="14" name="role">
+      <ObjectId>17323</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>648</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <table id="48" parent="14" name="user">
+      <ObjectId>17329</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>648</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+    </table>
+    <routine id="49" parent="14" name="put_event_organizer_to_participants_and_organizers">
+      <ObjectId>17477</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>658</StateNumber>
+      <PgRoutineKind>pg-trigger</PgRoutineKind>
+      <LanguageName>plpgsql</LanguageName>
+      <Rows>0.0</Rows>
+    </routine>
+    <routine id="50" parent="14" name="update_number_of_participants">
+      <ObjectId>17479</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>660</StateNumber>
+      <PgRoutineKind>pg-trigger</PgRoutineKind>
+      <LanguageName>plpgsql</LanguageName>
+      <Rows>0.0</Rows>
+    </routine>
+    <check id="51" parent="37" name="one_two_three_type_check">
+      <ObjectId>17320</ObjectId>
+      <StateNumber>646</StateNumber>
+      <Predicate>(VALUE = ANY (ARRAY[1, 2, 3]))</Predicate>
+    </check>
+    <argument id="52" parent="49">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
+    </argument>
+    <argument id="53" parent="50">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
+    </argument>
   </database-model>
 </dataSource>

@@ -61,7 +61,7 @@ namespace BusinessLayer.Data
         
         public async Task CancelEventAsync(int id)
         {
-            Response = await getEventResponse(0, Operation.DELETE, null, "", 0, 0);
+            Response = await getEventResponse(id, Operation.DELETE, null, "", 0, 0);
         }
     }
 }

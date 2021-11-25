@@ -1,6 +1,40 @@
 @page "/RequestsForGGL"
-<h3>RequestsForGGL</h3>
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
+
+@inject NavigationManager NavigationManager
+@inject IGameService gameService
+
+<h3>Requests For GGL</h3>
+
+@if (GameList == null)
+ {
+     <p>
+         <em>Loading...</em>
+     </p>
+ }
+ else
+ {
+     @foreach (var item in GameList)
+         {
+             if (item.Approved == false)
+             {
+                 <p @onclick="@(() => MoreInfo(item.Id))">@item.Name</p>
+             }
+         }
+ }
 
 @code {
+    private IList<Game> GameList;
     
+    protected override async Task OnInitializedAsync()
+    {
+        GameList = await gameService.GetGamesAsync();
+    //GameToEdit = null;
+    }
+
+    private async Task MoreInfo(int id)
+    {
+        NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
 }
