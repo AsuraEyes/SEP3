@@ -69,32 +69,37 @@
 <div class="card-deck">
     @foreach (var item in eventList)
     {
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@item.Name</h5>
-                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
-                {
-                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
-                }
-                else
-                {
-                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
-                }
-                @if (item.AddressApartmentNumber != null)
-                {
-                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
-                }
-                else
-                {
-                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
-                }
-            </div>
-            <div class="card-footer text-center">
-                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
-                    More
-                </button>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+                <div class="card h-100" style="width: 22rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                        {
+                            <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                        }
+                        else
+                        {
+                            <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                        }
+                        @if (item.AddressApartmentNumber != null)
+                        {
+                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                        }
+                        else
+                        {
+                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                        }
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                            More
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+        
     }
 </div>
 
@@ -110,16 +115,17 @@
 </div>
 
 <ul class="pagination justify-content-center">
-        @if (numberOfPages > 1)
+    @if (numberOfPages > 1)
+    {
+        for (var i = 1; i <= numberOfPages; i++)
         {
-            for (var i = 1; i <= numberOfPages; i++)
-            {
-                <li class="page-item active">
-                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
-                </li>
-            }
+            var page = i;
+            <li class="page-item">
+                <a class="page-link" href="AllEvents/@i" @onclick="@(() => SetCurrentPage(page))">@i</a>
+            </li>
         }
-    </ul>
+    }
+</ul>
 
 
 @* <table class="table"> *@
@@ -176,7 +182,7 @@
     protected override async Task OnInitializedAsync()
     {
         resultsPerPage = 3;
-        currentPage = 1;
+        if (currentPage < 1) currentPage = 1;
         categories = await CategoryService.GetCategoriesAsync();
 
         await Filter();
