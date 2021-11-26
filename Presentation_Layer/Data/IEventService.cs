@@ -17,6 +17,6 @@ namespace Presentation_Layer.Data
         
         Task CreateEvent(Event Event);
         Task<Event> GetEventAsync(int id);
-        Task CancelEvent(Event Event);
+        Task CancelEvent(int id);
     }
 }

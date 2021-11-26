@@ -79,9 +79,9 @@ namespace Presentation_Layer.Data
             await Client.PostAsync($"{uri}/Event", content);
         }
         
-        public async Task CancelEvent(Event Event)
+        public async Task CancelEvent(int id)
         {
-            await Client.DeleteAsync($"{uri}/Events/{Event.Id}");
+            await Client.DeleteAsync($"{uri}/Events/{id}");
         }
     }
 }
