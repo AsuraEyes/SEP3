@@ -27,15 +27,15 @@
                             <form>
                                 <div class="form-group">
                                     <label for="username" class="col-form-label">Username:</label>
-                                    <input class="form-control" id="username" type="text" placeholder="username" @bind-value="username"/>
+                                    <input class="form-control" id="username" type="text" placeholder="@@Username" @bind-value="username"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-form-label">Password</label>
-                                    <input class="form-control" id="password" type="password" placeholder="password" @bind-value="password"/>
+                                    <input class="form-control" id="password" type="password" placeholder="Password" @bind-value="password"/>
                                 </div>
                             </form>
+                            <div style="color:red">@errorMessage</div>
                         </div>
-                        <div class="remove_margin" style="color:red">@errorMessage</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccountAsync">Create Account</button>
                             <button type="button" class="btn btn-outline-primary" @onclick="PerformLogin">Login</button>
@@ -46,29 +46,29 @@
         }
     </NotAuthorized>
     <Authorized>
+        <span class="input-group-text">@@</span>
         <button class="btn btn-outline-primary" @onclick="OpenAsync">
             @username <i class="oi oi-person"></i>
         </button>
-                @if (showModal)
-                {
-                    <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Confirmation</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure you want to log out?</p>
-                                </div>
-                                <div class="remove_margin" style="color:red">@errorMessage</div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">Cancel</button>
-                                    <button type="button" class="btn btn-outline-danger" @onclick="PerformLogout">Logout</button>
-                                </div>
-                            </div>
+        @if (showModal)
+        {
+            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to log out?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">Cancel</button>
+                            <button type="button" class="btn btn-outline-danger" @onclick="PerformLogout">Logout</button>
                         </div>
                     </div>
-                }
+                </div>
+            </div>
+        }
     </Authorized>
 </AuthorizeView>
 
@@ -90,16 +90,17 @@
 
    private async Task PerformLogin()
     {
-       showModal = false;
-        try
+       try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
+            await CloseAsync();
         }
         catch (Exception)
         {
-            errorMessage = "Username or password incorrect";
+            errorMessage = "Username or password is incorrect";
         }
+
     }
 
     private async Task PerformLogout()
@@ -107,21 +108,21 @@
         errorMessage = "";
         username = "";
         password = "";
-        showModal = false;
         try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
+            await CloseAsync();
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            
+            // ignored
         }
     }
 
     private async Task CreateAccountAsync()
     {
-        showModal = false;
+        await CloseAsync();
         NavigationManager.NavigateTo("CreateAccount");
     }
 }

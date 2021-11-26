@@ -20,41 +20,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="nothing">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021,_10_45_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021,_15_50_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__10_45__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2021__15_50__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BankServer.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/BusinessLayer.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.RazorComponent.input.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.RazorCoreGenerate.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.StaticWebAssets.Manifest.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.TagHelpers.output.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.Views.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.Views.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/Presentation_Layer.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/apphost.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="beautify">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGameAdmin.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGameAdmin.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,31 +42,39 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/GameList.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/RequestsForGGL.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateGame.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/BusinessLayer/Controllers/OrganizerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/GameApproval.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/GameApproval.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/RequestsForGGL.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/GameList.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -110,14 +85,13 @@
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
@@ -409,14 +383,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="53121000" />
-    </task>
-    <task id="LOCAL-00016" summary="gimme gitignore">
-      <created>1637420482809</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1637420482809</updated>
+      <workItem from="1637742394056" duration="57399000" />
     </task>
     <task id="LOCAL-00017" summary="fixed event.">
       <created>1637505101536</created>
@@ -754,7 +721,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637866149443</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="beautify">
+      <created>1637876934198</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1637876934198</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,7 +752,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="cancel event working" />
     <MESSAGE value="code cleanup" />
     <MESSAGE value="added hyperlink to pagination" />
     <MESSAGE value="date fixed" />
@@ -803,6 +776,7 @@
     <MESSAGE value="exception simplified" />
     <MESSAGE value="new login page" />
     <MESSAGE value="nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
+    <MESSAGE value="beautify" />
+    <option name="LAST_COMMIT_MESSAGE" value="beautify" />
   </component>
 </project>
