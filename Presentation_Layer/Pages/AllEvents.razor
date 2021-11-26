@@ -169,7 +169,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (currentPage < 1) currentPage = 1;
         categories = await CategoryService.GetCategoriesAsync();
         await Filter();
 

@@ -33,18 +33,17 @@ public class EventsEndpoint
       case GET:
         response.setEvent(eventsDAO.get(request.getId()));
         break;
-      case POST:
+      case CREATE:
         eventsDAO.create(request.getEvent());
         break;
-      case PATCH:
+      case UPDATE:
         //eventsDAO.patch(request.getEvent());
         break;
       case GETALL:
-          response.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
-              request.getId(), request.getCurrentPage(), request.getResultsPerPage()));
+          response.setEventList(eventsDAO.searchAndFilter(request.getFilter()));
           //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
         break;
-      case DELETE:
+      case REMOVE:
        eventsDAO.cancel(request.getId());
     }
     return response;
