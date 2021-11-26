@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Presentation_Layer.Models;
 using Presentation_Layer.Pages;
 
@@ -30,9 +31,19 @@ namespace Presentation_Layer.Data
             return Events;
         }
 
-        public async Task<EventList> GetFilteredEventsAsync(Boolean byDate, Boolean byAvailability, int currentPage, int categoryId)
+        public async Task<EventList> GetFilteredEventsAsync(FilterREST filterRest)
         {
-            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents/{byDate}/{byAvailability}/{currentPage}/{categoryId}");
+            var filters =
+                $"?byDate={filterRest.byDate}&byAvailability={filterRest.byAvailability}&currentPage={filterRest.currentPage}&categoryId={filterRest.categoryId}";
+            // var filterRestAsJson = JsonSerializer.Serialize(filterRest);
+            // Console.WriteLine(filterRestAsJson);
+            // var aaa = uri + $"/FilteredEvents?" + filterRest;
+            // var EventList = await Client.GetStringAsync(aaa);
+            
+
+            //Content = new StringContent(filterRestAsJson, Encoding.UTF8, "application/json");
+            
+            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents"+filters);
             var EventList = await stringAsync;
             EventList Events = JsonSerializer.Deserialize<EventList>(EventList, new JsonSerializerOptions
             {

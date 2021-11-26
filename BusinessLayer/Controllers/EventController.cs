@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -22,28 +23,12 @@ namespace REST.Controllers
         }
 
         [HttpGet]
-        [Route("/Events")]
-        public async Task<ActionResult<IList<Event>>> GetEventsAsync()
+        [Route("/FilteredEvents")]
+        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync([FromQuery] FilterREST filterRest)
         {
             try
             {
-                IList<Event> events = await EventWebService.GetEventsAsync();
-                return Ok(events);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return  StatusCode(500, e.Message);
-            }
-        }
-        
-        [HttpGet]
-        [Route("/FilteredEvents/{byDate}/{byAvailability}/{currentPage}/{categoryId}")]
-        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync(bool byDate, bool byAvailability, int currentPage, int categoryId)
-        {
-            try
-            {
-                EventList filteredEventsAsync = await eventMiddlePoint.eventFilter(byDate, byAvailability, currentPage, categoryId);
+                EventList filteredEventsAsync = await eventMiddlePoint.eventFilter(filterRest);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)

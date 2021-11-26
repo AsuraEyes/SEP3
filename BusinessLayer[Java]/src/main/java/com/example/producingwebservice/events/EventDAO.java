@@ -110,9 +110,8 @@ public class EventDAO implements Events {
         //counting the number of elements based on the applied filters
 
         String statement = "SELECT COUNT(*) FROM event ";
-      System.out.println(filter);
         String appendToStatement = "";
-        if(!filter.equals("all")){
+        if(!filter.getFilter().equals("all")){
             appendToStatement += " WHERE ";
           if(filter.getFilter().contains("byDate"))
           {

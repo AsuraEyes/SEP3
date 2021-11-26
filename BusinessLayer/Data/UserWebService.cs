@@ -36,7 +36,7 @@ namespace BusinessLayer.Data
 
         public async Task  AddUserAsync(User user)
         {
-            response = await getUserResponse("", Operation.POST, user);
+            response = await getUserResponse("", Operation.CREATE, user);
             //return response.getMessageResponse.Notification;
         }
     }
