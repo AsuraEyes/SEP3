@@ -1,11 +1,36 @@
 @page "/GameList"
+@using Presentation_Layer.Data
+@using Presentation_Layer.Authentication
+@using Presentation_Layer.Models
+
+@inject IGameService gameService;
+@inject AuthenticationStateProvider stateProvider;
+
 <h3>GameList</h3>
+
+<ul>
+@foreach (var game in games)
+{
+    <li>
+        <b>@game.Name</b>
+    </li>
+}
+</ul>
+
+
 @inject NavigationManager NavigationManager
 <button @onclick="@EditAsync" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Edit
         </button>
 
 @code {
+    private IList<Game> games = new List<Game>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        games = await gameService.GetUserGamesAsync(((CustomAuthenticationStateProvider)stateProvider).GetCachedUser());
+    }
+    
     private async Task EditAsync()
     {
         NavigationManager.NavigateTo("EditGameList");

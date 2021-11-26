@@ -5,56 +5,105 @@
 
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime JSRuntime
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="remove_margin" style="color:#A6583C">@errorMessage</div>
-        <div class="form-group remove_margin">
-            <input class="form__input" id="username" type="text" placeholder="username" @bind-value="username"/>
-            <label class="form__label" for="username">Username</label>
-        </div>
-
-
-        <div class="form-group remove_margin">
-            <input class="form__input" id="password" type="password" placeholder="password" @bind-value="password"/>
-            <label class="form__label" for="password">Password</label>
-        </div>
-
-
-        <a class="login_logout" href="" @onclick="PerformLogin">
-            <span class="oi oi-account-login" aria-hidden="true"></span>
-            Login
-        </a>
+        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+            <i class="oi oi-person"></i>
+        </button>
+        @if (showModal)
+        {
+            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sign in</h5>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="username" class="col-form-label">Username:</label>
+                                    <input class="form-control" id="username" type="text" placeholder="@@Username" @bind-value="username"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Password</label>
+                                    <input class="form-control" id="password" type="password" placeholder="Password" @bind-value="password"/>
+                                </div>
+                            </form>
+                            <div style="color:red">@errorMessage</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccountAsync">Create Account</button>
+                            <button type="button" class="btn btn-outline-primary" @onclick="PerformLogin">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </NotAuthorized>
     <Authorized>
-        <p class="remove_margin">Hello, @username !</p>
-        <a class="login_logout" href="" @onclick="PerformLogout">
-            <span class="oi oi-account-logout" aria-hidden="true"></span>
-            Log out
-        </a>
+        <span class="input-group-text">@@</span>
+        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+            @username <i class="oi oi-person"></i>
+        </button>
+        @if (showModal)
+        {
+            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmation</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to log out?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">Cancel</button>
+                            <button type="button" class="btn btn-outline-danger" @onclick="PerformLogout">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </Authorized>
 </AuthorizeView>
 
 @code {
+    private bool showModal = false;
     private string username;
     private string password;
     private string errorMessage;
 
-    public async Task PerformLogin()
+    private async Task OpenAsync()
     {
-        errorMessage = "";
-        try
+        showModal = true;
+    }
+    
+    private async Task CloseAsync()
+    {
+        showModal = false;
+    }
+
+   private async Task PerformLogin()
+    {
+       try
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
+            await CloseAsync();
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            errorMessage = e.Message;
+            errorMessage = "Username or password is incorrect";
         }
+
     }
 
-    public async Task PerformLogout()
+    private async Task PerformLogout()
     {
         errorMessage = "";
         username = "";
@@ -63,10 +112,17 @@
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
+            await CloseAsync();
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            
+            // ignored
         }
+    }
+
+    private async Task CreateAccountAsync()
+    {
+        await CloseAsync();
+        NavigationManager.NavigateTo("CreateAccount");
     }
 }

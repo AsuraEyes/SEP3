@@ -43,8 +43,8 @@ namespace REST.Controllers
         {
             try
             {
-                IList<Game> adults = await soapWebService.GetGamesAsync();
-                return Ok(adults);
+                IList<Game> games = await soapWebService.GetGamesAsync();
+                return Ok(games);
             }
             catch (Exception e)
             {
@@ -53,14 +53,14 @@ namespace REST.Controllers
             }
         }
         
-       /* [HttpGet]
-        [Route("/UserGames")]
+       [HttpGet]
+        [Route("/UserGames/{username}")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesAsync([FromBody]String user)
+            GetUserGamesAsync([FromRoute]String username)
         {
             try
             {
-                IList<Game> adults = await soapWebService.GetUserGamesAsync(user);
+                IList<Game> adults = await soapWebService.GetUserGamesAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)
@@ -68,7 +68,7 @@ namespace REST.Controllers
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
-        }*/
+        }
         
         [HttpDelete]
         [Route("{id:int}")]
