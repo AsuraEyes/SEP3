@@ -1,5 +1,8 @@
 @page "/GGL"
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
 @inject NavigationManager NavigationManager
+@inject IGameService gameService
 
 <h3>GGL</h3>
 <p class="actions">
@@ -7,10 +10,31 @@
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
+ @* @foreach (var item in goldenGameList) *@
+ @*         { *@
+ @*                 if (item.Approved == true) *@
+ @*                 { *@
+ @*                         <ul> *@
+ @*                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li> *@
+ @*                         </ul> *@
+ @*                 } *@
+ @*         } *@
+ @* } *@
 
 @code {
+        private IList<Game> goldenGameList = new List<Game>();
+
+        protected override async Task OnInitializedAsync()
+        {
+                goldenGameList = await gameService.GetGamesAsync();
+        }
+
         private async Task AddGameAsync()
         {
                 NavigationManager.NavigateTo("CreateGameAdmin");
+        }
+        private async Task MoreInfo(int id)
+        {
+                NavigationManager.NavigateTo($"GameApproval/{id}");
         }
 }

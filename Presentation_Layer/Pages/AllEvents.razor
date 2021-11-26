@@ -83,11 +83,21 @@
                 }
             </div>
             <div class="card-footer text-center">
-                <button class="btn btn-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
                     More
                 </button>
             </div>
         </div>
+    }
+</div>
+
+<div>
+    @if (numberOfPages > 1)
+    {
+        for (var i = 1; i <= numberOfPages; i++)
+        {
+            <span><a href="AllEvents/@i" @onclick="@OnInitializedAsync"> -@i- </a>|</span>
+        }
     }
 </div>
 
@@ -96,18 +106,9 @@
         {
             for (var i = 1; i <= numberOfPages; i++)
             {
-                if (currentPage == i)
-                {
-                    <li class="page-item active">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="page-item">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@OnInitializedAsync">@i</a>
-                    </li>
-                }
+                <li class="page-item active">
+                    <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
+                </li>
             }
         }
     </ul>
@@ -147,7 +148,7 @@
 @code {
 
     [Parameter]
-    public int currentPage { get; set; }
+    public int currentPage { get; set; } = 1;
 
     private bool byAvailability;
     private bool byDate;
@@ -157,7 +158,14 @@
     
     private IList<Category> categories = new List<Category>();
     private EventList events = new();
-    private Event[] eventList = {};
+    private Event[] eventList = new Event[]{};
+
+    private FilterREST filterRest = new FilterREST{
+        // byDate = false,
+        // byAvailability = false,
+        // categoryId = 0,
+        // currentPage = 1
+        };
 
 
     private string Search;
@@ -168,12 +176,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (currentPage < 1)
-        {
-            currentPage = 1;
-        }
-        
         categories = await CategoryService.GetCategoriesAsync();
+        // events = await RestEvent.GetFilteredEventsAsync(filterRest);
+        // Console.WriteLine(events.Count);
+        // numberOfPages = events.Count;
+        // eventList = events.eventList;
+        // filterRest.byAvailability = byAvailability;
+        // filterRest.byDate = byDate;
+        // filterRest.categoryId = categoryId;
+        // filterRest.currentPage = currentPage;
+
         await Filter();
 
 
@@ -183,8 +195,13 @@
 
     private async Task Filter()
     {
-        events = await RestEvent.GetFilteredEventsAsync(byDate, byAvailability, currentPage, categoryId);
-        numberOfPages = events.NumberOfPages;
+        filterRest.byAvailability = byAvailability;
+        filterRest.byDate = byDate;
+        filterRest.categoryId = categoryId;
+        filterRest.currentPage = currentPage;
+        events = await RestEvent.GetFilteredEventsAsync(filterRest);
+        Console.WriteLine(events.Count);
+        numberOfPages = events.Count;
         eventList = events.eventList;
         currentPage = 1;
     }
@@ -196,8 +213,8 @@
             byDate = true;
         }
         else byDate = false;
-        currentPage = 1;
         await Filter();
+        currentPage = 1;
     }
 
     private async Task FilterByAvailability(ChangeEventArgs args)

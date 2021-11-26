@@ -103,26 +103,25 @@ public class EventDAO implements Events {
     return eventHelper().mapSingle(new EventMapper(), "SELECT * FROM event WHERE id = ?", id);
   }
 
-    public EventList searchAndFilter(String filter, int category, int currentPage, int resultsPerPage){
+    public EventList searchAndFilter(Filter filter){
         eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
 
         //counting the number of elements based on the applied filters
 
         String statement = "SELECT COUNT(*) FROM event ";
-      System.out.println(filter);
         String appendToStatement = "";
-        if(!filter.equals("all")){
+        if(!filter.getFilter().equals("all")){
             appendToStatement += " WHERE ";
-          if(filter.contains("byDate"))
+          if(filter.getFilter().contains("byDate"))
           {
               appendToStatement +="start_time > now() AND";
           }
-          if(filter.contains("byCategory"))
+          if(filter.getFilter().contains("byCategory"))
           {
-              appendToStatement +=" event_category_id = " + category+ " AND";
+              appendToStatement +=" event_category_id = " + filter.getCategoryId()+ " AND";
           }
-          if(filter.contains("byAvailability"))
+          if(filter.getFilter().contains("byAvailability"))
           {
               appendToStatement +=" number_of_participants < max_number_of_participants AND";
           }
@@ -151,19 +150,22 @@ public class EventDAO implements Events {
 
         //add pagination
 
-        statement += " ORDER by id LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
+        //statement += " ORDER by id LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
+        //offset = (currentPage-1)*resultsPerPage;
+
+        statement += " ORDER by id LIMIT "+filter.getLimit()+" OFFSET "+filter.getOffset()+";";
 
         pagedEventList.getEventList().addAll(eventHelper().map(new EventMapper(), statement));
-        pagedEventList.setNumberOfPages((int)Math.ceil(eventListLength/ (float)resultsPerPage));
+        pagedEventList.setCount((int)Math.ceil(eventListLength/ (float)filter.getLimit()));
 
         System.out.println(statement);
 
         return pagedEventList;
     }
 
-//    public int getNumberOfPages(int resultsPerPage){
-//        //return (int) Math.ceil(eventList.getEventList().size() / (float)resultsPerPage);
-//        return (int) Math.ceil(eventListLength/ (float)resultsPerPage);
+//    public int getNumberOfPages(int limit){
+//        //return (int) Math.ceil(eventList.getEventList().size() / (float)limit);
+//        return (int) Math.ceil(eventListLength/ (float)limit);
 //    }
 
     private static class IntegerMapper implements DataMapper<Integer> {

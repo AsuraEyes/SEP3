@@ -34,12 +34,12 @@ namespace BusinessLayer.Data
         
         public async Task JoinEventAsync(int id, string username)
         {
-            response = await GetParticipantResponse(Operation.POST, id, username);
+            response = await GetParticipantResponse(Operation.CREATE, id, username);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
         {
-            response = await GetParticipantResponse(Operation.PATCH, id, username);
+            response = await GetParticipantResponse(Operation.UPDATE, id, username);
         }
     }
 }

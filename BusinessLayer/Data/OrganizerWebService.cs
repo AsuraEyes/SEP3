@@ -34,12 +34,12 @@ namespace BusinessLayer.Data
         
         public async Task CoOrganizeEvent(int id, string username)
         {
-            response = await GetOrganizerResponse(Operation.POST, id, username);
+            response = await GetOrganizerResponse(Operation.CREATE, id, username);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
         {
-            response = await GetOrganizerResponse(Operation.PATCH, id, username);
+            response = await GetOrganizerResponse(Operation.UPDATE, id, username);
         }
     }
 }

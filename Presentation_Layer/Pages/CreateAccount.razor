@@ -1,0 +1,41 @@
+@page "/CreateAccount"
+@using global::Data
+@using Presentation_Layer.Models
+
+@inject IUserService UserService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Create Account</h3>
+<EditForm Model="@User" OnValidSubmit="@CreateAccountAsync">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+        Name:<br/>
+        <InputText @bind-Value="User.Username"/>
+        <ValidationMessage For="@(() => User.Username)"/>
+    </div>
+    <div class="form-group">
+        Password:<br/>
+        <InputText @bind-Value="User.Password"/>
+        <ValidationMessage For="@(() => User.Password)"/>
+    </div>
+    <div class="form-group">
+        Confirm Password:<br/>
+        <InputText @bind-Value="User.ConfirmPassword"/>
+        <ValidationMessage For="@(() => User.ConfirmPassword)"/>
+    </div>
+
+    <p class="actions">
+        <button class="btn btn-outline-success" type="submit">Create</button>
+    </p>
+
+</EditForm>
+
+@code {
+    private User User = new User();
+
+    private async Task CreateAccountAsync()
+    {
+        //await UserService.CreateAccount(User);
+    }
+}

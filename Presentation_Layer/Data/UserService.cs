@@ -87,8 +87,9 @@ namespace SEP3_Blazor.Data
                 HttpContent content = new StringContent(UserAsJson,
                     Encoding.UTF8,
                     "application/json");
-                
                 var UserValidationResponseMessage = await Client.PostAsync(url + "/User", content);
+                
+                
                 if (UserValidationResponseMessage.IsSuccessStatusCode)
                 {
                     Console.WriteLine("we go here!");

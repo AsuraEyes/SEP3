@@ -4,9 +4,14 @@ namespace Presentation_Layer.Models
 {
     public class User
     {
+        [Required(ErrorMessage = "Email is required.")]
         public string Username{ get; set; }
         
+        [Required(ErrorMessage = "Password is required")]
         public string Password{ get; set; }
+        
+        [Compare("Password", ErrorMessage = "The passwords do not match.")]
+        public string ConfirmPassword { get; set; }
         
         public string FirstName{ get; set; }
         

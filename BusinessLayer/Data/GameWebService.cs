@@ -41,7 +41,7 @@ namespace BusinessLayer.Data
 
         public async Task  AddGameAsync(Game game)
         {
-            response = await getGameResponse(0, Operation.POST, game, "");
+            response = await getGameResponse(0, Operation.CREATE, game, "");
             //return response.getMessageResponse.Notification;
         }
 
@@ -59,12 +59,12 @@ namespace BusinessLayer.Data
 
         public async Task RemoveGameAsync(int id)
         {
-            response = await getGameResponse(id, Operation.DELETE, null, "");
+            response = await getGameResponse(id, Operation.REMOVE, null, "");
         }
 
         public async Task EditGameAsync(Game game)
         {
-            response = await getGameResponse(0, Operation.PATCH, game, "");
+            response = await getGameResponse(0, Operation.UPDATE, game, "");
         }
     }
 }
