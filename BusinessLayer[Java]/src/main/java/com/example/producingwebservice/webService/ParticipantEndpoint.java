@@ -33,16 +33,16 @@ public class ParticipantEndpoint
         case GET:
           //response.setUser(participantsDAO.get(request.getUsername()));
           break;
-        case POST:
+        case CREATE:
           participantsDAO.join(request.getEventId(), request.getUsername());
           break;
-        case PATCH:
+        case UPDATE:
             participantsDAO.withdraw(request.getEventId(), request.getUsername());
           break;
         case GETALL:
         response.getParticipantList().addAll(participantsDAO.getParticipantList(request.getEventId()));
           break;
-        case DELETE:
+        case REMOVE:
           // usersDAO.delete(request.getId());
       }
       return response;

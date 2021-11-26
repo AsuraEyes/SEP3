@@ -25,10 +25,6 @@ public class CategoryEndpoint {
     public SOAPCategoryResponse categoryResponse(@RequestPayload SOAPCategoryRequest request) {
         SOAPCategoryResponse response = new SOAPCategoryResponse();
         switch (request.getOperation()) {
-//      case GET :
-//      case POST:
-//      case PATCH:
-//      case DELETE:
             case GETALL:
                 response.setCategoryList(categoryDAO.getCategories());
                 break;
