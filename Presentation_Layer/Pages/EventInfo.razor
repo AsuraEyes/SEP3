@@ -171,7 +171,7 @@ else
     
     private async Task CancelEvent()
     {
-        await eventService.CancelEvent(Id);
+        await eventService.CancelEvent(selectedEvent);
         NavigationManager.NavigateTo("MyEvents");
     }
 
