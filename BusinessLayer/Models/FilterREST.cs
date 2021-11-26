@@ -6,5 +6,6 @@ namespace BusinessLayer.Models
         public bool byAvailability { get; set; }
         public int currentPage { get; set; }
         public int categoryId { get; set; }
+        public int resultsPerPage { get; set; }
     }
 }

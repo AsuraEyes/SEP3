@@ -34,15 +34,7 @@ namespace Presentation_Layer.Data
         public async Task<EventList> GetFilteredEventsAsync(FilterREST filterRest)
         {
             var filters =
-                $"?byDate={filterRest.byDate}&byAvailability={filterRest.byAvailability}&currentPage={filterRest.currentPage}&categoryId={filterRest.categoryId}";
-            // var filterRestAsJson = JsonSerializer.Serialize(filterRest);
-            // Console.WriteLine(filterRestAsJson);
-            // var aaa = uri + $"/FilteredEvents?" + filterRest;
-            // var EventList = await Client.GetStringAsync(aaa);
-            
-
-            //Content = new StringContent(filterRestAsJson, Encoding.UTF8, "application/json");
-            
+                $"?byDate={filterRest.byDate}&byAvailability={filterRest.byAvailability}&currentPage={filterRest.currentPage}&categoryId={filterRest.categoryId}&resultsPerPage={filterRest.resultsPerPage}";
             var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents"+filters);
             var EventList = await stringAsync;
             EventList Events = JsonSerializer.Deserialize<EventList>(EventList, new JsonSerializerOptions

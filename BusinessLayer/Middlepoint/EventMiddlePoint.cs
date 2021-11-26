@@ -15,7 +15,7 @@ namespace BusinessLayer.Middlepoint
         private ICategoryWebService categoryWebService;
         private IEventWebService eventWebService;
         private EventList filteredEvents;
-        private int resultsPerPage = 3;
+        private int resultsPerPage;
        // public int numberOfPages { get; set; }
 
         public EventMiddlePoint(IEventWebService eventWebService)
@@ -51,8 +51,8 @@ namespace BusinessLayer.Middlepoint
                     filter = filter.Replace("byCategory", "");
 
                 filterObject.filter = filter;
-                filterObject.limit = resultsPerPage;
-                filterObject.offset = (filterRest.currentPage - 1) * resultsPerPage;
+                filterObject.limit = filterRest.resultsPerPage;
+                filterObject.offset = (filterRest.currentPage - 1) * filterRest.resultsPerPage;
                 filterObject.categoryId = filterRest.categoryId;
                 
                 Console.WriteLine(filter);
