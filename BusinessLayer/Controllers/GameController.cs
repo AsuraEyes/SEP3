@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -13,10 +14,12 @@ namespace REST.Controllers
     {
         //private readonly IUserService UserService;
         private IGameWebService soapWebService;
+        private IGameMiddlepoint gameMiddlepoint;
 
-        public GameController(IGameWebService soapWebService)
+        public GameController(IGameWebService soapWebService, GameMiddlepoint gameMiddlepoint)
         {
             this.soapWebService = soapWebService;
+            this.gameMiddlepoint = gameMiddlepoint;
         }
 
         [HttpGet]
@@ -97,6 +100,26 @@ namespace REST.Controllers
             try
             {
                 await soapWebService.AddGameAsync(Game);
+                return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        [HttpPost]
+        [Route("/Game/CreateGame")]
+        public async Task<ActionResult<Game>> AddGameAsyncAdmin([FromBody] Game Game)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await gameMiddlepoint.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)

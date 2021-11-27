@@ -24,18 +24,18 @@
     </div>
     <div class="form-group">
         Date: <br/>
-        <InputDate @bind-Value="Date">
-            <ValidationMessage For="@(() => Date)"/>
+        <InputDate @bind-Value="date">
+            <ValidationMessage For="@(() => date)"/>
         </InputDate>
     </div>
     <div class="form-group">
         Start Time: <br/>
-        <input type="time" required @bind-value="StartTime"/>
-        <ValidationMessage For="@(() => StartTime)"/>
+        <input type="time" required @bind-value="startTime"/>
+        <ValidationMessage For="@(() => startTime)"/>
     </div>
     <div class="form-group" aria-hidden="True">
         End Time:<br/>
-        <input type="time" required @bind-value="EndTime">
+        <input type="time" required @bind-value="endTime">
     </div>
     <div class="form-group">
         Address Street Name:<br/>
@@ -76,12 +76,11 @@
 
 
 @code {
-    private DateTime Date = DateTime.Today;
-    private DateTime StartTime = DateTime.Now;
-    private DateTime EndTime;
-    private Event newEvent = new Event();
-    private DateTime DateTime;
-    private IList<int> categoryOptions = new List<int>() {0, 1, 2, 3};
+    private DateTime date = DateTime.Today;
+    private DateTime startTime = DateTime.Now;
+    private DateTime endTime;
+    private Event newEvent = new();
+    private DateTime dateTime;
     private IList<Category> categories = new List<Category>();
     
     protected override async Task OnInitializedAsync()
@@ -93,8 +92,8 @@
     {
         newEvent.Organizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         
-        newEvent.StartTime = Date.Add(StartTime.TimeOfDay);
-        newEvent.EndTime = Date.Add(EndTime.TimeOfDay);
+        newEvent.StartTime = date.Add(startTime.TimeOfDay);
+        newEvent.EndTime = date.Add(endTime.TimeOfDay);
         await EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo($"MyEvents");

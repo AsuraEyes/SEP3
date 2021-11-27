@@ -36,5 +36,11 @@ namespace BusinessLayer.Middlepoint
             }
             return null;
         }
+
+        public async Task CreateAccountAsync(User user)
+        {
+            user.role = 2;
+            await UserWebService.CreateAccountAsync(user);
+        }
     }
 }

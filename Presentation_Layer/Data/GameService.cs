@@ -32,11 +32,20 @@ namespace Presentation_Layer.Data
 
         public async Task AddGameAsync(Game Game)
         {
-            string GameAsJson = JsonSerializer.Serialize(Game);
+            var GameAsJson = JsonSerializer.Serialize(Game);
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");
              await client.PostAsync(uri+"/Game", content);
+        }
+        
+        public async Task CreateGameAsync(Game Game)
+        {
+            var GameAsJson = JsonSerializer.Serialize(Game);
+            HttpContent content = new StringContent(GameAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await client.PostAsync(uri+"/User/CreateGame", content);
         }
 
         public async Task<IList<Game>> GetGamesAsync()
@@ -63,7 +72,7 @@ namespace Presentation_Layer.Data
 
         public async Task UpdateGameAsync(Game Game)
         {
-            string GameAsJson = JsonSerializer.Serialize(Game);
+            var GameAsJson = JsonSerializer.Serialize(Game);
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");

@@ -34,7 +34,10 @@
                                     <input class="form-control" id="password" type="password" placeholder="Password" @bind-value="password"/>
                                 </div>
                             </form>
-                            <div style="color:red">@errorMessage</div>
+                            @if (!errorMessage.Equals(""))
+                            {
+                                <div class="alert alert-danger" role="alert">@errorMessage</div>
+                            }
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccountAsync">Create Account</button>
@@ -46,7 +49,7 @@
         }
     </NotAuthorized>
     <Authorized>
-        <span class="input-group-text">@@</span>
+        <span class="input-group-text text-white bg-primary">@@</span>
         <button class="btn btn-outline-primary" @onclick="OpenAsync">
             @username <i class="oi oi-person"></i>
         </button>
@@ -78,6 +81,11 @@
     private string password;
     private string errorMessage;
 
+    protected override async Task OnInitializedAsync()
+    {
+        errorMessage = "";
+    }
+    
     private async Task OpenAsync()
     {
         showModal = true;
