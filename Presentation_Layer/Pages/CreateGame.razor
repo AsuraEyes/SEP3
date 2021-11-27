@@ -9,7 +9,6 @@
 <h3>Create Game</h3>
 <EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer">
     <DataAnnotationsValidator/>
-    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="game.Name"/>
@@ -49,9 +48,8 @@
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
     </div>
     
-    <br/>
     <p class="actions">
-        <button type="button" class="btn btn-outline-success">Create</button>
+        <button type="submit" class="btn btn-outline-success">Create</button>
     </p>
 </EditForm>
 

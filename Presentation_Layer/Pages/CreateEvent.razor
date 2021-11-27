@@ -4,6 +4,7 @@
 @using Presentation_Layer.Models
 @using System.ComponentModel.DataAnnotations
 @using System.Security.Claims
+@using ExpressiveAnnotations.Attributes
 @using Presentation_Layer.Authentication
 
 @attribute [Authorize(Policy = "Organizer")]
@@ -24,18 +25,19 @@
     </div>
     <div class="form-group">
         Date: <br/>
-        <InputDate @bind-Value="date">
-            <ValidationMessage For="@(() => date)"/>
+        <InputDate @bind-Value="newEvent.Date">
+            <ValidationMessage For="@(() => newEvent.Date)"/>
         </InputDate>
     </div>
     <div class="form-group">
         Start Time: <br/>
-        <input type="time" required @bind-value="startTime"/>
-        <ValidationMessage For="@(() => startTime)"/>
+        <input type="time" required @bind-value="@newEvent.TimeStart"/>
+        <ValidationMessage For="@(() => newEvent.TimeStart)"/>
     </div>
     <div class="form-group" aria-hidden="True">
         End Time:<br/>
-        <input type="time" required @bind-value="endTime">
+        <input type="time" required @bind-value="@newEvent.TimeEnd">
+        <ValidationMessage For="@(() => newEvent.TimeStart)"/>
     </div>
     <div class="form-group">
         Address Street Name:<br/>
@@ -76,9 +78,6 @@
 
 
 @code {
-    private DateTime date = DateTime.Today;
-    private DateTime startTime = DateTime.Now;
-    private DateTime endTime;
     private Event newEvent = new();
     private DateTime dateTime;
     private IList<Category> categories = new List<Category>();
@@ -90,13 +89,14 @@
 
     private async Task CreateEventAsync()
     {
-        newEvent.Organizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        var newEventOrganizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
         
-        newEvent.StartTime = date.Add(startTime.TimeOfDay);
-        newEvent.EndTime = date.Add(endTime.TimeOfDay);
+        newEvent.StartTime = newEvent.Date.Add(newEvent.TimeStart.TimeOfDay);
+        newEvent.EndTime = newEvent.Date.Add(newEvent.TimeEnd.TimeOfDay);
         await EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
-        NavigationManager.NavigateTo($"MyEvents");
+        NavigationManager.NavigateTo("MyEvents");
     }
 
 }
