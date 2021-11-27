@@ -9,7 +9,6 @@ public interface Games {
     GameList readAllGGL();
 
     GameList readAllUserGameList(String username);
-    GameList readAllEventGameList(int eventId);
 
     void delete(int id);
 
