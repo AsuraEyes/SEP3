@@ -38,7 +38,6 @@
     private async Task CreateAccountAsync()
     {
         await UserService.CreateAccountAsync(user);
-        await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
-        NavigationManager.NavigateTo($"Login/");
+        NavigationManager.NavigateTo($"/");
     }
 }

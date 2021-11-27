@@ -20,10 +20,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="made it work">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="creating account working">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/BusinessLayer/Controllers/EventController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -65,6 +64,7 @@
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/BusinessLayer/Controllers/EventController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -77,6 +77,7 @@
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -402,14 +403,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="71679000" />
-    </task>
-    <task id="LOCAL-00023" summary="filtering implementation blazor to database">
-      <created>1637655343894</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1637655343894</updated>
+      <workItem from="1637742394056" duration="72381000" />
     </task>
     <task id="LOCAL-00024" summary="added event gameList view java to blazor">
       <created>1637674632032</created>
@@ -747,7 +741,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638010228429</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="creating account working">
+      <created>1638011279685</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1638011279686</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -771,7 +772,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="My parts and apparently almost everyone's parts" />
     <MESSAGE value="Changed button names" />
     <MESSAGE value="fixed input field size" />
     <MESSAGE value="changed input field size" />
@@ -796,6 +796,7 @@
     <MESSAGE value="All events changes" />
     <MESSAGE value="alert has gotten bootstrap" />
     <MESSAGE value="made it work" />
-    <option name="LAST_COMMIT_MESSAGE" value="made it work" />
+    <MESSAGE value="creating account working" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating account working" />
   </component>
 </project>
