@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Presentation_Layer.Models
@@ -21,6 +22,8 @@ namespace Presentation_Layer.Models
         [Required(ErrorMessage = "A minimum amount of players is required.")]
         public int MinNumberOfPlayers { get; set; }
 
+        [Required(ErrorMessage = "A maximum amount of players is required.")]
+        [Range(typeof(int), "MinNumberOfPlayers", "Int32.MaxValue")]
         public int MaxNumberOfPlayers { get; set; }
 
         public string ShortDescription { get; set; }
