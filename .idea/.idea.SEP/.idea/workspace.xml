@@ -20,9 +20,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="All events changes">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="alert has gotten bootstrap">
+      <change afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameMiddlepoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IGameMiddlepoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/UserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IUserMiddlepoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IUserMiddlepoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/UserMiddlepoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/UserMiddlepoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGameAdmin.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGameAdmin.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +79,7 @@
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/Login.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/CreateEvent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/Code/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -400,14 +417,7 @@
       <workItem from="1637667922322" duration="1243000" />
       <workItem from="1637672584075" duration="4763000" />
       <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="65764000" />
-    </task>
-    <task id="LOCAL-00021" summary="create event thingies">
-      <created>1637510894303</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1637510894303</updated>
+      <workItem from="1637742394056" duration="70674000" />
     </task>
     <task id="LOCAL-00022" summary="Fixed event error messages">
       <created>1637573030655</created>
@@ -745,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637948887627</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="alert has gotten bootstrap">
+      <created>1638003827583</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1638003827583</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,7 +786,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="changed navbar and head title of website" />
     <MESSAGE value="correct name for pagination methods" />
     <MESSAGE value="My parts and apparently almost everyone's parts" />
     <MESSAGE value="Changed button names" />
@@ -794,6 +810,7 @@
     <MESSAGE value="changed cancelling event" />
     <MESSAGE value="rollback" />
     <MESSAGE value="All events changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="All events changes" />
+    <MESSAGE value="alert has gotten bootstrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="alert has gotten bootstrap" />
   </component>
 </project>

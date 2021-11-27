@@ -7,5 +7,6 @@ namespace BusinessLayer.Middlepoint
     {
         Task ValidateUserAsync(User user);
         Task<User> GetValidatedUser();
+        Task CreateAccountAsync(User user);
     }
 }

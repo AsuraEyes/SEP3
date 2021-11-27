@@ -6,7 +6,7 @@
 @inject NavigationManager NavigationManager
 @inject IGameService gameService
 
-<h3>CreateGame</h3>
+<h3>Create Game</h3>
 <EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -56,7 +56,7 @@
 </EditForm>
 
 @code {
-    private Game game = new Game();
+    private Game game = new();
     
     private async Task CreateAsOrganizer()
     {

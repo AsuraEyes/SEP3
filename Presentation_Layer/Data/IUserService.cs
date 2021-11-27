@@ -8,5 +8,6 @@ namespace Data
     {
         Task<string> helloWorld();
         Task<User> ValidateUser(string userName, string password);
+        Task CreateAccountAsync(User user);
     }
 }

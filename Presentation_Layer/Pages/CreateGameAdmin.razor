@@ -6,7 +6,7 @@
 @inject NavigationManager NavigationManager
 @inject IGameService gameService
 
-<h3>CreateGame</h3>
+<h3>Create Game</h3>
 <EditForm Model="@game" OnValidSubmit="@CreateAsAdministrator">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -56,12 +56,11 @@
 </EditForm>
 
 @code {
-    private Game game = new Game();
+    private readonly Game game = new();
     
     private async Task CreateAsAdministrator()
     {
-        game.Approved = true;
-        await gameService.AddGameAsync(game);
+        await gameService.CreateGameAsync(game);
         NavigationManager.NavigateTo("GGL");
     }
 }

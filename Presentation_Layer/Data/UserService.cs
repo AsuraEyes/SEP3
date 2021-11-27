@@ -16,7 +16,7 @@ namespace SEP3_Blazor.Data
         
 
         private readonly HttpClient Client;
-        private readonly string url = "https://localhost:5003";
+        private readonly string uri = "https://localhost:5003";
 
         public UserService()
         {
@@ -65,7 +65,7 @@ namespace SEP3_Blazor.Data
         {
             try
             {
-                var stringAsync = await Client.GetStringAsync(url);
+                var stringAsync = await Client.GetStringAsync(uri);
             //    var answer = JsonSerializer.Deserialize<string>(stringAsync, new JsonSerializerOptions
             //    {
             //        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
@@ -87,13 +87,13 @@ namespace SEP3_Blazor.Data
                 HttpContent content = new StringContent(UserAsJson,
                     Encoding.UTF8,
                     "application/json");
-                var UserValidationResponseMessage = await Client.PostAsync(url + "/User", content);
+                var UserValidationResponseMessage = await Client.PostAsync(uri + "/User", content);
                 
                 
                 if (UserValidationResponseMessage.IsSuccessStatusCode)
                 {
                     Console.WriteLine("we go here!");
-                    var stringAsync = Client.GetStringAsync(url + "/User/Validate");
+                    var stringAsync = Client.GetStringAsync(uri + "/User/Validate");
                     var UserSerialized = await stringAsync;
                     var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
                     {
@@ -130,6 +130,15 @@ namespace SEP3_Blazor.Data
 
             return first;*/
             return null;
+        }
+        
+        public async Task CreateAccountAsync(User user)
+        {
+            var userAsJson = JsonSerializer.Serialize(user);
+            HttpContent content = new StringContent(userAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await Client.PostAsync(uri+"/User/CreateAccount", content);
         }
     }
 }

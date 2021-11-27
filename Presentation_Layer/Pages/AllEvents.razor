@@ -7,7 +7,7 @@
 @inject IEventService RestEvent
 @inject ICategoryService CategoryService;
 
-<h2>AllEvents</h2>
+<h2>All Events</h2>
 
 @* @context.User.Identity.Name *@
 <AuthorizeView Policy="Organizer">
@@ -162,7 +162,7 @@
 @code {
 
     [Parameter]
-    public int currentPage { get; set; }
+    public int CurrentPage { get; set; }
 
     private bool byAvailability;
     private bool byDate;
@@ -175,14 +175,13 @@
     private IList<Category> categories = new List<Category>();
     private EventList events = new();
     private Event[] eventList = {};
-    private int[] pages = {};
 
     private FilterREST filterRest = new ();
 
     protected override async Task OnInitializedAsync()
     {
         resultsPerPage = 3;
-        if (currentPage < 1) currentPage = 1;
+        if (CurrentPage < 1) CurrentPage = 1;
         categories = await CategoryService.GetCategoriesAsync();
 
         await Filter();
@@ -193,13 +192,13 @@
         filterRest.byAvailability = byAvailability;
         filterRest.byDate = byDate;
         filterRest.categoryId = categoryId;
-        filterRest.currentPage = currentPage;
+        filterRest.currentPage = CurrentPage;
         filterRest.resultsPerPage = resultsPerPage;
         
         events = await RestEvent.GetFilteredEventsAsync(filterRest);
         numberOfPages = events.Count;
         eventList = events.eventList;
-        currentPage = 1;
+        CurrentPage = 1;
     }
 
     private async Task FilterByDate(ChangeEventArgs args)
@@ -236,7 +235,7 @@
 
     private async Task SetCurrentPage(int page)
     {
-        currentPage = page;
+        CurrentPage = page;
         await Filter();
     }
 

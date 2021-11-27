@@ -38,6 +38,27 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        
+        [HttpPost]
+        [Route("/User/CreateAccount")]
+        public async Task<ActionResult> CreateAccountAsync([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.CreateAccountAsync(user);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
 
         [HttpGet]
         [Route("/User/Validate")]
