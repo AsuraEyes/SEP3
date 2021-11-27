@@ -6,10 +6,10 @@ namespace BusinessLayer.Middlepoint
 {
     public class GameMiddlepoint : IGameMiddlepoint
     {
-        private GameWebService GameWebService;
+        private IGameWebService GameWebService;
         private Game game;
 
-        public GameMiddlepoint(GameWebService gameWebService)
+        public GameMiddlepoint(IGameWebService gameWebService)
         {
             GameWebService = gameWebService;
         }

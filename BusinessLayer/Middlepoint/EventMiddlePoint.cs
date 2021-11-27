@@ -15,8 +15,7 @@ namespace BusinessLayer.Middlepoint
         private ICategoryWebService categoryWebService;
         private IEventWebService eventWebService;
         private EventList filteredEvents;
-        private int resultsPerPage;
-       // public int numberOfPages { get; set; }
+        
 
         public EventMiddlePoint(IEventWebService eventWebService)
         {

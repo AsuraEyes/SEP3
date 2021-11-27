@@ -16,7 +16,7 @@ namespace REST.Controllers
         private IGameWebService soapWebService;
         private IGameMiddlepoint gameMiddlepoint;
 
-        public GameController(IGameWebService soapWebService, GameMiddlepoint gameMiddlepoint)
+        public GameController(IGameWebService soapWebService, IGameMiddlepoint gameMiddlepoint)
         {
             this.soapWebService = soapWebService;
             this.gameMiddlepoint = gameMiddlepoint;
