@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         Password:<br/>
-        <InputText @bind-Value="user.Password"/>
+        <InputText @bind-Value="user.Password" type="password"/>
         <ValidationMessage For="@(() => user.Password)"/>
     </div>
     <div class="form-group">
@@ -39,6 +39,6 @@
     {
         await UserService.CreateAccountAsync(user);
         await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(user.Username, user.Password);
-        NavigationManager.NavigateTo("/");
+        NavigationManager.NavigateTo($"Login/");
     }
 }
