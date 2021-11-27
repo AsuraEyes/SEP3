@@ -127,13 +127,13 @@ namespace BookAndPlaySOAP
         GET,
         
         /// <remarks/>
-        DELETE,
+        REMOVE,
         
         /// <remarks/>
-        POST,
+        CREATE,
         
         /// <remarks/>
-        PATCH,
+        UPDATE,
         
         /// <remarks/>
         GETALL,
@@ -338,21 +338,21 @@ namespace BookAndPlaySOAP
     public partial class EventList
     {
         
-        private int numberOfPagesField;
+        private int countField;
         
         private Event[] eventListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int numberOfPages
+        public int count
         {
             get
             {
-                return this.numberOfPagesField;
+                return this.countField;
             }
             set
             {
-                this.numberOfPagesField = value;
+                this.countField = value;
             }
         }
         
@@ -551,6 +551,78 @@ namespace BookAndPlaySOAP
             set
             {
                 this.organizerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class Filter
+    {
+        
+        private int categoryIdField;
+        
+        private string filterField;
+        
+        private int offsetField;
+        
+        private int limitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int categoryId
+        {
+            get
+            {
+                return this.categoryIdField;
+            }
+            set
+            {
+                this.categoryIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int offset
+        {
+            get
+            {
+                return this.offsetField;
+            }
+            set
+            {
+                this.offsetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int limit
+        {
+            get
+            {
+                return this.limitField;
+            }
+            set
+            {
+                this.limitField = value;
             }
         }
     }
@@ -1029,15 +1101,11 @@ namespace BookAndPlaySOAP
         
         private int idField;
         
-        private string filterField;
+        private Filter filterField;
         
         private Operation operationField;
         
         private Event eventField;
-        
-        private int currentPageField;
-        
-        private int resultsPerPageField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1055,7 +1123,7 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string filter
+        public Filter filter
         {
             get
             {
@@ -1092,34 +1160,6 @@ namespace BookAndPlaySOAP
             set
             {
                 this.eventField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public int currentPage
-        {
-            get
-            {
-                return this.currentPageField;
-            }
-            set
-            {
-                this.currentPageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public int resultsPerPage
-        {
-            get
-            {
-                return this.resultsPerPageField;
-            }
-            set
-            {
-                this.resultsPerPageField = value;
             }
         }
     }

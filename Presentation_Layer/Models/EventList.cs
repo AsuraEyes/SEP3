@@ -4,7 +4,7 @@ namespace Presentation_Layer.Models
 {
     public class EventList
     {
-        public int NumberOfPages { get; set; }
+        public int Count { get; set; }
         public Event[] eventList { get; set; }
 
         public  EventList()

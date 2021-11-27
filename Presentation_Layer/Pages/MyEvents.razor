@@ -1,12 +1,12 @@
 @page "/MyEvents"
 @inject NavigationManager NavigationManager
-<h3>MyEvents</h3>
+<h3>My Events</h3>
 
-<p class="actions">
-    <button @onclick="@(() => CreateEventAsync())" class="btn btn-outline-dark" type="submit">
-        <i class="oi oi-plus"></i> Create
-    </button>
-</p>
+<AuthorizeView Policy="Organizer">
+    <p class="actions">
+        <button @onclick="@CreateEventAsync" class="btn btn-outline-secondary" type="submit"><i class="oi oi-plus"></i> Create</button>
+    </p>
+</AuthorizeView>
 
 @code {
     private async Task CreateEventAsync()

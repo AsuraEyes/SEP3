@@ -57,6 +57,7 @@ public class DAOConfig {
     }
 
     @Bean
+
     @Scope("singleton")
     public EventGameLists EventGameListDAO() {
         return new EventGameListDAO();

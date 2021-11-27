@@ -16,11 +16,9 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:int"/>
-                <xs:element name="filter" type="xs:string"/>
+                <xs:element name="filter"  type="tns:Filter"/>
                 <xs:element name="Operation" type="tns:Operation"/>
                 <xs:element name="Event" type="tns:Event"/>
-                <xs:element name="currentPage" type="xs:int"/>
-                <xs:element name="resultsPerPage" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -78,12 +76,21 @@
     <xs:simpleType name="Operation">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GET"/>
-            <xs:enumeration value="DELETE"/>
-            <xs:enumeration value="POST"/>
-            <xs:enumeration value="PATCH"/>
+            <xs:enumeration value="REMOVE"/>
+            <xs:enumeration value="CREATE"/>
+            <xs:enumeration value="UPDATE"/>
             <xs:enumeration value="GETALL"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:complexType name="Filter">
+        <xs:sequence>
+            <xs:element name="categoryId" type="xs:int"/>
+            <xs:element name="filter" type="xs:string"/>
+            <xs:element name="offset" type="xs:int"/>
+            <xs:element name="limit" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:element name="SOAPGameResponse">
         <xs:complexType>
@@ -233,7 +240,7 @@
 
     <xs:complexType name="EventList">
         <xs:sequence>
-            <xs:element name="numberOfPages" type="xs:int"/>
+            <xs:element name="count" type="xs:int"/>
             <xs:element name="eventList" maxOccurs="unbounded" minOccurs="0" type="tns:Event">
             </xs:element>
         </xs:sequence>

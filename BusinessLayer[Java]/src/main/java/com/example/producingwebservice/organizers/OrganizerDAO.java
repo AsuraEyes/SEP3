@@ -45,8 +45,6 @@ public class OrganizerDAO implements Organizers
     public String create(ResultSet rs) throws SQLException
     {
       String username = rs.getString("user_username");
-
-
       return createOrganizer(username);
     }
   }

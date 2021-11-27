@@ -33,17 +33,17 @@ public class OrganizerEndpoint
         case GET:
           //response.setUser(usersDAO.get(request.getUsername()));
           break;
-        case POST:
+        case CREATE:
           organizersDAO.organize(request.getEventId(), request.getUsername());
           break;
-        case PATCH:
+        case UPDATE:
           organizersDAO.withdraw(request.getEventId(), request.getUsername());
           break;
         case GETALL:
           response.getOrganizerList().addAll(organizersDAO.getOrganizerList(request.getEventId()));
           //    request.getId()));
           break;
-        case DELETE:
+        case REMOVE:
           // usersDAO.delete(request.getId());
       }
       return response;

@@ -33,16 +33,16 @@ public class EventGameListEndpoint
       case GET:
 
         break;
-      case POST:
+      case CREATE:
 
         break;
-      case PATCH:
+      case UPDATE:
 
         break;
       case GETALL:
       response.setGameList(eventGameListDAO.readAllEventGameList(request.getEventId()));
         break;
-      case DELETE:
+      case REMOVE:
         break;
     }
     return response;

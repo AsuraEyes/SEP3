@@ -12,5 +12,7 @@ namespace Presentation_Layer.Data
         Task<IList<Game>> GetGamesAsync();
         Task RemoveGameAsync(Game Game);
         Task UpdateGameAsync(Game Game);
+        Task<IList<Game>> GetUserGamesAsync(User user);
+        Task CreateGameAsync(Game Game);
     }
 }

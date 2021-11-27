@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace BusinessLayer.Middlepoint
@@ -14,8 +15,7 @@ namespace BusinessLayer.Middlepoint
         private ICategoryWebService categoryWebService;
         private IEventWebService eventWebService;
         private EventList filteredEvents;
-        private int resultsPerPage = 3;
-       // public int numberOfPages { get; set; }
+        
 
         public EventMiddlePoint(IEventWebService eventWebService)
         {
@@ -23,34 +23,39 @@ namespace BusinessLayer.Middlepoint
             filteredEvents = new EventList();
             //categories = categoryWebService.getCategoriesAsync().Result;
         }
-        public async Task<EventList> eventFilter(bool byDate, bool byAvailability, int currentPage, int categoryId)
+        public async Task<EventList> eventFilter(FilterREST filterRest)
         {
+            Console.WriteLine(filterRest.byAvailability +""+ filterRest.categoryId + "here");
             string filter = "all";
-            int category = 0;
+            Filter filterObject = new Filter();
             
             try
             {
-                if (byDate == true)
+                if (filterRest.byDate == true)
                     filter += "byDate";
                 else 
                     filter = filter.Replace("byDate", "");
                 
-                if (byAvailability  == true)
+                if (filterRest.byAvailability  == true)
                     filter += "byAvailability";
                 else 
                     filter = filter.Replace("byAvailability", "");
 
-                if (categoryId != 0)
+                if (filterRest.categoryId != 0)
                 {
                     filter += "byCategory";
-                    category = categoryId;
                 }
      
                 else
                     filter = filter.Replace("byCategory", "");
+
+                filterObject.filter = filter;
+                filterObject.limit = filterRest.resultsPerPage;
+                filterObject.offset = (filterRest.currentPage - 1) * filterRest.resultsPerPage;
+                filterObject.categoryId = filterRest.categoryId;
                 
                 Console.WriteLine(filter);
-                filteredEvents = await eventWebService.GetFilteredEventsAsync(filter, category, currentPage, resultsPerPage);
+                filteredEvents = await eventWebService.GetFilteredEventsAsync(filterObject);
             }
             // {
             //     for (int i = 0; i < filteringOptions.Count; i++)

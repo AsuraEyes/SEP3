@@ -7,7 +7,7 @@
 @inject IEventService RestEvent
 @inject ICategoryService CategoryService;
 
-<h2>AllEvents</h2>
+<h2>All Events</h2>
 
 @* @context.User.Identity.Name *@
 <AuthorizeView Policy="Organizer">
@@ -56,61 +56,76 @@
         <option value="false">-- All --</option>
         <option value="true">Available</option>
     </Select>
+    Results per page
+    <Select class="selectpicker" @oninput="@(ResultsPerPage)">
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="9">9</option>
+        <option value="12">12</option>
+        </Select>
 </p>
 
 
 <div class="card-deck">
     @foreach (var item in eventList)
     {
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@item.Name</h5>
-                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
-                {
-                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
-                }
-                else
-                {
-                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
-                }
-                @if (item.AddressApartmentNumber != null)
-                {
-                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
-                }
-                else
-                {
-                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
-                }
-            </div>
-            <div class="card-footer text-center">
-                <button class="btn btn-primary" @onclick="@(() => NavigateToEvent(item.Id))">
-                    More
-                </button>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
+                <div class="card h-100" style="width: 22rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                        {
+                            <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                        }
+                        else
+                        {
+                            <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                        }
+                        @if (item.AddressApartmentNumber != null)
+                        {
+                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                        }
+                        else
+                        {
+                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                        }
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                            More
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+        
+    }
+</div>
+
+<div>
+    @if (numberOfPages > 1)
+    {
+        for (var i = 1; i <= numberOfPages; i++)
+        {
+            var page = i;
+            <span><a href="AllEvents/@i" @onclick="@(() => SetCurrentPage(page))"> -@i- </a>|</span>
+        }
     }
 </div>
 
 <ul class="pagination justify-content-center">
-        @if (numberOfPages > 1)
+    @if (numberOfPages > 1)
+    {
+        for (var i = 1; i <= numberOfPages; i++)
         {
-            for (var i = 1; i <= numberOfPages; i++)
-            {
-                if (currentPage == i)
-                {
-                    <li class="page-item active">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="page-item">
-                        <a class="page-link" href="AllEvents/@i" @onclick="@Filter">@i</a>
-                    </li>
-                }
-            }
+            var page = i;
+            <li class="page-item">
+                <a class="page-link" href="AllEvents/@i" @onclick="@(() => SetCurrentPage(page))">@i</a>
+            </li>
         }
-    </ul>
+    }
+</ul>
 
 
 @* <table class="table"> *@
@@ -147,41 +162,43 @@
 @code {
 
     [Parameter]
-    public int currentPage { get; set; }
+    public int CurrentPage { get; set; }
 
     private bool byAvailability;
     private bool byDate;
     
     private int numberOfPages;
     private int categoryId;
+    private int resultsPerPage;
     
+
     private IList<Category> categories = new List<Category>();
     private EventList events = new();
     private Event[] eventList = {};
 
-
-    private string Search;
-    private string filter = "all";
-    private IList<int> categoryOptions = new List<int> {0, 1, 2, 3};
-    private IList<string> filteringOptions = new List<string> {"byDate", "noDate", "byAvailability", "noAvailability", "byCategory", "noCategory"};
-
+    private FilterREST filterRest = new ();
 
     protected override async Task OnInitializedAsync()
     {
-        if (currentPage < 1) currentPage = 1;
+        resultsPerPage = 3;
+        if (CurrentPage < 1) CurrentPage = 1;
         categories = await CategoryService.GetCategoriesAsync();
+
         await Filter();
-
-
-    //numberOfPages = RestEvent.GetNumberOfPages(EventsToShow);
-    //EventsToShow = RestEvent.GetEventsPagination(EventsToShow, 1);
     }
 
     private async Task Filter()
     {
-        events = await RestEvent.GetFilteredEventsAsync(byDate, byAvailability, currentPage, categoryId);
-        numberOfPages = events.NumberOfPages;
+        filterRest.byAvailability = byAvailability;
+        filterRest.byDate = byDate;
+        filterRest.categoryId = categoryId;
+        filterRest.currentPage = CurrentPage;
+        filterRest.resultsPerPage = resultsPerPage;
+        
+        events = await RestEvent.GetFilteredEventsAsync(filterRest);
+        numberOfPages = events.Count;
         eventList = events.eventList;
+        CurrentPage = 1;
     }
 
     private async Task FilterByDate(ChangeEventArgs args)
@@ -192,7 +209,6 @@
         }
         else byDate = false;
         await Filter();
-        currentPage = 1;
     }
 
     private async Task FilterByAvailability(ChangeEventArgs args)
@@ -203,14 +219,24 @@
         }
         else byAvailability = false;
         await Filter();
-        currentPage = 1;
     }
 
     private async Task FilterByCategory(ChangeEventArgs args)
     {
         categoryId = int.Parse(args.Value.ToString());
         await Filter();
-        currentPage = 1;
+    }
+
+    private async Task ResultsPerPage(ChangeEventArgs args)
+    {
+        resultsPerPage = int.Parse(args.Value.ToString());
+        await Filter();
+    }
+
+    private async Task SetCurrentPage(int page)
+    {
+        CurrentPage = page;
+        await Filter();
     }
 
 

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Presentation_Layer.Models;
 
@@ -31,11 +32,20 @@ namespace Presentation_Layer.Data
 
         public async Task AddGameAsync(Game Game)
         {
-            string GameAsJson = JsonSerializer.Serialize(Game);
+            var GameAsJson = JsonSerializer.Serialize(Game);
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");
              await client.PostAsync(uri+"/Game", content);
+        }
+        
+        public async Task CreateGameAsync(Game Game)
+        {
+            var GameAsJson = JsonSerializer.Serialize(Game);
+            HttpContent content = new StringContent(GameAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await client.PostAsync(uri+"/User/CreateGame", content);
         }
 
         public async Task<IList<Game>> GetGamesAsync()
@@ -49,20 +59,20 @@ namespace Presentation_Layer.Data
             return Games;
         }
         
-       /* public async Task<IList<Game>> GetUserGamesAsync(User user)
-        {
-            var stringAsync = client.GetStringAsync(uri + "/UserGames");
+       public async Task<IList<Game>> GetUserGamesAsync(User user)
+       {
+           var stringAsync = client.GetStringAsync(uri + $"/UserGames/{user.Username}");
             var Game = await stringAsync;
             var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
             return Games;
-        }*/
+        }
 
         public async Task UpdateGameAsync(Game Game)
         {
-            string GameAsJson = JsonSerializer.Serialize(Game);
+            var GameAsJson = JsonSerializer.Serialize(Game);
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");

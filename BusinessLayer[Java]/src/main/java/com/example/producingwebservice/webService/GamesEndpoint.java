@@ -28,23 +28,22 @@ public class GamesEndpoint {
             case GET:
                 response.setGame(gamesDAO.get(request.getId()));
                 break;
-            case POST:
+            case CREATE:
                 gamesDAO.create(request.getGame());
                 break;
-            case PATCH:
+            case UPDATE:
                 gamesDAO.patch(request.getGame());
                 break;
             case GETALL:
-                if (request.getUserName().equals("")) {
+                if (request.getUserName().length() < 2)
                     response.setGameList(gamesDAO.readAllGGL());
-                }
-                else{
+                else
                     response.setGameList(gamesDAO.readAllUserGameList(request.getUserName()));
-                }
+
 //                    response.setGameList(gamesDAO.readAllEventGameList(
 //                        request.getId()));
                 break;
-            case DELETE:
+            case REMOVE:
                 gamesDAO.delete(request.getId());
         }
         return response;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -13,10 +14,12 @@ namespace REST.Controllers
     {
         //private readonly IUserService UserService;
         private IGameWebService soapWebService;
+        private IGameMiddlepoint gameMiddlepoint;
 
-        public GameController(IGameWebService soapWebService)
+        public GameController(IGameWebService soapWebService, IGameMiddlepoint gameMiddlepoint)
         {
             this.soapWebService = soapWebService;
+            this.gameMiddlepoint = gameMiddlepoint;
         }
 
         [HttpGet]
@@ -43,8 +46,8 @@ namespace REST.Controllers
         {
             try
             {
-                IList<Game> adults = await soapWebService.GetGamesAsync();
-                return Ok(adults);
+                IList<Game> games = await soapWebService.GetGamesAsync();
+                return Ok(games);
             }
             catch (Exception e)
             {
@@ -53,14 +56,14 @@ namespace REST.Controllers
             }
         }
         
-       /* [HttpGet]
-        [Route("/UserGames")]
+       [HttpGet]
+        [Route("/UserGames/{username}")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesAsync([FromBody]String user)
+            GetUserGamesAsync([FromRoute]String username)
         {
             try
             {
-                IList<Game> adults = await soapWebService.GetUserGamesAsync(user);
+                IList<Game> adults = await soapWebService.GetUserGamesAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)
@@ -68,7 +71,7 @@ namespace REST.Controllers
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
-        }*/
+        }
         
         [HttpDelete]
         [Route("{id:int}")]
@@ -97,6 +100,26 @@ namespace REST.Controllers
             try
             {
                 await soapWebService.AddGameAsync(Game);
+                return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        [HttpPost]
+        [Route("/Game/CreateGame")]
+        public async Task<ActionResult<Game>> AddGameAsyncAdmin([FromBody] Game Game)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await gameMiddlepoint.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)

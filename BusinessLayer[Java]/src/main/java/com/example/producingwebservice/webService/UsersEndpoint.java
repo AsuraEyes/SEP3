@@ -28,17 +28,17 @@ public class UsersEndpoint {
             case GET:
                 response.setUser(usersDAO.get(request.getUsername()));
                 break;
-            case POST:
+            case CREATE:
                 usersDAO.create(request.getUser());
                 break;
-            case PATCH:
+            case UPDATE:
                 //usersDAO.patch(request.getEvent());
                 break;
             case GETALL:
                 //usersDAO.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
                 //    request.getId()));
                 break;
-            case DELETE:
+            case REMOVE:
                 // usersDAO.delete(request.getId());
         }
         return response;

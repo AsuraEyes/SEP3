@@ -6,7 +6,7 @@
 @inject NavigationManager NavigationManager
 @inject IGameService gameService
 
-<h3>CreateGame</h3>
+<h3>Create Game</h3>
 <EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -45,18 +45,18 @@
         Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
     </div>
     <div class="form-group">
-        Turtorial:<br/> 
+        Tutorial:<br/> 
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
     </div>
     
     <br/>
     <p class="actions">
-        <button type="button" class="btn btn-outline-success" @onclick="CreateAsOrganizer">Create</button>
+        <button type="button" class="btn btn-outline-success">Create</button>
     </p>
 </EditForm>
 
 @code {
-    private Game game = new Game();
+    private Game game = new();
     
     private async Task CreateAsOrganizer()
     {
