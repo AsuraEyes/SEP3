@@ -64,7 +64,7 @@ namespace REST.Controllers
             try
             {
                 IList<Game> adults = await soapWebService.GetUserGamesAsync(username);
-                return Ok(adults);
+               return Ok(adults);
             }
             catch (Exception e)
             {
