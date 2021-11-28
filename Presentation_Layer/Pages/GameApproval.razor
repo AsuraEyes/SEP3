@@ -10,29 +10,31 @@
 <h3>Game Approval</h3>
 <EditForm Model="@game" OnValidSubmit="@Approve">
     <DataAnnotationsValidator/>
-    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="game.Name"/>
         <ValidationMessage For="@(() => game.Name)"/>
     </div>
     <div class="form-group">
-        Complexity: 
+        Complexity:
         <InputNumber @bind-Value="game.Complexity" style="width: 50px"/>
         <ValidationMessage For="@(() => game.Complexity)"/>
     </div>
     <div class="form-group">
-        Estimated time: 
+        Estimated time:
         <InputNumber @bind-Value="game.TimeEstimation" style="width: 50px"/>
         <ValidationMessage For="@(() => game.TimeEstimation)"/>
     </div>
     <div class="form-group">
         Player amount:<br/>
         Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>-
         Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>
+        <ValidationMessage For="@(() => game.MaxNumberOfPlayers)"/>
     </div>
-    <div class="form-group">Short Description:<br/>
+    <div class="form-group">
+        Short Description:
+        <br/>
         <InputTextArea @bind-Value="game.ShortDescription" style="width: 250px"/>
     </div>
     <div class="form-group">
@@ -42,12 +44,14 @@
     <div class="form-group">
         Age range:<br/>
         Min: <InputNumber @bind-Value="game.MinAge" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinAge)"/> -
         Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinAge)"/>
+        <ValidationMessage For="@(() => game.MaxAge)"/>
     </div>
     <div class="form-group">
-        Tutorial:<br/> 
+        Tutorial:<br/>
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
+        <ValidationMessage For="@(() => game.Tutorial)"/>
     </div>
     
     <br/>
