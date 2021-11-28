@@ -8,4 +8,8 @@
       <Content Include="PresentationLayer.csproj.DotSettings.user" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="ExpressiveAnnotations" Version="2.9.6" />
+    </ItemGroup>
+
 </Project>

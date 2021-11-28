@@ -1,5 +1,7 @@
+#nullable enable
 using System;
 using System.ComponentModel.DataAnnotations;
+using ExpressiveAnnotations.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation_Layer.Models
@@ -9,11 +11,23 @@ namespace Presentation_Layer.Models
         [Required]
         public int Id{ get; set; }
         
-        [Required]public string Name{ get; set; }
-
         [Required]
-        public DateTime StartTime{ get; set; }
+        public string Name{ get; set; }
+        
+        [Required]
+        [AssertThat("Date > Today()", 
+            ErrorMessage = "The date must be later than today")]
+        public DateTime Date { get; set; }
+        
+        [Required]
+        public DateTime Start { get; set; }
+        
+        [RequiredIf("End > Today() && End < Start", 
+            ErrorMessage = "The end time must be later than the start time.")]
+        public DateTime? End { get; set; }
 
+        public DateTime StartTime{ get; set; }
+        
         public DateTime EndTime{ get; set; }
         
         [Required(ErrorMessage = "The Address Street Name is required.")]
@@ -22,7 +36,7 @@ namespace Presentation_Layer.Models
         [Required(ErrorMessage = "The Address Street Number is required.")]
         public string AddressStreetNumber{ get; set; }
         
-        public string AddressApartmentNumber{ get; set; }
+        public string? AddressApartmentNumber{ get; set; }
         public string Organizer { get; set; }
         
         [Required(ErrorMessage = "Max number of participants field is required.")]
@@ -31,7 +45,9 @@ namespace Presentation_Layer.Models
         
         public int NumberOfParticipants{ get; set; }
         
-        [Required]public int EventCategory{ get; set; }
+        [Required]
+        [AssertThat("EventCategory >= 1", ErrorMessage = "Select a category")]
+        public int EventCategory{ get; set; }
 
     }
 }

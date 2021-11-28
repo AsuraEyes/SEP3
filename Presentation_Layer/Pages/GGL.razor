@@ -10,23 +10,23 @@
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
- @* @foreach (var item in goldenGameList) *@
- @*         { *@
- @*                 if (item.Approved == true) *@
- @*                 { *@
- @*                         <ul> *@
- @*                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li> *@
- @*                         </ul> *@
- @*                 } *@
- @*         } *@
- @* } *@
+ @foreach (var item in goldenGameList)
+         {
+                 if (item.Approved )
+                 {
+                         <ul>
+                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                         </ul>
+                 }
+         }
+ 
 
 @code {
         private IList<Game> goldenGameList = new List<Game>();
 
         protected override async Task OnInitializedAsync()
         {
-                goldenGameList = await gameService.GetGamesAsync();
+                goldenGameList = await gameService.GetGGLAsync();
         }
 
         private async Task AddGameAsync()

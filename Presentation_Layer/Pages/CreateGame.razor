@@ -1,15 +1,17 @@
 @page "/CreateGame"
 @using Microsoft.AspNetCore.Components
+@using Presentation_Layer.Authentication
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
+@using System.Security.Claims
 
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider Auth
 @inject IGameService gameService
 
 <h3>Create Game</h3>
-<EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer">
+<EditForm Model="@game" OnValidSubmit="@CreateGameAsync">
     <DataAnnotationsValidator/>
-    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="game.Name"/>
@@ -28,8 +30,9 @@
     <div class="form-group">
         Player amount:<br/>
         Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>-
         Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>
+        <ValidationMessage For="@(() => game.MaxNumberOfPlayers)"/>
     </div>
     <div class="form-group">Short Description:<br/>
         <InputTextArea @bind-Value="game.ShortDescription" style="width: 250px"/>
@@ -41,26 +44,39 @@
     <div class="form-group">
         Age range:<br/>
         Min: <InputNumber @bind-Value="game.MinAge" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinAge)"/> -
         Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
+        <ValidationMessage For="@(() => game.MinAge)"/>
+        <ValidationMessage For="@(() => game.MaxAge)"/>
     </div>
     <div class="form-group">
         Tutorial:<br/> 
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
+        <ValidationMessage For="@(() => game.Tutorial)"/>
     </div>
     
-    <br/>
     <p class="actions">
-        <button type="button" class="btn btn-outline-success">Create</button>
-    </p>
+        <button type="submit" class="btn btn-outline-success">Suggest</button>
+    </p> 
+    
+    
 </EditForm>
 
 @code {
     private Game game = new();
+    private int id;
     
-    private async Task CreateAsOrganizer()
+    private async Task CreateGameAsync()
     {
-        await gameService.AddGameAsync(game);
-        NavigationManager.NavigateTo("EditGameList");
-    }
+        id = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
+        if (id == 3)
+        {
+            await gameService.AddGameAsync(game);
+            NavigationManager.NavigateTo("EditGameList");
+        }
+        else
+        {
+            await gameService.CreateGameAsync(game);
+            NavigationManager.NavigateTo("GGL");
+        }
+    } 
 }

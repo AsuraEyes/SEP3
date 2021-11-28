@@ -5,9 +5,18 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:int"/>
-                <xs:element name="userName" type="xs:string"/>
+                <xs:element name="approved" type="xs:boolean"/>
                 <xs:element name="Operation" type="tns:Operation"/>
                 <xs:element name="Game" type="tns:Game"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPGameListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userName" type="xs:string"/>
+                <xs:element name="Operation" type="tns:Operation"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -95,8 +104,15 @@
     <xs:element name="SOAPGameResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="notification" type="xs:string"/>
                 <xs:element name="game" type="tns:Game"/>
+                <xs:element name="gameList" type="tns:GameList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPGameListResponse">
+        <xs:complexType>
+            <xs:sequence>
                 <xs:element name="gameList" type="tns:GameList"/>
             </xs:sequence>
         </xs:complexType>

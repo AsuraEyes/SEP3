@@ -11,8 +11,8 @@ namespace BusinessLayer.Data
     {
         Task<Game> GetGameAsync(int id);
         Task AddGameAsync(Game game);
-        Task<IList<Game>> GetGamesAsync();
-        Task<IList<Game>> GetUserGamesAsync(string user);
+        Task<IList<Game>> GetGamesAsync(bool approved);
+        //Task<IList<Game>> GetUserGamesAsync(string user);
         Task RemoveGameAsync(int id);
         Task EditGameAsync(Game game);
     }

@@ -48,9 +48,9 @@ namespace Presentation_Layer.Data
             await client.PostAsync(uri+"/User/CreateGame", content);
         }
 
-        public async Task<IList<Game>> GetGamesAsync()
+        public async Task<IList<Game>> GetGGLAsync()
         {
-            var stringAsync = client.GetStringAsync(uri + "/Games");
+            var stringAsync = client.GetStringAsync(uri + "/GGL");
             var Game = await stringAsync;
             var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
             {
@@ -59,9 +59,9 @@ namespace Presentation_Layer.Data
             return Games;
         }
         
-       public async Task<IList<Game>> GetUserGamesAsync(User user)
-       {
-           var stringAsync = client.GetStringAsync(uri + $"/UserGames/{user.Username}");
+        public async Task<IList<Game>> GetSuggestedGamesAsync()
+        {
+            var stringAsync = client.GetStringAsync(uri + "/SuggestedGames");
             var Game = await stringAsync;
             var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
             {

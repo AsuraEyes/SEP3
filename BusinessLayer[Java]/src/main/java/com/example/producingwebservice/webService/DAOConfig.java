@@ -6,6 +6,8 @@ import com.example.producingwebservice.categories.Categories;
 import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
+import com.example.producingwebservice.gameList.GameListDAO;
+import com.example.producingwebservice.gameList.GameLists;
 import com.example.producingwebservice.games.GameDAO;
 import com.example.producingwebservice.games.Games;
 import com.example.producingwebservice.organizers.OrganizerDAO;
@@ -57,11 +59,14 @@ public class DAOConfig {
     }
 
     @Bean
-
     @Scope("singleton")
     public EventGameLists EventGameListDAO() {
         return new EventGameListDAO();
     }
+
+    @Bean
+    @Scope("singleton")
+    public GameLists gameLists(){return new GameListDAO();}
 
     @Bean(name = "jdbcUrl")
     public String jdbcUrl() {

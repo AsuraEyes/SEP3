@@ -6,9 +6,7 @@ import io.spring.guides.gs_producing_web_service.GameList;
 public interface Games {
     Game create(Game game);
 
-    GameList readAllGGL();
-
-    GameList readAllUserGameList(String username);
+    GameList readAllGGL(boolean approved);
 
     void delete(int id);
 
