@@ -22,6 +22,7 @@ namespace Presentation_Layer.Models
         public int TimeEstimation { get; set; }
 
         [Required(ErrorMessage = "A minimum amount of players is required.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Minimum amount of players must be greater than 0.")]
         public int MinNumberOfPlayers { get; set; }
 
         [Required(ErrorMessage = "A maximum amount of players is required.")]
@@ -33,16 +34,17 @@ namespace Presentation_Layer.Models
         
         public string? NeededEquipment { get; set; }
 
-        [RequiredIf("MaxAge > null")]
+        [RequiredIf("MinAge < 0", ErrorMessage = "Minimum age of players must be greater than 0.")]
         [Range(0,int.MaxValue)]
         public int? MinAge { get; set; }
 
-        [RequiredIf("MinAge > null")]
-        [Range(0,int.MaxValue)]
+        [RequiredIf("MinAge > MaxAge")]
+        [Range(0, int.MaxValue)]
         [AssertThat("MaxAge > MinAge", 
             ErrorMessage = "Maximum age of players must be greater than the minimum age.")]
         public int? MaxAge { get; set; }
 
+        [Url(ErrorMessage = "Please enter a valid tutorial link.")]
         public string? Tutorial { get; set; }
 
         public bool Approved { get; set; }
