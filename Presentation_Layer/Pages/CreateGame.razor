@@ -7,9 +7,8 @@
 @inject IGameService gameService
 
 <h3>Create Game</h3>
-<EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer">
+<EditForm Model="@game" OnValidSubmit="@CreateAsOrganizer" Context="formContext">
     <DataAnnotationsValidator/>
-    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="game.Name"/>
@@ -49,10 +48,20 @@
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
     </div>
     
-    <br/>
-    <p class="actions">
-        <button type="button" class="btn btn-outline-success">Create</button>
-    </p>
+    <AuthorizeView Policy="Administrator" Context="authContext">
+        <NotAuthorized>
+            <p class="actions">
+                <button type="submit" class="btn btn-outline-success">Create</button>
+            </p> 
+        </NotAuthorized>
+        <Authorized>
+            <p class="actions">
+                <button type="submit" class="btn btn-outline-success">Create</button>
+            </p> 
+        </Authorized>
+    </AuthorizeView>
+    
+    
 </EditForm>
 
 @code {
@@ -62,5 +71,11 @@
     {
         await gameService.AddGameAsync(game);
         NavigationManager.NavigateTo("EditGameList");
+    }
+    
+    private async Task CreateAsAdministrator()
+    {
+        await gameService.CreateGameAsync(game);
+        NavigationManager.NavigateTo("GGL");
     }
 }

@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
         Confirm Password:<br/>
-        <InputText @bind-Value="user.ConfirmPassword"/>
+        <InputText @bind-Value="user.ConfirmPassword" type="password"/>
         <ValidationMessage For="@(() => user.ConfirmPassword)"/>
     </div>
 

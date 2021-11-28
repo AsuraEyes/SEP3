@@ -1,5 +1,7 @@
+#nullable enable
 using System;
 using System.ComponentModel.DataAnnotations;
+using ExpressiveAnnotations.Attributes;
 
 namespace Presentation_Layer.Models
 {
@@ -23,19 +25,25 @@ namespace Presentation_Layer.Models
         public int MinNumberOfPlayers { get; set; }
 
         [Required(ErrorMessage = "A maximum amount of players is required.")]
-        [Range(typeof(int), "MinNumberOfPlayers", "Int32.MaxValue")]
+        [AssertThat("MaxNumberOfPlayers > MinNumberOfPlayers", 
+            ErrorMessage = "Maximum amount of players must be greater than minimum amount.")]
         public int MaxNumberOfPlayers { get; set; }
 
-        public string ShortDescription { get; set; }
+        public string? ShortDescription { get; set; }
         
-        public string NeededEquipment { get; set; }
+        public string? NeededEquipment { get; set; }
 
-        [Required(ErrorMessage = "Minimum age is required.")]
-        public int MinAge { get; set; }
+        [RequiredIf("MaxAge > null")]
+        [Range(0,int.MaxValue)]
+        public int? MinAge { get; set; }
 
-        public int MaxAge { get; set; }
+        [RequiredIf("MinAge > null")]
+        [Range(0,int.MaxValue)]
+        [AssertThat("MaxAge > MinAge", 
+            ErrorMessage = "Maximum age of players must be greater than the minimum age.")]
+        public int? MaxAge { get; set; }
 
-        public string Tutorial { get; set; }
+        public string? Tutorial { get; set; }
 
         public bool Approved { get; set; }
     }
