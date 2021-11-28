@@ -9,10 +9,12 @@ import io.spring.guides.gs_producing_web_service.GameList;
 import javax.annotation.Resource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class GameListDAO implements GameLists
 {
-  private DatabaseHelper<Game> helper;
+  private DatabaseHelper<Game> gameHelper;
+  private DatabaseHelper<Integer> integerHelper;
   private final GameList gameList;
 
   @Resource(name = "jdbcUrl")
@@ -47,14 +49,20 @@ public class GameListDAO implements GameLists
     return newGame;
   }
 
-  private DatabaseHelper<Game> helper() {
-    if (helper == null)
-      helper = new DatabaseHelper<>(jdbcUrl, username, password);
-    return helper;
+  private DatabaseHelper<Game> gameHelper() {
+    if (gameHelper == null)
+      gameHelper = new DatabaseHelper<>(jdbcUrl, username, password);
+    return gameHelper;
+  }
+
+  private DatabaseHelper<Integer> integerHelper(){
+    if(integerHelper == null)
+      integerHelper = new DatabaseHelper<>(jdbcUrl, username, password);
+    return integerHelper;
   }
 
   public Game create(Game game) {
-    helper().executeUpdate(
+    gameHelper().executeUpdate(
         "INSERT INTO game(name, complexity, time_estimation, min_number_of_players, max_number_of_players, short_description, needed_equipment, min_age, max_age, tutorial, approved) "
             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", game.getName(), game.getComplexity(),
         game.getTimeEstimation(), game.getMinNumberOfPlayers(), game.getMaxNumberOfPlayers(), game.getShortDescription(),
@@ -64,8 +72,20 @@ public class GameListDAO implements GameLists
 
   public GameList readAllUserGameList(String username) {
     gameList.getGameList().clear();
-    gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
+    gameList.getGameList().addAll(gameHelper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
     return gameList;
+  }
+
+  public List<Integer> readAllUserGameListInt(String username){
+    return integerHelper().map(new IntegerMapper(), "SELECT id FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username);
+  }
+
+  public void addGameToUserGameList(String username, int id){
+    gameHelper.executeUpdate("INSERT INTO game_list VALUES (?, ?);", id, username);
+  }
+
+  public void removeGameFromUserGameList(String username, int id){
+    gameHelper.executeUpdate("DELETE FROM game_list WHERE user_username = ? AND game_id = ?;", username, id);
   }
 
   private static class GameMapper implements DataMapper<Game>
@@ -87,6 +107,13 @@ public class GameListDAO implements GameLists
 
       return createGame(id, name, complexity, timeEstimation, minNumberOfPlayers, maxNumberOfPlayers, shortDescription,
           neededEquipment, minAge, maxAge, tutorial, approved);
+    }
+  }
+
+  private static class IntegerMapper implements DataMapper<Integer> {
+    public Integer create(ResultSet rs)
+            throws SQLException {
+      return rs.getInt("count");
     }
   }
 }
