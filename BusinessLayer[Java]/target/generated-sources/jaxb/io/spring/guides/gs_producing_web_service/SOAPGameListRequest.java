@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -25,9 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="user" type="{http://spring.io/guides/gs-producing-web-service}User"/&gt;
- *         &lt;element name="userList" type="{http://spring.io/guides/gs-producing-web-service}UserList"/&gt;
+ *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Operation" type="{http://spring.io/guides/gs-producing-web-service}Operation"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,90 +38,64 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "type",
-    "user",
-    "userList"
+    "userName",
+    "operation"
 })
-@XmlRootElement(name = "SOAPUserResponse")
-public class SOAPUserResponse {
+@XmlRootElement(name = "SOAPGameListRequest")
+public class SOAPGameListRequest {
 
     @XmlElement(required = true)
-    protected String type;
-    @XmlElement(required = true)
-    protected User user;
-    @XmlElement(required = true)
-    protected UserList userList;
+    protected String userName;
+    @XmlElement(name = "Operation", required = true)
+    @XmlSchemaType(name = "string")
+    protected Operation operation;
 
     /**
-     * Gets the value of the type property.
+     * Gets the value of the userName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getType() {
-        return type;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * Sets the value of the type property.
+     * Sets the value of the userName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setType(String value) {
-        this.type = value;
+    public void setUserName(String value) {
+        this.userName = value;
     }
 
     /**
-     * Gets the value of the user property.
+     * Gets the value of the operation property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link Operation }
      *     
      */
-    public User getUser() {
-        return user;
+    public Operation getOperation() {
+        return operation;
     }
 
     /**
-     * Sets the value of the user property.
+     * Sets the value of the operation property.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link Operation }
      *     
      */
-    public void setUser(User value) {
-        this.user = value;
-    }
-
-    /**
-     * Gets the value of the userList property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserList }
-     *     
-     */
-    public UserList getUserList() {
-        return userList;
-    }
-
-    /**
-     * Sets the value of the userList property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserList }
-     *     
-     */
-    public void setUserList(UserList value) {
-        this.userList = value;
+    public void setOperation(Operation value) {
+        this.operation = value;
     }
 
 }

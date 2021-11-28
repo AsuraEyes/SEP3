@@ -11,21 +11,21 @@ package io.spring.guides.gs_producing_web_service;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Category complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Category"&gt;
+ * &lt;complexType&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="gameList" type="{http://spring.io/guides/gs-producing-web-service}GameList"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,54 +35,37 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Category", propOrder = {
-    "id",
-    "name"
+@XmlType(name = "", propOrder = {
+    "gameList"
 })
-public class Category {
+@XmlRootElement(name = "SOAPGameListResponse")
+public class SOAPGameListResponse {
 
-    protected int id;
     @XmlElement(required = true)
-    protected String name;
+    protected GameList gameList;
 
     /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
-
-    /**
-     * Gets the value of the name property.
+     * Gets the value of the gameList property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link GameList }
      *     
      */
-    public String getName() {
-        return name;
+    public GameList getGameList() {
+        return gameList;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the gameList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link GameList }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setGameList(GameList value) {
+        this.gameList = value;
     }
 
 }

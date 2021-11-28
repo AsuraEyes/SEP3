@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
@@ -12,6 +14,18 @@ namespace BusinessLayer.Middlepoint
         public GameMiddlepoint(IGameWebService gameWebService)
         {
             GameWebService = gameWebService;
+        }
+
+        public async Task<IList<Game>> GetGGLAsync()
+        {
+            var ggl = await GameWebService.GetGamesAsync(true);
+            return ggl;
+        }
+        
+        public async Task<IList<Game>> GetSuggestedGamesAsync()
+        {
+            var suggestedGames = await GameWebService.GetGamesAsync(false);
+            return suggestedGames;
         }
 
         public async Task AddGameAsync(Game game)

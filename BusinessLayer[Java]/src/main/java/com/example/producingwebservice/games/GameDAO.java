@@ -60,17 +60,17 @@ public class GameDAO implements Games {
         return game;
     }
 
-    public GameList readAllGGL() {
+    public GameList readAllGGL(boolean approved) {
         gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game"));
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = ?", approved));
         return gameList;
     }
 
-    public GameList readAllUserGameList(String username) {
-        gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
-        return gameList;
-    }
+//    public GameList readAllUserGameList(String username) {
+//        gameList.getGameList().clear();
+//        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
+//        return gameList;
+//    }
 
     public void delete(int id) {
         helper().executeUpdate("DELETE FROM game WHERE id = ?", id);
