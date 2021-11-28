@@ -15,27 +15,19 @@ namespace Presentation_Layer.Models
         public string Name{ get; set; }
         
         [Required]
-        [RequiredIf("Date <= Today")]
         [AssertThat("Date > Today()", 
             ErrorMessage = "The date must be later than today")]
         public DateTime Date { get; set; }
         
         [Required]
-        [AssertThat("TimeStart > Now()", 
-            ErrorMessage = "The start time must be later than now.")]
-        public DateTime TimeStart { get; set; }
+        public DateTime Start { get; set; }
         
-        [AssertThat("TimeEnd > TimeStart", 
+        [RequiredIf("End > Today() && End < Start", 
             ErrorMessage = "The end time must be later than the start time.")]
-        public DateTime TimeEnd;
+        public DateTime? End { get; set; }
 
-        [Required]
-        [AssertThat("StarTime >= Today()")]
         public DateTime StartTime{ get; set; }
         
-        [RequiredIf("EndTime <= Today()")]
-        [AssertThat("endTime > startTime", 
-            ErrorMessage = "The end time must be later than the start time.")] 
         public DateTime EndTime{ get; set; }
         
         [Required(ErrorMessage = "The Address Street Name is required.")]

@@ -31,13 +31,13 @@
     </div>
     <div class="form-group">
         Start Time: <br/>
-        <input type="time" required @bind-value="@newEvent.TimeStart"/>
-        <ValidationMessage For="@(() => newEvent.TimeStart)"/>
+        <input type="time" required @bind-value="@newEvent.Start"/>
+        <ValidationMessage For="@(() => newEvent.Start)"/>
     </div>
-    <div class="form-group" aria-hidden="True">
+    <div class="form-group" aria-disabled="true">
         End Time:<br/>
-        <input type="time" required @bind-value="@newEvent.TimeEnd">
-        <ValidationMessage For="@(() => newEvent.TimeStart)"/>
+        <input type="time" required @bind-value="@newEvent.End">
+        <ValidationMessage For="@(() => newEvent.End)"/>
     </div>
     <div class="form-group">
         Address Street Name:<br/>
@@ -79,11 +79,11 @@
 
 @code {
     private Event newEvent = new();
-    private DateTime dateTime;
     private IList<Category> categories = new List<Category>();
     
     protected override async Task OnInitializedAsync()
     {
+        newEvent.End = DateTime.Today;
         categories = await CategoryService.GetCategoriesAsync();
     }
 
@@ -92,8 +92,8 @@
         var newEventOrganizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
         
-        newEvent.StartTime = newEvent.Date.Add(newEvent.TimeStart.TimeOfDay);
-        newEvent.EndTime = newEvent.Date.Add(newEvent.TimeEnd.TimeOfDay);
+        newEvent.StartTime = newEvent.Date.Add(newEvent.Start.TimeOfDay);
+        newEvent.EndTime = newEvent.Date.Add(newEvent.End.Value.TimeOfDay);
         await EventService.CreateEvent(newEvent);
         await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         NavigationManager.NavigateTo("MyEvents");
