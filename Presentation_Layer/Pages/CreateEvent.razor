@@ -83,6 +83,7 @@
     
     protected override async Task OnInitializedAsync()
     {
+        newEvent.Date = DateTime.Today;
         newEvent.End = DateTime.Today;
         categories = await CategoryService.GetCategoriesAsync();
     }
