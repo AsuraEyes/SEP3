@@ -34,7 +34,7 @@ else
         @foreach (var item in ggl)
         {
             <tr>
-                <td>@item.Name</td>
+                <td href="@item.Tutorial">@item.Name</td>
                 <td>
                     <input type="checkbox" checked=@item.Approved @onchange="@((arg) => CompletedChange(arg, item))"/>
                 </td>
