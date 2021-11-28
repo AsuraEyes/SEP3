@@ -31,8 +31,9 @@
 
         private async Task AddGameAsync()
         {
-                NavigationManager.NavigateTo("CreateGameAdmin");
+                NavigationManager.NavigateTo("CreateGame");
         }
+        
         private async Task MoreInfo(int id)
         {
                 NavigationManager.NavigateTo($"GameApproval/{id}");
