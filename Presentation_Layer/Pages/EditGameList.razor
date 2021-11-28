@@ -56,7 +56,7 @@ else
 
         protected override async Task OnInitializedAsync()
         {
-                ggl = await GameService.GetGamesAsync();
+                ggl = await GameService.GetGGLAsync();
         }
         
         private async Task SuggestGameAsync()

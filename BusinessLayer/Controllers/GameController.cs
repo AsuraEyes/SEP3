@@ -13,12 +13,12 @@ namespace REST.Controllers
     public class GameController : Controller
     {
         //private readonly IUserService UserService;
-        private IGameWebService soapWebService;
+        private IGameWebService gameWebService;
         private IGameMiddlepoint gameMiddlepoint;
 
-        public GameController(IGameWebService soapWebService, IGameMiddlepoint gameMiddlepoint)
+        public GameController(IGameWebService gameWebService, IGameMiddlepoint gameMiddlepoint)
         {
-            this.soapWebService = soapWebService;
+            this.gameWebService = gameWebService;
             this.gameMiddlepoint = gameMiddlepoint;
         }
 
@@ -29,7 +29,7 @@ namespace REST.Controllers
             if (!ModelState.IsValid) return BadRequest();
             try
             {
-                var response = await soapWebService.GetGameAsync(id);
+                var response = await gameWebService.GetGameAsync(id);
                 return Ok(response);
             }
             catch (Exception e)
@@ -40,13 +40,13 @@ namespace REST.Controllers
         }
         
         [HttpGet]
-        [Route("/Games")]
+        [Route("/GGL")]
         public async Task<ActionResult<IList<Game>>>
-            GetGamesAsync()
+            GetGGLAsync()
         {
             try
             {
-                IList<Game> games = await soapWebService.GetGamesAsync();
+                IList<Game> games = await gameMiddlepoint.GetGGLAsync();
                 return Ok(games);
             }
             catch (Exception e)
@@ -56,15 +56,15 @@ namespace REST.Controllers
             }
         }
         
-       [HttpGet]
-        [Route("/UserGames/{username}")]
+        [HttpGet]
+        [Route("/SuggestedGames")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesAsync([FromRoute]String username)
+            GetSuggestedGamesAsync()
         {
             try
             {
-                IList<Game> adults = await soapWebService.GetUserGamesAsync(username);
-               return Ok(adults);
+                IList<Game> games = await gameMiddlepoint.GetSuggestedGamesAsync();
+                return Ok(games);
             }
             catch (Exception e)
             {
@@ -73,13 +73,15 @@ namespace REST.Controllers
             }
         }
         
+
+        
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<ActionResult> RemoveGameAsync([FromRoute] int id)
         {
             try
             {
-                await soapWebService.RemoveGameAsync(id);
+                await gameWebService.RemoveGameAsync(id);
                 return Ok();
             }
             catch (Exception e)
@@ -99,7 +101,7 @@ namespace REST.Controllers
 
             try
             {
-                await soapWebService.AddGameAsync(Game);
+                await gameWebService.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)
@@ -134,7 +136,7 @@ namespace REST.Controllers
         {
             try
             {
-                await soapWebService.EditGameAsync(Game);
+                await gameWebService.EditGameAsync(Game);
                 return Ok(Game);
             }
             catch (Exception e)

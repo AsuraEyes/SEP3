@@ -2,8 +2,9 @@
 @using Presentation_Layer.Data
 @using Presentation_Layer.Authentication
 @using Presentation_Layer.Models
+@using System.Security.Claims
 
-@inject IGameService gameService;
+@inject IGameListService gameListService;
 @inject AuthenticationStateProvider stateProvider;
 
 <h3>GameList</h3>
@@ -28,7 +29,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        games = await gameService.GetUserGamesAsync(((CustomAuthenticationStateProvider)stateProvider).GetCachedUser());
+        var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        games = await gameListService.GetUserGamesAsync(username);
+    //games = await gameListService.GetUserGamesAsync(((CustomAuthenticationStateProvider)stateProvider).GetCachedUser());
     }
     
     private async Task EditAsync()
