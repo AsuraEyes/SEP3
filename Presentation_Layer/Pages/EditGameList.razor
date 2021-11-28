@@ -1,9 +1,50 @@
 @page "/EditGameList"
+@using Presentation_Layer.Models
+@using System.Collections
+@using Presentation_Layer.Data
 
+@inject IGameService GameService
 @inject NavigationManager NavigationManager
 
-<h3>Edit GameList</h3>
+<h3>Edit Game List</h3>
 
+@if (ggl == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!ggl.Any())
+{
+    <p>
+        <em>No ToDo items exist. Please add some.</em>
+    </p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>In my Game List</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ggl)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <input type="checkbox" checked=@item.Approved @onchange="@((arg) => CompletedChange(arg, item))"/>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+    
 <p class="actions">
         <button @onclick="@SuggestGameAsync" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Suggest
@@ -11,9 +52,21 @@
 </p>
 
 @code {
+        private IList<Game> ggl;
+
+        protected override async Task OnInitializedAsync()
+        {
+                ggl = await GameService.GetGamesAsync();
+        }
+        
         private async Task SuggestGameAsync()
         {
                 NavigationManager.NavigateTo("CreateGame");
         }
+    
+    private void CompletedChange(ChangeEventArgs evt, Game game)
+    {
+        //save changes
+    }
     
 }
