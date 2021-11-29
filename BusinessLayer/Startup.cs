@@ -36,15 +36,19 @@ namespace REST
             services.AddScoped<IUserWebService, UserWebService>();
             services.AddScoped<IGameWebService, GameWebService>();
             services.AddScoped<IGameListWebService, GameListWebService>();
-            services.AddScoped<IGameListMiddlepoint, GameListMiddlepoint>();
             services.AddScoped<IEventWebService, EventWebService>();
-            services.AddScoped<IUserMiddlepoint, UserMiddlepoint>();
-            services.AddScoped<IEventMiddlePoint, EventMiddlePoint>();
-            services.AddScoped<IGameMiddlepoint, GameMiddlepoint>();
             services.AddScoped<ICategoryWebService, CategoryWebService>();
             services.AddScoped<IParticipantWebService, ParticipantWebService>();
             services.AddScoped<IOrganizerWebService, OrganizerWebService>();
             services.AddScoped<IEventGameListWebService, EventGameListWebService>();
+                        
+            services.AddScoped<IUserMiddlepoint, UserMiddlepoint>();
+            services.AddScoped<IEventMiddlePoint, EventMiddlePoint>();
+            services.AddScoped<IGameMiddlepoint, GameMiddlepoint>();
+            services.AddScoped<IGameListMiddlepoint, GameListMiddlepoint>();
+            services.AddScoped<IOneTimeWebService, OneTimeFeeWebService>();
+            services.AddScoped<IMonthlyFeeWebService, MonthlyFeeWebService>();
+
 
         }
 
