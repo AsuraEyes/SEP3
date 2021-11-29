@@ -1,10 +1,15 @@
 @page "/EditGameList"
 @using Presentation_Layer.Models
 @using System.Collections
+@using System.Security.Claims
+@using Presentation_Layer.Authentication
 @using Presentation_Layer.Data
 
 @inject IGameService GameService
+@inject IGameListService GameListService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider stateProvider;
+
 
 <h3>Edit Game List</h3>
 
@@ -36,7 +41,7 @@ else
             <tr>
                 <td href="@item.Tutorial">@item.Name</td>
                 <td>
-                    <input type="checkbox" checked=@item.Approved @onchange="@((arg) => CompletedChange(arg, item))"/>
+                    <input type="checkbox" checked=@CheckIfInTheList(item.Id) @onchange="@((arg) => CompletedChange(arg, item))"/>
                 </td>
             </tr>
         }
@@ -53,10 +58,13 @@ else
 
 @code {
         private IList<Game> ggl;
+        private IList<int> userGamesIds;
 
-        protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
         {
-                ggl = await GameService.GetGGLAsync();
+            ggl = await GameService.GetGGLAsync();
+            var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+            userGamesIds = await GameListService.GetUserGamesIdsAsync(username);
         }
         
         private async Task SuggestGameAsync()
@@ -67,6 +75,12 @@ else
     private void CompletedChange(ChangeEventArgs evt, Game game)
     {
         //save changes
+    }
+
+    private bool CheckIfInTheList(int id)
+    {
+        return userGamesIds.Contains(id);
+    //return userGames.Any(t => t.Id == id);
     }
     
 }

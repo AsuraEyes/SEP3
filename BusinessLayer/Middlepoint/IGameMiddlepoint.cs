@@ -9,5 +9,6 @@ namespace BusinessLayer.Middlepoint
         Task AddGameAsync(Game game);
         Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();
+        Task<IList<int>> GetUserGamesIdsAsync(string user);
     }
 }

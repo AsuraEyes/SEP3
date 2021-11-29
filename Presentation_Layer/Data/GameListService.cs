@@ -25,5 +25,16 @@ namespace Presentation_Layer.Data
             });
             return Games;
         }
+        
+        public async Task<IList<int>> GetUserGamesIdsAsync(string username)
+        {
+            var stringAsync = client.GetStringAsync(uri + $"/UserGamesIds/?username={username}");
+            var ids = await stringAsync;
+            var gamesIds = JsonSerializer.Deserialize<List<int>>(ids, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return gamesIds;
+        }
     }
 }
