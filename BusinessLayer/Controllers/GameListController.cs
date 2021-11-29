@@ -15,11 +15,13 @@ namespace REST.Controllers
     {
         private IGameListWebService gameListWebService;
         private IGameListMiddlepoint gameListMiddlepoint;
+        private IGameMiddlepoint gameMiddlepoint;
             
-        public GameListController(IGameListWebService gameListWebService, IGameListMiddlepoint gameListMiddlepoint)
+        public GameListController(IGameListWebService gameListWebService, IGameListMiddlepoint gameListMiddlepoint, IGameMiddlepoint gameMiddlepoint)
         {
             this.gameListWebService = gameListWebService;
             this.gameListMiddlepoint = gameListMiddlepoint;
+            this.gameMiddlepoint = gameMiddlepoint;
         }
         
         [HttpGet]

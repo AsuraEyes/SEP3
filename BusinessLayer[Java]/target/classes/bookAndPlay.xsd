@@ -291,4 +291,12 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="GameListUpdate">
+        <xs:sequence>
+            <xs:element name="username" type="xs:string"/>
+            <xs:element name="gameId" type="xs:int"/>
+            <xs:element name="inList" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>

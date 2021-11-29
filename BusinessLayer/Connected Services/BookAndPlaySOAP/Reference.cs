@@ -936,6 +936,8 @@ namespace BookAndPlaySOAP
         
         private string userNameField;
         
+        private int gameIdField;
+        
         private Operation operationField;
         
         /// <remarks/>
@@ -954,6 +956,20 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int gameId
+        {
+            get
+            {
+                return this.gameIdField;
+            }
+            set
+            {
+                this.gameIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Operation Operation
         {
             get
