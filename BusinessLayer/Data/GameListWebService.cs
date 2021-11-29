@@ -27,9 +27,20 @@ namespace BusinessLayer.Data
         
         public async Task<IList<Game>> GetUserGameListAsync(string user)
         {
-            response = await getGameListResponse(user, Operation.GET);
+            response = await getGameListResponse(user, null, Operation.GET);
             return response.SOAPGameListResponse.gameList;
         }
+
+        public async Task AddGameToUserGameListAsync(string username, int gameId)
+        {
+            await getGameListResponse(username, gameId, Operation.CREATE);
+        }
+        
+        public async Task RemoveGameFromUserGameList(string username, int gameId)
+        {
+            await getGameListResponse(username, gameId, Operation.REMOVE);
+        }
+    
         
     }
 }

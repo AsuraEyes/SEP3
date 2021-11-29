@@ -48,5 +48,47 @@ namespace Presentation_Layer.Models
         public string? Tutorial { get; set; }
 
         public bool Approved { get; set; }
+
+        protected bool Equals(Game other)
+        {
+            return Id == other.Id && 
+                   Name == other.Name && 
+                   Complexity == other.Complexity && 
+                   TimeEstimation == other.TimeEstimation && 
+                   MinNumberOfPlayers == other.MinNumberOfPlayers && 
+                   MaxNumberOfPlayers == other.MaxNumberOfPlayers && 
+                   ShortDescription == other.ShortDescription && 
+                   NeededEquipment == other.NeededEquipment && 
+                   MinAge == other.MinAge && 
+                   MaxAge == other.MaxAge && 
+                   Tutorial == other.Tutorial && 
+                   Approved == other.Approved;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Game) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = new HashCode();
+            hashCode.Add(Id);
+            hashCode.Add(Name);
+            hashCode.Add(Complexity);
+            hashCode.Add(TimeEstimation);
+            hashCode.Add(MinNumberOfPlayers);
+            hashCode.Add(MaxNumberOfPlayers);
+            hashCode.Add(ShortDescription);
+            hashCode.Add(NeededEquipment);
+            hashCode.Add(MinAge);
+            hashCode.Add(MaxAge);
+            hashCode.Add(Tutorial);
+            hashCode.Add(Approved);
+            return hashCode.ToHashCode();
+        }
     }
 }

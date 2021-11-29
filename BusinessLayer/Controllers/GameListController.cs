@@ -13,12 +13,12 @@ namespace REST.Controllers
     public class GameListController : Controller
     {
         private IGameListWebService gameListWebService;
-        private IGameMiddlepoint gameMiddlepoint;
+        private IGameListMiddlepoint gameListMiddlepoint;
             
-        public GameListController(IGameListWebService gameListWebService, IGameMiddlepoint gameMiddlepoint)
+        public GameListController(IGameListWebService gameListWebService, IGameListMiddlepoint gameListMiddlepoint)
         {
             this.gameListWebService = gameListWebService;
-            this.gameMiddlepoint = gameMiddlepoint;
+            this.gameListMiddlepoint = gameListMiddlepoint;
         }
         
         [HttpGet]
@@ -37,7 +37,13 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        
+
+        [HttpPost]
+        [Route("/UpdateGame")]
+        public async Task UpdateUserGamesAsync([FromBody] GameListUpdate gameListUpdate)
+        {
+            await gameListMiddlepoint.GameListUpdate(gameListUpdate);
+        }
         [HttpGet]
         [Route("/UserGamesIds")]
         public async Task<ActionResult<IList<Game>>>
