@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="gameList" type="{http://spring.io/guides/gs-producing-web-service}GameList"/&gt;
+ *         &lt;element name="eventList" type="{http://spring.io/guides/gs-producing-web-service}EventList"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "gameList"
+    "eventList"
 })
-@XmlRootElement(name = "SOAPEventGameListResponse")
-public class SOAPEventGameListResponse {
+@XmlRootElement(name = "SOAPEventOrganizerResponse")
+public class SOAPEventOrganizerResponse {
 
     @XmlElement(required = true)
-    protected GameList gameList;
+    protected EventList eventList;
 
     /**
-     * Gets the value of the gameList property.
+     * Gets the value of the eventList property.
      * 
      * @return
      *     possible object is
-     *     {@link GameList }
+     *     {@link EventList }
      *     
      */
-    public GameList getGameList() {
-        return gameList;
+    public EventList getEventList() {
+        return eventList;
     }
 
     /**
-     * Sets the value of the gameList property.
+     * Sets the value of the eventList property.
      * 
      * @param value
      *     allowed object is
-     *     {@link GameList }
+     *     {@link EventList }
      *     
      */
-    public void setGameList(GameList value) {
-        this.gameList = value;
+    public void setEventList(EventList value) {
+        this.eventList = value;
     }
 
 }

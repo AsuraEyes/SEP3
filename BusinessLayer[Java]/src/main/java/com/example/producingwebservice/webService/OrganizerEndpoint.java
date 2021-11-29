@@ -2,10 +2,7 @@ package com.example.producingwebservice.webService;
 
 import com.example.producingwebservice.organizers.Organizers;
 import com.example.producingwebservice.users.Users;
-import io.spring.guides.gs_producing_web_service.SOAPOrganizerRequest;
-import io.spring.guides.gs_producing_web_service.SOAPOrganizerResponse;
-import io.spring.guides.gs_producing_web_service.SOAPUserRequest;
-import io.spring.guides.gs_producing_web_service.SOAPUserResponse;
+import io.spring.guides.gs_producing_web_service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -31,7 +28,7 @@ public class OrganizerEndpoint
       SOAPOrganizerResponse response = new SOAPOrganizerResponse();
       switch (request.getOperation()) {
         case GET:
-          //response.setUser(usersDAO.get(request.getUsername()));
+          //GetCoorganizerEventList(request.getUsername())
           break;
         case CREATE:
           organizersDAO.organize(request.getEventId(), request.getUsername());
@@ -48,4 +45,5 @@ public class OrganizerEndpoint
       }
       return response;
     }
+
 }

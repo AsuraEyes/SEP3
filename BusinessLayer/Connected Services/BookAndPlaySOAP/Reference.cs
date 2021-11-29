@@ -34,6 +34,10 @@ namespace BookAndPlaySOAP
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPParticipantResponse1> SOAPParticipantAsync(BookAndPlaySOAP.SOAPParticipantRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -339,230 +343,6 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class EventList
-    {
-        
-        private int countField;
-        
-        private Event[] eventListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int count
-        {
-            get
-            {
-                return this.countField;
-            }
-            set
-            {
-                this.countField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("eventList", Order=1)]
-        public Event[] eventList
-        {
-            get
-            {
-                return this.eventListField;
-            }
-            set
-            {
-                this.eventListField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class Event
-    {
-        
-        private int idField;
-        
-        private string nameField;
-        
-        private System.DateTime startTimeField;
-        
-        private System.DateTime endTimeField;
-        
-        private string addressStreetNameField;
-        
-        private string addressStreetNumberField;
-        
-        private string addressApartmentNumberField;
-        
-        private int maxNumberOfParticipantsField;
-        
-        private int numberOfParticipantsField;
-        
-        private int eventCategoryField;
-        
-        private string organizerField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public System.DateTime startTime
-        {
-            get
-            {
-                return this.startTimeField;
-            }
-            set
-            {
-                this.startTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public System.DateTime endTime
-        {
-            get
-            {
-                return this.endTimeField;
-            }
-            set
-            {
-                this.endTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string addressStreetName
-        {
-            get
-            {
-                return this.addressStreetNameField;
-            }
-            set
-            {
-                this.addressStreetNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string addressStreetNumber
-        {
-            get
-            {
-                return this.addressStreetNumberField;
-            }
-            set
-            {
-                this.addressStreetNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string addressApartmentNumber
-        {
-            get
-            {
-                return this.addressApartmentNumberField;
-            }
-            set
-            {
-                this.addressApartmentNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public int maxNumberOfParticipants
-        {
-            get
-            {
-                return this.maxNumberOfParticipantsField;
-            }
-            set
-            {
-                this.maxNumberOfParticipantsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public int numberOfParticipants
-        {
-            get
-            {
-                return this.numberOfParticipantsField;
-            }
-            set
-            {
-                this.numberOfParticipantsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public int eventCategory
-        {
-            get
-            {
-                return this.eventCategoryField;
-            }
-            set
-            {
-                this.eventCategoryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string organizer
-        {
-            get
-            {
-                return this.organizerField;
-            }
-            set
-            {
-                this.organizerField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
     public partial class Filter
     {
         
@@ -834,6 +614,230 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class Event
+    {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        private System.DateTime startTimeField;
+        
+        private System.DateTime endTimeField;
+        
+        private string addressStreetNameField;
+        
+        private string addressStreetNumberField;
+        
+        private string addressApartmentNumberField;
+        
+        private int maxNumberOfParticipantsField;
+        
+        private int numberOfParticipantsField;
+        
+        private int eventCategoryField;
+        
+        private string organizerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime startTime
+        {
+            get
+            {
+                return this.startTimeField;
+            }
+            set
+            {
+                this.startTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime endTime
+        {
+            get
+            {
+                return this.endTimeField;
+            }
+            set
+            {
+                this.endTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string addressStreetName
+        {
+            get
+            {
+                return this.addressStreetNameField;
+            }
+            set
+            {
+                this.addressStreetNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string addressStreetNumber
+        {
+            get
+            {
+                return this.addressStreetNumberField;
+            }
+            set
+            {
+                this.addressStreetNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string addressApartmentNumber
+        {
+            get
+            {
+                return this.addressApartmentNumberField;
+            }
+            set
+            {
+                this.addressApartmentNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int maxNumberOfParticipants
+        {
+            get
+            {
+                return this.maxNumberOfParticipantsField;
+            }
+            set
+            {
+                this.maxNumberOfParticipantsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int numberOfParticipants
+        {
+            get
+            {
+                return this.numberOfParticipantsField;
+            }
+            set
+            {
+                this.numberOfParticipantsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public int eventCategory
+        {
+            get
+            {
+                return this.eventCategoryField;
+            }
+            set
+            {
+                this.eventCategoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string organizer
+        {
+            get
+            {
+                return this.organizerField;
+            }
+            set
+            {
+                this.organizerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class EventList
+    {
+        
+        private int countField;
+        
+        private Event[] eventListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int count
+        {
+            get
+            {
+                return this.countField;
+            }
+            set
+            {
+                this.countField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("eventList", Order=1)]
+        public Event[] eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
     public partial class SOAPOrganizerResponse
     {
@@ -843,6 +847,8 @@ namespace BookAndPlaySOAP
         private User userField;
         
         private string[] organizerListField;
+        
+        private EventList eventListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -883,6 +889,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.organizerListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
             }
         }
     }
@@ -1288,8 +1308,6 @@ namespace BookAndPlaySOAP
         
         private EventList eventListField;
         
-        private int numberOfPagesField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int currentPage
@@ -1345,20 +1363,6 @@ namespace BookAndPlaySOAP
                 this.eventListField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public int numberOfPages
-        {
-            get
-            {
-                return this.numberOfPagesField;
-            }
-            set
-            {
-                this.numberOfPagesField = value;
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1398,6 +1402,110 @@ namespace BookAndPlaySOAP
         public SOAPEventResponse1(BookAndPlaySOAP.SOAPEventResponse SOAPEventResponse)
         {
             this.SOAPEventResponse = SOAPEventResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPEventOrganizerRequest
+    {
+        
+        private string usernameField;
+        
+        private Operation operationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string username
+        {
+            get
+            {
+                return this.usernameField;
+            }
+            set
+            {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPEventOrganizerResponse
+    {
+        
+        private EventList eventListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventOrganizerRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest;
+        
+        public SOAPEventOrganizerRequest1()
+        {
+        }
+        
+        public SOAPEventOrganizerRequest1(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
+        {
+            this.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventOrganizerResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse;
+        
+        public SOAPEventOrganizerResponse1()
+        {
+        }
+        
+        public SOAPEventOrganizerResponse1(BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse)
+        {
+            this.SOAPEventOrganizerResponse = SOAPEventOrganizerResponse;
         }
     }
     
@@ -1486,6 +1594,8 @@ namespace BookAndPlaySOAP
         
         private string[] participantListField;
         
+        private EventList eventListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string type
@@ -1525,6 +1635,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.participantListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
             }
         }
     }
@@ -2032,6 +2156,19 @@ namespace BookAndPlaySOAP
             BookAndPlaySOAP.SOAPEventRequest1 inValue = new BookAndPlaySOAP.SOAPEventRequest1();
             inValue.SOAPEventRequest = SOAPEventRequest;
             return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request)
+        {
+            return base.Channel.SOAPEventOrganizerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
+        {
+            BookAndPlaySOAP.SOAPEventOrganizerRequest1 inValue = new BookAndPlaySOAP.SOAPEventOrganizerRequest1();
+            inValue.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventOrganizerAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
