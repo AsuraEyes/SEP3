@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers

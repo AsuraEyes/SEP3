@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using BusinessLayer.Data;
+using BusinessLayer.Models;
 
 namespace BusinessLayer.Middlepoint
 {
