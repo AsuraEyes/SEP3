@@ -11,24 +11,22 @@ package io.spring.guides.gs_producing_web_service;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for GameListUpdate complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType&gt;
+ * &lt;complexType name="GameListUpdate"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="gameId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Operation" type="{http://spring.io/guides/gs-producing-web-service}Operation"/&gt;
+ *         &lt;element name="inList" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,43 +36,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "userName",
+@XmlType(name = "GameListUpdate", propOrder = {
+    "username",
     "gameId",
-    "operation"
+    "inList"
 })
-@XmlRootElement(name = "SOAPGameListRequest")
-public class SOAPGameListRequest {
+public class GameListUpdate {
 
     @XmlElement(required = true)
-    protected String userName;
+    protected String username;
     protected int gameId;
-    @XmlElement(name = "Operation", required = true)
-    @XmlSchemaType(name = "string")
-    protected Operation operation;
+    protected boolean inList;
 
     /**
-     * Gets the value of the userName property.
+     * Gets the value of the username property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * Sets the value of the userName property.
+     * Sets the value of the username property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUserName(String value) {
-        this.userName = value;
+    public void setUsername(String value) {
+        this.username = value;
     }
 
     /**
@@ -94,27 +89,19 @@ public class SOAPGameListRequest {
     }
 
     /**
-     * Gets the value of the operation property.
+     * Gets the value of the inList property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Operation }
-     *     
      */
-    public Operation getOperation() {
-        return operation;
+    public boolean isInList() {
+        return inList;
     }
 
     /**
-     * Sets the value of the operation property.
+     * Sets the value of the inList property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Operation }
-     *     
      */
-    public void setOperation(Operation value) {
-        this.operation = value;
+    public void setInList(boolean value) {
+        this.inList = value;
     }
 
 }

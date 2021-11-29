@@ -26,10 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="filter" type="{http://spring.io/guides/gs-producing-web-service}Filter"/&gt;
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Operation" type="{http://spring.io/guides/gs-producing-web-service}Operation"/&gt;
- *         &lt;element name="Event" type="{http://spring.io/guides/gs-producing-web-service}Event"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -40,61 +38,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id",
-    "filter",
-    "operation",
-    "event"
+    "username",
+    "operation"
 })
-@XmlRootElement(name = "SOAPEventRequest")
-public class SOAPEventRequest {
+@XmlRootElement(name = "SOAPEventOrganizerRequest")
+public class SOAPEventOrganizerRequest {
 
-    protected int id;
     @XmlElement(required = true)
-    protected Filter filter;
+    protected String username;
     @XmlElement(name = "Operation", required = true)
     @XmlSchemaType(name = "string")
     protected Operation operation;
-    @XmlElement(name = "Event", required = true)
-    protected Event event;
 
     /**
-     * Gets the value of the id property.
-     * 
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     */
-    public void setId(int value) {
-        this.id = value;
-    }
-
-    /**
-     * Gets the value of the filter property.
+     * Gets the value of the username property.
      * 
      * @return
      *     possible object is
-     *     {@link Filter }
+     *     {@link String }
      *     
      */
-    public Filter getFilter() {
-        return filter;
+    public String getUsername() {
+        return username;
     }
 
     /**
-     * Sets the value of the filter property.
+     * Sets the value of the username property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Filter }
+     *     {@link String }
      *     
      */
-    public void setFilter(Filter value) {
-        this.filter = value;
+    public void setUsername(String value) {
+        this.username = value;
     }
 
     /**
@@ -119,30 +96,6 @@ public class SOAPEventRequest {
      */
     public void setOperation(Operation value) {
         this.operation = value;
-    }
-
-    /**
-     * Gets the value of the event property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Event }
-     *     
-     */
-    public Event getEvent() {
-        return event;
-    }
-
-    /**
-     * Sets the value of the event property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Event }
-     *     
-     */
-    public void setEvent(Event value) {
-        this.event = value;
     }
 
 }

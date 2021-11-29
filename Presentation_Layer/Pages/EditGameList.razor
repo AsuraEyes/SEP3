@@ -1,10 +1,14 @@
 @page "/EditGameList"
 @using Presentation_Layer.Models
 @using System.Collections
+@using System.Security.Claims
+@using Presentation_Layer.Authentication
 @using Presentation_Layer.Data
 
 @inject IGameService GameService
+@inject IGameListService gameListService;
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider stateProvider;
 
 <h3>Edit Game List</h3>
 
@@ -36,7 +40,11 @@ else
             <tr>
                 <td href="@item.Tutorial">@item.Name</td>
                 <td>
-                    <input type="checkbox" checked=@item.Approved @onchange="@((arg) => CompletedChange(arg, item))"/>
+                    <!--item.Id.Equals(gamesOfUser.FirstOrDefault(game => game.Id.Equals(item.Id)).Id)-->
+                    <!-- (Condition ? yes : no) -->
+                    <!--(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null ? "yes" : "NO")-->
+                    <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@((arg) => CompletedChange(arg, item.Id))"/>
+                    @* <!--<input type="checkbox" checked=@(idsOfGamesOfUser.Contains(item.Id)) @onchange="@((arg) => CompletedChange(arg, item.Id))"/>--> *@
                 </td>
             </tr>
         }
@@ -46,27 +54,41 @@ else
 
     
 <p class="actions">
-        <button @onclick="@SuggestGameAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Create
+        <button @onclick="@GoBack" class="btn btn-outline-secondary" type="submit">
+            Go back
         </button>
 </p>
 
 @code {
-        private IList<Game> ggl;
+    private IList<Game> ggl;
+    private IList<Game> gamesOfUser;
+    //private IList<int> idsOfGamesOfUser;
+    private string username;
 
-        protected override async Task OnInitializedAsync()
-        {
-                ggl = await GameService.GetGGLAsync();
-        }
-        
-        private async Task SuggestGameAsync()
-        {
-                NavigationManager.NavigateTo("CreateGame");
-        }
-    
-    private void CompletedChange(ChangeEventArgs evt, Game game)
+    protected override async Task OnInitializedAsync()
     {
-        //save changes
+        ggl = await GameService.GetGGLAsync();
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        gamesOfUser = await gameListService.GetUserGamesAsync(username);
+        // idsOfGamesOfUser = new List<int>();
+        // foreach (var game in gamesOfUser)
+        // {
+        //     idsOfGamesOfUser.Add(game.Id);
+        //     Console.WriteLine(game.Name);
+        // }
+    }
+    
+    private async Task CompletedChange(ChangeEventArgs arg, int id)
+    {
+        //change the value
+        bool inList = (bool) arg.Value;
+        await gameListService.UpdateUserGamesAsync(username, id, inList);
+
+    }
+    
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("GameList");
     }
     
 }

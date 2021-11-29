@@ -31,7 +31,8 @@ public class ParticipantEndpoint
       SOAPParticipantResponse response = new SOAPParticipantResponse();
       switch (request.getOperation()) {
         case GET:
-          //response.setUser(participantsDAO.get(request.getUsername()));
+          //GetParticipantEventList(request.getUsername())
+
           break;
         case CREATE:
           participantsDAO.join(request.getEventId(), request.getUsername());

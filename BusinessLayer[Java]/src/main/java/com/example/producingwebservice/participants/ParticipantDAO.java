@@ -42,8 +42,6 @@ public class ParticipantDAO implements Participants
     public String create(ResultSet rs) throws SQLException
     {
       String username = rs.getString("user_username");
-
-
       return createParticipant(username);
     }
   }

@@ -2,10 +2,7 @@ package com.example.producingwebservice.webService;
 
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.games.Games;
-import io.spring.guides.gs_producing_web_service.SOAPEventRequest;
-import io.spring.guides.gs_producing_web_service.SOAPEventResponse;
-import io.spring.guides.gs_producing_web_service.SOAPGameRequest;
-import io.spring.guides.gs_producing_web_service.SOAPGameResponse;
+import io.spring.guides.gs_producing_web_service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -45,6 +42,28 @@ public class EventsEndpoint
         break;
       case REMOVE:
        eventsDAO.cancel(request.getId());
+    }
+    return response;
+  }
+
+  public SOAPEventOrganizerResponse eventOrganizerResponse(@RequestPayload SOAPEventOrganizerRequest request) {
+    SOAPEventOrganizerResponse response = new SOAPEventOrganizerResponse();
+    switch (request.getOperation()){
+      case GET:
+        //response.setEvent(eventsDAO.get(request.getId()));
+        break;
+      case CREATE:
+        //eventsDAO.create(request.getEvent());
+        break;
+      case UPDATE:
+        //eventsDAO.patch(request.getEvent());
+        break;
+      case GETALL:
+       // response.setEventList(eventsDAO.searchAndFilter(request.getFilter()));
+        //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
+        break;
+      case REMOVE:
+       // eventsDAO.cancel(request.getId());
     }
     return response;
   }
