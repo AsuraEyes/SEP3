@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Presentation_Layer.Models;
@@ -25,6 +26,16 @@ namespace Presentation_Layer.Data
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
             return Games;
+        }
+
+        public async Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList)
+        {
+            var UpdateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
+                {username = username, gameId = gameId, eventId = eventId, inList = inList});
+            HttpContent content = new StringContent(UpdateAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await client.PostAsync(uri+"/UpdateEventGame", content);
         }
     }
 }

@@ -119,6 +119,13 @@ else
         </ul>
     }
     
+    if(organizers.Any(user => user.Equals(username)))
+    {
+        <br/><p class="actions">
+                 <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
+             </p>
+    }
+    
     if (username.Equals(selectedEvent.Organizer))
     {
         <br/><p class="actions">
@@ -195,5 +202,10 @@ else
     private async Task MoreUserInfo(string username)
     {
         NavigationManager.NavigateTo($"UserInfo/{username}");
+    }
+
+    private async Task EditEventGames()
+    {
+        NavigationManager.NavigateTo($"EditEventGames/{selectedEvent.Id}");
     }
 }
