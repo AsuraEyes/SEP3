@@ -73,11 +73,11 @@ public class EventGameListDAO implements EventGameLists
   }
 
   public void removeGameFromEventGameList(int gameId, int eventId, String username){
-    helper.executeUpdate("DELETE FROM event_game_list WHERE user_username = ? AND game_id = ? AND event_id = ?;", username, gameId, eventId);
+    helper().executeUpdate("DELETE FROM event_game_list WHERE user_username = ? AND game_id = ? AND event_id = ?;", username, gameId, eventId);
   }
 
   public void addGameToEventGameList(int gameId, int eventId, String username){
-    helper.executeUpdate("INSERT INTO event_game_list VALUES (?, ?, ?);", gameId, username, eventId);
+    helper().executeUpdate("INSERT INTO event_game_list VALUES (?, ?, ?);", gameId, username, eventId);
   }
 
   private static class GameMapper implements DataMapper<Game>

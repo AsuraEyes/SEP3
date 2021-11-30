@@ -51,6 +51,7 @@ namespace REST
             services.AddSingleton<IMonthlyFeeWebService, MonthlyFeeWebService>();
             services.AddSingleton<IFeeMiddlePoint, FeeMiddlePoint>();
             services.AddSingleton<IEventOrganizerWebService, EventOrganizerWebService>();
+            services.AddSingleton<IEventGameListMiddlePoint, EventGameListMiddlePoint>();
 
         }
 
