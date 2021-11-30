@@ -115,7 +115,7 @@ else
     foreach (var game in allEventGameList)
     {
         <ul>
-            <li @onclick="@(() => MoreInfo(game.Id))">@game.Name</li>
+            <li @onclick="@(() => MoreInfo(game.Id))"><a href="#">@game.Name</a></li>
         </ul>
     }
     

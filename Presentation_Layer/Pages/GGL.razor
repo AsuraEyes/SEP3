@@ -15,7 +15,7 @@
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                                 <li @onclick="@(() => MoreInfo(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
