@@ -33,7 +33,7 @@ namespace BusinessLayer.Middlepoint
                 //remove from list
                 try
                 {
-                    await gameListWebService.RemoveGameFromUserGameList(gameListUpdate.username, gameListUpdate.gameId);
+                    await gameListWebService.RemoveGameFromUserGameListAsync(gameListUpdate.username, gameListUpdate.gameId);
                 }
                 catch (Exception e)
                 {

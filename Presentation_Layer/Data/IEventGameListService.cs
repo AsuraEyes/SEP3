@@ -7,5 +7,6 @@ namespace Presentation_Layer.Data
     public interface IEventGameListService
     {
         Task<IList<Game>> GetAllEventGameListAsync(int id);
+        Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList);
     }
 }
