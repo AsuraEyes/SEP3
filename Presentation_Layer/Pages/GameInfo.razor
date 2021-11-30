@@ -5,8 +5,8 @@
 @inject NavigationManager NavigationManager
 @inject IGameService gameService
 
-<h3>Name: @game.Name</h3>
-<p>Complezity: @game.Complexity</p>
+<h3>@game.Name</h3>
+<p>Complexity: @game.Complexity</p>
 <p>Playing time: @game.TimeEstimation</p>
 <p>Player amount: @game.MinNumberOfPlayers - @game.MaxNumberOfPlayers</p>
 @if (game.ShortDescription != null)
@@ -15,11 +15,15 @@
 }
 @if (game.NeededEquipment != null)
 {
-    <p>Needed equipment: @game</p>
+    <p>Needed equipment: @game.NeededEquipment</p>
 }
 @if (game.MaxAge != null && game.MaxAge != null)
 {
     <p>Age range: @game.MinAge - @game.MaxAge</p>
+}
+else
+{
+    <p>Age range: @game.MinAge+</p>
 }
 @if (game.Tutorial != null)
 {
