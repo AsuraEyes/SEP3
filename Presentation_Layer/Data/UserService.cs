@@ -132,13 +132,14 @@ namespace SEP3_Blazor.Data
             return null;
         }
         
-        public async Task CreateAccountAsync(User user)
+        public async Task<string> CreateAccountAsync(User user)
         {
             var userAsJson = JsonSerializer.Serialize(user);
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await Client.PostAsync(uri+"/User/CreateAccount", content);
+           var message = await Client.PostAsync(uri+"/User/CreateAccount", content);
+           return message.IsSuccessStatusCode ? "success" : "Username has already been taken.";
         }
     }
 }

@@ -12,8 +12,8 @@
 <ul>
 @foreach (var game in games)
 {
-    <li href="@game.Tutorial">
-        <b>@game.Name</b>
+    <li href="#">
+        <b @onclick="@(() => MoreInfo(game.Id))">@game.Name</b>
     </li>
 }
 </ul>
@@ -37,5 +37,10 @@
     private async Task EditAsync()
     {
         NavigationManager.NavigateTo("EditGameList");
+    }
+    
+    private async Task MoreInfo(int id)
+    {
+        NavigationManager.NavigateTo($"GameInfo/{id}");
     }
 }

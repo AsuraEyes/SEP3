@@ -38,8 +38,15 @@ else
     {
     <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
     }
-    <p>Category: @category.Name </p><br/>
+    <p>Category: @category.Name </p>
+    if (username.Equals(selectedEvent.Organizer))
+    {
+        <p class="actions">
+            <button @onclick="@EditEventAsync" class="btn btn-outline-secondary" type="submit"><i class="oi oi-pencil"></i> Edit</button>
+        </p>
+    }
 
+    <br/>
     <div class="col-sm-6">
         <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
         @foreach (var participant in participants)
@@ -108,7 +115,7 @@ else
     foreach (var game in allEventGameList)
     {
         <ul>
-            <li href="@game.Tutorial">@game.Name</li>
+            <li @onclick="@(() => MoreInfo(game.Id))">@game.Name</li>
         </ul>
     }
     
@@ -131,7 +138,7 @@ else
     private IList<Category> categories = new List<Category>();
     private Category category = new();
     private IList<Game> allEventGameList = new List<Game>();
-    string username;
+    private string username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -174,5 +181,14 @@ else
         await eventService.CancelEvent(selectedEvent);
         NavigationManager.NavigateTo("MyEvents");
     }
-
+    
+    private async Task EditEventAsync()
+    {
+        NavigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
+    }
+    
+    private async Task MoreInfo(int id)
+    {
+        NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
 }

@@ -22,7 +22,7 @@ namespace Presentation_Layer.Models
         [Required]
         public DateTime Start { get; set; }
         
-        [RequiredIf("End > Today() && End < Start", 
+        [RequiredIf("End > Today() && (Compare(End, Start)) <= 0", 
             ErrorMessage = "The end time must be later than the start time.")]
         public DateTime? End { get; set; }
 

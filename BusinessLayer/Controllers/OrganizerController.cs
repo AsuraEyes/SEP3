@@ -71,5 +71,21 @@ namespace REST.Controllers
                 throw;
             }
         }
+        
+        [HttpGet]
+        [Route("/CoOrganizerEvents")]
+        public async Task<ActionResult<IList<Event>>> GetCoOrganizerEventsAsync([FromQuery] string username)
+        {
+            try
+            {
+                var organizersEvent = await organizerWebService.GetCoOrganizerEventsAsync(username);
+                return Ok(organizersEvent);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return  StatusCode(500, e.Message);
+            }
+        }
     }
 }

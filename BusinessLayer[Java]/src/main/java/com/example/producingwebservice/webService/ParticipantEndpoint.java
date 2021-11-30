@@ -1,5 +1,6 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.participants.ParticipantDAO;
 import com.example.producingwebservice.participants.Participants;
 import com.example.producingwebservice.users.Users;
@@ -19,10 +20,12 @@ public class ParticipantEndpoint
     private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
 
     private final Participants participantsDAO;
+    private final Events eventsDAO;
 
     @Autowired
-    public ParticipantEndpoint(Participants dao) {
+    public ParticipantEndpoint(Participants dao, Events eventsDAO) {
       this.participantsDAO = dao;
+      this.eventsDAO = eventsDAO;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPParticipantRequest")
@@ -31,8 +34,7 @@ public class ParticipantEndpoint
       SOAPParticipantResponse response = new SOAPParticipantResponse();
       switch (request.getOperation()) {
         case GET:
-          //GetParticipantEventList(request.getUsername())
-
+          response.setEventList(eventsDAO.getParticipantsEvents(request.getUsername()));
           break;
         case CREATE:
           participantsDAO.join(request.getEventId(), request.getUsername());

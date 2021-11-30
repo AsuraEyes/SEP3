@@ -41,5 +41,11 @@ namespace BusinessLayer.Data
         {
             response = await GetParticipantResponse(Operation.UPDATE, id, username);
         }
+
+        public async Task<EventList> GetParticipantEventsAsync(string username)
+        {
+            response = await GetParticipantResponse(Operation.GET, 0, username);
+            return response.SOAPParticipantResponse.eventList;
+        } 
     }
 }

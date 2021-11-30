@@ -168,3 +168,8 @@ CREATE TRIGGER update_number_of_participants_trigger
     FOR EACH ROW
     EXECUTE FUNCTION update_number_of_participants();
 
+SELECT e.*
+FROM event e, organizers o
+WHERE o.user_username != e.organizer
+  AND e.id = o.event_id AND o.user_username = 'boardgameGeek';
+
