@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -67,6 +68,22 @@ namespace REST.Controllers
                 {
                     Console.WriteLine(e);
                     throw;
+                }
+            }
+            
+            [HttpGet]
+            [Route("/ParticipantEvents")]
+            public async Task<ActionResult<IList<Event>>> GetParticipantEventsAsync([FromQuery] string username)
+            {
+                try
+                {
+                    var organizersEvent = await ParticipantWebService.GetParticipantEventsAsync(username);
+                    return Ok(organizersEvent);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return  StatusCode(500, e.Message);
                 }
             }
     }

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Presentation_Layer.Models;
 
 namespace Presentation_Layer.Data
 {
@@ -39,6 +40,17 @@ namespace Presentation_Layer.Data
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
             await Client.PatchAsync(uri + $"/Organizers/{id}", content);
+        }
+        
+        public async Task<EventList> GetCoOrganizerEventsAsync(string username)
+        {
+            var coOrganizersEvent = Client.GetStringAsync(uri + $"/CoOrganizerEvents/?username={username}");
+            var coOrganizersEvents = await coOrganizersEvent;
+            var eventList = JsonSerializer.Deserialize<EventList>(coOrganizersEvents, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return eventList;
         }
     }
 }

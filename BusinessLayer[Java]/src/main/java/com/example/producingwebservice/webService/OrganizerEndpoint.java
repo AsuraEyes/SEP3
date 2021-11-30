@@ -1,5 +1,6 @@
 package com.example.producingwebservice.webService;
 
+import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.organizers.Organizers;
 import com.example.producingwebservice.users.Users;
 import io.spring.guides.gs_producing_web_service.*;
@@ -16,10 +17,12 @@ public class OrganizerEndpoint
     private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
 
     private final Organizers organizersDAO;
+    private final Events eventsDAO;
 
     @Autowired
-    public OrganizerEndpoint(Organizers dao) {
+    public OrganizerEndpoint(Organizers dao, Events eventsDAO) {
       this.organizersDAO = dao;
+      this.eventsDAO = eventsDAO;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPOrganizerRequest")
@@ -28,7 +31,7 @@ public class OrganizerEndpoint
       SOAPOrganizerResponse response = new SOAPOrganizerResponse();
       switch (request.getOperation()) {
         case GET:
-          //GetCoorganizerEventList(request.getUsername())
+            response.setEventList(eventsDAO.getCoOrganizersEvents(request.getUsername()));
           break;
         case CREATE:
           organizersDAO.organize(request.getEventId(), request.getUsername());

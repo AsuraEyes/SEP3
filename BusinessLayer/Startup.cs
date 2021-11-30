@@ -50,7 +50,7 @@ namespace REST
             services.AddSingleton<IOneTimeFeeWebService, OneTimeFeeWebService>();
             services.AddSingleton<IMonthlyFeeWebService, MonthlyFeeWebService>();
             services.AddSingleton<IFeeMiddlePoint, FeeMiddlePoint>();
-
+            services.AddSingleton<IEventOrganizerWebService, EventOrganizerWebService>();
 
         }
 

@@ -34,7 +34,7 @@ public class EventGameListEndpoint
 
         break;
       case CREATE:
-
+        eventGameListDAO.addGameToEventGameList(request.getGameId(), request.getEventId(), request.getUsername());
         break;
       case UPDATE:
 
@@ -43,6 +43,7 @@ public class EventGameListEndpoint
       response.setGameList(eventGameListDAO.readAllEventGameList(request.getEventId()));
         break;
       case REMOVE:
+        eventGameListDAO.removeGameFromEventGameList(request.getGameId(), request.getEventId(), request.getUsername());
         break;
     }
     return response;

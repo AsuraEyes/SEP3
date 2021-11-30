@@ -168,3 +168,27 @@ CREATE TRIGGER update_number_of_participants_trigger
     FOR EACH ROW
     EXECUTE FUNCTION update_number_of_participants();
 
+--co-organizer
+SELECT e.*
+FROM event e, organizers o
+WHERE o.user_username != e.organizer
+  AND e.id = o.event_id AND o.user_username = 'boardgameGeek';
+
+--participants
+SELECT DISTINCT e.*
+FROM event e, participants p, organizers o
+WHERE o.user_username != p.user_username
+  AND e.organizer != p.user_username
+  AND e.id = p.event_id
+  AND p.event_id != o.event_id
+  AND p.user_username = 'boardgameGeek';
+
+--participants v2
+SELECT DISTINCT e.*
+FROM event e, participants p
+WHERE NOT EXISTS(
+    SELECT
+    FROM organizers o
+    WHERE o.event_id != p.event_id
+    AND o.user_username != p.user_username
+    )

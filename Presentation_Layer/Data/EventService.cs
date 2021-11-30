@@ -86,5 +86,12 @@ namespace Presentation_Layer.Data
         {
             await Client.DeleteAsync($"{uri}/Events/{Event.Id}");
         }
+
+        public async Task EditEvent(Event Event)
+        {
+            var EventAsJson = JsonSerializer.Serialize(Event);
+            HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
+            await Client.PatchAsync($"{uri}/Event", content);
+        }
     }
 }

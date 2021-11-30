@@ -6,9 +6,9 @@
 @using Presentation_Layer.Data
 
 @inject IGameService GameService
-@inject IGameListService gameListService;
+@inject IGameListService gameListService
 @inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider stateProvider;
+@inject AuthenticationStateProvider stateProvider
 
 <h3>Edit Game List</h3>
 
@@ -38,7 +38,7 @@ else
         @foreach (var item in ggl)
         {
             <tr>
-                <td href="@item.Tutorial">@item.Name</td>
+                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
                 <td>
                     <!--item.Id.Equals(gamesOfUser.FirstOrDefault(game => game.Id.Equals(item.Id)).Id)-->
                     <!-- (Condition ? yes : no) -->
@@ -83,7 +83,6 @@ else
         //change the value
         bool inList = (bool) arg.Value;
         await gameListService.UpdateUserGamesAsync(username, id, inList);
-
     }
     
     private void GoBack()
@@ -91,4 +90,8 @@ else
         NavigationManager.NavigateTo("GameList");
     }
     
+    private async Task MoreGameInfo(int id)
+    {
+        NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
 }

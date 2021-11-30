@@ -37,7 +37,7 @@ namespace BusinessLayer.Data
             await getGameListResponse(username, gameId, Operation.CREATE);
         }
         
-        public async Task RemoveGameFromUserGameList(string username, int gameId)
+        public async Task RemoveGameFromUserGameListAsync(string username, int gameId)
         {
             await getGameListResponse(username, gameId, Operation.REMOVE);
         }

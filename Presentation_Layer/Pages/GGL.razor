@@ -15,7 +15,7 @@
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                                 <li @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
@@ -33,8 +33,9 @@
         {
                 NavigationManager.NavigateTo("CreateGameAdmin");
         }
-        private async Task MoreInfo(int id)
+        
+        private async Task MoreGameInfo(int id)
         {
-                NavigationManager.NavigateTo($"GameApproval/{id}");
+                NavigationManager.NavigateTo($"GameInfo/{id}");
         }
 }

@@ -50,5 +50,10 @@ namespace BusinessLayer.Data
         {
             Response = await getEventResponse(id, Operation.REMOVE, null, null);
         }
+
+        public async Task EditEventAsync(Event Event)
+        {
+            Response = await getEventResponse(0, Operation.UPDATE, Event, null);
+        }
     }
 }

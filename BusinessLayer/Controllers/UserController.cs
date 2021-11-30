@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace REST.Controllers
 {
     [ApiController]
-    [Route("Event")]
+    [Route("User")]
     public class UserController : Controller
     {
         private IUserWebService UserWebService;
@@ -62,12 +62,28 @@ namespace REST.Controllers
 
         [HttpGet]
         [Route("/User/Validate")]
-        public async Task<ActionResult<User>> GetValidatedUser()
+        public async Task<ActionResult<User>> GetValidatedUserAsync()
         {
             try
             {
                 User user = await UserMiddlepoint.GetValidatedUser();
                 Console.WriteLine("controller: "+user.role);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("/User/{username}")]
+        public async Task<ActionResult<User>> GetUserByUsernameAsync([FromRoute] string username)
+        {
+            try
+            {
+                User user = await UserMiddlepoint.GetUserByUsernameAsync(username);
                 return Ok(user);
             }
             catch (Exception e)

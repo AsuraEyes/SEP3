@@ -34,7 +34,7 @@ public class EventsEndpoint
         eventsDAO.create(request.getEvent());
         break;
       case UPDATE:
-        //eventsDAO.patch(request.getEvent());
+        eventsDAO.edit(request.getEvent());
         break;
       case GETALL:
           response.setEventList(eventsDAO.searchAndFilter(request.getFilter()));
@@ -46,6 +46,8 @@ public class EventsEndpoint
     return response;
   }
 
+  @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPEventOrganizerRequest")
+  @ResponsePayload
   public SOAPEventOrganizerResponse eventOrganizerResponse(@RequestPayload SOAPEventOrganizerRequest request) {
     SOAPEventOrganizerResponse response = new SOAPEventOrganizerResponse();
     switch (request.getOperation()){
@@ -59,8 +61,7 @@ public class EventsEndpoint
         //eventsDAO.patch(request.getEvent());
         break;
       case GETALL:
-       // response.setEventList(eventsDAO.searchAndFilter(request.getFilter()));
-        //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
+       response.setEventList(eventsDAO.getOrganizersEvents(request.getUsername()));
         break;
       case REMOVE:
        // eventsDAO.cancel(request.getId());

@@ -1,0 +1,33 @@
+@page "/UserInfo/{Username}"
+@using Presentation_Layer.Models
+@using global::Data
+
+@inject IUserService UserService;
+
+<h3>@user.Username</h3>
+@if (user.FirstName != null && user.LastName != null)
+{
+    <p>Name: @((user.FirstName != null) ? user.FirstName : "") @((user.LastName != null) ? user.LastName : "")</p>
+}
+<p>Role: @((user.Role == 3) ? "Organizer" : "Player")</p>
+@if (user.PhoneNumber != null)
+{
+    <p>Phone: @(user.PhoneCountryCode != null ? user.PhoneCountryCode : "") @user.PhoneNumber</p>
+}
+@if (user.EmailAddress != null)
+{
+    <p>Email: @user.EmailAddress</p>
+}
+
+
+
+@code {
+    [Parameter]
+    public string Username { get; set; }
+    private User user = new User();
+    protected override async Task OnInitializedAsync()
+    {
+        user = await UserService.GetUserByUsernameAsync(Username);
+    }
+    
+}

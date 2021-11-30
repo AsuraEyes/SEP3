@@ -42,6 +42,7 @@ namespace Presentation_Layer
             services.AddScoped<IEventGameListService, EventGameListService>();
             services.AddScoped<IGameListService, GameListService>();
             services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IEventOrganizerService, EventOrganizerService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
             services.AddAuthorization(options =>

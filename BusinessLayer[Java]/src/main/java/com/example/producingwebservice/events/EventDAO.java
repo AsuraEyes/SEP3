@@ -103,7 +103,29 @@ public class EventDAO implements Events {
     return eventHelper().mapSingle(new EventMapper(), "SELECT * FROM event WHERE id = ?", id);
   }
 
-    public EventList searchAndFilter(Filter filter){
+  public EventList getOrganizersEvents(String username) {
+      eventList.getEventList().clear();
+      eventList.getEventList().addAll(eventHelper().map(new EventMapper(), "SELECT * FROM event WHERE organizer = ?", username));
+      return eventList;
+    }
+
+    public EventList getCoOrganizersEvents(String username) {
+        eventList.getEventList().clear();
+        eventList.getEventList().addAll(eventHelper().map(new EventMapper(),
+                "SELECT e.* FROM event e, organizers o WHERE o.user_username != e.organizer AND e.id = o.event_id AND o.user_username = ?",
+                username));
+        return eventList;
+    }
+
+  public EventList getParticipantsEvents(String username) {
+      eventList.getEventList().clear();
+      eventList.getEventList().addAll(eventHelper().map(new EventMapper(),
+              "SELECT DISTINCT e.*FROM event e, participants p, organizers o WHERE o.user_username != p.user_username AND e.organizer != p.user_username AND e.id = p.event_id AND p.user_username = ?",
+              username));
+      return eventList;
+  }
+
+  public EventList searchAndFilter(Filter filter){
         eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
 
@@ -176,8 +198,17 @@ public class EventDAO implements Events {
     }
 
     public void cancel(int id) {
-        System.out.println(id);
         eventHelper().executeUpdate("DELETE FROM event WHERE id = ?", id);
+    }
+
+    public void edit(Event event) {
+        Timestamp startTime = new Timestamp(event.getStartTime().toGregorianCalendar().getTimeInMillis());
+        Timestamp endTime = new Timestamp(event.getEndTime().toGregorianCalendar().getTimeInMillis());
+
+        eventHelper().executeUpdate(
+                "UPDATE event SET name = ?, start_time = ?, end_time = ?, address_street_name = ?, address_street_number = ?, address_apartment_number = ? WHERE id = ?",
+                event.getName(), startTime, endTime, event.getAddressStreetName(), event.getAddressStreetNumber(),
+                event.getAddressApartmentNumber(), event.getId());
     }
 
     private static class EventMapper implements DataMapper<Event> {

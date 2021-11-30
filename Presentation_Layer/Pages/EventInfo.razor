@@ -5,6 +5,7 @@
 @using System.Security.Claims
 
 @inject IParticipantService participantService;
+@inject IJSRuntime JSRuntime
 @inject IOrganizerService organizerService;
 @inject IEventService eventService;
 @inject ICategoryService categoryService;
@@ -38,14 +39,21 @@ else
     {
     <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
     }
-    <p>Category: @category.Name </p><br/>
+    <p>Category: @category.Name </p>
+    if (username.Equals(selectedEvent.Organizer))
+    {
+        <p class="actions">
+            <button @onclick="@EditEventAsync" class="btn btn-outline-secondary" type="submit"><i class="oi oi-pencil"></i> Edit</button>
+        </p>
+    }
 
+    <br/>
     <div class="col-sm-6">
         <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
         @foreach (var participant in participants)
         {
             <ul>
-                <li>@participant</li>
+                <li @onclick="@(() => MoreUserInfo(participant))"><a href="#">@participant</a></li>
             </ul>
         }
         @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
@@ -76,12 +84,12 @@ else
                 @if (organizer.Equals(selectedEvent.Organizer))
                 {
                     <li>
-                        <b>@organizer</b>
+                        <b @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></b>
                     </li>
                 }
                 else
                 {
-                    <li>@organizer</li>
+                    <li @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></li>
                 }
             </ul>
         }
@@ -108,8 +116,15 @@ else
     foreach (var game in allEventGameList)
     {
         <ul>
-            <li href="@game.Tutorial">@game.Name</li>
+            <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
         </ul>
+    }
+    
+    if(organizers.Any(user => user.Equals(username)))
+    {
+        <br/><p class="actions">
+                 <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
+             </p>
     }
     
     if (username.Equals(selectedEvent.Organizer))
@@ -131,7 +146,7 @@ else
     private IList<Category> categories = new List<Category>();
     private Category category = new();
     private IList<Game> allEventGameList = new List<Game>();
-    string username;
+    private string username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -152,6 +167,9 @@ else
 
     private async Task WithdrawEvent()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
+                                                          "Friendly Reminder: You won't get your money back."))
+            return;
         await participantService.WithdrawEvent(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);
@@ -165,14 +183,37 @@ else
 
     private async Task WithdrawEventAsCoOrganizer()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
+        return;
         await organizerService.WithdrawEvent(Id, username);
         organizers = await organizerService.GetOrganizersAsync(Id);
     }
     
     private async Task CancelEvent()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
+            return;
         await eventService.CancelEvent(selectedEvent);
         NavigationManager.NavigateTo("MyEvents");
     }
+    
+    private async Task EditEventAsync()
+    {
+        NavigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
+    }
+    
+    private async Task MoreGameInfo(int id)
+    {
+        NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
 
+    private async Task MoreUserInfo(string username)
+    {
+        NavigationManager.NavigateTo($"UserInfo/{username}");
+    }
+
+    private async Task EditEventGames()
+    {
+        NavigationManager.NavigateTo($"EditEventGames/{selectedEvent.Id}");
+    }
 }

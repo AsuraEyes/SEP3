@@ -21,44 +21,6 @@ namespace SEP3_Blazor.Data
         public UserService()
         {
             Client = new HttpClient();
-            
-            users = new[]
-            {
-                new User
-                {
-                    Password = "123456",
-                    Role = 3,
-                    Username = "Maggie"
-
-                },
-                new User
-                {
-                    Password = "admin",
-                    Role = 1,
-                    Username = "admin"
-
-                },
-                new User
-                {
-                    Password = "123",
-                    Role = 3,
-                    Username = "Kim"
-
-                },
-                new User
-                {
-                    Password = "123",
-                    Role = 2,
-                    Username = "someone"
-
-                },
-                new User
-                {
-                    Password = "123",
-                    Role = 2,
-                    Username = "nobody"
-                }
-            }.ToList();
         }
 
         public async Task<string> helloWorld()
@@ -132,13 +94,26 @@ namespace SEP3_Blazor.Data
             return null;
         }
         
-        public async Task CreateAccountAsync(User user)
+        public async Task<string> CreateAccountAsync(User user)
         {
             var userAsJson = JsonSerializer.Serialize(user);
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await Client.PostAsync(uri+"/User/CreateAccount", content);
+           var message = await Client.PostAsync(uri+"/User/CreateAccount", content);
+           return message.IsSuccessStatusCode ? "success" : "Username has already been taken.";
         }
+        
+        public async Task<User> GetUserByUsernameAsync(string username)
+        {
+            var stringAsync = Client.GetStringAsync(uri + $"/User/{username}");
+            var userAsync = await stringAsync;
+            var user = JsonSerializer.Deserialize<User>(userAsync, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return user;
+        }
+    
     }
 }
