@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +15,13 @@ namespace REST.Controllers
     {
         private IFeeMiddlePoint feeMiddlePoint;
         private IOneTimeFeeWebService oneTimeFeeWebService;
+        private IMonthlyFeeWebService monthlyFeeWebService;
 
-        public FeeController(IFeeMiddlePoint feeMiddlePoint, IOneTimeFeeWebService oneTimeFeeWebService)
+        public FeeController(IFeeMiddlePoint feeMiddlePoint, IOneTimeFeeWebService oneTimeFeeWebService, IMonthlyFeeWebService monthlyFeeWebService)
         {
             this.feeMiddlePoint = feeMiddlePoint;
             this.oneTimeFeeWebService = oneTimeFeeWebService;
+            this.monthlyFeeWebService = monthlyFeeWebService;
         }
         
         [HttpPost]
@@ -69,6 +73,40 @@ namespace REST.Controllers
             {
                 var message = await feeMiddlePoint.CheckSubscriptionAsync(username);
                 return Ok(message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpGet]
+        [Route("OneTimeHistory")]
+        public async Task<ActionResult<IList<OneTimeFee>>>
+            GetOneTimeFeeListAsync([FromQuery] string username)
+        {
+            try
+            {
+                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeList(username);
+                return Ok(oneTimeFees);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpGet]
+        [Route("MonthlyHistory")]
+        public async Task<ActionResult<IList<MonthlyFee>>>
+            GetMonthlyFeeListAsync([FromQuery] string username)
+        {
+            try
+            {
+                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeList(username);
+                return Ok(monthlyFees);
             }
             catch (Exception e)
             {
