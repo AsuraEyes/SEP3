@@ -52,7 +52,7 @@ else
         @foreach (var participant in participants)
         {
             <ul>
-                <li @onclick="@(() => MoreUserInfo(participant))">@participant</li>
+                <li @onclick="@(() => MoreUserInfo(participant))"><a>@participant</a></li>
             </ul>
         }
         @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
@@ -83,12 +83,12 @@ else
                 @if (organizer.Equals(selectedEvent.Organizer))
                 {
                     <li>
-                        <b @onclick="@(() => MoreUserInfo(organizer))">@organizer</b>
+                        <b @onclick="@(() => MoreUserInfo(organizer))"><a>@organizer</a></b>
                     </li>
                 }
                 else
                 {
-                    <li @onclick="@(() => MoreUserInfo(organizer))">@organizer</li>
+                    <li @onclick="@(() => MoreUserInfo(organizer))"><a>@organizer</a></li>
                 }
             </ul>
         }
