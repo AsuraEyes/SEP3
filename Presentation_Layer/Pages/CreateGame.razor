@@ -63,12 +63,12 @@
 
 @code {
     private Game game = new();
-    private int id;
+    private int role;
     
     private async Task CreateGameAsync()
     {
-        id = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
-        if (id == 3)
+        role = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
+        if (role == 3)
         {
             await gameService.AddGameAsync(game);
             NavigationManager.NavigateTo("EditGameList");
