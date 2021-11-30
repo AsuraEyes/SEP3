@@ -5,6 +5,7 @@
 @using System.Security.Claims
 
 @inject IParticipantService participantService;
+@inject IJSRuntime JSRuntime
 @inject IOrganizerService organizerService;
 @inject IEventService eventService;
 @inject ICategoryService categoryService;
@@ -159,6 +160,9 @@ else
 
     private async Task WithdrawEvent()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
+                                                          "Friendly Reminder: You won't get your money back."))
+            return;
         await participantService.WithdrawEvent(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);
@@ -172,12 +176,16 @@ else
 
     private async Task WithdrawEventAsCoOrganizer()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
+        return;
         await organizerService.WithdrawEvent(Id, username);
         organizers = await organizerService.GetOrganizersAsync(Id);
     }
     
     private async Task CancelEvent()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
+            return;
         await eventService.CancelEvent(selectedEvent);
         NavigationManager.NavigateTo("MyEvents");
     }

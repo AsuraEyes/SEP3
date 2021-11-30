@@ -17,7 +17,7 @@ namespace Presentation_Layer.Data
 
         public async Task<EventList> GetOrganizerEventsAsync(string username)
         {
-            var organizersEvent = client.GetStringAsync(uri + $"/OrganizerEvents/?username={username}");
+            var organizersEvent = client.GetStringAsync(uri + $"/OrganizerEvents?username={username}");
             var organizersEvents = await organizersEvent;
             var eventList = JsonSerializer.Deserialize<EventList>(organizersEvents, new JsonSerializerOptions
             {

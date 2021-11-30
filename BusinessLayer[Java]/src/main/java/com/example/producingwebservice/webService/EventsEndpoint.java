@@ -46,7 +46,7 @@ public class EventsEndpoint
     return response;
   }
 
-  @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPEventOrganizer Request")
+  @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPEventOrganizerRequest")
   @ResponsePayload
   public SOAPEventOrganizerResponse eventOrganizerResponse(@RequestPayload SOAPEventOrganizerRequest request) {
     SOAPEventOrganizerResponse response = new SOAPEventOrganizerResponse();
