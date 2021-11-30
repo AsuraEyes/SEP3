@@ -38,7 +38,7 @@ else
         @foreach (var item in ggl)
         {
             <tr>
-                <td @onclick="@(() => MoreInfo(item.Id))"><a href="#">@item.Name</a></td>
+                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
                 <td>
                     <!--item.Id.Equals(gamesOfUser.FirstOrDefault(game => game.Id.Equals(item.Id)).Id)-->
                     <!-- (Condition ? yes : no) -->
@@ -91,7 +91,7 @@ else
         NavigationManager.NavigateTo("GameList");
     }
     
-    private async Task MoreInfo(int id)
+    private async Task MoreGameInfo(int id)
     {
         NavigationManager.NavigateTo($"GameInfo/{id}");
     }

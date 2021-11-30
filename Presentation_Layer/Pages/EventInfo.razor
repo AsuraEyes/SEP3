@@ -52,7 +52,7 @@ else
         @foreach (var participant in participants)
         {
             <ul>
-                <li>@participant</li>
+                <li @onclick="@(() => MoreUserInfo(participant))">@participant</li>
             </ul>
         }
         @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
@@ -83,12 +83,12 @@ else
                 @if (organizer.Equals(selectedEvent.Organizer))
                 {
                     <li>
-                        <b>@organizer</b>
+                        <b @onclick="@(() => MoreUserInfo(organizer))">@organizer</b>
                     </li>
                 }
                 else
                 {
-                    <li>@organizer</li>
+                    <li @onclick="@(() => MoreUserInfo(organizer))">@organizer</li>
                 }
             </ul>
         }
@@ -115,7 +115,7 @@ else
     foreach (var game in allEventGameList)
     {
         <ul>
-            <li @onclick="@(() => MoreInfo(game.Id))"><a href="#">@game.Name</a></li>
+            <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
         </ul>
     }
     
@@ -187,8 +187,13 @@ else
         NavigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
     }
     
-    private async Task MoreInfo(int id)
+    private async Task MoreGameInfo(int id)
     {
         NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
+
+    private async Task MoreUserInfo(string username)
+    {
+        NavigationManager.NavigateTo($"UserInfo/{username}");
     }
 }
