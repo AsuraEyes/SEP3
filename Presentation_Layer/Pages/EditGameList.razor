@@ -38,7 +38,7 @@ else
         @foreach (var item in ggl)
         {
             <tr>
-                <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
+                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
                 <td>
                     <!--item.Id.Equals(gamesOfUser.FirstOrDefault(game => game.Id.Equals(item.Id)).Id)-->
                     <!-- (Condition ? yes : no) -->

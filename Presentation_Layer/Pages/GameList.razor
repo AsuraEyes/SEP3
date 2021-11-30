@@ -12,8 +12,8 @@
 <ul>
 @foreach (var game in games)
 {
-    <li href="#">
-        <b @onclick="@(() => MoreGameInfo(game.Id))">@game.Name</b>
+    <li>
+        <b @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></b>
     </li>
 }
 </ul>

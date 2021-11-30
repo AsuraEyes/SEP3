@@ -17,7 +17,7 @@
 {
     <p>Needed equipment: @game.NeededEquipment</p>
 }
-@if (game.MaxAge != null && game.MaxAge != null)
+@if (game.MaxAge != null && game.MaxAge != 0)
 {
     <p>Age range: @game.MinAge - @game.MaxAge</p>
 }
@@ -27,7 +27,7 @@ else
 }
 @if (game.Tutorial != null)
 {
-    <p href="@game.Tutorial">Turtorial: @game.Tutorial</p>
+    <p><a href="@game.Tutorial">Turtorial: @game.Tutorial</a></p>
 }
 
 @code {

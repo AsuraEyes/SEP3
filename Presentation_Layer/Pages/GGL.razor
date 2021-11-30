@@ -10,12 +10,12 @@
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
-@foreach (var item in goldenGameList)
+ @foreach (var item in goldenGameList)
          {
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</li>
+                                 <li @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
