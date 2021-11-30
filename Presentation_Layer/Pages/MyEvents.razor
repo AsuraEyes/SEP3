@@ -1,17 +1,182 @@
 @page "/MyEvents"
+@using Presentation_Layer.Data
+@using Presentation_Layer.Models
+@using Presentation_Layer.Authentication
+@using System.Security.Claims
+
+@inject AuthenticationStateProvider Auth
 @inject NavigationManager NavigationManager
-<h3>My Events</h3>
+@inject IEventOrganizerService EventOrganizerService;
+@inject IOrganizerService OrganizerService;
+@inject IParticipantService ParticipantService;
+
+<h2>My Events</h2>
 
 <AuthorizeView Policy="Organizer">
     <p class="actions">
         <button @onclick="@CreateEventAsync" class="btn btn-outline-secondary" type="submit"><i class="oi oi-plus"></i> Create</button>
     </p>
-</AuthorizeView>
-
-@code {
-    private async Task CreateEventAsync()
+    
+    <h3>Organizer Events</h3>
+    @if (oEventList != null)
     {
-        NavigationManager.NavigateTo($"CreateEvent");
+        <div class="card-deck">
+            @foreach (var item in oEventList)
+            {
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="width: 22rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                                {
+                                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                                }
+                                else
+                                {
+                                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                                }
+                                @if (item.AddressApartmentNumber != null)
+                                {
+                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                                }
+                                else
+                                {
+                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                                }
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                                    More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p><i>You are not organizing any events.</i></p>
     }
     
+    <h3>Co-organizer Events</h3>
+    @if (cEventList != null)
+    {
+        <div class="card-deck">
+            @foreach (var item in cEventList)
+            {
+                <div class="row row-cols-1 row-cols-md-3">
+                    <div class="col mb-4">
+                        <div class="card h-100" style="width: 22rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                                {
+                                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                                }
+                                else
+                                {
+                                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                                }
+                                @if (item.AddressApartmentNumber != null)
+                                {
+                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                                }
+                                else
+                                {
+                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                                }
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                                    More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p><i>You are not co-organizing any events.</i></p>
+    }
+</AuthorizeView>
+
+<h3>Participant Events</h3>
+    @if (pEventList != null)
+        {
+            <div class="card-deck">
+                @foreach (var item in pEventList)
+                {
+                    <div class="row row-cols-1 row-cols-md-3">
+                        <div class="col mb-4">
+                            <div class="card h-100" style="width: 22rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                                    {
+                                        <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                                    }
+                                    @if (item.AddressApartmentNumber != null)
+                                    {
+                                        <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                                    }
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                                        More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p><i>You are not participating in any events.</i></p>
+        }
+
+@code {
+    private EventList organizersEvents = new();
+    private Event[] oEventList = {};
+    private EventList coOrganizersEvents = new();
+    private Event[] cEventList = {};
+    private EventList participantsEvent = new();
+    private Event[] pEventList = {};
+    private string username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        organizersEvents = await EventOrganizerService.GetOrganizerEventsAsync(username);
+        oEventList = organizersEvents.eventList;
+        coOrganizersEvents = await OrganizerService.GetCoOrganizerEventsAsync(username);
+        cEventList = coOrganizersEvents.eventList;
+        participantsEvent = await ParticipantService.GetParticipantEvents(username);
+        pEventList = participantsEvent.eventList;
+    }
+
+    private async Task CreateEventAsync()
+    {
+        NavigationManager.NavigateTo("CreateEvent");
+    }
+
+    private async Task NavigateToEvent(int id)
+    {
+        NavigationManager.NavigateTo($"EventInfo/{id}");
+    }
 }

@@ -29,15 +29,28 @@
     <p class="actions">
         <button class="btn btn-outline-success" type="submit">Create</button>
     </p>
+    @if (!(errorMessage.Equals("") || errorMessage.Equals("success")))
+    {
+        <div class="alert alert-danger" role="alert">@errorMessage</div>
+    }
 
 </EditForm>
 
 @code {
     private readonly User user = new();
+    private string errorMessage;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        errorMessage = "";
+    }
 
     private async Task CreateAccountAsync()
     {
-        await UserService.CreateAccountAsync(user);
-        NavigationManager.NavigateTo($"/");
+        errorMessage = await UserService.CreateAccountAsync(user);
+        if (errorMessage.Equals("success"))
+        {
+            NavigationManager.NavigateTo("/");
+        }
     }
 }

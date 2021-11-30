@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace REST.Controllers
 {
     [ApiController]
-    [Route("Event")]
+    [Route("User")]
     public class UserController : Controller
     {
         private IUserWebService UserWebService;

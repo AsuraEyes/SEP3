@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BookAndPlaySOAP;
 
 namespace BusinessLayer.Data
 {
@@ -8,5 +9,6 @@ namespace BusinessLayer.Data
         Task<IList<string>> GetOrganizersAsync(int eventId);
         Task CoOrganizeEvent(int id, string username);
         Task WithdrawEventAsync(int id, string username);
+        Task<EventList> GetCoOrganizerEventsAsync(string username);
     }
 }

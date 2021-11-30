@@ -16,9 +16,9 @@ namespace REST.Controllers
         private IEventWebService EventWebService;
         private IEventMiddlePoint eventMiddlePoint;
 
-        public EventController(IEventWebService EventWebService, IEventMiddlePoint eventMiddlePoint)
+        public EventController(IEventWebService eventWebService, IEventMiddlePoint eventMiddlePoint)
         {
-            this.EventWebService = EventWebService;
+            EventWebService = eventWebService;
             this.eventMiddlePoint = eventMiddlePoint;
         }
 
@@ -37,6 +37,7 @@ namespace REST.Controllers
                 return  StatusCode(500, e.Message);
             }
         }
+        
         [HttpGet]
         [Route("{id:int}")]
         public async Task<ActionResult<Event>> GetEventAsync(int id)
@@ -65,6 +66,21 @@ namespace REST.Controllers
             try
             {
                 await EventWebService.CreateEventAsync(Event);
+                return Ok(Event);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPatch]
+        public async Task<ActionResult<Event>> UpdateEventAsync([FromBody] Event Event)
+        {
+            try
+            {
+                await EventWebService.EditEventAsync(Event);
                 return Ok(Event);
             }
             catch (Exception e)

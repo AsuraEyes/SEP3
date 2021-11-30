@@ -12,4 +12,8 @@ public interface Events {
     Event create(Event event);
     Event get(int id);
     void cancel(int id);
+    void edit(Event event);
+    EventList getOrganizersEvents(String username);
+    EventList getCoOrganizersEvents(String username);
+    EventList getParticipantsEvents(String username);
 }

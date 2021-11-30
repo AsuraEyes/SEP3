@@ -41,5 +41,11 @@ namespace BusinessLayer.Data
         {
             response = await GetOrganizerResponse(Operation.UPDATE, id, username);
         }
+        
+        public async Task<EventList> GetCoOrganizerEventsAsync(string username)
+        {
+            response = await GetOrganizerResponse(Operation.GET, 0, username);
+            return response.SOAPOrganizerResponse.eventList;
+        } 
     }
 }
