@@ -65,7 +65,7 @@ namespace REST.Controllers
         }
         
         [HttpGet]
-        [Route("Subscription")]
+        [Route("Validate")]
         public async Task<ActionResult<bool>>
            CheckSubscriptionAsync([FromQuery] string username)
         {
@@ -106,6 +106,23 @@ namespace REST.Controllers
             try
             {
                 IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeList(username);
+                return Ok(monthlyFees);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpGet]
+        [Route("Subscription")]
+        public async Task<ActionResult<MonthlyFee>>
+            GetMonthlyFeeAsync([FromQuery] string username)
+        {
+            try
+            {
+                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFee(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)

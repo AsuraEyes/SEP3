@@ -20,10 +20,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="small fix">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Models/MonthlyFee.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Models/OneTimeFee.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -355,7 +363,7 @@
       <workItem from="1638011265367" duration="9746000" />
       <workItem from="1638028302732" duration="15061000" />
       <workItem from="1638132002889" duration="18199000" />
-      <workItem from="1638261082732" duration="15964000" />
+      <workItem from="1638261082732" duration="22937000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -630,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638280787730</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="commit">
+      <created>1638282665484</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1638282665484</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,12 +703,12 @@
     <MESSAGE value="a" />
     <MESSAGE value="fixed game middlepoint" />
     <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
-    <MESSAGE value="commit" />
     <MESSAGE value="updated Web Reference based on SOAP wsdl" />
     <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
     <MESSAGE value="create Fees WebServices, updated Soap reference based on wsdl" />
     <MESSAGE value="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier" />
     <MESSAGE value="small fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

@@ -1,6 +1,129 @@
 @page "/Payment"
+@using Presentation_Layer.Models
+@using Presentation_Layer.Authentication
+@using System.Security.Claims
+@using Presentation_Layer.Data
+
+@inject AuthenticationStateProvider Auth
+@inject IPaymentService paymentService
+@inject NavigationManager NavigationManager
+
+
 <h3>Payment</h3>
 
+<h2>Subscription: </h2>
+@if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
+{
+    <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
+}
+else
+{
+    <p>No active subscription</p>
+    <button class="btn btn-outline-success" type="submit" @onclick="@PayNow">Subscribe Now!</button>
+@*     if (pay) *@
+@*     { *@
+@*         <EditForm Model="@userCardInfo" OnValidSubmit="@Subscribe"> *@
+@*             <DataAnnotationsValidator/> *@
+@*             <div class="form-group"> *@
+@*                 Card Holder Name:<br/> *@
+@*                 <InputText @bind-Value="userCardInfo.CardHolderName"/> *@
+@*                 <ValidationMessage For="@errorMessage"/> *@
+@*             </div> *@
+@*             <div class="form-group"> *@
+@*                 Card Number: *@
+@*                 <InputNumber @bind-Value="userCardInfo.CardNumber" style="width: 50px"/> *@
+@*             </div> *@
+@*             <div class="form-group"> *@
+@*                 CVC: *@
+@*                 <InputNumber @bind-Value="userCardInfo.CVC" style="width: 50px"/> *@
+@*             </div> *@
+@* *@
+@*             <p class="actions"> *@
+@*                <button class="btn btn-outline-success" type="submit">Subscribe</button> *@
+@*             </p> *@
+@* *@
+@*         </EditForm> *@
+@*     } *@
+}
+
+<h3>Payment History</h3>
+@if (monthlyFeeList != null)
+{
+    <h4>Subscriptions</h4>
+         @foreach (var item in monthlyFeeList)
+         {
+             <ul>
+                 <li>@item.Amount dkk</li>
+                 <li>From: @item.StartDate.ToLongDateString()</li>
+                 <li>To: @item.EndDate.ToLongDateString()</li>
+             </ul>
+         }
+}
+else 
+{<p>No monthly fees</p>}
+
+@if (oneTimeFees != null)
+{
+    <h4>Payments</h4>
+            @foreach (var item in oneTimeFees)
+            {
+                <ul>
+                    <li>@item.Amount dkk</li>
+                </ul>
+            }
+}
+else 
+{<p>No one time fees</p>}
+
+
 @code {
+    private MonthlyFee monthlyFee = new MonthlyFee();
+    private IList<MonthlyFee> monthlyFeeList = new List<MonthlyFee>();
+    private IList<OneTimeFee> oneTimeFees = new List<OneTimeFee>();
+    private string username;
+    private string errorMessage;
+    private bool pay;
+    private UserCardInfo userCardInfo;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        try
+        {
+            monthlyFeeList = await paymentService.GetSubscriptionList(username);
+        }
+        catch(Exception e)
+        {
+        }
+        try
+        {
+            oneTimeFees = await paymentService.GetOneTimePaymentList(username);
+        }
+        catch(Exception e)
+        {
+        }
+        try
+        {
+            monthlyFee = await paymentService.GetSubscription(username);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
+    }
+
+    private async Task PayNow()
+    {
+        pay = true;
+    }
+    
+    private async Task Subscribe()
+    {
+        userCardInfo.Username = username;
+        userCardInfo.Fee = 120;
+        userCardInfo.StartDateTime = DateTime.Now;
+    }
     
 }
