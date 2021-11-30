@@ -1742,6 +1742,8 @@ namespace BookAndPlaySOAP
         
         private MonthlyFee monthlyFeeField;
         
+        private MonthlyFee[] monthlyFeeListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public MonthlyFee MonthlyFee
@@ -1753,6 +1755,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.monthlyFeeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MonthlyFeeList", Order=1)]
+        public MonthlyFee[] MonthlyFeeList
+        {
+            get
+            {
+                return this.monthlyFeeListField;
+            }
+            set
+            {
+                this.monthlyFeeListField = value;
             }
         }
     }
@@ -2062,6 +2078,8 @@ namespace BookAndPlaySOAP
         
         private OneTimeFee oneTimeFeeField;
         
+        private OneTimeFee[] oneTimeFeeListField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public OneTimeFee OneTimeFee
@@ -2073,6 +2091,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.oneTimeFeeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("OneTimeFeeList", Order=1)]
+        public OneTimeFee[] OneTimeFeeList
+        {
+            get
+            {
+                return this.oneTimeFeeListField;
+            }
+            set
+            {
+                this.oneTimeFeeListField = value;
             }
         }
     }
@@ -2281,6 +2313,8 @@ namespace BookAndPlaySOAP
         
         private int eventIdField;
         
+        private int gameIdField;
+        
         private Operation operationField;
         
         /// <remarks/>
@@ -2313,6 +2347,20 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int gameId
+        {
+            get
+            {
+                return this.gameIdField;
+            }
+            set
+            {
+                this.gameIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public Operation Operation
         {
             get

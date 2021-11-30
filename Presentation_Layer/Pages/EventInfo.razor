@@ -173,6 +173,7 @@ else
         await participantService.WithdrawEvent(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
     }
 
     private async Task CoOrganizeEvent()
@@ -187,6 +188,7 @@ else
         return;
         await organizerService.WithdrawEvent(Id, username);
         organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
     }
     
     private async Task CancelEvent()

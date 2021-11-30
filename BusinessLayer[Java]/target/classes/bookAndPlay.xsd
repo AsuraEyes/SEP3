@@ -221,6 +221,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="OneTimeFee" type="tns:OneTimeFee"/>
+                <xs:element name="OneTimeFeeList" type="tns:OneTimeFee" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -229,6 +230,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="MonthlyFee" type="tns:MonthlyFee"/>
+                <xs:element name="MonthlyFeeList" type="tns:MonthlyFee" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

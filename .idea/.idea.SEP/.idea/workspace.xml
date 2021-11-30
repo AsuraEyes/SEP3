@@ -20,22 +20,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="UserInformation visible from EventInfo (participants and organizers)">
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventGameListMiddlePoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IEventGameListMiddlePoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer/Models/EventGameListUpdate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Models/EventGameListUpdate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventGames.razor" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="edit eventGameList - set up from front-end till back-end&#10;VisualStudio setup not done so BusinessLayer EventGameListWebService.cs throwing errors">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/EventGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/GameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/GameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IEventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IEventGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameListMiddlepoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameListMiddlepoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/EventGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IEventGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -366,7 +353,7 @@
       <workItem from="1638011265367" duration="9746000" />
       <workItem from="1638028302732" duration="15061000" />
       <workItem from="1638132002889" duration="13980000" />
-      <workItem from="1638219407792" duration="20340000" />
+      <workItem from="1638219407792" duration="22147000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -627,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638268878294</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="edit eventGameList - set up from front-end till back-end&#10;VisualStudio setup not done so BusinessLayer EventGameListWebService.cs throwing errors">
+      <created>1638279872257</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1638279872257</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +660,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="e" />
     <MESSAGE value="Boxes and new page created" />
     <MESSAGE value="paging" />
     <MESSAGE value="idk" />
@@ -691,6 +684,7 @@
     <MESSAGE value="updated Web Reference based on SOAP wsdl" />
     <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
     <MESSAGE value="UserInformation visible from EventInfo (participants and organizers)" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserInformation visible from EventInfo (participants and organizers)" />
+    <MESSAGE value="edit eventGameList - set up from front-end till back-end&#10;VisualStudio setup not done so BusinessLayer EventGameListWebService.cs throwing errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit eventGameList - set up from front-end till back-end&#10;VisualStudio setup not done so BusinessLayer EventGameListWebService.cs throwing errors" />
   </component>
 </project>

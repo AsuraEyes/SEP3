@@ -40,6 +40,7 @@ public class OneTimeFeeEndpoint
 
           break;
         case GETALL:
+          response.getOneTimeFeeList().addAll(oneTimeFeeDAO.getOneTimeFeeList(request.getUsername()));
           break;
         case REMOVE:
           break;
