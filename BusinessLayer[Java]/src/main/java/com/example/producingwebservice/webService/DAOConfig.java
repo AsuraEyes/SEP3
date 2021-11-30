@@ -2,10 +2,14 @@ package com.example.producingwebservice.webService;
 
 import com.example.producingwebservice.EventGameList.EventGameListDAO;
 import com.example.producingwebservice.EventGameList.EventGameLists;
+import com.example.producingwebservice.OneTimeFee.OneTimeFeeDAO;
+import com.example.producingwebservice.OneTimeFee.OneTimeFees;
 import com.example.producingwebservice.categories.Categories;
 import com.example.producingwebservice.categories.CategoryDAO;
 import com.example.producingwebservice.events.EventDAO;
 import com.example.producingwebservice.events.Events;
+import com.example.producingwebservice.monthlyFee.MonthlyFeeDAO;
+import com.example.producingwebservice.monthlyFee.MonthlyFees;
 import com.example.producingwebservice.gameList.GameListDAO;
 import com.example.producingwebservice.gameList.GameLists;
 import com.example.producingwebservice.games.GameDAO;
@@ -66,7 +70,17 @@ public class DAOConfig {
 
     @Bean
     @Scope("singleton")
-    public GameLists gameLists(){return new GameListDAO();}
+    public GameLists GameLists(){return new GameListDAO();}
+
+    @Bean
+    @Scope("singleton")
+    public MonthlyFees MonthlyFeeDAO(){ return new MonthlyFeeDAO();
+    }
+
+    @Bean
+    @Scope("singleton")
+    public OneTimeFees OneTimeFeeDAO(){return new OneTimeFeeDAO();
+    }
 
     @Bean(name = "jdbcUrl")
     public String jdbcUrl() {

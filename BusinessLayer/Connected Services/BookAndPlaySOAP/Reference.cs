@@ -38,7 +38,15 @@ namespace BookAndPlaySOAP
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPParticipantResponse1> SOAPParticipantAsync(BookAndPlaySOAP.SOAPParticipantRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOneTimeFeeResponse1> SOAPOneTimeFeeAsync(BookAndPlaySOAP.SOAPOneTimeFeeRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -335,6 +343,166 @@ namespace BookAndPlaySOAP
             set
             {
                 this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class OneTimeFee
+    {
+        
+        private int idField;
+        
+        private int amountField;
+        
+        private int eventIdField;
+        
+        private string userUsernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int eventId
+        {
+            get
+            {
+                return this.eventIdField;
+            }
+            set
+            {
+                this.eventIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string userUsername
+        {
+            get
+            {
+                return this.userUsernameField;
+            }
+            set
+            {
+                this.userUsernameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class MonthlyFee
+    {
+        
+        private int idField;
+        
+        private int amountField;
+        
+        private System.DateTime startDateField;
+        
+        private System.DateTime endDateField;
+        
+        private string userUsernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime startDate
+        {
+            get
+            {
+                return this.startDateField;
+            }
+            set
+            {
+                this.startDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
+        public System.DateTime endDate
+        {
+            get
+            {
+                return this.endDateField;
+            }
+            set
+            {
+                this.endDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string userUsername
+        {
+            get
+            {
+                return this.userUsernameField;
+            }
+            set
+            {
+                this.userUsernameField = value;
             }
         }
     }
@@ -1513,6 +1681,126 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPMonthlyFeeRequest
+    {
+        
+        private string usernameField;
+        
+        private Operation operationField;
+        
+        private MonthlyFee monthlyFeeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string username
+        {
+            get
+            {
+                return this.usernameField;
+            }
+            set
+            {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public MonthlyFee MonthlyFee
+        {
+            get
+            {
+                return this.monthlyFeeField;
+            }
+            set
+            {
+                this.monthlyFeeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPMonthlyFeeResponse
+    {
+        
+        private MonthlyFee monthlyFeeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MonthlyFee MonthlyFee
+        {
+            get
+            {
+                return this.monthlyFeeField;
+            }
+            set
+            {
+                this.monthlyFeeField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPMonthlyFeeRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest;
+        
+        public SOAPMonthlyFeeRequest1()
+        {
+        }
+        
+        public SOAPMonthlyFeeRequest1(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
+        {
+            this.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPMonthlyFeeResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse;
+        
+        public SOAPMonthlyFeeResponse1()
+        {
+        }
+        
+        public SOAPMonthlyFeeResponse1(BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse)
+        {
+            this.SOAPMonthlyFeeResponse = SOAPMonthlyFeeResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
     public partial class SOAPParticipantRequest
     {
         
@@ -1690,6 +1978,142 @@ namespace BookAndPlaySOAP
         public SOAPParticipantResponse1(BookAndPlaySOAP.SOAPParticipantResponse SOAPParticipantResponse)
         {
             this.SOAPParticipantResponse = SOAPParticipantResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPOneTimeFeeRequest
+    {
+        
+        private int eventIdField;
+        
+        private string usernameField;
+        
+        private Operation operationField;
+        
+        private OneTimeFee oneTimeFeeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int eventId
+        {
+            get
+            {
+                return this.eventIdField;
+            }
+            set
+            {
+                this.eventIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string username
+        {
+            get
+            {
+                return this.usernameField;
+            }
+            set
+            {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public OneTimeFee OneTimeFee
+        {
+            get
+            {
+                return this.oneTimeFeeField;
+            }
+            set
+            {
+                this.oneTimeFeeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    public partial class SOAPOneTimeFeeResponse
+    {
+        
+        private OneTimeFee oneTimeFeeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public OneTimeFee OneTimeFee
+        {
+            get
+            {
+                return this.oneTimeFeeField;
+            }
+            set
+            {
+                this.oneTimeFeeField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPOneTimeFeeRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPOneTimeFeeRequest SOAPOneTimeFeeRequest;
+        
+        public SOAPOneTimeFeeRequest1()
+        {
+        }
+        
+        public SOAPOneTimeFeeRequest1(BookAndPlaySOAP.SOAPOneTimeFeeRequest SOAPOneTimeFeeRequest)
+        {
+            this.SOAPOneTimeFeeRequest = SOAPOneTimeFeeRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPOneTimeFeeResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPOneTimeFeeResponse SOAPOneTimeFeeResponse;
+        
+        public SOAPOneTimeFeeResponse1()
+        {
+        }
+        
+        public SOAPOneTimeFeeResponse1(BookAndPlaySOAP.SOAPOneTimeFeeResponse SOAPOneTimeFeeResponse)
+        {
+            this.SOAPOneTimeFeeResponse = SOAPOneTimeFeeResponse;
         }
     }
     
@@ -2172,6 +2596,19 @@ namespace BookAndPlaySOAP
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request)
+        {
+            return base.Channel.SOAPMonthlyFeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
+        {
+            BookAndPlaySOAP.SOAPMonthlyFeeRequest1 inValue = new BookAndPlaySOAP.SOAPMonthlyFeeRequest1();
+            inValue.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPMonthlyFeeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPParticipantResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPParticipantAsync(BookAndPlaySOAP.SOAPParticipantRequest1 request)
         {
             return base.Channel.SOAPParticipantAsync(request);
@@ -2182,6 +2619,19 @@ namespace BookAndPlaySOAP
             BookAndPlaySOAP.SOAPParticipantRequest1 inValue = new BookAndPlaySOAP.SOAPParticipantRequest1();
             inValue.SOAPParticipantRequest = SOAPParticipantRequest;
             return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPParticipantAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOneTimeFeeResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPOneTimeFeeAsync(BookAndPlaySOAP.SOAPOneTimeFeeRequest1 request)
+        {
+            return base.Channel.SOAPOneTimeFeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOneTimeFeeResponse1> SOAPOneTimeFeeAsync(BookAndPlaySOAP.SOAPOneTimeFeeRequest SOAPOneTimeFeeRequest)
+        {
+            BookAndPlaySOAP.SOAPOneTimeFeeRequest1 inValue = new BookAndPlaySOAP.SOAPOneTimeFeeRequest1();
+            inValue.SOAPOneTimeFeeRequest = SOAPOneTimeFeeRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPOneTimeFeeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -42,6 +42,27 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="SOAPMonthlyFeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="Operation" type="tns:Operation"/>
+                <xs:element name="MonthlyFee" type="tns:MonthlyFee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPOneTimeFeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="eventId" type="xs:int"/>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="Operation" type="tns:Operation"/>
+                <xs:element name="OneTimeFee" type="tns:OneTimeFee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="SOAPUserRequest">
         <xs:complexType>
             <xs:sequence>
@@ -195,6 +216,22 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="SOAPOneTimeFeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="OneTimeFee" type="tns:OneTimeFee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SOAPMonthlyFeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MonthlyFee" type="tns:MonthlyFee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="User">
         <xs:sequence>
             <xs:element name="username" type="xs:string"/>
@@ -243,7 +280,7 @@
         <xs:sequence>
             <xs:element name="id" type="xs:int"/>
             <xs:element name="amount" type="xs:int"/>
-            <xs:element name="event" type="tns:Event"/>
+            <xs:element name="eventId" type="xs:int"/>
             <xs:element name="userUsername" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
