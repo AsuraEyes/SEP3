@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Middlepoint;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -12,10 +14,12 @@ namespace REST.Controllers
     public class EventGameListController : Controller
     {
         private IEventGameListWebService eventGameListWebService;
+        private IEventGameListMiddlePoint eventGameListMiddlePoint;
 
-        public EventGameListController(IEventGameListWebService eventGameListWebService)
+        public EventGameListController(IEventGameListWebService eventGameListWebService, IEventGameListMiddlePoint eventGameListMiddlePoint)
         {
             this.eventGameListWebService = eventGameListWebService;
+            this.eventGameListMiddlePoint = eventGameListMiddlePoint;
         }
         
         [HttpGet]
@@ -33,6 +37,13 @@ namespace REST.Controllers
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
             }
+        }
+        
+        [HttpPost]
+        [Route("/UpdateEventGame")]
+        public async Task UpdateUserGamesAsync([FromBody] EventGameListUpdate eventGameListUpdate)
+        {
+            await eventGameListMiddlePoint.EventGameListUpdate(eventGameListUpdate);
         }
     }
 }

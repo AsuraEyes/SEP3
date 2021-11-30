@@ -15,13 +15,12 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
+import java.util.*;
 
 public class MonthlyFeeDAO implements MonthlyFees
 {
   private DatabaseHelper<MonthlyFee> helper;
+  private List<MonthlyFee> monthlyFeeList;
 
   @Resource(name = "jdbcUrl")
   private String jdbcUrl;
@@ -33,7 +32,7 @@ public class MonthlyFeeDAO implements MonthlyFees
   private String password;
 
   public MonthlyFeeDAO() {
-
+    monthlyFeeList = new ArrayList<>();
   }
 
   private static MonthlyFee createMonthlyFee(int id, int amount, Date startDate, Date endDate, String username) {
@@ -87,7 +86,25 @@ public class MonthlyFeeDAO implements MonthlyFees
   }
 
   public MonthlyFee getMonthlyFee(String username){
-    return helper().mapSingle(new MonthlyFeeMapper(),"SELECT * FROM monthly_fee WHERE user_username = ?", username);
+    return helper().mapSingle(new MonthlyFeeMapper(),"SELECT * FROM monthly_fee WHERE user_username = ? ORDER BY id DESC LIMIT 1", username);
+  }
+
+  public List<MonthlyFee> getMonthlyFeeList(String username){
+    monthlyFeeList.clear();
+    monthlyFeeList.addAll(helper().map(new MonthlyFeeMapper(),"SELECT * FROM monthly_fee WHERE user_username = ?", username));
+    return monthlyFeeList;
+  }
+
+  public void updateMonthlyFee(MonthlyFee monthlyFee){
+    java.util.Date st = monthlyFee.getStartDate().toGregorianCalendar().getTime();
+    java.sql.Date sqlSt = new java.sql.Date(st.getTime());
+
+    java.util.Date et = monthlyFee.getEndDate().toGregorianCalendar().getTime();
+    java.sql.Date sqlEt = new java.sql.Date(et.getTime());
+
+
+    helper().executeUpdate("UPDATE monthly_fee SET amount = ?, end_date = ?  WHERE id = ?", monthlyFee.getAmount(),
+       sqlEt, monthlyFee.getId());
   }
 
   private static class MonthlyFeeMapper implements DataMapper<MonthlyFee>

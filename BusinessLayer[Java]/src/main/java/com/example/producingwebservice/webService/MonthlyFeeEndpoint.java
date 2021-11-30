@@ -40,9 +40,11 @@ public class MonthlyFeeEndpoint
           monthlyFeeDAO.create(request.getMonthlyFee());
           break;
         case UPDATE:
-
+          monthlyFeeDAO.updateMonthlyFee(request.getMonthlyFee());
           break;
         case GETALL:
+          response.getMonthlyFeeList().addAll(monthlyFeeDAO.getMonthlyFeeList(
+              request.getUsername()));
           break;
         case REMOVE:
           break;

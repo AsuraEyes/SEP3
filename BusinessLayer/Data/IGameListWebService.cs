@@ -8,6 +8,6 @@ namespace BusinessLayer.Data
     {
         Task<IList<Game>> GetUserGameListAsync(string user);
         Task AddGameToUserGameListAsync(string username, int gameId);
-        Task RemoveGameFromUserGameList(string username, int gameId);
+        Task RemoveGameFromUserGameListAsync(string username, int gameId);
     }
 }

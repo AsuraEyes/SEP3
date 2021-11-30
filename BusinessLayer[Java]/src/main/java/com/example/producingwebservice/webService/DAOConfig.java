@@ -94,6 +94,6 @@ public class DAOConfig {
 
     @Bean(name = "password")
     public String password() {
-        return "CoDex21";
+        return "SQLdatabaze";
     }
 }

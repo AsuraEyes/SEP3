@@ -120,7 +120,7 @@ public class EventDAO implements Events {
   public EventList getParticipantsEvents(String username) {
       eventList.getEventList().clear();
       eventList.getEventList().addAll(eventHelper().map(new EventMapper(),
-              "SELECT DISTINCT e.*FROM event e, participants p, organizers o WHERE o.user_username != p.user_username AND e.organizer != p.user_username AND e.id = p.event_id AND p.user_username = ?",
+              "SELECT * FROM event WHERE event.id IN (SELECT event_id FROM participants WHERE user_username = ?) AND event.id NOT IN (SELECT event_id FROM organizers WHERE user_username = ?)",
               username));
       return eventList;
   }
