@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 
@@ -25,15 +26,26 @@ namespace BusinessLayer.Data
             return soapResponse1;
         }
 
-        public async Task createMonthlyFee(MonthlyFee monthlyFee)
+        public async Task CreateMonthlyFee(MonthlyFee monthlyFee)
         {
             response = await getMonthlyFeeResponse(Operation.CREATE, "", monthlyFee);
         }
 
-        public async Task<MonthlyFee> getMonthlyFee(string username)
+        public async Task<MonthlyFee> GetMonthlyFee(string username)
         {
             response = await getMonthlyFeeResponse(Operation.GET, username, null);
             return response.SOAPMonthlyFeeResponse.MonthlyFee;
+        }
+
+        public async Task UpdateMonthlyFee(MonthlyFee monthlyFee)
+        {
+            response = await getMonthlyFeeResponse(Operation.UPDATE, "", null);
+        }
+        
+        public async Task<IList<MonthlyFee>> GetMonthlyFeeList(string username)
+        {
+            response = await getMonthlyFeeResponse(Operation.GETALL,username, null);
+            return response.SOAPMonthlyFeeResponse.MonthlyFeeList;
         }
     }
 }

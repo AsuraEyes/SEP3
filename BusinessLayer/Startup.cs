@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer.BankData;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
 using Microsoft.AspNetCore.Builder;
@@ -33,21 +34,22 @@ namespace REST
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "REST", Version = "v1"});
             });
-            services.AddScoped<IUserWebService, UserWebService>();
-            services.AddScoped<IGameWebService, GameWebService>();
-            services.AddScoped<IGameListWebService, GameListWebService>();
-            services.AddScoped<IEventWebService, EventWebService>();
-            services.AddScoped<ICategoryWebService, CategoryWebService>();
-            services.AddScoped<IParticipantWebService, ParticipantWebService>();
-            services.AddScoped<IOrganizerWebService, OrganizerWebService>();
-            services.AddScoped<IEventGameListWebService, EventGameListWebService>();
-                        
-            services.AddScoped<IUserMiddlepoint, UserMiddlepoint>();
-            services.AddScoped<IEventMiddlePoint, EventMiddlePoint>();
-            services.AddScoped<IGameMiddlepoint, GameMiddlepoint>();
-            services.AddScoped<IGameListMiddlepoint, GameListMiddlepoint>();
-            services.AddScoped<IOneTimeWebService, OneTimeFeeWebService>();
-            services.AddScoped<IMonthlyFeeWebService, MonthlyFeeWebService>();
+            services.AddSingleton<IUserWebService, UserWebService>();
+            services.AddSingleton<IGameWebService, GameWebService>();
+            services.AddSingleton<IGameListWebService, GameListWebService>();
+            services.AddSingleton<IEventWebService, EventWebService>();
+            services.AddSingleton<ICategoryWebService, CategoryWebService>();
+            services.AddSingleton<IParticipantWebService, ParticipantWebService>();
+            services.AddSingleton<IOrganizerWebService, OrganizerWebService>();
+            services.AddSingleton<IEventGameListWebService, EventGameListWebService>();
+            services.AddSingleton<IPaymentWebService, PaymentWebService>();
+            services.AddSingleton<IUserMiddlepoint, UserMiddlepoint>();
+            services.AddSingleton<IEventMiddlePoint, EventMiddlePoint>();
+            services.AddSingleton<IGameMiddlepoint, GameMiddlepoint>();
+            services.AddSingleton<IGameListMiddlepoint, GameListMiddlepoint>();
+            services.AddSingleton<IOneTimeFeeWebService, OneTimeFeeWebService>();
+            services.AddSingleton<IMonthlyFeeWebService, MonthlyFeeWebService>();
+            services.AddSingleton<IFeeMiddlePoint, FeeMiddlePoint>();
 
 
         }
