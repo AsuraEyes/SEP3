@@ -10,12 +10,12 @@
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
- @foreach (var item in goldenGameList)
+@foreach (var item in goldenGameList)
          {
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => MoreInfo(item.Id))">@item.Name</li>
+                                 <li @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</li>
                          </ul>
                  }
          }
@@ -34,7 +34,7 @@
                 NavigationManager.NavigateTo("CreateGameAdmin");
         }
         
-        private async Task MoreInfo(int id)
+        private async Task MoreGameInfo(int id)
         {
                 NavigationManager.NavigateTo($"GameInfo/{id}");
         }
