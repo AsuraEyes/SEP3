@@ -108,6 +108,7 @@
             <xs:sequence>
                 <xs:element name="username" type="xs:string"/>
                 <xs:element name="eventId" type="xs:int"/>
+                <xs:element name="gameId" type="xs:int"/>
                 <xs:element name="Operation" type="tns:Operation"/>
             </xs:sequence>
         </xs:complexType>
