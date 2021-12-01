@@ -14,16 +14,18 @@ namespace BusinessLayer.Middlepoint
         private IPaymentWebService paymentWebService;
         private IMonthlyFeeWebService monthlyFeeWebService;
         private IOneTimeFeeWebService oneTimeFeeWebService;
+        private IParticipantWebService participantWebService;
         private int monthlyFee = 120;
         private int oneTimeFee = 50;
         
 
         public FeeMiddlePoint(IPaymentWebService paymentWebService, IMonthlyFeeWebService monthlyFeeWebService,
-            IOneTimeFeeWebService oneTimeFeeWebService)
+            IOneTimeFeeWebService oneTimeFeeWebService, IParticipantWebService participantWebService)
         {
             this.paymentWebService = paymentWebService;
             this.monthlyFeeWebService = monthlyFeeWebService;
             this.oneTimeFeeWebService = oneTimeFeeWebService;
+            this.participantWebService = participantWebService;
         }
 
         private async Task<string> ApprovePaymentAsync(UserCardInfo userCardInfo)
@@ -46,6 +48,7 @@ namespace BusinessLayer.Middlepoint
                     userUsername = userCardInfo.Username
                 };
                 await oneTimeFeeWebService.CreateOneTimeFee(oneTimeFee);
+                await participantWebService.JoinEventAsync(userCardInfo.EventId, userCardInfo.Username);
             }
 
             return message;
