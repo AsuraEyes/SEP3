@@ -15,36 +15,13 @@
 @if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
 {
     <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
-    <button class="btn btn-outline-primary" type="submit" @onclick="@PayNow">Subscribe Now!</button>
+    <button class="btn btn-outline-primary" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
 }
 else
 {
     <p>No active subscription</p>
-    <button class="btn btn-outline-success" type="submit" @onclick="@PayNow">Subscribe Now!</button>
-@*     if (pay) *@
-@*     { *@
-@*         <EditForm Model="@userCardInfo" OnValidSubmit="@Subscribe"> *@
-@*             <DataAnnotationsValidator/> *@
-@*             <div class="form-group"> *@
-@*                 Card Holder Name:<br/> *@
-@*                 <InputText @bind-Value="userCardInfo.CardHolderName"/> *@
-@*                 <ValidationMessage For="@errorMessage"/> *@
-@*             </div> *@
-@*             <div class="form-group"> *@
-@*                 Card Number: *@
-@*                 <InputNumber @bind-Value="userCardInfo.CardNumber" style="width: 50px"/> *@
-@*             </div> *@
-@*             <div class="form-group"> *@
-@*                 CVC: *@
-@*                 <InputNumber @bind-Value="userCardInfo.CVC" style="width: 50px"/> *@
-@*             </div> *@
-@* *@
-@*             <p class="actions"> *@
-@*                <button class="btn btn-outline-success" type="submit">Subscribe</button> *@
-@*             </p> *@
-@* *@
-@*         </EditForm> *@
-@*     } *@
+    <button class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+
 }
 
 <h3>Payment History</h3>
@@ -122,9 +99,7 @@ else
     
     private async Task Subscribe()
     {
-        userCardInfo.Username = username;
-        userCardInfo.Fee = 120;
-        userCardInfo.StartDateTime = DateTime.Now;
+        NavigationManager.NavigateTo("Payment");
     }
     
 }
