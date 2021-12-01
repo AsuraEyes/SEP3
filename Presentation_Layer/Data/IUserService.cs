@@ -10,5 +10,6 @@ namespace Data
         Task<User> ValidateUser(string userName, string password);
         Task<string> CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
+        Task RequestPromotionToOrganizer();
     }
 }

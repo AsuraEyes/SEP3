@@ -92,5 +92,26 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+
+        [HttpPost]
+        [Route("/User/RequestPromotion")]
+        public async Task<ActionResult> RequestPromotionToOrganizer()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.RequestPromotionToOrganizer();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

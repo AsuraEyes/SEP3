@@ -26,19 +26,14 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<User> GetValidatedUser()
         {
-            Console.WriteLine("in the begininging");
             if (userFromDatabLoggedIn == null)
             {
-                Console.WriteLine("returns null here 1");
                 return null;
             }
             if (user.password.Equals(userFromDatabLoggedIn.password))
             {
-                Console.WriteLine("should return okay");
                 return userFromDatabLoggedIn;
             }
-
-            Console.WriteLine("returns null here 2");
             return null;
         }
 
@@ -57,6 +52,20 @@ namespace BusinessLayer.Middlepoint
             else
             {
                 return await UserWebService.GetUserAsync(username);
+            }
+        }
+
+        public async Task RequestPromotionToOrganizer()
+        {
+            if (userFromDatabLoggedIn.requestedPromotion)
+            {
+                //don't request again
+            }
+            else
+            {
+                userFromDatabLoggedIn.requestedPromotion = true;
+                Console.WriteLine("middlepoint role of user: "+userFromDatabLoggedIn.role);
+                await UserWebService.RequestPromotionToOrganizer(userFromDatabLoggedIn);
             }
         }
     }
