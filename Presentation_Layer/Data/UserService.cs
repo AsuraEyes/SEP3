@@ -114,6 +114,16 @@ namespace SEP3_Blazor.Data
             });
             return user;
         }
+
+        public async Task RequestPromotionToOrganizer()
+        {
+            // var usernameAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent("",
+                Encoding.UTF8,
+                "application/json");
+            
+            var message = await Client.PostAsync(uri+"/User/RequestPromotion", content);
+        }
     
     }
 }

@@ -39,5 +39,10 @@ namespace BusinessLayer.Data
             response = await getUserResponse("", Operation.CREATE, user);
             //return response.getMessageResponse.Notification;
         }
+
+        public async Task RequestPromotionToOrganizer(User user)
+        {
+            await getUserResponse("", Operation.UPDATE, user);
+        }
     }
 }
