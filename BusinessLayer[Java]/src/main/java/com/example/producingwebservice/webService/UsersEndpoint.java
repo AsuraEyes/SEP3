@@ -32,7 +32,7 @@ public class UsersEndpoint {
                 usersDAO.create(request.getUser());
                 break;
             case UPDATE:
-                //usersDAO.patch(request.getEvent());
+                usersDAO.update(request.getUser());
                 break;
             case GETALL:
                 //usersDAO.setEventList(eventsDAO.searchAndFilter(request.getFilter(),

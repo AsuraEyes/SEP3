@@ -6,5 +6,6 @@ public interface Users {
     User create(User user);
 
     User get(String username);
+    void update(User user);
 
 }
