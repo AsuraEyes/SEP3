@@ -63,6 +63,24 @@ public class UserDAO implements Users {
         return user;
     }
 
+    public void update(User user){
+        helper().executeUpdate("UPDATE \"user\" SET first_name = ?, " +
+                "last_name = ?, " +
+                "role_id = ?, " +
+                "phone_number = ?," +
+                " phone_country_code = ?," +
+                " email_address = ?," +
+                " requested_promotion = ? WHERE username = ?;",
+                user.getFirstName(),
+                user.getLastName(),
+                user.getRole(),
+                user.getPhoneNumber(),
+                user.getPhoneCountryCode(),
+                user.getEmailAddress(),
+                user.isRequestedPromotion(),
+                user.getUsername());
+    }
+
 
     private static class UserMapper implements DataMapper<User> {
         public User create(ResultSet rs) throws SQLException {
