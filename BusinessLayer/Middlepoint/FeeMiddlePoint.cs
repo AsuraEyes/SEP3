@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.BankData;
@@ -13,6 +14,8 @@ namespace BusinessLayer.Middlepoint
         private IPaymentWebService paymentWebService;
         private IMonthlyFeeWebService monthlyFeeWebService;
         private IOneTimeFeeWebService oneTimeFeeWebService;
+        private int monthlyFee = 120;
+        private int oneTimeFee = 50;
         
 
         public FeeMiddlePoint(IPaymentWebService paymentWebService, IMonthlyFeeWebService monthlyFeeWebService,
@@ -30,7 +33,10 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateOneTimePaymentAsync(UserCardInfo userCardInfo)
         {
+            userCardInfo.Fee = oneTimeFee;
+
             var message = await ApprovePaymentAsync(userCardInfo);
+            
             if (message.Equals("Approved"))
             {
                 OneTimeFee oneTimeFee = new OneTimeFee()
@@ -47,7 +53,10 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateMonthlyFeeAsync(UserCardInfo userCardInfo)
         {
+            userCardInfo.Fee = monthlyFee;
+            
             var message = await ApprovePaymentAsync(userCardInfo);
+            
             if (message.Equals("Approved"))
             {
                 if (userCardInfo.StartDateTime.Equals(DateTime.Today))

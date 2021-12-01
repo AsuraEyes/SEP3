@@ -1,6 +1,83 @@
 @page "/Payment"
+@page "/Payment/{eventId:int}"
+
+
+@inject AuthenticationStateProvider Auth
+@using Presentation_Layer.Models
+@using Presentation_Layer.Data
+@using Presentation_Layer.Authentication
+@using System.Security.Claims
+@inject IPaymentService paymentService
+@inject NavigationManager NavigationManager
+
+
 <h3>Payment</h3>
 
+@if (!errorMessage.Equals("") && !errorMessage.Equals("Approved"))
+{
+    <div class="alert alert-danger" role="alert">@errorMessage</div>
+}
+
+<EditForm Model="@userCardInfo" OnValidSubmit="@SubscribeAsync">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="form-group">
+        Card Holder Name:
+        <InputText @bind-Value="userCardInfo.CardHolderName" size="50"/>
+    </div>
+    <div class="form-group">
+        Card Number:
+        <InputText @bind-Value="userCardInfo.CardNumber"  size="50"/>
+    </div>
+    <div class="form-group">
+        CVC:
+        <InputText @bind-Value="userCardInfo.CVC" />
+    </div>
+    <div class="form-group">
+        Expiration Date:
+        <input type="month" @bind-value="userCardInfo.ExpiryDate"  size="50"/>
+    </div>
+
+    <p class="actions">
+        <button class="btn btn-outline-success" type="submit">Subscribe</button>
+    </p>
+
+</EditForm>
+
+
 @code {
-    
+
+    [Parameter]
+    public int eventId { get; set; }
+
+    private UserCardInfo userCardInfo = new UserCardInfo();
+    private string errorMessage = "";
+    private string username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        userCardInfo.ExpiryDate = DateTime.Today;
+    }
+
+    private async Task SubscribeAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        userCardInfo.Username = username;
+        userCardInfo.EventId = eventId;
+        if (!await paymentService.CheckSubscription(username))
+        {
+            userCardInfo.StartDateTime = DateTime.Today;
+        }
+
+        var message = await paymentService.MonthlyPaymentAsync(userCardInfo);
+        if (message.Equals("Approved"))
+        {
+            NavigationManager.NavigateTo("PaymentOverview");
+        }
+        else
+        {
+            errorMessage = message;
+        }
+    }
+
 }
