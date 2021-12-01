@@ -1,0 +1,39 @@
+Index: Presentation_Layer/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16373029431430984
+===================================================================
+diff --git a/Presentation_Layer/obj/rider.project.restore.info b/Presentation_Layer/obj/rider.project.restore.info
+--- a/Presentation_Layer/obj/rider.project.restore.info	
++++ b/Presentation_Layer/obj/rider.project.restore.info	
+@@ -1,1 +1,1 @@
+-16373029431430984
+\ No newline at end of file
++16373347861533998
+\ No newline at end of file
+Index: BusinessLayer/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16373029447328523
+===================================================================
+diff --git a/BusinessLayer/obj/rider.project.restore.info b/BusinessLayer/obj/rider.project.restore.info
+--- a/BusinessLayer/obj/rider.project.restore.info	
++++ b/BusinessLayer/obj/rider.project.restore.info	
+@@ -1,1 +1,1 @@
+-16373029447328523
+\ No newline at end of file
++16373347884552380
+\ No newline at end of file
+Index: BankServer/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16373029430254129
+===================================================================
+diff --git a/BankServer/obj/rider.project.restore.info b/BankServer/obj/rider.project.restore.info
+--- a/BankServer/obj/rider.project.restore.info	
++++ b/BankServer/obj/rider.project.restore.info	
+@@ -1,1 +1,1 @@
+-16373029430254129
+\ No newline at end of file
++16373347862820459
+\ No newline at end of file

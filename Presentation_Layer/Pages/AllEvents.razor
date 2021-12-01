@@ -109,7 +109,7 @@
         for (var i = 1; i <= numberOfPages; i++)
         {
             var page = i;
-            <span><a href="AllEvents/@i" @onclick="@(() => SetCurrentPage(page))"> -@i- </a>|</span>
+            <span><a href="AllEvents/@i" @onclick="() => SetCurrentPage(page)"> -@i- </a>|</span>
         }
     }
 </div>
@@ -121,7 +121,7 @@
         {
             var page = i;
             <li class="page-item">
-                <a class="page-link" href="AllEvents/@i" @onclick="@(() => SetCurrentPage(page))">@i</a>
+                <a class="page-link" href="AllEvents/@i" @onclick="() => SetCurrentPage(page)">@i</a>
             </li>
         }
     }

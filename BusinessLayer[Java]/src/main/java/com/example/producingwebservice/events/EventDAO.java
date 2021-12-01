@@ -121,7 +121,7 @@ public class EventDAO implements Events {
       eventList.getEventList().clear();
       eventList.getEventList().addAll(eventHelper().map(new EventMapper(),
               "SELECT * FROM event WHERE event.id IN (SELECT event_id FROM participants WHERE user_username = ?) AND event.id NOT IN (SELECT event_id FROM organizers WHERE user_username = ?)",
-              username));
+              username, username));
       return eventList;
   }
 
