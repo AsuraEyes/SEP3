@@ -81,7 +81,7 @@ namespace BusinessLayer.Middlepoint
             var monthlyFee = await monthlyFeeWebService.GetMonthlyFee(username);
             if (monthlyFee != null)
             {
-                if (monthlyFee.endDate.CompareTo(DateTime.Today) < 0)
+                if (monthlyFee.endDate.CompareTo(DateTime.Today) > 0)
                 {
                     return true;
                 }

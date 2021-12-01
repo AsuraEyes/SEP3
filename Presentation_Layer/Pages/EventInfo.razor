@@ -12,6 +12,7 @@
 @inject IEventGameListService eventGameListService;
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider Auth
+@inject IPaymentService paymentService;
 
 @if (categories.Count == 0)
 {
@@ -20,6 +21,7 @@
 else
 {
     <h3>@selectedEvent.Name</h3>
+    <p>@errorMessage</p>
 
     if (selectedEvent.EndTime.Subtract(selectedEvent.StartTime).TotalMinutes < 0)
     {
@@ -29,15 +31,15 @@ else
     {
         <p>Time: @selectedEvent.StartTime.ToString("f") - @selectedEvent.EndTime.ToString("t")</p>
     }
-    
+
     if (selectedEvent.AddressApartmentNumber != null)
     {
-    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
-        
+        <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+
     }
     else
     {
-    <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
+        <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
     }
     <p>Category: @category.Name </p>
     if (username.Equals(selectedEvent.Organizer))
@@ -74,8 +76,8 @@ else
                 <button class="btn btn-outline-success" type="submit" @onclick="@JoinEvent">Join</button>
             </p>
         }
-        </div>
-    
+    </div>
+
     <div class="mb-2">
         <h3>Organizers</h3>
         @foreach (var organizer in organizers)
@@ -112,24 +114,27 @@ else
         </AuthorizeView>
     </div>
 
-    <br/><h3>Games</h3>
+    <br/>
+    <h3>Games</h3>
     foreach (var game in allEventGameList)
     {
         <ul>
             <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
         </ul>
     }
-    
-    if(organizers.Any(user => user.Equals(username)))
+
+    if (organizers.Any(user => user.Equals(username)))
     {
-        <br/><p class="actions">
-                 <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
-             </p>
+        <br/>
+        <p class="actions">
+            <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
+        </p>
     }
-    
+
     if (username.Equals(selectedEvent.Organizer))
     {
-        <br/><p class="actions">
+        <br/>
+        <p class="actions">
             <button class="btn btn-outline-danger" type="submit" @onclick="@CancelEvent">Cancel</button>
         </p>
     }
@@ -140,6 +145,8 @@ else
     [Parameter]
     public int Id { get; set; }
 
+    private string errorMessage;
+    
     private Event selectedEvent = new();
     private IList<string> participants = new List<string>();
     private IList<string> organizers = new List<string>();
@@ -161,8 +168,17 @@ else
 
     private async Task JoinEvent()
     {
-        await participantService.JoinEvent(Id, username);
-        participants = await participantService.GetParticipantsAsync(Id);
+        if (await paymentService.CheckSubscription(username))
+        {
+            await participantService.JoinEvent(Id, username);
+            participants = await participantService.GetParticipantsAsync(Id);
+        }
+        else
+        {
+            errorMessage = "No active subscription. You have to pay to play!!!";
+        }
+        
+        
     }
 
     private async Task WithdrawEvent()
