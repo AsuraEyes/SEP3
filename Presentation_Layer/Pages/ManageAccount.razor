@@ -1,6 +1,28 @@
 @page "/ManageAccount"
 <h3>Manage Account</h3>
 
+<AuthorizeView Policy="Administrator"/>
+<p class="actions">
+    <button class="btn btn-outline-success" type="submit">Delete account</button>
+</p>
+
+<AuthorizeView/>
+
+
+<AuthorizeView Policy="Player"/>
+<p class="actions">
+         <button class="btn btn-outline-success" type="submit" @onclick="@RequestForOrganizer">Request for organizer</button>
+    </p>
+<AuthorizeView/>
+
+
+
 @code {
+    private bool request; 
     
+    private async Task RequestForOrganizer()
+    {
+        request = true;
+    }
+
 }
