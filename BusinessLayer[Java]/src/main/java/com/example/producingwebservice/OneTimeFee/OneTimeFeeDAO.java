@@ -67,10 +67,9 @@ public class OneTimeFeeDAO implements OneTimeFees
 
   public List<OneTimeFee> getOneTimeFeeList(String username){
     oneTimeFeeList.clear();
-    oneTimeFeeList.addAll(helper().map(new OneTimeFeeMapper(),"SELECT * FROM monthly_fee WHERE user_username = ?", username));
+    oneTimeFeeList.addAll(helper().map(new OneTimeFeeMapper(),"SELECT * FROM one_time_fee WHERE user_username = ?", username));
     return oneTimeFeeList;
   }
-
 
   private static class OneTimeFeeMapper implements DataMapper<OneTimeFee>
   {

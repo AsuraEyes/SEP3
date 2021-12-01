@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -30,9 +31,51 @@ namespace Presentation_Layer.Data
         public async Task<bool> CheckSubscription(string username)
         {
             var query = $"?username={username}";
-            var stringAsync = client.GetStringAsync(uri + $"Fee/Subscription"+query);
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/Validate"+query);
             var theString = await stringAsync;
             var message = JsonSerializer.Deserialize<bool>(theString, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return message;
+        }
+        
+        public async Task<MonthlyFee> GetSubscription(string username)
+        {
+            var query = $"?username={username}";
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/Subscription"+query);
+            var theString = await stringAsync;
+            if (theString != null && theString != "")
+            {
+                            var message = JsonSerializer.Deserialize<MonthlyFee>(theString, new JsonSerializerOptions
+                            {
+                                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                            });
+                            return message;
+            }
+
+            return null;
+
+        }
+        
+        public async Task<IList<MonthlyFee>> GetSubscriptionList(string username)
+        {
+            var query = $"?username={username}";
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/MonthlyHistory"+query);
+            var theString = await stringAsync;
+            var message = JsonSerializer.Deserialize<IList<MonthlyFee>>(theString, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return message;
+        }
+        
+        public async Task<IList<OneTimeFee>> GetOneTimePaymentList(string username)
+        {
+            var query = $"?username={username}";
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTimeHistory"+query);
+            var theString = await stringAsync;
+            var message = JsonSerializer.Deserialize<IList<OneTimeFee>>(theString, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
