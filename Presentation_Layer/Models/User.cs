@@ -26,6 +26,6 @@ namespace Presentation_Layer.Models
         
         public string? EmailAddress{ get; set; }
         
-        public bool? RequestedPromotion{ get; set; }
+        public bool RequestedPromotion{ get; set; }
     }
 }
