@@ -80,9 +80,11 @@ namespace Presentation_Layer.Authentication
 
         private ClaimsIdentity SetupClaimsForUser(User user)
         {
-            List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, user.Username));
-            claims.Add(new Claim("Level", user.Role.ToString()));
+            var claims = new List<Claim>
+            {
+                new(ClaimTypes.Name, user.Username),
+                new ("Level", user.Role.ToString())
+            };
 
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;
