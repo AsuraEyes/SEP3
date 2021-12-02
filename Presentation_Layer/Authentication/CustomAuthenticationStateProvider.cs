@@ -86,7 +86,7 @@ namespace Presentation_Layer.Authentication
                 new ("Level", user.Role.ToString())
             };
 
-            ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth type");
+            var identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;
         }
 
