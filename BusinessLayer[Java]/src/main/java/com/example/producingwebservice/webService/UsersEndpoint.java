@@ -36,7 +36,7 @@ public class UsersEndpoint {
                 break;
             case GETALL:
                 //usersDAO.setEventList(eventsDAO.searchAndFilter(request.getFilter(),
-                //    request.getId()));
+                //request.getId()));
                 break;
             case REMOVE:
                 // usersDAO.delete(request.getId());
