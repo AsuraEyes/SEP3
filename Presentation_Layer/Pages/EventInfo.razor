@@ -168,7 +168,7 @@ else
 
     private async Task JoinEvent()
     {
-        if (await paymentService.CheckSubscription(username))
+        if (await paymentService.CheckSubscription(username) || await paymentService.GetEventFee(username, Id)!= null)
         {
             await participantService.JoinEvent(Id, username);
             participants = await participantService.GetParticipantsAsync(Id);
@@ -176,6 +176,9 @@ else
         else
         {
             errorMessage = "No active subscription. You have to pay to play!!!";
+            if (!await JSRuntime.InvokeAsync<bool>("confirm", errorMessage))
+                return;
+            NavigationManager.NavigateTo($"Payment/{Id}");
         }
         
         

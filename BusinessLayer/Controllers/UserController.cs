@@ -29,8 +29,8 @@ namespace REST.Controllers
             try
             {
                 //call validation class
-                await UserMiddlepoint.ValidateUserAsync(user);
-                return Ok();
+                User validateUser = await UserMiddlepoint.ValidateUserAsync(user);
+                return Ok(validateUser);
             }
             catch (Exception e)
             {
@@ -60,22 +60,22 @@ namespace REST.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("/User/Validate")]
-        public async Task<ActionResult<User>> GetValidatedUserAsync()
-        {
-            try
-            {
-                User user = await UserMiddlepoint.GetValidatedUser();
-                Console.WriteLine("controller: "+user.role);
-                return Ok(user);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
+        // [HttpGet]
+        // [Route("/User/Validate")]
+        // public async Task<ActionResult<User>> GetValidatedUserAsync()
+        // {
+        //     try
+        //     {
+        //         User user = await UserMiddlepoint.GetValidatedUser();
+        //         Console.WriteLine("controller: "+user.role);
+        //         return Ok(user);
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         Console.WriteLine(e);
+        //         return StatusCode(500, e.Message);
+        //     }
+        // }
 
         [HttpGet]
         [Route("/User/{username}")]
@@ -85,6 +85,83 @@ namespace REST.Controllers
             {
                 User user = await UserMiddlepoint.GetUserByUsernameAsync(username);
                 return Ok(user);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("/User/RequestPromotion")]
+        public async Task<ActionResult> RequestPromotionToOrganizer()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.RequestPromotionToOrganizer();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        [HttpDelete]
+        public async Task<ActionResult> DeleteAccountAsync([FromQuery] string username)
+        {
+            try
+            {
+                await UserWebService.DeleteAccountAsync(username);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPost]
+        [Route("/User/AcceptPromotion")]
+        public async Task<ActionResult> AcceptPromotion([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.AcceptPromotion(user);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPost]
+        [Route("/User/DeclinePromotion")]
+        public async Task<ActionResult> DeclinePromotion([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.DeclinePromotion(user);
+                return Ok();
             }
             catch (Exception e)
             {

@@ -12,5 +12,6 @@ namespace Presentation_Layer.Data
         Task<IList<OneTimeFee>> GetOneTimePaymentList(string username);
         Task<IList<MonthlyFee>> GetSubscriptionList(string username);
         Task<MonthlyFee> GetSubscription(string username);
+        Task<OneTimeFee> GetEventFee(string username, int eventId);
     }
 }

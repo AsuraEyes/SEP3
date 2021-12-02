@@ -8,11 +8,12 @@ namespace Presentation_Layer.Data
     public interface IGameService
     {
         Task<Game> GetGameAsync(int id);
-        Task AddGameAsync(Game Game);
+        Task SuggestGameAsync(Game Game);
         Task RemoveGameAsync(Game Game);
-        Task UpdateGameAsync(Game Game);
+        Task UpdateGameApprovalAsync(Game Game);
         Task CreateGameAsync(Game Game);
         Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();
+        Task EditGameAsync(Game game);
     }
 }

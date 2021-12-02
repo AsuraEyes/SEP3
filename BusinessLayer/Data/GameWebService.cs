@@ -39,7 +39,7 @@ namespace BusinessLayer.Data
             return  game;
         }
 
-        public async Task  AddGameAsync(Game game)
+        public async Task  SuggestGameAsync(Game game)
         {
             response = await getGameResponse(0, Operation.CREATE, game, false);
             //return response.getMessageResponse.Notification;

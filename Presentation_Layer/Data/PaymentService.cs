@@ -58,6 +58,23 @@ namespace Presentation_Layer.Data
 
         }
         
+        public async Task<OneTimeFee> GetEventFee(string username, int eventId)
+        {
+            var query = $"?username={username}&eventId={eventId}";
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTime"+query);
+            var theString = await stringAsync;
+            if (theString != null && theString != "")
+            {
+                var message = JsonSerializer.Deserialize<OneTimeFee>(theString, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+                return message;
+            }
+
+            return null;
+        }
+        
         public async Task<IList<MonthlyFee>> GetSubscriptionList(string username)
         {
             var query = $"?username={username}";

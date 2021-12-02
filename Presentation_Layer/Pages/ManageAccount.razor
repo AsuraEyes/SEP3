@@ -1,37 +1,59 @@
 @page "/ManageAccount"
+@using global::Data
+@using Presentation_Layer.Authentication
+@using System.Security.Claims
+
+@inject IUserService UserService;
+@inject AuthenticationStateProvider StateProvider
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
 <h3>Manage Account</h3>
 
-<AuthorizeView Policy="Administrator"/>
 <p class="actions">
-    <button class="btn btn-outline-success" type="submit">Delete account</button>
-</p>
-
-<h3>Request for organizer</h3>
-<p class="actions">
-    <button class="btn btn-outline-success" type="submit">Accept</button>
-</p>
-<p class="actions">
-    <button class="btn btn-outline-success" type="submit">Decline</button>
+    <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
 </p>
 
 
-<AuthorizeView/>
 
-
-<AuthorizeView Policy="Player"/>
-<p class="actions">
-         <button class="btn btn-outline-success" type="submit" @onclick="@RequestForOrganizer">Request for organizer</button>
+<AuthorizeView Policy="Player">
+    <p class="actions">
+        
+        <button class="btn btn-outline-primary" type="submit" @onclick="@RequestForOrganizer">Request for organizer</button>
     </p>
-<AuthorizeView/>
+    <p>@confirmationMessage</p>
+</AuthorizeView>
 
 
 
 @code {
-    private bool request; 
+    private bool request;
+    private string username;
+    private string confirmationMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+    }
     
     private async Task RequestForOrganizer()
     {
         request = true;
+        await UserService.RequestPromotionToOrganizer();
+        confirmationMessage = "Request for organizer sent successfully.";
+    }
+
+    private async Task Delete()
+    {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
+            return;
+        try
+        {
+            await UserService.DeleteAccountAsync(username);
+            await ((CustomAuthenticationStateProvider) StateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch(Exception){}
     }
 
 }

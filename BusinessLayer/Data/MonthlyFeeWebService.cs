@@ -39,7 +39,7 @@ namespace BusinessLayer.Data
 
         public async Task UpdateMonthlyFee(MonthlyFee monthlyFee)
         {
-            response = await getMonthlyFeeResponse(Operation.UPDATE, "", null);
+            response = await getMonthlyFeeResponse(Operation.UPDATE, "", monthlyFee);
         }
         
         public async Task<IList<MonthlyFee>> GetMonthlyFeeList(string username)

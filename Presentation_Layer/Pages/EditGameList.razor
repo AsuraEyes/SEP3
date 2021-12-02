@@ -12,6 +12,12 @@
 
 <h3>Edit Game List</h3>
 
+<p class="actions">
+        <button @onclick="@SuggestGameAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Create
+        </button>
+</p>
+
 @if (ggl == null)
 {
     <p>
@@ -93,5 +99,10 @@ else
     private async Task MoreGameInfo(int id)
     {
         NavigationManager.NavigateTo($"GameInfo/{id}");
+    }
+    
+    private async Task SuggestGameAsync()
+    {
+        NavigationManager.NavigateTo("CreateGame");
     }
 }

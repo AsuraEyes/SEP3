@@ -92,7 +92,7 @@ namespace REST.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<Game>> AddGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> SuggestGameAsync([FromBody] Game Game)
         {
             if (!ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace REST.Controllers
 
             try
             {
-                await gameWebService.AddGameAsync(Game);
+                await gameWebService.SuggestGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)
@@ -111,8 +111,8 @@ namespace REST.Controllers
             }
         }
         [HttpPost]
-        [Route("/Game/CreateGame")]
-        public async Task<ActionResult<Game>> AddGameAsyncAdmin([FromBody] Game Game)
+        [Route("/CreateGame")]
+        public async Task<ActionResult<Game>> CreateGameAsync([FromBody] Game Game)
         {
             if (!ModelState.IsValid)
             {
@@ -121,6 +121,7 @@ namespace REST.Controllers
 
             try
             {
+                Console.WriteLine("Game name: " + Game.name);
                 await gameMiddlepoint.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
@@ -132,10 +133,32 @@ namespace REST.Controllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Game>> UpdateGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> UpdateGameApprovalAsync([FromBody] Game Game)
         {
             try
             {
+                await gameMiddlepoint.UpdateGameApprovalAsync(Game);
+                return Ok(Game);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPatch]
+        [Route("/Game/EditGame")]
+        public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game Game)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Console.WriteLine(Game.name);
                 await gameWebService.EditGameAsync(Game);
                 return Ok(Game);
             }
