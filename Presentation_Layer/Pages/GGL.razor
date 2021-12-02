@@ -15,7 +15,7 @@
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></li>
+                                 <li @onclick="@(() => EditGameAsync(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
@@ -31,11 +31,11 @@
 
         private async Task AddGameAsync()
         {
-                NavigationManager.NavigateTo("CreateGameAdmin");
+                NavigationManager.NavigateTo("CreateGame");
         }
         
-        private async Task MoreGameInfo(int id)
+        private async Task EditGameAsync(int id)
         {
-                NavigationManager.NavigateTo($"GameInfo/{id}");
+                NavigationManager.NavigateTo($"EditGame/{id}");
         }
 }

@@ -139,7 +139,7 @@ else
     
     public async Task AddGameAsync()
     {
-        await gameService.AddGameAsync(Game);
+        await gameService.SuggestGameAsync(Game);
         await OnInitializedAsync();
     }
 
@@ -159,7 +159,7 @@ else
     
     public async Task Save()
     {
-        await gameService.UpdateGameAsync(GameToEdit);
+        await gameService.UpdateGameApprovalAsync(GameToEdit);
         GameToEdit = null;
     }
 }

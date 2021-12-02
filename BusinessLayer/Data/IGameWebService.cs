@@ -10,7 +10,7 @@ namespace BusinessLayer.Data
     public interface IGameWebService
     {
         Task<Game> GetGameAsync(int id);
-        Task AddGameAsync(Game game);
+        Task SuggestGameAsync(Game game);
         Task<IList<Game>> GetGamesAsync(bool approved);
         //Task<IList<Game>> GetUserGamesAsync(string user);
         Task RemoveGameAsync(int id);

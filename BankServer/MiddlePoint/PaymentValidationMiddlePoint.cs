@@ -25,7 +25,7 @@ namespace BankServer.MiddlePoint
                 return "Not a valid name.";
             }
 
-            if (userCard.CVC.Length < 3)
+            if (userCard.CVC.Length !=3)
             {
                 return "Invalid CVC";
             }

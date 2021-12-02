@@ -37,7 +37,12 @@ namespace BusinessLayer.Data
         public async Task  CreateAccountAsync(User user)
         {
             response = await getUserResponse("", Operation.CREATE, user);
-            //return response.getMessageResponse.Notification;
+            
+        }
+
+        public async Task DeleteAccountAsync(string username)
+        {
+            response = await getUserResponse(username, Operation.REMOVE,null);
         }
 
         public async Task UpdateUser(User user)

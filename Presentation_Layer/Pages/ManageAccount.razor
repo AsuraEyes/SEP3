@@ -5,11 +5,13 @@
 
 @inject IUserService UserService;
 @inject AuthenticationStateProvider StateProvider
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
 
 <h3>Manage Account</h3>
 
 <p class="actions">
-    <button class="btn btn-outline-danger" type="submit">Delete account</button>
+    <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
 </p>
 
 
@@ -28,13 +30,30 @@
     private bool request;
     private string username;
     private string confirmationMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+    }
     
     private async Task RequestForOrganizer()
     {
         request = true;
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         await UserService.RequestPromotionToOrganizer();
         confirmationMessage = "Request for organizer sent successfully.";
+    }
+
+    private async Task Delete()
+    {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
+            return;
+        try
+        {
+            await UserService.DeleteAccountAsync(username);
+            await ((CustomAuthenticationStateProvider) StateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch(Exception){}
     }
 
 }

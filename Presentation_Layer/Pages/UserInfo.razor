@@ -1,8 +1,11 @@
 @page "/UserInfo/{Username}"
 @using Presentation_Layer.Models
 @using global::Data
+@using Presentation_Layer.Authentication
 
 @inject IUserService UserService;
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
 
 @if (user == null)
 {
@@ -40,6 +43,11 @@ else
 
     </AuthorizeView>
 }
+<AuthorizeView Policy="Administrator">
+    <p class="actions">
+        <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
+    </p>
+</AuthorizeView>
 
 
 
@@ -68,6 +76,17 @@ else
     private async Task UpdateUser()
     {
         user = await UserService.GetUserByUsernameAsync(Username);
+    }
+    private async Task Delete()
+    {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete this account?"))
+            return;
+        try
+        {
+            await UserService.DeleteAccountAsync(Username);
+            NavigationManager.NavigateTo("/");
+        }
+        catch(Exception){}
     }
     
 }

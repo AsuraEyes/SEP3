@@ -1,4 +1,3 @@
-@page "/GameApproval"
 @page "/GameApproval/{Id:int}"
 
 @using Presentation_Layer.Models
@@ -9,7 +8,7 @@
 @inject IJSRuntime JSRuntime
 
 <h3>Game Approval</h3>
-<EditForm Model="@game" OnValidSubmit="@Approve">
+<EditForm Model="@game" OnValidSubmit="@Approval">
     <DataAnnotationsValidator/>
     <div class="form-group">
         Name:<br/>
@@ -56,6 +55,7 @@
     </div>
     
     <br/>
+    
     <p class="actions">
         <button type="button" class="btn btn-primary" @onclick="Approve">Approve</button>
         <button type="button" class="btn btn-danger" @onclick="Disapprove">Disapprove</button>
@@ -67,6 +67,8 @@
     [Parameter]
     public int Id { get; set; }
 
+    bool approval;
+
     private Game game = new();
     
     protected override async Task OnInitializedAsync()
@@ -74,17 +76,31 @@
         game = await gameService.GetGameAsync(Id);
     }
 
+    private async Task Approval()
+    {
+        if (approval)
+        {
+            await gameService.UpdateGameApprovalAsync(game);
+            NavigationManager.NavigateTo("RequestsForGGL");
+        }
+        else
+        {
+            if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to disapprove this game?"))
+                return;
+            await gameService.RemoveGameAsync(game);
+            NavigationManager.NavigateTo("RequestsForGGL");
+        }
+    }
+
     private async Task Approve()
     {
-        // await gameService.UpdateGameAsync(game);
-        NavigationManager.NavigateTo("RequestsForGGL");
+        approval = true;
+        await Approval();
     }
     
     private async Task Disapprove()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to disapprove this game?"))
-            return;
-        await gameService.RemoveGameAsync(game);
-        NavigationManager.NavigateTo("RequestsForGGL");
+        approval = false;
+        await Approval();
     }
 }

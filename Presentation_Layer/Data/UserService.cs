@@ -6,7 +6,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Data;
+using Newtonsoft.Json;
 using Presentation_Layer.Models;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SEP3_Blazor.Data
 {
@@ -50,27 +52,36 @@ namespace SEP3_Blazor.Data
                     Encoding.UTF8,
                     "application/json");
                 var UserValidationResponseMessage = await Client.PostAsync(uri + "/User", content);
-                
-                
                 if (UserValidationResponseMessage.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("we go here!");
-                    var stringAsync = Client.GetStringAsync(uri + "/User/Validate");
-                    var UserSerialized = await stringAsync;
-                    var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
-                    {
-                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                    });
-                    Console.WriteLine("user service: "+User.Role);
-                    if (User == null)
+                    string ResponseContent = UserValidationResponseMessage.Content.ReadAsStringAsync().Result;
+                    User validatedUser = JsonConvert.DeserializeObject<User>(ResponseContent);
+                    if (validatedUser == null)
                     {
                         throw new Exception("Username or password incorrect.");
                     }
-
-                    Console.WriteLine(User.Role);
-                    
-                    return User;
+                    return validatedUser;
                 }
+
+                // if (UserValidationResponseMessage.IsSuccessStatusCode)
+                // {
+                //     Console.WriteLine("we go here!");
+                //     var stringAsync = Client.GetStringAsync(uri + "/User/Validate");
+                //     var UserSerialized = await stringAsync;
+                //     var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
+                //     {
+                //         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                //     });
+                //     Console.WriteLine("user service: "+User.Role);
+                //     if (User == null)
+                //     {
+                //         throw new Exception("Username or password incorrect.");
+                //     }
+                //
+                //     Console.WriteLine(User.Role);
+                //     
+                //     return User;
+                // }
             }
             catch (Exception e)
             {
@@ -141,6 +152,11 @@ namespace SEP3_Blazor.Data
                 Encoding.UTF8,
                 "application/json");
             var message = await Client.PostAsync(uri+"/User/DeclinePromotion", content);
+        }
+        
+        public async Task DeleteAccountAsync(string username)
+        {
+            await Client.DeleteAsync($"{uri}/User?username={username}");
         }
     
     }

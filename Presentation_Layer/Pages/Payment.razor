@@ -38,9 +38,19 @@
         <input type="month" @bind-value="userCardInfo.ExpiryDate"  size="50"/>
     </div>
 
-    <p class="actions">
-        <button class="btn btn-outline-success" type="submit">Subscribe</button>
-    </p>
+    @if (eventId > 0)
+    {
+        <p class="actions">
+            <button class="btn btn-outline-success" type="submit">Pay</button>
+        </p>
+    }
+    else
+    {
+        <p class="actions">
+            <button class="btn btn-outline-success" type="submit">Subscribe</button>
+        </p>
+    }
+
 
 </EditForm>
 
@@ -64,20 +74,37 @@
         username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         userCardInfo.Username = username;
         userCardInfo.EventId = eventId;
+        var message = "";
         if (!await paymentService.CheckSubscription(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
-
-        var message = await paymentService.MonthlyPaymentAsync(userCardInfo);
+        if (eventId>0)
+        {
+            message = await paymentService.OneTimePaymentAsync(userCardInfo);
+        }
+        else
+        {
+           message = await paymentService.MonthlyPaymentAsync(userCardInfo);
+        }
+        
         if (message.Equals("Approved"))
         {
-            NavigationManager.NavigateTo("PaymentOverview");
+            if (eventId > 0)
+            {
+                NavigationManager.NavigateTo($"EventInfo/{eventId}");
+            }
+            else
+            {
+                NavigationManager.NavigateTo("PaymentOverview"); 
+            }
         }
         else
         {
             errorMessage = message;
         }
+        
+
     }
 
 }

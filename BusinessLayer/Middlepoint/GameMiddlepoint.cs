@@ -11,7 +11,6 @@ namespace BusinessLayer.Middlepoint
     {
         private IGameWebService GameWebService;
         private IGameListWebService gameListWebService;
-        private Game game;
 
         public GameMiddlepoint(IGameWebService gameWebService, IGameListWebService gameListWebService )
         {
@@ -33,15 +32,21 @@ namespace BusinessLayer.Middlepoint
 
         public async Task AddGameAsync(Game game)
         {
-            this.game = game;
+            Console.WriteLine("Game name: " + game.name);
             game.approved = true;
-            await GameWebService.AddGameAsync(game);
+            await GameWebService.SuggestGameAsync(game);
         }
-
+        
         public async Task<IList<int>> GetUserGamesIdsAsync(string user)
         {
             var userGames = await gameListWebService.GetUserGameListAsync(user);
             return userGames.Select(g => g.id).ToList();
-        }  
+        }
+
+        public async Task UpdateGameApprovalAsync(Game game)
+        {
+            game.approved = true;
+            await GameWebService.EditGameAsync(game);
+        }
     }
 }

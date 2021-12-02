@@ -17,15 +17,10 @@ namespace BusinessLayer.Middlepoint
             user = null;
         }
         
-        public async Task ValidateUserAsync(User user)
+        public async Task<User> ValidateUserAsync(User user)
         {
             this.user = user;
             userFromDatabLoggedIn = await UserWebService.GetUserAsync(user.username);
-            Console.WriteLine("middlepoint: "+userFromDatabLoggedIn.role+" username: "+userFromDatabLoggedIn.username + " password: "+userFromDatabLoggedIn.password);
-        }
-
-        public async Task<User> GetValidatedUser()
-        {
             if (userFromDatabLoggedIn == null)
             {
                 return null;

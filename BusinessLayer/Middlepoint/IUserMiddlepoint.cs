@@ -5,8 +5,7 @@ namespace BusinessLayer.Middlepoint
 {
     public interface IUserMiddlepoint
     {
-        Task ValidateUserAsync(User user);
-        Task<User> GetValidatedUser();
+        Task<User> ValidateUserAsync(User user);
         Task CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
         Task RequestPromotionToOrganizer();

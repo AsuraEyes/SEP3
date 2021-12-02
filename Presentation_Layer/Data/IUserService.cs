@@ -13,5 +13,6 @@ namespace Data
         Task RequestPromotionToOrganizer();
         Task AcceptPromotion(User user);
         Task DeclinePromotion(User user);
+        Task DeleteAccountAsync(string username);
     }
 }

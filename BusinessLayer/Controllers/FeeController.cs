@@ -131,5 +131,21 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        [HttpGet]
+        [Route("OneTime")]
+        public async Task<ActionResult<OneTimeFee>>
+            GetOneTimeFeeAsync([FromQuery] string username, int eventId)
+        {
+            try
+            {
+                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFee(username, eventId);
+                return Ok(oneTimeFee);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }
