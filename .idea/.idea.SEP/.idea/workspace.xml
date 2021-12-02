@@ -20,20 +20,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="approval fully implemented">
-      <change afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="edit games work">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameMiddlepoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameMiddlepoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,14 +357,7 @@
       <workItem from="1637678017045" duration="11019000" />
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
-      <workItem from="1638435229861" duration="2945000" />
-    </task>
-    <task id="LOCAL-00043" summary="date fixed">
-      <created>1637768130632</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1637768130632</updated>
+      <workItem from="1638435229861" duration="5691000" />
     </task>
     <task id="LOCAL-00044" summary="fixes applied">
       <created>1637823293683</created>
@@ -709,7 +695,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638433749421</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="edit games work">
+      <created>1638442612695</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1638442612698</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,7 +726,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="login changes" />
     <MESSAGE value="changed cancelling event" />
     <MESSAGE value="rollback" />
     <MESSAGE value="All events changes" />
@@ -758,6 +750,7 @@
     <MESSAGE value="Debug stuff" />
     <MESSAGE value="added a confirmation message when disapproving a game" />
     <MESSAGE value="approval fully implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="approval fully implemented" />
+    <MESSAGE value="edit games work" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit games work" />
   </component>
 </project>

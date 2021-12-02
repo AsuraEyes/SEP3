@@ -157,6 +157,7 @@ namespace REST.Controllers
 
             try
             {
+                Console.WriteLine(Game.name);
                 await gameWebService.EditGameAsync(Game);
                 return Ok(Game);
             }

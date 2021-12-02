@@ -45,7 +45,7 @@ namespace Presentation_Layer.Data
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PostAsync(uri+"/User/CreateGame", content);
+            await client.PostAsync(uri+"/Game/CreateGame", content);
         }
 
         public async Task<IList<Game>> GetGGLAsync()
@@ -76,7 +76,7 @@ namespace Presentation_Layer.Data
             HttpContent content = new StringContent(GameAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PatchAsync(uri+"/User/EditGame", content);
+            await client.PatchAsync(uri+"/Game/EditGame", content);
         }
 
         public async Task UpdateGameApprovalAsync(Game Game)
