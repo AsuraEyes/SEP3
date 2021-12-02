@@ -7,5 +7,6 @@ public interface Users {
 
     User get(String username);
     void update(User user);
+    void delete(String username);
 
 }

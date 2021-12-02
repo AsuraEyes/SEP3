@@ -63,6 +63,10 @@ public class UserDAO implements Users {
         return user;
     }
 
+    public void delete(String username){
+        helper().executeUpdate("DELETE FROM \"user\" WHERE username = ?", username);
+    }
+
     public void update(User user){
         helper().executeUpdate("UPDATE \"user\" SET first_name = ?, " +
                 "last_name = ?, " +

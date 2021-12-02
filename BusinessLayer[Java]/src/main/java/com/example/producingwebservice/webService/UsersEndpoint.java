@@ -39,7 +39,7 @@ public class UsersEndpoint {
                 //    request.getId()));
                 break;
             case REMOVE:
-                // usersDAO.delete(request.getId());
+                usersDAO.delete(request.getUsername());
         }
         return response;
     }

@@ -124,6 +124,11 @@ namespace SEP3_Blazor.Data
             
             var message = await Client.PostAsync(uri+"/User/RequestPromotion", content);
         }
+        
+        public async Task DeleteAccountAsync(string username)
+        {
+            await Client.DeleteAsync($"{uri}/User?username={username}");
+        }
     
     }
 }

@@ -9,5 +9,6 @@ namespace BusinessLayer.Data
         Task<User> GetUserAsync(string username);
         Task CreateAccountAsync(User user);
         Task RequestPromotionToOrganizer(User user);
+        Task DeleteAccountAsync(string username);
     }
 }
