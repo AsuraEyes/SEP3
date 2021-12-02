@@ -70,6 +70,15 @@ namespace Presentation_Layer.Data
             return Games;
         }
 
+        public async Task EditGameAsync(Game game)
+        {
+            var GameAsJson = JsonSerializer.Serialize(game);
+            HttpContent content = new StringContent(GameAsJson,
+                Encoding.UTF8,
+                "application/json");
+            await client.PatchAsync(uri+"/User/EditGame", content);
+        }
+
         public async Task UpdateGameApprovalAsync(Game Game)
         {
             var GameAsJson = JsonSerializer.Serialize(Game);

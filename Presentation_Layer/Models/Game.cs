@@ -34,12 +34,9 @@ namespace Presentation_Layer.Models
         
         public string? NeededEquipment { get; set; }
 
-        [RequiredIf("MinAge < 0", ErrorMessage = "Minimum age of players must be greater than 0.")]
         [Range(0,int.MaxValue)]
         public int? MinAge { get; set; }
-
-        [RequiredIf("MinAge > MaxAge")]
-        [Range(0, int.MaxValue)]
+        
         [AssertThat("MaxAge > MinAge", 
             ErrorMessage = "Maximum age of players must be greater than the minimum age.")]
         public int? MaxAge { get; set; }

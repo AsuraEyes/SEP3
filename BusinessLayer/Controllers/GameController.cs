@@ -145,5 +145,26 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        
+        [HttpPatch]
+        [Route("/Game/EditGame")]
+        public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game Game)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await gameWebService.EditGameAsync(Game);
+                return Ok(Game);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }
