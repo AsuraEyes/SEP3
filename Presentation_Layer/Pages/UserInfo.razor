@@ -21,6 +21,11 @@
 {
     <p>Email: @user.EmailAddress</p>
 }
+<AuthorizeView Policy="Administrator">
+    <p class="actions">
+        <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
+    </p>
+</AuthorizeView>
 
 
 
