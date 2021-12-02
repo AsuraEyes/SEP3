@@ -68,15 +68,18 @@
     private async Task CreateGameAsync()
     {
         role = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
-        if (role == 3)
+        Console.WriteLine("Role: " + role);
+        if (role == 1)
         {
-            await gameService.AddGameAsync(game);
-            NavigationManager.NavigateTo("EditGameList");
+            Console.WriteLine("Game name: "+game.Name);
+            await gameService.CreateGameAsync(game);
+            NavigationManager.NavigateTo("GGL");
         }
         else
         {
-            await gameService.CreateGameAsync(game);
-            NavigationManager.NavigateTo("GGL");
+            
+            await gameService.SuggestGameAsync(game);
+            NavigationManager.NavigateTo("EditGameList");
         }
     } 
 }

@@ -139,7 +139,7 @@ else
     
     public async Task AddGameAsync()
     {
-        await gameService.AddGameAsync(Game);
+        await gameService.SuggestGameAsync(Game);
         await OnInitializedAsync();
     }
 

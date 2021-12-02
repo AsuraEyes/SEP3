@@ -35,11 +35,10 @@ namespace Presentation_Layer.Models
         public string? NeededEquipment { get; set; }
 
         [Range(0,int.MaxValue)]
-        public int? MinAge { get; set; }
+        public int MinAge { get; set; }
         
-        [AssertThat("MaxAge > MinAge", 
-            ErrorMessage = "Maximum age of players must be greater than the minimum age.")]
-        public int? MaxAge { get; set; }
+        [Range(0,int.MaxValue)]
+        public int MaxAge { get; set; }
 
         [Url(ErrorMessage = "Please enter a valid tutorial link.")]
         public string? Tutorial { get; set; }
