@@ -74,7 +74,7 @@ namespace Presentation_Layer.Authentication
         {
             cachedUser = null;
             var user = new ClaimsPrincipal(new ClaimsIdentity());
-            isRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
+            await isRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
         }
 
