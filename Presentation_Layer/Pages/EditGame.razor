@@ -1,38 +1,31 @@
-@page "/CreateGame"
-@using Microsoft.AspNetCore.Components
-@using Presentation_Layer.Authentication
+@page "/EditGame/{Id:int}"
 @using Presentation_Layer.Data
+@using Microsoft.AspNetCore.Components
 @using Presentation_Layer.Models
-@using System.Security.Claims
 
 @inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider Auth
 @inject IGameService gameService
 
-<h3>Create Game</h3>
-<EditForm Model="@game" OnValidSubmit="@CreateGameAsync">
+<h3>Edit Game</h3>
+<EditForm Model="@game" OnValidSubmit="@EditGameAsync">
     <DataAnnotationsValidator/>
+    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="game.Name"/>
-        <ValidationMessage For="@(() => game.Name)"/>
     </div>
     <div class="form-group">
         Complexity: 
         <InputNumber @bind-Value="game.Complexity" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.Complexity)"/>
     </div>
     <div class="form-group">
         Estimated time: 
         <InputNumber @bind-Value="game.TimeEstimation" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.TimeEstimation)"/>
     </div>
     <div class="form-group">
         Player amount:<br/>
         Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
         Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinNumberOfPlayers)"/>
-        <ValidationMessage For="@(() => game.MaxNumberOfPlayers)"/>
     </div>
     <div class="form-group">Short Description:<br/>
         <InputTextArea @bind-Value="game.ShortDescription" style="width: 250px"/>
@@ -45,38 +38,32 @@
         Age range:<br/>
         Min: <InputNumber @bind-Value="game.MinAge" style="width: 50px"/>
         Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
-        <ValidationMessage For="@(() => game.MinAge)"/>
-        <ValidationMessage For="@(() => game.MaxAge)"/>
     </div>
     <div class="form-group">
         Tutorial:<br/> 
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
-        <ValidationMessage For="@(() => game.Tutorial)"/>
     </div>
     
     <p class="actions">
-        <button type="submit" class="btn btn-outline-success">Create</button>
+        <button type="submit" class="btn btn-outline-success">Save</button>
     </p> 
     
     
 </EditForm>
 
 @code {
+    [Parameter]
+    public int Id { get; set; }
     private Game game = new();
-    private int role;
     
-    private async Task CreateGameAsync()
+    protected override async Task OnInitializedAsync()
     {
-        role = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
-        if (role == 3)
-        {
-            await gameService.AddGameAsync(game);
-            NavigationManager.NavigateTo("EditGameList");
-        }
-        else
-        {
-            await gameService.CreateGameAsync(game);
-            NavigationManager.NavigateTo("GGL");
-        }
+        game = await gameService.GetGameAsync(Id);
+    }
+    
+    private async Task EditGameAsync()
+    {
+        await gameService.EditGameAsync(game);
+        NavigationManager.NavigateTo("GGL");
     } 
 }

@@ -111,7 +111,7 @@ namespace REST.Controllers
             }
         }
         [HttpPost]
-        [Route("/Game/CreateGame")]
+        [Route("/CreateGame")]
         public async Task<ActionResult<Game>> AddGameAsyncAdmin([FromBody] Game Game)
         {
             if (!ModelState.IsValid)
@@ -121,6 +121,7 @@ namespace REST.Controllers
 
             try
             {
+                Console.WriteLine("Game name: " + Game.name);
                 await gameMiddlepoint.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
@@ -137,6 +138,28 @@ namespace REST.Controllers
             try
             {
                 await gameMiddlepoint.UpdateGameApprovalAsync(Game);
+                return Ok(Game);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPatch]
+        [Route("/Game/EditGame")]
+        public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game Game)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Console.WriteLine(Game.name);
+                await gameWebService.EditGameAsync(Game);
                 return Ok(Game);
             }
             catch (Exception e)

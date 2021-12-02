@@ -17,36 +17,30 @@
 <h3>Create Event</h3>
 <EditForm Model="@_event" OnValidSubmit="@EditEventAsync">
     <DataAnnotationsValidator/>
+    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="_event.Name"/>
-        <ValidationMessage For="@(() => _event.Name)"/>
     </div>
     <div class="form-group">
         Date: <br/>
-        <InputDate @bind-Value="_event.Date">
-            <ValidationMessage For="@(() => _event.Date)"/>
-        </InputDate>
+        <InputDate @bind-Value="_event.Date"/>
     </div>
     <div class="form-group">
         Start Time: <br/>
         <input type="time" required @bind-value="@_event.Start"/>
-        <ValidationMessage For="@(() => _event.Start)"/>
     </div>
     <div class="form-group" aria-disabled="true">
         End Time:<br/>
         <input type="time" required @bind-value="@_event.End">
-        <ValidationMessage For="@(() => _event.End)"/>
     </div>
     <div class="form-group">
         Address Street Name:<br/>
         <InputText @bind-Value="_event.AddressStreetName"/>
-        <ValidationMessage For="@(() => _event.AddressStreetName)"/>
     </div>
     <div class="form-group">
         Address Street Number:<br/>
         <InputText @bind-Value="_event.AddressStreetNumber"/>
-        <ValidationMessage For="@(() => _event.AddressStreetNumber)"/>
     </div>
     <div class="form-group">
         Address Apartment Number:<br/>
@@ -68,7 +62,7 @@
     </div>
 
     <p class="actions">
-        <button class="btn btn-outline-success" type="submit">Edit</button>
+        <button class="btn btn-outline-success" type="submit">Save</button>
     </p>
 
 </EditForm>

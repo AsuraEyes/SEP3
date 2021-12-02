@@ -14,5 +14,6 @@ namespace Presentation_Layer.Data
         Task CreateGameAsync(Game Game);
         Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();
+        Task EditGameAsync(Game game);
     }
 }
