@@ -20,23 +20,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="monthly fee/payment working">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2021_4_50_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2021_4_50_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2021_8_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2021_8_38_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_1.xml" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_24_2021_8_30_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/FeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/FeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/UserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/UserPaymentInformation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +372,8 @@
       <workItem from="1638132002889" duration="18199000" />
       <workItem from="1638261082732" duration="22989000" />
       <workItem from="1638350642872" duration="3419000" />
-      <workItem from="1638355192437" duration="6917000" />
+      <workItem from="1638355192437" duration="7683000" />
+      <workItem from="1638432160074" duration="4904000" />
     </task>
     <task id="LOCAL-00001" summary="new repo">
       <created>1635850119210</created>
@@ -669,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638359417380</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="payment options work in presentation tier aswell">
+      <created>1638362259876</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1638362259876</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,7 +722,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="gimme gitignore" />
     <MESSAGE value="fixed event." />
     <MESSAGE value="fixed validation error" />
     <MESSAGE value="fixed" />
@@ -733,6 +746,7 @@
     <MESSAGE value="presentation tier payment service implementation" />
     <MESSAGE value="PaymentOverview.razor" />
     <MESSAGE value="monthly fee/payment working" />
-    <option name="LAST_COMMIT_MESSAGE" value="monthly fee/payment working" />
+    <MESSAGE value="payment options work in presentation tier aswell" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment options work in presentation tier aswell" />
   </component>
 </project>
