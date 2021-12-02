@@ -29,8 +29,8 @@ namespace REST.Controllers
             try
             {
                 //call validation class
-                await UserMiddlepoint.ValidateUserAsync(user);
-                return Ok();
+                User validateUser = await UserMiddlepoint.ValidateUserAsync(user);
+                return Ok(validateUser);
             }
             catch (Exception e)
             {
@@ -47,7 +47,6 @@ namespace REST.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 await UserMiddlepoint.CreateAccountAsync(user);
@@ -60,22 +59,22 @@ namespace REST.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("/User/Validate")]
-        public async Task<ActionResult<User>> GetValidatedUserAsync()
-        {
-            try
-            {
-                User user = await UserMiddlepoint.GetValidatedUser();
-                Console.WriteLine("controller: "+user.role);
-                return Ok(user);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
+        // [HttpGet]
+        // [Route("/User/Validate")]
+        // public async Task<ActionResult<User>> GetValidatedUserAsync()
+        // {
+        //     try
+        //     {
+        //         User user = await UserMiddlepoint.GetValidatedUser();
+        //         Console.WriteLine("controller: "+user.role);
+        //         return Ok(user);
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         Console.WriteLine(e);
+        //         return StatusCode(500, e.Message);
+        //     }
+        // }
 
         [HttpGet]
         [Route("/User/{username}")]

@@ -172,7 +172,7 @@
     <xs:element name="SOAPUserResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="type" type="xs:string"/>
+                <xs:element name="type" type="xs:string" />
                 <xs:element name="user" type="tns:User"/>
                 <xs:element name="userList" type="tns:UserList"/>
             </xs:sequence>
