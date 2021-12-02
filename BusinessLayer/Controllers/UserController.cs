@@ -113,5 +113,47 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+        
+        [HttpPost]
+        [Route("/User/AcceptPromotion")]
+        public async Task<ActionResult> AcceptPromotion([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.AcceptPromotion(user);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpPost]
+        [Route("/User/DeclinePromotion")]
+        public async Task<ActionResult> DeclinePromotion([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserMiddlepoint.DeclinePromotion(user);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

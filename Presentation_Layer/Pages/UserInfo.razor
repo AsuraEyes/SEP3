@@ -4,19 +4,41 @@
 
 @inject IUserService UserService;
 
-<h3>@user.Username</h3>
-@if (user.FirstName != null && user.LastName != null)
+@if (user == null)
 {
-    <p>Name: @((user.FirstName != null) ? user.FirstName : "") @((user.LastName != null) ? user.LastName : "")</p>
+    //something
 }
-<p>Role: @((user.Role == 3) ? "Organizer" : "Player")</p>
-@if (user.PhoneNumber != null)
+else
 {
-    <p>Phone: @(user.PhoneCountryCode != null ? user.PhoneCountryCode : "") @user.PhoneNumber</p>
-}
-@if (user.EmailAddress != null)
-{
-    <p>Email: @user.EmailAddress</p>
+    <h3>@user.Username</h3>
+    @if (user.FirstName != null && user.LastName != null)
+    {
+        <p>Name: @((user.FirstName != null) ? user.FirstName : "") @((user.LastName != null) ? user.LastName : "")</p>
+    }
+    <p>Role: @((user.Role == 3) ? "Organizer" : "Player")</p>
+    @if (user.PhoneNumber != null)
+    {
+        <p>Phone: @(user.PhoneCountryCode != null ? user.PhoneCountryCode : "") @user.PhoneNumber</p>
+    }
+    @if (user.EmailAddress != null)
+    {
+        <p>Email: @user.EmailAddress</p>
+    }
+    
+    <AuthorizeView Policy="Administrator">
+        <p>for admin only</p>
+        @if (user.RequestedPromotion)
+        {
+            <h3>Request for organizer</h3>
+            <p class="actions">
+                <button class="btn btn-outline-success" type="submit" @onclick="@AcceptPromotion">Accept</button>
+            </p>
+            <p class="actions">
+                <button class="btn btn-outline-danger" type="submit" @onclick="@DeclinePromotion">Decline</button>
+            </p>
+        }
+
+    </AuthorizeView>
 }
 
 
@@ -24,8 +46,26 @@
 @code {
     [Parameter]
     public string Username { get; set; }
-    private User user = new User();
+    private User user;
     protected override async Task OnInitializedAsync()
+    {
+        await UpdateUser();
+        Console.WriteLine("requested promotion: "+user.RequestedPromotion);
+    }
+
+    private async Task AcceptPromotion()
+    {
+        await UserService.AcceptPromotion(user);
+        await UpdateUser();
+    }
+
+    private async Task DeclinePromotion()
+    {
+        await UserService.DeclinePromotion(user);
+        await UpdateUser();
+    }
+
+    private async Task UpdateUser()
     {
         user = await UserService.GetUserByUsernameAsync(Username);
     }
