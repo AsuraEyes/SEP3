@@ -132,11 +132,11 @@ namespace REST.Controllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Game>> UpdateGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> UpdateGameApprovalAsync([FromBody] Game Game)
         {
             try
             {
-                await gameWebService.EditGameAsync(Game);
+                await gameMiddlepoint.UpdateGameApprovalAsync(Game);
                 return Ok(Game);
             }
             catch (Exception e)
