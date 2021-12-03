@@ -2,8 +2,8 @@
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
 
-@inject NavigationManager NavigationManager
-@inject IGameService GameService
+@inject NavigationManager navigationManager
+@inject IGameService gameService
 
 <h3>@game.Name</h3>
 <p>Complexity: @game.Complexity</p>
@@ -38,6 +38,6 @@ else
     
     protected override async Task OnInitializedAsync()
     {
-        game = await GameService.GetGameAsync(Id);
+        game = await gameService.GetGameAsync(Id);
     }
 }

@@ -4,11 +4,11 @@
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
 
-@inject AuthenticationStateProvider StateProvider
-@inject NavigationManager NavigationManager
-@inject IEventOrganizerService EventOrganizerService
-@inject IOrganizerService OrganizerService
-@inject IParticipantService ParticipantService
+@inject AuthenticationStateProvider stateProvider
+@inject NavigationManager navigationManager
+@inject IEventOrganizerService eventOrganizerService
+@inject IOrganizerService organizerService
+@inject IParticipantService participantService
 
 <h2>My Events</h2>
 
@@ -161,22 +161,22 @@
 
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        organizersEvents = await EventOrganizerService.GetOrganizerEventsAsync(username);
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        organizersEvents = await eventOrganizerService.GetOrganizerEventsAsync(username);
         organizersEventList = organizersEvents.eventList;
-        coOrganizersEvents = await OrganizerService.GetCoOrganizerEventsAsync(username);
+        coOrganizersEvents = await organizerService.GetCoOrganizerEventsAsync(username);
         coOrganizersEventList = coOrganizersEvents.eventList;
-        participantsEvents = await ParticipantService.GetParticipantEvents(username);
+        participantsEvents = await participantService.GetParticipantEvents(username);
         participantsEventList = participantsEvents.eventList;
     }
 
     private void CreateEvent()
     {
-        NavigationManager.NavigateTo("CreateEvent");
+        navigationManager.NavigateTo("CreateEvent");
     }
 
     private void NavigateToEvent(int id)
     {
-        NavigationManager.NavigateTo($"EventInfo/{id}");
+        navigationManager.NavigateTo($"EventInfo/{id}");
     }
 }

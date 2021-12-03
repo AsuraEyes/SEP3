@@ -5,9 +5,9 @@
 @using Presentation_Layer.Models
 @using System.Security.Claims
 
-@inject IGameListService GameListService
-@inject AuthenticationStateProvider StateProvider
-@inject NavigationManager NavigationManager
+@inject IGameListService gameListService
+@inject AuthenticationStateProvider stateProvider
+@inject NavigationManager navigationManager
 
 <h3>GameList</h3>
 <ul>
@@ -28,17 +28,17 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        games = await GameListService.GetUserGamesAsync(username);
+        var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        games = await gameListService.GetUserGamesAsync(username);
     }
     
     private void Edit()
     {
-        NavigationManager.NavigateTo("EditGameList");
+        navigationManager.NavigateTo("EditGameList");
     }
     
     private void MoreGameInfo(int id)
     {
-        NavigationManager.NavigateTo($"GameInfo/{id}");
+        navigationManager.NavigateTo($"GameInfo/{id}");
     }
 }

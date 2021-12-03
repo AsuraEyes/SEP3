@@ -2,8 +2,8 @@
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
 
-@inject NavigationManager NavigationManager
-@inject IGameService GameService
+@inject NavigationManager navigationManager
+@inject IGameService gameService
 
 <h3>Requests For GGL</h3>
 
@@ -31,11 +31,11 @@
     
     protected override async Task OnInitializedAsync()
     {
-        gameList = await GameService.GetSuggestedGamesAsync();
+        gameList = await gameService.GetSuggestedGamesAsync();
     }
 
     private void MoreGameInfo(int id)
     {
-        NavigationManager.NavigateTo($"GameApproval/{id}");
+        navigationManager.NavigateTo($"GameApproval/{id}");
     }
 }

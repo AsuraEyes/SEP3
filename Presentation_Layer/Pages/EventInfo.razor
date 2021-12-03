@@ -5,15 +5,15 @@
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
 
-@inject IParticipantService ParticipantService;
-@inject IJSRuntime JSRuntime
-@inject IOrganizerService OrganizerService;
-@inject IEventService EventService;
-@inject ICategoryService CategoryService;
-@inject IEventGameListService EventGameListService;
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider StateProvider
-@inject IPaymentService PaymentService;
+@inject IParticipantService participantService;
+@inject IJSRuntime jsRuntime
+@inject IOrganizerService organizerService;
+@inject IEventService eventService;
+@inject ICategoryService categoryService;
+@inject IEventGameListService eventGameListService;
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IPaymentService paymentService;
 
 @if (categories.Count == 0)
 {
@@ -157,82 +157,82 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        categories = await CategoryService.GetCategoriesAsync();
-        allEventGameList = await EventGameListService.GetAllEventGameListAsync(Id);
-        selectedEvent = await EventService.GetEventAsync(Id);
-        participants = await ParticipantService.GetParticipantsAsync(Id);
-        organizers = await OrganizerService.GetOrganizersAsync(Id);
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        categories = await categoryService.GetCategoriesAsync();
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
+        selectedEvent = await eventService.GetEventAsync(Id);
+        participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
         category = categories.FirstOrDefault(a => a.Id == selectedEvent.EventCategory);
     }
 
     private async Task JoinEventAsync()
     {
-        if (await PaymentService.CheckSubscription(username) || await PaymentService.GetEventFee(username, Id)!= null)
+        if (await paymentService.CheckSubscription(username) || await paymentService.GetEventFee(username, Id)!= null)
         {
-            await ParticipantService.JoinEvent(Id, username);
-            participants = await ParticipantService.GetParticipantsAsync(Id);
+            await participantService.JoinEvent(Id, username);
+            participants = await participantService.GetParticipantsAsync(Id);
         }
         else
         {
             errorMessage = "No active subscription. You have to pay to play!!!";
-            if (!await JSRuntime.InvokeAsync<bool>("confirm", errorMessage))
+            if (!await jsRuntime.InvokeAsync<bool>("confirm", errorMessage))
                 return;
-            NavigationManager.NavigateTo($"Payment/{Id}");
+            navigationManager.NavigateTo($"Payment/{Id}");
         }
     }
 
     private async Task WithdrawEventAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
                                                           "Friendly Reminder: You won't get your money back."))
             return;
-        await ParticipantService.WithdrawEvent(Id, username);
-        participants = await ParticipantService.GetParticipantsAsync(Id);
-        organizers = await OrganizerService.GetOrganizersAsync(Id);
-        allEventGameList = await EventGameListService.GetAllEventGameListAsync(Id);
+        await participantService.WithdrawEvent(Id, username);
+        participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
     }
 
     private async Task CoOrganizeEventAsync()
     {
-        await OrganizerService.CoOrganizeEvent(Id, username);
-        organizers = await OrganizerService.GetOrganizersAsync(Id);
+        await organizerService.CoOrganizeEvent(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
     }
 
     private async Task WithdrawEventAsCoOrganizerAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
         return;
-        await OrganizerService.WithdrawEvent(Id, username);
-        organizers = await OrganizerService.GetOrganizersAsync(Id);
-        allEventGameList = await EventGameListService.GetAllEventGameListAsync(Id);
+        await organizerService.WithdrawEvent(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
     }
     
     private async Task CancelEventAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
             return;
-        await EventService.CancelEvent(selectedEvent);
-        NavigationManager.NavigateTo("MyEvents");
+        await eventService.CancelEvent(selectedEvent);
+        navigationManager.NavigateTo("MyEvents");
     }
     
     private void EditEvent()
     {
-        NavigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
+        navigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
     }
     
     private void MoreGameInfo(int id)
     {
-        NavigationManager.NavigateTo($"GameInfo/{id}");
+        navigationManager.NavigateTo($"GameInfo/{id}");
     }
 
     private void MoreUserInfo(string moreUserInfoUsername)
     {
-        NavigationManager.NavigateTo($"UserInfo/{moreUserInfoUsername}");
+        navigationManager.NavigateTo($"UserInfo/{moreUserInfoUsername}");
     }
 
     private void EditEventGames()
     {
-        NavigationManager.NavigateTo($"EditEventGames/{selectedEvent.Id}");
+        navigationManager.NavigateTo($"EditEventGames/{selectedEvent.Id}");
     }
 }

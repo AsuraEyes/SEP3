@@ -3,8 +3,8 @@
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
 
-@inject NavigationManager NavigationManager
-@inject IGameService GameService
+@inject NavigationManager navigationManager
+@inject IGameService gameService
 
 <h3>GGL</h3>
 <p class="actions">
@@ -28,16 +28,16 @@
 
         protected override async Task OnInitializedAsync()
         {
-                goldenGameList = await GameService.GetGGLAsync();
+                goldenGameList = await gameService.GetGGLAsync();
         }
 
         private void AddGame()
         {
-                NavigationManager.NavigateTo("CreateGame");
+                navigationManager.NavigateTo("CreateGame");
         }
         
         private void EditGame(int id)
         {
-                NavigationManager.NavigateTo($"EditGame/{id}");
+                navigationManager.NavigateTo($"EditGame/{id}");
         }
 }

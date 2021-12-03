@@ -9,11 +9,11 @@
 
 @attribute [Authorize(Policy = "Organizer")]
 
-@inject IEventService EventService
-@inject ICategoryService CategoryService;
-@inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider Auth
+@inject IEventService eventService
+@inject ICategoryService categoryService;
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider auth
 
 <h3>Create Event</h3>
 <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
@@ -77,19 +77,19 @@
     {
         newEvent.Date = DateTime.Today;
         newEvent.End = DateTime.Today;
-        categories = await CategoryService.GetCategoriesAsync();
+        categories = await categoryService.GetCategoriesAsync();
     }
 
     private async Task CreateEventAsync()
     {
-        var newEventOrganizer = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        var newEventOrganizer = ((CustomAuthenticationStateProvider) auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
         
         newEvent.StartTime = newEvent.Date.Add(newEvent.Start.TimeOfDay);
         newEvent.EndTime = newEvent.Date.Add(newEvent.End.Value.TimeOfDay);
-        await EventService.CreateEvent(newEvent);
-        await JSRuntime.InvokeVoidAsync("alert", "Successfully created an event");
-        NavigationManager.NavigateTo("MyEvents");
+        await eventService.CreateEvent(newEvent);
+        await jsRuntime.InvokeVoidAsync("alert", "Successfully created an event");
+        navigationManager.NavigateTo("MyEvents");
     }
 
 }

@@ -5,8 +5,8 @@
 @using Presentation_Layer.Models
 @using System.Security.Claims
 
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider Auth
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider auth
 @inject IGameService gameService
 
 <h3>Create Game</h3>
@@ -60,19 +60,19 @@
     
     private async Task CreateGameAsync()
     {
-        role = Convert.ToInt32(((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
+        role = Convert.ToInt32(((CustomAuthenticationStateProvider) auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
         Console.WriteLine("Role: " + role);
         if (role == 1)
         {
             Console.WriteLine("Game name: "+game.Name);
             await gameService.CreateGameAsync(game);
-            NavigationManager.NavigateTo("GGL");
+            navigationManager.NavigateTo("GGL");
         }
         else
         {
             
             await gameService.SuggestGameAsync(game);
-            NavigationManager.NavigateTo("EditGameList");
+            navigationManager.NavigateTo("EditGameList");
         }
     } 
 }

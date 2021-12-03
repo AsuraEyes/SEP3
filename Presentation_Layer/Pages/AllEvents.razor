@@ -3,9 +3,9 @@
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
 
-@inject NavigationManager NavigationManager
-@inject IEventService RestEvent
-@inject ICategoryService CategoryService;
+@inject NavigationManager navigationManager
+@inject IEventService restEvent
+@inject ICategoryService categoryService;
 
 <h2>All Events</h2>
 
@@ -182,7 +182,7 @@
     {
         resultsPerPage = 3;
         if (CurrentPage < 1) CurrentPage = 1;
-        categories = await CategoryService.GetCategoriesAsync();
+        categories = await categoryService.GetCategoriesAsync();
 
         await Filter();
     }
@@ -195,7 +195,7 @@
         filterRest.currentPage = CurrentPage;
         filterRest.resultsPerPage = resultsPerPage;
         
-        events = await RestEvent.GetFilteredEventsAsync(filterRest);
+        events = await restEvent.GetFilteredEventsAsync(filterRest);
         numberOfPages = events.Count;
         eventList = events.eventList;
         CurrentPage = 1;
@@ -285,12 +285,12 @@
 
     private async Task NavigateToEvent(int id)
     {
-        NavigationManager.NavigateTo($"EventInfo/{id}");
+        navigationManager.NavigateTo($"EventInfo/{id}");
     }
 
     private async Task CreateEventAsync()
     {
-        NavigationManager.NavigateTo("CreateEvent");
+        navigationManager.NavigateTo("CreateEvent");
     }
     
     /*

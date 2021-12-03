@@ -1,21 +1,20 @@
 @page "/EditGameList"
+
 @using Presentation_Layer.Models
-@using System.Collections
 @using System.Security.Claims
 @using Presentation_Layer.Authentication
 @using Presentation_Layer.Data
 
-@inject IGameService GameService
+@inject IGameService gameService
 @inject IGameListService gameListService
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
 <h3>Edit Game List</h3>
-
 <p class="actions">
-        <button @onclick="@SuggestGameAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Create
-        </button>
+    <button @onclick="@SuggestGame" class="btn btn-outline-secondary" type="submit">
+            <i class="oi oi-plus"></i> Create
+    </button>
 </p>
 
 @if (ggl == null)
@@ -32,28 +31,23 @@ else if (!ggl.Any())
 }
 else
 {
-
     <table class="table">
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>In my Game List</th>
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th>In my Game List</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in ggl)
-        {
-            <tr>
-                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
-                <td>
-                    <!--item.Id.Equals(gamesOfUser.FirstOrDefault(game => game.Id.Equals(item.Id)).Id)-->
-                    <!-- (Condition ? yes : no) -->
-                    <!--(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null ? "yes" : "NO")-->
-                    <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@((arg) => CompletedChange(arg, item.Id))"/>
-                    @* <!--<input type="checkbox" checked=@(idsOfGamesOfUser.Contains(item.Id)) @onchange="@((arg) => CompletedChange(arg, item.Id))"/>--> *@
-                </td>
-            </tr>
-        }
+            @foreach (var item in ggl)
+            {
+                <tr>
+                    <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
+                    <td>
+                        <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 }
@@ -68,41 +62,33 @@ else
 @code {
     private IList<Game> ggl;
     private IList<Game> gamesOfUser;
-    //private IList<int> idsOfGamesOfUser;
     private string username;
 
     protected override async Task OnInitializedAsync()
     {
-        ggl = await GameService.GetGGLAsync();
+        ggl = await gameService.GetGGLAsync();
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         gamesOfUser = await gameListService.GetUserGamesAsync(username);
-        // idsOfGamesOfUser = new List<int>();
-        // foreach (var game in gamesOfUser)
-        // {
-        //     idsOfGamesOfUser.Add(game.Id);
-        //     Console.WriteLine(game.Name);
-        // }
     }
     
-    private async Task CompletedChange(ChangeEventArgs arg, int id)
+    private async Task CompletedChangeAsync(ChangeEventArgs arg, int id)
     {
-        //change the value
-        bool inList = (bool) arg.Value;
+        bool inList = arg.Value != null && (bool) arg.Value;
         await gameListService.UpdateUserGamesAsync(username, id, inList);
     }
     
     private void GoBack()
     {
-        NavigationManager.NavigateTo("GameList");
+        navigationManager.NavigateTo("GameList");
     }
     
-    private async Task MoreGameInfo(int id)
+    private void MoreGameInfo(int id)
     {
-        NavigationManager.NavigateTo($"GameInfo/{id}");
+        navigationManager.NavigateTo($"GameInfo/{id}");
     }
     
-    private async Task SuggestGameAsync()
+    private void SuggestGame()
     {
-        NavigationManager.NavigateTo("CreateGame");
+        navigationManager.NavigateTo("CreateGame");
     }
 }

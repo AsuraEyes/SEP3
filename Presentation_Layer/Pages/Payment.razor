@@ -6,9 +6,9 @@
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
 
-@inject IPaymentService PaymentService
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider StateProvider
+@inject IPaymentService paymentService
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
 
 
 <h3>Payment</h3>
@@ -38,7 +38,7 @@
         <input type="month" @bind-value="userCardInfo.ExpiryDate"  size="50"/>
     </div>
 
-    @if (eventId > 0)
+    @if (EventId > 0)
     {
         <p class="actions">
             <button class="btn btn-outline-success" type="submit">Pay</button>
@@ -55,7 +55,7 @@
 @code {
 
     [Parameter]
-    public int eventId { get; set; }
+    public int EventId { get; set; }
 
     private UserCardInfo userCardInfo = new();
     private string errorMessage = "";
@@ -68,32 +68,32 @@
 
     private async Task SubscribeAsync()
     {
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         userCardInfo.Username = username;
-        userCardInfo.EventId = eventId;
+        userCardInfo.EventId = EventId;
         var message = "";
-        if (!await PaymentService.CheckSubscription(username))
+        if (!await paymentService.CheckSubscription(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
-        if (eventId > 0)
+        if (EventId > 0)
         {
-            message = await PaymentService.OneTimePaymentAsync(userCardInfo);
+            message = await paymentService.OneTimePaymentAsync(userCardInfo);
         }
         else
         {
-           message = await PaymentService.MonthlyPaymentAsync(userCardInfo);
+           message = await paymentService.MonthlyPaymentAsync(userCardInfo);
         }
         
         if (message.Equals("Approved"))
         {
-            if (eventId > 0)
+            if (EventId > 0)
             {
-                NavigationManager.NavigateTo($"EventInfo/{eventId}");
+                navigationManager.NavigateTo($"EventInfo/{EventId}");
             }
             else
             {
-                NavigationManager.NavigateTo("PaymentOverview"); 
+                navigationManager.NavigateTo("PaymentOverview"); 
             }
         }
         else

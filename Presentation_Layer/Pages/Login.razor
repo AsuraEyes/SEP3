@@ -3,9 +3,9 @@
 @namespace LoginComponent
 
 
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider StateProvider
-@inject IJSRuntime JSRuntime
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
 
 <AuthorizeView>
     <NotAuthorized>
@@ -81,8 +81,8 @@
     {
        try
         {
-            await ((CustomAuthenticationStateProvider) StateProvider).ValidateLogin(username, password);
-            NavigationManager.NavigateTo("/");
+            await ((CustomAuthenticationStateProvider) stateProvider).ValidateLogin(username, password);
+            navigationManager.NavigateTo("/");
             Close();
         }
         catch (Exception)
@@ -93,18 +93,18 @@
 
     private async Task PerformLogoutAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
             return;
         errorMessage = "";
         username = "";
         password = "";
-        await ((CustomAuthenticationStateProvider) StateProvider).Logout();
-        NavigationManager.NavigateTo("/");
+        await ((CustomAuthenticationStateProvider) stateProvider).Logout();
+        navigationManager.NavigateTo("/");
     }
 
     private void CreateAccount()
     {
         Close();
-        NavigationManager.NavigateTo("CreateAccount");
+        navigationManager.NavigateTo("CreateAccount");
     }
 }

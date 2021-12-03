@@ -4,7 +4,7 @@
 @using System.Security.Claims
 @using global::Data
 @attribute [Authorize(Policy = "Administrator")]
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
 
 @inject IUserService userService;
 @inject AuthenticationStateProvider stateProvider;
@@ -45,7 +45,7 @@ Requested promotion:
     
     private async Task MoreUserInfo(string username)
     {
-        NavigationManager.NavigateTo($"UserInfo/{username}");
+        navigationManager.NavigateTo($"UserInfo/{username}");
     }
     
     private async Task FilterByPromotion(ChangeEventArgs args)

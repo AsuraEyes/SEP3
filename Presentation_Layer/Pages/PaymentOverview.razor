@@ -4,9 +4,9 @@
 @using System.Security.Claims
 @using Presentation_Layer.Data
 
-@inject AuthenticationStateProvider StateProvider
-@inject IPaymentService PaymentService
-@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IPaymentService paymentService
+@inject NavigationManager navigationManager
 
 
 <h3>Payment Overview</h3>
@@ -65,15 +65,15 @@ else
     
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        monthlyFeeList = await PaymentService.GetSubscriptionList(username);
-        oneTimeFees = await PaymentService.GetOneTimePaymentList(username);
-        monthlyFee = await PaymentService.GetSubscription(username);
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        monthlyFeeList = await paymentService.GetSubscriptionList(username);
+        oneTimeFees = await paymentService.GetOneTimePaymentList(username);
+        monthlyFee = await paymentService.GetSubscription(username);
     }
 
     private void Subscribe()
     {
-        NavigationManager.NavigateTo("Payment");
+        navigationManager.NavigateTo("Payment");
     }
     
 }

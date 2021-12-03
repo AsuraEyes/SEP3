@@ -5,10 +5,10 @@
 @using global::Data
 @using Presentation_Layer.Models
 
-@inject IUserService UserService
-@inject AuthenticationStateProvider StateProvider
-@inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
+@inject IUserService userService
+@inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
 
 <h3>Manage Account</h3>
 @if (user == null)
@@ -59,30 +59,30 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         Console.WriteLine(username);
-        user = await UserService.GetUserByUsernameAsync(username);
+        user = await userService.GetUserByUsernameAsync(username);
     }
     
     private async Task RequestForOrganizerAsync()
     {
         request = true;
-        await UserService.RequestPromotionToOrganizer();
+        await userService.RequestPromotionToOrganizer();
         confirmationMessage = "Request for organizer sent successfully.";
     }
 
     private async Task DeleteAccountAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
             return;
-        await UserService.DeleteAccountAsync(username);
-        await ((CustomAuthenticationStateProvider) StateProvider).Logout();
-        NavigationManager.NavigateTo("/");
+        await userService.DeleteAccountAsync(username);
+        await ((CustomAuthenticationStateProvider) stateProvider).Logout();
+        navigationManager.NavigateTo("/");
     }
 
     private void Edit()
     {
-        NavigationManager.NavigateTo($"/EditAccount/{username}");
+        navigationManager.NavigateTo($"/EditAccount/{username}");
     }
 
 }

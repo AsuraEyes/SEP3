@@ -1,13 +1,12 @@
 @page "/EditAccount/{Username}"
+
 @using global::Data
-@using Presentation_Layer.Authentication
-@using System.Security.Claims
 @using Presentation_Layer.Models
 
-@inject IUserService UserService;
-@inject AuthenticationStateProvider StateProvider
-@inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
+@inject IUserService userService;
+@inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
 
 <h3>Edit Account</h3>
 <EditForm Model="@user" OnValidSubmit="@EditAccountAsync">
@@ -55,13 +54,13 @@
     
     protected override async Task OnInitializedAsync()
     {
-        user = await UserService.GetUserByUsernameAsync(Username);
+        user = await userService.GetUserByUsernameAsync(Username);
         user.ConfirmPassword = user.Password;
     }
 
     private async Task EditAccountAsync()
     {
-        await UserService.EditAccountAsync(user);
-        NavigationManager.NavigateTo("/ManageAccount");
+        await userService.EditAccountAsync(user);
+        navigationManager.NavigateTo("/ManageAccount");
     }
 }

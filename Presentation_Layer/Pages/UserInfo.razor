@@ -2,9 +2,9 @@
 @using Presentation_Layer.Models
 @using global::Data
 
-@inject IUserService UserService
-@inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
+@inject IUserService userService
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
 
 @if (user == null)
 {
@@ -62,25 +62,25 @@ else
 
     private async Task AcceptPromotionAsync()
     {
-        await UserService.AcceptPromotion(user);
+        await userService.AcceptPromotion(user);
         await UpdateUserAsync();
     }
 
     private async Task DeclinePromotionAsync()
     {
-        await UserService.DeclinePromotion(user);
+        await userService.DeclinePromotion(user);
         await UpdateUserAsync();
     }
 
     private async Task UpdateUserAsync()
     {
-        user = await UserService.GetUserByUsernameAsync(Username);
+        user = await userService.GetUserByUsernameAsync(Username);
     }
     private async Task DeleteAccountAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete this account?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete this account?"))
             return;
-        await UserService.DeleteAccountAsync(Username);
-        NavigationManager.NavigateTo("/AllUsers");
+        await userService.DeleteAccountAsync(Username);
+        navigationManager.NavigateTo("/AllUsers");
     }
 }
