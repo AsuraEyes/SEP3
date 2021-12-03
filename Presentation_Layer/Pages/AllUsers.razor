@@ -24,13 +24,13 @@
 
 
 @code {
-    private UserList UserList = new UserList();
+    private UserList UserList = new ();
     private User[] users = {};
 
     protected override async Task OnInitializedAsync()
     {
         UserList = await userService.GetUsersAsync();
-        users = UserList.UserList;
+        users = UserList.userList;
     }
     
 
