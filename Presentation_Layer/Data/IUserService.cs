@@ -15,6 +15,6 @@ namespace Data
         Task AcceptPromotion(User user);
         Task DeclinePromotion(User user);
         Task DeleteAccountAsync(string username);
-        Task<UserList> GetUsersAsync();
+        Task<IList<User>> GetUsersAsync();
     }
 }
