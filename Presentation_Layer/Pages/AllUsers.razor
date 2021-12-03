@@ -15,7 +15,7 @@
 @foreach (var user in users)
 {
     <li>
-        <b @onclick="@(() => MoreUserInfo(user.Id))"><a href="#">@user.Username</a></b>
+        <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
     </li>
 }
 </ul>
@@ -33,9 +33,9 @@
     
 
     
-    private async Task MoreUserInfo(int id)
+    private async Task MoreUserInfo(string username)
     {
-        NavigationManager.NavigateTo($"UserInfo/{id}");
+        NavigationManager.NavigateTo($"UserInfo/{username}");
     }
     
 }
