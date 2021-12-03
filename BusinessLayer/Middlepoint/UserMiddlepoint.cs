@@ -8,19 +8,14 @@ namespace BusinessLayer.Middlepoint
     public class UserMiddlepoint : IUserMiddlepoint
     {
         private IUserWebService UserWebService;
-        private User user;
-        private User userFromDatabLoggedIn;
-
         public UserMiddlepoint(IUserWebService userWebService)
         {
             UserWebService = userWebService;
-            user = null;
         }
         
         public async Task<User> ValidateUserAsync(User user)
         {
-            this.user = user;
-            userFromDatabLoggedIn = await UserWebService.GetUserAsync(user.username);
+            var userFromDatabLoggedIn = await UserWebService.GetUserAsync(user.username);
             if (userFromDatabLoggedIn == null)
             {
                 return null;
@@ -40,25 +35,14 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<User> GetUserByUsernameAsync(string username)
         {
-            if (username.Equals(userFromDatabLoggedIn.username))
-            {
-                return userFromDatabLoggedIn;
-            }
             return await UserWebService.GetUserAsync(username);
         }
 
-        public async Task RequestPromotionToOrganizer()
+        public async Task RequestPromotionToOrganizer(string username)
         {
-            if (userFromDatabLoggedIn.requestedPromotion)
-            {
-                //don't request again
-            }
-            else
-            {
-                userFromDatabLoggedIn.requestedPromotion = true;
-                Console.WriteLine("middlepoint role of user: "+userFromDatabLoggedIn.role);
-                await UserWebService.UpdateUser(userFromDatabLoggedIn);
-            }
+            User userToBePromoted = await GetUserByUsernameAsync(username);
+            userToBePromoted.requestedPromotion = true;
+            await UserWebService.UpdateUser(userToBePromoted);
         }
 
         public async Task AcceptPromotion(User user)

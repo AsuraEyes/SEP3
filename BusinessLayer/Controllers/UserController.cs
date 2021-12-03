@@ -95,7 +95,7 @@ namespace REST.Controllers
 
         [HttpPost]
         [Route("/User/RequestPromotion")]
-        public async Task<ActionResult> RequestPromotionToOrganizer()
+        public async Task<ActionResult> RequestPromotionToOrganizer([FromBody] string username)
         {
             if (!ModelState.IsValid)
             {
@@ -104,7 +104,7 @@ namespace REST.Controllers
 
             try
             {
-                await UserMiddlepoint.RequestPromotionToOrganizer();
+                await UserMiddlepoint.RequestPromotionToOrganizer(username);
                 return Ok();
             }
             catch (Exception e)

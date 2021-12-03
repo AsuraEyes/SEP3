@@ -43,12 +43,12 @@ else
 @if (oneTimeFees != null)
 {
     <h4>Payments</h4>
-            @foreach (var item in oneTimeFees)
-            {
-                <ul>
-                    <li>@item.Amount dkk</li>
-                </ul>
-            }
+    @foreach (var item in oneTimeFees)
+    {
+        <ul>
+            <li>@item.Amount dkk</li>
+        </ul>
+    }
 }
 else 
 {<p>No one time fees</p>}

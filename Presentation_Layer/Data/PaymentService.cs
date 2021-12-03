@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -45,17 +46,23 @@ namespace Presentation_Layer.Data
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/Subscription"+query);
             var theString = await stringAsync;
-            if (theString != null && theString != "")
+            MonthlyFee message = new MonthlyFee();
+            try
             {
-                            var message = JsonSerializer.Deserialize<MonthlyFee>(theString, new JsonSerializerOptions
-                            {
-                                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                            });
-                            return message;
+                if (theString != "")
+                {
+                    message = JsonSerializer.Deserialize<MonthlyFee>(theString, new JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
-            return null;
-
+            return message;
         }
         
         public async Task<OneTimeFee> GetEventFee(string username, int eventId)
@@ -80,10 +87,19 @@ namespace Presentation_Layer.Data
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/MonthlyHistory"+query);
             var theString = await stringAsync;
-            var message = JsonSerializer.Deserialize<IList<MonthlyFee>>(theString, new JsonSerializerOptions
+            IList<MonthlyFee> message = new List<MonthlyFee>();
+            try
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
+                message = JsonSerializer.Deserialize<IList<MonthlyFee>>(theString, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
             return message;
         }
         
@@ -92,10 +108,18 @@ namespace Presentation_Layer.Data
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTimeHistory"+query);
             var theString = await stringAsync;
-            var message = JsonSerializer.Deserialize<IList<OneTimeFee>>(theString, new JsonSerializerOptions
+            IList<OneTimeFee> message = new List<OneTimeFee>();
+            try
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
+                message = JsonSerializer.Deserialize<IList<OneTimeFee>>(theString, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return message;
         }
         

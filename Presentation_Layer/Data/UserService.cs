@@ -126,10 +126,10 @@ namespace SEP3_Blazor.Data
             return user;
         }
 
-        public async Task RequestPromotionToOrganizer()
+        public async Task RequestPromotionToOrganizer(string username)
         {
-            // var usernameAsJson = JsonSerializer.Serialize(username);
-            HttpContent content = new StringContent("",
+            var usernameAsJson = JsonSerializer.Serialize(username);
+            HttpContent content = new StringContent(usernameAsJson,
                 Encoding.UTF8,
                 "application/json");
             

@@ -35,12 +35,12 @@ else
 
     if (selectedEvent.AddressApartmentNumber != null)
     {
-        <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
 
     }
     else
     {
-        <p>@selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
+        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
     }
     <p>Category: @category.Name </p>
     if (username.Equals(selectedEvent.Organizer))

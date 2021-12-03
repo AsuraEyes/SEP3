@@ -8,7 +8,7 @@ namespace BusinessLayer.Middlepoint
         Task<User> ValidateUserAsync(User user);
         Task CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
-        Task RequestPromotionToOrganizer();
+        Task RequestPromotionToOrganizer(string username);
         Task AcceptPromotion(User user);
         Task DeclinePromotion(User user);
     }

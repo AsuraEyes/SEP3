@@ -17,7 +17,6 @@
 }
 else
 {
-    <h3>@username</h3>
     <h3>@user.Username</h3>
     @if (user.FirstName != null && user.LastName != null)
     {
@@ -33,7 +32,7 @@ else
         <p>Email: @user.EmailAddress</p>
     }
     <p class="actions">
-        <button class="btn btn-outline-info" type="submit" @onclick="@Edit">Save</button>
+        <button class="btn btn-outline-info" type="submit" @onclick="@Edit">Edit</button>
     </p>
 
     <p class="actions">
@@ -43,7 +42,6 @@ else
 
 <AuthorizeView Policy="Player">
     <p class="actions">
-        
         <button class="btn btn-outline-primary" type="submit" @onclick="@RequestForOrganizerAsync">Request for organizer</button>
     </p>
     <p>@confirmationMessage</p>
@@ -64,7 +62,7 @@ else
     
     private async Task RequestForOrganizerAsync()
     {
-        await userService.RequestPromotionToOrganizer();
+        await userService.RequestPromotionToOrganizer(username);
         confirmationMessage = "Request for organizer sent successfully.";
     }
 
