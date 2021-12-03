@@ -17,7 +17,7 @@ else
     {
         <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
     }
-    <p>Role: @((user.Role == 3) ? "Organizer" : "Player")</p>
+    <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
     @if (user.PhoneNumber != null)
     {
         <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>

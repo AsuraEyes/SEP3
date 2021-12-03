@@ -39,7 +39,7 @@ else
             <tr>
                 <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
                 <td>
-                    <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@((arg) => CompletedChangeAsync(arg, item.Id))"/>
+                    <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
                 </td>
             </tr>
         }
@@ -70,7 +70,7 @@ else
 
     private async Task CompletedChangeAsync(ChangeEventArgs arg, int gameId)
     {
-        bool inList = arg.Value != null && (bool) arg.Value;
+        var inList = arg.Value != null && (bool) arg.Value;
         await eventGameListService.UpdateEventGamesAsync(username, gameId, EventId, inList);
     }
     

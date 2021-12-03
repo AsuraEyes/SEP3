@@ -57,11 +57,11 @@
     [Parameter]
     public int EventId { get; set; }
 
-    private UserCardInfo userCardInfo = new();
+    private readonly UserCardInfo userCardInfo = new();
     private string errorMessage = "";
     private string username;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         userCardInfo.ExpiryDate = DateTime.Today;
     }
@@ -87,14 +87,7 @@
         
         if (message.Equals("Approved"))
         {
-            if (EventId > 0)
-            {
-                navigationManager.NavigateTo($"EventInfo/{EventId}");
-            }
-            else
-            {
-                navigationManager.NavigateTo("PaymentOverview"); 
-            }
+            navigationManager.NavigateTo(EventId > 0 ? $"EventInfo/{EventId}" : "PaymentOverview");
         }
         else
         {

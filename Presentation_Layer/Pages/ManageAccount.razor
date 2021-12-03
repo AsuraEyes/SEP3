@@ -52,7 +52,6 @@ else
 
 
 @code {
-    private bool request;
     private string username;
     private string confirmationMessage;
     private User user;
@@ -65,7 +64,6 @@ else
     
     private async Task RequestForOrganizerAsync()
     {
-        request = true;
         await userService.RequestPromotionToOrganizer();
         confirmationMessage = "Request for organizer sent successfully.";
     }
