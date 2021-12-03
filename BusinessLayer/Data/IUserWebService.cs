@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 
@@ -11,5 +12,6 @@ namespace BusinessLayer.Data
         Task UpdateUser(User user);
         //Task RequestPromotionToOrganizer(User user);
         Task DeleteAccountAsync(string username);
+        Task<IList<User>> GetUsersAsync();
     }
 }

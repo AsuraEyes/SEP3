@@ -169,5 +169,21 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+
+        [HttpGet]
+        [Route("/Users")]
+        public async Task<ActionResult<IList<User>>> GetUsersAsync()
+        {
+            try
+            {
+                IList<User> users = await UserWebService.GetUsersAsync();
+                return Ok(users);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);  
+            }
+        }
     }
 }
