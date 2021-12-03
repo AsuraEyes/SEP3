@@ -1,50 +1,29 @@
 @page "/AllEvents"
 @page "/AllEvents/{currentPage:int}"
+
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
 
 @inject NavigationManager navigationManager
 @inject IEventService restEvent
-@inject ICategoryService categoryService;
+@inject ICategoryService categoryService
 
 <h2>All Events</h2>
 
-@* @context.User.Identity.Name *@
 <AuthorizeView Policy="Organizer">
     <p class="actions">
-        <button @onclick="@CreateEventAsync" class="btn btn-outline-success" type="submit"><i class="oi oi-plus"></i> Create</button>
+        <button @onclick="@CreateEvent" class="btn btn-outline-success" type="submit"><i class="oi oi-plus"></i> Create</button>
     </p>
 </AuthorizeView>
 
-
-@* <p> *@
-@*     <!--Search: <input type="text"  style="width: 150px"/> --> *@
-@*     OldDate: *@
-@*     <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))"> *@
-@*         <option value=@filteringOptions[1]>-- All --</option> *@
-@*         <option value=@filteringOptions[0]>All Upcomming</option> *@
-@*     </Select> *@
-@*     OldCategory: *@
-@*     <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))"> *@
-@*         <option value=@categoryOptions[0]>-- All --</option> *@
-@*         <option value=@categoryOptions[1]>Children</option> *@
-@*         <option value=@categoryOptions[2]>Adults</option> *@
-@*         <option value=@categoryOptions[3]>Family</option> *@
-@*     </Select> *@
-@*     OldAvailable *@
-@*     <Select class="selectpicker" @oninput="@(arg => DateFilter(arg))"> *@
-@*         <option value=@filteringOptions[3]>-- All --</option> *@
-@*         <option value=@filteringOptions[2]>Available</option> *@
-@*     </Select> *@
-@* </p> *@
 <p>
     Date:
-    <Select class="selectpicker" @oninput="@(FilterByDate)">
+    <Select class="selectpicker" @oninput="@(FilterByDateAsync)">
         <option value="false">-- All --</option>
         <option value="true">All Upcomming</option>
     </Select>
     Category:
-    <Select class="selectpicker" @oninput="@(FilterByCategory)">
+    <Select class="selectpicker" @oninput="@(FilterByCategoryAsync)">
         <option value="0">-- All --</option>
         @foreach (var category in categories)
         {
@@ -52,19 +31,18 @@
         }
     </Select>
     Available
-    <Select class="selectpicker" @oninput="@(FilterByAvailability)">
+    <Select class="selectpicker" @oninput="@(FilterByAvailabilityAsync)">
         <option value="false">-- All --</option>
         <option value="true">Available</option>
     </Select>
     Results per page
-    <Select class="selectpicker" @oninput="@(ResultsPerPage)">
+    <Select class="selectpicker" @oninput="@(ResultsPerPageAsync)">
         <option value="3">3</option>
         <option value="6">6</option>
         <option value="9">9</option>
         <option value="12">12</option>
     </Select>
 </p>
-
 
 <div class="card-deck">
     @foreach (var item in eventList)
@@ -103,17 +81,6 @@
     }
 </div>
 
-<div>
-    @if (numberOfPages > 1)
-    {
-        for (var i = 1; i <= numberOfPages; i++)
-        {
-            var page = i;
-            <span><a href="AllEvents/@i" @onclick="() => SetCurrentPage(page)"> -@i- </a>|</span>
-        }
-    }
-</div>
-
 <ul class="pagination justify-content-center">
     @if (numberOfPages > 1)
     {
@@ -121,73 +88,35 @@
         {
             var page = i;
             <li class="page-item">
-                <a class="page-link" href="AllEvents/@i" @onclick="() => SetCurrentPage(page)">@i</a>
+                <a class="page-link" href="AllEvents/@i" @onclick="() => SetCurrentPageAsync(page)">@i</a>
             </li>
         }
     }
 </ul>
 
-
-@* <table class="table"> *@
-@*         <thead> *@
-@*         <tr> *@
-@*             <th>Id</th> *@
-@*             <th>Name</th> *@
-@*             <th>Start Time</th> *@
-@*             <th>End Time</th> *@
-@*             <th>Number of Participants</th> *@
-@*             <th>Max Number of Participants</th> *@
-@*             <th>Event Category</th> *@
-@*         </tr> *@
-@*         </thead> *@
-@*         <tbody> *@
-@*         @foreach (var item in eventsToShow) *@
-@*         { *@
-@*             <tr> *@
-@*                 <td>@item.Id</td> *@
-@*                 <td>@item.Name</td> *@
-@*                 <td>@item.StartTime</td> *@
-@*                 <td>@item.EndTime</td> *@
-@*                 <td>@item.NumberOfParticipants</td> *@
-@*                 <td>@item.MaxNumberOfParticipants</td> *@
-@*                 <td>@item.EventCategory</td> *@
-@*             </tr> *@
-@*         } *@
-@*         </tbody> *@
-@* </table> *@
-
-
-
-
 @code {
-
     [Parameter]
     public int CurrentPage { get; set; }
 
     private bool byAvailability;
     private bool byDate;
-    
     private int numberOfPages;
     private int categoryId;
     private int resultsPerPage;
-    
-
     private IList<Category> categories = new List<Category>();
     private EventList events = new();
     private Event[] eventList = {};
-
-    private FilterREST filterRest = new ();
+    private readonly FilterREST filterRest = new ();
 
     protected override async Task OnInitializedAsync()
     {
         resultsPerPage = 3;
         if (CurrentPage < 1) CurrentPage = 1;
         categories = await categoryService.GetCategoriesAsync();
-
-        await Filter();
+        await FilterAsync();
     }
 
-    private async Task Filter()
+    private async Task FilterAsync()
     {
         filterRest.byAvailability = byAvailability;
         filterRest.byDate = byDate;
@@ -201,111 +130,51 @@
         CurrentPage = 1;
     }
 
-    private async Task FilterByDate(ChangeEventArgs args)
+    private async Task FilterByDateAsync(ChangeEventArgs args)
     {
-        if (args.Value.ToString().Equals("true"))
+        if (args.Value != null && args.Value.Equals("true"))
         {
             byDate = true;
         }
         else byDate = false;
-        await Filter();
+        await FilterAsync();
     }
 
-    private async Task FilterByAvailability(ChangeEventArgs args)
+    private async Task FilterByAvailabilityAsync(ChangeEventArgs args)
     {
-        if (args.Value.ToString().Equals("true"))
+        if (args.Value != null && args.Value.Equals("true"))
         {
             byAvailability = true;
         }
         else byAvailability = false;
-        await Filter();
+        await FilterAsync();
     }
 
-    private async Task FilterByCategory(ChangeEventArgs args)
+    private async Task FilterByCategoryAsync(ChangeEventArgs args)
     {
-        categoryId = int.Parse(args.Value.ToString());
-        await Filter();
+        if (args.Value != null) categoryId = int.Parse(args.Value.ToString() ?? string.Empty);
+        await FilterAsync();
     }
 
-    private async Task ResultsPerPage(ChangeEventArgs args)
+    private async Task ResultsPerPageAsync(ChangeEventArgs args)
     {
-        resultsPerPage = int.Parse(args.Value.ToString());
-        await Filter();
+        if (args.Value != null) resultsPerPage = int.Parse(args.Value.ToString() ?? string.Empty);
+        await FilterAsync();
     }
 
-    private async Task SetCurrentPage(int page)
+    private async Task SetCurrentPageAsync(int page)
     {
         CurrentPage = page;
-        await Filter();
+        await FilterAsync();
     }
 
-
-    // private async Task DateFilter(ChangeEventArgs args)
-    // {
-    //     try
-    //     {
-    //         for (int i = 0; i < filteringOptions.Count; i++)
-    //         {
-    //             if (args.Value.ToString().Equals(filteringOptions[i]) && i%2 == 0)
-    //             {
-    //                 filter += filteringOptions[i];
-    //             }
-    //             else if (args.Value.ToString().Equals(filteringOptions[i]) && i%2 ==1)
-    //             {
-    //                 filter = filter.Replace(filteringOptions[i-1], "");
-    //             }
-    //         }
-    //         if (int.Parse(args.Value.ToString()) != 0)
-    //         {
-    //             filter += filteringOptions[4];
-    //             categoryId = int.Parse(args.Value.ToString());
-    //         }
-    //         else filter = filter.Replace(filteringOptions[4], string.Empty);
-    //     }
-    //     catch (Exception)
-    //     {
-    //     }
-    //     EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
-    // }
-    //
-    // private async Task CategoryFilter(ChangeEventArgs args)
-    // {
-    //     try
-    //     {
-    //         if (int.Parse(args.Value.ToString()) != 0)
-    //         {
-    //             filter += filteringOptions[4];
-    //             categoryId = int.Parse(args.Value.ToString());
-    //         }
-    //         else filter = filter.Replace(filteringOptions[4], string.Empty);
-    //     }
-    //     catch(Exception ){}
-    //     EventsToShow = await RestEvent.GetFilteredEventsAsync(filter, categoryId);
-    // }
-
-    private async Task NavigateToEvent(int id)
+    private void NavigateToEvent(int id)
     {
         navigationManager.NavigateTo($"EventInfo/{id}");
     }
 
-    private async Task CreateEventAsync()
+    private void CreateEvent()
     {
         navigationManager.NavigateTo("CreateEvent");
     }
-    
-    /*
-    private async Task Next()
-    {
-        var next = currentPage + 1;
-        NavigationManager.NavigateTo($"AllEvents/{next}");
-        await OnInitializedAsync();
-    }
-    
-    private async Task Previous()
-    {
-        var previous = currentPage - 1;
-        NavigationManager.NavigateTo($"AllEvents/{previous}");
-        await OnInitializedAsync();
-    }*/
-    
 }

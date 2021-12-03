@@ -20,32 +20,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Fixed void / async Task and -Async in names of methods in classes: &#10;&#10;EventInfo.razor, GameApproval.razor, GameList.razor, GGL.razor, Login.razor, ManageAccount.razor, MyEvents.razor, Payment.razor, PaymentOverview.razor, UserInfo.razor">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/AllUsers.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ChangePositionRequests.razor" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventGames.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventGames.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Error.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,14 +351,7 @@
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="7740000" />
-      <workItem from="1638519708146" duration="8790000" />
-    </task>
-    <task id="LOCAL-00054" summary="list fixed">
-      <created>1637847062602</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1637847062603</updated>
+      <workItem from="1638519708146" duration="9608000" />
     </task>
     <task id="LOCAL-00055" summary="Made the category picker in create event the correct way">
       <created>1637847568260</created>
@@ -710,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638532323376</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables">
+      <created>1638533545816</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1638533545816</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +720,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="error message fix on create game and changed create game for organizers and admins" />
     <MESSAGE value="create event error messages fixed" />
     <MESSAGE value="added links to game description" />
     <MESSAGE value="fixed bug in create event" />
@@ -759,7 +744,8 @@
     <MESSAGE value="Index.razor cleared" />
     <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;GameApproval.razor, GameInfo.razor, GameList.razor, GGL.razor&#10;fixed new() ... in PaymentOverview.razor, Payment.razor, UserInfo.razor" />
     <MESSAGE value="Fixed void / async Task and -Async in names of methods in classes: &#10;&#10;EventInfo.razor, GameApproval.razor, GameList.razor, GGL.razor, Login.razor, ManageAccount.razor, MyEvents.razor, Payment.razor, PaymentOverview.razor, UserInfo.razor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed void / async Task and -Async in names of methods in classes: &#10;&#10;EventInfo.razor, GameApproval.razor, GameList.razor, GGL.razor, Login.razor, ManageAccount.razor, MyEvents.razor, Payment.razor, PaymentOverview.razor, UserInfo.razor" />
+    <MESSAGE value="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

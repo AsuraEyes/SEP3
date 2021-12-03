@@ -2,18 +2,16 @@
 
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
-@using System.ComponentModel.DataAnnotations
 @using System.Security.Claims
-@using ExpressiveAnnotations.Attributes
 @using Presentation_Layer.Authentication
 
 @attribute [Authorize(Policy = "Organizer")]
 
 @inject IEventService eventService
-@inject ICategoryService categoryService;
+@inject ICategoryService categoryService
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
-@inject AuthenticationStateProvider auth
+@inject AuthenticationStateProvider stateProvider
 
 <h3>Create Event</h3>
 <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
@@ -65,12 +63,10 @@
     <p class="actions">
         <button class="btn btn-outline-success" type="submit">Create</button>
     </p>
-
 </EditForm>
 
-
 @code {
-    private Event newEvent = new();
+    private readonly Event newEvent = new();
     private IList<Category> categories = new List<Category>();
     
     protected override async Task OnInitializedAsync()
@@ -82,11 +78,11 @@
 
     private async Task CreateEventAsync()
     {
-        var newEventOrganizer = ((CustomAuthenticationStateProvider) auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        var newEventOrganizer = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
         
         newEvent.StartTime = newEvent.Date.Add(newEvent.Start.TimeOfDay);
-        newEvent.EndTime = newEvent.Date.Add(newEvent.End.Value.TimeOfDay);
+        if (newEvent.End != null) newEvent.EndTime = newEvent.Date.Add(newEvent.End.Value.TimeOfDay);
         await eventService.CreateEvent(newEvent);
         await jsRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         navigationManager.NavigateTo("MyEvents");

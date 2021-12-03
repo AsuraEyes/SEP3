@@ -1,11 +1,12 @@
 @page "/CreateAccount"
+
 @using global::Data
 @using Presentation_Layer.Authentication
 @using Presentation_Layer.Models
 
 @inject IUserService userService
 @inject NavigationManager navigationManager
-@inject AuthenticationStateProvider authenticationStateProvider
+@inject AuthenticationStateProvider stateProvider
 
 <h3>Create Account</h3>
 <EditForm Model="@user" OnValidSubmit="@CreateAccountAsync">
@@ -47,14 +48,13 @@
     {
         <div class="alert alert-danger" role="alert">@errorMessage</div>
     }
-
 </EditForm>
 
 @code {
     private readonly User user = new();
     private string errorMessage;
     
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         errorMessage = "";
     }
@@ -64,7 +64,7 @@
         errorMessage = await userService.CreateAccountAsync(user);
         if (errorMessage.Equals("success"))
         {
-            await ((CustomAuthenticationStateProvider) authenticationStateProvider).ValidateLogin(user.Username, user.Password);
+            await ((CustomAuthenticationStateProvider) stateProvider).ValidateLogin(user.Username, user.Password);
             navigationManager.NavigateTo("/");
         }
     }

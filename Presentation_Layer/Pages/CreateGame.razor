@@ -1,12 +1,12 @@
 @page "/CreateGame"
+
 @using Microsoft.AspNetCore.Components
 @using Presentation_Layer.Authentication
 @using Presentation_Layer.Data
 @using Presentation_Layer.Models
-@using System.Security.Claims
 
 @inject NavigationManager navigationManager
-@inject AuthenticationStateProvider auth
+@inject AuthenticationStateProvider stateProvider
 @inject IGameService gameService
 
 <h3>Create Game</h3>
@@ -49,28 +49,23 @@
     
     <p class="actions">
         <button type="submit" class="btn btn-outline-success">Create</button>
-    </p> 
-    
-    
+    </p>
 </EditForm>
 
 @code {
-    private Game game = new();
+    private readonly Game game = new();
     private int role;
     
     private async Task CreateGameAsync()
     {
-        role = Convert.ToInt32(((CustomAuthenticationStateProvider) auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
-        Console.WriteLine("Role: " + role);
+        role = Convert.ToInt32(((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
         if (role == 1)
         {
-            Console.WriteLine("Game name: "+game.Name);
             await gameService.CreateGameAsync(game);
             navigationManager.NavigateTo("GGL");
         }
         else
         {
-            
             await gameService.SuggestGameAsync(game);
             navigationManager.NavigateTo("EditGameList");
         }

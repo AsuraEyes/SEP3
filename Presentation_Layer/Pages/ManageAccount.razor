@@ -60,7 +60,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        Console.WriteLine(username);
         user = await userService.GetUserByUsernameAsync(username);
     }
     

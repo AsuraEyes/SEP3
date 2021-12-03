@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <Content Include="PresentationLayer.csproj.DotSettings.user" />
+      <Content Remove="Pages\ChangePositionRequests.razor" />
     </ItemGroup>
 
     <ItemGroup>

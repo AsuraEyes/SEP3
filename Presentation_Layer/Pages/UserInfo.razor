@@ -57,7 +57,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         await UpdateUserAsync();
-        Console.WriteLine("requested promotion: "+user.RequestedPromotion);
     }
 
     private async Task AcceptPromotionAsync()

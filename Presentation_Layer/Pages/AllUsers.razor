@@ -1,14 +1,13 @@
 @page "/AllUsers"
+
 @using Presentation_Layer.Models
-@using Presentation_Layer.Authentication
-@using System.Security.Claims
 @using global::Data
+
 @attribute [Authorize(Policy = "Administrator")]
+
 @inject NavigationManager navigationManager
-
-@inject IUserService userService;
-@inject AuthenticationStateProvider stateProvider;
-
+@inject IUserService userService
+@inject AuthenticationStateProvider stateProvider
 
 <h3>All Users</h3>
 Requested promotion:
@@ -18,16 +17,13 @@ Requested promotion:
     </Select>
 
 <ul>
-@foreach (var user in filteredUsers)
-{
-    <li>
-        <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
-    </li>
-}
+    @foreach (var user in filteredUsers)
+    {
+        <li>
+            <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+        </li>
+    }
 </ul>
-
-
-
 
 @code {
     private IList<User> allUsers  = new List<User>();
@@ -37,39 +33,21 @@ Requested promotion:
     {
         allUsers = await userService.GetUsersAsync();
         filteredUsers = allUsers;
-        // foreach (var user in allUsers)
-        // {
-        //     filteredUsers.Add(user);
-        // }
     }
     
-    private async Task MoreUserInfo(string username)
+    private void MoreUserInfo(string username)
     {
         navigationManager.NavigateTo($"UserInfo/{username}");
     }
     
-    private async Task FilterByPromotion(ChangeEventArgs args)
+    private void FilterByPromotion(ChangeEventArgs args)
     {
-        Console.WriteLine("1: "+allUsers.Count);
-        Console.WriteLine("2: "+allUsers.Count);
-        if (args.Value.ToString().Equals("true"))
+        if (args.Value != null && args.Value.Equals("true"))
         {
-            Console.WriteLine("selected promotion");
-            Console.WriteLine("3: "+allUsers.Count);
-            filteredUsers = allUsers.Where(user => user.RequestedPromotion == true).ToList();
-            /*foreach (var user in allUsers)
-            {
-                Console.WriteLine("here");
-                if (user.RequestedPromotion)
-                {
-                    Console.WriteLine("adding user to filtered users "+user.Username);
-                    filteredUsers.Add(user);
-                }
-            }*/
+            filteredUsers = allUsers.Where(user => user.RequestedPromotion).ToList();
         }
         else
         {
-            Console.WriteLine("selected all");
             filteredUsers = allUsers;
         }
     }
