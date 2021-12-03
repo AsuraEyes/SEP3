@@ -4,9 +4,9 @@
 @using Presentation_Layer.Models
 
 @inject NavigationManager NavigationManager
-@inject IGameService gameService
+@inject IGameService GameService
 
-<h1>BOOK & PLAY - CRUD demo</h1>
+<h1>BOOK & PLAY</h1>
 
 <h2 style="color:red;">@title</h2>
 
@@ -16,31 +16,31 @@ Welcome to your new bording games app.
     <h3 style="color:green">Add Game</h3>
 
 
-<EditForm Model="@Game" OnValidSubmit="@AddGameAsync">
+<EditForm Model="@game" OnValidSubmit="@AddGameAsync">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
             Game part1:
-            <InputText type="text" @bind-Value="Game.Name"/>
+            <InputText type="text" @bind-Value="game.Name"/>
             part 2:
-            <InputText type="text" @bind-Value="Game.ShortDescription"/>
+            <InputText type="text" @bind-Value="game.ShortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Create</button>
         </div>
     </EditForm>
 
 
-@if (GameToEdit != null)
+@if (gameToEdit != null)
 {
     
     <h3 style="color:green">Edit Game</h3>
-    <EditForm Model="@GameToEdit" OnValidSubmit="@Save">
+    <EditForm Model="@gameToEdit" OnValidSubmit="@Save">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         <div class="form-group">
             Game part1:
-            <InputText @bind-Value="GameToEdit.Name"/>
+            <InputText @bind-Value="gameToEdit.Name"/>
             part 2:
-            <InputText @bind-Value="GameToEdit.ShortDescription"/>
+            <InputText @bind-Value="gameToEdit.ShortDescription"/>
             <button class="btn btn-outline-dark" type="submit">Edit</button>
         </div>
     </EditForm>
@@ -52,13 +52,13 @@ else
 
 <br/>
 <h3>Game List</h3>
-@if (GameList == null)
+@if (gameList == null)
 {
     <p>
         <em>Loading...</em>
     </p>
 }
-else if (!GameList.Any())
+else if (!gameList.Any())
 {
     <p>
         <em>No Games exist. Please add some.</em>
@@ -87,7 +87,7 @@ else
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in GameList)
+        @foreach (var item in gameList)
         {
             <tr>
                 <td>
@@ -112,7 +112,7 @@ else
                     </button>
                 </td>
                 <td>
-                    <button @onclick="@(() => GameToEdit = GameList.FirstOrDefault(t => t.Id == item.Id))">
+                    <button @onclick="@(() => gameToEdit = gameList.FirstOrDefault(t => t.Id == item.Id))">
                         <i class="oi oi-pencil" style="color:#1b6ec2"></i>
                     </button>
                 </td>
@@ -127,39 +127,33 @@ else
 @code
 {
     private string title = "Hello World";
-    private Game Game = new Game();
-    private Game GameToEdit;
-    private IList<Game> GameList;
-    
-    /*protected override async Task OnInitializedAsync()
-    {
-        GameList = await gameService.GetGamesAsync();
-        //GameToEdit = null;
-    }*/
-    
+    private Game game = new Game();
+    private Game gameToEdit;
+    private IList<Game> gameList;
+
     public async Task AddGameAsync()
     {
-        await gameService.SuggestGameAsync(Game);
+        await GameService.SuggestGameAsync(game);
         await OnInitializedAsync();
     }
 
     public async Task RemoveGameAsync(int id)
     {
-        Game GameToRemove = GameList.First(t => t.Id == id);
-        await gameService.RemoveGameAsync(GameToRemove);
+        Game gameToRemove = gameList.First(t => t.Id == id);
+        await GameService.RemoveGameAsync(gameToRemove);
         await OnInitializedAsync();
     }
 
     public async Task ChangeTitle(int id)
     {
-        Game GameToTittle = await gameService.GetGameAsync(id);
-        title = GameToTittle.Name;
+        Game gameAsync = await GameService.GetGameAsync(id);
+        title = gameAsync.Name;
 
     }
     
     public async Task Save()
     {
-        await gameService.UpdateGameApprovalAsync(GameToEdit);
-        GameToEdit = null;
+        await GameService.UpdateGameApprovalAsync(gameToEdit);
+        gameToEdit = null;
     }
 }

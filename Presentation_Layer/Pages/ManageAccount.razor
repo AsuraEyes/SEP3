@@ -5,7 +5,7 @@
 @using global::Data
 @using Presentation_Layer.Models
 
-@inject IUserService UserService;
+@inject IUserService UserService
 @inject AuthenticationStateProvider StateProvider
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
@@ -13,12 +13,12 @@
 <h3>Manage Account</h3>
 @if (user == null)
 {
-    //something
+    <p>Loading...</p>
 }
 else
 {
     <h3>@username</h3>
-<h3>@user.Username</h3>
+    <h3>@user.Username</h3>
     @if (user.FirstName != null && user.LastName != null)
     {
         <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
@@ -75,16 +75,12 @@ else
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
             return;
-        try
-        {
-            await UserService.DeleteAccountAsync(username);
-            await ((CustomAuthenticationStateProvider) StateProvider).Logout();
-            NavigationManager.NavigateTo("/");
-        }
-        catch(Exception){}
+        await UserService.DeleteAccountAsync(username);
+        await ((CustomAuthenticationStateProvider) StateProvider).Logout();
+        NavigationManager.NavigateTo("/");
     }
 
-    private async Task Edit()
+    private void Edit()
     {
         NavigationManager.NavigateTo($"/EditAccount/{username}");
     }

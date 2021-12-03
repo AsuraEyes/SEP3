@@ -4,12 +4,12 @@
 
 
 @inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject AuthenticationStateProvider StateProvider
 @inject IJSRuntime JSRuntime
 
 <AuthorizeView>
     <NotAuthorized>
-        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+        <button class="btn btn-outline-primary" @onclick="Open">
             <i class="oi oi-person"></i>
         </button>
         @if (showModal)
@@ -19,7 +19,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Sign in</h5>
-                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -62,17 +62,17 @@
     private string password;
     private string errorMessage;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         errorMessage = "";
     }
     
-    private async Task OpenAsync()
+    private void Open()
     {
         showModal = true;
     }
     
-    private async Task CloseAsync()
+    private void Close()
     {
         showModal = false;
     }
@@ -81,9 +81,9 @@
     {
        try
         {
-            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            await ((CustomAuthenticationStateProvider) StateProvider).ValidateLogin(username, password);
             NavigationManager.NavigateTo("/");
-            await CloseAsync();
+            Close();
         }
         catch (Exception)
         {
@@ -98,20 +98,13 @@
         errorMessage = "";
         username = "";
         password = "";
-        try
-        {
-            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
-        }
-        catch (Exception)
-        {
-            // ignored
-        }
+        await ((CustomAuthenticationStateProvider) StateProvider).Logout();
+        NavigationManager.NavigateTo("/");
     }
 
-    private async Task CreateAccountAsync()
+    private void CreateAccountAsync()
     {
-        await CloseAsync();
+        Close();
         NavigationManager.NavigateTo("CreateAccount");
     }
 }

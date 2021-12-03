@@ -20,14 +20,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="filter all users by requested promotion">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,14 +345,7 @@
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="7740000" />
-      <workItem from="1638519708146" duration="4647000" />
-    </task>
-    <task id="LOCAL-00049" summary="fixed input field size">
-      <created>1637844931252</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1637844931253</updated>
+      <workItem from="1638519708146" duration="5593000" />
     </task>
     <task id="LOCAL-00050" summary="changed input field size">
       <created>1637845038114</created>
@@ -692,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638524032906</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor">
+      <created>1638527737812</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1638527737812</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +714,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="creating account working" />
     <MESSAGE value="login fixing" />
     <MESSAGE value="login fixes" />
     <MESSAGE value="fixed bugs" />
@@ -741,6 +738,7 @@
     <MESSAGE value="create game" />
     <MESSAGE value="updated UserWebService interface" />
     <MESSAGE value="filter all users by requested promotion" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter all users by requested promotion" />
+    <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor" />
   </component>
 </project>

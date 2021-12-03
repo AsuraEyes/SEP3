@@ -155,7 +155,7 @@
     private Event[] organizersEventList = {};
     private EventList coOrganizersEvents = new();
     private Event[] coOrganizersEventList = {};
-    private EventList participantsEvent = new();
+    private EventList participantsEvents = new();
     private Event[] participantsEventList = {};
     private string username;
 
@@ -166,16 +166,16 @@
         organizersEventList = organizersEvents.eventList;
         coOrganizersEvents = await OrganizerService.GetCoOrganizerEventsAsync(username);
         coOrganizersEventList = coOrganizersEvents.eventList;
-        participantsEvent = await ParticipantService.GetParticipantEvents(username);
-        participantsEventList = participantsEvent.eventList;
+        participantsEvents = await ParticipantService.GetParticipantEvents(username);
+        participantsEventList = participantsEvents.eventList;
     }
 
-    private async Task CreateEventAsync()
+    private void CreateEventAsync()
     {
         NavigationManager.NavigateTo("CreateEvent");
     }
 
-    private async Task NavigateToEvent(int id)
+    private void NavigateToEvent(int id)
     {
         NavigationManager.NavigateTo($"EventInfo/{id}");
     }
