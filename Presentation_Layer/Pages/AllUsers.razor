@@ -1,6 +1,43 @@
 @page "/AllUsers"
+@using Presentation_Layer.Models
+@using Presentation_Layer.Authentication
+@using System.Security.Claims
+@using global::Data
+@attribute [Authorize(Policy = "Administrator")]
+@inject NavigationManager NavigationManager
+
+@inject IUserService userService;
+@inject AuthenticationStateProvider stateProvider;
+
+
 <h3>All Users</h3>
+<ul>
+@foreach (var user in users)
+{
+    <li>
+        <b @onclick="@(() => MoreUserInfo(user.Id))"><a href="#">@user.Username</a></b>
+    </li>
+}
+</ul>
+
+
+
 
 @code {
+    private UserList UserList = new UserList();
+    private User[] users = {};
+
+    protected override async Task OnInitializedAsync()
+    {
+        UserList = await userService.GetUsersAsync();
+        users = UserList.UserList;
+    }
+    
+
+    
+    private async Task MoreUserInfo(int id)
+    {
+        NavigationManager.NavigateTo($"UserInfo/{id}");
+    }
     
 }

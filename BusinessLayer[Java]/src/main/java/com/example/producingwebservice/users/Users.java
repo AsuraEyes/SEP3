@@ -1,6 +1,7 @@
 package com.example.producingwebservice.users;
 
 import io.spring.guides.gs_producing_web_service.User;
+import io.spring.guides.gs_producing_web_service.UserList;
 
 public interface Users {
     User create(User user);
@@ -9,4 +10,5 @@ public interface Users {
     void update(User user);
     void delete(String username);
 
+    UserList getUserlist();
 }

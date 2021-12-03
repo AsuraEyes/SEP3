@@ -67,6 +67,13 @@ public class UserDAO implements Users {
         helper().executeUpdate("DELETE FROM \"user\" WHERE username = ?", username);
     }
 
+    @Override
+    public UserList getUserlist() {
+        userList.getUserList().clear();
+        userList.getUserList().addAll(helper().map(new UserMapper(), "SELECT * FROM \"user\""));
+        return userList;
+    }
+
     public void update(User user){
         helper().executeUpdate("UPDATE \"user\" SET first_name = ?, " +
                 "last_name = ?, " +
