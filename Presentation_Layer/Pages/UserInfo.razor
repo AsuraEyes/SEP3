@@ -84,7 +84,7 @@ else
         try
         {
             await UserService.DeleteAccountAsync(Username);
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/AllUsers");
         }
         catch(Exception){}
     }
