@@ -1,9 +1,8 @@
 @page "/UserInfo/{Username}"
 @using Presentation_Layer.Models
 @using global::Data
-@using Presentation_Layer.Authentication
 
-@inject IUserService UserService;
+@inject IUserService UserService
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 
@@ -16,12 +15,12 @@ else
     <h3>@user.Username</h3>
     @if (user.FirstName != null && user.LastName != null)
     {
-        <p>Name: @((user.FirstName != null) ? user.FirstName : "") @((user.LastName != null) ? user.LastName : "")</p>
+        <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
     }
     <p>Role: @((user.Role == 3) ? "Organizer" : "Player")</p>
     @if (user.PhoneNumber != null)
     {
-        <p>Phone: @(user.PhoneCountryCode != null ? user.PhoneCountryCode : "") @user.PhoneNumber</p>
+        <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
     }
     @if (user.EmailAddress != null)
     {
@@ -81,12 +80,8 @@ else
     {
         if (!await JSRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete this account?"))
             return;
-        try
-        {
-            await UserService.DeleteAccountAsync(Username);
-            NavigationManager.NavigateTo("/AllUsers");
-        }
-        catch(Exception){}
+        await UserService.DeleteAccountAsync(Username);
+        NavigationManager.NavigateTo("/AllUsers");
     }
     
 }

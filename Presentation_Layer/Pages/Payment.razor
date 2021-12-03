@@ -1,14 +1,14 @@
 @page "/Payment"
 @page "/Payment/{eventId:int}"
 
-
-@inject AuthenticationStateProvider Auth
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
-@inject IPaymentService paymentService
+
+@inject IPaymentService PaymentService
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider StateProvider
 
 
 <h3>Payment</h3>
@@ -50,10 +50,7 @@
             <button class="btn btn-outline-success" type="submit">Subscribe</button>
         </p>
     }
-
-
 </EditForm>
-
 
 @code {
 
@@ -71,21 +68,21 @@
 
     private async Task SubscribeAsync()
     {
-        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         userCardInfo.Username = username;
         userCardInfo.EventId = eventId;
         var message = "";
-        if (!await paymentService.CheckSubscription(username))
+        if (!await PaymentService.CheckSubscription(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
         if (eventId>0)
         {
-            message = await paymentService.OneTimePaymentAsync(userCardInfo);
+            message = await PaymentService.OneTimePaymentAsync(userCardInfo);
         }
         else
         {
-           message = await paymentService.MonthlyPaymentAsync(userCardInfo);
+           message = await PaymentService.MonthlyPaymentAsync(userCardInfo);
         }
         
         if (message.Equals("Approved"))

@@ -4,11 +4,11 @@
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
 
-@inject AuthenticationStateProvider Auth
+@inject AuthenticationStateProvider StateProvider
 @inject NavigationManager NavigationManager
-@inject IEventOrganizerService EventOrganizerService;
-@inject IOrganizerService OrganizerService;
-@inject IParticipantService ParticipantService;
+@inject IEventOrganizerService EventOrganizerService
+@inject IOrganizerService OrganizerService
+@inject IParticipantService ParticipantService
 
 <h2>My Events</h2>
 
@@ -161,7 +161,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         organizersEvents = await EventOrganizerService.GetOrganizerEventsAsync(username);
         oEventList = organizersEvents.eventList;
         coOrganizersEvents = await OrganizerService.GetCoOrganizerEventsAsync(username);

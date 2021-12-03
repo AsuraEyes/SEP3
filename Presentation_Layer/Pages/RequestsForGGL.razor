@@ -3,11 +3,11 @@
 @using Presentation_Layer.Data
 
 @inject NavigationManager NavigationManager
-@inject IGameService gameService
+@inject IGameService GameService
 
 <h3>Requests For GGL</h3>
 
-@if (GameList == null)
+@if (gameList == null)
  {
      <p>
          <em>Loading...</em>
@@ -15,7 +15,7 @@
  }
  else
  {
-     @foreach (var item in GameList)
+     @foreach (var item in gameList)
          {
              if (item.Approved == false)
              {
@@ -27,15 +27,14 @@
  }
 
 @code {
-    private IList<Game> GameList;
+    private IList<Game> gameList;
     
     protected override async Task OnInitializedAsync()
     {
-        GameList = await gameService.GetSuggestedGamesAsync();
-    //GameToEdit = null;
+        gameList = await GameService.GetSuggestedGamesAsync();
     }
 
-    private async Task MoreGameInfo(int id)
+    private void MoreGameInfo(int id)
     {
         NavigationManager.NavigateTo($"GameApproval/{id}");
     }
