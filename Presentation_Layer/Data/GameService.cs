@@ -30,7 +30,7 @@ namespace Presentation_Layer.Data
             return Game;
         }
 
-        public async Task AddGameAsync(Game Game)
+        public async Task SuggestGameAsync(Game Game)
         {
             var GameAsJson = JsonSerializer.Serialize(Game);
             HttpContent content = new StringContent(GameAsJson,

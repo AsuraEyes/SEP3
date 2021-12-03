@@ -44,10 +44,7 @@ namespace BusinessLayer.Middlepoint
             {
                 return userFromDatabLoggedIn;
             }
-            else
-            {
-                return await UserWebService.GetUserAsync(username);
-            }
+            return await UserWebService.GetUserAsync(username);
         }
 
         public async Task RequestPromotionToOrganizer()
@@ -60,8 +57,21 @@ namespace BusinessLayer.Middlepoint
             {
                 userFromDatabLoggedIn.requestedPromotion = true;
                 Console.WriteLine("middlepoint role of user: "+userFromDatabLoggedIn.role);
-                await UserWebService.RequestPromotionToOrganizer(userFromDatabLoggedIn);
+                await UserWebService.UpdateUser(userFromDatabLoggedIn);
             }
+        }
+
+        public async Task AcceptPromotion(User user)
+        {
+            user.role = 3;
+            user.requestedPromotion = false;
+            await UserWebService.UpdateUser(user);
+        }
+        
+        public async Task DeclinePromotion(User user)
+        {
+            user.requestedPromotion = false;
+            await UserWebService.UpdateUser(user);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 
@@ -45,9 +46,15 @@ namespace BusinessLayer.Data
             response = await getUserResponse(username, Operation.REMOVE,null);
         }
 
-        public async Task RequestPromotionToOrganizer(User user)
+        public async Task UpdateUser(User user)
         {
             await getUserResponse("", Operation.UPDATE, user);
+        }
+
+        public async Task<IList<User>> GetUsersAsync()
+        {
+            response = await getUserResponse("", Operation.GETALL, null);
+            return response.SOAPUserResponse.userList;
         }
     }
 }

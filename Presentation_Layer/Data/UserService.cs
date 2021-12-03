@@ -135,11 +135,39 @@ namespace SEP3_Blazor.Data
             
             var message = await Client.PostAsync(uri+"/User/RequestPromotion", content);
         }
+
+        public async Task AcceptPromotion(User user)
+        {
+            var userAsJson = JsonSerializer.Serialize(user);
+            HttpContent content = new StringContent(userAsJson,
+                Encoding.UTF8,
+                "application/json");
+            var message = await Client.PostAsync(uri+"/User/AcceptPromotion", content);
+        }
+        
+        public async Task DeclinePromotion(User user)
+        {
+            var userAsJson = JsonSerializer.Serialize(user);
+            HttpContent content = new StringContent(userAsJson,
+                Encoding.UTF8,
+                "application/json");
+            var message = await Client.PostAsync(uri+"/User/DeclinePromotion", content);
+        }
         
         public async Task DeleteAccountAsync(string username)
         {
             await Client.DeleteAsync($"{uri}/User?username={username}");
         }
-    
+
+        public async Task<IList<User>> GetUsersAsync()
+        {
+            var usersAsJson = Client.GetStringAsync(uri + "/Users");
+            var User = await usersAsJson;
+            var Users = JsonSerializer.Deserialize<IList<User>>(User, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return Users;
+        }
     }
 }
