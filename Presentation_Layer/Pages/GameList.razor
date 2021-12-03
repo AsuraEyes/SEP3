@@ -19,7 +19,7 @@
 }
 </ul>
 
-<button @onclick="@EditAsync" class="btn btn-outline-secondary" type="submit">
+<button @onclick="@Edit" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Edit
         </button>
 
@@ -32,7 +32,7 @@
         games = await GameListService.GetUserGamesAsync(username);
     }
     
-    private void EditAsync()
+    private void Edit()
     {
         NavigationManager.NavigateTo("EditGameList");
     }

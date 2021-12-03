@@ -8,7 +8,7 @@
 @inject IJSRuntime JSRuntime
 
 <h3>Game Approval</h3>
-<EditForm Model="@game" OnValidSubmit="@Approval">
+<EditForm Model="@game" OnValidSubmit="@ApprovalAsync">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
@@ -50,8 +50,8 @@
     <br/>
     
     <p class="actions">
-        <button type="button" class="btn btn-primary" @onclick="Approve">Approve</button>
-        <button type="button" class="btn btn-danger" @onclick="Disapprove">Disapprove</button>
+        <button type="button" class="btn btn-primary" @onclick="ApproveAsync">Approve</button>
+        <button type="button" class="btn btn-danger" @onclick="DisapproveAsync">Disapprove</button>
     </p>
 </EditForm>
 
@@ -68,7 +68,7 @@
         game = await GameService.GetGameAsync(Id);
     }
 
-    private async Task Approval()
+    private async Task ApprovalAsync()
     {
         if (approval)
         {
@@ -84,15 +84,15 @@
         }
     }
 
-    private async Task Approve()
+    private async Task ApproveAsync()
     {
         approval = true;
-        await Approval();
+        await ApprovalAsync();
     }
     
-    private async Task Disapprove()
+    private async Task DisapproveAsync()
     {
         approval = false;
-        await Approval();
+        await ApprovalAsync();
     }
 }

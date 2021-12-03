@@ -71,7 +71,7 @@ else
         monthlyFee = await PaymentService.GetSubscription(username);
     }
 
-    private async Task Subscribe()
+    private void Subscribe()
     {
         NavigationManager.NavigateTo("Payment");
     }

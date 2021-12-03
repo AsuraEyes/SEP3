@@ -76,7 +76,7 @@
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
-        if (eventId>0)
+        if (eventId > 0)
         {
             message = await PaymentService.OneTimePaymentAsync(userCardInfo);
         }
@@ -100,8 +100,5 @@
         {
             errorMessage = message;
         }
-        
-
     }
-
 }

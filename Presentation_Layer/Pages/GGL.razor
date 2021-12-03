@@ -8,7 +8,7 @@
 
 <h3>GGL</h3>
 <p class="actions">
-        <button @onclick="@AddGameAsync" class="btn btn-outline-secondary" type="submit">
+        <button @onclick="@AddGame" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
@@ -17,7 +17,7 @@
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => EditGameAsync(item.Id))"><a href="#">@item.Name</a></li>
+                                 <li @onclick="@(() => EditGame(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
@@ -31,12 +31,12 @@
                 goldenGameList = await GameService.GetGGLAsync();
         }
 
-        private void AddGameAsync()
+        private void AddGame()
         {
                 NavigationManager.NavigateTo("CreateGame");
         }
         
-        private void EditGameAsync(int id)
+        private void EditGame(int id)
         {
                 NavigationManager.NavigateTo($"EditGame/{id}");
         }
