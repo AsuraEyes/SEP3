@@ -11,8 +11,14 @@
 
 
 <h3>All Users</h3>
+Requested promotion:
+    <Select class="selectpicker" @oninput="@(FilterByPromotion)">
+        <option value="false">-- All --</option>
+        <option value="true">Requested promotion</option>
+    </Select>
+
 <ul>
-@foreach (var user in users)
+@foreach (var user in filteredUsers)
 {
     <li>
         <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
@@ -24,18 +30,48 @@
 
 
 @code {
-    private IList<User> users  = new List<User>();
+    private IList<User> allUsers  = new List<User>();
+    private IList<User> filteredUsers = new List<User>();
 
     protected override async Task OnInitializedAsync()
     {
-        users = await userService.GetUsersAsync();
+        allUsers = await userService.GetUsersAsync();
+        filteredUsers = allUsers;
+        // foreach (var user in allUsers)
+        // {
+        //     filteredUsers.Add(user);
+        // }
     }
-    
-
     
     private async Task MoreUserInfo(string username)
     {
         NavigationManager.NavigateTo($"UserInfo/{username}");
+    }
+    
+    private async Task FilterByPromotion(ChangeEventArgs args)
+    {
+        Console.WriteLine("1: "+allUsers.Count);
+        Console.WriteLine("2: "+allUsers.Count);
+        if (args.Value.ToString().Equals("true"))
+        {
+            Console.WriteLine("selected promotion");
+            Console.WriteLine("3: "+allUsers.Count);
+            filteredUsers = allUsers.Where(user => user.RequestedPromotion == true).ToList();
+            /*foreach (var user in allUsers)
+            {
+                Console.WriteLine("here");
+                if (user.RequestedPromotion)
+                {
+                    Console.WriteLine("adding user to filtered users "+user.Username);
+                    filteredUsers.Add(user);
+                }
+            }*/
+        }
+        else
+        {
+            Console.WriteLine("selected all");
+            filteredUsers = allUsers;
+        }
     }
     
 }
