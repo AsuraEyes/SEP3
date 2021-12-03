@@ -18,36 +18,30 @@
 <h3>Create Event</h3>
 <EditForm Model="@newEvent" OnValidSubmit="@CreateEventAsync">
     <DataAnnotationsValidator/>
+    <ValidationSummary/>
     <div class="form-group">
         Name:<br/>
         <InputText @bind-Value="newEvent.Name"/>
-        <ValidationMessage For="@(() => newEvent.Name)"/>
     </div>
     <div class="form-group">
         Date: <br/>
-        <InputDate @bind-Value="newEvent.Date">
-            <ValidationMessage For="@(() => newEvent.Date)"/>
-        </InputDate>
+        <InputDate @bind-Value="newEvent.Date"/>
     </div>
     <div class="form-group">
         Start Time: <br/>
         <input type="time" required @bind-value="@newEvent.Start"/>
-        <ValidationMessage For="@(() => newEvent.Start)"/>
     </div>
     <div class="form-group" aria-disabled="true">
         End Time:<br/>
         <input type="time" required @bind-value="@newEvent.End">
-        <ValidationMessage For="@(() => newEvent.End)"/>
     </div>
     <div class="form-group">
         Address Street Name:<br/>
         <InputText @bind-Value="newEvent.AddressStreetName"/>
-        <ValidationMessage For="@(() => newEvent.AddressStreetName)"/>
     </div>
     <div class="form-group">
         Address Street Number:<br/>
         <InputText @bind-Value="newEvent.AddressStreetNumber"/>
-        <ValidationMessage For="@(() => newEvent.AddressStreetNumber)"/>
     </div>
     <div class="form-group">
         Address Apartment Number:<br/>
@@ -56,7 +50,6 @@
     <div class="form-group">
         Max number of participants:<br/>
         <InputNumber @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
-        <ValidationMessage For="@(() => newEvent.MaxNumberOfParticipants)"/>
     </div>
     <div class="form-group">
         Event category:<br/>
@@ -67,7 +60,6 @@
                 <option value=@category.Id>@category.Name</option>
             }
         </InputSelect>
-        <ValidationMessage For="@(() => newEvent.EventCategory)"/>
     </div>
 
     <p class="actions">

@@ -50,33 +50,14 @@
     </NotAuthorized>
     <Authorized>
         <span class="input-group-text text-white bg-primary">@username</span>
-        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+        <button class="btn btn-outline-primary" @onclick="PerformLogout">
             Logout <i class="oi oi-account-logout"></i>
         </button>
-        @if (showModal)
-        {
-            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Confirmation</h5>
-                        </div>
-                        <div class="modal-body">
-                            <p>Are you sure you want to log out?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">Cancel</button>
-                            <button type="button" class="btn btn-outline-danger" @onclick="PerformLogout">Logout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
     </Authorized>
 </AuthorizeView>
 
 @code {
-    private bool showModal = false;
+    private bool showModal;
     private string username;
     private string password;
     private string errorMessage;
@@ -112,6 +93,8 @@
 
     private async Task PerformLogout()
     {
+        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
+            return;
         errorMessage = "";
         username = "";
         password = "";
@@ -119,7 +102,6 @@
         {
             await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
-            await CloseAsync();
         }
         catch (Exception)
         {

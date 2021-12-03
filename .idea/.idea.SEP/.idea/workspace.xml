@@ -20,9 +20,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="accept decline organizer promotion">
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixed the issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,24 +38,24 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BusinessLayer/Data/IUserWebService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/c6/a59c0411/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/49/FromQueryAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/4b/eaa1e453/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c444817a6e3a4d8b94445f55790d489b2e800/70/IBindingSourceMetadata.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/46/FromBodyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/AllUsers.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/7/CompareAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BusinessLayer/Data/IUserWebService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BusinessLayer/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/Presentation_Layer/Data/IUserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BusinessLayer/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BusinessLayer/Middlepoint/IUserMiddlepoint.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/Presentation_Layer/Data/UserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/Presentation_Layer/Data/IUserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/Presentation_Layer/Data/UserService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -349,56 +347,8 @@
       <workItem from="1637678017045" duration="11019000" />
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
-      <workItem from="1638435229861" duration="7740000" />
-    </task>
-    <task id="LOCAL-00047" summary="My parts and apparently almost everyone's parts">
-      <created>1637844778688</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1637844778688</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Changed button names">
-      <created>1637844837411</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1637844837411</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fixed input field size">
-      <created>1637844931252</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1637844931253</updated>
-    </task>
-    <task id="LOCAL-00050" summary="changed input field size">
-      <created>1637845038114</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1637845038121</updated>
-    </task>
-    <task id="LOCAL-00051" summary="changed list members into actual lists">
-      <created>1637846701861</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1637846701862</updated>
-    </task>
-    <task id="LOCAL-00052" summary="buttons added">
-      <created>1637846793409</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1637846793409</updated>
-    </task>
-    <task id="LOCAL-00053" summary="fixed link">
-      <created>1637846901970</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1637846901971</updated>
+      <workItem from="1638435229861" duration="14022000" />
+      <workItem from="1638517980892" duration="1012000" />
     </task>
     <task id="LOCAL-00054" summary="list fixed">
       <created>1637847062602</created>
@@ -694,7 +644,56 @@
       <option name="project" value="LOCAL" />
       <updated>1638445485993</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fixed create game">
+      <created>1638447071153</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1638447071154</updated>
+    </task>
+    <task id="LOCAL-00097" summary="cleanup according to rider">
+      <created>1638447195030</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1638447195030</updated>
+    </task>
+    <task id="LOCAL-00098" summary="rider cleanup">
+      <created>1638447223213</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1638447223213</updated>
+    </task>
+    <task id="LOCAL-00099" summary="added await expression">
+      <created>1638447259596</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1638447259597</updated>
+    </task>
+    <task id="LOCAL-00100" summary="put input validation summary when creating and editing files">
+      <created>1638517785130</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1638517785132</updated>
+    </task>
+    <task id="LOCAL-00101" summary="View all users fully implemented">
+      <created>1638518738087</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1638518738087</updated>
+    </task>
+    <task id="LOCAL-00102" summary="fixed the issue">
+      <created>1638519002540</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1638519002540</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,13 +717,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="alert has gotten bootstrap" />
-    <MESSAGE value="made it work" />
-    <MESSAGE value="creating account working" />
-    <MESSAGE value="login fixing" />
-    <MESSAGE value="login fixes" />
-    <MESSAGE value="fixed bugs" />
-    <MESSAGE value="bug fixes" />
     <MESSAGE value="error message fix on create game and changed create game for organizers and admins" />
     <MESSAGE value="create event error messages fixed" />
     <MESSAGE value="added links to game description" />
@@ -743,6 +735,13 @@
     <MESSAGE value="create account  fully implemented" />
     <MESSAGE value="change in account" />
     <MESSAGE value="create game" />
-    <option name="LAST_COMMIT_MESSAGE" value="create game" />
+    <MESSAGE value="fixed create game" />
+    <MESSAGE value="cleanup according to rider" />
+    <MESSAGE value="rider cleanup" />
+    <MESSAGE value="added await expression" />
+    <MESSAGE value="put input validation summary when creating and editing files" />
+    <MESSAGE value="View all users fully implemented" />
+    <MESSAGE value="fixed the issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the issue" />
   </component>
 </project>

@@ -158,6 +158,16 @@ namespace SEP3_Blazor.Data
         {
             await Client.DeleteAsync($"{uri}/User?username={username}");
         }
-    
+
+        public async Task<IList<User>> GetUsersAsync()
+        {
+            var usersAsJson = Client.GetStringAsync(uri + "/Users");
+            var User = await usersAsJson;
+            var Users = JsonSerializer.Deserialize<IList<User>>(User, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return Users;
+        }
     }
 }
