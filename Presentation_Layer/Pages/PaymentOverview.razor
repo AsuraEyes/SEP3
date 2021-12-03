@@ -9,7 +9,7 @@
 @inject NavigationManager NavigationManager
 
 
-<h3>Payment</h3>
+<h3>Payment Overview</h3>
 
 <h2>Subscription: </h2>
 @if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
@@ -55,7 +55,7 @@ else
 
 
 @code {
-    private MonthlyFee monthlyFee = new MonthlyFee();
+    private MonthlyFee monthlyFee = new();
     private IList<MonthlyFee> monthlyFeeList = new List<MonthlyFee>();
     private IList<OneTimeFee> oneTimeFees = new List<OneTimeFee>();
     private string username;

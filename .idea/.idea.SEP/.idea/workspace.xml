@@ -20,9 +20,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;Login.razor, ManageAccount.razor, MyEvents.razor">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Index.razor cleared">
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/GameList.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,14 +348,7 @@
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="7740000" />
-      <workItem from="1638519708146" duration="6538000" />
-    </task>
-    <task id="LOCAL-00051" summary="changed list members into actual lists">
-      <created>1637846701861</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1637846701862</updated>
+      <workItem from="1638519708146" duration="6990000" />
     </task>
     <task id="LOCAL-00052" summary="buttons added">
       <created>1637846793409</created>
@@ -687,7 +686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638528483894</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Index.razor cleared">
+      <created>1638531211995</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1638531211995</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,7 +717,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="login fixes" />
     <MESSAGE value="fixed bugs" />
     <MESSAGE value="bug fixes" />
     <MESSAGE value="error message fix on create game and changed create game for organizers and admins" />
@@ -736,6 +741,7 @@
     <MESSAGE value="filter all users by requested promotion" />
     <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor" />
     <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;Login.razor, ManageAccount.razor, MyEvents.razor" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;Login.razor, ManageAccount.razor, MyEvents.razor" />
+    <MESSAGE value="Index.razor cleared" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index.razor cleared" />
   </component>
 </project>

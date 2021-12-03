@@ -4,7 +4,7 @@
 @using Presentation_Layer.Data
 
 @inject NavigationManager NavigationManager
-@inject IGameService gameService
+@inject IGameService GameService
 @inject IJSRuntime JSRuntime
 
 <h3>Game Approval</h3>
@@ -60,27 +60,26 @@
     [Parameter]
     public int Id { get; set; }
 
-    bool approval;
-
+    private bool approval;
     private Game game = new();
     
     protected override async Task OnInitializedAsync()
     {
-        game = await gameService.GetGameAsync(Id);
+        game = await GameService.GetGameAsync(Id);
     }
 
     private async Task Approval()
     {
         if (approval)
         {
-            await gameService.UpdateGameApprovalAsync(game);
+            await GameService.UpdateGameApprovalAsync(game);
             NavigationManager.NavigateTo("RequestsForGGL");
         }
         else
         {
             if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to disapprove this game?"))
                 return;
-            await gameService.RemoveGameAsync(game);
+            await GameService.RemoveGameAsync(game);
             NavigationManager.NavigateTo("RequestsForGGL");
         }
     }

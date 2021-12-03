@@ -3,7 +3,7 @@
 @using Presentation_Layer.Data
 
 @inject NavigationManager NavigationManager
-@inject IGameService gameService
+@inject IGameService GameService
 
 <h3>@game.Name</h3>
 <p>Complexity: @game.Complexity</p>
@@ -17,7 +17,7 @@
 {
     <p>Needed equipment: @game.NeededEquipment</p>
 }
-@if (game.MaxAge != null && game.MaxAge != 0)
+@if (game.MaxAge != 0)
 {
     <p>Age range: @game.MinAge - @game.MaxAge</p>
 }
@@ -38,6 +38,6 @@ else
     
     protected override async Task OnInitializedAsync()
     {
-        game = await gameService.GetGameAsync(Id);
+        game = await GameService.GetGameAsync(Id);
     }
 }
