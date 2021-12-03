@@ -185,5 +185,26 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);  
             }
         }
+        
+        [HttpPatch]
+        [Route("/User/EditAccount")]
+        public async Task<ActionResult> EditAccountAsync([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await UserWebService.UpdateUser(user);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

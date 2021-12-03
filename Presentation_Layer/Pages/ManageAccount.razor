@@ -1,7 +1,9 @@
 @page "/ManageAccount"
-@using global::Data
+
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
+@using global::Data
+@using Presentation_Layer.Models
 
 @inject IUserService UserService;
 @inject AuthenticationStateProvider StateProvider
@@ -9,12 +11,35 @@
 @inject NavigationManager NavigationManager
 
 <h3>Manage Account</h3>
+@if (user == null)
+{
+    //something
+}
+else
+{
+    <h3>@username</h3>
+<h3>@user.Username</h3>
+    @if (user.FirstName != null && user.LastName != null)
+    {
+        <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
+    }
+    <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
+    @if (user.PhoneNumber != null)
+    {
+        <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
+    }
+    @if (user.EmailAddress != null)
+    {
+        <p>Email: @user.EmailAddress</p>
+    }
+    <p class="actions">
+        <button class="btn btn-outline-info" type="submit" @onclick="@Edit">Save</button>
+    </p>
 
-<p class="actions">
-    <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
-</p>
-
-
+    <p class="actions">
+        <button class="btn btn-outline-danger" type="submit" @onclick="@Delete">Delete account</button>
+    </p>
+}
 
 <AuthorizeView Policy="Player">
     <p class="actions">
@@ -30,10 +55,13 @@
     private bool request;
     private string username;
     private string confirmationMessage;
+    private User user;
 
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) StateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        Console.WriteLine(username);
+        user = await UserService.GetUserByUsernameAsync(username);
     }
     
     private async Task RequestForOrganizer()
@@ -54,6 +82,11 @@
             NavigationManager.NavigateTo("/");
         }
         catch(Exception){}
+    }
+
+    private async Task Edit()
+    {
+        NavigationManager.NavigateTo($"/EditAccount/{username}");
     }
 
 }

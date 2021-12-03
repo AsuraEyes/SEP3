@@ -18,10 +18,10 @@
     </p>
     
     <h3>Organizer Events</h3>
-    @if (oEventList != null)
+    @if (organizersEventList != null)
     {
         <div class="card-deck">
-            @foreach (var item in oEventList)
+            @foreach (var item in organizersEventList)
             {
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
@@ -62,10 +62,10 @@
     }
     
     <h3>Co-organizer Events</h3>
-    @if (cEventList != null)
+    @if (coOrganizersEventList != null)
     {
         <div class="card-deck">
-            @foreach (var item in cEventList)
+            @foreach (var item in coOrganizersEventList)
             {
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
@@ -107,10 +107,10 @@
 </AuthorizeView>
 
 <h3>Participant Events</h3>
-    @if (pEventList != null)
+    @if (participantsEventList != null)
         {
             <div class="card-deck">
-                @foreach (var item in pEventList)
+                @foreach (var item in participantsEventList)
                 {
                     <div class="row row-cols-1 row-cols-md-3">
                         <div class="col mb-4">
@@ -152,22 +152,22 @@
 
 @code {
     private EventList organizersEvents = new();
-    private Event[] oEventList = {};
+    private Event[] organizersEventList = {};
     private EventList coOrganizersEvents = new();
-    private Event[] cEventList = {};
+    private Event[] coOrganizersEventList = {};
     private EventList participantsEvent = new();
-    private Event[] pEventList = {};
+    private Event[] participantsEventList = {};
     private string username;
 
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         organizersEvents = await EventOrganizerService.GetOrganizerEventsAsync(username);
-        oEventList = organizersEvents.eventList;
+        organizersEventList = organizersEvents.eventList;
         coOrganizersEvents = await OrganizerService.GetCoOrganizerEventsAsync(username);
-        cEventList = coOrganizersEvents.eventList;
+        coOrganizersEventList = coOrganizersEvents.eventList;
         participantsEvent = await ParticipantService.GetParticipantEvents(username);
-        pEventList = participantsEvent.eventList;
+        participantsEventList = participantsEvent.eventList;
     }
 
     private async Task CreateEventAsync()

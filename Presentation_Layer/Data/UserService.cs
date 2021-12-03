@@ -169,5 +169,14 @@ namespace SEP3_Blazor.Data
             });
             return Users;
         }
+
+        public async Task EditAccountAsync(User user)
+        {
+            var userAsJson = JsonSerializer.Serialize(user);
+            HttpContent content = new StringContent(userAsJson,
+                Encoding.UTF8,
+                "application/json");
+            var message = await Client.PatchAsync(uri+"/User/EditAccount", content);
+        }
     }
 }
