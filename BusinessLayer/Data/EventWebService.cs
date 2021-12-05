@@ -7,15 +7,15 @@ namespace BusinessLayer.Data
 {
     public class EventWebService : IEventWebService
     {
-        private BookAndPlayPort Port;
-        private SOAPEventResponse1 Response;
+        private readonly BookAndPlayPort port;
+        private SOAPEventResponse1 response;
 
         public EventWebService()
         {
-            Port = new BookAndPlayPortClient();
+            port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPEventResponse1> getEventResponse(int id, Operation name, Event ev, Filter filter)
+        private async Task<SOAPEventResponse1> getEventResponseAsync(int id, Operation name, Event ev, Filter filter)
         {
             SOAPEventRequest soapEventRequest = new SOAPEventRequest();
             soapEventRequest.id = id;
@@ -23,36 +23,36 @@ namespace BusinessLayer.Data
             soapEventRequest.Event = ev;
             soapEventRequest.filter = filter;
             SOAPEventRequest1 soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
-            SOAPEventResponse1 soapEventResponse1 = Port.SOAPEventAsync(soapEventRequest1).Result;
+            SOAPEventResponse1 soapEventResponse1 = port.SOAPEventAsync(soapEventRequest1).Result;
             return soapEventResponse1;
         }
 
-        public async Task CreateEventAsync(Event Event)
+        public async Task CreateEventAsync(Event newEvent)
         {
-            Response = await getEventResponse(0, Operation.CREATE, Event, null);
+            response = await getEventResponseAsync(0, Operation.CREATE, newEvent, null);
         }
 
         public async Task<EventList> GetFilteredEventsAsync(Filter filter)
         {
-            Response = await getEventResponse(0, Operation.GETALL, null, filter);
-            return Response.SOAPEventResponse.eventList;
+            response = await getEventResponseAsync(0, Operation.GETALL, null, filter);
+            return response.SOAPEventResponse.eventList;
         }
 
         public async Task<Event> GetEventAsync(int id)
         {
-            Response = await getEventResponse(id, Operation.GET, null, null);
-            return Response.SOAPEventResponse.Event;
+            response = await getEventResponseAsync(id, Operation.GET, null, null);
+            return response.SOAPEventResponse.Event;
         }
         
         
         public async Task CancelEventAsync(int id)
         {
-            Response = await getEventResponse(id, Operation.REMOVE, null, null);
+            response = await getEventResponseAsync(id, Operation.REMOVE, null, null);
         }
 
-        public async Task EditEventAsync(Event Event)
+        public async Task EditEventAsync(Event eventToEdit)
         {
-            Response = await getEventResponse(0, Operation.UPDATE, Event, null);
+            response = await getEventResponseAsync(0, Operation.UPDATE, eventToEdit, null);
         }
     }
 }

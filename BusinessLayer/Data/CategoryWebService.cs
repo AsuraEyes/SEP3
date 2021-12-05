@@ -7,7 +7,7 @@ namespace BusinessLayer.Data
 {
     public class CategoryWebService : ICategoryWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPCategoryResponse1 response;
 
         public CategoryWebService()
@@ -15,7 +15,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPCategoryResponse1> getCategoryResponse(Operation name)
+        private async Task<SOAPCategoryResponse1> getCategoryResponseAsync(Operation name)
         {
             SOAPCategoryRequest soapCategoryRequest = new SOAPCategoryRequest();
             soapCategoryRequest.Operation = name;
@@ -25,9 +25,9 @@ namespace BusinessLayer.Data
             return soapResponse1;
         }
 
-        public async Task<IList<Category>> getCategoriesAsync()
+        public async Task<IList<Category>> GetCategoriesAsync()
         {
-            response = await getCategoryResponse(Operation.GETALL);
+            response = await getCategoryResponseAsync(Operation.GETALL);
             return response.SOAPCategoryResponse.CategoryList;
         }
 

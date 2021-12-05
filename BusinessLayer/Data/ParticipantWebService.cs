@@ -6,7 +6,7 @@ namespace BusinessLayer.Data
 {
     public class ParticipantWebService: IParticipantWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPParticipantResponse1 response;
 
         public ParticipantWebService()
@@ -14,7 +14,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPParticipantResponse1> GetParticipantResponse(Operation name, int eventId, string username)
+        private async Task<SOAPParticipantResponse1> getParticipantResponse(Operation name, int eventId, string username)
         {
             SOAPParticipantRequest soapParticipantRequest = new SOAPParticipantRequest();
             soapParticipantRequest.Operation = name;
@@ -28,23 +28,23 @@ namespace BusinessLayer.Data
 
         public async Task<IList<string>> GetParticipantsAsync(int eventId)
         {
-            response = await GetParticipantResponse(Operation.GETALL, eventId, "");
+            response = await getParticipantResponse(Operation.GETALL, eventId, "");
             return response.SOAPParticipantResponse.participantList;
         }
         
         public async Task JoinEventAsync(int id, string username)
         {
-            response = await GetParticipantResponse(Operation.CREATE, id, username);
+            response = await getParticipantResponse(Operation.CREATE, id, username);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
         {
-            response = await GetParticipantResponse(Operation.UPDATE, id, username);
+            response = await getParticipantResponse(Operation.UPDATE, id, username);
         }
 
         public async Task<EventList> GetParticipantEventsAsync(string username)
         {
-            response = await GetParticipantResponse(Operation.GET, 0, username);
+            response = await getParticipantResponse(Operation.GET, 0, username);
             return response.SOAPParticipantResponse.eventList;
         } 
     }

@@ -23,7 +23,7 @@ namespace REST.Controllers
         {
             try
             {
-                IList<Category> categories = await categoryWebService.getCategoriesAsync();
+                IList<Category> categories = await categoryWebService.GetCategoriesAsync();
                 return Ok(categories);
             }
             catch (Exception e)

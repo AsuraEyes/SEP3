@@ -86,7 +86,7 @@ namespace REST.Controllers
         {
             try
             {
-                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeList(username);
+                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeListAsync(username);
                 return Ok(oneTimeFees);
             }
             catch (Exception e)
@@ -102,7 +102,7 @@ namespace REST.Controllers
         {
             try
             {
-                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeList(username);
+                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeListAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -118,7 +118,7 @@ namespace REST.Controllers
         {
             try
             {
-                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFee(username);
+                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFeeAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -133,7 +133,7 @@ namespace REST.Controllers
         {
             try
             {
-                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFee(username, eventId);
+                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFeeAsync(username, eventId);
                 return Ok(oneTimeFee);
             }
             catch (Exception e)

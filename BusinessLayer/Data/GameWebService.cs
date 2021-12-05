@@ -11,7 +11,7 @@ namespace BusinessLayer.Data
 {
     public class GameWebService : IGameWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPGameResponse1 response;
 
         public GameWebService()
@@ -19,7 +19,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPGameResponse1> getGameResponse(int id, Operation name, Game game, bool approved)
+        private async Task<SOAPGameResponse1> getGameResponseAsync(int id, Operation name, Game game, bool approved)
         {
             SOAPGameRequest soapGameRequest = new SOAPGameRequest();
             soapGameRequest.id = id;
@@ -33,7 +33,7 @@ namespace BusinessLayer.Data
         }
         public async Task<Game> GetGameAsync(int id)
         {
-            response = await getGameResponse(id, Operation.GET, null, false);
+            response = await getGameResponseAsync(id, Operation.GET, null, false);
             Game game = response.SOAPGameResponse.game;
 
             return  game;
@@ -41,42 +41,23 @@ namespace BusinessLayer.Data
 
         public async Task  SuggestGameAsync(Game game)
         {
-            response = await getGameResponse(0, Operation.CREATE, game, false);
-            //return response.getMessageResponse.Notification;
+            response = await getGameResponseAsync(0, Operation.CREATE, game, false);
         }
 
         public async Task<IList<Game>> GetGamesAsync(bool approved)
         {
-            response = await getGameResponse(0, Operation.GETALL, null, approved);
+            response = await getGameResponseAsync(0, Operation.GETALL, null, approved);
             return response.SOAPGameResponse.gameList;
         }
-        
-        // public async Task<IList<Game>> GetGGLAsync()
-        // {
-        //     response = await getGameResponse(0, Operation.GETALL, null, true);
-        //     return response.SOAPGameResponse.gameList;
-        // }
-        //
-        // public async Task<IList<Game>> GetSuggestedGamesAsync()
-        // {
-        //     response = await getGameResponse(0, Operation.GETALL, null, false);
-        //     return response.SOAPGameResponse.gameList;
-        // }
-
-        // public async Task<IList<Game>> GetUserGamesAsync(string user)
-        // {
-        //     response = await getGameResponse(0, Operation.GETALL, null);
-        //     return response.SOAPGameResponse.gameList;
-        // }
 
         public async Task RemoveGameAsync(int id)
         {
-            response = await getGameResponse(id, Operation.REMOVE, null, false);
+            response = await getGameResponseAsync(id, Operation.REMOVE, null, false);
         }
 
         public async Task EditGameAsync(Game game)
         {
-            response = await getGameResponse(0, Operation.UPDATE, game, false);
+            response = await getGameResponseAsync(0, Operation.UPDATE, game, false);
         }
     }
 }

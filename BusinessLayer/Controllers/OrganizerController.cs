@@ -47,7 +47,7 @@ namespace REST.Controllers
 
             try
             {
-                await organizerWebService.CoOrganizeEvent(id, username);
+                await organizerWebService.CoOrganizeEventAsync(id, username);
                 Created($"/{id}", "username");
             }
             catch (Exception e)

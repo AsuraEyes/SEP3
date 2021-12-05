@@ -112,7 +112,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("/User/AcceptPromotion")]
-        public async Task<ActionResult> AcceptPromotion([FromBody] User user)
+        public async Task<ActionResult> AcceptPromotionAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
@@ -133,7 +133,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("/User/DeclinePromotion")]
-        public async Task<ActionResult> DeclinePromotion([FromBody] User user)
+        public async Task<ActionResult> DeclinePromotionAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
