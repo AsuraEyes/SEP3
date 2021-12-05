@@ -14,94 +14,39 @@ namespace SEP3_Blazor.Data
 {
     public class UserService : IUserService
     {
-        private IList<User> users;
-        
-
-        private readonly HttpClient Client;
-        private readonly string uri = "https://localhost:5003";
+        private readonly HttpClient client;
+        private const string uri = "https://localhost:5003";
 
         public UserService()
         {
-            Client = new HttpClient();
-        }
-
-        public async Task<string> helloWorld()
-        {
-            try
-            {
-                var stringAsync = await Client.GetStringAsync(uri);
-            //    var answer = JsonSerializer.Deserialize<string>(stringAsync, new JsonSerializerOptions
-            //    {
-            //        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            //    });
-                return stringAsync;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            client = new HttpClient();
         }
         
-        public async Task<User> ValidateUser(string userName, string password)
+        public async Task<User> ValidateUserAsync(string userName, string password)
         {
             try
             {
-                string UserAsJson = JsonSerializer.Serialize(new User {Username = userName, Password = password});
-                HttpContent content = new StringContent(UserAsJson,
+                string userAsJson = JsonSerializer.Serialize(new User {Username = userName, Password = password});
+                HttpContent content = new StringContent(userAsJson,
                     Encoding.UTF8,
                     "application/json");
-                var UserValidationResponseMessage = await Client.PostAsync(uri + "/User", content);
-                if (UserValidationResponseMessage.IsSuccessStatusCode)
+                var userValidationResponseMessage = await client.PostAsync(uri + "/User", content);
+                if (userValidationResponseMessage.IsSuccessStatusCode)
                 {
-                    string ResponseContent = UserValidationResponseMessage.Content.ReadAsStringAsync().Result;
-                    User validatedUser = JsonConvert.DeserializeObject<User>(ResponseContent);
+                    string responseContent = userValidationResponseMessage.Content.ReadAsStringAsync().Result;
+                    User validatedUser = JsonConvert.DeserializeObject<User>(responseContent);
                     if (validatedUser == null)
                     {
                         throw new Exception("Username or password incorrect.");
                     }
                     return validatedUser;
                 }
-
-                // if (UserValidationResponseMessage.IsSuccessStatusCode)
-                // {
-                //     Console.WriteLine("we go here!");
-                //     var stringAsync = Client.GetStringAsync(uri + "/User/Validate");
-                //     var UserSerialized = await stringAsync;
-                //     var User = JsonSerializer.Deserialize<User>(UserSerialized, new JsonSerializerOptions
-                //     {
-                //         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                //     });
-                //     Console.WriteLine("user service: "+User.Role);
-                //     if (User == null)
-                //     {
-                //         throw new Exception("Username or password incorrect.");
-                //     }
-                //
-                //     Console.WriteLine(User.Role);
-                //     
-                //     return User;
-                // }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
             }
-            
-            /*
-            User first = users.FirstOrDefault(user => user.Username.Equals(userName));
-            if (first == null)
-            {
-                throw new Exception("User not found");
-            }
-
-            if (!first.Password.Equals(password))
-            {
-                throw new Exception("Incorrect password");
-            }
-
-            return first;*/
             return null;
         }
         
@@ -111,13 +56,13 @@ namespace SEP3_Blazor.Data
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-           var message = await Client.PostAsync(uri+"/User/CreateAccount", content);
+           var message = await client.PostAsync(uri+"/User/CreateAccount", content);
            return message.IsSuccessStatusCode ? "success" : "Username has already been taken.";
         }
         
         public async Task<User> GetUserByUsernameAsync(string username)
         {
-            var stringAsync = Client.GetStringAsync(uri + $"/User/{username}");
+            var stringAsync = client.GetStringAsync(uri + $"/User/{username}");
             var userAsync = await stringAsync;
             var user = JsonSerializer.Deserialize<User>(userAsync, new JsonSerializerOptions
             {
@@ -126,48 +71,48 @@ namespace SEP3_Blazor.Data
             return user;
         }
 
-        public async Task RequestPromotionToOrganizer(string username)
+        public async Task RequestPromotionToOrganizerAsync(string username)
         {
             var usernameAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(usernameAsJson,
                 Encoding.UTF8,
                 "application/json");
             
-            var message = await Client.PostAsync(uri+"/User/RequestPromotion", content);
+            await client.PostAsync(uri+"/User/RequestPromotion", content);
         }
 
-        public async Task AcceptPromotion(User user)
+        public async Task AcceptPromotionAsync(User user)
         {
             var userAsJson = JsonSerializer.Serialize(user);
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var message = await Client.PostAsync(uri+"/User/AcceptPromotion", content);
+            await client.PostAsync(uri+"/User/AcceptPromotion", content);
         }
         
-        public async Task DeclinePromotion(User user)
+        public async Task DeclinePromotionAsync(User user)
         {
             var userAsJson = JsonSerializer.Serialize(user);
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var message = await Client.PostAsync(uri+"/User/DeclinePromotion", content);
+            await client.PostAsync(uri+"/User/DeclinePromotion", content);
         }
         
         public async Task DeleteAccountAsync(string username)
         {
-            await Client.DeleteAsync($"{uri}/User?username={username}");
+            await client.DeleteAsync($"{uri}/User?username={username}");
         }
 
         public async Task<IList<User>> GetUsersAsync()
         {
-            var usersAsJson = Client.GetStringAsync(uri + "/Users");
-            var User = await usersAsJson;
-            var Users = JsonSerializer.Deserialize<IList<User>>(User, new JsonSerializerOptions
+            var usersAsJson = client.GetStringAsync(uri + "/Users");
+            var user = await usersAsJson;
+            var users = JsonSerializer.Deserialize<IList<User>>(user, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Users;
+            return users;
         }
 
         public async Task EditAccountAsync(User user)
@@ -176,7 +121,7 @@ namespace SEP3_Blazor.Data
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            var message = await Client.PatchAsync(uri+"/User/EditAccount", content);
+            await client.PatchAsync(uri+"/User/EditAccount", content);
         }
     }
 }

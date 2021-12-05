@@ -7,8 +7,8 @@ namespace Presentation_Layer.Data
     public interface IParticipantService
     {
         Task<IList<string>> GetParticipantsAsync(int id);
-        Task JoinEvent(int id, string username);
-        Task WithdrawEvent(int id, string username);
-        Task<EventList> GetParticipantEvents(string username);
+        Task JoinEventAsync(int id, string username);
+        Task WithdrawEventAsync(int id, string username);
+        Task<EventList> GetParticipantEventsAsync(string username);
     }
 }

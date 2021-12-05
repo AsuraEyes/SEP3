@@ -63,9 +63,9 @@ else
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        monthlyFeeList = await paymentService.GetSubscriptionList(username);
-        oneTimeFees = await paymentService.GetOneTimePaymentList(username);
-        monthlyFee = await paymentService.GetSubscription(username);
+        monthlyFeeList = await paymentService.GetSubscriptionListAsync(username);
+        oneTimeFees = await paymentService.GetOneTimePaymentListAsync(username);
+        monthlyFee = await paymentService.GetSubscriptionAsync(username);
     }
 
     private void Subscribe()

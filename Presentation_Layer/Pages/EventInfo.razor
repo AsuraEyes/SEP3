@@ -168,9 +168,9 @@ else
 
     private async Task JoinEventAsync()
     {
-        if (await paymentService.CheckSubscription(username) || await paymentService.GetEventFee(username, Id)!= null)
+        if (await paymentService.CheckSubscriptionAsync(username) || await paymentService.GetEventFeeAsync(username, Id)!= null)
         {
-            await participantService.JoinEvent(Id, username);
+            await participantService.JoinEventAsync(Id, username);
             participants = await participantService.GetParticipantsAsync(Id);
         }
         else
@@ -187,7 +187,7 @@ else
         if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
                                                           "Friendly Reminder: You won't get your money back."))
             return;
-        await participantService.WithdrawEvent(Id, username);
+        await participantService.WithdrawEventAsync(Id, username);
         participants = await participantService.GetParticipantsAsync(Id);
         organizers = await organizerService.GetOrganizersAsync(Id);
         allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
@@ -195,7 +195,7 @@ else
 
     private async Task CoOrganizeEventAsync()
     {
-        await organizerService.CoOrganizeEvent(Id, username);
+        await organizerService.CoOrganizeEventAsync(Id, username);
         organizers = await organizerService.GetOrganizersAsync(Id);
     }
 
@@ -203,7 +203,7 @@ else
     {
         if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
         return;
-        await organizerService.WithdrawEvent(Id, username);
+        await organizerService.WithdrawEventAsync(Id, username);
         organizers = await organizerService.GetOrganizersAsync(Id);
         allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
     }
@@ -212,7 +212,7 @@ else
     {
         if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
             return;
-        await eventService.CancelEvent(selectedEvent);
+        await eventService.CancelEventAsync(selectedEvent);
         navigationManager.NavigateTo("MyEvents");
     }
     

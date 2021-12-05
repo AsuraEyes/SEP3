@@ -166,7 +166,7 @@
         organizersEventList = organizersEvents.ListOfEvents;
         coOrganizersEvents = await organizerService.GetCoOrganizerEventsAsync(username);
         coOrganizersEventList = coOrganizersEvents.ListOfEvents;
-        participantsEvents = await participantService.GetParticipantEvents(username);
+        participantsEvents = await participantService.GetParticipantEventsAsync(username);
         participantsEventList = participantsEvents.ListOfEvents;
     }
 

@@ -21,28 +21,27 @@ namespace Presentation_Layer.Data
         
         public async Task<Game> GetGameAsync(int id)
         {
-            var stringAsync = client.GetStringAsync(uri + $"/Game/{id}");
-            var Gamea = await stringAsync;
-            var Game = JsonSerializer.Deserialize<Game>(Gamea, new JsonSerializerOptions
+            var stringAsync = await client.GetStringAsync(uri + $"/Game/{id}");
+            var game = JsonSerializer.Deserialize<Game>(stringAsync, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Game;
+            return game;
         }
 
-        public async Task SuggestGameAsync(Game Game)
+        public async Task SuggestGameAsync(Game game)
         {
-            var GameAsJson = JsonSerializer.Serialize(Game);
-            HttpContent content = new StringContent(GameAsJson,
+            var gameAsJson = JsonSerializer.Serialize(game);
+            HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
              await client.PostAsync(uri+"/Game", content);
         }
         
-        public async Task CreateGameAsync(Game Game)
+        public async Task CreateGameAsync(Game game)
         {
-            var GameAsJson = JsonSerializer.Serialize(Game);
-            HttpContent content = new StringContent(GameAsJson,
+            var gameAsJson = JsonSerializer.Serialize(game);
+            HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
             await client.PostAsync(uri+ "/CreateGame", content);
@@ -51,46 +50,46 @@ namespace Presentation_Layer.Data
         public async Task<IList<Game>> GetGGLAsync()
         {
             var stringAsync = client.GetStringAsync(uri + "/GGL");
-            var Game = await stringAsync;
-            var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
+            var game = await stringAsync;
+            var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Games;
+            return games;
         }
         
         public async Task<IList<Game>> GetSuggestedGamesAsync()
         {
             var stringAsync = client.GetStringAsync(uri + "/SuggestedGames");
-            var Game = await stringAsync;
-            var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
+            var game = await stringAsync;
+            var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Games;
+            return games;
         }
 
         public async Task EditGameAsync(Game game)
         {
-            var GameAsJson = JsonSerializer.Serialize(game);
-            HttpContent content = new StringContent(GameAsJson,
+            var gameAsJson = JsonSerializer.Serialize(game);
+            HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
             await client.PatchAsync(uri+"/Game/EditGame", content);
         }
 
-        public async Task UpdateGameApprovalAsync(Game Game)
+        public async Task UpdateGameApprovalAsync(Game game)
         {
-            var GameAsJson = JsonSerializer.Serialize(Game);
-            HttpContent content = new StringContent(GameAsJson,
+            var gameAsJson = JsonSerializer.Serialize(game);
+            HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
             await client.PatchAsync($"{uri}/Game/", content);
         }
 
-        public async Task RemoveGameAsync(Game Game)
+        public async Task RemoveGameAsync(Game game)
         {
-            await client.DeleteAsync($"{uri}/Game/{Game.Id}");
+            await client.DeleteAsync($"{uri}/Game/{game.Id}");
         }
         
     }

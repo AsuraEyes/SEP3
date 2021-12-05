@@ -62,7 +62,7 @@ else
     
     private async Task RequestForOrganizerAsync()
     {
-        await userService.RequestPromotionToOrganizer(username);
+        await userService.RequestPromotionToOrganizerAsync(username);
         confirmationMessage = "Request for organizer sent successfully.";
     }
 

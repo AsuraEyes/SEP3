@@ -13,85 +13,64 @@ namespace Presentation_Layer.Data
     public class EventService : IEventService
     {
         private string uri = "https://localhost:5003";
-        private readonly HttpClient Client;
+        private readonly HttpClient client;
 
         public EventService()
         {
-            Client = new HttpClient();
+            client = new HttpClient();
         }
 
         public async Task<IList<Event>> GetEventsAsync()
         {
-            var stringAsync = Client.GetStringAsync(uri + "/Events");
-            var Event = await stringAsync;
-            var Events = JsonSerializer.Deserialize<List<Event>>(Event, new JsonSerializerOptions
+            var stringAsync = await client.GetStringAsync(uri + "/Events");
+            var events = JsonSerializer.Deserialize<List<Event>>(stringAsync, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Events;
+            return events;
         }
 
         public async Task<EventList> GetFilteredEventsAsync(FilterREST filterRest)
         {
             var filters =
                 $"?byDate={filterRest.ByDate}&byAvailability={filterRest.ByAvailability}&currentPage={filterRest.CurrentPage}&categoryId={filterRest.CategoryId}&resultsPerPage={filterRest.ResultsPerPage}";
-            var stringAsync = Client.GetStringAsync(uri + $"/FilteredEvents"+filters);
-            var EventList = await stringAsync;
-            EventList Events = JsonSerializer.Deserialize<EventList>(EventList, new JsonSerializerOptions
+            var stringAsync = client.GetStringAsync(uri + $"/FilteredEvents"+filters);
+            var eventList = await stringAsync;
+            EventList events = JsonSerializer.Deserialize<EventList>(eventList, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Events;
+            return events;
         }
         
         public async Task<Event> GetEventAsync(int id)
         {
-            var stringAsync = Client.GetStringAsync(uri + $"/Event/{id}");
+            var stringAsync = client.GetStringAsync(uri + $"/Event/{id}");
             var eventString = await stringAsync;
-            var Event = JsonSerializer.Deserialize<Event>(eventString, new JsonSerializerOptions
+            var deserializedEvent = JsonSerializer.Deserialize<Event>(eventString, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Event;
+            return deserializedEvent;
         }
 
-        // public int GetNumberOfPages(IList<Event> allEvents)
-        // {
-        //     return (int) Math.Ceiling(allEvents.Count / 9.00);
-        // }
-
-        // public IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage)
-        // {
-        //     //current page starts at 1
-        //     IList<Event> pagedList = new List<Event>();
-        //     for (int i = 0 + (currentPage - 1) * 9; i < currentPage * 9; i++)
-        //     {
-        //         if (i < allEvents.Count)
-        //         {
-        //             pagedList.Add(allEvents[i]);
-        //         }
-        //     }
-        //
-        //     return pagedList;
-        // }
-
-        public async Task CreateEvent(Event Event)
+        public async Task CreateEventAsync(Event newEvent)
         {
-            var EventAsJson = JsonSerializer.Serialize(Event);
-            HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync($"{uri}/Event", content);
+            var eventAsJson = JsonSerializer.Serialize(newEvent);
+            HttpContent content = new StringContent(eventAsJson, Encoding.UTF8, "application/json");
+            await client.PostAsync($"{uri}/Event", content);
         }
         
-        public async Task CancelEvent(Event Event)
+        public async Task CancelEventAsync(Event eventToBeCancelled)
         {
-            await Client.DeleteAsync($"{uri}/Events/{Event.Id}");
+            await client.DeleteAsync($"{uri}/Events/{eventToBeCancelled.Id}");
         }
 
-        public async Task EditEvent(Event Event)
+        public async Task EditEventAsync(Event eventToBeEdited)
         {
-            var EventAsJson = JsonSerializer.Serialize(Event);
-            HttpContent content = new StringContent(EventAsJson, Encoding.UTF8, "application/json");
-            await Client.PatchAsync($"{uri}/Event", content);
+            var eventAsJson = JsonSerializer.Serialize(eventToBeEdited);
+            HttpContent content = new StringContent(eventAsJson, Encoding.UTF8, "application/json");
+            await client.PatchAsync($"{uri}/Event", content);
         }
     }
 }

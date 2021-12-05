@@ -29,12 +29,7 @@ namespace Presentation_Layer.Authentication
             var identity = new ClaimsIdentity();
             if (cachedUser == null)
             {
-                /*string userAsJson = await isRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
-                if (!string.IsNullOrEmpty(userAsJson))
-                /*{
-                    User tmp = JsonSerializer.Deserialize<User>(userAsJson);
-                    ValidateLogin(tmp.Username, tmp.Password);
-                }*/
+                
             }
             else
             {
@@ -45,8 +40,6 @@ namespace Presentation_Layer.Authentication
             return await Task.FromResult(new AuthenticationState(cachedClaimsPrincipal));
         }
 
-        //public async Task ValidateLogin(string username, string password)
-
         public async Task ValidateLogin(string username, string password)
         {
             Console.WriteLine("Validating log in");
@@ -56,8 +49,7 @@ namespace Presentation_Layer.Authentication
             ClaimsIdentity identity = new ClaimsIdentity();
             try
             {
-                //User user = await userService.ValidateUserAsync(username, password);
-                User user = await userService.ValidateUser(username, password);
+                User user = await userService.ValidateUserAsync(username, password);
                 identity = SetupClaimsForUser(user);
                 string serialisedData = JsonSerializer.Serialize(user);
                 isRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serialisedData);

@@ -29,7 +29,7 @@ namespace Presentation_Layer.Data
             return message;
         }
 
-        public async Task<bool> CheckSubscription(string username)
+        public async Task<bool> CheckSubscriptionAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/Validate"+query);
@@ -41,12 +41,12 @@ namespace Presentation_Layer.Data
             return message;
         }
         
-        public async Task<MonthlyFee> GetSubscription(string username)
+        public async Task<MonthlyFee> GetSubscriptionAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/Subscription"+query);
             var theString = await stringAsync;
-            MonthlyFee message = new MonthlyFee();
+            var message = new MonthlyFee();
             try
             {
                 if (theString != "")
@@ -65,24 +65,20 @@ namespace Presentation_Layer.Data
             return message;
         }
         
-        public async Task<OneTimeFee> GetEventFee(string username, int eventId)
+        public async Task<OneTimeFee> GetEventFeeAsync(string username, int eventId)
         {
             var query = $"?username={username}&eventId={eventId}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTime"+query);
             var theString = await stringAsync;
-            if (theString != null && theString != "")
+            if (theString == "") return null;
+            var message = JsonSerializer.Deserialize<OneTimeFee>(theString, new JsonSerializerOptions
             {
-                var message = JsonSerializer.Deserialize<OneTimeFee>(theString, new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                });
-                return message;
-            }
-
-            return null;
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return message;
         }
         
-        public async Task<IList<MonthlyFee>> GetSubscriptionList(string username)
+        public async Task<IList<MonthlyFee>> GetSubscriptionListAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/MonthlyHistory"+query);
@@ -99,11 +95,10 @@ namespace Presentation_Layer.Data
             {
                 Console.WriteLine(e);
             }
-            
             return message;
         }
         
-        public async Task<IList<OneTimeFee>> GetOneTimePaymentList(string username)
+        public async Task<IList<OneTimeFee>> GetOneTimePaymentListAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTimeHistory"+query);

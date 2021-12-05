@@ -20,19 +20,19 @@ namespace Presentation_Layer.Data
         public async Task<IList<Game>> GetAllEventGameListAsync(int id)
         {
             var stringAsync = client.GetStringAsync(uri + $"/EventGameList/{id}");
-            var Game = await stringAsync;
-            var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
+            var game = await stringAsync;
+            var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Games;
+            return games;
         }
 
         public async Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList)
         {
-            var UpdateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
+            var updateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
                 {Username = username, GameId = gameId, EventId = eventId, InList = inList});
-            HttpContent content = new StringContent(UpdateAsJson,
+            HttpContent content = new StringContent(updateAsJson,
                 Encoding.UTF8,
                 "application/json");
             await client.PostAsync(uri+"/UpdateEventGame", content);

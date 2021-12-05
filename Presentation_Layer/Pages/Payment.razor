@@ -72,7 +72,7 @@
         userCardInfo.Username = username;
         userCardInfo.EventId = EventId;
         var message = "";
-        if (!await paymentService.CheckSubscription(username))
+        if (!await paymentService.CheckSubscriptionAsync(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
