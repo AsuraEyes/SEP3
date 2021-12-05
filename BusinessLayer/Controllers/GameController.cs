@@ -121,7 +121,6 @@ namespace REST.Controllers
 
             try
             {
-                Console.WriteLine("Game name: " + Game.name);
                 await gameMiddlepoint.AddGameAsync(Game);
                 return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
             }
@@ -158,7 +157,6 @@ namespace REST.Controllers
 
             try
             {
-                Console.WriteLine(Game.name);
                 await gameWebService.EditGameAsync(Game);
                 return Ok(Game);
             }

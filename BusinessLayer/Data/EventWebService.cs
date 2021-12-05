@@ -22,7 +22,6 @@ namespace BusinessLayer.Data
             soapEventRequest.Operation = name;
             soapEventRequest.Event = ev;
             soapEventRequest.filter = filter;
-            Console.WriteLine("filter:"+filter);
             SOAPEventRequest1 soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
             SOAPEventResponse1 soapEventResponse1 = Port.SOAPEventAsync(soapEventRequest1).Result;
             return soapEventResponse1;

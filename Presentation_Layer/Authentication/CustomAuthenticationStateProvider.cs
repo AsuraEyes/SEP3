@@ -42,7 +42,6 @@ namespace Presentation_Layer.Authentication
 
         public async Task ValidateLogin(string username, string password)
         {
-            Console.WriteLine("Validating log in");
             if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
             if (string.IsNullOrEmpty(password)) throw new Exception("Enter password");
 
@@ -80,11 +79,6 @@ namespace Presentation_Layer.Authentication
 
             var identity = new ClaimsIdentity(claims, "apiauth type");
             return identity;
-        }
-
-        public User GetCachedUser()
-        {
-            return cachedUser;
         }
     }
 }

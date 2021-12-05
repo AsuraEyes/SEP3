@@ -31,7 +31,6 @@ namespace BusinessLayer.Data
         {
             response = await getUserResponse(username, Operation.GET, null);
             User User = response.SOAPUserResponse.user;
-            Console.WriteLine("web service: "+User.role + " username: "+User.username + " password: "+User.password);
             return  User;
         }
 

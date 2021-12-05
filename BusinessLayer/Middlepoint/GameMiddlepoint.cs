@@ -32,7 +32,6 @@ namespace BusinessLayer.Middlepoint
 
         public async Task AddGameAsync(Game game)
         {
-            Console.WriteLine("Game name: " + game.name);
             game.approved = true;
             await GameWebService.SuggestGameAsync(game);
         }

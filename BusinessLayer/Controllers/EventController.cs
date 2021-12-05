@@ -94,7 +94,6 @@ namespace REST.Controllers
         [Route("/Events/{id}")]
         public async Task<ActionResult<Event>> CancelEventAsync(int id)
         {
-            Console.WriteLine(id);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

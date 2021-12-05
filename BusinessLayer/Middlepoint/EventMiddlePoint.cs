@@ -21,11 +21,9 @@ namespace BusinessLayer.Middlepoint
         {
             this.eventWebService = eventWebService;
             filteredEvents = new EventList();
-            //categories = categoryWebService.getCategoriesAsync().Result;
         }
         public async Task<EventList> eventFilter(FilterREST filterRest)
         {
-            Console.WriteLine(filterRest.byAvailability +""+ filterRest.categoryId + "here");
             string filter = "all";
             Filter filterObject = new Filter();
             
@@ -54,7 +52,6 @@ namespace BusinessLayer.Middlepoint
                 filterObject.offset = (filterRest.currentPage - 1) * filterRest.resultsPerPage;
                 filterObject.categoryId = filterRest.categoryId;
                 
-                Console.WriteLine(filter);
                 filteredEvents = await eventWebService.GetFilteredEventsAsync(filterObject);
             }
             // {
