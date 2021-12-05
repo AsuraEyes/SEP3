@@ -163,11 +163,11 @@
     {
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         organizersEvents = await eventOrganizerService.GetOrganizerEventsAsync(username);
-        organizersEventList = organizersEvents.eventList;
+        organizersEventList = organizersEvents.ListOfEvents;
         coOrganizersEvents = await organizerService.GetCoOrganizerEventsAsync(username);
-        coOrganizersEventList = coOrganizersEvents.eventList;
+        coOrganizersEventList = coOrganizersEvents.ListOfEvents;
         participantsEvents = await participantService.GetParticipantEvents(username);
-        participantsEventList = participantsEvents.eventList;
+        participantsEventList = participantsEvents.ListOfEvents;
     }
 
     private void CreateEvent()

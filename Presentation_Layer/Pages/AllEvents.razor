@@ -118,15 +118,15 @@
 
     private async Task FilterAsync()
     {
-        filterRest.byAvailability = byAvailability;
-        filterRest.byDate = byDate;
-        filterRest.categoryId = categoryId;
-        filterRest.currentPage = CurrentPage;
-        filterRest.resultsPerPage = resultsPerPage;
+        filterRest.ByAvailability = byAvailability;
+        filterRest.ByDate = byDate;
+        filterRest.CategoryId = categoryId;
+        filterRest.CurrentPage = CurrentPage;
+        filterRest.ResultsPerPage = resultsPerPage;
         
         events = await restEvent.GetFilteredEventsAsync(filterRest);
         numberOfPages = events.Count;
-        eventList = events.eventList;
+        eventList = events.ListOfEvents;
         CurrentPage = 1;
     }
 

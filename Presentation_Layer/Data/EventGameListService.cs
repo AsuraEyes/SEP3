@@ -31,7 +31,7 @@ namespace Presentation_Layer.Data
         public async Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList)
         {
             var UpdateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
-                {username = username, gameId = gameId, eventId = eventId, inList = inList});
+                {Username = username, GameId = gameId, EventId = eventId, InList = inList});
             HttpContent content = new StringContent(UpdateAsJson,
                 Encoding.UTF8,
                 "application/json");

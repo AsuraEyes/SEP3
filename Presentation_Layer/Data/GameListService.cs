@@ -30,7 +30,7 @@ namespace Presentation_Layer.Data
         public async Task UpdateUserGamesAsync(string username, int gameId, bool inList)
         {
             var UpdateAsJson = JsonSerializer.Serialize(new GameListUpdate
-                {username = username, gameId = gameId, inList = inList});
+                {Username = username, GameId = gameId, InList = inList});
             HttpContent content = new StringContent(UpdateAsJson,
                 Encoding.UTF8,
                 "application/json");
