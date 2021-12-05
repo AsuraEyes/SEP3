@@ -2,10 +2,10 @@ namespace BusinessLayer.Models
 {
     public class FilterREST
     {
-        public bool byDate { get; set; }
-        public bool byAvailability { get; set; }
-        public int currentPage { get; set; }
-        public int categoryId { get; set; }
-        public int resultsPerPage { get; set; }
+        public bool ByDate { get; set; }
+        public bool ByAvailability { get; set; }
+        public int CurrentPage { get; set; }
+        public int CategoryId { get; set; }
+        public int ResultsPerPage { get; set; }
     }
 }

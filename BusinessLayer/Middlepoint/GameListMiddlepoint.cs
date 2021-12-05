@@ -16,12 +16,12 @@ namespace BusinessLayer.Middlepoint
 
         public async Task GameListUpdate(GameListUpdate gameListUpdate)
         {
-            if (gameListUpdate.inList)
+            if (gameListUpdate.InList)
             {
                 //add to list
                 try
                 {
-                    await gameListWebService.AddGameToUserGameListAsync(gameListUpdate.username, gameListUpdate.gameId);
+                    await gameListWebService.AddGameToUserGameListAsync(gameListUpdate.Username, gameListUpdate.GameId);
                 }
                 catch (Exception e)
                 {
@@ -33,7 +33,7 @@ namespace BusinessLayer.Middlepoint
                 //remove from list
                 try
                 {
-                    await gameListWebService.RemoveGameFromUserGameListAsync(gameListUpdate.username, gameListUpdate.gameId);
+                    await gameListWebService.RemoveGameFromUserGameListAsync(gameListUpdate.Username, gameListUpdate.GameId);
                 }
                 catch (Exception e)
                 {

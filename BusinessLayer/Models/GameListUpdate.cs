@@ -2,8 +2,8 @@ namespace BusinessLayer.Models
 {
     public class GameListUpdate
     {
-        public string username { get; set; }
-        public int gameId { get; set; }
-        public bool inList { get; set; }
+        public string Username { get; set; }
+        public int GameId { get; set; }
+        public bool InList { get; set; }
     }
 }

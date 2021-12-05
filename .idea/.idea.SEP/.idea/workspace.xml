@@ -20,18 +20,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Console.Writeline deleted from the whole Business and Presentation layer">
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventOrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/HelloWorldController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/ParticipantController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed">
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventGameListMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameListMiddlepoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameListMiddlepoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/EventGameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Models/EventGameListUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/FilterREST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Models/FilterREST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/GameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Models/GameListUpdate.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,14 +347,7 @@
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="7740000" />
       <workItem from="1638519708146" duration="16352000" />
-      <workItem from="1638717815667" duration="2516000" />
-    </task>
-    <task id="LOCAL-00062" summary="exception simplified">
-      <created>1637861863350</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1637861863350</updated>
+      <workItem from="1638717815667" duration="2870000" />
     </task>
     <task id="LOCAL-00063" summary="new login page">
       <created>1637865042358</created>
@@ -697,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638719688128</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed">
+      <created>1638720376873</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1638720376873</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +716,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="game names now hyperlink" />
     <MESSAGE value="users made into hyperlinks" />
     <MESSAGE value="users now hyperlinks" />
     <MESSAGE value="Debug stuff" />
@@ -746,7 +740,8 @@
     <MESSAGE value="Models PascalCase revised" />
     <MESSAGE value="Data on Presentation layer revised&#10;Added Async to method names&#10;renamed private variables to camelCase" />
     <MESSAGE value="Console.Writeline deleted from the whole Business and Presentation layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Console.Writeline deleted from the whole Business and Presentation layer" />
+    <MESSAGE value="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

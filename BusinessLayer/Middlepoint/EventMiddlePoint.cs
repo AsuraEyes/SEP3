@@ -29,17 +29,17 @@ namespace BusinessLayer.Middlepoint
             
             try
             {
-                if (filterRest.byDate == true)
+                if (filterRest.ByDate == true)
                     filter += "byDate";
                 else 
                     filter = filter.Replace("byDate", "");
                 
-                if (filterRest.byAvailability  == true)
+                if (filterRest.ByAvailability  == true)
                     filter += "byAvailability";
                 else 
                     filter = filter.Replace("byAvailability", "");
 
-                if (filterRest.categoryId != 0)
+                if (filterRest.CategoryId != 0)
                 {
                     filter += "byCategory";
                 }
@@ -48,9 +48,9 @@ namespace BusinessLayer.Middlepoint
                     filter = filter.Replace("byCategory", "");
 
                 filterObject.filter = filter;
-                filterObject.limit = filterRest.resultsPerPage;
-                filterObject.offset = (filterRest.currentPage - 1) * filterRest.resultsPerPage;
-                filterObject.categoryId = filterRest.categoryId;
+                filterObject.limit = filterRest.ResultsPerPage;
+                filterObject.offset = (filterRest.CurrentPage - 1) * filterRest.ResultsPerPage;
+                filterObject.categoryId = filterRest.CategoryId;
                 
                 filteredEvents = await eventWebService.GetFilteredEventsAsync(filterObject);
             }
