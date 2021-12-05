@@ -3,7 +3,7 @@ using BookAndPlaySOAP;
 
 namespace BusinessLayer.Middlepoint
 {
-    public interface IUserMiddlepoint
+    public interface IUserMiddlePoint
     {
         Task<User> ValidateUserAsync(User user);
         Task CreateAccountAsync(User user);

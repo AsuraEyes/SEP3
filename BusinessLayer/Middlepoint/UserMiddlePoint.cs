@@ -5,17 +5,17 @@ using BusinessLayer.Data;
 
 namespace BusinessLayer.Middlepoint
 {
-    public class UserMiddlepoint : IUserMiddlepoint
+    public class UserMiddlePoint : IUserMiddlePoint
     {
-        private IUserWebService UserWebService;
-        public UserMiddlepoint(IUserWebService userWebService)
+        private readonly IUserWebService userWebService;
+        public UserMiddlePoint(IUserWebService userWebService)
         {
-            UserWebService = userWebService;
+            this.userWebService = userWebService;
         }
         
         public async Task<User> ValidateUserAsync(User user)
         {
-            var userFromDatabLoggedIn = await UserWebService.GetUserAsync(user.username);
+            var userFromDatabLoggedIn = await userWebService.GetUserAsync(user.username);
             if (userFromDatabLoggedIn == null)
             {
                 return null;
@@ -30,32 +30,32 @@ namespace BusinessLayer.Middlepoint
         public async Task CreateAccountAsync(User user)
         {
             user.role = 2;
-            await UserWebService.CreateAccountAsync(user);
+            await userWebService.CreateAccountAsync(user);
         }
 
         public async Task<User> GetUserByUsernameAsync(string username)
         {
-            return await UserWebService.GetUserAsync(username);
+            return await userWebService.GetUserAsync(username);
         }
 
         public async Task RequestPromotionToOrganizer(string username)
         {
             User userToBePromoted = await GetUserByUsernameAsync(username);
             userToBePromoted.requestedPromotion = true;
-            await UserWebService.UpdateUser(userToBePromoted);
+            await userWebService.UpdateUser(userToBePromoted);
         }
 
         public async Task AcceptPromotion(User user)
         {
             user.role = 3;
             user.requestedPromotion = false;
-            await UserWebService.UpdateUser(user);
+            await userWebService.UpdateUser(user);
         }
         
         public async Task DeclinePromotion(User user)
         {
             user.requestedPromotion = false;
-            await UserWebService.UpdateUser(user);
+            await userWebService.UpdateUser(user);
         }
     }
 }

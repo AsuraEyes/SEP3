@@ -5,11 +5,11 @@ using BusinessLayer.Models;
 
 namespace BusinessLayer.Middlepoint
 {
-    public class GameListMiddlepoint : IGameListMiddlepoint
+    public class GameListMiddlePoint : IGameListMiddlePoint
     {
-        private IGameListWebService gameListWebService;
+        private readonly IGameListWebService gameListWebService;
         
-        public GameListMiddlepoint(IGameListWebService gameListWebService)
+        public GameListMiddlePoint(IGameListWebService gameListWebService)
         {
             this.gameListWebService = gameListWebService;
         }

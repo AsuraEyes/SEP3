@@ -13,9 +13,9 @@ namespace REST.Controllers
     public class GameController : Controller
     {
         private readonly IGameWebService gameWebService;
-        private readonly IGameMiddlepoint gameMiddlePoint;
+        private readonly IGameMiddlePoint gameMiddlePoint;
 
-        public GameController(IGameWebService gameWebService, IGameMiddlepoint gameMiddlePoint)
+        public GameController(IGameWebService gameWebService, IGameMiddlePoint gameMiddlePoint)
         {
             this.gameWebService = gameWebService;
             this.gameMiddlePoint = gameMiddlePoint;

@@ -4,7 +4,7 @@ using BookAndPlaySOAP;
 
 namespace BusinessLayer.Middlepoint
 {
-    public interface IGameMiddlepoint
+    public interface IGameMiddlePoint
     {
         Task AddGameAsync(Game game);
         Task<IList<Game>> GetGGLAsync();

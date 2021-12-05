@@ -11,12 +11,12 @@ namespace BusinessLayer.Middlepoint
 {
     public class FeeMiddlePoint : IFeeMiddlePoint
     {
-        private IPaymentWebService paymentWebService;
-        private IMonthlyFeeWebService monthlyFeeWebService;
-        private IOneTimeFeeWebService oneTimeFeeWebService;
-        private IParticipantWebService participantWebService;
-        private int monthlyFee = 120;
-        private int oneTimeFee = 50;
+        private readonly IPaymentWebService paymentWebService;
+        private readonly IMonthlyFeeWebService monthlyFeeWebService;
+        private readonly IOneTimeFeeWebService oneTimeFeeWebService;
+        private readonly IParticipantWebService participantWebService;
+        private const int MonthlyFee = 120;
+        private const int OneTimeFee = 50;
         
 
         public FeeMiddlePoint(IPaymentWebService paymentWebService, IMonthlyFeeWebService monthlyFeeWebService,
@@ -35,7 +35,7 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateOneTimePaymentAsync(UserCardInfo userCardInfo)
         {
-            userCardInfo.Fee = oneTimeFee;
+            userCardInfo.Fee = OneTimeFee;
 
             var message = await ApprovePaymentAsync(userCardInfo);
             
@@ -56,7 +56,7 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateMonthlyFeeAsync(UserCardInfo userCardInfo)
         {
-            userCardInfo.Fee = monthlyFee;
+            userCardInfo.Fee = MonthlyFee;
             
             var message = await ApprovePaymentAsync(userCardInfo);
             

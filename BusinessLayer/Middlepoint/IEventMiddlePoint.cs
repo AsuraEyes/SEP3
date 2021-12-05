@@ -9,6 +9,6 @@ namespace BusinessLayer.Middlepoint
 {
     public interface IEventMiddlePoint
     {
-        Task<EventList> eventFilter(FilterREST filterRest);
+        Task<EventList> EventFilterAsync(FilterREST filterRest);
     }
 }

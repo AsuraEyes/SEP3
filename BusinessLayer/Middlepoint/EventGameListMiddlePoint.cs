@@ -7,7 +7,7 @@ namespace BusinessLayer.Middlepoint
 {
     public class EventGameListMiddlePoint : IEventGameListMiddlePoint
     {
-        private IEventGameListWebService eventGameListWebService;
+        private readonly IEventGameListWebService eventGameListWebService;
         
         public EventGameListMiddlePoint(IEventGameListWebService eventGameListWebService)
         {
@@ -15,7 +15,7 @@ namespace BusinessLayer.Middlepoint
         }
         
         
-        public async Task EventGameListUpdate(EventGameListUpdate eventGameListUpdate)
+        public async Task EventGameListUpdateAsync(EventGameListUpdate eventGameListUpdate)
         {
             if (eventGameListUpdate.InList)
             {

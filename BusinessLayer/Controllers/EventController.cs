@@ -28,7 +28,7 @@ namespace REST.Controllers
         {
             try
             {
-                EventList filteredEventsAsync = await eventMiddlePoint.eventFilter(filterRest);
+                EventList filteredEventsAsync = await eventMiddlePoint.EventFilterAsync(filterRest);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)

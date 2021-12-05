@@ -42,7 +42,7 @@ namespace REST.Controllers
         [Route("/UpdateEventGame")]
         public async Task UpdateUserGamesAsync([FromBody] EventGameListUpdate eventGameListUpdate)
         {
-            await eventGameListMiddlePoint.EventGameListUpdate(eventGameListUpdate);
+            await eventGameListMiddlePoint.EventGameListUpdateAsync(eventGameListUpdate);
         }
     }
 }

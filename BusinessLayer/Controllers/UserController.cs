@@ -14,9 +14,9 @@ namespace REST.Controllers
     public class UserController : Controller
     {
         private readonly IUserWebService userWebService;
-        private readonly IUserMiddlepoint userMiddlePoint;
+        private readonly IUserMiddlePoint userMiddlePoint;
 
-        public UserController(IUserWebService userWebService, IUserMiddlepoint userMiddlePoint)
+        public UserController(IUserWebService userWebService, IUserMiddlePoint userMiddlePoint)
         {
             this.userWebService = userWebService;
             this.userMiddlePoint = userMiddlePoint;
