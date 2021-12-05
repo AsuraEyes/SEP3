@@ -13,12 +13,12 @@ namespace REST.Controllers
     [Route("Event")]
     public class EventController : Controller
     {
-        private IEventWebService EventWebService;
-        private IEventMiddlePoint eventMiddlePoint;
+        private readonly IEventWebService eventWebService;
+        private readonly IEventMiddlePoint eventMiddlePoint;
 
         public EventController(IEventWebService eventWebService, IEventMiddlePoint eventMiddlePoint)
         {
-            EventWebService = eventWebService;
+            this.eventWebService = eventWebService;
             this.eventMiddlePoint = eventMiddlePoint;
         }
 
@@ -45,7 +45,7 @@ namespace REST.Controllers
             if (!ModelState.IsValid) return BadRequest();
             try
             {
-                var response = await EventWebService.GetEventAsync(id);
+                var response = await eventWebService.GetEventAsync(id);
                 return Ok(response);
             }
             catch (Exception e)
@@ -56,7 +56,7 @@ namespace REST.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Event>> CreateEventAsync([FromBody] Event Event)
+        public async Task<ActionResult<Event>> CreateEventAsync([FromBody] Event newEvent)
         {
             if (!ModelState.IsValid)
             {
@@ -65,8 +65,8 @@ namespace REST.Controllers
 
             try
             {
-                await EventWebService.CreateEventAsync(Event);
-                return Ok(Event);
+                await eventWebService.CreateEventAsync(newEvent);
+                return Ok(newEvent);
             }
             catch (Exception e)
             {
@@ -76,12 +76,12 @@ namespace REST.Controllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Event>> UpdateEventAsync([FromBody] Event Event)
+        public async Task<ActionResult<Event>> UpdateEventAsync([FromBody] Event eventToBeUpdated)
         {
             try
             {
-                await EventWebService.EditEventAsync(Event);
-                return Ok(Event);
+                await eventWebService.EditEventAsync(eventToBeUpdated);
+                return Ok(eventToBeUpdated);
             }
             catch (Exception e)
             {
@@ -101,7 +101,7 @@ namespace REST.Controllers
 
             try
             {
-                await EventWebService.CancelEventAsync(id);
+                await eventWebService.CancelEventAsync(id);
                 return Ok();
             }
             catch (Exception e)

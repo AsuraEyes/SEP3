@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
-using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -12,11 +11,11 @@ namespace REST.Controllers
     [Route("EventOrganizer")]
     public class EventOrganizerController : Controller
     {
-        private IEventOrganizerWebService EventOrganizerWebService;
+        private readonly IEventOrganizerWebService eventOrganizerWebService;
 
         public EventOrganizerController(IEventOrganizerWebService eventOrganizerWebService)
         {
-            EventOrganizerWebService = eventOrganizerWebService;
+            this.eventOrganizerWebService = eventOrganizerWebService;
         }
         
         [HttpGet]
@@ -25,7 +24,7 @@ namespace REST.Controllers
         {
             try
             {
-                var organizersEvent = await EventOrganizerWebService.GetOrganizerEventsAsync(username);
+                var organizersEvent = await eventOrganizerWebService.GetOrganizerEventsAsync(username);
                 return Ok(organizersEvent);
             }
             catch (Exception e)

@@ -20,32 +20,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Models PascalCase revised">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/EventGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/GameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IEventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IOrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IParticipantService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/OrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/OrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/ParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/ParticipantService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEventAsync.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventAsync.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Console.Writeline deleted from the whole Business and Presentation layer">
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/EventOrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/GameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/HelloWorldController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/ParticipantController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,21 +352,7 @@
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="7740000" />
       <workItem from="1638519708146" duration="16352000" />
-      <workItem from="1638717815667" duration="1665000" />
-    </task>
-    <task id="LOCAL-00060" summary="fixed log in error">
-      <created>1637861753568</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1637861753571</updated>
-    </task>
-    <task id="LOCAL-00061" summary="fixed">
-      <created>1637861799038</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1637861799038</updated>
+      <workItem from="1638717815667" duration="2516000" />
     </task>
     <task id="LOCAL-00062" summary="exception simplified">
       <created>1637861863350</created>
@@ -711,7 +683,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638718233519</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Data on Presentation layer revised&#10;Added Async to method names&#10;renamed private variables to camelCase">
+      <created>1638719559503</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1638719559503</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Console.Writeline deleted from the whole Business and Presentation layer">
+      <created>1638719688128</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1638719688128</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,8 +721,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fixed create account, games are clickable, events now shown in my events" />
-    <MESSAGE value="Game info changed" />
     <MESSAGE value="game names now hyperlink" />
     <MESSAGE value="users made into hyperlinks" />
     <MESSAGE value="users now hyperlinks" />
@@ -760,7 +744,9 @@
     <MESSAGE value="deleted RequestsForOrganizers from the NavMenu.razor" />
     <MESSAGE value="no caching of the current user in the Business layer middlepoint &#10;So if two users logged in at the same time, it works properly" />
     <MESSAGE value="Models PascalCase revised" />
-    <option name="LAST_COMMIT_MESSAGE" value="Models PascalCase revised" />
+    <MESSAGE value="Data on Presentation layer revised&#10;Added Async to method names&#10;renamed private variables to camelCase" />
+    <MESSAGE value="Console.Writeline deleted from the whole Business and Presentation layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Console.Writeline deleted from the whole Business and Presentation layer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
