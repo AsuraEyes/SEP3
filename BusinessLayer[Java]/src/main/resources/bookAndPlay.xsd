@@ -153,10 +153,10 @@
     <xs:element name="SOAPEventResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="currentPage" type="xs:int"/>
-                <xs:element name="notification" type="xs:string"/>
+                <xs:element name="currentPage" type="xs:int" minOccurs="0"/>
+                <xs:element name="notification" type="xs:string" minOccurs="0"/>
                 <xs:element name="Event" type="tns:Event"/>
-                <xs:element name="eventList" type="tns:EventList"/>
+                <xs:element name="eventList" type="tns:EventList" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
