@@ -7,34 +7,33 @@ using BusinessLayer.Data;
 
 namespace BusinessLayer.Middlepoint
 {
-    public class GameMiddlepoint : IGameMiddlepoint
+    public class GameMiddlePoint : IGameMiddlePoint
     {
-        private IGameWebService GameWebService;
-        private IGameListWebService gameListWebService;
+        private readonly IGameWebService gameWebService;
+        private readonly IGameListWebService gameListWebService;
 
-        public GameMiddlepoint(IGameWebService gameWebService, IGameListWebService gameListWebService )
+        public GameMiddlePoint(IGameWebService gameWebService, IGameListWebService gameListWebService )
         {
-            GameWebService = gameWebService;
+            this.gameWebService = gameWebService;
             this.gameListWebService = gameListWebService;
         }
 
         public async Task<IList<Game>> GetGGLAsync()
         {
-            var ggl = await GameWebService.GetGamesAsync(true);
+            var ggl = await gameWebService.GetGamesAsync(true);
             return ggl;
         }
         
         public async Task<IList<Game>> GetSuggestedGamesAsync()
         {
-            var suggestedGames = await GameWebService.GetGamesAsync(false);
+            var suggestedGames = await gameWebService.GetGamesAsync(false);
             return suggestedGames;
         }
 
         public async Task AddGameAsync(Game game)
         {
-            Console.WriteLine("Game name: " + game.name);
             game.approved = true;
-            await GameWebService.SuggestGameAsync(game);
+            await gameWebService.SuggestGameAsync(game);
         }
         
         public async Task<IList<int>> GetUserGamesIdsAsync(string user)
@@ -46,7 +45,7 @@ namespace BusinessLayer.Middlepoint
         public async Task UpdateGameApprovalAsync(Game game)
         {
             game.approved = true;
-            await GameWebService.EditGameAsync(game);
+            await gameWebService.EditGameAsync(game);
         }
     }
 }

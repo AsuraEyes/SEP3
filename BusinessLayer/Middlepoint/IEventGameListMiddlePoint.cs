@@ -5,6 +5,6 @@ namespace BusinessLayer.Middlepoint
 {
     public interface IEventGameListMiddlePoint
     {
-        Task EventGameListUpdate(EventGameListUpdate eventGameListUpdate);
+        Task EventGameListUpdateAsync(EventGameListUpdate eventGameListUpdate);
     }
 }

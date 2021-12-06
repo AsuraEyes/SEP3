@@ -4,12 +4,12 @@
 @using System.Security.Claims
 @using Presentation_Layer.Data
 
-@inject AuthenticationStateProvider Auth
+@inject AuthenticationStateProvider stateProvider
 @inject IPaymentService paymentService
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
 
 
-<h3>Payment</h3>
+<h3>Payment Overview</h3>
 
 <h2>Subscription: </h2>
 @if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
@@ -43,63 +43,34 @@ else
 @if (oneTimeFees != null)
 {
     <h4>Payments</h4>
-            @foreach (var item in oneTimeFees)
-            {
-                <ul>
-                    <li>@item.Amount dkk</li>
-                </ul>
-            }
+    @foreach (var item in oneTimeFees)
+    {
+        <ul>
+            <li>@item.Amount dkk</li>
+        </ul>
+    }
 }
 else 
 {<p>No one time fees</p>}
 
 
 @code {
-    private MonthlyFee monthlyFee = new MonthlyFee();
+    private MonthlyFee monthlyFee = new();
     private IList<MonthlyFee> monthlyFeeList = new List<MonthlyFee>();
     private IList<OneTimeFee> oneTimeFees = new List<OneTimeFee>();
     private string username;
-    private string errorMessage;
-    private bool pay;
-    private UserCardInfo userCardInfo;
     
     protected override async Task OnInitializedAsync()
     {
-        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        try
-        {
-            monthlyFeeList = await paymentService.GetSubscriptionList(username);
-        }
-        catch(Exception e)
-        {
-        }
-        try
-        {
-            oneTimeFees = await paymentService.GetOneTimePaymentList(username);
-        }
-        catch(Exception e)
-        {
-        }
-        try
-        {
-            monthlyFee = await paymentService.GetSubscription(username);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        monthlyFeeList = await paymentService.GetSubscriptionListAsync(username);
+        oneTimeFees = await paymentService.GetOneTimePaymentListAsync(username);
+        monthlyFee = await paymentService.GetSubscriptionAsync(username);
     }
 
-    private async Task PayNow()
+    private void Subscribe()
     {
-        pay = true;
-    }
-    
-    private async Task Subscribe()
-    {
-        NavigationManager.NavigateTo("Payment");
+        navigationManager.NavigateTo("Payment");
     }
     
 }

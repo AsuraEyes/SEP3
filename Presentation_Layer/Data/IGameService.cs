@@ -9,8 +9,8 @@ namespace Presentation_Layer.Data
     {
         Task<Game> GetGameAsync(int id);
         Task SuggestGameAsync(Game Game);
-        Task RemoveGameAsync(Game Game);
-        Task UpdateGameApprovalAsync(Game Game);
+        Task RemoveGameAsync(Game game);
+        Task UpdateGameApprovalAsync(Game game);
         Task CreateGameAsync(Game Game);
         Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();

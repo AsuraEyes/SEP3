@@ -11,12 +11,12 @@ namespace BusinessLayer.Middlepoint
 {
     public class FeeMiddlePoint : IFeeMiddlePoint
     {
-        private IPaymentWebService paymentWebService;
-        private IMonthlyFeeWebService monthlyFeeWebService;
-        private IOneTimeFeeWebService oneTimeFeeWebService;
-        private IParticipantWebService participantWebService;
-        private int monthlyFee = 120;
-        private int oneTimeFee = 50;
+        private readonly IPaymentWebService paymentWebService;
+        private readonly IMonthlyFeeWebService monthlyFeeWebService;
+        private readonly IOneTimeFeeWebService oneTimeFeeWebService;
+        private readonly IParticipantWebService participantWebService;
+        private const int MonthlyFee = 120;
+        private const int OneTimeFee = 50;
         
 
         public FeeMiddlePoint(IPaymentWebService paymentWebService, IMonthlyFeeWebService monthlyFeeWebService,
@@ -35,7 +35,7 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateOneTimePaymentAsync(UserCardInfo userCardInfo)
         {
-            userCardInfo.Fee = oneTimeFee;
+            userCardInfo.Fee = OneTimeFee;
 
             var message = await ApprovePaymentAsync(userCardInfo);
             
@@ -47,7 +47,7 @@ namespace BusinessLayer.Middlepoint
                     eventId = userCardInfo.EventId,
                     userUsername = userCardInfo.Username
                 };
-                await oneTimeFeeWebService.CreateOneTimeFee(oneTimeFee);
+                await oneTimeFeeWebService.CreateOneTimeFeeAsync(oneTimeFee);
                 await participantWebService.JoinEventAsync(userCardInfo.EventId, userCardInfo.Username);
             }
 
@@ -56,7 +56,7 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<string> CreateMonthlyFeeAsync(UserCardInfo userCardInfo)
         {
-            userCardInfo.Fee = monthlyFee;
+            userCardInfo.Fee = MonthlyFee;
             
             var message = await ApprovePaymentAsync(userCardInfo);
             
@@ -71,17 +71,17 @@ namespace BusinessLayer.Middlepoint
                         endDate = userCardInfo.StartDateTime.AddDays(30),
                         userUsername = userCardInfo.Username
                     };
-                    await monthlyFeeWebService.CreateMonthlyFee(monthlyFee);
+                    await monthlyFeeWebService.CreateMonthlyFeeAsync(monthlyFee);
                 }
                 else
                 {
-                    var monthlyFee = await monthlyFeeWebService.GetMonthlyFee(userCardInfo.Username);
+                    var monthlyFee = await monthlyFeeWebService.GetMonthlyFeeAsync(userCardInfo.Username);
                     
                     DateTime endDate = monthlyFee.endDate;
                     monthlyFee.amount += userCardInfo.Fee;
                     monthlyFee.endDate = endDate.AddDays(30);
                     
-                    await monthlyFeeWebService.UpdateMonthlyFee(monthlyFee);
+                    await monthlyFeeWebService.UpdateMonthlyFeeAsync(monthlyFee);
                 }
 
             }
@@ -90,7 +90,7 @@ namespace BusinessLayer.Middlepoint
 
         public async Task<bool> CheckSubscriptionAsync(string username)
         {
-            var monthlyFee = await monthlyFeeWebService.GetMonthlyFee(username);
+            var monthlyFee = await monthlyFeeWebService.GetMonthlyFeeAsync(username);
             if (monthlyFee != null)
             {
                 if (monthlyFee.endDate.CompareTo(DateTime.Today) > 0)

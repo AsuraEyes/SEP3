@@ -14,9 +14,9 @@ namespace Presentation_Layer.Data
         //
         // IList<Event> GetEventsPagination(IList<Event> allEvents, int currentPage);
         
-        Task CreateEvent(Event Event);
+        Task CreateEventAsync(Event newEvent);
         Task<Event> GetEventAsync(int id);
-        Task CancelEvent(Event Event);
-        Task EditEvent(Event Event);
+        Task CancelEventAsync(Event eventToBeCancelled);
+        Task EditEventAsync(Event eventToBeEdited);
     }
 }

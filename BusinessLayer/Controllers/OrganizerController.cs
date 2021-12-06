@@ -12,7 +12,7 @@ namespace REST.Controllers
     [Route("Organizer")]
     public class OrganizerController : Controller
     {
-        private IOrganizerWebService organizerWebService;
+        private readonly IOrganizerWebService organizerWebService;
 
         public OrganizerController(IOrganizerWebService organizerWebService)
         {
@@ -38,7 +38,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("/Organizers/{id}")]
-        public async Task JoinEventResult(int id, [FromBody] string username)
+        public async Task JoinEventResultAsync(int id, [FromBody] string username)
         {
             if (!ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace REST.Controllers
 
             try
             {
-                await organizerWebService.CoOrganizeEvent(id, username);
+                await organizerWebService.CoOrganizeEventAsync(id, username);
                 Created($"/{id}", "username");
             }
             catch (Exception e)

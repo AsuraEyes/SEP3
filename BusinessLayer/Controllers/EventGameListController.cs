@@ -13,8 +13,8 @@ namespace REST.Controllers
     [Route ("EventGameList")]
     public class EventGameListController : Controller
     {
-        private IEventGameListWebService eventGameListWebService;
-        private IEventGameListMiddlePoint eventGameListMiddlePoint;
+        private readonly IEventGameListWebService eventGameListWebService;
+        private readonly IEventGameListMiddlePoint eventGameListMiddlePoint;
 
         public EventGameListController(IEventGameListWebService eventGameListWebService, IEventGameListMiddlePoint eventGameListMiddlePoint)
         {
@@ -24,8 +24,7 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<IList<Game>>>
-            GetAllEventGameListAsync(int id)
+        public async Task<ActionResult<IList<Game>>> GetAllEventGameListAsync(int id)
         {
             try
             {
@@ -43,7 +42,7 @@ namespace REST.Controllers
         [Route("/UpdateEventGame")]
         public async Task UpdateUserGamesAsync([FromBody] EventGameListUpdate eventGameListUpdate)
         {
-            await eventGameListMiddlePoint.EventGameListUpdate(eventGameListUpdate);
+            await eventGameListMiddlePoint.EventGameListUpdateAsync(eventGameListUpdate);
         }
     }
 }

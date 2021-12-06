@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -28,7 +29,7 @@ namespace Presentation_Layer.Data
             return message;
         }
 
-        public async Task<bool> CheckSubscription(string username)
+        public async Task<bool> CheckSubscriptionAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/Validate"+query);
@@ -40,62 +41,80 @@ namespace Presentation_Layer.Data
             return message;
         }
         
-        public async Task<MonthlyFee> GetSubscription(string username)
+        public async Task<MonthlyFee> GetSubscriptionAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/Subscription"+query);
             var theString = await stringAsync;
-            if (theString != null && theString != "")
+            var message = new MonthlyFee();
+            try
             {
-                            var message = JsonSerializer.Deserialize<MonthlyFee>(theString, new JsonSerializerOptions
-                            {
-                                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                            });
-                            return message;
+                if (theString != "")
+                {
+                    message = JsonSerializer.Deserialize<MonthlyFee>(theString, new JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
-            return null;
-
+            return message;
         }
         
-        public async Task<OneTimeFee> GetEventFee(string username, int eventId)
+        public async Task<OneTimeFee> GetEventFeeAsync(string username, int eventId)
         {
             var query = $"?username={username}&eventId={eventId}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTime"+query);
             var theString = await stringAsync;
-            if (theString != null && theString != "")
-            {
-                var message = JsonSerializer.Deserialize<OneTimeFee>(theString, new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                });
-                return message;
-            }
-
-            return null;
-        }
-        
-        public async Task<IList<MonthlyFee>> GetSubscriptionList(string username)
-        {
-            var query = $"?username={username}";
-            var stringAsync = client.GetStringAsync(uri + $"/Fee/MonthlyHistory"+query);
-            var theString = await stringAsync;
-            var message = JsonSerializer.Deserialize<IList<MonthlyFee>>(theString, new JsonSerializerOptions
+            if (theString == "") return null;
+            var message = JsonSerializer.Deserialize<OneTimeFee>(theString, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
             return message;
         }
         
-        public async Task<IList<OneTimeFee>> GetOneTimePaymentList(string username)
+        public async Task<IList<MonthlyFee>> GetSubscriptionListAsync(string username)
+        {
+            var query = $"?username={username}";
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/MonthlyHistory"+query);
+            var theString = await stringAsync;
+            IList<MonthlyFee> message = new List<MonthlyFee>();
+            try
+            {
+                message = JsonSerializer.Deserialize<IList<MonthlyFee>>(theString, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return message;
+        }
+        
+        public async Task<IList<OneTimeFee>> GetOneTimePaymentListAsync(string username)
         {
             var query = $"?username={username}";
             var stringAsync = client.GetStringAsync(uri + $"/Fee/OneTimeHistory"+query);
             var theString = await stringAsync;
-            var message = JsonSerializer.Deserialize<IList<OneTimeFee>>(theString, new JsonSerializerOptions
+            IList<OneTimeFee> message = new List<OneTimeFee>();
+            try
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
+                message = JsonSerializer.Deserialize<IList<OneTimeFee>>(theString, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return message;
         }
         

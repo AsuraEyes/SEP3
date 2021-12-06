@@ -6,9 +6,9 @@ namespace BusinessLayer.Data
 {
     public interface IMonthlyFeeWebService
     {
-        Task CreateMonthlyFee(MonthlyFee monthlyFee);
-        Task<MonthlyFee> GetMonthlyFee(string username);
-        Task<IList<MonthlyFee>> GetMonthlyFeeList(string username);
-        Task UpdateMonthlyFee(MonthlyFee monthlyFee);
+        Task CreateMonthlyFeeAsync(MonthlyFee monthlyFee);
+        Task<MonthlyFee> GetMonthlyFeeAsync(string username);
+        Task<IList<MonthlyFee>> GetMonthlyFeeListAsync(string username);
+        Task UpdateMonthlyFeeAsync(MonthlyFee monthlyFee);
     }
 }

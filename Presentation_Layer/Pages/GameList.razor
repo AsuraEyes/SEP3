@@ -1,14 +1,15 @@
 @page "/GameList"
+
 @using Presentation_Layer.Data
 @using Presentation_Layer.Authentication
 @using Presentation_Layer.Models
 @using System.Security.Claims
 
-@inject IGameListService gameListService;
-@inject AuthenticationStateProvider stateProvider;
+@inject IGameListService gameListService
+@inject AuthenticationStateProvider stateProvider
+@inject NavigationManager navigationManager
 
 <h3>GameList</h3>
-
 <ul>
 @foreach (var game in games)
 {
@@ -18,9 +19,7 @@
 }
 </ul>
 
-
-@inject NavigationManager NavigationManager
-<button @onclick="@EditAsync" class="btn btn-outline-secondary" type="submit">
+<button @onclick="@Edit" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Edit
         </button>
 
@@ -31,16 +30,15 @@
     {
         var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         games = await gameListService.GetUserGamesAsync(username);
-    //games = await gameListService.GetUserGamesAsync(((CustomAuthenticationStateProvider)stateProvider).GetCachedUser());
     }
     
-    private async Task EditAsync()
+    private void Edit()
     {
-        NavigationManager.NavigateTo("EditGameList");
+        navigationManager.NavigateTo("EditGameList");
     }
     
-    private async Task MoreGameInfo(int id)
+    private void MoreGameInfo(int id)
     {
-        NavigationManager.NavigateTo($"GameInfo/{id}");
+        navigationManager.NavigateTo($"GameInfo/{id}");
     }
 }

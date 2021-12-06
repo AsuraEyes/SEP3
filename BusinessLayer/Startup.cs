@@ -34,6 +34,7 @@ namespace REST
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "REST", Version = "v1"});
             });
+            //web services
             services.AddSingleton<IUserWebService, UserWebService>();
             services.AddSingleton<IGameWebService, GameWebService>();
             services.AddSingleton<IGameListWebService, GameListWebService>();
@@ -43,14 +44,16 @@ namespace REST
             services.AddSingleton<IOrganizerWebService, OrganizerWebService>();
             services.AddSingleton<IEventGameListWebService, EventGameListWebService>();
             services.AddSingleton<IPaymentWebService, PaymentWebService>();
-            services.AddSingleton<IUserMiddlepoint, UserMiddlepoint>();
-            services.AddSingleton<IEventMiddlePoint, EventMiddlePoint>();
-            services.AddSingleton<IGameMiddlepoint, GameMiddlepoint>();
-            services.AddSingleton<IGameListMiddlepoint, GameListMiddlepoint>();
             services.AddSingleton<IOneTimeFeeWebService, OneTimeFeeWebService>();
             services.AddSingleton<IMonthlyFeeWebService, MonthlyFeeWebService>();
-            services.AddSingleton<IFeeMiddlePoint, FeeMiddlePoint>();
             services.AddSingleton<IEventOrganizerWebService, EventOrganizerWebService>();
+            
+            //middlepoints
+            services.AddSingleton<IUserMiddlePoint, UserMiddlePoint>();
+            services.AddSingleton<IEventMiddlePoint, EventMiddlePoint>();
+            services.AddSingleton<IGameMiddlePoint, GameMiddlePoint>();
+            services.AddSingleton<IGameListMiddlePoint, GameListMiddlePoint>();
+            services.AddSingleton<IFeeMiddlePoint, FeeMiddlePoint>();
             services.AddSingleton<IEventGameListMiddlePoint, EventGameListMiddlePoint>();
 
         }

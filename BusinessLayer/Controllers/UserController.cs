@@ -13,13 +13,13 @@ namespace REST.Controllers
     [Route("User")]
     public class UserController : Controller
     {
-        private IUserWebService UserWebService;
-        private IUserMiddlepoint UserMiddlepoint;
+        private readonly IUserWebService userWebService;
+        private readonly IUserMiddlePoint userMiddlePoint;
 
-        public UserController(IUserWebService userWebService, IUserMiddlepoint userMiddlepoint)
+        public UserController(IUserWebService userWebService, IUserMiddlePoint userMiddlePoint)
         {
-            UserWebService = userWebService;
-            UserMiddlepoint = userMiddlepoint;
+            this.userWebService = userWebService;
+            this.userMiddlePoint = userMiddlePoint;
         }
         
         [HttpPost]
@@ -28,8 +28,7 @@ namespace REST.Controllers
         {
             try
             {
-                //call validation class
-                User validateUser = await UserMiddlepoint.ValidateUserAsync(user);
+                User validateUser = await userMiddlePoint.ValidateUserAsync(user);
                 return Ok(validateUser);
             }
             catch (Exception e)
@@ -50,7 +49,7 @@ namespace REST.Controllers
 
             try
             {
-                await UserMiddlepoint.CreateAccountAsync(user);
+                await userMiddlePoint.CreateAccountAsync(user);
                 return Ok(user);
             }
             catch (Exception e)
@@ -60,30 +59,13 @@ namespace REST.Controllers
             }
         }
 
-        // [HttpGet]
-        // [Route("/User/Validate")]
-        // public async Task<ActionResult<User>> GetValidatedUserAsync()
-        // {
-        //     try
-        //     {
-        //         User user = await UserMiddlepoint.GetValidatedUser();
-        //         Console.WriteLine("controller: "+user.role);
-        //         return Ok(user);
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         Console.WriteLine(e);
-        //         return StatusCode(500, e.Message);
-        //     }
-        // }
-
         [HttpGet]
         [Route("/User/{username}")]
         public async Task<ActionResult<User>> GetUserByUsernameAsync([FromRoute] string username)
         {
             try
             {
-                User user = await UserMiddlepoint.GetUserByUsernameAsync(username);
+                User user = await userMiddlePoint.GetUserByUsernameAsync(username);
                 return Ok(user);
             }
             catch (Exception e)
@@ -95,7 +77,7 @@ namespace REST.Controllers
 
         [HttpPost]
         [Route("/User/RequestPromotion")]
-        public async Task<ActionResult> RequestPromotionToOrganizer()
+        public async Task<ActionResult> RequestPromotionToOrganizerAsync([FromBody] string username)
         {
             if (!ModelState.IsValid)
             {
@@ -104,7 +86,7 @@ namespace REST.Controllers
 
             try
             {
-                await UserMiddlepoint.RequestPromotionToOrganizer();
+                await userMiddlePoint.RequestPromotionToOrganizer(username);
                 return Ok();
             }
             catch (Exception e)
@@ -118,7 +100,7 @@ namespace REST.Controllers
         {
             try
             {
-                await UserWebService.DeleteAccountAsync(username);
+                await userWebService.DeleteAccountAsync(username);
                 return Ok();
             }
             catch (Exception e)
@@ -130,7 +112,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("/User/AcceptPromotion")]
-        public async Task<ActionResult> AcceptPromotion([FromBody] User user)
+        public async Task<ActionResult> AcceptPromotionAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
@@ -139,7 +121,7 @@ namespace REST.Controllers
 
             try
             {
-                await UserMiddlepoint.AcceptPromotion(user);
+                await userMiddlePoint.AcceptPromotion(user);
                 return Ok();
             }
             catch (Exception e)
@@ -151,7 +133,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("/User/DeclinePromotion")]
-        public async Task<ActionResult> DeclinePromotion([FromBody] User user)
+        public async Task<ActionResult> DeclinePromotionAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
@@ -160,7 +142,7 @@ namespace REST.Controllers
 
             try
             {
-                await UserMiddlepoint.DeclinePromotion(user);
+                await userMiddlePoint.DeclinePromotion(user);
                 return Ok();
             }
             catch (Exception e)
@@ -176,13 +158,34 @@ namespace REST.Controllers
         {
             try
             {
-                IList<User> users = await UserWebService.GetUsersAsync();
+                IList<User> users = await userWebService.GetUsersAsync();
                 return Ok(users);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);  
+            }
+        }
+        
+        [HttpPatch]
+        [Route("/User/EditAccount")]
+        public async Task<ActionResult> EditAccountAsync([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await userWebService.UpdateUser(user);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
             }
         }
     }

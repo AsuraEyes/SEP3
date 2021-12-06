@@ -1,41 +1,55 @@
 @page "/AllUsers"
+
 @using Presentation_Layer.Models
-@using Presentation_Layer.Authentication
-@using System.Security.Claims
 @using global::Data
+
 @attribute [Authorize(Policy = "Administrator")]
-@inject NavigationManager NavigationManager
 
-@inject IUserService userService;
-@inject AuthenticationStateProvider stateProvider;
-
+@inject NavigationManager navigationManager
+@inject IUserService userService
+@inject AuthenticationStateProvider stateProvider
 
 <h3>All Users</h3>
+Requested promotion:
+    <Select class="selectpicker" @oninput="@(FilterByPromotion)">
+        <option value="false">-- All --</option>
+        <option value="true">Requested promotion</option>
+    </Select>
+
 <ul>
-@foreach (var user in users)
-{
-    <li>
-        <b @onclick="@(() => MoreUserInfo(user.Id))"><a href="#">@user.Username</a></b>
-    </li>
-}
+    @foreach (var user in filteredUsers)
+    {
+        <li>
+            <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+        </li>
+    }
 </ul>
 
-
-
-
 @code {
-    private IList<User> users  = new List<User>();
+    private IList<User> allUsers  = new List<User>();
+    private IList<User> filteredUsers = new List<User>();
 
     protected override async Task OnInitializedAsync()
     {
-        users = await userService.GetUsersAsync();
+        allUsers = await userService.GetUsersAsync();
+        filteredUsers = allUsers;
     }
     
-
-    
-    private async Task MoreUserInfo(int id)
+    private void MoreUserInfo(string username)
     {
-        NavigationManager.NavigateTo($"UserInfo/{id}");
+        navigationManager.NavigateTo($"UserInfo/{username}");
+    }
+    
+    private void FilterByPromotion(ChangeEventArgs args)
+    {
+        if (args.Value != null && args.Value.Equals("true"))
+        {
+            filteredUsers = allUsers.Where(user => user.RequestedPromotion).ToList();
+        }
+        else
+        {
+            filteredUsers = allUsers;
+        }
     }
     
 }

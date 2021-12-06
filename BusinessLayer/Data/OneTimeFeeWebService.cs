@@ -6,7 +6,7 @@ namespace BusinessLayer.Data
 {
     public class OneTimeFeeWebService : IOneTimeFeeWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPOneTimeFeeResponse1 response;
 
         public OneTimeFeeWebService()
@@ -14,7 +14,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPOneTimeFeeResponse1> getOneTimeFeeResponse(Operation name, int eventId,string username, OneTimeFee oneTimeFee )
+        private async Task<SOAPOneTimeFeeResponse1> getOneTimeFeeResponseAsync(Operation name, int eventId,string username, OneTimeFee oneTimeFee )
         {
             SOAPOneTimeFeeRequest soapOneTimeFeeRequest = new SOAPOneTimeFeeRequest();
             soapOneTimeFeeRequest.Operation = name;
@@ -27,20 +27,20 @@ namespace BusinessLayer.Data
             return soapResponse1;
         }
 
-        public async Task CreateOneTimeFee(OneTimeFee oneTimeFee)
+        public async Task CreateOneTimeFeeAsync(OneTimeFee oneTimeFee)
         {
-            response = await getOneTimeFeeResponse(Operation.CREATE,0, "", oneTimeFee);
+            response = await getOneTimeFeeResponseAsync(Operation.CREATE,0, "", oneTimeFee);
         }
 
-        public async Task<OneTimeFee> GetOneTimeFee(string username, int eventId)
+        public async Task<OneTimeFee> GetOneTimeFeeAsync(string username, int eventId)
         {
-            response = await getOneTimeFeeResponse(Operation.GET, eventId,username, null);
+            response = await getOneTimeFeeResponseAsync(Operation.GET, eventId,username, null);
             return response.SOAPOneTimeFeeResponse.OneTimeFee;
         }
 
-        public async Task<IList<OneTimeFee>> GetOneTimeFeeList(string username)
+        public async Task<IList<OneTimeFee>> GetOneTimeFeeListAsync(string username)
         {
-            response = await getOneTimeFeeResponse(Operation.GETALL, 0,username, null);
+            response = await getOneTimeFeeResponseAsync(Operation.GETALL, 0,username, null);
             return response.SOAPOneTimeFeeResponse.OneTimeFeeList;
         }
     }

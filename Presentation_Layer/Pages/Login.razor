@@ -3,13 +3,13 @@
 @namespace LoginComponent
 
 
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider AuthenticationStateProvider
-@inject IJSRuntime JSRuntime
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
 
 <AuthorizeView>
     <NotAuthorized>
-        <button class="btn btn-outline-primary" @onclick="OpenAsync">
+        <button class="btn btn-outline-primary" @onclick="Open">
             <i class="oi oi-person"></i>
         </button>
         @if (showModal)
@@ -19,7 +19,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Sign in</h5>
-                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseAsync">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -40,8 +40,8 @@
                             }
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccountAsync">Create Account</button>
-                            <button type="button" class="btn btn-outline-primary" @onclick="PerformLogin">Login</button>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccount">Create Account</button>
+                            <button type="button" class="btn btn-outline-primary" @onclick="PerformLoginAsync">Login</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
     </NotAuthorized>
     <Authorized>
         <span class="input-group-text text-white bg-primary">@username</span>
-        <button class="btn btn-outline-primary" @onclick="PerformLogout">
+        <button class="btn btn-outline-primary" @onclick="PerformLogoutAsync">
             Logout <i class="oi oi-account-logout"></i>
         </button>
     </Authorized>
@@ -62,28 +62,28 @@
     private string password;
     private string errorMessage;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         errorMessage = "";
     }
     
-    private async Task OpenAsync()
+    private void Open()
     {
         showModal = true;
     }
     
-    private async Task CloseAsync()
+    private void Close()
     {
         showModal = false;
     }
 
-   private async Task PerformLogin()
+   private async Task PerformLoginAsync()
     {
        try
         {
-            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
-            NavigationManager.NavigateTo("/");
-            await CloseAsync();
+            await ((CustomAuthenticationStateProvider) stateProvider).ValidateLogin(username, password);
+            navigationManager.NavigateTo("/");
+            Close();
         }
         catch (Exception)
         {
@@ -91,27 +91,20 @@
         }
     }
 
-    private async Task PerformLogout()
+    private async Task PerformLogoutAsync()
     {
-        if (!await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
             return;
         errorMessage = "";
         username = "";
         password = "";
-        try
-        {
-            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
-        }
-        catch (Exception)
-        {
-            // ignored
-        }
+        await ((CustomAuthenticationStateProvider) stateProvider).Logout();
+        navigationManager.NavigateTo("/");
     }
 
-    private async Task CreateAccountAsync()
+    private void CreateAccount()
     {
-        await CloseAsync();
-        NavigationManager.NavigateTo("CreateAccount");
+        Close();
+        navigationManager.NavigateTo("CreateAccount");
     }
 }

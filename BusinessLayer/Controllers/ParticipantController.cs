@@ -11,11 +11,11 @@ namespace REST.Controllers
         [Route("Participant")]
         public class ParticipantController : Controller
         {
-            private IParticipantWebService ParticipantWebService;
+            private readonly IParticipantWebService participantWebService;
 
-            public ParticipantController(IParticipantWebService ParticipantWebService)
+            public ParticipantController(IParticipantWebService participantWebService)
             {
-                this.ParticipantWebService = ParticipantWebService;
+                this.participantWebService = participantWebService;
             }
 
             [HttpGet]
@@ -25,8 +25,8 @@ namespace REST.Controllers
             {
                 try
                 {
-                    IList<string> Participants = await ParticipantWebService.GetParticipantsAsync(id);
-                    return Ok(Participants);
+                    IList<string> participants = await participantWebService.GetParticipantsAsync(id);
+                    return Ok(participants);
                 }
                 catch (Exception e)
                 {
@@ -37,7 +37,7 @@ namespace REST.Controllers
 
             [HttpPost]
             [Route("/{id}")]
-            public async Task JoinEventResult(int id, [FromBody] string username)
+            public async Task JoinEventResultAsync(int id, [FromBody] string username)
             {
                 if (!ModelState.IsValid)
                 {
@@ -46,7 +46,7 @@ namespace REST.Controllers
 
                 try
                 {
-                    await ParticipantWebService.JoinEventAsync(id, username);
+                    await participantWebService.JoinEventAsync(id, username);
                     Created($"/{id}", "username");
                 }
                 catch (Exception e)
@@ -62,7 +62,7 @@ namespace REST.Controllers
             {
                 try
                 {
-                    await ParticipantWebService.WithdrawEventAsync(id, username);
+                    await participantWebService.WithdrawEventAsync(id, username);
                 }
                 catch (Exception e)
                 {
@@ -77,7 +77,7 @@ namespace REST.Controllers
             {
                 try
                 {
-                    var organizersEvent = await ParticipantWebService.GetParticipantEventsAsync(username);
+                    var organizersEvent = await participantWebService.GetParticipantEventsAsync(username);
                     return Ok(organizersEvent);
                 }
                 catch (Exception e)

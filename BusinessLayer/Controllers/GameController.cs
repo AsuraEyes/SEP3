@@ -12,19 +12,18 @@ namespace REST.Controllers
     [Route ("Game")]
     public class GameController : Controller
     {
-        //private readonly IUserService UserService;
-        private IGameWebService gameWebService;
-        private IGameMiddlepoint gameMiddlepoint;
+        private readonly IGameWebService gameWebService;
+        private readonly IGameMiddlePoint gameMiddlePoint;
 
-        public GameController(IGameWebService gameWebService, IGameMiddlepoint gameMiddlepoint)
+        public GameController(IGameWebService gameWebService, IGameMiddlePoint gameMiddlePoint)
         {
             this.gameWebService = gameWebService;
-            this.gameMiddlepoint = gameMiddlepoint;
+            this.gameMiddlePoint = gameMiddlePoint;
         }
 
         [HttpGet]
         [Route("{id:int}")]
-        public async Task<ActionResult<Game>> getGame(int id)
+        public async Task<ActionResult<Game>> GetGameAsync(int id)
         {
             if (!ModelState.IsValid) return BadRequest();
             try
@@ -41,12 +40,11 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("/GGL")]
-        public async Task<ActionResult<IList<Game>>>
-            GetGGLAsync()
+        public async Task<ActionResult<IList<Game>>> GetGglAsync()
         {
             try
             {
-                IList<Game> games = await gameMiddlepoint.GetGGLAsync();
+                IList<Game> games = await gameMiddlePoint.GetGGLAsync();
                 return Ok(games);
             }
             catch (Exception e)
@@ -58,12 +56,11 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("/SuggestedGames")]
-        public async Task<ActionResult<IList<Game>>>
-            GetSuggestedGamesAsync()
+        public async Task<ActionResult<IList<Game>>> GetSuggestedGamesAsync()
         {
             try
             {
-                IList<Game> games = await gameMiddlepoint.GetSuggestedGamesAsync();
+                IList<Game> games = await gameMiddlePoint.GetSuggestedGamesAsync();
                 return Ok(games);
             }
             catch (Exception e)
@@ -72,9 +69,7 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        
 
-        
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<ActionResult> RemoveGameAsync([FromRoute] int id)
@@ -92,7 +87,7 @@ namespace REST.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<Game>> SuggestGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> SuggestGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)
             {
@@ -101,8 +96,9 @@ namespace REST.Controllers
 
             try
             {
-                await gameWebService.SuggestGameAsync(Game);
-                return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
+                await gameWebService.SuggestGameAsync(game);
+                return Created($"/{game.id}", game);
+                // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)
             {
@@ -112,7 +108,7 @@ namespace REST.Controllers
         }
         [HttpPost]
         [Route("/CreateGame")]
-        public async Task<ActionResult<Game>> CreateGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> CreateGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)
             {
@@ -121,9 +117,9 @@ namespace REST.Controllers
 
             try
             {
-                Console.WriteLine("Game name: " + Game.name);
-                await gameMiddlepoint.AddGameAsync(Game);
-                return Created($"/{Game.id}", Game); // return newly added to-do, to get the auto generated id
+                await gameMiddlePoint.AddGameAsync(game);
+                return Created($"/{game.id}", game); 
+                // return newly added to-do, to get the auto generated id
             }
             catch (Exception e)
             {
@@ -133,12 +129,12 @@ namespace REST.Controllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Game>> UpdateGameApprovalAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> UpdateGameApprovalAsync([FromBody] Game game)
         {
             try
             {
-                await gameMiddlepoint.UpdateGameApprovalAsync(Game);
-                return Ok(Game);
+                await gameMiddlePoint.UpdateGameApprovalAsync(game);
+                return Ok(game);
             }
             catch (Exception e)
             {
@@ -149,7 +145,7 @@ namespace REST.Controllers
         
         [HttpPatch]
         [Route("/Game/EditGame")]
-        public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game Game)
+        public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)
             {
@@ -158,9 +154,8 @@ namespace REST.Controllers
 
             try
             {
-                Console.WriteLine(Game.name);
-                await gameWebService.EditGameAsync(Game);
-                return Ok(Game);
+                await gameWebService.EditGameAsync(game);
+                return Ok(game);
             }
             catch (Exception e)
             {

@@ -7,7 +7,7 @@ namespace BusinessLayer.Middlepoint
 {
     public class EventGameListMiddlePoint : IEventGameListMiddlePoint
     {
-        private IEventGameListWebService eventGameListWebService;
+        private readonly IEventGameListWebService eventGameListWebService;
         
         public EventGameListMiddlePoint(IEventGameListWebService eventGameListWebService)
         {
@@ -15,14 +15,14 @@ namespace BusinessLayer.Middlepoint
         }
         
         
-        public async Task EventGameListUpdate(EventGameListUpdate eventGameListUpdate)
+        public async Task EventGameListUpdateAsync(EventGameListUpdate eventGameListUpdate)
         {
-            if (eventGameListUpdate.inList)
+            if (eventGameListUpdate.InList)
             {
                 //add to list
                 try
                 {
-                    await eventGameListWebService.AddGameToEventGameListAsync(eventGameListUpdate.username, eventGameListUpdate.gameId, eventGameListUpdate.eventId);
+                    await eventGameListWebService.AddGameToEventGameListAsync(eventGameListUpdate.Username, eventGameListUpdate.GameId, eventGameListUpdate.EventId);
                 }
                 catch (Exception e)
                 {
@@ -34,7 +34,7 @@ namespace BusinessLayer.Middlepoint
                 //remove from list
                 try
                 {
-                    await eventGameListWebService.RemoveGameFromEventGameListAsync(eventGameListUpdate.username, eventGameListUpdate.gameId, eventGameListUpdate.eventId);
+                    await eventGameListWebService.RemoveGameFromEventGameListAsync(eventGameListUpdate.Username, eventGameListUpdate.GameId, eventGameListUpdate.EventId);
                 }
                 catch (Exception e)
                 {

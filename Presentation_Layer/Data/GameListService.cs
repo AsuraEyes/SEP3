@@ -19,19 +19,19 @@ namespace Presentation_Layer.Data
         public async Task<IList<Game>> GetUserGamesAsync(string username)
         {
             var stringAsync = client.GetStringAsync(uri + $"/UserGames/?username={username}");
-            var Game = await stringAsync;
-            var Games = JsonSerializer.Deserialize<List<Game>>(Game, new JsonSerializerOptions
+            var game = await stringAsync;
+            var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
-            return Games;
+            return games;
         }
 
         public async Task UpdateUserGamesAsync(string username, int gameId, bool inList)
         {
-            var UpdateAsJson = JsonSerializer.Serialize(new GameListUpdate
-                {username = username, gameId = gameId, inList = inList});
-            HttpContent content = new StringContent(UpdateAsJson,
+            var updateAsJson = JsonSerializer.Serialize(new GameListUpdate
+                {Username = username, GameId = gameId, InList = inList});
+            HttpContent content = new StringContent(updateAsJson,
                 Encoding.UTF8,
                 "application/json");
             await client.PostAsync(uri+"/UpdateGame", content);

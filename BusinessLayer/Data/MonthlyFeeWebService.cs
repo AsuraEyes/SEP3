@@ -6,7 +6,7 @@ namespace BusinessLayer.Data
 {
     public class MonthlyFeeWebService: IMonthlyFeeWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPMonthlyFeeResponse1 response;
 
         public MonthlyFeeWebService()
@@ -14,7 +14,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPMonthlyFeeResponse1> getMonthlyFeeResponse(Operation name, string username, MonthlyFee monthlyFee )
+        private async Task<SOAPMonthlyFeeResponse1> getMonthlyFeeResponseAsync(Operation name, string username, MonthlyFee monthlyFee )
         {
             SOAPMonthlyFeeRequest soapMonthlyFeeRequest = new SOAPMonthlyFeeRequest();
             soapMonthlyFeeRequest.Operation = name;
@@ -26,25 +26,25 @@ namespace BusinessLayer.Data
             return soapResponse1;
         }
 
-        public async Task CreateMonthlyFee(MonthlyFee monthlyFee)
+        public async Task CreateMonthlyFeeAsync(MonthlyFee monthlyFee)
         {
-            response = await getMonthlyFeeResponse(Operation.CREATE, "", monthlyFee);
+            response = await getMonthlyFeeResponseAsync(Operation.CREATE, "", monthlyFee);
         }
 
-        public async Task<MonthlyFee> GetMonthlyFee(string username)
+        public async Task<MonthlyFee> GetMonthlyFeeAsync(string username)
         {
-            response = await getMonthlyFeeResponse(Operation.GET, username, null);
+            response = await getMonthlyFeeResponseAsync(Operation.GET, username, null);
             return response.SOAPMonthlyFeeResponse.MonthlyFee;
         }
 
-        public async Task UpdateMonthlyFee(MonthlyFee monthlyFee)
+        public async Task UpdateMonthlyFeeAsync(MonthlyFee monthlyFee)
         {
-            response = await getMonthlyFeeResponse(Operation.UPDATE, "", monthlyFee);
+            response = await getMonthlyFeeResponseAsync(Operation.UPDATE, "", monthlyFee);
         }
         
-        public async Task<IList<MonthlyFee>> GetMonthlyFeeList(string username)
+        public async Task<IList<MonthlyFee>> GetMonthlyFeeListAsync(string username)
         {
-            response = await getMonthlyFeeResponse(Operation.GETALL,username, null);
+            response = await getMonthlyFeeResponseAsync(Operation.GETALL,username, null);
             return response.SOAPMonthlyFeeResponse.MonthlyFeeList;
         }
     }

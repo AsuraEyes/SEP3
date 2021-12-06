@@ -7,14 +7,14 @@ namespace Data
 {
     public interface IUserService
     {
-        Task<string> helloWorld();
-        Task<User> ValidateUser(string userName, string password);
+        Task<User> ValidateUserAsync(string userName, string password);
         Task<string> CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
-        Task RequestPromotionToOrganizer();
-        Task AcceptPromotion(User user);
-        Task DeclinePromotion(User user);
+        Task RequestPromotionToOrganizerAsync(string username);
+        Task AcceptPromotionAsync(User user);
+        Task DeclinePromotionAsync(User user);
         Task DeleteAccountAsync(string username);
         Task<IList<User>> GetUsersAsync();
+        Task EditAccountAsync(User user);
     }
 }

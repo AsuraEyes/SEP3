@@ -6,6 +6,6 @@ namespace BusinessLayer.Data
 {
     public interface ICategoryWebService
     {
-        Task<IList<Category>> getCategoriesAsync();
+        Task<IList<Category>> GetCategoriesAsync();
     }
 }

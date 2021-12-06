@@ -7,10 +7,10 @@ namespace Presentation_Layer.Models
         [Required(ErrorMessage = "Email is required.")]
         public string Username{ get; set; }
         
-        [Required(ErrorMessage = "Password is required")]
+        [Required(ErrorMessage = "Password is required.")]
         public string Password{ get; set; }
         
-        [Required(ErrorMessage = "Please confirm your password")]
+        [Required(ErrorMessage = "Please confirm your password.")]
         [Compare("Password", ErrorMessage = "The passwords do not match.")]
         public string ConfirmPassword { get; set; }
         

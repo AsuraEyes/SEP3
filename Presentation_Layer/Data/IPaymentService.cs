@@ -8,10 +8,10 @@ namespace Presentation_Layer.Data
     {
         Task<string> MonthlyPaymentAsync(UserCardInfo userCard);
         Task<string> OneTimePaymentAsync(UserCardInfo userCard);
-        Task<bool> CheckSubscription(string username);
-        Task<IList<OneTimeFee>> GetOneTimePaymentList(string username);
-        Task<IList<MonthlyFee>> GetSubscriptionList(string username);
-        Task<MonthlyFee> GetSubscription(string username);
-        Task<OneTimeFee> GetEventFee(string username, int eventId);
+        Task<bool> CheckSubscriptionAsync(string username);
+        Task<IList<OneTimeFee>> GetOneTimePaymentListAsync(string username);
+        Task<IList<MonthlyFee>> GetSubscriptionListAsync(string username);
+        Task<MonthlyFee> GetSubscriptionAsync(string username);
+        Task<OneTimeFee> GetEventFeeAsync(string username, int eventId);
     }
 }

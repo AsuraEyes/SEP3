@@ -11,7 +11,7 @@ namespace REST.Controllers
     [Route("Event")]
     public class CategoryController : Controller
     {
-        private ICategoryWebService categoryWebService;
+        private readonly ICategoryWebService categoryWebService;
 
         public CategoryController(ICategoryWebService categoryWebService)
         {
@@ -19,12 +19,11 @@ namespace REST.Controllers
         }
         [HttpGet]
         [Route("/Categories")]
-        public async Task<ActionResult<IList<Category>>>
-            GetCategoriesAsync()
+        public async Task<ActionResult<IList<Category>>> GetCategoriesAsync()
         {
             try
             {
-                IList<Category> categories = await categoryWebService.getCategoriesAsync();
+                IList<Category> categories = await categoryWebService.GetCategoriesAsync();
                 return Ok(categories);
             }
             catch (Exception e)

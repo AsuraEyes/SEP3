@@ -2,9 +2,9 @@ namespace Presentation_Layer.Models
 {
     public class EventGameListUpdate
     {
-        public string username { get; set; }
-        public int gameId { get; set; }
-        public int eventId { get; set; }
-        public bool inList { get; set; }
+        public string Username { get; set; }
+        public int GameId { get; set; }
+        public int EventId { get; set; }
+        public bool InList { get; set; }
     }
 }

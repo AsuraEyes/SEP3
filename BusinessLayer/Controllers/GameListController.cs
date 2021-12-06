@@ -13,15 +13,15 @@ namespace REST.Controllers
     [Route ("GameList")]
     public class GameListController : Controller
     {
-        private IGameListWebService gameListWebService;
-        private IGameListMiddlepoint gameListMiddlepoint;
-        private IGameMiddlepoint gameMiddlepoint;
+        private readonly IGameListWebService gameListWebService;
+        private readonly IGameListMiddlePoint gameListMiddlePoint;
+        private readonly IGameMiddlePoint gameMiddlePoint;
             
-        public GameListController(IGameListWebService gameListWebService, IGameListMiddlepoint gameListMiddlepoint, IGameMiddlepoint gameMiddlepoint)
+        public GameListController(IGameListWebService gameListWebService, IGameListMiddlePoint gameListMiddlePoint, IGameMiddlePoint gameMiddlePoint)
         {
             this.gameListWebService = gameListWebService;
-            this.gameListMiddlepoint = gameListMiddlepoint;
-            this.gameMiddlepoint = gameMiddlepoint;
+            this.gameListMiddlePoint = gameListMiddlePoint;
+            this.gameMiddlePoint = gameMiddlePoint;
         }
         
         [HttpGet]
@@ -45,8 +45,9 @@ namespace REST.Controllers
         [Route("/UpdateGame")]
         public async Task UpdateUserGamesAsync([FromBody] GameListUpdate gameListUpdate)
         {
-            await gameListMiddlepoint.GameListUpdate(gameListUpdate);
+            await gameListMiddlePoint.GameListUpdate(gameListUpdate);
         }
+        
         [HttpGet]
         [Route("/UserGamesIds")]
         public async Task<ActionResult<IList<Game>>>
@@ -54,7 +55,7 @@ namespace REST.Controllers
         {
             try
             {
-                IList<int> adults = await gameMiddlepoint.GetUserGamesIdsAsync(username);
+                IList<int> adults = await gameMiddlePoint.GetUserGamesIdsAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)

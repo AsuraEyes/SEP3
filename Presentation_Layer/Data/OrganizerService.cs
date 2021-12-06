@@ -10,16 +10,16 @@ namespace Presentation_Layer.Data
     public class OrganizerService : IOrganizerService
     {
         private string uri = "https://localhost:5003";
-        private readonly HttpClient Client;
+        private readonly HttpClient client;
 
         public OrganizerService()
         {
-            Client = new HttpClient();
+            client = new HttpClient();
         }
 
         public async Task<IList<string>> GetOrganizersAsync(int id)
         {
-            var stringAsync = Client.GetStringAsync(uri + $"/Organizers/{id}");
+            var stringAsync = client.GetStringAsync(uri + $"/Organizers/{id}");
             var organizers = await stringAsync;
             var organizersList = JsonSerializer.Deserialize<List<string>>(organizers, new JsonSerializerOptions
             {
@@ -28,23 +28,23 @@ namespace Presentation_Layer.Data
             return organizersList;
         }
         
-        public async Task CoOrganizeEvent(int id, string username)
+        public async Task CoOrganizeEventAsync(int id, string username)
         {
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await Client.PostAsync(uri + $"/Organizers/{id}", content);
+            await client.PostAsync(uri + $"/Organizers/{id}", content);
         }
         
-        public async Task WithdrawEvent(int id, string username)
+        public async Task WithdrawEventAsync(int id, string username)
         {
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await Client.PatchAsync(uri + $"/Organizers/{id}", content);
+            await client.PatchAsync(uri + $"/Organizers/{id}", content);
         }
         
         public async Task<EventList> GetCoOrganizerEventsAsync(string username)
         {
-            var coOrganizersEvent = Client.GetStringAsync(uri + $"/CoOrganizerEvents/?username={username}");
+            var coOrganizersEvent = client.GetStringAsync(uri + $"/CoOrganizerEvents/?username={username}");
             var coOrganizersEvents = await coOrganizersEvent;
             var eventList = JsonSerializer.Deserialize<EventList>(coOrganizersEvents, new JsonSerializerOptions
             {

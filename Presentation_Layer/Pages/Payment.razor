@@ -1,14 +1,14 @@
 @page "/Payment"
 @page "/Payment/{eventId:int}"
 
-
-@inject AuthenticationStateProvider Auth
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
 @using Presentation_Layer.Authentication
 @using System.Security.Claims
+
 @inject IPaymentService paymentService
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
 
 
 <h3>Payment</h3>
@@ -38,7 +38,7 @@
         <input type="month" @bind-value="userCardInfo.ExpiryDate"  size="50"/>
     </div>
 
-    @if (eventId > 0)
+    @if (EventId > 0)
     {
         <p class="actions">
             <button class="btn btn-outline-success" type="submit">Pay</button>
@@ -50,36 +50,33 @@
             <button class="btn btn-outline-success" type="submit">Subscribe</button>
         </p>
     }
-
-
 </EditForm>
-
 
 @code {
 
     [Parameter]
-    public int eventId { get; set; }
+    public int EventId { get; set; }
 
-    private UserCardInfo userCardInfo = new UserCardInfo();
+    private UserCardInfo userCardInfo = new();
     private string errorMessage = "";
     private string username;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         userCardInfo.ExpiryDate = DateTime.Today;
     }
 
     private async Task SubscribeAsync()
     {
-        username = ((CustomAuthenticationStateProvider) Auth).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         userCardInfo.Username = username;
-        userCardInfo.EventId = eventId;
+        userCardInfo.EventId = EventId;
         var message = "";
-        if (!await paymentService.CheckSubscription(username))
+        if (!await paymentService.CheckSubscriptionAsync(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
-        if (eventId>0)
+        if (EventId > 0)
         {
             message = await paymentService.OneTimePaymentAsync(userCardInfo);
         }
@@ -90,21 +87,11 @@
         
         if (message.Equals("Approved"))
         {
-            if (eventId > 0)
-            {
-                NavigationManager.NavigateTo($"EventInfo/{eventId}");
-            }
-            else
-            {
-                NavigationManager.NavigateTo("PaymentOverview"); 
-            }
+            navigationManager.NavigateTo(EventId > 0 ? $"EventInfo/{EventId}" : "PaymentOverview");
         }
         else
         {
             errorMessage = message;
         }
-        
-
     }
-
 }

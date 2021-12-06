@@ -1,9 +1,10 @@
 @page "/EditGame/{Id:int}"
+
 @using Presentation_Layer.Data
 @using Microsoft.AspNetCore.Components
 @using Presentation_Layer.Models
 
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
 @inject IGameService gameService
 
 <h3>Edit Game</h3>
@@ -46,14 +47,13 @@
     
     <p class="actions">
         <button type="submit" class="btn btn-outline-success">Save</button>
-    </p> 
-    
-    
+    </p>
 </EditForm>
 
 @code {
     [Parameter]
     public int Id { get; set; }
+    
     private Game game = new();
     
     protected override async Task OnInitializedAsync()
@@ -64,6 +64,6 @@
     private async Task EditGameAsync()
     {
         await gameService.EditGameAsync(game);
-        NavigationManager.NavigateTo("GGL");
+        navigationManager.NavigateTo("GGL");
     } 
 }

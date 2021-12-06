@@ -6,7 +6,7 @@ namespace BusinessLayer.Data
 {
     public class OrganizerWebService : IOrganizerWebService
     {
-        private BookAndPlayPort port;
+        private readonly BookAndPlayPort port;
         private SOAPOrganizerResponse1 response;
 
         public OrganizerWebService()
@@ -14,7 +14,7 @@ namespace BusinessLayer.Data
             port = new BookAndPlayPortClient();
         }
 
-        private async Task<SOAPOrganizerResponse1> GetOrganizerResponse(Operation name, int eventId, string organizerName)
+        private async Task<SOAPOrganizerResponse1> getOrganizerResponse(Operation name, int eventId, string organizerName)
         {
             SOAPOrganizerRequest soapOrganizerRequest = new SOAPOrganizerRequest();
             soapOrganizerRequest.Operation = name;
@@ -28,23 +28,23 @@ namespace BusinessLayer.Data
 
         public async Task<IList<string>> GetOrganizersAsync(int eventId)
         {
-            response = await GetOrganizerResponse(Operation.GETALL, eventId, "");
+            response = await getOrganizerResponse(Operation.GETALL, eventId, "");
             return response.SOAPOrganizerResponse.organizerList;
         }
         
-        public async Task CoOrganizeEvent(int id, string username)
+        public async Task CoOrganizeEventAsync(int id, string username)
         {
-            response = await GetOrganizerResponse(Operation.CREATE, id, username);
+            response = await getOrganizerResponse(Operation.CREATE, id, username);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
         {
-            response = await GetOrganizerResponse(Operation.UPDATE, id, username);
+            response = await getOrganizerResponse(Operation.UPDATE, id, username);
         }
         
         public async Task<EventList> GetCoOrganizerEventsAsync(string username)
         {
-            response = await GetOrganizerResponse(Operation.GET, 0, username);
+            response = await getOrganizerResponse(Operation.GET, 0, username);
             return response.SOAPOrganizerResponse.eventList;
         } 
     }

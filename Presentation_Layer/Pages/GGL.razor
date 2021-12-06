@@ -1,12 +1,14 @@
 @page "/GGL"
+
 @using Presentation_Layer.Models
 @using Presentation_Layer.Data
-@inject NavigationManager NavigationManager
+
+@inject NavigationManager navigationManager
 @inject IGameService gameService
 
 <h3>GGL</h3>
 <p class="actions">
-        <button @onclick="@AddGameAsync" class="btn btn-outline-secondary" type="submit">
+        <button @onclick="@AddGame" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Add
         </button>
 </p>
@@ -15,7 +17,7 @@
                  if (item.Approved )
                  {
                          <ul>
-                                 <li @onclick="@(() => EditGameAsync(item.Id))"><a href="#">@item.Name</a></li>
+                                 <li @onclick="@(() => EditGame(item.Id))"><a href="#">@item.Name</a></li>
                          </ul>
                  }
          }
@@ -29,13 +31,13 @@
                 goldenGameList = await gameService.GetGGLAsync();
         }
 
-        private async Task AddGameAsync()
+        private void AddGame()
         {
-                NavigationManager.NavigateTo("CreateGame");
+                navigationManager.NavigateTo("CreateGame");
         }
         
-        private async Task EditGameAsync(int id)
+        private void EditGame(int id)
         {
-                NavigationManager.NavigateTo($"EditGame/{id}");
+                navigationManager.NavigateTo($"EditGame/{id}");
         }
 }

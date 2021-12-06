@@ -3,7 +3,7 @@ using BusinessLayer.Models;
 
 namespace BusinessLayer.Middlepoint
 {
-    public interface IGameListMiddlepoint
+    public interface IGameListMiddlePoint
     {
         Task GameListUpdate(GameListUpdate gameListUpdate);
     }

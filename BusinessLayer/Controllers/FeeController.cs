@@ -13,9 +13,9 @@ namespace REST.Controllers
     [Route("Fee")]
     public class FeeController: Controller
     {
-        private IFeeMiddlePoint feeMiddlePoint;
-        private IOneTimeFeeWebService oneTimeFeeWebService;
-        private IMonthlyFeeWebService monthlyFeeWebService;
+        private readonly IFeeMiddlePoint feeMiddlePoint;
+        private readonly IOneTimeFeeWebService oneTimeFeeWebService;
+        private readonly IMonthlyFeeWebService monthlyFeeWebService;
 
         public FeeController(IFeeMiddlePoint feeMiddlePoint, IOneTimeFeeWebService oneTimeFeeWebService, IMonthlyFeeWebService monthlyFeeWebService)
         {
@@ -26,7 +26,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("OneTime")]
-        public async Task<ActionResult<string>> OneTimeFeePayment([FromBody] UserCardInfo userCardInfo)
+        public async Task<ActionResult<string>> OneTimeFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
         {
             if (!ModelState.IsValid)
             {
@@ -46,7 +46,7 @@ namespace REST.Controllers
         
         [HttpPost]
         [Route("Subscription")]
-        public async Task<ActionResult<string>> MonthlyFeePayment([FromBody] UserCardInfo userCardInfo)
+        public async Task<ActionResult<string>> MonthlyFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
         {
             if (!ModelState.IsValid)
             {
@@ -66,8 +66,7 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("Validate")]
-        public async Task<ActionResult<bool>>
-           CheckSubscriptionAsync([FromQuery] string username)
+        public async Task<ActionResult<bool>> CheckSubscriptionAsync([FromQuery] string username)
         {
             try
             {
@@ -83,12 +82,11 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("OneTimeHistory")]
-        public async Task<ActionResult<IList<OneTimeFee>>>
-            GetOneTimeFeeListAsync([FromQuery] string username)
+        public async Task<ActionResult<IList<OneTimeFee>>> GetOneTimeFeeListAsync([FromQuery] string username)
         {
             try
             {
-                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeList(username);
+                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeListAsync(username);
                 return Ok(oneTimeFees);
             }
             catch (Exception e)
@@ -100,12 +98,11 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("MonthlyHistory")]
-        public async Task<ActionResult<IList<MonthlyFee>>>
-            GetMonthlyFeeListAsync([FromQuery] string username)
+        public async Task<ActionResult<IList<MonthlyFee>>> GetMonthlyFeeListAsync([FromQuery] string username)
         {
             try
             {
-                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeList(username);
+                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeListAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -117,12 +114,11 @@ namespace REST.Controllers
         
         [HttpGet]
         [Route("Subscription")]
-        public async Task<ActionResult<MonthlyFee>>
-            GetMonthlyFeeAsync([FromQuery] string username)
+        public async Task<ActionResult<MonthlyFee>> GetMonthlyFeeAsync([FromQuery] string username)
         {
             try
             {
-                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFee(username);
+                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFeeAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -133,12 +129,11 @@ namespace REST.Controllers
         }
         [HttpGet]
         [Route("OneTime")]
-        public async Task<ActionResult<OneTimeFee>>
-            GetOneTimeFeeAsync([FromQuery] string username, int eventId)
+        public async Task<ActionResult<OneTimeFee>> GetOneTimeFeeAsync([FromQuery] string username, int eventId)
         {
             try
             {
-                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFee(username, eventId);
+                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFeeAsync(username, eventId);
                 return Ok(oneTimeFee);
             }
             catch (Exception e)
