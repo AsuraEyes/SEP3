@@ -1,4 +1,4 @@
-namespace Presentation_Layer.Models
+namespace PresentationTier.Models
 {
     public class GameListUpdate
     {

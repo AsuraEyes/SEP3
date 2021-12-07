@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
-using Presentation_Layer.Models;
+using PresentationTier.Models;
 
-namespace Presentation_Layer.Authentication
+namespace PresentationTier.Authentication
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {

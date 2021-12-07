@@ -1,5 +1,5 @@
 @page "/Login"
-@using Presentation_Layer.Authentication
+@using PresentationTier.Authentication
 @namespace LoginComponent
 
 
@@ -41,7 +41,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccount">Create Account</button>
-                            <button type="button" class="btn btn-outline-primary" @onclick="PerformLoginAsync">Login</button>
+                            <button type="submit" class="btn btn-outline-primary" @onclick="PerformLoginAsync">Login</button>
                         </div>
                     </div>
                 </div>

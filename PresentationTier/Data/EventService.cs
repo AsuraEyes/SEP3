@@ -5,10 +5,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Presentation_Layer.Models;
-using Presentation_Layer.Pages;
+using PresentationTier.Models;
+using PresentationTier.Pages;
 
-namespace Presentation_Layer.Data
+namespace PresentationTier.Data
 {
     public class EventService : IEventService
     {
