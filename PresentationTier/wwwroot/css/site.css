@@ -72,3 +72,27 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
         top: 0.5rem;
     }
     
+h1, h2, h3{
+    font-family: Garamond;
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 3em;
+}
+h3{
+    font-size: 2em;
+}
+
+li{
+    list-style: none;
+}
+
+#payment_overview{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    width: 20em;
+}

@@ -9,9 +9,9 @@
 @inject NavigationManager navigationManager
 
 
-<h3>Payment Overview</h3>
+<h1>Payment Overview</h1>
 
-<h2>Subscription: </h2>
+<h2>Subscription</h2>
 @if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
 {
     <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
@@ -20,29 +20,35 @@
 else
 {
     <p>No active subscription</p>
-    <button class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+    <button style="margin-bottom: 3em" class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
 
 }
 
-<h3>Payment History</h3>
+<h2>Payment History</h2>
 @if (monthlyFeeList != null)
 {
-    <h4>Subscriptions</h4>
+    <h3>Subscriptions</h3>
+    <ul>
          @foreach (var item in monthlyFeeList)
          {
-             <ul>
-                 <li>@item.Amount dkk</li>
-                 <li>From: @item.StartDate.ToLongDateString()</li>
-                 <li>To: @item.EndDate.ToLongDateString()</li>
-             </ul>
+             <div id="payment_overview" style="margin: 1em 0">
+                 <div style="margin-bottom: 3em" class="oi oi-dollar">
+                 </div>
+                 <div>
+                     <li>@item.Amount dkk</li>
+                     <li>From: @item.StartDate.ToLongDateString()</li>
+                     <li>To: @item.EndDate.ToLongDateString()</li>
+                 </div>
+             </div>
          }
+    </ul>
 }
 else 
 {<p>No monthly fees</p>}
 
 @if (oneTimeFees != null)
 {
-    <h4>Payments</h4>
+    <h3>Payments</h3>
     @foreach (var item in oneTimeFees)
     {
         <ul>
