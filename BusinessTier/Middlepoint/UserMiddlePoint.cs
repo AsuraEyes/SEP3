@@ -45,20 +45,20 @@ namespace BusinessLayer.Middlepoint
         {
             User userToBePromoted = await GetUserByUsernameAsync(username);
             userToBePromoted.requestedPromotion = true;
-            await userWebService.UpdateUserAsync(userToBePromoted);
+            await userWebService.UpdateUser(userToBePromoted);
         }
 
         public async Task AcceptPromotion(User user)
         {
             user.role = 3;
             user.requestedPromotion = false;
-            await userWebService.UpdateUserAsync(user);
+            await userWebService.UpdateUser(user);
         }
         
         public async Task DeclinePromotion(User user)
         {
             user.requestedPromotion = false;
-            await userWebService.UpdateUserAsync(user);
+            await userWebService.UpdateUser(user);
         }
 
         public async Task<IList<User>> GetUsersAsync(FilterREST filterRest)

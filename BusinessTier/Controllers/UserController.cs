@@ -180,7 +180,7 @@ namespace REST.Controllers
 
             try
             {
-                await userWebService.UpdateUserAsync(user);
+                await userWebService.UpdateUser(user);
                 return Ok(user);
             }
             catch (Exception e)

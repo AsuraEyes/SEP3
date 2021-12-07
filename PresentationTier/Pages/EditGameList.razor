@@ -46,7 +46,7 @@ else
             <tr>
                 <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
                 <td>
-                    <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                    <input type="checkbox" checked=@(gameIds.Contains(item.Id)) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
                 </td>
             </tr>
         }
@@ -71,7 +71,7 @@ else
     private IList<Game> goldenGameListPage = new List<Game>();
     private List<Game> goldenGameList = new ();
     private FilterREST filterRest = new ();
-    private IList<Game> gamesOfUser;
+    private IList<int> gameIds;
     private string username;
     private string searchName;
     private int initialResultsNumber;
@@ -83,7 +83,7 @@ else
         initialResultsNumber = goldenGameListPage.Count;
         goldenGameList.AddRange(goldenGameListPage);
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        gamesOfUser = await gameListService.GetUserGamesAsync(username);
+        gameIds = await gameListService.GetUserGamesIdsAsync(username);
     }
     
     private async Task CompletedChangeAsync(ChangeEventArgs arg, int id)

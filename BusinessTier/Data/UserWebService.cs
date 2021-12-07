@@ -46,7 +46,7 @@ namespace BusinessLayer.Data
             response = await getUserResponseAsync(username, Operation.REMOVE,null, null);
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async Task UpdateUser(User user)
         {
             await getUserResponseAsync("", Operation.UPDATE, user, null);
         }

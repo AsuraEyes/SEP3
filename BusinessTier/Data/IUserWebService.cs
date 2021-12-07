@@ -9,7 +9,7 @@ namespace BusinessLayer.Data
     {
         Task<User> GetUserAsync(string username);
         Task CreateAccountAsync(User user);
-        Task UpdateUserAsync(User user);
+        Task UpdateUser(User user);
         Task DeleteAccountAsync(string username);
         Task<IList<User>> GetUsersAsync(Filter filter);
     }
