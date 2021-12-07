@@ -94,9 +94,6 @@ public class MonthlyFeeDAO implements MonthlyFees
   }
 
   public void updateMonthlyFee(MonthlyFee monthlyFee){
-    java.util.Date st = monthlyFee.getStartDate().toGregorianCalendar().getTime();
-    java.sql.Date sqlSt = new java.sql.Date(st.getTime());
-
     java.util.Date et = monthlyFee.getEndDate().toGregorianCalendar().getTime();
     java.sql.Date sqlEt = new java.sql.Date(et.getTime());
 
