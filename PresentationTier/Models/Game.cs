@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using ExpressiveAnnotations.Attributes;
 
-namespace Presentation_Layer.Models
+namespace PresentationTier.Models
 {
     public class Game
     {

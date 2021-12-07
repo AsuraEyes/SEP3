@@ -5,9 +5,9 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Presentation_Layer.Models;
+using PresentationTier.Models;
 
-namespace Presentation_Layer.Data
+namespace PresentationTier.Data
 {
     public class GameService : IGameService
     {

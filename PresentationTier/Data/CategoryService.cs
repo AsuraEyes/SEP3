@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Presentation_Layer.Models;
+using PresentationTier.Models;
 
-namespace Presentation_Layer.Data
+namespace PresentationTier.Data
 {
     public class CategoryService: ICategoryService
     {

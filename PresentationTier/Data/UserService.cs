@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Data;
 using Newtonsoft.Json;
-using Presentation_Layer.Models;
+using PresentationTier.Models;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SEP3_Blazor.Data

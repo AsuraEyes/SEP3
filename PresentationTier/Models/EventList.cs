@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Presentation_Layer.Models
+namespace PresentationTier.Models
 {
     public class EventList
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using ExpressiveAnnotations.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Presentation_Layer.Models
+namespace PresentationTier.Models
 {
     public class Event
     {

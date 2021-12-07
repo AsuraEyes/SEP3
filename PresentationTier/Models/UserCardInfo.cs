@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
 
-namespace Presentation_Layer.Models
+namespace PresentationTier.Models
 {
     public class UserCardInfo
     {

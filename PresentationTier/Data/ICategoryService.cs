@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Presentation_Layer.Models;
+using PresentationTier.Models;
 
-namespace Presentation_Layer.Data
+namespace PresentationTier.Data
 {
     public interface ICategoryService
     {

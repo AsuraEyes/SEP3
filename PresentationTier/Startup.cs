@@ -12,11 +12,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Presentation_Layer.Authentication;
-using Presentation_Layer.Data;
+using PresentationTier.Authentication;
+using PresentationTier.Data;
 using SEP3_Blazor.Data;
 
-namespace Presentation_Layer
+namespace PresentationTier
 {
     public class Startup
     {
