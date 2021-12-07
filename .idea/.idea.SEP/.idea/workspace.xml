@@ -20,24 +20,173 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="BusinessLayer Middlepoint &#10;Fixed names to MiddlePoint everywhere&#10;Naming conventions fixed&#10;Added -Async to asynchronous methods">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="changed the save button in edit forms">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SEP.sln.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SEP.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/UnitTest1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTests/EventTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTests/GameTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTests/UnitTests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnitTests/UserTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2021_8_38_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2021_8_38_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/CategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/CategoryWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/EventGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/EventOrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/EventWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/GameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/GameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/GameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/GameWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/ICategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/ICategoryWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IEventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IEventWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IMonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IMonthlyFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IOneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/IOneTimeFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/MonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/MonthlyFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/OneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Data/OneTimeFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/FeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer/Middlepoint/FeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.idea/.idea.BusinessLayer/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.idea/.idea.BusinessLayer/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.idea/.idea.BusinessLayer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.idea/.idea.BusinessLayer/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.idea/.idea.BusinessLayer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.idea/.idea.BusinessLayer/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.vs/BusinessLayer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.vs/BusinessLayer/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/.vs/BusinessLayer/xs/UserPrefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.vs/BusinessLayer/xs/UserPrefs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/BankData/IPaymentWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BankData/IPaymentWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/BankData/PaymentWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BankData/PaymentWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/BusinessLayer.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BusinessLayer.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Connected Services/BookAndPlaySOAP/ConnectedService.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/ConnectedService.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Connected Services/BookAndPlaySOAP/Reference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/Reference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventGameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventOrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/FeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/OrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/ParticipantController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/CategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/CategoryWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/EventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/GameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/GameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/ICategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/ICategoryWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IEventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IEventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IEventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IGameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IMonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IMonthlyFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IOneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IOneTimeFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IParticipantWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/MonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/MonthlyFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/OneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/OneTimeFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/OrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/OrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/ParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/ParticipantWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/EventGameListMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/EventMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/EventMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/FeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/FeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameListMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/GameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IEventGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IEventGameListMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IEventMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IEventMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IFeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IFeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameListMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IGameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/IUserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Middlepoint/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/EventGameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/EventGameListUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/FilterREST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/FilterREST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/GameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/GameListUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/CategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventOrganizerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/ICategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IEventGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IEventOrganizerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IEventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IOrganizerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IParticipantService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IPaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/OrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/OrganizerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/ParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/ParticipantService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/PaymentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/EventGameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/EventGameListUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/EventList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/FilterREST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/FilterREST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/GameListUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/GameListUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/MonthlyFee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/MonthlyFee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/OneTimeFee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/OneTimeFee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateEventAsync.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateEventAsync.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventAsync.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventAsync.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditEventGames.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/PresentationLayer.csproj.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/PresentationLayer.csproj.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/PresentationTier.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Presentation_Layer.csproj.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Shared/SurveyPrompt.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/SurveyPrompt.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/bootstrap/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/bootstrap/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/FONT-LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/FONT-LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/ICON-LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/ICON-LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation_Layer/wwwroot/site.ico" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/site.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SEP.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +205,45 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation_Layer/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/CreateAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e54fec4597f74a4b865d31f47b54f4fa11188/dc/662eb147/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/c6/a59c0411/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PresentationTier/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/49/FromQueryAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/4b/eaa1e453/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c444817a6e3a4d8b94445f55790d489b2e800/70/IBindingSourceMetadata.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/46/FromBodyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/AllUsers.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTests/EventTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/7/CompareAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/EditAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UnitTests/UserTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/UserInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tests/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/55/AggregateException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -164,7 +343,7 @@
       </method>
     </configuration>
     <configuration name="BusinessLayer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="BusinessLayer" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -179,7 +358,7 @@
       </method>
     </configuration>
     <configuration name="BusinessLayer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -194,7 +373,7 @@
       </method>
     </configuration>
     <configuration name="BusinessLayer: WebApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="WebApplication" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -238,8 +417,8 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="Presentation_Layer" type="LaunchSettings" factoryName=".NET Launch Settings Profile" singleton="false">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" />
+    <configuration name="Presentation_Layer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationTier/PresentationTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="Presentation_Layer" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -254,7 +433,7 @@
       </method>
     </configuration>
     <configuration name="Presentation_Layer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationTier/PresentationTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -356,9 +535,64 @@
       <workItem from="1637678017045" duration="11019000" />
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
-      <workItem from="1638435229861" duration="7740000" />
-      <workItem from="1638519708146" duration="16352000" />
-      <workItem from="1638717815667" duration="6176000" />
+      <workItem from="1638435229861" duration="14022000" />
+      <workItem from="1638517980892" duration="18001000" />
+    </task>
+    <task id="LOCAL-00057" summary="random change">
+      <created>1637852939067</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1637852939068</updated>
+    </task>
+    <task id="LOCAL-00058" summary="pagination fix">
+      <created>1637860758525</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1637860758526</updated>
+    </task>
+    <task id="LOCAL-00059" summary="redundant pagination removed">
+      <created>1637860857230</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1637860857232</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fixed log in error">
+      <created>1637861753568</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1637861753571</updated>
+    </task>
+    <task id="LOCAL-00061" summary="fixed">
+      <created>1637861799038</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1637861799038</updated>
+    </task>
+    <task id="LOCAL-00062" summary="exception simplified">
+      <created>1637861863350</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1637861863350</updated>
+    </task>
+    <task id="LOCAL-00063" summary="new login page">
+      <created>1637865042358</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1637865042359</updated>
+    </task>
+    <task id="LOCAL-00064" summary="nothing">
+      <created>1637866149439</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1637866149443</updated>
     </task>
     <task id="LOCAL-00065" summary="beautify">
       <created>1637876934198</created>
@@ -577,133 +811,77 @@
       <option name="project" value="LOCAL" />
       <updated>1638445485993</updated>
     </task>
-    <task id="LOCAL-00096" summary="updated UserWebService interface">
-      <created>1638462194773</created>
+    <task id="LOCAL-00096" summary="fixed create game">
+      <created>1638447071153</created>
       <option name="number" value="00096" />
       <option name="presentableId" value="LOCAL-00096" />
       <option name="project" value="LOCAL" />
-      <updated>1638462194773</updated>
+      <updated>1638447071154</updated>
     </task>
-    <task id="LOCAL-00097" summary="filter all users by requested promotion">
-      <created>1638524032906</created>
+    <task id="LOCAL-00097" summary="cleanup according to rider">
+      <created>1638447195030</created>
       <option name="number" value="00097" />
       <option name="presentableId" value="LOCAL-00097" />
       <option name="project" value="LOCAL" />
-      <updated>1638524032906</updated>
+      <updated>1638447195030</updated>
     </task>
-    <task id="LOCAL-00098" summary="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor">
-      <created>1638527737812</created>
+    <task id="LOCAL-00098" summary="rider cleanup">
+      <created>1638447223213</created>
       <option name="number" value="00098" />
       <option name="presentableId" value="LOCAL-00098" />
       <option name="project" value="LOCAL" />
-      <updated>1638527737812</updated>
+      <updated>1638447223213</updated>
     </task>
-    <task id="LOCAL-00099" summary="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;Login.razor, ManageAccount.razor, MyEvents.razor">
-      <created>1638528483894</created>
+    <task id="LOCAL-00099" summary="added await expression">
+      <created>1638447259596</created>
       <option name="number" value="00099" />
       <option name="presentableId" value="LOCAL-00099" />
       <option name="project" value="LOCAL" />
-      <updated>1638528483894</updated>
+      <updated>1638447259597</updated>
     </task>
-    <task id="LOCAL-00100" summary="Index.razor cleared">
-      <created>1638531211995</created>
+    <task id="LOCAL-00100" summary="put input validation summary when creating and editing files">
+      <created>1638517785130</created>
       <option name="number" value="00100" />
       <option name="presentableId" value="LOCAL-00100" />
       <option name="project" value="LOCAL" />
-      <updated>1638531211995</updated>
+      <updated>1638517785132</updated>
     </task>
-    <task id="LOCAL-00101" summary="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;GameApproval.razor, GameInfo.razor, GameList.razor, GGL.razor&#10;fixed new() ... in PaymentOverview.razor, Payment.razor, UserInfo.razor">
-      <created>1638531681813</created>
+    <task id="LOCAL-00101" summary="View all users fully implemented">
+      <created>1638518738087</created>
       <option name="number" value="00101" />
       <option name="presentableId" value="LOCAL-00101" />
       <option name="project" value="LOCAL" />
-      <updated>1638531681813</updated>
+      <updated>1638518738087</updated>
     </task>
-    <task id="LOCAL-00102" summary="Fixed void / async Task and -Async in names of methods in classes: &#10;&#10;EventInfo.razor, GameApproval.razor, GameList.razor, GGL.razor, Login.razor, ManageAccount.razor, MyEvents.razor, Payment.razor, PaymentOverview.razor, UserInfo.razor">
-      <created>1638532323376</created>
+    <task id="LOCAL-00102" summary="fixed the issue">
+      <created>1638519002540</created>
       <option name="number" value="00102" />
       <option name="presentableId" value="LOCAL-00102" />
       <option name="project" value="LOCAL" />
-      <updated>1638532323376</updated>
+      <updated>1638519002540</updated>
     </task>
-    <task id="LOCAL-00103" summary="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables">
-      <created>1638533545816</created>
+    <task id="LOCAL-00103" summary="fixed redirecting">
+      <created>1638519169222</created>
       <option name="number" value="00103" />
       <option name="presentableId" value="LOCAL-00103" />
       <option name="project" value="LOCAL" />
-      <updated>1638533545816</updated>
+      <updated>1638519169223</updated>
     </task>
-    <task id="LOCAL-00104" summary="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;AllEvents.razor, AllUsers.razor, CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, ManageAccount.razor, UserInfo.razor&#10;&#10;Deleted page ChangePositionRequests.razor">
-      <created>1638534660159</created>
+    <task id="LOCAL-00104" summary="edit account working">
+      <created>1638527690301</created>
       <option name="number" value="00104" />
       <option name="presentableId" value="LOCAL-00104" />
       <option name="project" value="LOCAL" />
-      <updated>1638534660159</updated>
+      <updated>1638527690303</updated>
     </task>
-    <task id="LOCAL-00105" summary="final touches on Presentation layer">
-      <created>1638535160187</created>
+    <task id="LOCAL-00105" summary="changed the save button in edit forms">
+      <created>1638530615225</created>
       <option name="number" value="00105" />
       <option name="presentableId" value="LOCAL-00105" />
       <option name="project" value="LOCAL" />
-      <updated>1638535160187</updated>
+      <updated>1638530615226</updated>
     </task>
-    <task id="LOCAL-00106" summary="deleted RequestsForOrganizers from the NavMenu.razor">
-      <created>1638535388376</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1638535388376</updated>
-    </task>
-    <task id="LOCAL-00107" summary="no caching of the current user in the Business layer middlepoint &#10;So if two users logged in at the same time, it works properly">
-      <created>1638539715003</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1638539715003</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Models PascalCase revised">
-      <created>1638718233519</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1638718233519</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Data on Presentation layer revised&#10;Added Async to method names&#10;renamed private variables to camelCase">
-      <created>1638719559503</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1638719559503</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Console.Writeline deleted from the whole Business and Presentation layer">
-      <created>1638719688128</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1638719688128</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed">
-      <created>1638720376873</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1638720376873</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Business server Models fixed naming conventions">
-      <created>1638720721792</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1638720721792</updated>
-    </task>
-    <task id="LOCAL-00113" summary="BusinessLayer Middlepoint &#10;Fixed names to MiddlePoint everywhere&#10;Naming conventions fixed&#10;Added -Async to asynchronous methods">
-      <created>1638721759895</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1638721759895</updated>
-    </task>
-    <option name="localTasksCounter" value="114" />
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,6 +905,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="fixed bug in create event" />
+    <MESSAGE value="fixed typo" />
+    <MESSAGE value="code cleanup" />
+    <MESSAGE value="fixed create account, games are clickable, events now shown in my events" />
+    <MESSAGE value="Game info changed" />
+    <MESSAGE value="game names now hyperlink" />
+    <MESSAGE value="users made into hyperlinks" />
+    <MESSAGE value="users now hyperlinks" />
     <MESSAGE value="Debug stuff" />
     <MESSAGE value="added a confirmation message when disapproving a game" />
     <MESSAGE value="approval fully implemented" />
@@ -734,28 +920,16 @@
     <MESSAGE value="create account  fully implemented" />
     <MESSAGE value="change in account" />
     <MESSAGE value="create game" />
-    <MESSAGE value="updated UserWebService interface" />
-    <MESSAGE value="filter all users by requested promotion" />
-    <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes MainLayout.razor, NavMenu.razor, Payment.razor, PaymentOverview.razor, RequestsForGGL.razor, UserInfo.razor" />
-    <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;Login.razor, ManageAccount.razor, MyEvents.razor" />
-    <MESSAGE value="Index.razor cleared" />
-    <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;GameApproval.razor, GameInfo.razor, GameList.razor, GGL.razor&#10;fixed new() ... in PaymentOverview.razor, Payment.razor, UserInfo.razor" />
-    <MESSAGE value="Fixed void / async Task and -Async in names of methods in classes: &#10;&#10;EventInfo.razor, GameApproval.razor, GameList.razor, GGL.razor, Login.razor, ManageAccount.razor, MyEvents.razor, Payment.razor, PaymentOverview.razor, UserInfo.razor" />
-    <MESSAGE value="renamed @inject to camelCase in the whole Presentation layer Pages&#10;changed Rider preferences to camelCase from _lowerCase by private instance variables" />
-    <MESSAGE value="fixing naming conventions&#10;getting rid of try{} catch(){} in razor pages&#10;deleting comments and cw&#10;classes:&#10;AllEvents.razor, AllUsers.razor, CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, ManageAccount.razor, UserInfo.razor&#10;&#10;Deleted page ChangePositionRequests.razor" />
-    <MESSAGE value="final touches on Presentation layer" />
-    <MESSAGE value="deleted RequestsForOrganizers from the NavMenu.razor" />
-    <MESSAGE value="no caching of the current user in the Business layer middlepoint &#10;So if two users logged in at the same time, it works properly" />
-    <MESSAGE value="Models PascalCase revised" />
-    <MESSAGE value="Data on Presentation layer revised&#10;Added Async to method names&#10;renamed private variables to camelCase" />
-    <MESSAGE value="Console.Writeline deleted from the whole Business and Presentation layer" />
-    <MESSAGE value="Business server Controllers&#10;Async added to method names&#10;Naming conventions fixed" />
-    <MESSAGE value="Business server Models fixed naming conventions" />
-    <MESSAGE value="BusinessLayer Middlepoint &#10;Fixed names to MiddlePoint everywhere&#10;Naming conventions fixed&#10;Added -Async to asynchronous methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="BusinessLayer Middlepoint &#10;Fixed names to MiddlePoint everywhere&#10;Naming conventions fixed&#10;Added -Async to asynchronous methods" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="fixed create game" />
+    <MESSAGE value="cleanup according to rider" />
+    <MESSAGE value="rider cleanup" />
+    <MESSAGE value="added await expression" />
+    <MESSAGE value="put input validation summary when creating and editing files" />
+    <MESSAGE value="View all users fully implemented" />
+    <MESSAGE value="fixed the issue" />
+    <MESSAGE value="fixed redirecting" />
+    <MESSAGE value="edit account working" />
+    <MESSAGE value="changed the save button in edit forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the save button in edit forms" />
   </component>
 </project>
