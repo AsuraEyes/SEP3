@@ -125,6 +125,11 @@
         filterRest.ResultsPerPage = resultsPerPage;
         
         events = await restEvent.GetFilteredEventsAsync(filterRest);
+        foreach (var item in events.ListOfEvents)
+        {
+            Console.WriteLine(item.Name);
+        }
+        
         numberOfPages = events.Count;
         eventList = events.ListOfEvents;
         CurrentPage = 1;
