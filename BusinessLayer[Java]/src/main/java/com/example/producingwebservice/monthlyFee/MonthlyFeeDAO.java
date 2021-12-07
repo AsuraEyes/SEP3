@@ -2,7 +2,6 @@ package com.example.producingwebservice.monthlyFee;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
-
 import io.spring.guides.gs_producing_web_service.MonthlyFee;
 
 import javax.annotation.Resource;
@@ -11,16 +10,16 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class MonthlyFeeDAO implements MonthlyFees
 {
   private DatabaseHelper<MonthlyFee> helper;
-  private List<MonthlyFee> monthlyFeeList;
+  private final List<MonthlyFee> monthlyFeeList;
 
   @Resource(name = "jdbcUrl")
   private String jdbcUrl;
@@ -42,7 +41,6 @@ public class MonthlyFeeDAO implements MonthlyFees
     monthlyFee.setId(id);
     monthlyFee.setAmount(amount);
 
-    //Date to XMLGregorianCalendar conversion
     GregorianCalendar c = new GregorianCalendar();
 
     try{
@@ -53,9 +51,9 @@ public class MonthlyFeeDAO implements MonthlyFees
       c.clear();
       c.setTime(endDate);
       XMLGregorianCalendar end = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-      monthlyFee.setEndDate(end); // set the monthly fee end time
+      monthlyFee.setEndDate(end);
       }
-    catch (DatatypeConfigurationException e)
+    catch (DatatypeConfigurationException ignored)
     {}
 
     monthlyFee.setUserUsername(username);

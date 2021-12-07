@@ -15,7 +15,6 @@ public class EventGameListDAO implements EventGameLists
 
   private DatabaseHelper<Game> helper;
   private final GameList gameList;
-  //private EventGameList eventGameList;
 
   @Resource(name = "jdbcUrl")
   private String jdbcUrl;
@@ -28,7 +27,6 @@ public class EventGameListDAO implements EventGameLists
 
   public EventGameListDAO() {
     gameList = new GameList();
-    //eventGameList = new EventGameList();
   }
 
   private static Game createGame(int id, String name, int complexity, int timeEstimation,

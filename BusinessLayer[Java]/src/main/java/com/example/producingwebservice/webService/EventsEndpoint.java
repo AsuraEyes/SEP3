@@ -15,7 +15,7 @@ public class EventsEndpoint
 {
   private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
 
-  private Events eventsDAO;
+  private final Events eventsDAO;
 
   @Autowired
   public EventsEndpoint(Events dao) {
@@ -38,7 +38,6 @@ public class EventsEndpoint
         break;
       case GETALL:
           response.setEventList(eventsDAO.searchAndFilter(request.getFilter()));
-          //response.setNumberOfPages(eventsDAO.getNumberOfPages(request.getResultsPerPage()));
         break;
       case REMOVE:
        eventsDAO.cancel(request.getId());

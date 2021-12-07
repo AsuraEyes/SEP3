@@ -2,8 +2,9 @@ package com.example.producingwebservice.events;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
-import com.example.producingwebservice.games.GameDAO;
-import io.spring.guides.gs_producing_web_service.*;
+import io.spring.guides.gs_producing_web_service.Event;
+import io.spring.guides.gs_producing_web_service.EventList;
+import io.spring.guides.gs_producing_web_service.Filter;
 
 import javax.annotation.Resource;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -12,7 +13,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -20,8 +20,6 @@ public class EventDAO implements Events {
     private DatabaseHelper<Event> eventHelper;
     private DatabaseHelper<Integer> integerHelper;
     private final EventList eventList;
-    private int eventListLength;
-//    private GameDAO gameDAO;
 
     @Resource(name = "jdbcUrl")
     private String jdbcUrl;
@@ -54,7 +52,6 @@ public class EventDAO implements Events {
     {
         Event event = new Event();
 
-        //Date to XMLGregorianCalendar conversion
         GregorianCalendar c = new GregorianCalendar();
 
         try{
@@ -67,10 +64,10 @@ public class EventDAO implements Events {
             c.clear();
             c.setTime(endTimeStamp);
             XMLGregorianCalendar end = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-            event.setEndTime(end); // set the event end time
+            event.setEndTime(end);
           }
         }
-        catch (DatatypeConfigurationException e){}
+        catch (DatatypeConfigurationException ignored){}
 
         event.setId(id);
         event.setName(name);
@@ -81,9 +78,6 @@ public class EventDAO implements Events {
         event.setNumberOfParticipants(numberOfParticipants);
         event.setEventCategory(eventCategory);
         event.setOrganizer(organizer);
-//        event.setParticipants(participants);
-//        event.setOrganizers(organizers);
-//        event.setGameList(gameList);
         return event;
     }
 
@@ -128,8 +122,7 @@ public class EventDAO implements Events {
   public EventList searchAndFilter(Filter filter){
         eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
-
-        //counting the number of elements based on the applied filters
+        int eventListLength;
 
         String statement = "SELECT COUNT(*) FROM event ";
         String appendToStatement = "";
@@ -150,30 +143,18 @@ public class EventDAO implements Events {
           if(appendToStatement.endsWith("AND"))
           {
               appendToStatement = appendToStatement.substring(0, appendToStatement.length() - 4);
-              //appendToStatement +=" GROUP BY id ORDER BY id;";
               appendToStatement +=";";
           }
         }
         else{
-            // appendToStatement +=" GROUP BY id ORDER BY id;";
             appendToStatement +=";";
         }
 
         System.out.println(statement+appendToStatement);
 
-        //retrieving the number of elements
-
-        //eventList.getEventList().addAll(helper().map(new EventMapper(), statement+appendToStatement));
         eventListLength = (integerHelper().mapSingle(new IntegerMapper(), statement+appendToStatement));
 
-        //cut out the ";" in the end, change count to select
-
         statement = "SELECT * FROM event "+appendToStatement.substring(0, appendToStatement.length()-1);
-
-        //add pagination
-
-        //statement += " ORDER by id LIMIT "+resultsPerPage+" OFFSET "+(currentPage-1)*resultsPerPage+";";
-        //offset = (currentPage-1)*resultsPerPage;
 
         statement += " ORDER by id LIMIT "+filter.getLimit()+" OFFSET "+filter.getOffset()+";";
 
@@ -184,11 +165,6 @@ public class EventDAO implements Events {
 
         return pagedEventList;
     }
-
-//    public int getNumberOfPages(int limit){
-//        //return (int) Math.ceil(eventList.getEventList().size() / (float)limit);
-//        return (int) Math.ceil(eventListLength/ (float)limit);
-//    }
 
     private static class IntegerMapper implements DataMapper<Integer> {
         public Integer create(ResultSet rs)
@@ -226,9 +202,6 @@ public class EventDAO implements Events {
              int numberOfParticipants = rs.getInt("number_of_participants");
              int eventCategory = rs.getInt("event_category_id");
              String organizer =  rs.getString("organizer");
-//             User organizer;
-////             UserList participants;
-////             UserList organizers;
 
 
             return createEvent(id, name, startTime,endTime,addressStreetName,

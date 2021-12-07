@@ -20,7 +20,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="made some unit tests" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="optimized imports for game test">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/EventGameList/EventGameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/EventGameList/EventGameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/events/Events.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/gameList/GameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/gameList/GameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/gameList/GameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/gameList/GameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/EventGameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/EventGameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/EventsEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/EventsEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/GameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/GameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/OrganizerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/OrganizerEndpoint.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +57,7 @@
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/UnitTests/GameTest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/CreateAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
@@ -68,7 +85,6 @@
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/UserInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tests/UnitTest1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -369,21 +385,7 @@
       <workItem from="1637742394056" duration="94339000" />
       <workItem from="1638129589140" duration="30223000" />
       <workItem from="1638435229861" duration="14022000" />
-      <workItem from="1638517980892" duration="18595000" />
-    </task>
-    <task id="LOCAL-00058" summary="pagination fix">
-      <created>1637860758525</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1637860758526</updated>
-    </task>
-    <task id="LOCAL-00059" summary="redundant pagination removed">
-      <created>1637860857230</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1637860857232</updated>
+      <workItem from="1638517980892" duration="20394000" />
     </task>
     <task id="LOCAL-00060" summary="fixed log in error">
       <created>1637861753568</created>
@@ -714,7 +716,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638861331845</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="removed unnecessary project from solution">
+      <created>1638861419660</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1638861419660</updated>
+    </task>
+    <task id="LOCAL-00108" summary="optimized imports for game test">
+      <created>1638861471926</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1638861471926</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,8 +754,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fixed typo" />
-    <MESSAGE value="code cleanup" />
     <MESSAGE value="fixed create account, games are clickable, events now shown in my events" />
     <MESSAGE value="Game info changed" />
     <MESSAGE value="game names now hyperlink" />
@@ -763,6 +777,8 @@
     <MESSAGE value="edit account working" />
     <MESSAGE value="changed the save button in edit forms" />
     <MESSAGE value="made some unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="made some unit tests" />
+    <MESSAGE value="removed unnecessary project from solution" />
+    <MESSAGE value="optimized imports for game test" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimized imports for game test" />
   </component>
 </project>

@@ -22,7 +22,7 @@ import java.util.List;
 public class OneTimeFeeDAO implements OneTimeFees
 {
   private DatabaseHelper<OneTimeFee> helper;
-  private List<OneTimeFee> oneTimeFeeList;
+  private final List<OneTimeFee> oneTimeFeeList;
 
   @Resource(name = "jdbcUrl")
   private String jdbcUrl;
