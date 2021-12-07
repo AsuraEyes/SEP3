@@ -2,6 +2,7 @@ package com.example.producingwebservice.games;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
+import io.spring.guides.gs_producing_web_service.Filter;
 import io.spring.guides.gs_producing_web_service.Game;
 import io.spring.guides.gs_producing_web_service.GameList;
 
@@ -60,17 +61,18 @@ public class GameDAO implements Games {
         return game;
     }
 
-    public GameList readAllGGL(boolean approved) {
+    public GameList getSuggestedGames() {
         gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = ?", approved));
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = false"));
         return gameList;
     }
 
-//    public GameList readAllUserGameList(String username) {
-//        gameList.getGameList().clear();
-//        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username));
-//        return gameList;
-//    }
+    public GameList getGGL(Filter filter) {
+        String search = "%"+filter.getFilter()+"%";
+        gameList.getGameList().clear();
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = true AND name ILIKE ? LIMIT ? OFFSET ?;", search, filter.getLimit(), filter.getOffset()));
+        return gameList;
+    }
 
     public void delete(int id) {
         helper().executeUpdate("DELETE FROM game WHERE id = ?", id);

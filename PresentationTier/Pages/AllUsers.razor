@@ -1,0 +1,104 @@
+@page "/AllUsers"
+
+@using PresentationTier.Models
+@using global::Data
+
+@attribute [Authorize(Policy = "Administrator")]
+
+@inject NavigationManager navigationManager
+@inject IUserService userService
+@inject AuthenticationStateProvider stateProvider
+
+<h3>All Users</h3>
+Requested promotion:
+<Select class="selectpicker" @oninput="@(Filter)">
+    <option value="false">-- All --</option>
+    <option value="true">Requested promotion</option>
+</Select>
+
+<input type="text" @bind-value="searchName"  style="width: 250px"/>
+<button @onclick="@SearchUserAsync" class="btn btn-outline-secondary" type="submit">Search</button>
+
+<ul>
+    @if (requested == false)
+    {
+        @foreach (var user in allUsers)
+        {
+            <li>
+                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+            </li>
+        }
+        @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
+        {
+            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Load more
+            </button>
+        }
+    }
+    else
+    {
+        @foreach (var user in allUsers.Where(t=> t.RequestedPromotion))
+        {
+            <li>
+                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+            </li>
+        }
+        @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
+        {
+            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Load more
+            </button>
+        }
+    }
+</ul>
+
+@code {
+    private List<User> allUsers  = new ();
+    private IList<User> allUsersPage = new List<User>();
+    private FilterREST filterRest = new();
+    private string searchName;
+    private int initialResultsNumber;
+    private bool requested;
+
+    protected override async Task OnInitializedAsync()
+    {
+        filterRest.CurrentPage = 1;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        initialResultsNumber = allUsersPage.Count;
+        allUsers.AddRange(allUsersPage);
+    }
+    
+    private void MoreUserInfo(string username)
+    {
+        navigationManager.NavigateTo($"UserInfo/{username}");
+    }
+
+    private void Filter(ChangeEventArgs args)
+    {
+        if (args.Value != null && args.Value.Equals("true"))
+        {
+            requested = true;
+        }
+        else
+        {
+            requested = false;
+        }
+    }
+    
+    private async Task SearchUserAsync()
+    {
+        filterRest.Search = searchName;
+        filterRest.CurrentPage = 1;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        allUsers.Clear();
+        allUsers.AddRange(allUsersPage);
+    }
+
+    private async Task LoadMoreAsync()
+    {
+        filterRest.CurrentPage += 1;
+        filterRest.Search = searchName;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        allUsers.AddRange(allUsersPage);
+    }
+}

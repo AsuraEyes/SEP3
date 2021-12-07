@@ -1,0 +1,238 @@
+@page "/EventInfo/{Id:int}"
+
+@using PresentationTier.Data
+@using PresentationTier.Models
+@using PresentationTier.Authentication
+@using System.Security.Claims
+
+@inject IParticipantService participantService;
+@inject IJSRuntime jsRuntime
+@inject IOrganizerService organizerService;
+@inject IEventService eventService;
+@inject ICategoryService categoryService;
+@inject IEventGameListService eventGameListService;
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IPaymentService paymentService;
+
+@if (categories.Count == 0)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <h3>@selectedEvent.Name</h3>
+    <p>@errorMessage</p>
+
+    if (selectedEvent.EndTime.Subtract(selectedEvent.StartTime).TotalMinutes < 0)
+    {
+        <p>Time: @selectedEvent.StartTime.ToString("f")</p>
+    }
+    else
+    {
+        <p>Time: @selectedEvent.StartTime.ToString("f") - @selectedEvent.EndTime.ToString("t")</p>
+    }
+
+    if (selectedEvent.AddressApartmentNumber != null)
+    {
+        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+
+    }
+    else
+    {
+        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
+    }
+    <p>Category: @category.Name </p>
+    if (username.Equals(selectedEvent.Organizer))
+    {
+        <p class="actions">
+            <button @onclick="@EditEvent" class="btn btn-outline-secondary" type="submit"><i class="oi oi-pencil"></i> Edit</button>
+        </p>
+    }
+
+    <br/>
+    <div class="col-sm-6">
+        <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
+        @foreach (var participant in participants)
+        {
+            <ul>
+                <li @onclick="@(() => MoreUserInfo(participant))"><a href="#">@participant</a></li>
+            </ul>
+        }
+        @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
+        {
+            <p class="actions">
+                <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsync">Withdraw</button>
+            </p>
+        }
+        else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
+        {
+            <p class="actions">
+                <button class="btn btn-secondary btn-lg" type="submit" disabled>Join</button>
+            </p>
+        }
+        else if (!username.Equals(selectedEvent.Organizer))
+        {
+            <p class="actions">
+                <button class="btn btn-outline-success" type="submit" @onclick="@JoinEventAsync">Join</button>
+            </p>
+        }
+    </div>
+
+    <div class="mb-2">
+        <h3>Organizers</h3>
+        @foreach (var organizer in organizers)
+        {
+            <ul>
+                @if (organizer.Equals(selectedEvent.Organizer))
+                {
+                    <li>
+                        <b @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></b>
+                    </li>
+                }
+                else
+                {
+                    <li @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></li>
+                }
+            </ul>
+        }
+        <AuthorizeView Policy="Organizer">
+            @if (participants.Contains(username))
+            {
+                if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
+                {
+                    <p class="actions">
+                        <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsCoOrganizerAsync">Withdraw</button>
+                    </p>
+                }
+                else if (!username.Equals(selectedEvent.Organizer))
+                {
+                    <p class="actions">
+                        <button class="btn btn-outline-success" type="submit" @onclick="@CoOrganizeEventAsync">Co-Organize</button>
+                    </p>
+                }
+            }
+        </AuthorizeView>
+    </div>
+
+    <br/>
+    <h3>Games</h3>
+    foreach (var game in allEventGameList)
+    {
+        <ul>
+            <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
+        </ul>
+    }
+
+    if (organizers.Any(user => user.Equals(username)))
+    {
+        <br/>
+        <p class="actions">
+            <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
+        </p>
+    }
+
+    if (username.Equals(selectedEvent.Organizer))
+    {
+        <br/>
+        <p class="actions">
+            <button class="btn btn-outline-danger" type="submit" @onclick="@CancelEventAsync">Cancel</button>
+        </p>
+    }
+}
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private string errorMessage;
+    private Event selectedEvent = new();
+    private IList<string> participants = new List<string>();
+    private IList<string> organizers = new List<string>();
+    private IList<Category> categories = new List<Category>();
+    private Category category = new();
+    private IList<Game> allEventGameList = new List<Game>();
+    private string username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        categories = await categoryService.GetCategoriesAsync();
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
+        selectedEvent = await eventService.GetEventAsync(Id);
+        participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        category = categories.FirstOrDefault(a => a.Id == selectedEvent.EventCategory);
+    }
+
+    private async Task JoinEventAsync()
+    {
+        if (await paymentService.CheckSubscriptionAsync(username) || await paymentService.GetEventFeeAsync(username, Id)!= null)
+        {
+            await participantService.JoinEventAsync(Id, username);
+            participants = await participantService.GetParticipantsAsync(Id);
+        }
+        else
+        {
+            errorMessage = "No active subscription. You have to pay to play!!!";
+            if (!await jsRuntime.InvokeAsync<bool>("confirm", errorMessage))
+                return;
+            navigationManager.NavigateTo($"Payment/{Id}");
+        }
+    }
+
+    private async Task WithdrawEventAsync()
+    {
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop participating in the event?\n" +
+                                                          "Friendly Reminder: You won't get your money back."))
+            return;
+        await participantService.WithdrawEventAsync(Id, username);
+        participants = await participantService.GetParticipantsAsync(Id);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
+    }
+
+    private async Task CoOrganizeEventAsync()
+    {
+        await organizerService.CoOrganizeEventAsync(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+    }
+
+    private async Task WithdrawEventAsCoOrganizerAsync()
+    {
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to stop co-organizing the event?"))
+        return;
+        await organizerService.WithdrawEventAsync(Id, username);
+        organizers = await organizerService.GetOrganizersAsync(Id);
+        allEventGameList = await eventGameListService.GetAllEventGameListAsync(Id);
+    }
+    
+    private async Task CancelEventAsync()
+    {
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to cancel the event?"))
+            return;
+        await eventService.CancelEventAsync(selectedEvent);
+        navigationManager.NavigateTo("MyEvents");
+    }
+    
+    private void EditEvent()
+    {
+        navigationManager.NavigateTo($"EditEvent/{selectedEvent.Id}");
+    }
+    
+    private void MoreGameInfo(int id)
+    {
+        navigationManager.NavigateTo($"GameInfo/{id}");
+    }
+
+    private void MoreUserInfo(string moreUserInfoUsername)
+    {
+        navigationManager.NavigateTo($"UserInfo/{moreUserInfoUsername}");
+    }
+
+    private void EditEventGames()
+    {
+        navigationManager.NavigateTo($"EditEventGames/{selectedEvent.Id}");
+    }
+}

@@ -2,8 +2,8 @@ package com.example.producingwebservice.webService;
 
 import com.example.producingwebservice.events.Events;
 import com.example.producingwebservice.organizers.Organizers;
-import com.example.producingwebservice.users.Users;
-import io.spring.guides.gs_producing_web_service.*;
+import io.spring.guides.gs_producing_web_service.SOAPOrganizerRequest;
+import io.spring.guides.gs_producing_web_service.SOAPOrganizerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -41,7 +41,6 @@ public class OrganizerEndpoint
           break;
         case GETALL:
           response.getOrganizerList().addAll(organizersDAO.getOrganizerList(request.getEventId()));
-          //    request.getId()));
           break;
         case REMOVE:
           // usersDAO.delete(request.getId());

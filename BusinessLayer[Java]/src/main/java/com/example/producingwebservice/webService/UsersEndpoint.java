@@ -35,7 +35,7 @@ public class UsersEndpoint {
                 usersDAO.update(request.getUser());
                 break;
             case GETALL:
-                response.setUserList(usersDAO.getUserlist());
+                response.setUserList(usersDAO.getUserList(request.getFilter()));
                 break;
             case REMOVE:
                 usersDAO.delete(request.getUsername());

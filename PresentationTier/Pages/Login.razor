@@ -1,0 +1,110 @@
+@page "/Login"
+@using PresentationTier.Authentication
+@namespace LoginComponent
+
+
+@inject NavigationManager navigationManager
+@inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
+
+<AuthorizeView>
+    <NotAuthorized>
+        <button class="btn btn-outline-primary" @onclick="Open">
+            <i class="oi oi-person"></i>
+        </button>
+        @if (showModal)
+        {
+            <div class="simply modal" tabindex="-1" role="dialog" style="display: block;" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sign in</h5>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="username" class="col-form-label">Username:</label>
+                                    <input class="form-control" id="username" type="text" placeholder="@@Username" @bind-value="username"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Password</label>
+                                    <input class="form-control" id="password" type="password" placeholder="Password" @bind-value="password"/>
+                                </div>
+                            </form>
+                            @if (!errorMessage.Equals(""))
+                            {
+                                <div class="alert alert-danger" role="alert">@errorMessage</div>
+                            }
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccount">Create Account</button>
+                            <button type="submit" class="btn btn-outline-primary" @onclick="PerformLoginAsync">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </NotAuthorized>
+    <Authorized>
+        <span class="input-group-text text-white bg-primary">@username</span>
+        <button class="btn btn-outline-primary" @onclick="PerformLogoutAsync">
+            Logout <i class="oi oi-account-logout"></i>
+        </button>
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    private bool showModal;
+    private string username;
+    private string password;
+    private string errorMessage;
+
+    protected override void OnInitialized()
+    {
+        errorMessage = "";
+    }
+    
+    private void Open()
+    {
+        showModal = true;
+    }
+    
+    private void Close()
+    {
+        showModal = false;
+    }
+
+   private async Task PerformLoginAsync()
+    {
+       try
+        {
+            await ((CustomAuthenticationStateProvider) stateProvider).ValidateLogin(username, password);
+            navigationManager.NavigateTo("/");
+            Close();
+        }
+        catch (Exception)
+        {
+            errorMessage = "Username or password is incorrect";
+        }
+    }
+
+    private async Task PerformLogoutAsync()
+    {
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you wish to log out?"))
+            return;
+        errorMessage = "";
+        username = "";
+        password = "";
+        await ((CustomAuthenticationStateProvider) stateProvider).Logout();
+        navigationManager.NavigateTo("/");
+    }
+
+    private void CreateAccount()
+    {
+        Close();
+        navigationManager.NavigateTo("CreateAccount");
+    }
+}

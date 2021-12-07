@@ -1,0 +1,82 @@
+@page "/UserInfo/{Username}"
+@using PresentationTier.Models
+@using global::Data
+
+@inject IUserService userService
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
+
+@if (user == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <h3>@user.Username</h3>
+    @if (user.FirstName != null && user.LastName != null)
+    {
+        <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
+    }
+    <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
+    @if (user.PhoneNumber != null)
+    {
+        <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
+    }
+    @if (user.EmailAddress != null)
+    {
+        <p>Email: @user.EmailAddress</p>
+    }
+    
+    <AuthorizeView Policy="Administrator">
+        @if (user.RequestedPromotion)
+        {
+            <h3>Request for organizer</h3>
+            <p class="actions">
+                <button class="btn btn-outline-success" type="submit" @onclick="@AcceptPromotionAsync">Accept</button>
+            </p>
+            <p class="actions">
+                <button class="btn btn-outline-danger" type="submit" @onclick="@DeclinePromotionAsync">Decline</button>
+            </p>
+        }
+
+    </AuthorizeView>
+}
+<AuthorizeView Policy="Administrator">
+    <p class="actions">
+        <button class="btn btn-outline-danger" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
+    </p>
+</AuthorizeView>
+
+@code {
+    [Parameter]
+    public string Username { get; set; }
+    private User user;
+    protected override async Task OnInitializedAsync()
+    {
+        await UpdateUserAsync();
+    }
+
+    private async Task AcceptPromotionAsync()
+    {
+        await userService.AcceptPromotionAsync(user);
+        await UpdateUserAsync();
+    }
+
+    private async Task DeclinePromotionAsync()
+    {
+        await userService.DeclinePromotionAsync(user);
+        await UpdateUserAsync();
+    }
+
+    private async Task UpdateUserAsync()
+    {
+        user = await userService.GetUserByUsernameAsync(Username);
+    }
+    private async Task DeleteAccountAsync()
+    {
+        if (!await jsRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete this account?"))
+            return;
+        await userService.DeleteAccountAsync(Username);
+        navigationManager.NavigateTo("/AllUsers");
+    }
+}

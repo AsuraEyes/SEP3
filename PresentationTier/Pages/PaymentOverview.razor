@@ -1,0 +1,76 @@
+@page "/PaymentOverview"
+@using PresentationTier.Models
+@using PresentationTier.Authentication
+@using System.Security.Claims
+@using PresentationTier.Data
+
+@inject AuthenticationStateProvider stateProvider
+@inject IPaymentService paymentService
+@inject NavigationManager navigationManager
+
+
+<h3>Payment Overview</h3>
+
+<h2>Subscription: </h2>
+@if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
+{
+    <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
+    <button class="btn btn-outline-primary" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+}
+else
+{
+    <p>No active subscription</p>
+    <button class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+
+}
+
+<h3>Payment History</h3>
+@if (monthlyFeeList != null)
+{
+    <h4>Subscriptions</h4>
+         @foreach (var item in monthlyFeeList)
+         {
+             <ul>
+                 <li>@item.Amount dkk</li>
+                 <li>From: @item.StartDate.ToLongDateString()</li>
+                 <li>To: @item.EndDate.ToLongDateString()</li>
+             </ul>
+         }
+}
+else 
+{<p>No monthly fees</p>}
+
+@if (oneTimeFees != null)
+{
+    <h4>Payments</h4>
+    @foreach (var item in oneTimeFees)
+    {
+        <ul>
+            <li>@item.Amount dkk</li>
+        </ul>
+    }
+}
+else 
+{<p>No one time fees</p>}
+
+
+@code {
+    private MonthlyFee monthlyFee = new();
+    private IList<MonthlyFee> monthlyFeeList = new List<MonthlyFee>();
+    private IList<OneTimeFee> oneTimeFees = new List<OneTimeFee>();
+    private string username;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        monthlyFeeList = await paymentService.GetSubscriptionListAsync(username);
+        oneTimeFees = await paymentService.GetOneTimePaymentListAsync(username);
+        monthlyFee = await paymentService.GetSubscriptionAsync(username);
+    }
+
+    private void Subscribe()
+    {
+        navigationManager.NavigateTo("Payment");
+    }
+    
+}

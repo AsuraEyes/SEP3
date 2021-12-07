@@ -1,0 +1,44 @@
+@page "/GameList"
+
+@using PresentationTier.Data
+@using PresentationTier.Authentication
+@using PresentationTier.Models
+@using System.Security.Claims
+
+@inject IGameListService gameListService
+@inject AuthenticationStateProvider stateProvider
+@inject NavigationManager navigationManager
+
+<h3>GameList</h3>
+<ul>
+@foreach (var game in games)
+{
+    <li>
+        <b @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></b>
+    </li>
+}
+</ul>
+
+<button @onclick="@Edit" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Edit
+        </button>
+
+@code {
+    private IList<Game> games = new List<Game>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        games = await gameListService.GetUserGamesAsync(username);
+    }
+    
+    private void Edit()
+    {
+        navigationManager.NavigateTo("EditGameList");
+    }
+    
+    private void MoreGameInfo(int id)
+    {
+        navigationManager.NavigateTo($"GameInfo/{id}");
+    }
+}

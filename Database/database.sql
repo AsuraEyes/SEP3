@@ -121,6 +121,8 @@ CREATE TABLE event_game_list(
     FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE
 );
 
+SELECT * FROM game WHERE approved = true AND name ILIKE '%%' LIMIT 20 OFFSET 0;
+
 
 CREATE OR REPLACE FUNCTION put_event_organizer_to_participants_and_organizers()
     RETURNS TRIGGER

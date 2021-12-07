@@ -1,0 +1,86 @@
+@page "/EditEventGames/{eventId:int}"
+
+@using PresentationTier.Models
+@using PresentationTier.Data
+@using PresentationTier.Authentication
+@using System.Security.Claims
+
+@inject IGameListService gameListService
+@inject IEventGameListService eventGameListService
+@inject AuthenticationStateProvider stateProvider
+@inject NavigationManager navigationManager
+
+<h3>Edit Event Games</h3>
+
+@if (gameList == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!gameList.Any())
+{
+    <p>
+        <em>No ToDo items exist. Please add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>In my Game List</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in gameList)
+        {
+            <tr>
+                <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
+                <td>
+                    <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<p class="actions">
+        <button @onclick="@GoBack" class="btn btn-outline-secondary" type="submit">
+            Go back
+        </button>
+</p>
+
+@code {
+    [Parameter]
+    public int EventId { get; set; }
+    
+    private IList<Game> gameList;
+    private IList<Game> gamesInEvent;
+    private string username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
+        gameList = await gameListService.GetUserGamesAsync(username);
+        gamesInEvent = await eventGameListService.GetAllEventGameListAsync(EventId);
+    }
+
+    private async Task CompletedChangeAsync(ChangeEventArgs arg, int gameId)
+    {
+        var inList = arg.Value != null && (bool) arg.Value;
+        await eventGameListService.UpdateEventGamesAsync(username, gameId, EventId, inList);
+    }
+    
+    private void MoreGameInfo(int gameId)
+    {
+        navigationManager.NavigateTo($"GameInfo/{gameId}");
+    }
+    
+    private void GoBack()
+    {
+        navigationManager.NavigateTo($"EventInfo/{EventId}");
+    }
+}
