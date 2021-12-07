@@ -76,10 +76,6 @@ public class GameListDAO implements GameLists
     return gameList;
   }
 
-  public List<Integer> readAllUserGameListInt(String username){
-    return integerHelper().map(new IntegerMapper(), "SELECT id FROM game_list l, game g WHERE l.game_id = g.id AND user_username = ?", username);
-  }
-
   public void addGameToUserGameList(String username, int id){
     gameHelper.executeUpdate("INSERT INTO game_list VALUES (?, ?);", id, username);
   }

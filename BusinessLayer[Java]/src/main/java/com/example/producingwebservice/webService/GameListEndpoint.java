@@ -31,7 +31,6 @@ public class GameListEndpoint
     switch (request.getOperation()) {
       case GET:
         response.setGameList(gameListDAO.readAllUserGameList(request.getUserName()));
-       // response.setGame(gamesDAO.get(request.getId()));
         break;
       case CREATE:
         gameListDAO.addGameToUserGameList(request.getUserName(), request.getGameId());

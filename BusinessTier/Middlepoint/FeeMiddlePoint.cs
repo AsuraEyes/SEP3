@@ -41,7 +41,7 @@ namespace BusinessLayer.Middlepoint
             
             if (message.Equals("Approved"))
             {
-                OneTimeFee oneTimeFee = new OneTimeFee()
+                OneTimeFee oneTimeFee = new OneTimeFee
                 {
                     amount = userCardInfo.Fee,
                     eventId = userCardInfo.EventId,

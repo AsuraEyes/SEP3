@@ -67,7 +67,6 @@ public class UserDAO implements Users {
         helper().executeUpdate("DELETE FROM \"user\" WHERE username = ?", username);
     }
 
-    @Override
     public UserList getUserlist() {
         userList.getUserList().clear();
         userList.getUserList().addAll(helper().map(new UserMapper(), "SELECT * FROM \"user\""));

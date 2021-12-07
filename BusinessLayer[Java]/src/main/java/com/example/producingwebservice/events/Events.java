@@ -6,9 +6,6 @@ import io.spring.guides.gs_producing_web_service.Filter;
 
 public interface Events {
     EventList searchAndFilter(Filter filter);
-
-    //int getNumberOfPages(int resultsPerPage);
-
     Event create(Event event);
     Event get(int id);
     void cancel(int id);

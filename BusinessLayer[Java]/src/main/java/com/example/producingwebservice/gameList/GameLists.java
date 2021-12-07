@@ -7,7 +7,6 @@ import java.util.List;
 public interface GameLists
 {
   GameList readAllUserGameList(String username);
-  List<Integer> readAllUserGameListInt(String username);
   void addGameToUserGameList(String username, int id);
   void removeGameFromUserGameList(String username, int id);
 }
