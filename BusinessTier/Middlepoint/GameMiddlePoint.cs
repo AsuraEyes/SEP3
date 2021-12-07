@@ -20,18 +20,6 @@ namespace BusinessLayer.Middlepoint
             this.gameListWebService = gameListWebService;
         }
 
-        public async Task<IList<Game>> GetGGLAsync()
-        {
-            var ggl = await gameWebService.GetGamesAsync(true);
-            return ggl;
-        }
-        
-        public async Task<IList<Game>> GetSuggestedGamesAsync()
-        {
-            var suggestedGames = await gameWebService.GetGamesAsync(false);
-            return suggestedGames;
-        }
-
         public async Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest)
         {
             filterRest.ResultsPerPage = resultsPerPage;
@@ -46,7 +34,7 @@ namespace BusinessLayer.Middlepoint
             }
             filter.limit = filterRest.ResultsPerPage;
             filter.offset = (filterRest.CurrentPage - 1) * filterRest.ResultsPerPage;
-            var ggl = await gameWebService.GetLimitedSearchGamesAsync(true, filter);
+            var ggl = await gameWebService.GetLimitedSearchGamesAsync(filter);
             return ggl;
         }
 

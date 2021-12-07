@@ -12,7 +12,6 @@ namespace Presentation_Layer.Data
         Task RemoveGameAsync(Game game);
         Task UpdateGameApprovalAsync(Game game);
         Task CreateGameAsync(Game Game);
-        Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();
         Task EditGameAsync(Game game);
         Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest);

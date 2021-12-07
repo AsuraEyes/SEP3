@@ -11,45 +11,94 @@
 
 <h3>All Users</h3>
 Requested promotion:
-    <Select class="selectpicker" @oninput="@(FilterByPromotion)">
-        <option value="false">-- All --</option>
-        <option value="true">Requested promotion</option>
-    </Select>
+<Select class="selectpicker" @oninput="@(Filter)">
+    <option value="false">-- All --</option>
+    <option value="true">Requested promotion</option>
+</Select>
+
+<input type="text" @bind-value="searchName"  style="width: 250px"/>
+<button @onclick="@SearchUserAsync" class="btn btn-outline-secondary" type="submit">Search</button>
 
 <ul>
-    @foreach (var user in filteredUsers)
+    @if (requested == false)
     {
-        <li>
-            <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
-        </li>
+        @foreach (var user in allUsers)
+        {
+            <li>
+                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+            </li>
+        }
+        @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
+        {
+            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Load more
+            </button>
+        }
+    }
+    else
+    {
+        @foreach (var user in allUsers.Where(t=> t.RequestedPromotion))
+        {
+            <li>
+                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
+            </li>
+        }
+        @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
+        {
+            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Load more
+            </button>
+        }
     }
 </ul>
 
 @code {
-    private IList<User> allUsers  = new List<User>();
-    private IList<User> filteredUsers = new List<User>();
+    private List<User> allUsers  = new ();
+    private IList<User> allUsersPage = new List<User>();
+    private FilterREST filterRest = new();
+    private string searchName;
+    private int initialResultsNumber;
+    private bool requested;
 
     protected override async Task OnInitializedAsync()
     {
-        allUsers = await userService.GetUsersAsync();
-        filteredUsers = allUsers;
+        filterRest.CurrentPage = 1;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        initialResultsNumber = allUsersPage.Count;
+        allUsers.AddRange(allUsersPage);
     }
     
     private void MoreUserInfo(string username)
     {
         navigationManager.NavigateTo($"UserInfo/{username}");
     }
-    
-    private void FilterByPromotion(ChangeEventArgs args)
+
+    private void Filter(ChangeEventArgs args)
     {
         if (args.Value != null && args.Value.Equals("true"))
         {
-            filteredUsers = allUsers.Where(user => user.RequestedPromotion).ToList();
+            requested = true;
         }
         else
         {
-            filteredUsers = allUsers;
+            requested = false;
         }
     }
     
+    private async Task SearchUserAsync()
+    {
+        filterRest.Search = searchName;
+        filterRest.CurrentPage = 1;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        allUsers.Clear();
+        allUsers.AddRange(allUsersPage);
+    }
+
+    private async Task LoadMoreAsync()
+    {
+        filterRest.CurrentPage += 1;
+        filterRest.Search = searchName;
+        allUsersPage = await userService.GetUsersAsync(filterRest);
+        allUsers.AddRange(allUsersPage);
+    }
 }

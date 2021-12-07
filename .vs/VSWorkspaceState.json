@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\BusinessLayer",
-    "\\BusinessLayer\\Data"
+    "\\BusinessTier",
+    "\\BusinessTier\\Connected Services",
+    "\\BusinessTier\\Connected Services\\BookAndPlaySOAP"
   ],
-  "SelectedNode": "\\BusinessLayer\\Data\\UserService.cs",
+  "SelectedNode": "\\BusinessTier\\Connected Services\\BookAndPlaySOAP\\Reference.cs",
   "PreviewInSolutionExplorer": false
 }

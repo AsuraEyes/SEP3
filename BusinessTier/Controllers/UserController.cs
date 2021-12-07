@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -154,11 +155,11 @@ namespace REST.Controllers
 
         [HttpGet]
         [Route("/Users")]
-        public async Task<ActionResult<IList<User>>> GetUsersAsync()
+        public async Task<ActionResult<IList<User>>> GetUsersAsync([FromQuery] FilterREST filterRest)
         {
             try
             {
-                IList<User> users = await userWebService.GetUsersAsync();
+                IList<User> users = await userMiddlePoint.GetUsersAsync(filterRest);
                 return Ok(users);
             }
             catch (Exception e)
@@ -179,7 +180,7 @@ namespace REST.Controllers
 
             try
             {
-                await userWebService.UpdateUser(user);
+                await userWebService.UpdateUserAsync(user);
                 return Ok(user);
             }
             catch (Exception e)

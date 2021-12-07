@@ -14,7 +14,7 @@ namespace Data
         Task AcceptPromotionAsync(User user);
         Task DeclinePromotionAsync(User user);
         Task DeleteAccountAsync(string username);
-        Task<IList<User>> GetUsersAsync();
+        Task<IList<User>> GetUsersAsync(FilterREST filterRest);
         Task EditAccountAsync(User user);
     }
 }

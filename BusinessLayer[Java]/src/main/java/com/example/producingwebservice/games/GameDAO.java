@@ -61,16 +61,16 @@ public class GameDAO implements Games {
         return game;
     }
 
-    public GameList readAllGGL(boolean approved) {
+    public GameList getSuggestedGames() {
         gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = ?", approved));
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = false"));
         return gameList;
     }
 
-    public GameList searchLimitGGL(boolean approved, Filter filter) {
+    public GameList getGGL(Filter filter) {
         String search = "%"+filter.getFilter()+"%";
         gameList.getGameList().clear();
-        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = ? AND name ILIKE ? LIMIT ? OFFSET ?;", approved, search, filter.getLimit(), filter.getOffset()));
+        gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM game WHERE approved = true AND name ILIKE ? LIMIT ? OFFSET ?;", search, filter.getLimit(), filter.getOffset()));
         return gameList;
     }
 

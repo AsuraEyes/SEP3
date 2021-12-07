@@ -104,9 +104,10 @@ namespace SEP3_Blazor.Data
             await client.DeleteAsync($"{uri}/User?username={username}");
         }
 
-        public async Task<IList<User>> GetUsersAsync()
+        public async Task<IList<User>> GetUsersAsync(FilterREST filterRest)
         {
-            var usersAsJson = client.GetStringAsync(uri + "/Users");
+            var filter = $"?Search={filterRest.Search}&CurrentPage={filterRest.CurrentPage}";
+            var usersAsJson = client.GetStringAsync(uri + "/Users" + filter);
             var user = await usersAsJson;
             var users = JsonSerializer.Deserialize<IList<User>>(user, new JsonSerializerOptions
             {

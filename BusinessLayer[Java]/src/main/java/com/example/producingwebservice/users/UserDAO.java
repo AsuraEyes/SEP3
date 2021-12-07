@@ -2,6 +2,8 @@ package com.example.producingwebservice.users;
 
 import com.example.producingwebservice.db.DataMapper;
 import com.example.producingwebservice.db.DatabaseHelper;
+import com.example.producingwebservice.games.GameDAO;
+import io.spring.guides.gs_producing_web_service.Filter;
 import io.spring.guides.gs_producing_web_service.User;
 import io.spring.guides.gs_producing_web_service.UserList;
 
@@ -70,6 +72,13 @@ public class UserDAO implements Users {
     public UserList getUserlist() {
         userList.getUserList().clear();
         userList.getUserList().addAll(helper().map(new UserMapper(), "SELECT * FROM \"user\""));
+        return userList;
+    }
+
+    public UserList getUserList(Filter filter){
+        String search = "%"+filter.getFilter()+"%";
+        userList.getUserList().clear();
+        userList.getUserList().addAll(helper().map(new UserMapper(), "SELECT * FROM \"user\" WHERE username ILIKE ? LIMIT ? OFFSET ?;",search, filter.getLimit(), filter.getOffset()));
         return userList;
     }
 

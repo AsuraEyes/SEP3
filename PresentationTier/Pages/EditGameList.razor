@@ -32,7 +32,7 @@ else if (!goldenGameList.Any())
 else
 {
     <input type="text" @bind-value="searchName"  style="width: 250px"/>
-    <button @onclick="@SearchGame" class="btn btn-outline-secondary" type="submit">Search</button>
+    <button @onclick="@SearchGameAsync" class="btn btn-outline-secondary" type="submit">Search</button>
     <table class="table">
         <thead>
         <tr>
@@ -54,7 +54,7 @@ else
     </table>
     @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
     {
-        <button @onclick="@LoadMore" class="btn btn-outline-secondary" type="submit">
+        <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
             <i class="oi oi-plus"></i> Load more
         </button>
     }
@@ -69,8 +69,8 @@ else
 
 @code {
     private IList<Game> goldenGameListPage = new List<Game>();
-    private List<Game> goldenGameList = new List<Game>();
-    private FilterREST filterRest = new FilterREST();
+    private List<Game> goldenGameList = new ();
+    private FilterREST filterRest = new ();
     private IList<Game> gamesOfUser;
     private string username;
     private string searchName;
@@ -107,7 +107,7 @@ else
         navigationManager.NavigateTo("CreateGame");
     }
     
-    private async Task SearchGame()
+    private async Task SearchGameAsync()
     {
         filterRest.Search = searchName;
         filterRest.CurrentPage = 1;
@@ -116,7 +116,7 @@ else
         goldenGameList.AddRange(goldenGameListPage);
     }
 
-    private async Task LoadMore()
+    private async Task LoadMoreAsync()
     {
         filterRest.CurrentPage += 1;
         filterRest.Search = searchName;

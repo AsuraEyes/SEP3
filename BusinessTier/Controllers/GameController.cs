@@ -38,25 +38,9 @@ namespace REST.Controllers
                 return StatusCode(500, e.Message);
             }
         }
-        
+
         [HttpGet]
         [Route("/GGL")]
-        public async Task<ActionResult<IList<Game>>> GetGglAsync()
-        {
-            try
-            {
-                IList<Game> games = await gameMiddlePoint.GetGGLAsync();
-                return Ok(games);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return StatusCode(500, e.Message);
-            }
-        }
-        
-        [HttpGet]
-        [Route("/SearchGGL")]
         public async Task<ActionResult<IList<Game>>> GetLimitedSearchGGLAsync([FromQuery] FilterREST filterRest)
         {
             try
@@ -77,7 +61,7 @@ namespace REST.Controllers
         {
             try
             {
-                IList<Game> games = await gameMiddlePoint.GetSuggestedGamesAsync();
+                IList<Game> games = await gameWebService.GetSuggestedGamesAsync();
                 return Ok(games);
             }
             catch (Exception e)

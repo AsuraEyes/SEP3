@@ -1,6 +1,8 @@
 package com.example.producingwebservice.webService;
 
 import com.example.producingwebservice.games.Games;
+import io.spring.guides.gs_producing_web_service.SOAPGGLRequest;
+import io.spring.guides.gs_producing_web_service.SOAPGGLResponse;
 import io.spring.guides.gs_producing_web_service.SOAPGameRequest;
 import io.spring.guides.gs_producing_web_service.SOAPGameResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +37,21 @@ public class GamesEndpoint {
                 gamesDAO.patch(request.getGame());
                 break;
             case GETALL:
-                response.setGameList(gamesDAO.searchLimitGGL(request.isApproved(), request.getFilter()));
-                //response.setGameList(gamesDAO.readAllGGL(request.isApproved()));
+                response.setGameList(gamesDAO.getSuggestedGames());
                 break;
             case REMOVE:
                 gamesDAO.delete(request.getId());
+        }
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SOAPGGLRequest")
+    @ResponsePayload
+    public SOAPGGLResponse gglResponse(@RequestPayload SOAPGGLRequest request) {
+        SOAPGGLResponse response = new SOAPGGLResponse();
+        switch (request.getOperation()) {
+            case GETALL:
+                response.setGameList(gamesDAO.getGGL(request.getFilter()));
         }
         return response;
     }

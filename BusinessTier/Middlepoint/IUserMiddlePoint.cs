@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
+using BusinessLayer.Models;
 
 namespace BusinessLayer.Middlepoint
 {
@@ -11,5 +13,6 @@ namespace BusinessLayer.Middlepoint
         Task RequestPromotionToOrganizer(string username);
         Task AcceptPromotion(User user);
         Task DeclinePromotion(User user);
+        Task<IList<User>> GetUsersAsync(FilterREST filterRest);
     }
 }
