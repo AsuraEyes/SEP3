@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessLayer.Data;
-using BusinessLayer.Middlepoint;
-using BusinessLayer.Models;
+using BusinessTier.Data;
+using BusinessTier.Middlepoint;
+using BusinessTier.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers

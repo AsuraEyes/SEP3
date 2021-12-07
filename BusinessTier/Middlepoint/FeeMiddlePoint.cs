@@ -2,12 +2,12 @@ using System;
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessLayer.BankData;
-using BusinessLayer.Data;
+using BusinessTier.BankData;
+using BusinessTier.Data;
 using Microsoft.AspNetCore.Diagnostics;
 using Presentation_Layer.Models;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public class FeeMiddlePoint : IFeeMiddlePoint
     {

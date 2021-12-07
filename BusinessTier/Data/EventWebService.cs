@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 
-namespace BusinessLayer.Data
+namespace BusinessTier.Data
 {
     public class EventWebService : IEventWebService
     {

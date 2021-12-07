@@ -1,4 +1,4 @@
-namespace BusinessLayer.Models
+namespace BusinessTier.Models
 {
     public class GameListUpdate
     {

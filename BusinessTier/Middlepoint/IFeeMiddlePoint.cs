@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using Presentation_Layer.Models;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public interface IFeeMiddlePoint
     {
