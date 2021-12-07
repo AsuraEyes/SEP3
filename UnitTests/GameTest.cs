@@ -4,7 +4,6 @@ using BookAndPlaySOAP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
-using BusinessLayer.Models;
 
 namespace BusinessTierTests
 {
