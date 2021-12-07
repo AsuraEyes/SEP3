@@ -12,6 +12,8 @@ namespace BusinessLayer.Data
         Task<Game> GetGameAsync(int id);
         Task SuggestGameAsync(Game game);
         Task<IList<Game>> GetGamesAsync(bool approved);
+
+        Task<IList<Game>> GetLimitedSearchGamesAsync(bool approved, Filter filter);
         //Task<IList<Game>> GetUserGamesAsync(string user);
         Task RemoveGameAsync(int id);
         Task EditGameAsync(Game game);

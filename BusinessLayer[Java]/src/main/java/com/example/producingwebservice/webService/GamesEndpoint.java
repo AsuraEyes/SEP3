@@ -35,7 +35,8 @@ public class GamesEndpoint {
                 gamesDAO.patch(request.getGame());
                 break;
             case GETALL:
-                response.setGameList(gamesDAO.readAllGGL(request.isApproved()));
+                response.setGameList(gamesDAO.searchLimitGGL(request.isApproved(), request.getFilter()));
+                //response.setGameList(gamesDAO.readAllGGL(request.isApproved()));
                 break;
             case REMOVE:
                 gamesDAO.delete(request.getId());

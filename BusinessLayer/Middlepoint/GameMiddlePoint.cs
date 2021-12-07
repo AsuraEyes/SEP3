@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
+using BusinessLayer.Models;
 
 namespace BusinessLayer.Middlepoint
 {
@@ -11,6 +12,7 @@ namespace BusinessLayer.Middlepoint
     {
         private readonly IGameWebService gameWebService;
         private readonly IGameListWebService gameListWebService;
+        private readonly int resultsPerPage = 10;
 
         public GameMiddlePoint(IGameWebService gameWebService, IGameListWebService gameListWebService )
         {
@@ -28,6 +30,24 @@ namespace BusinessLayer.Middlepoint
         {
             var suggestedGames = await gameWebService.GetGamesAsync(false);
             return suggestedGames;
+        }
+
+        public async Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest)
+        {
+            filterRest.ResultsPerPage = resultsPerPage;
+            Filter filter = new Filter();
+            if (filterRest.Search != null)
+            {
+              filter.filter = filterRest.Search;   
+            }
+            else
+            {
+                filter.filter = "";
+            }
+            filter.limit = filterRest.ResultsPerPage;
+            filter.offset = (filterRest.CurrentPage - 1) * filterRest.ResultsPerPage;
+            var ggl = await gameWebService.GetLimitedSearchGamesAsync(true, filter);
+            return ggl;
         }
 
         public async Task AddGameAsync(Game game)

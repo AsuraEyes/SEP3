@@ -58,6 +58,18 @@ namespace Presentation_Layer.Data
             return games;
         }
         
+        public async Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest)
+        {
+            var search = $"?Search={filterRest.Search}&CurrentPage={filterRest.CurrentPage}";
+            var stringAsync = client.GetStringAsync(uri + "/SearchGGL" + search);
+            var game = await stringAsync;
+            var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+            return games;
+        }
+        
         public async Task<IList<Game>> GetSuggestedGamesAsync()
         {
             var stringAsync = client.GetStringAsync(uri + "/SuggestedGames");

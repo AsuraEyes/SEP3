@@ -15,5 +15,6 @@ namespace Presentation_Layer.Data
         Task<IList<Game>> GetGGLAsync();
         Task<IList<Game>> GetSuggestedGamesAsync();
         Task EditGameAsync(Game game);
+        Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest);
     }
 }

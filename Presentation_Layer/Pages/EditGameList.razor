@@ -17,39 +17,47 @@
     </button>
 </p>
 
-@if (ggl == null)
+@if (goldenGameList == null)
 {
     <p>
         <em>Loading...</em>
     </p>
 }
-else if (!ggl.Any())
+else if (!goldenGameList.Any())
 {
     <p>
-        <em>No ToDo items exist. Please add some.</em>
+        <em>No games exist. Please suggest some.</em>
     </p>
 }
 else
 {
+    <input type="text" @bind-value="searchName"  style="width: 250px"/>
+    <button @onclick="@SearchGame" class="btn btn-outline-secondary" type="submit">Search</button>
     <table class="table">
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>In my Game List</th>
-            </tr>
+        <tr>
+            <th>Name</th>
+            <th>In my Game List</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var item in ggl)
-            {
-                <tr>
-                    <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
-                    <td>
-                        <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
-                    </td>
-                </tr>
-            }
+        @foreach (var item in goldenGameList)
+        {
+            <tr>
+                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
+                <td>
+                    <input type="checkbox" checked=@(gamesOfUser.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
+    @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
+    {
+        <button @onclick="@LoadMore" class="btn btn-outline-secondary" type="submit">
+            <i class="oi oi-plus"></i> Load more
+        </button>
+    }
 }
 
     
@@ -60,13 +68,20 @@ else
 </p>
 
 @code {
-    private IList<Game> ggl;
+    private IList<Game> goldenGameListPage = new List<Game>();
+    private List<Game> goldenGameList = new List<Game>();
+    private FilterREST filterRest = new FilterREST();
     private IList<Game> gamesOfUser;
     private string username;
+    private string searchName;
+    private int initialResultsNumber;
 
     protected override async Task OnInitializedAsync()
     {
-        ggl = await gameService.GetGGLAsync();
+        filterRest.CurrentPage = 1;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        initialResultsNumber = goldenGameListPage.Count;
+        goldenGameList.AddRange(goldenGameListPage);
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         gamesOfUser = await gameListService.GetUserGamesAsync(username);
     }
@@ -90,5 +105,22 @@ else
     private void SuggestGame()
     {
         navigationManager.NavigateTo("CreateGame");
+    }
+    
+    private async Task SearchGame()
+    {
+        filterRest.Search = searchName;
+        filterRest.CurrentPage = 1;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        goldenGameList.Clear();
+        goldenGameList.AddRange(goldenGameListPage);
+    }
+
+    private async Task LoadMore()
+    {
+        filterRest.CurrentPage += 1;
+        filterRest.Search = searchName;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        goldenGameList.AddRange(goldenGameListPage);
     }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessLayer.Data;
 using BusinessLayer.Middlepoint;
+using BusinessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace REST.Controllers
@@ -51,6 +52,22 @@ namespace REST.Controllers
             {
                 Console.WriteLine(e);
                 return StatusCode(500, e.Message);
+            }
+        }
+        
+        [HttpGet]
+        [Route("/SearchGGL")]
+        public async Task<ActionResult<IList<Game>>> GetLimitedSearchGGLAsync([FromQuery] FilterREST filterRest)
+        {
+            try
+            {
+                IList<Game> searchGGLList = await gameMiddlePoint.GetLimitedSearchGGLAsync(filterRest);
+                return Ok(searchGGLList);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return  StatusCode(500, e.Message);
             }
         }
         

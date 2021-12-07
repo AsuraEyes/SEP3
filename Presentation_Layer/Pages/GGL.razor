@@ -7,6 +7,9 @@
 @inject IGameService gameService
 
 <h3>GGL</h3>
+<input type="text" @bind-value="searchName"  style="width: 250px"/>
+<button @onclick="@SearchGame" class="btn btn-outline-secondary" type="submit">Search</button>
+
 <p class="actions">
         <button @onclick="@AddGame" class="btn btn-outline-secondary" type="submit">
                 <i class="oi oi-plus"></i> Add
@@ -21,14 +24,27 @@
                          </ul>
                  }
          }
+@if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
+{
+        <button @onclick="@LoadMore" class="btn btn-outline-secondary" type="submit">
+                <i class="oi oi-plus"></i> Load more
+        </button>
+}
  
 
 @code {
-        private IList<Game> goldenGameList = new List<Game>();
+        private IList<Game> goldenGameListPage = new List<Game>();
+        private List<Game> goldenGameList = new List<Game>();
+        private FilterREST filterRest = new FilterREST();
+        private string searchName;
+        private int initialResultsNumber;
 
         protected override async Task OnInitializedAsync()
         {
-                goldenGameList = await gameService.GetGGLAsync();
+                filterRest.CurrentPage = 1;
+                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+                initialResultsNumber = goldenGameListPage.Count;
+                goldenGameList.AddRange(goldenGameListPage);
         }
 
         private void AddGame()
@@ -39,5 +55,22 @@
         private void EditGame(int id)
         {
                 navigationManager.NavigateTo($"EditGame/{id}");
+        }
+
+        private async Task SearchGame()
+        {
+                filterRest.Search = searchName;
+                filterRest.CurrentPage = 1;
+                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+                goldenGameList.Clear();
+                goldenGameList.AddRange(goldenGameListPage);
+        }
+
+        private async Task LoadMore()
+        {
+                filterRest.CurrentPage += 1;
+                filterRest.Search = searchName;
+                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+                goldenGameList.AddRange(goldenGameListPage);
         }
 }

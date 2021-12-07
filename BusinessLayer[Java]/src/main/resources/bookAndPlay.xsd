@@ -8,6 +8,7 @@
                 <xs:element name="approved" type="xs:boolean"/>
                 <xs:element name="Operation" type="tns:Operation"/>
                 <xs:element name="Game" type="tns:Game"/>
+                <xs:element name="Filter" type="tns:Filter"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -127,7 +128,7 @@
     <xs:complexType name="Filter">
         <xs:sequence>
             <xs:element name="categoryId" type="xs:int"/>
-            <xs:element name="filter" type="xs:string"/>
+            <xs:element name="filter" type="xs:string" minOccurs="0"/>
             <xs:element name="offset" type="xs:int"/>
             <xs:element name="limit" type="xs:int"/>
         </xs:sequence>

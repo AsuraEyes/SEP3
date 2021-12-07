@@ -1,7 +1,10 @@
+using System;
+
 namespace BusinessLayer.Models
 {
     public class FilterREST
     {
+        public string Search { get; set; }
         public bool ByDate { get; set; }
         public bool ByAvailability { get; set; }
         public int CurrentPage { get; set; }

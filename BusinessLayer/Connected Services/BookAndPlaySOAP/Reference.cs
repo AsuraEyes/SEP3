@@ -1251,6 +1251,8 @@ namespace BookAndPlaySOAP
         
         private Game gameField;
         
+        private Filter filterField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int id
@@ -1304,6 +1306,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.gameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Filter Filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
             }
         }
     }
@@ -1470,6 +1486,8 @@ namespace BookAndPlaySOAP
         
         private int currentPageField;
         
+        private bool currentPageFieldSpecified;
+        
         private string notificationField;
         
         private Event eventField;
@@ -1487,6 +1505,20 @@ namespace BookAndPlaySOAP
             set
             {
                 this.currentPageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool currentPageSpecified
+        {
+            get
+            {
+                return this.currentPageFieldSpecified;
+            }
+            set
+            {
+                this.currentPageFieldSpecified = value;
             }
         }
         
