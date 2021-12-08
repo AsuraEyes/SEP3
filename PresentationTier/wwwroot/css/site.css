@@ -52,7 +52,7 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
 
 .spinner{
     border: 16px solid silver;
-    border-top: 16px solid #337AB7;
+    border-top: 16px solid var(--yellow-color);
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -88,6 +88,7 @@ li{
     background-color: #18062E;
     color: white;
 }
+
 
 /*LINKS*/
 .main a{
@@ -175,4 +176,21 @@ h3{
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
+}
+
+
+/*CARDS*/
+.card{
+    border: 1px solid white;
+    border-radius: 0;
+    background: none;
+}
+.card:hover{
+    border: 1px solid var(--yellow-color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card:hover h5{
+    color: var(--yellow-color);
+    transition: 0.5s;
 }
