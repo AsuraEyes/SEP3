@@ -115,7 +115,12 @@ namespace PresentationTier.Data
             {
                 Console.WriteLine(e);
             }
-            return message;
+
+            if (message != null)
+            {
+                return message;
+            }
+            return null;
         }
         
         public async Task<string> MonthlyPaymentAsync(UserCardInfo userCard)
