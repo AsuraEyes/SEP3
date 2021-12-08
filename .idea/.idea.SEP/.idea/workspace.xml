@@ -25,12 +25,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="menu CSS done">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="PaymentOverview.razor, Payment.razor css">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -443,13 +443,6 @@
       <workItem from="1638518842375" duration="8768000" />
       <workItem from="1638802769369" duration="24604000" />
     </task>
-    <task id="LOCAL-00005" summary="Hello World! works">
-      <created>1636110199014</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1636110199014</updated>
-    </task>
     <task id="LOCAL-00006" summary="works part2">
       <created>1636111003133</created>
       <option name="number" value="00006" />
@@ -786,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638958865416</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="PaymentOverview.razor, Payment.razor css">
+      <created>1638968272304</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1638968272304</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +825,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="r" />
     <MESSAGE value="special push" />
     <MESSAGE value="filter with filter Object everywhere" />
     <MESSAGE value="resultsPerPage are on the page" />
@@ -850,6 +849,7 @@
     <MESSAGE value="css file path rename" />
     <MESSAGE value="payment overview" />
     <MESSAGE value="menu CSS done" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu CSS done" />
+    <MESSAGE value="PaymentOverview.razor, Payment.razor css" />
+    <option name="LAST_COMMIT_MESSAGE" value="PaymentOverview.razor, Payment.razor css" />
   </component>
 </project>

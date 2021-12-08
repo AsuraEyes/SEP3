@@ -70,33 +70,62 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
     }
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
-    
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+/*---------------------------------------------------*/
+
+
+/*GENERAL*/
+li{
+    list-style: none;
+}
+*{
+    background-color: #18062E;
+    color: white;
+}
+
+/*LINKS*/
+.main a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.main a::after{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--yellow-color);
+    transition: 0.5s;
+    /*border-bottom: 2px solid white;
+    transition: width 0.5s;*/
+}
+.main a:hover::after{
+    width: 100%;
+}
+
+
+/*HEADINGS*/
 h1, h2{
-   /* font-family: Garamond;*/
     font-family: Didot, serif;
     margin-bottom: 1em;
 }
-
 h1, h2, h3{
     color: var(--yellow-color);
 }
-
 h3, h4{
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    /*text-transform: uppercase;*/
     font-variant: small-caps;
 }
-
 h1{
     font-size: 4em;
 }
-
 h2{
     font-size: 3em;
 }
@@ -104,20 +133,6 @@ h3{
     font-size: 2em;
 }
 
-li{
-    list-style: none;
-}
-
-#payment_overview{
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    width: 20em;
-}
-
-*{
-    background-color: #18062E;
-    color: white;
-}
 
 /*GRID*/
 .grid-container-payment{
@@ -131,8 +146,11 @@ li{
     border-top: 1.5px solid var(--yellow-color);
     padding: 1rem;
 }
-
-
+#payment_overview{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    width: 20em;
+}
 
 
 /*BUTTONS*/
@@ -142,13 +160,11 @@ li{
     margin: 1em;
     font-variant: small-caps;
 }
-
 .simple-button:hover{
     border: 1px solid var(--yellow-color);
     color: var(--yellow-color);
     transition: 0.5s;
 }
-
 
 
 /*FORM*/
@@ -157,7 +173,6 @@ li{
     border-bottom: 2px solid white;
     outline: 0;
 }
-
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
 }

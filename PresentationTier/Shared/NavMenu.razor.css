@@ -39,17 +39,16 @@ https://codepen.io/harman97/pen/ZdEemB*/
     width: 100%;
     transition: width .5s;
 }
-    .nav-item ::deep a {
-        color: #d7d7d7;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.nav-item ::deep a {
+    color: #d7d7d7;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
 
 .nav-item ::deep a.active {
     color: #AC8E02;
-    
 }
 
 @media (min-width: 641px) {
