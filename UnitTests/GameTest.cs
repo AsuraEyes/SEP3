@@ -2,8 +2,9 @@ using System;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BusinessTier.Data;
-using BusinessTier.Middlepoint;
+using BusinessTier.Data.GameWebServices.Games;
+using BusinessTier.MiddlePoint.GameMiddlePoints;
+using BusinessTier.MiddlePoint.GameMiddlePoints.Games;
 
 namespace BusinessTierTests
 {

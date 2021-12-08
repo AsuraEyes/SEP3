@@ -5,8 +5,9 @@
 @using PresentationTier.Data
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data.FeeServices
 
-@inject IPaymentService paymentService
+@inject IFeeService feeService
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
@@ -72,17 +73,17 @@
         userCardInfo.Username = username;
         userCardInfo.EventId = EventId;
         var message = "";
-        if (!await paymentService.CheckSubscriptionAsync(username))
+        if (!await feeService.CheckSubscriptionAsync(username))
         {
             userCardInfo.StartDateTime = DateTime.Today;
         }
         if (EventId > 0)
         {
-            message = await paymentService.OneTimePaymentAsync(userCardInfo);
+            message = await feeService.OneTimeFeeAsync(userCardInfo);
         }
         else
         {
-           message = await paymentService.MonthlyPaymentAsync(userCardInfo);
+           message = await feeService.SubscribeAsync(userCardInfo);
         }
         
         if (message.Equals("Approved"))

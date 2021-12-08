@@ -3,9 +3,10 @@
 @using PresentationTier.Authentication
 @using System.Security.Claims
 @using PresentationTier.Data
+@using PresentationTier.Data.FeeServices
 
 @inject AuthenticationStateProvider stateProvider
-@inject IPaymentService paymentService
+@inject IFeeService feeService
 @inject NavigationManager navigationManager
 
 
@@ -63,9 +64,9 @@ else
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
-        monthlyFeeList = await paymentService.GetSubscriptionListAsync(username);
-        oneTimeFees = await paymentService.GetOneTimePaymentListAsync(username);
-        monthlyFee = await paymentService.GetSubscriptionAsync(username);
+        monthlyFeeList = await feeService.GetSubscriptionListAsync(username);
+        oneTimeFees = await feeService.GetOneTimeFeeListAsync(username);
+        monthlyFee = await feeService.GetSubscriptionAsync(username);
     }
 
     private void Subscribe()
