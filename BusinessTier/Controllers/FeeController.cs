@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessLayer.Data;
-using BusinessLayer.Middlepoint;
+using BusinessTier.Data;
+using BusinessTier.Middlepoint;
 using Microsoft.AspNetCore.Mvc;
 using Presentation_Layer.Models;
 

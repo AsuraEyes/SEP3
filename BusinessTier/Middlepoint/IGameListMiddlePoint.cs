@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using BusinessLayer.Models;
+using BusinessTier.Models;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public interface IGameListMiddlePoint
     {

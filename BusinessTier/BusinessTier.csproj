@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>BusinessLayer</RootNamespace>
+        <RootNamespace>BusinessTier</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessLayer.Data;
-using BusinessLayer.Models;
+using BusinessTier.Data;
+using BusinessTier.Models;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public class UserMiddlePoint : IUserMiddlePoint
     {

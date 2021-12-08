@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessLayer.Data;
-using BusinessLayer.Models;
+using BusinessTier.Data;
+using BusinessTier.Models;
 using Microsoft.AspNetCore.Components;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public class EventMiddlePoint : IEventMiddlePoint
     {

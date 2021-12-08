@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using BookAndPlaySOAP;
 
-namespace BusinessLayer.Data
+namespace BusinessTier.Data
 {
     public class GameWebService : IGameWebService
     {

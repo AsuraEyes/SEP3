@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using BusinessLayer.Data;
-using BusinessLayer.Models;
+using BusinessTier.Data;
+using BusinessTier.Models;
 
-namespace BusinessLayer.Middlepoint
+namespace BusinessTier.Middlepoint
 {
     public class EventGameListMiddlePoint : IEventGameListMiddlePoint
     {
