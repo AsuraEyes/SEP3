@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.VisualBasic;
 
 namespace Presentation_Layer.Models
 {
@@ -14,7 +13,7 @@ namespace Presentation_Layer.Models
         [Required]
         public string CardHolderName { get; set; }
         [Required]
-        public string CVC { get; set; }
+        public string Cvc { get; set; }
         [Required]
         public DateTime ExpiryDate { get; set; }
         

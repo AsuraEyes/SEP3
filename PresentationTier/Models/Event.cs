@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using ExpressiveAnnotations.Attributes;
-using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationTier.Models
 {

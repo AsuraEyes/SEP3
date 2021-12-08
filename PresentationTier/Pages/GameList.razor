@@ -4,12 +4,14 @@
 @using PresentationTier.Authentication
 @using PresentationTier.Models
 @using System.Security.Claims
+@using PresentationTier.Data.GameServices
+@using PresentationTier.Data.GameServices.GameLists
 
 @inject IGameListService gameListService
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
 
-<h3>GameList</h3>
+<h3>Game List</h3>
 <ul>
 @foreach (var game in games)
 {

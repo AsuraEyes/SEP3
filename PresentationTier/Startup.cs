@@ -1,20 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using Data;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationTier.Authentication;
 using PresentationTier.Data;
-using SEP3_Blazor.Data;
+using PresentationTier.Data.EventServices;
+using PresentationTier.Data.EventServices.Categories;
+using PresentationTier.Data.EventServices.EventGameLists;
+using PresentationTier.Data.EventServices.EventOrganizers;
+using PresentationTier.Data.EventServices.Events;
+using PresentationTier.Data.EventServices.Organizers;
+using PresentationTier.Data.EventServices.Participants;
+using PresentationTier.Data.FeeServices;
+using PresentationTier.Data.GameServices;
+using PresentationTier.Data.GameServices.GameLists;
+using PresentationTier.Data.GameServices.Games;
+using PresentationTier.Data.UserServices;
 
 namespace PresentationTier
 {
@@ -41,7 +45,7 @@ namespace PresentationTier
             services.AddScoped<IOrganizerService, OrganizerService>();
             services.AddScoped<IEventGameListService, EventGameListService>();
             services.AddScoped<IGameListService, GameListService>();
-            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IFeeService, FeeService>();
             services.AddScoped<IEventOrganizerService, EventOrganizerService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 

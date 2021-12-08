@@ -4,6 +4,13 @@
 @using PresentationTier.Models
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data.EventServices
+@using PresentationTier.Data.EventServices.Categories
+@using PresentationTier.Data.EventServices.EventGameLists
+@using PresentationTier.Data.EventServices.Events
+@using PresentationTier.Data.EventServices.Organizers
+@using PresentationTier.Data.EventServices.Participants
+@using PresentationTier.Data.FeeServices
 
 @inject IParticipantService participantService;
 @inject IJSRuntime jsRuntime
@@ -13,7 +20,7 @@
 @inject IEventGameListService eventGameListService;
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
-@inject IPaymentService paymentService;
+@inject IFeeService feeService;
 
 @if (categories.Count == 0)
 {
@@ -168,7 +175,7 @@ else
 
     private async Task JoinEventAsync()
     {
-        if (await paymentService.CheckSubscriptionAsync(username) || await paymentService.GetEventFeeAsync(username, Id)!= null)
+        if (await feeService.CheckSubscriptionAsync(username) || await feeService.GetEventFeeAsync(username, Id)!= null)
         {
             await participantService.JoinEventAsync(Id, username);
             participants = await participantService.GetParticipantsAsync(Id);

@@ -1,8 +1,6 @@
-using System;
-
 namespace BusinessTier.Models
 {
-    public class FilterREST
+    public class FilterRest
     {
         public string Search { get; set; }
         public bool ByDate { get; set; }
