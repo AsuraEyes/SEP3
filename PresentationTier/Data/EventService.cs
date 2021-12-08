@@ -36,9 +36,9 @@ namespace PresentationTier.Data
                 $"?byDate={filterRest.ByDate}&byAvailability={filterRest.ByAvailability}&currentPage={filterRest.CurrentPage}&categoryId={filterRest.CategoryId}&resultsPerPage={filterRest.ResultsPerPage}";
             var stringAsync = client.GetStringAsync(uri + $"/FilteredEvents"+filters);
             var eventList = await stringAsync;
-            EventList events = JsonSerializer.Deserialize<EventList>(eventList, new JsonSerializerOptions
+            var events = JsonSerializer.Deserialize<EventList>(eventList, new JsonSerializerOptions
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             });
             return events;
         }

@@ -24,7 +24,7 @@ namespace REST.Controllers
 
         [HttpGet]
         [Route("/FilteredEvents")]
-        public async Task<ActionResult<IList<Event>>> GetFilteredEventsAsync([FromQuery] FilterREST filterRest)
+        public async Task<ActionResult<EventList>> GetFilteredEventsAsync([FromQuery] FilterREST filterRest)
         {
             try
             {

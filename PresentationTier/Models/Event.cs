@@ -25,7 +25,7 @@ namespace PresentationTier.Models
         [RequiredIf("End > Today() && (Compare(End, Start)) <= 0", 
             ErrorMessage = "The end time must be later than the start time.")]
         public DateTime? End { get; set; }
-
+        
         public DateTime StartTime{ get; set; }
         
         public DateTime EndTime{ get; set; }
@@ -48,6 +48,28 @@ namespace PresentationTier.Models
         [Required]
         [AssertThat("EventCategory >= 1", ErrorMessage = "Select a category")]
         public int EventCategory{ get; set; }
-
+        
+        
+        // public int Id{ get; set; }
+        //
+        // public string Name{ get; set; }
+        //
+        // public DateTime StartTime{ get; set; }
+        //
+        // public DateTime EndTime{ get; set; }
+        //
+        // public string AddressStreetName{ get; set; }
+        //
+        // public string AddressStreetNumber{ get; set; }
+        //
+        // public string AddressApartmentNumber{ get; set; }
+        //
+        // public int MaxNumberOfParticipants{ get; set; }
+        //
+        // public int NumberOfParticipants{ get; set; }
+        //
+        // public int EventCategory{ get; set; }
+        //
+        // public string Organizer{ get; set; }
     }
 }
