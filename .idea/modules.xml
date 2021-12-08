@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/complete/BusinessLayer[Java].iml" filepath="$PROJECT_DIR$/complete/BusinessLayer[Java].iml" />
-      <module fileurl="file://$PROJECT_DIR$/BusinessLayer[Java]/DataTier.iml" filepath="$PROJECT_DIR$/BusinessLayer[Java]/DataTier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataTier/DataTier.iml" filepath="$PROJECT_DIR$/DataTier/DataTier.iml" />
     </modules>
   </component>
 </project>
