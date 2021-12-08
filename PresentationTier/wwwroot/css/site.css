@@ -72,8 +72,19 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
         top: 0.5rem;
     }
     
+h1, h2{
+   /* font-family: Garamond;*/
+    font-family: Didot, serif;
+}
+
 h1, h2, h3{
-    font-family: Garamond;
+    color: #AC8E02;
+}
+
+h3{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-transform: uppercase;
+    font-variant: all-small-caps;
 }
 
 h1{
@@ -95,4 +106,9 @@ li{
     display: grid;
     grid-template-columns: 1fr 10fr;
     width: 20em;
+}
+
+*{
+    background-color: #18062E;
+    color: white;
 }
