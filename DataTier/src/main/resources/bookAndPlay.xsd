@@ -263,7 +263,6 @@
             <xs:element name="phoneNumber" type="xs:string"/>
             <xs:element name="emailAddress" type="xs:string"/>
             <xs:element name="requestedPromotion" type="xs:boolean"/>
-<!--            <xs:element name="gameList" type="tns:GameList"/>-->
         </xs:sequence>
     </xs:complexType>
 
@@ -280,9 +279,6 @@
             <xs:element name="numberOfParticipants" type="xs:int"/>
             <xs:element name="eventCategory" type="xs:int"/>
             <xs:element name="organizer" type="xs:string"/>
-<!--            <xs:element name="participants" type="tns:UserList"/>-->
-<!--            <xs:element name="organizers" type="tns:UserList"/>-->
-<!--            <xs:element name="gameList" type="tns:EventGameList"/>-->
         </xs:sequence>
     </xs:complexType>
 
@@ -345,14 +341,6 @@
             </xs:sequence>
         </xs:complexType>
 
-<!--        <xs:complexType name="EventGameList">-->
-<!--            <xs:sequence>-->
-<!--                <xs:element name="username" type="xs:string"/>-->
-<!--                <xs:element name="gameList" maxOccurs="unbounded" minOccurs="0" type="tns:Game">-->
-<!--                </xs:element>-->
-<!--            </xs:sequence>-->
-<!--        </xs:complexType>-->
-
     <xs:complexType name="Category">
         <xs:sequence>
             <xs:element name="id" type="xs:int"/>
@@ -363,14 +351,6 @@
     <xs:complexType name="CategoryList">
         <xs:sequence>
             <xs:element name="categoryList" maxOccurs="unbounded" minOccurs="0" type="tns:Category"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="GameListUpdate">
-        <xs:sequence>
-            <xs:element name="username" type="xs:string"/>
-            <xs:element name="gameId" type="xs:int"/>
-            <xs:element name="inList" type="xs:boolean"/>
         </xs:sequence>
     </xs:complexType>
 

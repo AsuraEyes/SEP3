@@ -25,119 +25,211 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="renamed namespace and reformatted stuff">
-      <change afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/MonthlyFees/IMonthlyFeeWebService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/OneTimeFees/IOneTimeFeeWebService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/Users/IUserWebService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/Events/IEventMiddlePoint.cs" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="packages, packages, namespaces, namespaces.............">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/SEP/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/SEP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Models/UserCardInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/BankData/PaymentWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BankData/PaymentWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventGameListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventOrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/FeeControllers/FeeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameListController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/OrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/ParticipantController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/CategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/EventGameLists/EventGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/EventOrganizers/EventOrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Events/EventWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/GameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebServices/GameLists/GameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebServices/Games/GameWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/ICategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/ICategoryWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/EventGameLists/IEventGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/EventOrganizers/IEventOrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Events/IEventWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebServices/GameLists/IGameListWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebServices/Games/IGameWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IMonthlyFeeWebService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IOneTimeFeeWebService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Organizers/IOrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Participants/IParticipantWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/MonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/MonthlyFees/MonthlyFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/OneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/OneTimeFees/OneTimeFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/OrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Organizers/OrganizerWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/ParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Participants/ParticipantWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/Users/UserWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/EventGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/EventGameLists/EventGameListMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/EventMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/Events/EventMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/FeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/FeeMiddlePoints/FeeMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/GameLists/GameListMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/GameMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IEventGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/EventGameLists/IEventGameListMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IEventMiddlePoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IFeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/FeeMiddlePoints/IFeeMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameListMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/GameLists/IGameListMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/IGameMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/IUserMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/UserMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Models/FilterREST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/FilterREST.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/UserCardInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Categories/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/EventGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventOrganizers/EventOrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/EventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/GameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Categories/ICategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IEventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/IEventGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IEventOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventOrganizers/IEventOrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/IEventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/IGameListService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/IGameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IOrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Organizers/IOrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Participants/IParticipantService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/IFeeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserServices/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/OrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Organizers/OrganizerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/ParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Participants/ParticipantService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/FeeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserServices/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateEventAsync.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateEventAsync.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEventAsync.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventAsync.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/EventTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/EventTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/GameTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/GameTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/UserTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/UserTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/EventGameList/EventGameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/EventGameList/EventGameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/oneTimeFees/OneTimeFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/OneTimeFee/OneTimeFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/oneTimeFees/OneTimeFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/categories/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/category/Categories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/categories/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/category/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/events/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/Events.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/gameList/GameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/gameLists/GameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/gameList/GameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/gameLists/GameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/games/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/games/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/games/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/monthlyFees/MonthlyFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/monthlyFee/MonthlyFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/monthlyFees/MonthlyFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/organizers/OrganizerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/organizers/OrganizerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/organizers/Organizers.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/organizers/Organizers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/participants/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/participants/ParticipantDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/participants/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/participants/Participants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/users/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/CategoryEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/CategoryEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/DAOConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/DAOConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/EventGameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/EventsEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventsEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/GameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/GamesEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GamesEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/MonthlyFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/OneTimeFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/OrganizerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/ParticipantEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/UsersEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/META-INF/JAXB/episode_xjc_1.xjb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameLists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/Categories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO$CategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/db/DataMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/db/DatabaseHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$EventMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$IntegerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/Events.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$IntegerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameLists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/Games.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO$MonthlyFeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO$OrganizerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/Organizers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO$ParticipantMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/Participants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/CategoryEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/CategoryEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/DAOConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventGameListEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventGameListEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventsEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventsEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GameListEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GameListEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GamesEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GamesEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/MonthlyFeeEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/MonthlyFeeEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OneTimeFeeEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OneTimeFeeEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ParticipantEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ParticipantEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ProducingWebServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/UsersEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/WebServiceConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameLists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/Categories.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO$CategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$EventMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$IntegerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/Events.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$IntegerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameLists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO$GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/Games.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO$MonthlyFeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFees.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO$OrganizerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/Organizers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO$ParticipantMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/Participants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO$UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/CategoryEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/CategoryEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/DAOConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/DAOConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventGameListEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventGameListEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventsEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventsEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GameListEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GameListEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GamesEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GamesEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/MonthlyFeeEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/MonthlyFeeEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OneTimeFeeEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OneTimeFeeEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OrganizerEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OrganizerEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/ParticipantEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/ParticipantEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/UsersEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/UsersEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/CategoryList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/EventList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Filter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/GameList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/GameListUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/MonthlyFee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/ObjectFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/OneTimeFee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Operation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventGameListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventGameListResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameListRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameListResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOrganizerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOrganizerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPParticipantRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPParticipantResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/UserList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/package-info.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,14 +393,7 @@
       <workItem from="1638950950724" duration="3192000" />
       <workItem from="1638961274562" duration="309000" />
       <workItem from="1638961700320" duration="1426000" />
-      <workItem from="1638963768792" duration="6165000" />
-    </task>
-    <task id="LOCAL-00007" summary="works3">
-      <created>1636111757205</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1636111757205</updated>
+      <workItem from="1638963768792" duration="9008000" />
     </task>
     <task id="LOCAL-00008" summary="database">
       <created>1636457623411</created>
@@ -646,7 +731,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638961864752</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="packages, packages, namespaces, namespaces.............">
+      <created>1638970013749</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1638970013749</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +762,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="special push" />
     <MESSAGE value="filter with filter Object everywhere" />
     <MESSAGE value="resultsPerPage are on the page" />
     <MESSAGE value="a" />
@@ -695,6 +786,7 @@
     <MESSAGE value="user pagination/search" />
     <MESSAGE value="List of game objects =&gt; List of game ids" />
     <MESSAGE value="renamed namespace and reformatted stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed namespace and reformatted stuff" />
+    <MESSAGE value="packages, packages, namespaces, namespaces............." />
+    <option name="LAST_COMMIT_MESSAGE" value="packages, packages, namespaces, namespaces............." />
   </component>
 </project>
