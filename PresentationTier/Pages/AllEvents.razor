@@ -1,8 +1,8 @@
 @page "/AllEvents"
 @page "/AllEvents/{currentPage:int}"
 
-@using PresentationTier.Data
-@using PresentationTier.Models
+@using Data
+@using Models
 
 @inject NavigationManager navigationManager
 @inject IEventService restEvent
@@ -125,6 +125,7 @@
         filterRest.ResultsPerPage = resultsPerPage;
         
         events = await restEvent.GetFilteredEventsAsync(filterRest);
+
         numberOfPages = events.Count;
         eventList = events.ListOfEvents;
         CurrentPage = 1;

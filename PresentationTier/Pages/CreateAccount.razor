@@ -1,7 +1,6 @@
 @page "/CreateAccount"
 
 @using global::Data
-@using PresentationTier.Authentication
 @using PresentationTier.Models
 
 @inject IUserService userService
@@ -13,7 +12,7 @@
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
-        Name:<br/>
+        Username:<br/>
         <InputText @bind-Value="user.Username"/>
     </div>
     <div class="form-group">
@@ -64,7 +63,6 @@
         errorMessage = await userService.CreateAccountAsync(user);
         if (errorMessage.Equals("success"))
         {
-            await ((CustomAuthenticationStateProvider) stateProvider).ValidateLogin(user.Username, user.Password);
             navigationManager.NavigateTo("/");
         }
     }
