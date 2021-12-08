@@ -15,17 +15,435 @@
     <projectFile profileName="SOAP_csharp">SOAP_csharp/SOAP_csharp.csproj</projectFile>
     <projectFile profileName="IIS Express">PresentationLayer/PresentationLayer.csproj</projectFile>
     <projectFile profileName="PresentationLayer">PresentationLayer/PresentationLayer.csproj</projectFile>
+    <projectFile profileName="IIS Express">BusinessTier/BusinessTier.csproj</projectFile>
+    <projectFile profileName="WebApplication">BusinessTier/BusinessTier.csproj</projectFile>
+    <projectFile profileName="IIS Express">PresentationTier/PresentationTier.csproj</projectFile>
+    <projectFile profileName="Presentation_Layer">PresentationTier/PresentationTier.csproj</projectFile>
     <projectFile profileName="PresentationTier">PresentationTier/PresentationTier.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="changed namespace">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2021_10_22_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2021_10_22__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/ServiceReference1/ConnectedService.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/ServiceReference1/Reference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameListDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/EventGameList/EventGameLists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/OneTimeFee/OneTimeFees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/Categories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO$CategoryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/categories/CategoryDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/db/DataMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/db/DatabaseHelper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$EventMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO$IntegerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/EventDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/events/Events.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO$IntegerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameListDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/gameList/GameLists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/GameDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/games/Games.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO$MonthlyFeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/monthlyFee/MonthlyFees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO$OrganizerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/OrganizerDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/organizers/Organizers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO$ParticipantMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/ParticipantDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/participants/Participants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/users/Users.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/CategoryEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/CategoryEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/DAOConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventGameListEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventGameListEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventsEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/EventsEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GameListEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GameListEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GamesEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/GamesEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/MonthlyFeeEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/MonthlyFeeEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OneTimeFeeEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OneTimeFeeEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/OrganizerEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ParticipantEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ParticipantEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/ProducingWebServiceApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/UsersEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/com/example/producingwebservice/webService/WebServiceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/countries.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameListDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/EventGameList/EventGameLists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO$OneTimeFeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/OneTimeFee/OneTimeFees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/Categories.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO$CategoryMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/categories/CategoryDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/db/DataMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/db/DatabaseHelper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$EventMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO$IntegerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/EventDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/events/Events.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO$IntegerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameListDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/gameList/GameLists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO$GameMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/GameDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/games/Games.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO$MonthlyFeeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/monthlyFee/MonthlyFees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO$OrganizerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/OrganizerDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/organizers/Organizers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO$ParticipantMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/ParticipantDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/participants/Participants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO$UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/users/Users.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/BookAndPlay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/CategoryEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/CategoryEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/DAOConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventGameListEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventGameListEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventsEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/EventsEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GameListEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GameListEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GamesEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/GamesEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/MonthlyFeeEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/MonthlyFeeEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OneTimeFeeEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OneTimeFeeEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OrganizerEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/OrganizerEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/ParticipantEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/ParticipantEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/UsersEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/UsersEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/WebServiceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/CategoryList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Event.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/EventList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Filter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/GameList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/GameListUpdate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/MonthlyFee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/ObjectFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/OneTimeFee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Operation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPCategoryRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPCategoryResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventGameListRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventGameListResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventOrganizerRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventOrganizerResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGGLRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGGLResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameListRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameListResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/UserList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/package-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/CategoryList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Event.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/EventList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Filter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/GameList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/GameListUpdate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/MonthlyFee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/ObjectFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/OneTimeFee.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/Operation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventGameListRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventGameListResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPEventResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameListRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameListResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOrganizerRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPOrganizerResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPParticipantRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPParticipantResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/UserList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/io/spring/guides/gs_producing_web_service/package-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/message.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/CategoryList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/EventList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/GameList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/GameListUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/MonthlyFee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/OneTimeFee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Operation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/UserList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/jaxb2/.xjc-xjcStaleFlag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/PaymentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/book_and_play.MoXDGg.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SEP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankServer/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankServer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankServer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/BankData/PaymentWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BankData/PaymentWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/ConnectedService.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/Reference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventGameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventOrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/FeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/OrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/ParticipantController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/CategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/CategoryWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/EventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/EventWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/GameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/ICategoryWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/ICategoryWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IEventWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IEventWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IGameListWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IGameListWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IMonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IMonthlyFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IOrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IOrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IParticipantWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/MonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/MonthlyFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/OneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/OneTimeFeeWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/OrganizerWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/OrganizerWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/ParticipantWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/ParticipantWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/FeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/FeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IFeeMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IFeeMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Models/FilterREST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/FilterREST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/BusinessLayer[Java].iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/DataTier.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/DataTier.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/request.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/EventGameList/EventGameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/EventGameList/EventGameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/EventGameList/EventGameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/EventGameList/EventGameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/OneTimeFee/OneTimeFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/OneTimeFee/OneTimeFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/OneTimeFee/OneTimeFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/OneTimeFee/OneTimeFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/categories/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/categories/Categories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/categories/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/categories/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/db/DataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/db/DataMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/db/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/db/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/CountryEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/CountryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/MessageDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/MessageEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/MessageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/demo_toBeRemovedLater/Messages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/events/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/events/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/events/Events.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/gameList/GameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/gameList/GameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/gameList/GameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/gameList/GameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/games/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/games/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/games/Games.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/monthlyFee/MonthlyFeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/monthlyFee/MonthlyFeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/monthlyFee/MonthlyFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/monthlyFee/MonthlyFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/organizers/OrganizerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/organizers/OrganizerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/organizers/Organizers.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/organizers/Organizers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/participants/ParticipantDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/participants/ParticipantDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/participants/Participants.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/participants/Participants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/users/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/users/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/CategoryEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/CategoryEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/DAOConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/DAOConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/EventGameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/EventGameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/EventsEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/EventsEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/GameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/GameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/GamesEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/GamesEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/MonthlyFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/MonthlyFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/OneTimeFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/OneTimeFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/OrganizerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/OrganizerEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/ParticipantEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/ParticipantEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/ProducingWebServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/BookAndPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/UsersEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/com/example/producingwebservice/webService/WebServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/WebServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/test/java/com/example/producingwebservice/ProducingWebServiceApplicationIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/test/java/dk/bookAndPlay/ProducingWebServiceApplicationIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc_1.xjb" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/CategoryList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Filter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameListUpdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/MonthlyFee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/OneTimeFee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Operation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGGLRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGGLResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/UserList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Database/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Authentication/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Authentication/CustomAuthenticationStateProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IEventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTests/EventTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/EventTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTests/GameTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/GameTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTests/UserTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/UserTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,56 +462,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Models/EventList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/UnitTests/GameTest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e54fec4597f74a4b865d31f47b54f4fa11188/dc/662eb147/Assert.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/c6/a59c0411/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d0d4bacef0d846b3a6bb82418cf5d6d165400/4b/eaa1e453/AttributeTargets.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://EventList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b9918930ec5410a990cdadd8b0f984d29200/7/CompareAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/EditAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitTests/UserTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/UserInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Models/EventList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/CreateAccount.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PresentationTier/obj/Debug/net5.0/Razor/Pages/GameApproval.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Models/EventList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Models/EventList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PresentationTier/Data/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/49/FromQueryAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c444817a6e3a4d8b94445f55790d489b2e800/70/IBindingSourceMetadata.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f41cb29cb794b5595adb557f61fcbef1bae00/46/FromBodyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Pages/AllUsers.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/UnitTests/EventTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/55/AggregateException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/Presentation_Layer/Models/Event.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/CODE/PresentationTier/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3da0403ae6e540a7a79283e509f3945b8d7e00/4F/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/99d3ee92f8b9404aa364b4c80c2b61a31b4400/51/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -105,7 +482,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3496708" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -115,10 +492,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BusinessLayer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PresentationTier">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -207,357 +584,372 @@
       <workItem from="1637599804389" duration="4898000" />
       <workItem from="1637655009002" duration="9043000" />
       <workItem from="1637667922322" duration="1243000" />
-      <workItem from="1637672584075" duration="4763000" />
-      <workItem from="1637678017045" duration="11019000" />
-      <workItem from="1637742394056" duration="94339000" />
-      <workItem from="1638129589140" duration="30223000" />
-      <workItem from="1638435229861" duration="14022000" />
-      <workItem from="1638517980892" duration="32383000" />
+      <workItem from="1637672584075" duration="6804000" />
+      <workItem from="1637685315737" duration="2040000" />
+      <workItem from="1637742195106" duration="3396000" />
+      <workItem from="1637755801028" duration="628000" />
+      <workItem from="1637840622328" duration="199000" />
+      <workItem from="1637842077232" duration="692000" />
+      <workItem from="1637848296693" duration="301000" />
+      <workItem from="1637855219061" duration="4974000" />
+      <workItem from="1637917278071" duration="16064000" />
+      <workItem from="1638011265367" duration="9746000" />
+      <workItem from="1638028302732" duration="15061000" />
+      <workItem from="1638132002889" duration="18199000" />
+      <workItem from="1638261082732" duration="22989000" />
+      <workItem from="1638350642872" duration="3419000" />
+      <workItem from="1638355192437" duration="7683000" />
+      <workItem from="1638432160074" duration="9771000" />
+      <workItem from="1638518842375" duration="8768000" />
+      <workItem from="1638802769369" duration="29695000" />
+      <workItem from="1638896234376" duration="2433000" />
+      <workItem from="1638950950724" duration="3192000" />
+      <workItem from="1638961274562" duration="309000" />
     </task>
-    <task id="LOCAL-00062" summary="exception simplified">
-      <created>1637861863350</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+    <task id="LOCAL-00006" summary="works part2">
+      <created>1636111003133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1637861863350</updated>
+      <updated>1636111003133</updated>
     </task>
-    <task id="LOCAL-00063" summary="new login page">
-      <created>1637865042358</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+    <task id="LOCAL-00007" summary="works3">
+      <created>1636111757205</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1637865042359</updated>
+      <updated>1636111757205</updated>
     </task>
-    <task id="LOCAL-00064" summary="nothing">
-      <created>1637866149439</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+    <task id="LOCAL-00008" summary="database">
+      <created>1636457623411</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1637866149443</updated>
+      <updated>1636457623412</updated>
     </task>
-    <task id="LOCAL-00065" summary="beautify">
-      <created>1637876934198</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+    <task id="LOCAL-00009" summary="c# changes">
+      <created>1636551371863</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1637876934198</updated>
+      <updated>1636551371863</updated>
     </task>
-    <task id="LOCAL-00066" summary="login changes">
-      <created>1637915194661</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+    <task id="LOCAL-00010" summary="authentication presentation layer">
+      <created>1637160317844</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1637915194661</updated>
+      <updated>1637160317844</updated>
     </task>
-    <task id="LOCAL-00067" summary="changed cancelling event">
-      <created>1637918366570</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+    <task id="LOCAL-00011" summary="Authentication done, login done but hard coded users. &#10;Pages in Blazor done without content. &#10;Commented out code from Index.razor that was throwing exceptions">
+      <created>1637177164815</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1637918366571</updated>
+      <updated>1637177164815</updated>
     </task>
-    <task id="LOCAL-00068" summary="rollback">
-      <created>1637924123268</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+    <task id="LOCAL-00012" summary="removed Blazor project">
+      <created>1637229639668</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1637924123269</updated>
+      <updated>1637229639668</updated>
     </task>
-    <task id="LOCAL-00069" summary="All events changes">
-      <created>1637948887627</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+    <task id="LOCAL-00013" summary="paging">
+      <created>1637267810207</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1637948887627</updated>
+      <updated>1637267810207</updated>
     </task>
-    <task id="LOCAL-00070" summary="alert has gotten bootstrap">
-      <created>1638003827583</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
+    <task id="LOCAL-00014" summary="idk">
+      <created>1637402428686</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1638003827583</updated>
+      <updated>1637402428686</updated>
     </task>
-    <task id="LOCAL-00071" summary="made it work">
-      <created>1638010228429</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
+    <task id="LOCAL-00015" summary="Vadlidate username presentation layer connection">
+      <created>1637416018885</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1638010228429</updated>
+      <updated>1637416018885</updated>
     </task>
-    <task id="LOCAL-00072" summary="creating account working">
-      <created>1638011279685</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
+    <task id="LOCAL-00016" summary="gimme gitignore">
+      <created>1637420482809</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1638011279686</updated>
+      <updated>1637420482809</updated>
     </task>
-    <task id="LOCAL-00073" summary="login fixing">
-      <created>1638012099410</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
+    <task id="LOCAL-00017" summary="fixed event.">
+      <created>1637505101536</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1638012099411</updated>
+      <updated>1637505101536</updated>
     </task>
-    <task id="LOCAL-00074" summary="login fixes">
-      <created>1638013771142</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
+    <task id="LOCAL-00018" summary="fixed validation error">
+      <created>1637505316038</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1638013771142</updated>
+      <updated>1637505316038</updated>
     </task>
-    <task id="LOCAL-00075" summary="fixed typo">
-      <created>1638018222463</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
+    <task id="LOCAL-00019" summary="fixed">
+      <created>1637505365897</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1638018222463</updated>
+      <updated>1637505365897</updated>
     </task>
-    <task id="LOCAL-00076" summary="fixed bugs">
-      <created>1638026134976</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
+    <task id="LOCAL-00020" summary="event range changed">
+      <created>1637507618036</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1638026134988</updated>
+      <updated>1637507618036</updated>
     </task>
-    <task id="LOCAL-00077" summary="bug fixes">
-      <created>1638026629588</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
+    <task id="LOCAL-00021" summary="create event thingies">
+      <created>1637510894303</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1638026629591</updated>
+      <updated>1637510894303</updated>
     </task>
-    <task id="LOCAL-00078" summary="error message fix on create game and changed create game for organizers and admins">
-      <created>1638096357750</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
+    <task id="LOCAL-00022" summary="Fixed event error messages">
+      <created>1637573030655</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1638096357752</updated>
+      <updated>1637573030655</updated>
     </task>
-    <task id="LOCAL-00079" summary="create event error messages fixed">
-      <created>1638099216402</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
+    <task id="LOCAL-00023" summary="filtering implementation blazor to database">
+      <created>1637655343894</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1638099216403</updated>
+      <updated>1637655343894</updated>
     </task>
-    <task id="LOCAL-00080" summary="added links to game description">
-      <created>1638101580648</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
+    <task id="LOCAL-00024" summary="added event gameList view java to blazor">
+      <created>1637674632032</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1638101580648</updated>
+      <updated>1637674632032</updated>
     </task>
-    <task id="LOCAL-00081" summary="fixed bug in create event">
-      <created>1638105113563</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
+    <task id="LOCAL-00025" summary="r">
+      <created>1637674651339</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1638105113565</updated>
+      <updated>1637674651339</updated>
     </task>
-    <task id="LOCAL-00082" summary="fixed typo">
-      <created>1638105191576</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
+    <task id="LOCAL-00026" summary="special push">
+      <created>1637677430634</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1638105191576</updated>
+      <updated>1637677430634</updated>
     </task>
-    <task id="LOCAL-00083" summary="code cleanup">
-      <created>1638105365584</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
+    <task id="LOCAL-00027" summary="filter with filter Object everywhere">
+      <created>1637926706153</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1638105365584</updated>
+      <updated>1637926706153</updated>
     </task>
-    <task id="LOCAL-00084" summary="fixed create account, games are clickable, events now shown in my events">
-      <created>1638264331638</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
+    <task id="LOCAL-00028" summary="resultsPerPage are on the page">
+      <created>1637931267126</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1638264331651</updated>
+      <updated>1637931267126</updated>
     </task>
-    <task id="LOCAL-00085" summary="Game info changed">
-      <created>1638265864334</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
+    <task id="LOCAL-00029" summary="a">
+      <created>1638011671703</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1638265864339</updated>
+      <updated>1638011671703</updated>
     </task>
-    <task id="LOCAL-00086" summary="game names now hyperlink">
-      <created>1638269583715</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
+    <task id="LOCAL-00030" summary="fixed game middlepoint">
+      <created>1638016454955</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1638269583721</updated>
+      <updated>1638016454955</updated>
     </task>
-    <task id="LOCAL-00087" summary="users made into hyperlinks">
-      <created>1638269861390</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
+    <task id="LOCAL-00031" summary="commit">
+      <created>1638023410910</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1638269861391</updated>
+      <updated>1638023410910</updated>
     </task>
-    <task id="LOCAL-00088" summary="users now hyperlinks">
-      <created>1638270156705</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
+    <task id="LOCAL-00032" summary="business tier/presentation tier GameList and Game - services classes together with methods - created/updated">
+      <created>1638108807059</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1638270156718</updated>
+      <updated>1638108807059</updated>
     </task>
-    <task id="LOCAL-00089" summary="Debug stuff">
-      <created>1638278371895</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
+    <task id="LOCAL-00033" summary="commit">
+      <created>1638177140662</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1638278371900</updated>
+      <updated>1638177140662</updated>
     </task>
-    <task id="LOCAL-00090" summary="added a confirmation message when disapproving a game">
-      <created>1638348616069</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
+    <task id="LOCAL-00034" summary="commit">
+      <created>1638177588122</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1638348616076</updated>
+      <updated>1638177588122</updated>
     </task>
-    <task id="LOCAL-00091" summary="approval fully implemented">
-      <created>1638433749410</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
+    <task id="LOCAL-00035" summary="updated Web Reference based on SOAP wsdl">
+      <created>1638179739434</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1638433749421</updated>
+      <updated>1638179739434</updated>
     </task>
-    <task id="LOCAL-00092" summary="edit games work">
-      <created>1638442612695</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
+    <task id="LOCAL-00036" summary="setup for eventLists for different types of users, in java and xsd file">
+      <created>1638189017418</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1638442612698</updated>
+      <updated>1638189017418</updated>
     </task>
-    <task id="LOCAL-00093" summary="create account  fully implemented">
-      <created>1638445076918</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
+    <task id="LOCAL-00037" summary="create Fees WebServices, updated Soap reference based on wsdl">
+      <created>1638208038523</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1638445076921</updated>
+      <updated>1638208038523</updated>
     </task>
-    <task id="LOCAL-00094" summary="change in account">
-      <created>1638445115313</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
+    <task id="LOCAL-00038" summary="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier">
+      <created>1638280200717</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1638445115314</updated>
+      <updated>1638280200717</updated>
     </task>
-    <task id="LOCAL-00095" summary="create game">
-      <created>1638445485993</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
+    <task id="LOCAL-00039" summary="small fix">
+      <created>1638280787729</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1638445485993</updated>
+      <updated>1638280787730</updated>
     </task>
-    <task id="LOCAL-00096" summary="fixed create game">
-      <created>1638447071153</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
+    <task id="LOCAL-00040" summary="commit">
+      <created>1638282665484</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1638447071154</updated>
+      <updated>1638282665484</updated>
     </task>
-    <task id="LOCAL-00097" summary="cleanup according to rider">
-      <created>1638447195030</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
+    <task id="LOCAL-00041" summary="presentation tier payment service implementation">
+      <created>1638289626317</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1638447195030</updated>
+      <updated>1638289626317</updated>
     </task>
-    <task id="LOCAL-00098" summary="rider cleanup">
-      <created>1638447223213</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
+    <task id="LOCAL-00042" summary="PaymentOverview.razor">
+      <created>1638352635731</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1638447223213</updated>
+      <updated>1638352635731</updated>
     </task>
-    <task id="LOCAL-00099" summary="added await expression">
-      <created>1638447259596</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
+    <task id="LOCAL-00043" summary="monthly fee/payment working">
+      <created>1638359417380</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1638447259597</updated>
+      <updated>1638359417380</updated>
     </task>
-    <task id="LOCAL-00100" summary="put input validation summary when creating and editing files">
-      <created>1638517785130</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
+    <task id="LOCAL-00044" summary="payment options work in presentation tier aswell">
+      <created>1638362259876</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1638517785132</updated>
+      <updated>1638362259876</updated>
     </task>
-    <task id="LOCAL-00101" summary="View all users fully implemented">
-      <created>1638518738087</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
+    <task id="LOCAL-00045" summary="Delete account implemented">
+      <created>1638442417573</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1638518738087</updated>
+      <updated>1638442417573</updated>
     </task>
-    <task id="LOCAL-00102" summary="fixed the issue">
-      <created>1638519002540</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
+    <task id="LOCAL-00046" summary="Validate user updated">
+      <created>1638445585580</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1638519002540</updated>
+      <updated>1638445585580</updated>
     </task>
-    <task id="LOCAL-00103" summary="fixed redirecting">
-      <created>1638519169222</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
+    <task id="LOCAL-00047" summary="update">
+      <created>1638518978761</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1638519169223</updated>
+      <updated>1638518978761</updated>
     </task>
-    <task id="LOCAL-00104" summary="edit account working">
-      <created>1638527690301</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
+    <task id="LOCAL-00048" summary="update">
+      <created>1638802801679</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1638527690303</updated>
+      <updated>1638802801679</updated>
     </task>
-    <task id="LOCAL-00105" summary="changed the save button in edit forms">
-      <created>1638530615225</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
+    <task id="LOCAL-00049" summary="search/pagination GGL">
+      <created>1638875825683</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1638530615226</updated>
+      <updated>1638875825683</updated>
     </task>
-    <task id="LOCAL-00106" summary="made some unit tests">
-      <created>1638861331844</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
+    <task id="LOCAL-00050" summary="pagination/search GGL">
+      <created>1638875867879</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1638861331845</updated>
+      <updated>1638875867880</updated>
     </task>
-    <task id="LOCAL-00107" summary="removed unnecessary project from solution">
-      <created>1638861419660</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
+    <task id="LOCAL-00051" summary="css file path rename">
+      <created>1638877241654</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1638861419660</updated>
+      <updated>1638877241654</updated>
     </task>
-    <task id="LOCAL-00108" summary="optimized imports for game test">
-      <created>1638861471926</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
+    <task id="LOCAL-00052" summary="user pagination/search">
+      <created>1638887338452</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1638861471926</updated>
+      <updated>1638887338452</updated>
     </task>
-    <task id="LOCAL-00109" summary="fixed namespace">
-      <created>1638884700715</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
+    <task id="LOCAL-00053" summary="List of game objects =&gt; List of game ids">
+      <created>1638892555923</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1638884700717</updated>
+      <updated>1638892555923</updated>
     </task>
-    <task id="LOCAL-00110" summary="changed namespace">
-      <created>1638892663813</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
+    <task id="LOCAL-00054" summary="json issue fixed">
+      <created>1638954466321</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
       <option name="project" value="LOCAL" />
-      <updated>1638892663813</updated>
+      <updated>1638954466321</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,31 +973,31 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="game names now hyperlink" />
-    <MESSAGE value="users made into hyperlinks" />
-    <MESSAGE value="users now hyperlinks" />
-    <MESSAGE value="Debug stuff" />
-    <MESSAGE value="added a confirmation message when disapproving a game" />
-    <MESSAGE value="approval fully implemented" />
-    <MESSAGE value="edit games work" />
-    <MESSAGE value="create account  fully implemented" />
-    <MESSAGE value="change in account" />
-    <MESSAGE value="create game" />
-    <MESSAGE value="fixed create game" />
-    <MESSAGE value="cleanup according to rider" />
-    <MESSAGE value="rider cleanup" />
-    <MESSAGE value="added await expression" />
-    <MESSAGE value="put input validation summary when creating and editing files" />
-    <MESSAGE value="View all users fully implemented" />
-    <MESSAGE value="fixed the issue" />
-    <MESSAGE value="fixed redirecting" />
-    <MESSAGE value="edit account working" />
-    <MESSAGE value="changed the save button in edit forms" />
-    <MESSAGE value="made some unit tests" />
-    <MESSAGE value="removed unnecessary project from solution" />
-    <MESSAGE value="optimized imports for game test" />
-    <MESSAGE value="fixed namespace" />
-    <MESSAGE value="changed namespace" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed namespace" />
+    <MESSAGE value="r" />
+    <MESSAGE value="special push" />
+    <MESSAGE value="filter with filter Object everywhere" />
+    <MESSAGE value="resultsPerPage are on the page" />
+    <MESSAGE value="a" />
+    <MESSAGE value="fixed game middlepoint" />
+    <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
+    <MESSAGE value="updated Web Reference based on SOAP wsdl" />
+    <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
+    <MESSAGE value="create Fees WebServices, updated Soap reference based on wsdl" />
+    <MESSAGE value="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier" />
+    <MESSAGE value="small fix" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="presentation tier payment service implementation" />
+    <MESSAGE value="PaymentOverview.razor" />
+    <MESSAGE value="monthly fee/payment working" />
+    <MESSAGE value="payment options work in presentation tier aswell" />
+    <MESSAGE value="Delete account implemented" />
+    <MESSAGE value="Validate user updated" />
+    <MESSAGE value="update" />
+    <MESSAGE value="search/pagination GGL" />
+    <MESSAGE value="pagination/search GGL" />
+    <MESSAGE value="css file path rename" />
+    <MESSAGE value="user pagination/search" />
+    <MESSAGE value="List of game objects =&gt; List of game ids" />
+    <option name="LAST_COMMIT_MESSAGE" value="List of game objects =&gt; List of game ids" />
   </component>
 </project>

@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/complete/pom.xml" />
         <option value="$PROJECT_DIR$/BusinessLayer[Java]/pom.xml" />
+        <option value="$PROJECT_DIR$/DataTier/pom.xml" />
       </list>
     </option>
   </component>

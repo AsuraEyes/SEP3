@@ -8,11 +8,12 @@
 		<version>2.5.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>producing-web-service-complete</artifactId>
+
+	<groupId>dk.bookAndPlay</groupId>
+	<artifactId>DataTier</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>producing-web-service-complete</name>
-	<description>Demo project for Spring Boot</description>
+	<name>DataTier</name>
+	<description>SEP3 Data Tier Server</description>
 
 	<properties>
 		<java.version>1.8</java.version>

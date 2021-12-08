@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BusinessLayer",
-    "\\BusinessTier",
-    "\\BusinessTier\\Connected Services",
-    "\\BusinessTier\\Connected Services\\BookAndPlaySOAP"
+    ""
   ],
-  "SelectedNode": "\\BusinessTier\\Connected Services\\BookAndPlaySOAP\\Reference.cs",
+  "SelectedNode": "\\SEP.sln",
   "PreviewInSolutionExplorer": false
 }
