@@ -25,11 +25,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="payment overview">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="menu CSS done">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/MainLayout.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Shared/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/EventList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/UserCardInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -442,13 +443,6 @@
       <workItem from="1638518842375" duration="8768000" />
       <workItem from="1638802769369" duration="24604000" />
     </task>
-    <task id="LOCAL-00004" summary="BusinessLayer - Presentation_Layer is fucking working dude">
-      <created>1635864085141</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1635864085141</updated>
-    </task>
     <task id="LOCAL-00005" summary="Hello World! works">
       <created>1636110199014</created>
       <option name="number" value="00005" />
@@ -785,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638893698417</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="menu CSS done">
+      <created>1638958865416</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1638958865416</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -824,7 +825,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added event gameList view java to blazor" />
     <MESSAGE value="r" />
     <MESSAGE value="special push" />
     <MESSAGE value="filter with filter Object everywhere" />
@@ -849,6 +849,7 @@
     <MESSAGE value="pagination/search GGL" />
     <MESSAGE value="css file path rename" />
     <MESSAGE value="payment overview" />
-    <option name="LAST_COMMIT_MESSAGE" value="payment overview" />
+    <MESSAGE value="menu CSS done" />
+    <option name="LAST_COMMIT_MESSAGE" value="menu CSS done" />
   </component>
 </project>

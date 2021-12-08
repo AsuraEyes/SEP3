@@ -1,5 +1,9 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --yellow-color:#AC8E02;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -16,6 +20,7 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
+    
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -75,16 +80,17 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
 h1, h2{
    /* font-family: Garamond;*/
     font-family: Didot, serif;
+    margin-bottom: 1em;
 }
 
 h1, h2, h3{
-    color: #AC8E02;
+    color: var(--yellow-color);
 }
 
-h3{
+h3, h4{
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    text-transform: uppercase;
-    font-variant: all-small-caps;
+    /*text-transform: uppercase;*/
+    font-variant: small-caps;
 }
 
 h1{
@@ -111,4 +117,47 @@ li{
 *{
     background-color: #18062E;
     color: white;
+}
+
+/*GRID*/
+.grid-container-payment{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-container-fifty-fifty{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1.5px solid var(--yellow-color);
+    padding: 1rem;
+}
+
+
+
+
+/*BUTTONS*/
+.simple-button{
+    border: 1px solid white;
+    padding: 0.7em;
+    margin: 1em;
+    font-variant: small-caps;
+}
+
+.simple-button:hover{
+    border: 1px solid var(--yellow-color);
+    color: var(--yellow-color);
+    transition: 0.5s;
+}
+
+
+
+/*FORM*/
+.form-field{
+    border: none;
+    border-bottom: 2px solid white;
+    outline: 0;
+}
+
+.grid-container-payment .form-field, .grid-container-payment label{
+    padding: 0.5em;
 }
