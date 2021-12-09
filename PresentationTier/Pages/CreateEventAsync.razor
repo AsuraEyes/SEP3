@@ -85,7 +85,7 @@
         if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
         
         newEvent.StartTime = newEvent.Date.Add(newEvent.Start.TimeOfDay);
-        if (newEvent.End != null) newEvent.EndTime = newEvent.Date.Add(newEvent.End.Value.TimeOfDay);
+        newEvent.EndTime = newEvent.Date.Add(newEvent.End.TimeOfDay);
         await eventService.CreateEventAsync(newEvent);
         await jsRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         navigationManager.NavigateTo("MyEvents");
