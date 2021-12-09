@@ -174,7 +174,10 @@ h3{
 .delete-button:hover{
     color: red;
 }
-
+.button:hover .oi, .button:hover span{
+    color: var(--yellow-color);
+    transition: 0.5s;
+}
 
 /*FORM*/
 .form-field{
@@ -201,4 +204,27 @@ h3{
 .card:hover h5{
     color: var(--yellow-color);
     transition: 0.5s;
+}
+
+
+/*TOP ROW*/
+.top-row[b-xp7kt5tolp]{
+    background-color: var(--violet-color) !important;
+    height: 5em !important;
+} 
+
+/*LOGIN*/
+.modal{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content{
+    border: 1.5px white solid;
+}
+.modal-header, .modal-footer, .modal-content{
+    border-radius: 0;
+}
+#username-top-row{
+    font-variant: small-caps;
+    color: var(--yellow-color);
+    font-size: 1.7em;
 }
