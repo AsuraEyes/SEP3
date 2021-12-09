@@ -10,52 +10,72 @@
 @inject NavigationManager navigationManager
 
 
-<h3>Payment Overview</h3>
+<h2>Payment Overview</h2>
 
-<h2>Subscription: </h2>
-@if (monthlyFee!= null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
-{
-    <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
-    <button class="btn btn-outline-primary" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
-}
-else
-{
-    <p>No active subscription</p>
-    <button class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+<div class="grid-container-payment">
+    <div class="grid-item">
+        <h3>Subscription</h3>
+            @if (monthlyFee != null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
+            {
+                <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
+                <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+            }
+            else
+            {
+                <p>No active subscription</p>
+                <button style="margin-bottom: 3em" class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+        
+            }
+    </div>
+    
+    <div class="grid-item">
+        <h3>Payment History</h3>
+        <div class="grid-container-fifty-fifty">
+            
+            @if (monthlyFeeList != null)
+            {
+                <div>
+                    <h4>Subscriptions</h4>
+                    <ul>
+                        @foreach (var item in monthlyFeeList)
+                        {
+                            <div id="payment_overview" style="margin: 1em 0">
+                                <div style="margin-bottom: 3em" class="oi oi-dollar">
+                                </div>
+                                <div>
+                                    <li>@item.Amount dkk</li>
+                                    <li>From: @item.StartDate.ToLongDateString()</li>
+                                    <li>To: @item.EndDate.ToLongDateString()</li>
+                                </div>
+                            </div>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <p>No monthly fees</p>}
 
-}
-
-<h3>Payment History</h3>
-@if (monthlyFeeList != null)
-{
-    <h4>Subscriptions</h4>
-         @foreach (var item in monthlyFeeList)
-         {
-             <ul>
-                 <li>@item.Amount dkk</li>
-                 <li>From: @item.StartDate.ToLongDateString()</li>
-                 <li>To: @item.EndDate.ToLongDateString()</li>
-             </ul>
-         }
-}
-else 
-{<p>No monthly fees</p>}
-
-@if (oneTimeFees != null)
-{
-    <h4>Payments</h4>
-    @foreach (var item in oneTimeFees)
-    {
-        <ul>
-            <li>@item.Amount dkk</li>
-        </ul>
-    }
-}
-else
-{
-    <p>No one time fees</p>
-}
-
+            @if (oneTimeFees != null)
+            {
+                <div>
+                    <h4>Payments</h4>
+                    @foreach (var item in oneTimeFees)
+                    {
+                        <ul>
+                            <li>@item.Amount dkk</li>
+                        </ul>
+                    }
+                </div>
+            
+            }
+            else
+            {
+                <p>No one time fees</p>
+            }
+        </div>
+    </div>
+</div>
 
 @code {
     private MonthlyFee monthlyFee = new();
