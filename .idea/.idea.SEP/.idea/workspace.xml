@@ -25,14 +25,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="css done on ManageAccount.razor, EditEvent.razor, EditAccount.razor">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, EditGame.razor css done">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +195,6 @@
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="18191000" />
       <workItem from="1639055364376" duration="1589000" />
-    </task>
-    <task id="LOCAL-00013" summary="paging">
-      <created>1637267810207</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1637267810207</updated>
     </task>
     <task id="LOCAL-00014" summary="idk">
       <created>1637402428686</created>
@@ -542,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639061553778</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, EditGame.razor css done">
+      <created>1639062629115</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1639062629115</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +563,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated Web Reference based on SOAP wsdl" />
     <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
     <MESSAGE value="create Fees WebServices, updated Soap reference based on wsdl" />
     <MESSAGE value="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier" />
@@ -591,6 +587,7 @@
     <MESSAGE value="GameList.razor css updated" />
     <MESSAGE value="ManageAccount.razor, EditGameList.razor half done css&#10;missing checkbox styling" />
     <MESSAGE value="css done on ManageAccount.razor, EditEvent.razor, EditAccount.razor" />
-    <option name="LAST_COMMIT_MESSAGE" value="css done on ManageAccount.razor, EditEvent.razor, EditAccount.razor" />
+    <MESSAGE value="CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, EditGame.razor css done" />
+    <option name="LAST_COMMIT_MESSAGE" value="CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, EditGame.razor css done" />
   </component>
 </project>

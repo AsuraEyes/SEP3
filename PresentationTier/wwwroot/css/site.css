@@ -160,6 +160,11 @@ h3{
 .remove-line-above{
     border-top: none;
 }
+.grid-container-fourths{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 2em;
+}
 
 
 /*BUTTONS*/
@@ -294,4 +299,19 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     transform: scale(1);
+}
+
+/*PAGINATION*/
+.page-item{
+   /* background-color: var(--dark-violet-color);*/
+}
+.page-link{
+    background-color: var(--dark-violet-color);
+    color:white
+}
+.page-item:hover .page-link{
+    color: var(--yellow-color);
+}
+.pagination{
+    border-radius: 0;
 }
