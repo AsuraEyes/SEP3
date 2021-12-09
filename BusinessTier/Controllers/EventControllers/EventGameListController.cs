@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.EventWebServices.EventGameLists;
-using BusinessTier.MiddlePoint.EventMiddlePoints;
 using BusinessTier.MiddlePoint.EventMiddlePoints.EventGameLists;
 using BusinessTier.Models;
 using Microsoft.AspNetCore.Mvc;
