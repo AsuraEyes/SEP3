@@ -1,9 +1,7 @@
 using System;
 using System.Threading.Tasks;
-using BookAndPlaySOAP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessTier.Data.EventWebServices.Events;
-using BusinessTier.MiddlePoint.EventMiddlePoints;
 using BusinessTier.MiddlePoint.EventMiddlePoints.Events;
 using BusinessTier.Models;
 
