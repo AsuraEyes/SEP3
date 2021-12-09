@@ -1,10 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using BookAndPlaySOAP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BusinessLayer.Data;
-using BusinessLayer.Middlepoint;
-using BusinessLayer.Models;
+using BusinessTier.Data.EventWebServices.Events;
+using BusinessTier.MiddlePoint.EventMiddlePoints.Events;
+using BusinessTier.Models;
 
 namespace BusinessTierTests
 {
@@ -21,13 +20,13 @@ namespace BusinessTierTests
             EventList actualEvents;
             try
             {
-                var allEvents = new FilterREST
+                var allEvents = new FilterRest
                 {
                     ByDate = false,
                     ByAvailability = false,
                     CategoryId = 0
                 };
-                var filterRest = new FilterREST
+                var filterRest = new FilterRest
                 {
                     ByDate = true,
                     ByAvailability = false,

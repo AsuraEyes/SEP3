@@ -1,6 +1,6 @@
 @page "/UserInfo/{Username}"
 @using PresentationTier.Models
-@using global::Data
+@using PresentationTier.Data.UserServices
 
 @inject IUserService userService
 @inject IJSRuntime jsRuntime
@@ -58,13 +58,13 @@ else
 
     private async Task AcceptPromotionAsync()
     {
-        await userService.AcceptPromotionAsync(user);
+        await userService.AcceptPromotionAsync(Username);
         await UpdateUserAsync();
     }
 
     private async Task DeclinePromotionAsync()
     {
-        await userService.DeclinePromotionAsync(user);
+        await userService.DeclinePromotionAsync(Username);
         await UpdateUserAsync();
     }
 

@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "http://localhost:8080/ws/bookAndPlay.wsdl"
+      "http://localhost:8080/BookAndPlay.wsdl"
     ],
     "collectionTypes": [
       "System.Array",

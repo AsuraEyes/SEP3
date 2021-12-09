@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Presentation_Layer.Models;
 
-namespace BusinessLayer.BankData
+namespace BusinessTier.BankData
 {
     public interface IPaymentWebService
     {

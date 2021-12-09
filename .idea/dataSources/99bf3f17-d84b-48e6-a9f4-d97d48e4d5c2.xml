@@ -3,6 +3,14 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.23">
     <root id="1">
       <ServerVersion>13.2</ServerVersion>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13441||-9223372036854775808|c|G
+13441||10|c|G
+13441||10|C|G
+13441||10|T|G</Grants>
       <DateStyle>dmy</DateStyle>
       <TimeZones>true ACDT
 true ACSST
@@ -784,8 +792,8 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <IntrospectionStateNumber>8540</IntrospectionStateNumber>
-      <StartupTime>1638518303</StartupTime>
+      <IntrospectionStateNumber>8569</IntrospectionStateNumber>
+      <StartupTime>1638955914</StartupTime>
     </root>
     <database id="2" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
@@ -805,9 +813,15 @@ false Zulu
 37092||-9223372036854775808|U|G
 37092||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>8541</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8570</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|18610|18612|1
+      <Relations>sequence|table|88918|88920|1
+sequence|table|88941|88943|1
+sequence|table|88949|88951|1
+sequence|table|88971|88973|1
+sequence|table|88984|88986|1
+sequence|table|89032|89034|1
+sequence|table|18610|18612|1
 sequence|table|18631|18633|1
 sequence|table|18650|18652|3
 sequence|table|18666|18668|1
@@ -845,12 +859,6 @@ sequence|table|38435|38437|1
 sequence|table|37914|37916|1
 sequence|table|37991|37993|1
 sequence|table|38047|38049|1
-sequence|table|80886|80888|1
-sequence|table|80909|80911|1
-sequence|table|80917|80919|1
-sequence|table|80939|80941|1
-sequence|table|80952|80954|1
-sequence|table|81000|81002|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -905,10 +913,10 @@ sequence|table|81000|81002|1
       <Owner>postgres</Owner>
     </schema>
     <schema id="15" parent="2" name="book_and_play">
-      <ObjectId>80882</ObjectId>
-      <StateNumber>8500</StateNumber>
+      <ObjectId>88914</ObjectId>
+      <StateNumber>8551</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>8541</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8570</IntrospectionStateNumber>
     </schema>
     <schema id="16" parent="2" name="books">
       <ObjectId>16399</ObjectId>
@@ -977,7 +985,7 @@ sequence|table|81000|81002|1
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>8541</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8570</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <schema id="29" parent="2" name="share_it">
@@ -1097,45 +1105,45 @@ sequence|table|81000|81002|1
       <HandlerId>334</HandlerId>
     </access-method>
     <sequence id="44" parent="15" name="event_category_id_seq">
-      <ObjectId>80909</ObjectId>
+      <ObjectId>88941</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8504</StateNumber>
+      <StateNumber>8555</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="45" parent="15" name="event_id_seq">
-      <ObjectId>80917</ObjectId>
+      <ObjectId>88949</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="46" parent="15" name="game_id_seq">
-      <ObjectId>81000</ObjectId>
+      <ObjectId>89032</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="47" parent="15" name="monthly_fee_id_seq">
-      <ObjectId>80939</ObjectId>
+      <ObjectId>88971</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="48" parent="15" name="one_time_fee_id_seq">
-      <ObjectId>80952</ObjectId>
+      <ObjectId>88984</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="49" parent="15" name="role_id_seq">
-      <ObjectId>80886</ObjectId>
+      <ObjectId>88918</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8502</StateNumber>
+      <StateNumber>8553</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <object-type id="50" parent="15" name="one_two_three_type">
-      <ObjectId>80884</ObjectId>
+      <ObjectId>88916</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8501</StateNumber>
+      <StateNumber>8552</StateNumber>
       <SubKind>domain</SubKind>
       <Definition>integer</Definition>
       <NotNull>1</NotNull>
@@ -1143,101 +1151,101 @@ sequence|table|81000|81002|1
       <SubCategory>numeric</SubCategory>
     </object-type>
     <table id="51" parent="15" name="event">
-      <ObjectId>80919</ObjectId>
+      <ObjectId>88951</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="52" parent="15" name="event_category">
-      <ObjectId>80911</ObjectId>
+      <ObjectId>88943</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="53" parent="15" name="event_game_list">
-      <ObjectId>81027</ObjectId>
+      <ObjectId>89059</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8512</StateNumber>
+      <StateNumber>8563</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="54" parent="15" name="game">
-      <ObjectId>81002</ObjectId>
+      <ObjectId>89034</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8511</StateNumber>
+      <StateNumber>8562</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="55" parent="15" name="game_list">
-      <ObjectId>81012</ObjectId>
+      <ObjectId>89044</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8511</StateNumber>
+      <StateNumber>8562</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="56" parent="15" name="monthly_fee">
-      <ObjectId>80941</ObjectId>
+      <ObjectId>88973</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="57" parent="15" name="one_time_fee">
-      <ObjectId>80954</ObjectId>
+      <ObjectId>88986</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="58" parent="15" name="organizers">
-      <ObjectId>80985</ObjectId>
+      <ObjectId>89017</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8509</StateNumber>
+      <StateNumber>8560</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="59" parent="15" name="participants">
-      <ObjectId>80970</ObjectId>
+      <ObjectId>89002</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8508</StateNumber>
+      <StateNumber>8559</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="60" parent="15" name="role">
-      <ObjectId>80888</ObjectId>
+      <ObjectId>88920</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <table id="61" parent="15" name="user">
-      <ObjectId>80894</ObjectId>
+      <ObjectId>88926</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
     <routine id="62" parent="15" name="put_event_organizer_to_participants_and_organizers">
-      <ObjectId>81042</ObjectId>
+      <ObjectId>89074</ObjectId>
       <Owner>postgres</Owner>
       <SourceTextLength>268</SourceTextLength>
-      <StateNumber>8513</StateNumber>
+      <StateNumber>8564</StateNumber>
       <PgRoutineKind>pg-trigger</PgRoutineKind>
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <Rows>0.0</Rows>
     </routine>
     <routine id="63" parent="15" name="update_number_of_participants">
-      <ObjectId>81044</ObjectId>
+      <ObjectId>89076</ObjectId>
       <Owner>postgres</Owner>
       <SourceTextLength>386</SourceTextLength>
-      <StateNumber>8515</StateNumber>
+      <StateNumber>8566</StateNumber>
       <PgRoutineKind>pg-trigger</PgRoutineKind>
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <Rows>0.0</Rows>
     </routine>
     <check id="64" parent="50" name="one_two_three_type_check">
-      <ObjectId>80885</ObjectId>
-      <StateNumber>8501</StateNumber>
+      <ObjectId>88917</ObjectId>
+      <StateNumber>8552</StateNumber>
       <Predicate>(VALUE = ANY (ARRAY[1, 2, 3]))</Predicate>
     </check>
     <column id="65" parent="51" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.event_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1245,54 +1253,54 @@ sequence|table|81000|81002|1
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="67" parent="51" name="start_time">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="68" parent="51" name="end_time">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="69" parent="51" name="address_street_name">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="70" parent="51" name="address_street_number">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="71" parent="51" name="address_apartment_number">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="72" parent="51" name="max_number_of_participants">
       <Position>8</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="73" parent="51" name="number_of_participants">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1300,19 +1308,19 @@ sequence|table|81000|81002|1
       <Position>10</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="75" parent="51" name="organizer">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8505</StateNumber>
+      <StateNumber>8556</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="76" parent="51" name="event_pkey">
-      <ObjectId>80927</ObjectId>
-      <StateNumber>8505</StateNumber>
+      <ObjectId>88959</ObjectId>
+      <StateNumber>8556</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1321,27 +1329,27 @@ sequence|table|81000|81002|1
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="77" parent="51" name="event_pkey">
-      <ObjectId>80928</ObjectId>
-      <StateNumber>8505</StateNumber>
+      <ObjectId>88960</ObjectId>
+      <StateNumber>8556</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>event_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="78" parent="51" name="event_event_category_id_fkey">
-      <ObjectId>80929</ObjectId>
-      <StateNumber>8505</StateNumber>
+      <ObjectId>88961</ObjectId>
+      <StateNumber>8556</StateNumber>
       <ColNames>event_category_id</ColNames>
-      <RefTableId>80911</RefTableId>
+      <RefTableId>88943</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>event_category</RefTableName>
       <RefKeyName>event_category_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="79" parent="51" name="event_organizer_fkey">
-      <ObjectId>80934</ObjectId>
-      <StateNumber>8505</StateNumber>
+      <ObjectId>88966</ObjectId>
+      <StateNumber>8556</StateNumber>
       <ColNames>organizer</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1349,17 +1357,17 @@ sequence|table|81000|81002|1
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <trigger id="80" parent="51" name="put_event_organizer_to_participants_and_organizers_trigger">
-      <ObjectId>81043</ObjectId>
-      <StateNumber>8514</StateNumber>
+      <ObjectId>89075</ObjectId>
+      <StateNumber>8565</StateNumber>
       <Turn>after-row</Turn>
       <Events>I</Events>
-      <CallRoutineId>81042</CallRoutineId>
+      <CallRoutineId>89074</CallRoutineId>
     </trigger>
     <column id="81" parent="52" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8504</StateNumber>
+      <StateNumber>8555</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.event_category_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1367,12 +1375,12 @@ sequence|table|81000|81002|1
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8504</StateNumber>
+      <StateNumber>8555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="83" parent="52" name="event_category_pkey">
-      <ObjectId>80915</ObjectId>
-      <StateNumber>8504</StateNumber>
+      <ObjectId>88947</ObjectId>
+      <StateNumber>8555</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1381,8 +1389,8 @@ sequence|table|81000|81002|1
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="84" parent="52" name="event_category_pkey">
-      <ObjectId>80916</ObjectId>
-      <StateNumber>8504</StateNumber>
+      <ObjectId>88948</ObjectId>
+      <StateNumber>8555</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>event_category_pkey</UnderlyingIndexName>
@@ -1391,26 +1399,26 @@ sequence|table|81000|81002|1
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8512</StateNumber>
+      <StateNumber>8563</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="86" parent="53" name="user_username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8512</StateNumber>
+      <StateNumber>8563</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="87" parent="53" name="event_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8512</StateNumber>
+      <StateNumber>8563</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="88" parent="53" name="event_game_list_pkey">
-      <ObjectId>81030</ObjectId>
-      <StateNumber>8512</StateNumber>
+      <ObjectId>89062</ObjectId>
+      <StateNumber>8563</StateNumber>
       <ColNames>game_id
 user_username
 event_id</ColNames>
@@ -1424,8 +1432,8 @@ default
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="89" parent="53" name="event_game_list_pkey">
-      <ObjectId>81031</ObjectId>
-      <StateNumber>8512</StateNumber>
+      <ObjectId>89063</ObjectId>
+      <StateNumber>8563</StateNumber>
       <ColNames>game_id
 user_username
 event_id</ColNames>
@@ -1433,10 +1441,10 @@ event_id</ColNames>
       <UnderlyingIndexName>event_game_list_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="90" parent="53" name="event_game_list_game_id_fkey">
-      <ObjectId>81037</ObjectId>
-      <StateNumber>8512</StateNumber>
+      <ObjectId>89069</ObjectId>
+      <StateNumber>8563</StateNumber>
       <ColNames>game_id</ColNames>
-      <RefTableId>81002</RefTableId>
+      <RefTableId>89034</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>game</RefTableName>
       <RefKeyName>game_pkey</RefKeyName>
@@ -1444,11 +1452,11 @@ event_id</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="91" parent="53" name="event_game_list_user_username_event_id_fkey">
-      <ObjectId>81032</ObjectId>
-      <StateNumber>8512</StateNumber>
+      <ObjectId>89064</ObjectId>
+      <StateNumber>8563</StateNumber>
       <ColNames>user_username
 event_id</ColNames>
-      <RefTableId>80985</RefTableId>
+      <RefTableId>89017</RefTableId>
       <RefColPositions>2,1</RefColPositions>
       <RefTableName>organizers</RefTableName>
       <RefColNames>user_username
@@ -1459,7 +1467,7 @@ event_id</RefColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.game_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1467,76 +1475,76 @@ event_id</RefColNames>
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="94" parent="54" name="complexity">
       <Position>3</Position>
       <DataType>book_and_play.one_two_three_type|0cs</DataType>
-      <StateNumber>8510</StateNumber>
-      <TypeId>80884</TypeId>
+      <StateNumber>8561</StateNumber>
+      <TypeId>88916</TypeId>
     </column>
     <column id="95" parent="54" name="time_estimation">
       <Position>4</Position>
       <DataType>book_and_play.one_two_three_type|0cs</DataType>
-      <StateNumber>8510</StateNumber>
-      <TypeId>80884</TypeId>
+      <StateNumber>8561</StateNumber>
+      <TypeId>88916</TypeId>
     </column>
     <column id="96" parent="54" name="min_number_of_players">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="97" parent="54" name="max_number_of_players">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="98" parent="54" name="short_description">
       <Position>7</Position>
       <DataType>varchar(10000)|0s</DataType>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="99" parent="54" name="needed_equipment">
       <Position>8</Position>
       <DataType>varchar(10000)|0s</DataType>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="100" parent="54" name="min_age">
       <Position>9</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="101" parent="54" name="max_age">
       <Position>10</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="102" parent="54" name="tutorial">
       <Position>11</Position>
       <DataType>varchar(10000)|0s</DataType>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="103" parent="54" name="approved">
       <Position>12</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8510</StateNumber>
+      <StateNumber>8561</StateNumber>
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
     <index id="104" parent="54" name="game_pkey">
-      <ObjectId>81010</ObjectId>
-      <StateNumber>8510</StateNumber>
+      <ObjectId>89042</ObjectId>
+      <StateNumber>8561</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1545,8 +1553,8 @@ event_id</RefColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="105" parent="54" name="game_pkey">
-      <ObjectId>81011</ObjectId>
-      <StateNumber>8510</StateNumber>
+      <ObjectId>89043</ObjectId>
+      <StateNumber>8561</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>game_pkey</UnderlyingIndexName>
@@ -1555,19 +1563,19 @@ event_id</RefColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8511</StateNumber>
+      <StateNumber>8562</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="107" parent="55" name="user_username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8511</StateNumber>
+      <StateNumber>8562</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="108" parent="55" name="game_list_pkey">
-      <ObjectId>81015</ObjectId>
-      <StateNumber>8511</StateNumber>
+      <ObjectId>89047</ObjectId>
+      <StateNumber>8562</StateNumber>
       <ColNames>game_id
 user_username</ColNames>
       <Unique>1</Unique>
@@ -1579,18 +1587,18 @@ default</CollationNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="109" parent="55" name="game_list_pkey">
-      <ObjectId>81016</ObjectId>
-      <StateNumber>8511</StateNumber>
+      <ObjectId>89048</ObjectId>
+      <StateNumber>8562</StateNumber>
       <ColNames>game_id
 user_username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>game_list_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="110" parent="55" name="game_list_game_id_fkey">
-      <ObjectId>81022</ObjectId>
-      <StateNumber>8511</StateNumber>
+      <ObjectId>89054</ObjectId>
+      <StateNumber>8562</StateNumber>
       <ColNames>game_id</ColNames>
-      <RefTableId>81002</RefTableId>
+      <RefTableId>89034</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>game</RefTableName>
       <RefKeyName>game_pkey</RefKeyName>
@@ -1598,10 +1606,10 @@ user_username</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="111" parent="55" name="game_list_user_username_fkey">
-      <ObjectId>81017</ObjectId>
-      <StateNumber>8511</StateNumber>
+      <ObjectId>89049</ObjectId>
+      <StateNumber>8562</StateNumber>
       <ColNames>user_username</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1612,7 +1620,7 @@ user_username</ColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.monthly_fee_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1620,33 +1628,33 @@ user_username</ColNames>
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="114" parent="56" name="start_date">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="115" parent="56" name="end_date">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="116" parent="56" name="user_username">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8506</StateNumber>
+      <StateNumber>8557</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="117" parent="56" name="monthly_fee_pkey">
-      <ObjectId>80945</ObjectId>
-      <StateNumber>8506</StateNumber>
+      <ObjectId>88977</ObjectId>
+      <StateNumber>8557</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1655,17 +1663,17 @@ user_username</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="118" parent="56" name="monthly_fee_pkey">
-      <ObjectId>80946</ObjectId>
-      <StateNumber>8506</StateNumber>
+      <ObjectId>88978</ObjectId>
+      <StateNumber>8557</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>monthly_fee_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="119" parent="56" name="monthly_fee_user_username_fkey">
-      <ObjectId>80947</ObjectId>
-      <StateNumber>8506</StateNumber>
+      <ObjectId>88979</ObjectId>
+      <StateNumber>8557</StateNumber>
       <ColNames>user_username</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1676,7 +1684,7 @@ user_username</ColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.one_time_fee_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1684,26 +1692,26 @@ user_username</ColNames>
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="122" parent="57" name="event_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="123" parent="57" name="user_username">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8507</StateNumber>
+      <StateNumber>8558</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="124" parent="57" name="one_time_fee_pkey">
-      <ObjectId>80958</ObjectId>
-      <StateNumber>8507</StateNumber>
+      <ObjectId>88990</ObjectId>
+      <StateNumber>8558</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1712,17 +1720,17 @@ user_username</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="125" parent="57" name="one_time_fee_pkey">
-      <ObjectId>80959</ObjectId>
-      <StateNumber>8507</StateNumber>
+      <ObjectId>88991</ObjectId>
+      <StateNumber>8558</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>one_time_fee_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="126" parent="57" name="one_time_fee_event_id_fkey">
-      <ObjectId>80965</ObjectId>
-      <StateNumber>8507</StateNumber>
+      <ObjectId>88997</ObjectId>
+      <StateNumber>8558</StateNumber>
       <ColNames>event_id</ColNames>
-      <RefTableId>80919</RefTableId>
+      <RefTableId>88951</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>event</RefTableName>
       <RefKeyName>event_pkey</RefKeyName>
@@ -1730,10 +1738,10 @@ user_username</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="127" parent="57" name="one_time_fee_user_username_fkey">
-      <ObjectId>80960</ObjectId>
-      <StateNumber>8507</StateNumber>
+      <ObjectId>88992</ObjectId>
+      <StateNumber>8558</StateNumber>
       <ColNames>user_username</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1744,19 +1752,19 @@ user_username</ColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8509</StateNumber>
+      <StateNumber>8560</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="129" parent="58" name="user_username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8509</StateNumber>
+      <StateNumber>8560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="130" parent="58" name="organizers_pkey">
-      <ObjectId>80988</ObjectId>
-      <StateNumber>8509</StateNumber>
+      <ObjectId>89020</ObjectId>
+      <StateNumber>8560</StateNumber>
       <ColNames>event_id
 user_username</ColNames>
       <Unique>1</Unique>
@@ -1768,18 +1776,18 @@ default</CollationNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="131" parent="58" name="organizers_pkey">
-      <ObjectId>80989</ObjectId>
-      <StateNumber>8509</StateNumber>
+      <ObjectId>89021</ObjectId>
+      <StateNumber>8560</StateNumber>
       <ColNames>event_id
 user_username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>organizers_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="132" parent="58" name="organizers_event_id_fkey">
-      <ObjectId>80995</ObjectId>
-      <StateNumber>8509</StateNumber>
+      <ObjectId>89027</ObjectId>
+      <StateNumber>8560</StateNumber>
       <ColNames>event_id</ColNames>
-      <RefTableId>80919</RefTableId>
+      <RefTableId>88951</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>event</RefTableName>
       <RefKeyName>event_pkey</RefKeyName>
@@ -1787,10 +1795,10 @@ user_username</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="133" parent="58" name="organizers_user_username_fkey">
-      <ObjectId>80990</ObjectId>
-      <StateNumber>8509</StateNumber>
+      <ObjectId>89022</ObjectId>
+      <StateNumber>8560</StateNumber>
       <ColNames>user_username</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1801,19 +1809,19 @@ user_username</ColNames>
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8508</StateNumber>
+      <StateNumber>8559</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="135" parent="59" name="user_username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8508</StateNumber>
+      <StateNumber>8559</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="136" parent="59" name="participants_pkey">
-      <ObjectId>80973</ObjectId>
-      <StateNumber>8508</StateNumber>
+      <ObjectId>89005</ObjectId>
+      <StateNumber>8559</StateNumber>
       <ColNames>event_id
 user_username</ColNames>
       <Unique>1</Unique>
@@ -1825,18 +1833,18 @@ default</CollationNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="137" parent="59" name="participants_pkey">
-      <ObjectId>80974</ObjectId>
-      <StateNumber>8508</StateNumber>
+      <ObjectId>89006</ObjectId>
+      <StateNumber>8559</StateNumber>
       <ColNames>event_id
 user_username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>participants_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="138" parent="59" name="participants_event_id_fkey">
-      <ObjectId>80980</ObjectId>
-      <StateNumber>8508</StateNumber>
+      <ObjectId>89012</ObjectId>
+      <StateNumber>8559</StateNumber>
       <ColNames>event_id</ColNames>
-      <RefTableId>80919</RefTableId>
+      <RefTableId>88951</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>event</RefTableName>
       <RefKeyName>event_pkey</RefKeyName>
@@ -1844,10 +1852,10 @@ user_username</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="139" parent="59" name="participants_user_username_fkey">
-      <ObjectId>80975</ObjectId>
-      <StateNumber>8508</StateNumber>
+      <ObjectId>89007</ObjectId>
+      <StateNumber>8559</StateNumber>
       <ColNames>user_username</ColNames>
-      <RefTableId>80894</RefTableId>
+      <RefTableId>88926</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>user</RefTableName>
       <RefKeyName>user_pkey</RefKeyName>
@@ -1855,17 +1863,17 @@ user_username</ColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
     <trigger id="140" parent="59" name="update_number_of_participants_trigger">
-      <ObjectId>81045</ObjectId>
-      <StateNumber>8516</StateNumber>
+      <ObjectId>89077</ObjectId>
+      <StateNumber>8567</StateNumber>
       <Turn>after-row</Turn>
       <Events>I</Events>
-      <CallRoutineId>81044</CallRoutineId>
+      <CallRoutineId>89076</CallRoutineId>
     </trigger>
     <column id="141" parent="60" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8502</StateNumber>
+      <StateNumber>8553</StateNumber>
       <DefaultExpression>nextval(&apos;book_and_play.role_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -1873,12 +1881,12 @@ user_username</ColNames>
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8502</StateNumber>
+      <StateNumber>8553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="143" parent="60" name="role_pkey">
-      <ObjectId>80892</ObjectId>
-      <StateNumber>8502</StateNumber>
+      <ObjectId>88924</ObjectId>
+      <StateNumber>8553</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1887,8 +1895,8 @@ user_username</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="144" parent="60" name="role_pkey">
-      <ObjectId>80893</ObjectId>
-      <StateNumber>8502</StateNumber>
+      <ObjectId>88925</ObjectId>
+      <StateNumber>8553</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>role_pkey</UnderlyingIndexName>
@@ -1897,65 +1905,65 @@ user_username</ColNames>
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="146" parent="61" name="password">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="147" parent="61" name="first_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="148" parent="61" name="last_name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="149" parent="61" name="role_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <DefaultExpression>2</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="150" parent="61" name="phone_country_code">
       <Position>6</Position>
       <DataType>varchar(10)|0s</DataType>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="151" parent="61" name="phone_number">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="152" parent="61" name="email_address">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="153" parent="61" name="requested_promotion">
       <Position>9</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>8503</StateNumber>
+      <StateNumber>8554</StateNumber>
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
     <index id="154" parent="61" name="user_pkey">
-      <ObjectId>80902</ObjectId>
-      <StateNumber>8503</StateNumber>
+      <ObjectId>88934</ObjectId>
+      <StateNumber>8554</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1965,17 +1973,17 @@ user_username</ColNames>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="155" parent="61" name="user_pkey">
-      <ObjectId>80903</ObjectId>
-      <StateNumber>8503</StateNumber>
+      <ObjectId>88935</ObjectId>
+      <StateNumber>8554</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>
     </key>
     <foreign-key id="156" parent="61" name="user_role_id_fkey">
-      <ObjectId>80904</ObjectId>
-      <StateNumber>8503</StateNumber>
+      <ObjectId>88936</ObjectId>
+      <StateNumber>8554</StateNumber>
       <ColNames>role_id</ColNames>
-      <RefTableId>80888</RefTableId>
+      <RefTableId>88920</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>role</RefTableName>
       <RefKeyName>role_pkey</RefKeyName>

@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Data;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
+using PresentationTier.Data.UserServices;
 using PresentationTier.Models;
 
 namespace PresentationTier.Authentication

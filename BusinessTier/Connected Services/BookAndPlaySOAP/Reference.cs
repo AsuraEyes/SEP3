@@ -12,33 +12,13 @@ namespace BookAndPlaySOAP
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", ConfigurationName="BookAndPlaySOAP.BookAndPlayPort")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://bookAndPlay.dk/web-service", ConfigurationName="BookAndPlaySOAP.BookAndPlayPort")]
     public interface BookAndPlayPort
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request);
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -50,11 +30,11 @@ namespace BookAndPlaySOAP
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest1 request);
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest1 request);
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -62,40 +42,46 @@ namespace BookAndPlaySOAP
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request);
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest1 request);
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPOrganizerRequest
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventGameListRequest
     {
-        
-        private int eventIdField;
         
         private string usernameField;
         
-        private Operation operationField;
+        private int eventIdField;
         
-        private User organizerField;
+        private int gameIdField;
+        
+        private Operation operationField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int eventId
-        {
-            get
-            {
-                return this.eventIdField;
-            }
-            set
-            {
-                this.eventIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string username
         {
             get
@@ -109,7 +95,35 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int eventId
+        {
+            get
+            {
+                return this.eventIdField;
+            }
+            set
+            {
+                this.eventIdField = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int gameId
+        {
+            get
+            {
+                return this.gameIdField;
+            }
+            set
+            {
+                this.gameIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public Operation Operation
         {
             get
@@ -121,25 +135,11 @@ namespace BookAndPlaySOAP
                 this.operationField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public User Organizer
-        {
-            get
-            {
-                return this.organizerField;
-            }
-            set
-            {
-                this.organizerField = value;
-            }
-        }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
     public enum Operation
     {
         
@@ -162,7 +162,503 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class MonthlyFee
+    {
+        
+        private int idField;
+        
+        private int amountField;
+        
+        private System.DateTime startDateField;
+        
+        private System.DateTime endDateField;
+        
+        private string userUsernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime startDate
+        {
+            get
+            {
+                return this.startDateField;
+            }
+            set
+            {
+                this.startDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
+        public System.DateTime endDate
+        {
+            get
+            {
+                return this.endDateField;
+            }
+            set
+            {
+                this.endDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string userUsername
+        {
+            get
+            {
+                return this.userUsernameField;
+            }
+            set
+            {
+                this.userUsernameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class Category
+    {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class Filter
+    {
+        
+        private int categoryIdField;
+        
+        private string filterField;
+        
+        private int offsetField;
+        
+        private int limitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int categoryId
+        {
+            get
+            {
+                return this.categoryIdField;
+            }
+            set
+            {
+                this.categoryIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int offset
+        {
+            get
+            {
+                return this.offsetField;
+            }
+            set
+            {
+                this.offsetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int limit
+        {
+            get
+            {
+                return this.limitField;
+            }
+            set
+            {
+                this.limitField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class OneTimeFee
+    {
+        
+        private int idField;
+        
+        private int amountField;
+        
+        private int eventIdField;
+        
+        private string userUsernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int eventId
+        {
+            get
+            {
+                return this.eventIdField;
+            }
+            set
+            {
+                this.eventIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string userUsername
+        {
+            get
+            {
+                return this.userUsernameField;
+            }
+            set
+            {
+                this.userUsernameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class Event
+    {
+        
+        private int idField;
+        
+        private string nameField;
+        
+        private System.DateTime startTimeField;
+        
+        private System.DateTime endTimeField;
+        
+        private string addressStreetNameField;
+        
+        private string addressStreetNumberField;
+        
+        private string addressApartmentNumberField;
+        
+        private int maxNumberOfParticipantsField;
+        
+        private int numberOfParticipantsField;
+        
+        private int eventCategoryField;
+        
+        private string organizerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime startTime
+        {
+            get
+            {
+                return this.startTimeField;
+            }
+            set
+            {
+                this.startTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime endTime
+        {
+            get
+            {
+                return this.endTimeField;
+            }
+            set
+            {
+                this.endTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string addressStreetName
+        {
+            get
+            {
+                return this.addressStreetNameField;
+            }
+            set
+            {
+                this.addressStreetNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string addressStreetNumber
+        {
+            get
+            {
+                return this.addressStreetNumberField;
+            }
+            set
+            {
+                this.addressStreetNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string addressApartmentNumber
+        {
+            get
+            {
+                return this.addressApartmentNumberField;
+            }
+            set
+            {
+                this.addressApartmentNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public int maxNumberOfParticipants
+        {
+            get
+            {
+                return this.maxNumberOfParticipantsField;
+            }
+            set
+            {
+                this.maxNumberOfParticipantsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public int numberOfParticipants
+        {
+            get
+            {
+                return this.numberOfParticipantsField;
+            }
+            set
+            {
+                this.numberOfParticipantsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public int eventCategory
+        {
+            get
+            {
+                return this.eventCategoryField;
+            }
+            set
+            {
+                this.eventCategoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string organizer
+        {
+            get
+            {
+                return this.organizerField;
+            }
+            set
+            {
+                this.organizerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class EventList
+    {
+        
+        private int countField;
+        
+        private Event[] eventListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int count
+        {
+            get
+            {
+                return this.countField;
+            }
+            set
+            {
+                this.countField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("eventList", Order=1)]
+        public Event[] eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
     public partial class User
     {
         
@@ -314,279 +810,7 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class Category
-    {
-        
-        private int idField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class OneTimeFee
-    {
-        
-        private int idField;
-        
-        private int amountField;
-        
-        private int eventIdField;
-        
-        private string userUsernameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int amount
-        {
-            get
-            {
-                return this.amountField;
-            }
-            set
-            {
-                this.amountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public int eventId
-        {
-            get
-            {
-                return this.eventIdField;
-            }
-            set
-            {
-                this.eventIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string userUsername
-        {
-            get
-            {
-                return this.userUsernameField;
-            }
-            set
-            {
-                this.userUsernameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class MonthlyFee
-    {
-        
-        private int idField;
-        
-        private int amountField;
-        
-        private System.DateTime startDateField;
-        
-        private System.DateTime endDateField;
-        
-        private string userUsernameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int amount
-        {
-            get
-            {
-                return this.amountField;
-            }
-            set
-            {
-                this.amountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
-        public System.DateTime startDate
-        {
-            get
-            {
-                return this.startDateField;
-            }
-            set
-            {
-                this.startDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
-        public System.DateTime endDate
-        {
-            get
-            {
-                return this.endDateField;
-            }
-            set
-            {
-                this.endDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string userUsername
-        {
-            get
-            {
-                return this.userUsernameField;
-            }
-            set
-            {
-                this.userUsernameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class Filter
-    {
-        
-        private int categoryIdField;
-        
-        private string filterField;
-        
-        private int offsetField;
-        
-        private int limitField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int categoryId
-        {
-            get
-            {
-                return this.categoryIdField;
-            }
-            set
-            {
-                this.categoryIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string filter
-        {
-            get
-            {
-                return this.filterField;
-            }
-            set
-            {
-                this.filterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public int offset
-        {
-            get
-            {
-                return this.offsetField;
-            }
-            set
-            {
-                this.offsetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public int limit
-        {
-            get
-            {
-                return this.limitField;
-            }
-            set
-            {
-                this.limitField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bookAndPlay.dk/web-service")]
     public partial class Game
     {
         
@@ -786,400 +1010,8 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class Event
-    {
-        
-        private int idField;
-        
-        private string nameField;
-        
-        private System.DateTime startTimeField;
-        
-        private System.DateTime endTimeField;
-        
-        private string addressStreetNameField;
-        
-        private string addressStreetNumberField;
-        
-        private string addressApartmentNumberField;
-        
-        private int maxNumberOfParticipantsField;
-        
-        private int numberOfParticipantsField;
-        
-        private int eventCategoryField;
-        
-        private string organizerField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public System.DateTime startTime
-        {
-            get
-            {
-                return this.startTimeField;
-            }
-            set
-            {
-                this.startTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public System.DateTime endTime
-        {
-            get
-            {
-                return this.endTimeField;
-            }
-            set
-            {
-                this.endTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string addressStreetName
-        {
-            get
-            {
-                return this.addressStreetNameField;
-            }
-            set
-            {
-                this.addressStreetNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string addressStreetNumber
-        {
-            get
-            {
-                return this.addressStreetNumberField;
-            }
-            set
-            {
-                this.addressStreetNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string addressApartmentNumber
-        {
-            get
-            {
-                return this.addressApartmentNumberField;
-            }
-            set
-            {
-                this.addressApartmentNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public int maxNumberOfParticipants
-        {
-            get
-            {
-                return this.maxNumberOfParticipantsField;
-            }
-            set
-            {
-                this.maxNumberOfParticipantsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public int numberOfParticipants
-        {
-            get
-            {
-                return this.numberOfParticipantsField;
-            }
-            set
-            {
-                this.numberOfParticipantsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public int eventCategory
-        {
-            get
-            {
-                return this.eventCategoryField;
-            }
-            set
-            {
-                this.eventCategoryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string organizer
-        {
-            get
-            {
-                return this.organizerField;
-            }
-            set
-            {
-                this.organizerField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class EventList
-    {
-        
-        private int countField;
-        
-        private Event[] eventListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int count
-        {
-            get
-            {
-                return this.countField;
-            }
-            set
-            {
-                this.countField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("eventList", Order=1)]
-        public Event[] eventList
-        {
-            get
-            {
-                return this.eventListField;
-            }
-            set
-            {
-                this.eventListField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPOrganizerResponse
-    {
-        
-        private string typeField;
-        
-        private User userField;
-        
-        private string[] organizerListField;
-        
-        private EventList eventListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string type
-        {
-            get
-            {
-                return this.typeField;
-            }
-            set
-            {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public User user
-        {
-            get
-            {
-                return this.userField;
-            }
-            set
-            {
-                this.userField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("organizerList", Order=2)]
-        public string[] organizerList
-        {
-            get
-            {
-                return this.organizerListField;
-            }
-            set
-            {
-                this.organizerListField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public EventList eventList
-        {
-            get
-            {
-                return this.eventListField;
-            }
-            set
-            {
-                this.eventListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPOrganizerRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest;
-        
-        public SOAPOrganizerRequest1()
-        {
-        }
-        
-        public SOAPOrganizerRequest1(BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest)
-        {
-            this.SOAPOrganizerRequest = SOAPOrganizerRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPOrganizerResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPOrganizerResponse SOAPOrganizerResponse;
-        
-        public SOAPOrganizerResponse1()
-        {
-        }
-        
-        public SOAPOrganizerResponse1(BookAndPlaySOAP.SOAPOrganizerResponse SOAPOrganizerResponse)
-        {
-            this.SOAPOrganizerResponse = SOAPOrganizerResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGameListRequest
-    {
-        
-        private string userNameField;
-        
-        private int gameIdField;
-        
-        private Operation operationField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string userName
-        {
-            get
-            {
-                return this.userNameField;
-            }
-            set
-            {
-                this.userNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int gameId
-        {
-            get
-            {
-                return this.gameIdField;
-            }
-            set
-            {
-                this.gameIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Operation Operation
-        {
-            get
-            {
-                return this.operationField;
-            }
-            set
-            {
-                this.operationField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGameListResponse
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventGameListResponse
     {
         
         private Game[] gameListField;
@@ -1204,19 +1036,19 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGameListRequest1
+    public partial class SOAPEventGameListRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest;
         
-        public SOAPGameListRequest1()
+        public SOAPEventGameListRequest1()
         {
         }
         
-        public SOAPGameListRequest1(BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest)
+        public SOAPEventGameListRequest1(BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest)
         {
-            this.SOAPGameListRequest = SOAPGameListRequest;
+            this.SOAPEventGameListRequest = SOAPEventGameListRequest;
         }
     }
     
@@ -1224,603 +1056,26 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGameListResponse1
+    public partial class SOAPEventGameListResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGameListResponse SOAPGameListResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventGameListResponse SOAPEventGameListResponse;
         
-        public SOAPGameListResponse1()
+        public SOAPEventGameListResponse1()
         {
         }
         
-        public SOAPGameListResponse1(BookAndPlaySOAP.SOAPGameListResponse SOAPGameListResponse)
+        public SOAPEventGameListResponse1(BookAndPlaySOAP.SOAPEventGameListResponse SOAPEventGameListResponse)
         {
-            this.SOAPGameListResponse = SOAPGameListResponse;
+            this.SOAPEventGameListResponse = SOAPEventGameListResponse;
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGameRequest
-    {
-        
-        private int idField;
-        
-        private Operation operationField;
-        
-        private Game gameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Operation Operation
-        {
-            get
-            {
-                return this.operationField;
-            }
-            set
-            {
-                this.operationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Game Game
-        {
-            get
-            {
-                return this.gameField;
-            }
-            set
-            {
-                this.gameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGameResponse
-    {
-        
-        private Game gameField;
-        
-        private Game[] gameListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Game game
-        {
-            get
-            {
-                return this.gameField;
-            }
-            set
-            {
-                this.gameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("gameList", IsNullable=false)]
-        public Game[] gameList
-        {
-            get
-            {
-                return this.gameListField;
-            }
-            set
-            {
-                this.gameListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGameRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest;
-        
-        public SOAPGameRequest1()
-        {
-        }
-        
-        public SOAPGameRequest1(BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest)
-        {
-            this.SOAPGameRequest = SOAPGameRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGameResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGameResponse SOAPGameResponse;
-        
-        public SOAPGameResponse1()
-        {
-        }
-        
-        public SOAPGameResponse1(BookAndPlaySOAP.SOAPGameResponse SOAPGameResponse)
-        {
-            this.SOAPGameResponse = SOAPGameResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventRequest
-    {
-        
-        private int idField;
-        
-        private Filter filterField;
-        
-        private Operation operationField;
-        
-        private Event eventField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Filter filter
-        {
-            get
-            {
-                return this.filterField;
-            }
-            set
-            {
-                this.filterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Operation Operation
-        {
-            get
-            {
-                return this.operationField;
-            }
-            set
-            {
-                this.operationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public Event Event
-        {
-            get
-            {
-                return this.eventField;
-            }
-            set
-            {
-                this.eventField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventResponse
-    {
-        
-        private int currentPageField;
-        
-        private bool currentPageFieldSpecified;
-        
-        private string notificationField;
-        
-        private Event eventField;
-        
-        private EventList eventListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int currentPage
-        {
-            get
-            {
-                return this.currentPageField;
-            }
-            set
-            {
-                this.currentPageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool currentPageSpecified
-        {
-            get
-            {
-                return this.currentPageFieldSpecified;
-            }
-            set
-            {
-                this.currentPageFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string notification
-        {
-            get
-            {
-                return this.notificationField;
-            }
-            set
-            {
-                this.notificationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public Event Event
-        {
-            get
-            {
-                return this.eventField;
-            }
-            set
-            {
-                this.eventField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public EventList eventList
-        {
-            get
-            {
-                return this.eventListField;
-            }
-            set
-            {
-                this.eventListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest;
-        
-        public SOAPEventRequest1()
-        {
-        }
-        
-        public SOAPEventRequest1(BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest)
-        {
-            this.SOAPEventRequest = SOAPEventRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventResponse SOAPEventResponse;
-        
-        public SOAPEventResponse1()
-        {
-        }
-        
-        public SOAPEventResponse1(BookAndPlaySOAP.SOAPEventResponse SOAPEventResponse)
-        {
-            this.SOAPEventResponse = SOAPEventResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventOrganizerRequest
-    {
-        
-        private string usernameField;
-        
-        private Operation operationField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string username
-        {
-            get
-            {
-                return this.usernameField;
-            }
-            set
-            {
-                this.usernameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Operation Operation
-        {
-            get
-            {
-                return this.operationField;
-            }
-            set
-            {
-                this.operationField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventOrganizerResponse
-    {
-        
-        private EventList eventListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public EventList eventList
-        {
-            get
-            {
-                return this.eventListField;
-            }
-            set
-            {
-                this.eventListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventOrganizerRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest;
-        
-        public SOAPEventOrganizerRequest1()
-        {
-        }
-        
-        public SOAPEventOrganizerRequest1(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
-        {
-            this.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventOrganizerResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse;
-        
-        public SOAPEventOrganizerResponse1()
-        {
-        }
-        
-        public SOAPEventOrganizerResponse1(BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse)
-        {
-            this.SOAPEventOrganizerResponse = SOAPEventOrganizerResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPMonthlyFeeRequest
-    {
-        
-        private string usernameField;
-        
-        private Operation operationField;
-        
-        private MonthlyFee monthlyFeeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string username
-        {
-            get
-            {
-                return this.usernameField;
-            }
-            set
-            {
-                this.usernameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Operation Operation
-        {
-            get
-            {
-                return this.operationField;
-            }
-            set
-            {
-                this.operationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public MonthlyFee MonthlyFee
-        {
-            get
-            {
-                return this.monthlyFeeField;
-            }
-            set
-            {
-                this.monthlyFeeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPMonthlyFeeResponse
-    {
-        
-        private MonthlyFee monthlyFeeField;
-        
-        private MonthlyFee[] monthlyFeeListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public MonthlyFee MonthlyFee
-        {
-            get
-            {
-                return this.monthlyFeeField;
-            }
-            set
-            {
-                this.monthlyFeeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("MonthlyFeeList", Order=1)]
-        public MonthlyFee[] MonthlyFeeList
-        {
-            get
-            {
-                return this.monthlyFeeListField;
-            }
-            set
-            {
-                this.monthlyFeeListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPMonthlyFeeRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest;
-        
-        public SOAPMonthlyFeeRequest1()
-        {
-        }
-        
-        public SOAPMonthlyFeeRequest1(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
-        {
-            this.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPMonthlyFeeResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse;
-        
-        public SOAPMonthlyFeeResponse1()
-        {
-        }
-        
-        public SOAPMonthlyFeeResponse1(BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse)
-        {
-            this.SOAPMonthlyFeeResponse = SOAPMonthlyFeeResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPParticipantRequest
     {
         
@@ -1829,8 +1084,6 @@ namespace BookAndPlaySOAP
         private string usernameField;
         
         private Operation operationField;
-        
-        private User participantField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1873,26 +1126,12 @@ namespace BookAndPlaySOAP
                 this.operationField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public User Participant
-        {
-            get
-            {
-                return this.participantField;
-            }
-            set
-            {
-                this.participantField = value;
-            }
-        }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPParticipantResponse
     {
         
@@ -1968,7 +1207,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPParticipantRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPParticipantRequest SOAPParticipantRequest;
         
         public SOAPParticipantRequest1()
@@ -1988,7 +1227,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPParticipantResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPParticipantResponse SOAPParticipantResponse;
         
         public SOAPParticipantResponse1()
@@ -2004,7 +1243,7 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPOneTimeFeeRequest
     {
         
@@ -2076,7 +1315,7 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPOneTimeFeeResponse
     {
         
@@ -2120,7 +1359,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPOneTimeFeeRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPOneTimeFeeRequest SOAPOneTimeFeeRequest;
         
         public SOAPOneTimeFeeRequest1()
@@ -2140,7 +1379,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPOneTimeFeeResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPOneTimeFeeResponse SOAPOneTimeFeeResponse;
         
         public SOAPOneTimeFeeResponse1()
@@ -2156,7 +1395,353 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventRequest
+    {
+        
+        private int idField;
+        
+        private Filter filterField;
+        
+        private Operation operationField;
+        
+        private Event eventField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Filter filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Event Event
+        {
+            get
+            {
+                return this.eventField;
+            }
+            set
+            {
+                this.eventField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventResponse
+    {
+        
+        private Event eventField;
+        
+        private EventList eventListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Event Event
+        {
+            get
+            {
+                return this.eventField;
+            }
+            set
+            {
+                this.eventField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest;
+        
+        public SOAPEventRequest1()
+        {
+        }
+        
+        public SOAPEventRequest1(BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest)
+        {
+            this.SOAPEventRequest = SOAPEventRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventResponse SOAPEventResponse;
+        
+        public SOAPEventResponse1()
+        {
+        }
+        
+        public SOAPEventResponse1(BookAndPlaySOAP.SOAPEventResponse SOAPEventResponse)
+        {
+            this.SOAPEventResponse = SOAPEventResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPCategoryRequest
+    {
+        
+        private Operation operationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPCategoryResponse
+    {
+        
+        private Category[] categoryListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("categoryList", IsNullable=false)]
+        public Category[] CategoryList
+        {
+            get
+            {
+                return this.categoryListField;
+            }
+            set
+            {
+                this.categoryListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPCategoryRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest;
+        
+        public SOAPCategoryRequest1()
+        {
+        }
+        
+        public SOAPCategoryRequest1(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
+        {
+            this.SOAPCategoryRequest = SOAPCategoryRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPCategoryResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse;
+        
+        public SOAPCategoryResponse1()
+        {
+        }
+        
+        public SOAPCategoryResponse1(BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse)
+        {
+            this.SOAPCategoryResponse = SOAPCategoryResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGGLRequest
+    {
+        
+        private Operation operationField;
+        
+        private Filter filterField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Filter Filter
+        {
+            get
+            {
+                return this.filterField;
+            }
+            set
+            {
+                this.filterField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGGLResponse
+    {
+        
+        private Game[] gameListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gameList", IsNullable=false)]
+        public Game[] gameList
+        {
+            get
+            {
+                return this.gameListField;
+            }
+            set
+            {
+                this.gameListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPGGLRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGGLRequest SOAPGGLRequest;
+        
+        public SOAPGGLRequest1()
+        {
+        }
+        
+        public SOAPGGLRequest1(BookAndPlaySOAP.SOAPGGLRequest SOAPGGLRequest)
+        {
+            this.SOAPGGLRequest = SOAPGGLRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPGGLResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGGLResponse SOAPGGLResponse;
+        
+        public SOAPGGLResponse1()
+        {
+        }
+        
+        public SOAPGGLResponse1(BookAndPlaySOAP.SOAPGGLResponse SOAPGGLResponse)
+        {
+            this.SOAPGGLResponse = SOAPGGLResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPUserRequest
     {
         
@@ -2228,7 +1813,7 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
     public partial class SOAPUserResponse
     {
         
@@ -2289,7 +1874,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPUserRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPUserRequest SOAPUserRequest;
         
         public SOAPUserRequest1()
@@ -2309,7 +1894,7 @@ namespace BookAndPlaySOAP
     public partial class SOAPUserResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
         public BookAndPlaySOAP.SOAPUserResponse SOAPUserResponse;
         
         public SOAPUserResponse1()
@@ -2325,15 +1910,148 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventGameListRequest
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGameRequest
+    {
+        
+        private int idField;
+        
+        private Operation operationField;
+        
+        private Game gameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Game Game
+        {
+            get
+            {
+                return this.gameField;
+            }
+            set
+            {
+                this.gameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGameResponse
+    {
+        
+        private Game gameField;
+        
+        private Game[] gameListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Game game
+        {
+            get
+            {
+                return this.gameField;
+            }
+            set
+            {
+                this.gameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gameList", IsNullable=false)]
+        public Game[] gameList
+        {
+            get
+            {
+                return this.gameListField;
+            }
+            set
+            {
+                this.gameListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPGameRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest;
+        
+        public SOAPGameRequest1()
+        {
+        }
+        
+        public SOAPGameRequest1(BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest)
+        {
+            this.SOAPGameRequest = SOAPGameRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPGameResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGameResponse SOAPGameResponse;
+        
+        public SOAPGameResponse1()
+        {
+        }
+        
+        public SOAPGameResponse1(BookAndPlaySOAP.SOAPGameResponse SOAPGameResponse)
+        {
+            this.SOAPGameResponse = SOAPGameResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventOrganizerRequest
     {
         
         private string usernameField;
-        
-        private int eventIdField;
-        
-        private int gameIdField;
         
         private Operation operationField;
         
@@ -2353,20 +2071,248 @@ namespace BookAndPlaySOAP
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int eventId
+        public Operation Operation
         {
             get
             {
-                return this.eventIdField;
+                return this.operationField;
             }
             set
             {
-                this.eventIdField = value;
+                this.operationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPEventOrganizerResponse
+    {
+        
+        private EventList eventListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventOrganizerRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest;
+        
+        public SOAPEventOrganizerRequest1()
+        {
+        }
+        
+        public SOAPEventOrganizerRequest1(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
+        {
+            this.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPEventOrganizerResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse;
+        
+        public SOAPEventOrganizerResponse1()
+        {
+        }
+        
+        public SOAPEventOrganizerResponse1(BookAndPlaySOAP.SOAPEventOrganizerResponse SOAPEventOrganizerResponse)
+        {
+            this.SOAPEventOrganizerResponse = SOAPEventOrganizerResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPMonthlyFeeRequest
+    {
+        
+        private string usernameField;
+        
+        private Operation operationField;
+        
+        private MonthlyFee monthlyFeeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string username
+        {
+            get
+            {
+                return this.usernameField;
+            }
+            set
+            {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Operation Operation
+        {
+            get
+            {
+                return this.operationField;
+            }
+            set
+            {
+                this.operationField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public MonthlyFee MonthlyFee
+        {
+            get
+            {
+                return this.monthlyFeeField;
+            }
+            set
+            {
+                this.monthlyFeeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPMonthlyFeeResponse
+    {
+        
+        private MonthlyFee monthlyFeeField;
+        
+        private MonthlyFee[] monthlyFeeListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MonthlyFee MonthlyFee
+        {
+            get
+            {
+                return this.monthlyFeeField;
+            }
+            set
+            {
+                this.monthlyFeeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MonthlyFeeList", Order=1)]
+        public MonthlyFee[] MonthlyFeeList
+        {
+            get
+            {
+                return this.monthlyFeeListField;
+            }
+            set
+            {
+                this.monthlyFeeListField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPMonthlyFeeRequest1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest;
+        
+        public SOAPMonthlyFeeRequest1()
+        {
+        }
+        
+        public SOAPMonthlyFeeRequest1(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
+        {
+            this.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SOAPMonthlyFeeResponse1
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse;
+        
+        public SOAPMonthlyFeeResponse1()
+        {
+        }
+        
+        public SOAPMonthlyFeeResponse1(BookAndPlaySOAP.SOAPMonthlyFeeResponse SOAPMonthlyFeeResponse)
+        {
+            this.SOAPMonthlyFeeResponse = SOAPMonthlyFeeResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGameListRequest
+    {
+        
+        private string userNameField;
+        
+        private int gameIdField;
+        
+        private Operation operationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string userName
+        {
+            get
+            {
+                return this.userNameField;
+            }
+            set
+            {
+                this.userNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int gameId
         {
             get
@@ -2380,7 +2326,7 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Operation Operation
         {
             get
@@ -2397,8 +2343,8 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPEventGameListResponse
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPGameListResponse
     {
         
         private Game[] gameListField;
@@ -2423,19 +2369,19 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventGameListRequest1
+    public partial class SOAPGameListRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest;
         
-        public SOAPEventGameListRequest1()
+        public SOAPGameListRequest1()
         {
         }
         
-        public SOAPEventGameListRequest1(BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest)
+        public SOAPGameListRequest1(BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest)
         {
-            this.SOAPEventGameListRequest = SOAPEventGameListRequest;
+            this.SOAPGameListRequest = SOAPGameListRequest;
         }
     }
     
@@ -2443,138 +2389,65 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPEventGameListResponse1
+    public partial class SOAPGameListResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPEventGameListResponse SOAPEventGameListResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPGameListResponse SOAPGameListResponse;
         
-        public SOAPEventGameListResponse1()
+        public SOAPGameListResponse1()
         {
         }
         
-        public SOAPEventGameListResponse1(BookAndPlaySOAP.SOAPEventGameListResponse SOAPEventGameListResponse)
+        public SOAPGameListResponse1(BookAndPlaySOAP.SOAPGameListResponse SOAPGameListResponse)
         {
-            this.SOAPEventGameListResponse = SOAPEventGameListResponse;
+            this.SOAPGameListResponse = SOAPGameListResponse;
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGGLRequest
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPOrganizerRequest
     {
+        
+        private int eventIdField;
+        
+        private string usernameField;
         
         private Operation operationField;
         
-        private Filter filterField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Operation Operation
+        public int eventId
         {
             get
             {
-                return this.operationField;
+                return this.eventIdField;
             }
             set
             {
-                this.operationField = value;
+                this.eventIdField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Filter Filter
+        public string username
         {
             get
             {
-                return this.filterField;
+                return this.usernameField;
             }
             set
             {
-                this.filterField = value;
+                this.usernameField = value;
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPGGLResponse
-    {
-        
-        private Game[] gameListField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("gameList", IsNullable=false)]
-        public Game[] gameList
-        {
-            get
-            {
-                return this.gameListField;
-            }
-            set
-            {
-                this.gameListField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGGLRequest1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGGLRequest SOAPGGLRequest;
-        
-        public SOAPGGLRequest1()
-        {
-        }
-        
-        public SOAPGGLRequest1(BookAndPlaySOAP.SOAPGGLRequest SOAPGGLRequest)
-        {
-            this.SOAPGGLRequest = SOAPGGLRequest;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPGGLResponse1
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPGGLResponse SOAPGGLResponse;
-        
-        public SOAPGGLResponse1()
-        {
-        }
-        
-        public SOAPGGLResponse1(BookAndPlaySOAP.SOAPGGLResponse SOAPGGLResponse)
-        {
-            this.SOAPGGLResponse = SOAPGGLResponse;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPCategoryRequest
-    {
-        
-        private Operation operationField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Operation Operation
         {
             get
@@ -2591,24 +2464,71 @@ namespace BookAndPlaySOAP
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://spring.io/guides/gs-producing-web-service")]
-    public partial class SOAPCategoryResponse
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://bookAndPlay.dk/web-service")]
+    public partial class SOAPOrganizerResponse
     {
         
-        private Category[] categoryListField;
+        private string typeField;
+        
+        private User userField;
+        
+        private string[] organizerListField;
+        
+        private EventList eventListField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("categoryList", IsNullable=false)]
-        public Category[] CategoryList
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string type
         {
             get
             {
-                return this.categoryListField;
+                return this.typeField;
             }
             set
             {
-                this.categoryListField = value;
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public User user
+        {
+            get
+            {
+                return this.userField;
+            }
+            set
+            {
+                this.userField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("organizerList", Order=2)]
+        public string[] organizerList
+        {
+            get
+            {
+                return this.organizerListField;
+            }
+            set
+            {
+                this.organizerListField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public EventList eventList
+        {
+            get
+            {
+                return this.eventListField;
+            }
+            set
+            {
+                this.eventListField = value;
             }
         }
     }
@@ -2617,19 +2537,19 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPCategoryRequest1
+    public partial class SOAPOrganizerRequest1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest;
         
-        public SOAPCategoryRequest1()
+        public SOAPOrganizerRequest1()
         {
         }
         
-        public SOAPCategoryRequest1(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
+        public SOAPOrganizerRequest1(BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest)
         {
-            this.SOAPCategoryRequest = SOAPCategoryRequest;
+            this.SOAPOrganizerRequest = SOAPOrganizerRequest;
         }
     }
     
@@ -2637,19 +2557,19 @@ namespace BookAndPlaySOAP
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SOAPCategoryResponse1
+    public partial class SOAPOrganizerResponse1
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://spring.io/guides/gs-producing-web-service", Order=0)]
-        public BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://bookAndPlay.dk/web-service", Order=0)]
+        public BookAndPlaySOAP.SOAPOrganizerResponse SOAPOrganizerResponse;
         
-        public SOAPCategoryResponse1()
+        public SOAPOrganizerResponse1()
         {
         }
         
-        public SOAPCategoryResponse1(BookAndPlaySOAP.SOAPCategoryResponse SOAPCategoryResponse)
+        public SOAPOrganizerResponse1(BookAndPlaySOAP.SOAPOrganizerResponse SOAPOrganizerResponse)
         {
-            this.SOAPCategoryResponse = SOAPCategoryResponse;
+            this.SOAPOrganizerResponse = SOAPOrganizerResponse;
         }
     }
     
@@ -2704,81 +2624,16 @@ namespace BookAndPlaySOAP
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest1 request)
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest1 request)
         {
-            return base.Channel.SOAPOrganizerAsync(request);
+            return base.Channel.SOAPEventGameListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest)
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest)
         {
-            BookAndPlaySOAP.SOAPOrganizerRequest1 inValue = new BookAndPlaySOAP.SOAPOrganizerRequest1();
-            inValue.SOAPOrganizerRequest = SOAPOrganizerRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPOrganizerAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest1 request)
-        {
-            return base.Channel.SOAPGameListAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest)
-        {
-            BookAndPlaySOAP.SOAPGameListRequest1 inValue = new BookAndPlaySOAP.SOAPGameListRequest1();
-            inValue.SOAPGameListRequest = SOAPGameListRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPGameListAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest1 request)
-        {
-            return base.Channel.SOAPGameAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest)
-        {
-            BookAndPlaySOAP.SOAPGameRequest1 inValue = new BookAndPlaySOAP.SOAPGameRequest1();
-            inValue.SOAPGameRequest = SOAPGameRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPGameAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest1 request)
-        {
-            return base.Channel.SOAPEventAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest)
-        {
-            BookAndPlaySOAP.SOAPEventRequest1 inValue = new BookAndPlaySOAP.SOAPEventRequest1();
-            inValue.SOAPEventRequest = SOAPEventRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request)
-        {
-            return base.Channel.SOAPEventOrganizerAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
-        {
-            BookAndPlaySOAP.SOAPEventOrganizerRequest1 inValue = new BookAndPlaySOAP.SOAPEventOrganizerRequest1();
-            inValue.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventOrganizerAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request)
-        {
-            return base.Channel.SOAPMonthlyFeeAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
-        {
-            BookAndPlaySOAP.SOAPMonthlyFeeRequest1 inValue = new BookAndPlaySOAP.SOAPMonthlyFeeRequest1();
-            inValue.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPMonthlyFeeAsync(inValue);
+            BookAndPlaySOAP.SOAPEventGameListRequest1 inValue = new BookAndPlaySOAP.SOAPEventGameListRequest1();
+            inValue.SOAPEventGameListRequest = SOAPEventGameListRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventGameListAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2808,29 +2663,29 @@ namespace BookAndPlaySOAP
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest1 request)
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest1 request)
         {
-            return base.Channel.SOAPUserAsync(request);
+            return base.Channel.SOAPEventAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest SOAPUserRequest)
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventResponse1> SOAPEventAsync(BookAndPlaySOAP.SOAPEventRequest SOAPEventRequest)
         {
-            BookAndPlaySOAP.SOAPUserRequest1 inValue = new BookAndPlaySOAP.SOAPUserRequest1();
-            inValue.SOAPUserRequest = SOAPUserRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPUserAsync(inValue);
+            BookAndPlaySOAP.SOAPEventRequest1 inValue = new BookAndPlaySOAP.SOAPEventRequest1();
+            inValue.SOAPEventRequest = SOAPEventRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest1 request)
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request)
         {
-            return base.Channel.SOAPEventGameListAsync(request);
+            return base.Channel.SOAPCategoryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventGameListResponse1> SOAPEventGameListAsync(BookAndPlaySOAP.SOAPEventGameListRequest SOAPEventGameListRequest)
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
         {
-            BookAndPlaySOAP.SOAPEventGameListRequest1 inValue = new BookAndPlaySOAP.SOAPEventGameListRequest1();
-            inValue.SOAPEventGameListRequest = SOAPEventGameListRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventGameListAsync(inValue);
+            BookAndPlaySOAP.SOAPCategoryRequest1 inValue = new BookAndPlaySOAP.SOAPCategoryRequest1();
+            inValue.SOAPCategoryRequest = SOAPCategoryRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPCategoryAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2847,16 +2702,81 @@ namespace BookAndPlaySOAP
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest1 request)
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest1 request)
         {
-            return base.Channel.SOAPCategoryAsync(request);
+            return base.Channel.SOAPUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPCategoryResponse1> SOAPCategoryAsync(BookAndPlaySOAP.SOAPCategoryRequest SOAPCategoryRequest)
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPUserResponse1> SOAPUserAsync(BookAndPlaySOAP.SOAPUserRequest SOAPUserRequest)
         {
-            BookAndPlaySOAP.SOAPCategoryRequest1 inValue = new BookAndPlaySOAP.SOAPCategoryRequest1();
-            inValue.SOAPCategoryRequest = SOAPCategoryRequest;
-            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPCategoryAsync(inValue);
+            BookAndPlaySOAP.SOAPUserRequest1 inValue = new BookAndPlaySOAP.SOAPUserRequest1();
+            inValue.SOAPUserRequest = SOAPUserRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest1 request)
+        {
+            return base.Channel.SOAPGameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameResponse1> SOAPGameAsync(BookAndPlaySOAP.SOAPGameRequest SOAPGameRequest)
+        {
+            BookAndPlaySOAP.SOAPGameRequest1 inValue = new BookAndPlaySOAP.SOAPGameRequest1();
+            inValue.SOAPGameRequest = SOAPGameRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPGameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest1 request)
+        {
+            return base.Channel.SOAPEventOrganizerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPEventOrganizerResponse1> SOAPEventOrganizerAsync(BookAndPlaySOAP.SOAPEventOrganizerRequest SOAPEventOrganizerRequest)
+        {
+            BookAndPlaySOAP.SOAPEventOrganizerRequest1 inValue = new BookAndPlaySOAP.SOAPEventOrganizerRequest1();
+            inValue.SOAPEventOrganizerRequest = SOAPEventOrganizerRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPEventOrganizerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest1 request)
+        {
+            return base.Channel.SOAPMonthlyFeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPMonthlyFeeResponse1> SOAPMonthlyFeeAsync(BookAndPlaySOAP.SOAPMonthlyFeeRequest SOAPMonthlyFeeRequest)
+        {
+            BookAndPlaySOAP.SOAPMonthlyFeeRequest1 inValue = new BookAndPlaySOAP.SOAPMonthlyFeeRequest1();
+            inValue.SOAPMonthlyFeeRequest = SOAPMonthlyFeeRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPMonthlyFeeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest1 request)
+        {
+            return base.Channel.SOAPGameListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPGameListResponse1> SOAPGameListAsync(BookAndPlaySOAP.SOAPGameListRequest SOAPGameListRequest)
+        {
+            BookAndPlaySOAP.SOAPGameListRequest1 inValue = new BookAndPlaySOAP.SOAPGameListRequest1();
+            inValue.SOAPGameListRequest = SOAPGameListRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPGameListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> BookAndPlaySOAP.BookAndPlayPort.SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest1 request)
+        {
+            return base.Channel.SOAPOrganizerAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BookAndPlaySOAP.SOAPOrganizerResponse1> SOAPOrganizerAsync(BookAndPlaySOAP.SOAPOrganizerRequest SOAPOrganizerRequest)
+        {
+            BookAndPlaySOAP.SOAPOrganizerRequest1 inValue = new BookAndPlaySOAP.SOAPOrganizerRequest1();
+            inValue.SOAPOrganizerRequest = SOAPOrganizerRequest;
+            return ((BookAndPlaySOAP.BookAndPlayPort)(this)).SOAPOrganizerAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -2887,7 +2807,7 @@ namespace BookAndPlaySOAP
         {
             if ((endpointConfiguration == EndpointConfiguration.BookAndPlayPortSoap11))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:8080/ws");
+                return new System.ServiceModel.EndpointAddress("http://localhost:8080/");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
