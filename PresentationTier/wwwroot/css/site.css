@@ -10,16 +10,6 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-a, .btn-link {
-    color: #0366d6;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
 .content {
     padding-top: 1.1rem;
     
@@ -177,6 +167,9 @@ h3{
 .button:hover{
     transition: 0.5s;
 }
+.button:active{
+    
+}
 .simple-button:hover{
     color: var(--yellow-color);
 }
@@ -197,6 +190,7 @@ h3{
     border-bottom: 2px solid white;
     outline: 0;
     margin-bottom: 1em;
+    border-radius: 0;
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;

@@ -12,7 +12,7 @@
 
 <AuthorizeView Policy="Organizer">
     <p class="actions">
-        <button @onclick="@CreateEvent" class="btn btn-outline-success" type="submit"><i class="oi oi-plus"></i> Create</button>
+        <button @onclick="@CreateEvent" class="button simple-button" type="submit"><i class="oi oi-plus"></i> Create</button>
     </p>
 </AuthorizeView>
 
@@ -70,7 +70,7 @@
                         }
                     </div>
                     <div class="card-footer text-center">
-                        <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                        <button class="button simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
                             More
                         </button>
                     </div>
