@@ -16,19 +16,19 @@
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
-        Name:<br/>
+        *Name:<br/>
         <InputText @bind-Value="game.Name"/>
     </div>
     <div class="form-group">
-        Complexity: 
+        *Complexity: 
         <InputNumber @bind-Value="game.Complexity" style="width: 50px"/>
     </div>
     <div class="form-group">
-        Estimated time: 
+        *Estimated time: 
         <InputNumber @bind-Value="game.TimeEstimation" style="width: 50px"/>
     </div>
     <div class="form-group">
-        Player amount:<br/>
+        *Player amount:<br/>
         Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
         Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
     </div>
