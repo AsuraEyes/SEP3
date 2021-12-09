@@ -1,11 +1,8 @@
 @page "/EditEvent/{Id:int}"
-
-@using PresentationTier.Data
 @using PresentationTier.Models
 @using Microsoft.AspNetCore.Components
 @using PresentationTier.Authentication
 @using System.Security.Claims
-@using PresentationTier.Data.EventServices
 @using PresentationTier.Data.EventServices.Categories
 @using PresentationTier.Data.EventServices.Events
 
@@ -92,7 +89,7 @@
         if (newEventOrganizer != null) eventToEdit.Organizer = newEventOrganizer;
 
         eventToEdit.StartTime = eventToEdit.Date.Add(eventToEdit.Start.TimeOfDay);
-        if (eventToEdit.End != null) eventToEdit.EndTime = eventToEdit.Date.Add(eventToEdit.End.Value.TimeOfDay);
+        eventToEdit.EndTime = eventToEdit.Date.Add(eventToEdit.End.TimeOfDay);
         await eventService.EditEventAsync(eventToEdit);
         await jsRuntime.InvokeVoidAsync("alert", "Successfully edited the event");
         navigationManager.NavigateTo($"EventInfo/{Id}");

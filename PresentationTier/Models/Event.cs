@@ -21,9 +21,10 @@ namespace PresentationTier.Models
         [Required]
         public DateTime Start { get; set; }
         
-        [RequiredIf("End > Today() && (Compare(End, Start)) <= 0", 
+        [Required]
+        [AssertThat("End > Start", 
             ErrorMessage = "The end time must be later than the start time.")]
-        public DateTime? End { get; set; }
+        public DateTime End { get; set; }
         
         public DateTime StartTime{ get; set; }
         
