@@ -1,11 +1,13 @@
 @page "/RequestsForGGL"
 @using PresentationTier.Models
 @using PresentationTier.Data
+@using PresentationTier.Data.GameServices
+@using PresentationTier.Data.GameServices.Games
 
 @inject NavigationManager navigationManager
 @inject IGameService gameService
 
-<h3>Requests For GGL</h3>
+<h2>Requests For GGL</h2>
 
 @if (gameList == null)
  {
@@ -20,7 +22,7 @@
              if (item.Approved == false)
              {
                  <ul>
-                     <li @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</li>
+                     <li @onclick="@(() => MoreGameInfo(item.Id))"><a>@item.Name</a></li>
                  </ul>
              }
          }

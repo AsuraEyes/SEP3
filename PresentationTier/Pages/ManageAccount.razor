@@ -2,7 +2,7 @@
 
 @using PresentationTier.Authentication
 @using System.Security.Claims
-@using global::Data
+@using PresentationTier.Data.UserServices
 @using PresentationTier.Models
 
 @inject IUserService userService
@@ -10,7 +10,7 @@
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 
-<h3>Manage Account</h3>
+<h2>Manage Account</h2>
 @if (user == null)
 {
     <p>Loading...</p>
@@ -32,11 +32,11 @@ else
         <p>Email: @user.EmailAddress</p>
     }
     <p class="actions">
-        <button class="btn btn-outline-info" type="submit" @onclick="@Edit">Edit</button>
+        <button class="button simple-button" type="submit" @onclick="@Edit">Edit</button>
     </p>
 
     <p class="actions">
-        <button class="btn btn-outline-danger" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
+        <button class="button delete-button" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
     </p>
 }
 

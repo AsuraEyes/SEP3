@@ -4,6 +4,10 @@
 @using PresentationTier.Data
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data.EventServices
+@using PresentationTier.Data.EventServices.EventGameLists
+@using PresentationTier.Data.GameServices
+@using PresentationTier.Data.GameServices.GameLists
 
 @inject IGameListService gameListService
 @inject IEventGameListService eventGameListService
@@ -71,7 +75,7 @@ else
     private async Task CompletedChangeAsync(ChangeEventArgs arg, int gameId)
     {
         var inList = arg.Value != null && (bool) arg.Value;
-        await eventGameListService.UpdateEventGamesAsync(username, gameId, EventId, inList);
+        await eventGameListService.EditEventGamesAsync(username, gameId, EventId, inList);
     }
     
     private void MoreGameInfo(int gameId)

@@ -1,12 +1,10 @@
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using BookAndPlaySOAP;
 using Presentation_Layer.Models;
 
-namespace BusinessLayer.BankData
+namespace BusinessTier.BankData
 {
     public class PaymentWebService : IPaymentWebService
     {

@@ -4,6 +4,13 @@
 @using PresentationTier.Models
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data.EventServices
+@using PresentationTier.Data.EventServices.Categories
+@using PresentationTier.Data.EventServices.EventGameLists
+@using PresentationTier.Data.EventServices.Events
+@using PresentationTier.Data.EventServices.Organizers
+@using PresentationTier.Data.EventServices.Participants
+@using PresentationTier.Data.FeeServices
 
 @inject IParticipantService participantService;
 @inject IJSRuntime jsRuntime
@@ -13,7 +20,7 @@
 @inject IEventGameListService eventGameListService;
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
-@inject IPaymentService paymentService;
+@inject IFeeService feeService;
 
 @if (categories.Count == 0)
 {
@@ -22,123 +29,132 @@
 else
 {
     <h3>@selectedEvent.Name</h3>
-    <p>@errorMessage</p>
 
-    if (selectedEvent.EndTime.Subtract(selectedEvent.StartTime).TotalMinutes < 0)
-    {
-        <p>Time: @selectedEvent.StartTime.ToString("f")</p>
-    }
-    else
-    {
-        <p>Time: @selectedEvent.StartTime.ToString("f") - @selectedEvent.EndTime.ToString("t")</p>
-    }
-
-    if (selectedEvent.AddressApartmentNumber != null)
-    {
-        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
-
-    }
-    else
-    {
-        <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
-    }
-    <p>Category: @category.Name </p>
-    if (username.Equals(selectedEvent.Organizer))
-    {
-        <p class="actions">
-            <button @onclick="@EditEvent" class="btn btn-outline-secondary" type="submit"><i class="oi oi-pencil"></i> Edit</button>
-        </p>
-    }
-
-    <br/>
-    <div class="col-sm-6">
-        <h3>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h3>
-        @foreach (var participant in participants)
-        {
-            <ul>
-                <li @onclick="@(() => MoreUserInfo(participant))"><a href="#">@participant</a></li>
-            </ul>
-        }
-        @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
-        {
-            <p class="actions">
-                <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsync">Withdraw</button>
-            </p>
-        }
-        else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
-        {
-            <p class="actions">
-                <button class="btn btn-secondary btn-lg" type="submit" disabled>Join</button>
-            </p>
-        }
-        else if (!username.Equals(selectedEvent.Organizer))
-        {
-            <p class="actions">
-                <button class="btn btn-outline-success" type="submit" @onclick="@JoinEventAsync">Join</button>
-            </p>
-        }
-    </div>
-
-    <div class="mb-2">
-        <h3>Organizers</h3>
-        @foreach (var organizer in organizers)
-        {
-            <ul>
-                @if (organizer.Equals(selectedEvent.Organizer))
-                {
-                    <li>
-                        <b @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></b>
-                    </li>
-                }
-                else
-                {
-                    <li @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></li>
-                }
-            </ul>
-        }
-        <AuthorizeView Policy="Organizer">
-            @if (participants.Contains(username))
+    <div class="grid-container-fifty-fifty remove-line-above">
+        <div>
+            @if (selectedEvent.EndTime.Subtract(selectedEvent.StartTime).TotalMinutes < 0)
             {
-                if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
-                {
-                    <p class="actions">
-                        <button class="btn btn-outline-danger" type="submit" @onclick="@WithdrawEventAsCoOrganizerAsync">Withdraw</button>
-                    </p>
-                }
-                else if (!username.Equals(selectedEvent.Organizer))
-                {
-                    <p class="actions">
-                        <button class="btn btn-outline-success" type="submit" @onclick="@CoOrganizeEventAsync">Co-Organize</button>
-                    </p>
-                }
+                <p>Time: @selectedEvent.StartTime.ToString("f")</p>
             }
-        </AuthorizeView>
+            else
+            {
+                <p>Time: @selectedEvent.StartTime.ToString("f") - @selectedEvent.EndTime.ToString("t")</p>
+            }
+        
+            @if (selectedEvent.AddressApartmentNumber != null)
+            {
+                <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber, @selectedEvent.AddressApartmentNumber</p>
+        
+            }
+            else
+            {
+                <p>Address: @selectedEvent.AddressStreetName @selectedEvent.AddressStreetNumber</p>
+            }
+            <p>Category: @category.Name </p>
+        </div>
+        <div class="grid-container-fifty-fifty remove-line-above">
+            <div>
+                @if (username.Equals(selectedEvent.Organizer))
+                {
+                    <p class="actions">
+                        <button @onclick="@EditEvent" class="button simple-button" type="submit"><i class="oi oi-pencil"></i> Edit</button>
+                    </p>
+                }
+            </div>
+            <div>
+                @if (username.Equals(selectedEvent.Organizer))
+                {
+                    <p class="actions">
+                        <button class="button delete-button" type="submit" @onclick="@CancelEventAsync">Cancel</button>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>                       
+    
+    <div class="grid-container-thirds">
+        <div>
+            <h4>Participants: @participants.Count/@selectedEvent.MaxNumberOfParticipants</h4>
+            @foreach (var participant in participants)
+            {
+                <ul>
+                    <li @onclick="@(() => MoreUserInfo(participant))"><a href="#">@participant</a></li>
+                </ul>
+            }
+            @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
+            {
+                <p class="actions">
+                    <button class="button delete-button" type="submit" @onclick="@WithdrawEventAsync">Withdraw</button>
+                </p>
+            }
+            else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
+            {
+                <p class="actions">
+                    <button class="button simple-button" type="submit" disabled>Join</button>
+                </p>
+            }
+            else if (!username.Equals(selectedEvent.Organizer))
+            {
+                <p class="actions">
+                    <button class="button simple-button" type="submit" @onclick="@JoinEventAsync">Join</button>
+                </p>
+            }
+        </div>
+        <div class="mb-2">
+            <h4>Organizers</h4>
+            @foreach (var organizer in organizers)
+            {
+                <ul>
+                    @if (organizer.Equals(selectedEvent.Organizer))
+                    {
+                        <li>
+                            <a href="#" @onclick="@(() => MoreUserInfo(organizer))">@organizer (Main organizer)</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li @onclick="@(() => MoreUserInfo(organizer))"><a href="#">@organizer</a></li>
+                    }
+                </ul>
+            }
+            <AuthorizeView Policy="Organizer">
+                @if (participants.Contains(username))
+                {
+                    if (!username.Equals(selectedEvent.Organizer) && organizers.Contains(username))
+                    {
+                        <p class="actions">
+                            <button class="button delete-button" type="submit" @onclick="@WithdrawEventAsCoOrganizerAsync">Withdraw</button>
+                        </p>
+                    }
+                    else if (!username.Equals(selectedEvent.Organizer))
+                    {
+                        <p class="actions">
+                            <button class="button simple-button" type="submit" @onclick="@CoOrganizeEventAsync">Co-Organize</button>
+                        </p>
+                    }
+                }
+            </AuthorizeView>
+        </div>
+        <div>
+            <h4>Games</h4>
+            @foreach (var game in allEventGameList)
+            {
+                <ul>
+                    <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
+                </ul>
+            }
+        
+            @if (organizers.Any(user => user.Equals(username)))
+            {
+                <br/>
+                <p class="actions">
+                    <button class="button simple-button" type="submit" @onclick="@EditEventGames">Edit event games</button>
+                </p>
+            }
+        </div>
     </div>
-
-    <br/>
-    <h3>Games</h3>
-    foreach (var game in allEventGameList)
-    {
-        <ul>
-            <li @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></li>
-        </ul>
-    }
-
-    if (organizers.Any(user => user.Equals(username)))
-    {
-        <br/>
-        <p class="actions">
-            <button class="btn btn-outline-success" type="submit" @onclick="@EditEventGames">Edit event games</button>
-        </p>
-    }
-
-    if (username.Equals(selectedEvent.Organizer))
-    {
-        <br/>
-        <p class="actions">
-            <button class="btn btn-outline-danger" type="submit" @onclick="@CancelEventAsync">Cancel</button>
-        </p>
-    }
+    
+    
 }
 
 @code {
@@ -168,15 +184,14 @@ else
 
     private async Task JoinEventAsync()
     {
-        if (await paymentService.CheckSubscriptionAsync(username) || await paymentService.GetEventFeeAsync(username, Id)!= null)
+        if (await feeService.CheckSubscriptionAsync(username) || await feeService.GetEventFeeAsync(username, Id)!= null)
         {
             await participantService.JoinEventAsync(Id, username);
             participants = await participantService.GetParticipantsAsync(Id);
         }
         else
         {
-            errorMessage = "No active subscription. You have to pay to play!!!";
-            if (!await jsRuntime.InvokeAsync<bool>("confirm", errorMessage))
+            if (!await jsRuntime.InvokeAsync<bool>("confirm", "No active subscription. You have to pay to play!!!"))
                 return;
             navigationManager.NavigateTo($"Payment/{Id}");
         }

@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{851D2477-BA5B-4C24-892C-E605CB4D7FAA}|Default">
-  <MonoDevelop.Ide.ItemProperties.BusinessLayer PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.BusinessTier PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BusinessLayer" expanded="True" selected="True" />
+          <Node name="BusinessTier" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

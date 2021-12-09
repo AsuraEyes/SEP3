@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.VisualBasic;
 
 namespace PresentationTier.Models
 {
@@ -9,13 +8,13 @@ namespace PresentationTier.Models
         public string Username { get; set; }
         public DateTime StartDateTime { get; set; }
         public int EventId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Card number is required.")]
         public string CardNumber { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Card holder name is required.")]
         public string CardHolderName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "CVC is required")]
         public string CVC { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Expiry date is required")]
         public DateTime ExpiryDate { get; set; }
         
         public int AvailableSavings { get; set; }

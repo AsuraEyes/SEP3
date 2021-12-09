@@ -3,6 +3,10 @@
 @using PresentationTier.Models
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data.EventServices
+@using PresentationTier.Data.EventServices.EventOrganizers
+@using PresentationTier.Data.EventServices.Organizers
+@using PresentationTier.Data.EventServices.Participants
 
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
@@ -14,7 +18,7 @@
 
 <AuthorizeView Policy="Organizer">
     <p class="actions">
-        <button @onclick="@CreateEvent" class="btn btn-outline-success" type="submit"><i class="oi oi-plus"></i> Create</button>
+        <button @onclick="@CreateEvent" class="button simple-button" type="submit"><i class="oi oi-plus"></i> Create</button>
     </p>
     
     <h3>Organizer Events</h3>
@@ -25,7 +29,7 @@
             {
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
-                        <div class="card h-100" style="width: 22rem;">
+                        <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
                             <div class="card-body">
                                 <h5 class="card-title">@item.Name</h5>
                                 @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
@@ -45,11 +49,11 @@
                                     <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
                                 }
                             </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                            @*<div class="card-footer text-center">
+                                <button class="simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
                                     More
                                 </button>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                 </div>
@@ -69,7 +73,7 @@
             {
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
-                        <div class="card h-100" style="width: 22rem;">
+                        <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
                             <div class="card-body">
                                 <h5 class="card-title">@item.Name</h5>
                                 @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
@@ -89,11 +93,11 @@
                                     <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
                                 }
                             </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                            @*<div class="card-footer text-center">
+                                <button class="simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
                                     More
                                 </button>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
                 {
                     <div class="row row-cols-1 row-cols-md-3">
                         <div class="col mb-4">
-                            <div class="card h-100" style="width: 22rem;">
+                            <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">@item.Name</h5>
                                     @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
@@ -134,11 +138,11 @@
                                         <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
                                     }
                                 </div>
-                                <div class="card-footer text-center">
-                                    <button class="btn btn-outline-primary" @onclick="@(() => NavigateToEvent(item.Id))">
+                                @*<div class="card-footer text-center">
+                                    <button class="simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
                                         More
                                     </button>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                     </div>

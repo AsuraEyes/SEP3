@@ -9,7 +9,7 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <button class="btn btn-outline-primary" @onclick="Open">
+        <button class="button simple-button" @onclick="Open">
             <i class="oi oi-person"></i>
         </button>
         @if (showModal)
@@ -18,8 +18,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Sign in</h5>
-                            <button type="button" class="btn btn-outline-secondary" @onclick="Close">
+                            <h3 class="modal-title">Sign in</h3>
+                            <button type="button" class="button simple-button" @onclick="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -40,8 +40,8 @@
                             }
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" @onclick="CreateAccount">Create Account</button>
-                            <button type="submit" class="btn btn-outline-primary" @onclick="PerformLoginAsync">Login</button>
+                            <button type="button" class="button simple-button" @onclick="CreateAccount">Create Account</button>
+                            <button type="submit" class="button simple-button" @onclick="PerformLoginAsync">Login</button>
                         </div>
                     </div>
                 </div>
@@ -49,8 +49,8 @@
         }
     </NotAuthorized>
     <Authorized>
-        <span class="input-group-text text-white bg-primary">@username</span>
-        <button class="btn btn-outline-primary" @onclick="PerformLogoutAsync">
+        <span id="username-top-row">@username</span>
+        <button class="button simple-button" @onclick="PerformLogoutAsync">
             Logout <i class="oi oi-account-logout"></i>
         </button>
     </Authorized>

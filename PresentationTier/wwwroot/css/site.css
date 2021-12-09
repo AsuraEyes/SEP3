@@ -1,5 +1,10 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --yellow-color:#AC8E02;
+    --violet-color:#18062E;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -16,6 +21,7 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
+    
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -47,7 +53,7 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
 
 .spinner{
     border: 16px solid silver;
-    border-top: 16px solid #337AB7;
+    border-top: 16px solid var(--yellow-color);
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -65,10 +71,173 @@ https://medium.com/@kajepratik/how-to-display-loading-indicator-while-blazor-com
     }
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
-    
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+/*---------------------------------------------------*/
+
+
+/*GENERAL*/
+li{
+    list-style: none;
+}
+*{
+    background-color: var(--violet-color);
+    color: white;
+}
+
+
+/*LINKS*/
+.main a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.main a::after{
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--yellow-color);
+    transition: 0.5s;
+    /*border-bottom: 2px solid white;
+    transition: width 0.5s;*/
+}
+.main a:hover::after{
+    width: 100%;
+}
+
+
+/*HEADINGS*/
+h1, h2{
+    font-family: Didot, serif;
+    margin-bottom: 1em;
+}
+h1, h2, h3{
+    color: var(--yellow-color);
+}
+h3, h4{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-variant: small-caps;
+}
+h1{
+    font-size: 4em;
+}
+h2{
+    font-size: 3em;
+}
+h3{
+    font-size: 2em;
+}
+
+
+/*GRID*/
+.grid-container-payment{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.grid-container-fifty-fifty{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1.5px solid var(--yellow-color);
+    padding: 1rem;
+}
+.grid-container-thirds{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1.5px solid var(--yellow-color);
+    padding: 1rem;
+}
+#payment_overview{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    width: 20em;
+}
+.remove-line-above{
+    border-top: none;
+}
+
+
+/*BUTTONS*/
+.button{
+    padding: 0.7em;
+    margin: 1em;
+    font-variant: small-caps;
+    border: 1px solid var(--yellow-color);
+}
+.button:hover{
+    transition: 0.5s;
+}
+.simple-button:hover{
+    color: var(--yellow-color);
+}
+.delete-button{
+    border: 1px solid red;
+}
+.delete-button:hover{
+    color: red;
+}
+.button:hover .oi, .button:hover span{
+    color: var(--yellow-color);
+    transition: 0.5s;
+}
+
+/*FORM*/
+.form-field{
+    border: none;
+    border-bottom: 2px solid white;
+    outline: 0;
+    margin-bottom: 1em;
+}
+.grid-container-payment .form-field, .grid-container-payment label{
+    padding: 0.5em;
+}
+.input-text-area{
+    border: 1px solid white;
+}
+
+
+/*CARDS*/
+.card{
+    border: 1px solid white;
+    border-radius: 0;
+    background: none;
+}
+.card:hover{
+    border: 1px solid var(--yellow-color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card:hover h5{
+    color: var(--yellow-color);
+    transition: 0.5s;
+}
+
+
+/*TOP ROW*/
+.top-row[b-xp7kt5tolp]{
+    background-color: var(--violet-color) !important;
+    height: 5em !important;
+} 
+
+/*LOGIN*/
+.modal{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content{
+    border: 1.5px white solid;
+}
+.modal-header, .modal-footer, .modal-content{
+    border-radius: 0;
+}
+#username-top-row{
+    font-variant: small-caps;
+    color: var(--yellow-color);
+    font-size: 1.7em;
+}

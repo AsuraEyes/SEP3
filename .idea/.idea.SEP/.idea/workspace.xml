@@ -19,106 +19,164 @@
     <projectFile profileName="WebApplication">BusinessTier/BusinessTier.csproj</projectFile>
     <projectFile profileName="IIS Express">PresentationTier/PresentationTier.csproj</projectFile>
     <projectFile profileName="Presentation_Layer">PresentationTier/PresentationTier.csproj</projectFile>
+    <projectFile profileName="PresentationTier">PresentationTier/PresentationTier.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="css file path rename">
-      <change afterPath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPGGLResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGGLRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGGLResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/.vs/BusinessTier/v16/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/.vs/ProjectSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessTier/.vs/slnx.sqlite" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="push">
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/META-INF/JAXB/episode_xjc.xjb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameEndpoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/UserEndpoint$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/UserEndpoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/SEP/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/SEP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SEP3/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/Games.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/games/Games.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/users/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/GamesEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/GamesEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/java/com/example/producingwebservice/webService/UsersEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/resources/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/src/main/resources/bookAndPlay.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/META-INF/JAXB/episode_xjc.xjb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/bookAndPlay.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/games/GameDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/games/GameDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/games/Games.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/games/Games.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO$UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/users/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/GamesEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/GamesEndpoint$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/GamesEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/GamesEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/com/example/producingwebservice/webService/UsersEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/Filter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/ObjectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPGameRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/classes/io/spring/guides/gs_producing_web_service/SOAPUserRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc.xjb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/CategoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/CategoryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/EventList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameListUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/GameListUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/MonthlyFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/MonthlyFee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/ObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/OneTimeFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/OneTimeFee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPCategoryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventGameListResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventOrganizerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPEventResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameListResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPGameResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPMonthlyFeeResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOneTimeFeeResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPOrganizerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPParticipantResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/SOAPUserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/UserList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLayer[Java]/target/generated-sources/jaxb/io/spring/guides/gs_producing_web_service/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/.vs/BusinessLayer/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/.vs/BusinessLayer/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/ConnectedService.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/ConnectedService.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/Reference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Connected Services/BookAndPlaySOAP/Reference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/GameWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IGameWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/IUserWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/GameMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IGameMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/IUserMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Middlepoint/UserMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IGameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventGameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventGameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventOrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventOrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/OrganizerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/ParticipantController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/ParticipantController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/FeeControllers/FeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/FeeControllers/FeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameListController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/GameControllers/GameListController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/GameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/GameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/IGameMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/GameMiddlePoints/Games/IGameMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/IUserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/IUserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/UserMiddlePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/eventGameLists/EventGameLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/gameLists/GameListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/gameLists/GameListDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/users/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventsEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/EventEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GameListEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GameListEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GamesEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/GameEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/UsersEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/webService/Endpoints/UserEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/resources/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/eventGameLists/EventGameListDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/eventGameLists/EventGameListDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/eventGameLists/EventGameLists.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/eventGameLists/EventGameLists.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO$GameMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO$GameMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO$IntegerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/games/GameDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/games/GameDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO$UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO$UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventGameListEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventsEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventsEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameListEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameListEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameListEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GameListEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GamesEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/GamesEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/MonthlyFeeEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OneTimeFeeEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/OrganizerEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/ParticipantEndpoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/UsersEndpoint$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/UsersEndpoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Filter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/GameListUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventGameListRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventGameListRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPEventResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameListRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameListRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPGameRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPMonthlyFeeResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOneTimeFeeResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPOrganizerResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPParticipantResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/web_service/SOAPUserResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc_1.xjb" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/META-INF/JAXB/episode_xjc_1.xjb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/CategoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/CategoryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/EventList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/EventList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/GameList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/GameListUpdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/MonthlyFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/MonthlyFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/OneTimeFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/OneTimeFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPCategoryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventGameListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventOrganizerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPEventResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGGLResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPGameResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPMonthlyFeeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOneTimeFeeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPOrganizerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPParticipantResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/SOAPUserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/generated-sources/jaxb/dk/bookandplay/web_service/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/EventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/EventGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/IEventGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/EventGameLists/IEventGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/EventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Events/IEventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Organizers/OrganizerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Organizers/OrganizerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Participants/ParticipantService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/EventServices/Participants/ParticipantService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/FeeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/FeeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/IFeeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/FeeServices/IFeeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/GameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/GameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/IGameListService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/GameLists/IGameListService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/GameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/GameServices/Games/IGameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/UserServices/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserServices/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Data/UserServices/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Data/UserServices/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Models/Event.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,17 +196,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/em_du/Documents/SEP3/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/em_du/Documents/SEP3/Presentation_Layer/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/_Host.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -160,6 +216,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -168,10 +226,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.PresentationTier: Presentation_Layer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PresentationTier">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -187,127 +245,7 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="BankServer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Blazor" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blazor/Blazor.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="Blazor" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Blazor: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blazor/Blazor.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Blazor: SEP3-Blazor" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blazor/Blazor.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="SEP3-Blazor" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
     <configuration name="BusinessLayer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="BusinessLayer" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="BusinessLayer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="BusinessLayer: WebApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessLayer/BusinessLayer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="WebApplication" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="BusinessTier: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="BusinessTier: WebApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BusinessTier/BusinessTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
       <option name="LAUNCH_PROFILE_NAME" value="WebApplication" />
@@ -322,115 +260,10 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="PresentationLayer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationLayer/PresentationLayer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="PresentationLayer" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="PresentationLayer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationLayer/PresentationLayer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="PresentationTier: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+    <configuration name="PresentationTier" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationTier/PresentationTier.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="PresentationTier: Presentation_Layer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PresentationTier/PresentationTier.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="Presentation_Layer" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Presentation_Layer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="Presentation_Layer" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Presentation_Layer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation_Layer/Presentation_Layer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="SOAP_csharp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SOAP_csharp/SOAP_csharp.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="SOAP_csharp" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="SOAP_csharp: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/SOAP_csharp/SOAP_csharp.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="LAUNCH_PROFILE_NAME" value="PresentationTier" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -444,23 +277,8 @@
     </configuration>
     <list>
       <item itemvalue=".NET Launch Settings Profile.BankServer" />
-      <item itemvalue=".NET Launch Settings Profile.BankServer: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.Blazor" />
-      <item itemvalue=".NET Launch Settings Profile.Blazor: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.Blazor: SEP3-Blazor" />
       <item itemvalue=".NET Launch Settings Profile.BusinessLayer" />
-      <item itemvalue=".NET Launch Settings Profile.BusinessLayer: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.BusinessLayer: WebApplication" />
-      <item itemvalue=".NET Launch Settings Profile.Presentation_Layer" />
-      <item itemvalue=".NET Launch Settings Profile.Presentation_Layer: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.PresentationLayer" />
-      <item itemvalue=".NET Launch Settings Profile.PresentationLayer: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.SOAP_csharp" />
-      <item itemvalue=".NET Launch Settings Profile.SOAP_csharp: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.BusinessTier: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.BusinessTier: WebApplication" />
-      <item itemvalue=".NET Launch Settings Profile.PresentationTier: IIS Express" />
-      <item itemvalue=".NET Launch Settings Profile.PresentationTier: Presentation_Layer" />
+      <item itemvalue=".NET Launch Settings Profile.PresentationTier" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -517,56 +335,12 @@
       <workItem from="1638355192437" duration="7683000" />
       <workItem from="1638432160074" duration="9771000" />
       <workItem from="1638518842375" duration="8768000" />
-      <workItem from="1638802769369" duration="24604000" />
-    </task>
-    <task id="LOCAL-00003" summary="business server not working&#10;localhost redirected you too many times">
-      <created>1635858442101</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1635858442101</updated>
-    </task>
-    <task id="LOCAL-00004" summary="BusinessLayer - Presentation_Layer is fucking working dude">
-      <created>1635864085141</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1635864085141</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Hello World! works">
-      <created>1636110199014</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1636110199014</updated>
-    </task>
-    <task id="LOCAL-00006" summary="works part2">
-      <created>1636111003133</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1636111003133</updated>
-    </task>
-    <task id="LOCAL-00007" summary="works3">
-      <created>1636111757205</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1636111757205</updated>
-    </task>
-    <task id="LOCAL-00008" summary="database">
-      <created>1636457623411</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1636457623412</updated>
-    </task>
-    <task id="LOCAL-00009" summary="c# changes">
-      <created>1636551371863</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1636551371863</updated>
+      <workItem from="1638802769369" duration="29695000" />
+      <workItem from="1638896234376" duration="2433000" />
+      <workItem from="1638950950724" duration="3192000" />
+      <workItem from="1638961274562" duration="309000" />
+      <workItem from="1638961700320" duration="1426000" />
+      <workItem from="1638963768792" duration="18191000" />
     </task>
     <task id="LOCAL-00010" summary="authentication presentation layer">
       <created>1637160317844</created>
@@ -862,7 +636,56 @@
       <option name="project" value="LOCAL" />
       <updated>1638877241654</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="user pagination/search">
+      <created>1638887338452</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1638887338452</updated>
+    </task>
+    <task id="LOCAL-00053" summary="List of game objects =&gt; List of game ids">
+      <created>1638892555923</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1638892555923</updated>
+    </task>
+    <task id="LOCAL-00054" summary="json issue fixed">
+      <created>1638954466321</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1638954466321</updated>
+    </task>
+    <task id="LOCAL-00055" summary="renamed namespace and reformatted stuff">
+      <created>1638961864752</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1638961864752</updated>
+    </task>
+    <task id="LOCAL-00056" summary="packages, packages, namespaces, namespaces.............">
+      <created>1638970013749</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1638970013749</updated>
+    </task>
+    <task id="LOCAL-00057" summary="packages packages java, mm, mm, yummy, uu, aa, ee,">
+      <created>1638975018877</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1638975018877</updated>
+    </task>
+    <task id="LOCAL-00058" summary="push">
+      <created>1639042990464</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1639042990464</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -881,32 +704,11 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="filtering implementation blazor to database" />
-    <MESSAGE value="added event gameList view java to blazor" />
-    <MESSAGE value="r" />
-    <MESSAGE value="special push" />
-    <MESSAGE value="filter with filter Object everywhere" />
-    <MESSAGE value="resultsPerPage are on the page" />
     <MESSAGE value="a" />
     <MESSAGE value="fixed game middlepoint" />
     <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
@@ -926,6 +728,12 @@
     <MESSAGE value="search/pagination GGL" />
     <MESSAGE value="pagination/search GGL" />
     <MESSAGE value="css file path rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="css file path rename" />
+    <MESSAGE value="user pagination/search" />
+    <MESSAGE value="List of game objects =&gt; List of game ids" />
+    <MESSAGE value="renamed namespace and reformatted stuff" />
+    <MESSAGE value="packages, packages, namespaces, namespaces............." />
+    <MESSAGE value="packages packages java, mm, mm, yummy, uu, aa, ee," />
+    <MESSAGE value="push" />
+    <option name="LAST_COMMIT_MESSAGE" value="push" />
   </component>
 </project>

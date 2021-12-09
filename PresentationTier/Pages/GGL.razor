@@ -2,35 +2,43 @@
 
 @using PresentationTier.Models
 @using PresentationTier.Data
+@using PresentationTier.Data.GameServices
+@using PresentationTier.Data.GameServices.Games
 
 @inject NavigationManager navigationManager
 @inject IGameService gameService
 
-<h3>GGL</h3>
-<input type="text" @bind-value="searchName"  style="width: 250px"/>
-<button @onclick="@SearchGameAsync" class="btn btn-outline-secondary" type="submit">Search</button>
+<h2>GGL</h2>
+<div class="grid-container-fifty-fifty">
+        <div>
+                @foreach (var item in goldenGameList)
+                {
+                        if (item.Approved )
+                        {
+                                <ul>
+                                        <li @onclick="@(() => EditGame(item.Id))"><a href="#">@item.Name</a></li>
+                                </ul>
+                        }
+                }
+                @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
+                {
+                        <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Load more
+                        </button>
+                }   
+        </div>
+        <div>
+                <input class="form-field" type="text" @bind-value="searchName" style="width: 250px"/>
+                <button @onclick="@SearchGameAsync" class="button simple-button" type="submit">Search</button>
+                      
+                <p class="actions">
+                        <button @onclick="@AddGame" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Add
+                        </button>
+                </p>
+        </div>
+</div>
 
-<p class="actions">
-        <button @onclick="@AddGame" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Add
-        </button>
-</p>
- @foreach (var item in goldenGameList)
-         {
-                 if (item.Approved )
-                 {
-                         <ul>
-                                 <li @onclick="@(() => EditGame(item.Id))"><a href="#">@item.Name</a></li>
-                         </ul>
-                 }
-         }
-@if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
-{
-        <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Load more
-        </button>
-}
- 
 
 @code {
         private IList<Game> goldenGameListPage = new List<Game>();

@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using ExpressiveAnnotations.Attributes;
-using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationTier.Models
 {
@@ -25,7 +24,7 @@ namespace PresentationTier.Models
         [RequiredIf("End > Today() && (Compare(End, Start)) <= 0", 
             ErrorMessage = "The end time must be later than the start time.")]
         public DateTime? End { get; set; }
-
+        
         public DateTime StartTime{ get; set; }
         
         public DateTime EndTime{ get; set; }
@@ -48,6 +47,5 @@ namespace PresentationTier.Models
         [Required]
         [AssertThat("EventCategory >= 1", ErrorMessage = "Select a category")]
         public int EventCategory{ get; set; }
-
     }
 }
