@@ -17,7 +17,7 @@
             @if (monthlyFee != null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
             {
                 <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
-                <button class="simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+                <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
             }
             else
             {

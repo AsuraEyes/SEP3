@@ -25,9 +25,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="links css">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="MyEvents.razor CSS done, cards styled">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -440,13 +443,6 @@
       <workItem from="1638518842375" duration="8768000" />
       <workItem from="1638802769369" duration="24604000" />
     </task>
-    <task id="LOCAL-00007" summary="works3">
-      <created>1636111757205</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1636111757205</updated>
-    </task>
     <task id="LOCAL-00008" summary="database">
       <created>1636457623411</created>
       <option name="number" value="00008" />
@@ -783,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638976151131</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="MyEvents.razor CSS done, cards styled">
+      <created>1638977209910</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1638977209910</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -822,7 +825,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="filter with filter Object everywhere" />
     <MESSAGE value="resultsPerPage are on the page" />
     <MESSAGE value="a" />
     <MESSAGE value="fixed game middlepoint" />
@@ -847,6 +849,7 @@
     <MESSAGE value="menu CSS done" />
     <MESSAGE value="PaymentOverview.razor, Payment.razor css" />
     <MESSAGE value="links css" />
-    <option name="LAST_COMMIT_MESSAGE" value="links css" />
+    <MESSAGE value="MyEvents.razor CSS done, cards styled" />
+    <option name="LAST_COMMIT_MESSAGE" value="MyEvents.razor CSS done, cards styled" />
   </component>
 </project>

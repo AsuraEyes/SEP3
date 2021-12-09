@@ -2,6 +2,7 @@
 
 :root {
     --yellow-color:#AC8E02;
+    --violet-color:#18062E;
 }
 
 html, body {
@@ -85,7 +86,7 @@ li{
     list-style: none;
 }
 *{
-    background-color: #18062E;
+    background-color: var(--violet-color);
     color: white;
 }
 
@@ -155,16 +156,23 @@ h3{
 
 
 /*BUTTONS*/
-.simple-button{
-    border: 1px solid white;
+.button{
     padding: 0.7em;
     margin: 1em;
     font-variant: small-caps;
+    border: 1px solid var(--yellow-color);
+}
+.button:hover{
+    transition: 0.5s;
 }
 .simple-button:hover{
-    border: 1px solid var(--yellow-color);
     color: var(--yellow-color);
-    transition: 0.5s;
+}
+.delete-button{
+    border: 1px solid red;
+}
+.delete-button:hover{
+    color: red;
 }
 
 
