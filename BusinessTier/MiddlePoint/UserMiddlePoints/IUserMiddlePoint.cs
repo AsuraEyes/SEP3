@@ -11,8 +11,8 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
         Task CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
         Task RequestPromotionToOrganizer(string username);
-        Task AcceptPromotion(User user);
-        Task DeclinePromotion(User user);
+        Task AcceptPromotion(string username);
+        Task DeclinePromotion(string username);
         Task<IList<User>> GetUsersAsync(FilterRest filterRest);
     }
 }

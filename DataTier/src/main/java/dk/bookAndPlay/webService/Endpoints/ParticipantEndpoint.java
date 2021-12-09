@@ -41,8 +41,6 @@ public class ParticipantEndpoint
         case GETALL:
         response.getParticipantList().addAll(participantsDAO.getParticipantList(request.getEventId()));
           break;
-        case REMOVE:
-          // usersDAO.delete(request.getId());
       }
       return response;
     }

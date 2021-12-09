@@ -19,7 +19,7 @@ namespace PresentationTier.Data.EventServices.Organizers
 
         public async Task<IList<string>> GetOrganizersAsync(int id)
         {
-            var stringAsync = client.GetStringAsync(uri + $"/Organizers/{id}");
+            var stringAsync = client.GetStringAsync(uri + $"/Organizer/{id}");
             var organizers = await stringAsync;
             var organizersList = JsonSerializer.Deserialize<List<string>>(organizers, new JsonSerializerOptions
             {
@@ -32,14 +32,13 @@ namespace PresentationTier.Data.EventServices.Organizers
         {
             var organizerAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await client.PostAsync(uri + $"/Organizers/{id}", content);
+            await client.PostAsync(uri + $"/Organizer/{id}", content);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
         {
-            var organizerAsJson = JsonSerializer.Serialize(username);
-            HttpContent content = new StringContent(organizerAsJson, Encoding.UTF8, "application/json");
-            await client.PatchAsync(uri + $"/Organizers/{id}", content);
+            string withdrawal = $"?id={id}&username={username}";
+            await client.DeleteAsync(uri + "/Organizer" + withdrawal);
         }
         
         public async Task<EventList> GetCoOrganizerEventsAsync(string username)

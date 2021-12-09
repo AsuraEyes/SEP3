@@ -17,16 +17,6 @@ namespace PresentationTier.Data.EventServices.Events
             client = new HttpClient();
         }
 
-        public async Task<IList<Event>> GetEventsAsync()
-        {
-            var stringAsync = await client.GetStringAsync(uri + "/Events");
-            var events = JsonSerializer.Deserialize<List<Event>>(stringAsync, new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
-            return events;
-        }
-
         public async Task<EventList> GetFilteredEventsAsync(FilterREST filterRest)
         {
             var filters =
@@ -60,7 +50,7 @@ namespace PresentationTier.Data.EventServices.Events
         
         public async Task CancelEventAsync(Event eventToBeCancelled)
         {
-            await client.DeleteAsync($"{uri}/Events/{eventToBeCancelled.Id}");
+            await client.DeleteAsync($"{uri}/Event/{eventToBeCancelled.Id}");
         }
 
         public async Task EditEventAsync(Event eventToBeEdited)

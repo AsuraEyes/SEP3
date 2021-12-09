@@ -27,9 +27,8 @@ namespace BusinessTier.Controllers.GameControllers
         }
         
         [HttpGet]
-        [Route("/UserGames")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesAsync([FromQuery]String username)
+            GetUserGamesAsync([FromQuery]string username)
         {
             try
             {
@@ -43,17 +42,16 @@ namespace BusinessTier.Controllers.GameControllers
             }
         }
 
-        [HttpPost]
-        [Route("/UpdateGame")]
-        public async Task UpdateUserGamesAsync([FromBody] GameListUpdate gameListUpdate)
+        [HttpPatch]
+        public async Task EditUserGamesAsync([FromBody] GameListUpdate gameListUpdate)
         {
             await gameListMiddlePoint.GameListUpdate(gameListUpdate);
         }
         
         [HttpGet]
-        [Route("/UserGamesIds")]
+        [Route("Ids")]
         public async Task<ActionResult<IList<Game>>>
-            GetUserGamesIdsAsync([FromQuery]String username)
+            GetUserGamesIdsAsync([FromQuery]string username)
         {
             try
             {

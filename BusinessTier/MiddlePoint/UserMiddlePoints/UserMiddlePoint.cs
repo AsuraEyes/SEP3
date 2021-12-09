@@ -47,15 +47,17 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
             await userWebService.UpdateUser(userToBePromoted);
         }
 
-        public async Task AcceptPromotion(User user)
+        public async Task AcceptPromotion(string username)
         {
+            var user = await userWebService.GetUserAsync(username);
             user.role = 3;
             user.requestedPromotion = false;
             await userWebService.UpdateUser(user);
         }
         
-        public async Task DeclinePromotion(User user)
+        public async Task DeclinePromotion(string username)
         {
+            var user = await userWebService.GetUserAsync(username);
             user.requestedPromotion = false;
             await userWebService.UpdateUser(user);
         }

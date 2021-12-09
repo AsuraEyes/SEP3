@@ -68,12 +68,6 @@ public class UserDAO implements Users {
         helper().executeUpdate("DELETE FROM \"user\" WHERE username = ?", username);
     }
 
-    public UserList getUserlist() {
-        userList.getUserList().clear();
-        userList.getUserList().addAll(helper().map(new UserMapper(), "SELECT * FROM \"user\""));
-        return userList;
-    }
-
     public UserList getUserList(Filter filter){
         String search = "%"+filter.getFilter()+"%";
         userList.getUserList().clear();

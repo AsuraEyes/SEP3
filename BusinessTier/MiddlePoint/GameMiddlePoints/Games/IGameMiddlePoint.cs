@@ -9,7 +9,7 @@ namespace BusinessTier.MiddlePoint.GameMiddlePoints.Games
     {
         Task AddGameAsync(Game game);
         Task<IList<int>> GetUserGamesIdsAsync(string user);
-        Task UpdateGameApprovalAsync(Game game);
+        Task EditGameApprovalAsync(Game game);
         Task<IList<Game>> GetLimitedSearchGglAsync(FilterRest filterRest);
     }
 }

@@ -12,14 +12,14 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
-public class EventsEndpoint
+public class EventEndpoint
 {
   private static final String NAMESPACE_URI = "http://bookAndPlay.dk/web-service";
 
   private final Events eventsDAO;
 
   @Autowired
-  public EventsEndpoint(Events dao) {
+  public EventEndpoint(Events dao) {
     this.eventsDAO = dao;
   }
 
@@ -51,20 +51,9 @@ public class EventsEndpoint
   public SOAPEventOrganizerResponse eventOrganizerResponse(@RequestPayload SOAPEventOrganizerRequest request) {
     SOAPEventOrganizerResponse response = new SOAPEventOrganizerResponse();
     switch (request.getOperation()){
-      case GET:
-        //response.setEvent(eventsDAO.get(request.getId()));
-        break;
-      case CREATE:
-        //eventsDAO.create(request.getEvent());
-        break;
-      case UPDATE:
-        //eventsDAO.patch(request.getEvent());
-        break;
       case GETALL:
        response.setEventList(eventsDAO.getOrganizersEvents(request.getUsername()));
         break;
-      case REMOVE:
-       // eventsDAO.cancel(request.getId());
     }
     return response;
   }

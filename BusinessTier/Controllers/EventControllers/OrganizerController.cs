@@ -19,7 +19,7 @@ namespace BusinessTier.Controllers.EventControllers
         }
 
         [HttpGet]
-        [Route("/Organizers/{id}")]
+        [Route("{id:int}")]
         public async Task<ActionResult<IList<string>>>
             GetOrganizersAsync(int id)
         {
@@ -36,7 +36,7 @@ namespace BusinessTier.Controllers.EventControllers
         }
         
         [HttpPost]
-        [Route("/Organizers/{id}")]
+        [Route("{id:int}")]
         public async Task JoinEventResultAsync(int id, [FromBody] string username)
         {
             if (!ModelState.IsValid)
@@ -56,9 +56,8 @@ namespace BusinessTier.Controllers.EventControllers
             }
         }
 
-        [HttpPatch]
-        [Route("/Organizers/{id}")]
-        public async Task WithdrawEventAsync(int id, [FromBody] string username)
+        [HttpDelete]
+        public async Task WithdrawEventAsync([FromQuery]int id, [FromQuery] string username)
         {
             try
             {

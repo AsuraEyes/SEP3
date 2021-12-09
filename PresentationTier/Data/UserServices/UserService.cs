@@ -28,7 +28,7 @@ namespace PresentationTier.Data.UserServices
                 HttpContent content = new StringContent(userAsJson,
                     Encoding.UTF8,
                     "application/json");
-                var userValidationResponseMessage = await client.PostAsync(uri + "/User", content);
+                var userValidationResponseMessage = await client.PostAsync(uri + "/User/Login", content);
                 if (userValidationResponseMessage.IsSuccessStatusCode)
                 {
                     string responseContent = userValidationResponseMessage.Content.ReadAsStringAsync().Result;
@@ -54,13 +54,13 @@ namespace PresentationTier.Data.UserServices
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-           var message = await client.PostAsync(uri+"/User/CreateAccount", content);
+           var message = await client.PostAsync(uri+"/User", content);
            return message.IsSuccessStatusCode ? "success" : "Username has already been taken.";
         }
         
         public async Task<User> GetUserByUsernameAsync(string username)
         {
-            var stringAsync = client.GetStringAsync(uri + $"/User/{username}");
+            var stringAsync = client.GetStringAsync(uri + $"/User?username={username}");
             var userAsync = await stringAsync;
             var user = JsonSerializer.Deserialize<User>(userAsync, new JsonSerializerOptions
             {
@@ -76,25 +76,22 @@ namespace PresentationTier.Data.UserServices
                 Encoding.UTF8,
                 "application/json");
             
-            await client.PostAsync(uri+"/User/RequestPromotion", content);
+            await client.PostAsync(uri+"/User/Promotion", content);
         }
 
-        public async Task AcceptPromotionAsync(User user)
+        public async Task AcceptPromotionAsync(string username)
         {
-            var userAsJson = JsonSerializer.Serialize(user);
+            var userAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PostAsync(uri+"/User/AcceptPromotion", content);
+            await client.PatchAsync(uri+"/User/Promotion", content);
         }
         
-        public async Task DeclinePromotionAsync(User user)
+        public async Task DeclinePromotionAsync(string username)
         {
-            var userAsJson = JsonSerializer.Serialize(user);
-            HttpContent content = new StringContent(userAsJson,
-                Encoding.UTF8,
-                "application/json");
-            await client.PostAsync(uri+"/User/DeclinePromotion", content);
+
+            await client.DeleteAsync(uri+$"/User/Promotion/?username={username}");
         }
         
         public async Task DeleteAccountAsync(string username)
@@ -105,7 +102,7 @@ namespace PresentationTier.Data.UserServices
         public async Task<IList<User>> GetUsersAsync(FilterREST filterRest)
         {
             var filter = $"?Search={filterRest.Search}&CurrentPage={filterRest.CurrentPage}";
-            var usersAsJson = client.GetStringAsync(uri + "/Users" + filter);
+            var usersAsJson = client.GetStringAsync(uri + "/User/All" + filter);
             var user = await usersAsJson;
             var users = JsonSerializer.Deserialize<IList<User>>(user, new JsonSerializerOptions
             {
@@ -120,7 +117,7 @@ namespace PresentationTier.Data.UserServices
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PatchAsync(uri+"/User/EditAccount", content);
+            await client.PatchAsync(uri+"/User", content);
         }
     }
 }

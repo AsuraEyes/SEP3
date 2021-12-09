@@ -53,12 +53,6 @@ public class GameListDAO implements GameLists
     return gameHelper;
   }
 
-  private DatabaseHelper<Integer> integerHelper(){
-    if(integerHelper == null)
-      integerHelper = new DatabaseHelper<>(jdbcUrl, username, password);
-    return integerHelper;
-  }
-
   public Game create(Game game) {
     gameHelper().executeUpdate(
         "INSERT INTO game(name, complexity, time_estimation, min_number_of_players, max_number_of_players, short_description, needed_equipment, min_age, max_age, tutorial, approved) "
@@ -104,10 +98,4 @@ public class GameListDAO implements GameLists
     }
   }
 
-  private static class IntegerMapper implements DataMapper<Integer> {
-    public Integer create(ResultSet rs)
-            throws SQLException {
-      return rs.getInt("count");
-    }
-  }
 }

@@ -74,7 +74,7 @@
     {
         if (approval)
         {
-            await gameService.UpdateGameApprovalAsync(game);
+            await gameService.EditGameApprovalAsync(game);
             navigationManager.NavigateTo("RequestsForGGL");
         }
         else

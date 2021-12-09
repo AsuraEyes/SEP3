@@ -7,7 +7,7 @@ namespace PresentationTier.Data.GameServices.GameLists
     public interface IGameListService
     {
         Task<IList<Game>> GetUserGamesAsync(string username);
-        Task UpdateUserGamesAsync(string username, int gameId, bool inList);
+        Task EditUserGamesAsync(string username, int gameId, bool inList);
         Task<IList<int>> GetUserGamesIdsAsync(string username);
     }
 }

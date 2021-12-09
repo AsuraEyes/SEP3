@@ -50,7 +50,7 @@ namespace BusinessTier.MiddlePoint.GameMiddlePoints.Games
             return userGames.Select(g => g.id).ToList();
         }
 
-        public async Task UpdateGameApprovalAsync(Game game)
+        public async Task EditGameApprovalAsync(Game game)
         {
             game.approved = true;
             await gameWebService.EditGameAsync(game);

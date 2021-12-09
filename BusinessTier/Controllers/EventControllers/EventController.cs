@@ -91,7 +91,7 @@ namespace BusinessTier.Controllers.EventControllers
         }
         
         [HttpDelete]
-        [Route("/Events/{id}")]
+        [Route("{id:int}")]
         public async Task<ActionResult<Event>> CancelEventAsync(int id)
         {
             if (!ModelState.IsValid)

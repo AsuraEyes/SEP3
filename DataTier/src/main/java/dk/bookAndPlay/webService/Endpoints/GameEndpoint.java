@@ -12,13 +12,13 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
-public class GamesEndpoint {
+public class GameEndpoint {
     private static final String NAMESPACE_URI = "http://bookAndPlay.dk/web-service";
 
     private final Games gamesDAO;
 
     @Autowired
-    public GamesEndpoint(Games dao) {
+    public GameEndpoint(Games dao) {
         this.gamesDAO = dao;
     }
 

@@ -42,8 +42,7 @@ public class OrganizerEndpoint
         case GETALL:
           response.getOrganizerList().addAll(organizersDAO.getOrganizerList(request.getEventId()));
           break;
-        case REMOVE:
-          // usersDAO.delete(request.getId());
+
       }
       return response;
     }

@@ -92,7 +92,7 @@ else
     private async Task CompletedChangeAsync(ChangeEventArgs arg, int id)
     {
         var inList = arg.Value != null && (bool) arg.Value;
-        await gameListService.UpdateUserGamesAsync(username, id, inList);
+        await gameListService.EditUserGamesAsync(username, id, inList);
     }
     
     private void GoBack()

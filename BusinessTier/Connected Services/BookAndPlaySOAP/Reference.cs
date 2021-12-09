@@ -1085,8 +1085,6 @@ namespace BookAndPlaySOAP
         
         private Operation operationField;
         
-        private User participantField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int eventId
@@ -1126,20 +1124,6 @@ namespace BookAndPlaySOAP
             set
             {
                 this.operationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public User Participant
-        {
-            get
-            {
-                return this.participantField;
-            }
-            set
-            {
-                this.participantField = value;
             }
         }
     }
@@ -1487,60 +1471,12 @@ namespace BookAndPlaySOAP
     public partial class SOAPEventResponse
     {
         
-        private int currentPageField;
-        
-        private bool currentPageFieldSpecified;
-        
-        private string notificationField;
-        
         private Event eventField;
         
         private EventList eventListField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int currentPage
-        {
-            get
-            {
-                return this.currentPageField;
-            }
-            set
-            {
-                this.currentPageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool currentPageSpecified
-        {
-            get
-            {
-                return this.currentPageFieldSpecified;
-            }
-            set
-            {
-                this.currentPageFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string notification
-        {
-            get
-            {
-                return this.notificationField;
-            }
-            set
-            {
-                this.notificationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Event Event
         {
             get
@@ -1554,7 +1490,7 @@ namespace BookAndPlaySOAP
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public EventList eventList
         {
             get
@@ -2482,8 +2418,6 @@ namespace BookAndPlaySOAP
         
         private Operation operationField;
         
-        private User organizerField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int eventId
@@ -2523,20 +2457,6 @@ namespace BookAndPlaySOAP
             set
             {
                 this.operationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public User Organizer
-        {
-            get
-            {
-                return this.organizerField;
-            }
-            set
-            {
-                this.organizerField = value;
             }
         }
     }

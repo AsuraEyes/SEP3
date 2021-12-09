@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BusinessTier.Controllers.EventControllers
 {
     [ApiController]
-    [Route("EventOrganizer")]
+    [Route("OrganizerEvents")]
     public class EventOrganizerController : Controller
     {
         private readonly IEventOrganizerWebService eventOrganizerWebService;
@@ -19,7 +19,6 @@ namespace BusinessTier.Controllers.EventControllers
         }
         
         [HttpGet]
-        [Route("/OrganizerEvents")]
         public async Task<ActionResult<IList<Event>>> GetOrganizerEventsAsync([FromQuery] string username)
         {
             try

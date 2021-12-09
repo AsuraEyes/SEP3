@@ -18,7 +18,7 @@ namespace PresentationTier.Data.GameServices.GameLists
         }
         public async Task<IList<Game>> GetUserGamesAsync(string username)
         {
-            var stringAsync = client.GetStringAsync(uri + $"/UserGames/?username={username}");
+            var stringAsync = client.GetStringAsync(uri + $"/GameList/?username={username}");
             var game = await stringAsync;
             var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
@@ -27,20 +27,20 @@ namespace PresentationTier.Data.GameServices.GameLists
             return games;
         }
 
-        public async Task UpdateUserGamesAsync(string username, int gameId, bool inList)
+        public async Task EditUserGamesAsync(string username, int gameId, bool inList)
         {
             var updateAsJson = JsonSerializer.Serialize(new GameListUpdate
                 {Username = username, GameId = gameId, InList = inList});
             HttpContent content = new StringContent(updateAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PostAsync(uri+"/UpdateGame", content);
+            await client.PatchAsync(uri+"/GameList", content);
         }
         
                 
         public async Task<IList<int>> GetUserGamesIdsAsync(string username)
         {
-            var stringAsync = client.GetStringAsync(uri + $"/UserGamesIds/?username={username}");
+            var stringAsync = client.GetStringAsync(uri + $"/GameList/Ids/?username={username}");
             var ids = await stringAsync;
             var gamesIds = JsonSerializer.Deserialize<List<int>>(ids, new JsonSerializerOptions
             {

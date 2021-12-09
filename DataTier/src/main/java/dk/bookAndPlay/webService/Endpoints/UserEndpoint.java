@@ -10,13 +10,13 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
-public class UsersEndpoint {
+public class UserEndpoint {
     private static final String NAMESPACE_URI = "http://bookAndPlay.dk/web-service";
 
     private final Users usersDAO;
 
     @Autowired
-    public UsersEndpoint(Users dao) {
+    public UserEndpoint(Users dao) {
         this.usersDAO = dao;
     }
 

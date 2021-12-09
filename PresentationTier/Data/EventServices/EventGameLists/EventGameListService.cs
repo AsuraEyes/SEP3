@@ -28,14 +28,14 @@ namespace PresentationTier.Data.EventServices.EventGameLists
             return games;
         }
 
-        public async Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList)
+        public async Task EditEventGamesAsync(string username, int gameId, int eventId, bool inList)
         {
             var updateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
                 {Username = username, GameId = gameId, EventId = eventId, InList = inList});
             HttpContent content = new StringContent(updateAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PostAsync(uri+"/UpdateEventGame", content);
+            await client.PatchAsync(uri+"/EventGameList", content);
         }
     }
 }

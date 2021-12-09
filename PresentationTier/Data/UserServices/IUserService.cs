@@ -10,8 +10,8 @@ namespace PresentationTier.Data.UserServices
         Task<string> CreateAccountAsync(User user);
         Task<User> GetUserByUsernameAsync(string username);
         Task RequestPromotionToOrganizerAsync(string username);
-        Task AcceptPromotionAsync(User user);
-        Task DeclinePromotionAsync(User user);
+        Task AcceptPromotionAsync(string username);
+        Task DeclinePromotionAsync(string username);
         Task DeleteAccountAsync(string username);
         Task<IList<User>> GetUsersAsync(FilterREST filterRest);
         Task EditAccountAsync(User user);

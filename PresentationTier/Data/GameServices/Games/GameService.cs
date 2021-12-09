@@ -33,7 +33,7 @@ namespace PresentationTier.Data.GameServices.Games
             HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
-             await client.PostAsync(uri+"/Game", content);
+             await client.PostAsync(uri+"/SuggestedGames", content);
         }
         
         public async Task CreateGameAsync(Game game)
@@ -42,13 +42,13 @@ namespace PresentationTier.Data.GameServices.Games
             HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PostAsync(uri+ "/CreateGame", content);
+            await client.PostAsync(uri+ "/Game", content);
         }
 
         public async Task<IList<Game>> GetLimitedSearchGGLAsync(FilterREST filterRest)
         {
             var search = $"?Search={filterRest.Search}&CurrentPage={filterRest.CurrentPage}";
-            var stringAsync = client.GetStringAsync(uri + "/GGL" + search);
+            var stringAsync = client.GetStringAsync(uri + "/Game/GGL" + search);
             var game = await stringAsync;
             var games = JsonSerializer.Deserialize<List<Game>>(game, new JsonSerializerOptions
             {
@@ -74,16 +74,16 @@ namespace PresentationTier.Data.GameServices.Games
             HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PatchAsync(uri+"/Game/EditGame", content);
+            await client.PatchAsync(uri+"/Game", content);
         }
 
-        public async Task UpdateGameApprovalAsync(Game game)
+        public async Task EditGameApprovalAsync(Game game)
         {
             var gameAsJson = JsonSerializer.Serialize(game);
             HttpContent content = new StringContent(gameAsJson,
                 Encoding.UTF8,
                 "application/json");
-            await client.PatchAsync($"{uri}/Game/", content);
+            await client.PatchAsync($"{uri}/Game/Approval", content);
         }
 
         public async Task RemoveGameAsync(Game game)

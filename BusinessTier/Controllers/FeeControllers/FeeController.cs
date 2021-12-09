@@ -27,7 +27,7 @@ namespace BusinessTier.Controllers.FeeControllers
         
         [HttpPost]
         [Route("OneTime")]
-        public async Task<ActionResult<string>> OneTimeFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
+        public async Task<ActionResult<string>> CreateOneTimeFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
         {
             if (!ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace BusinessTier.Controllers.FeeControllers
         
         [HttpPost]
         [Route("Subscription")]
-        public async Task<ActionResult<string>> MonthlyFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
+        public async Task<ActionResult<string>> CreateMonthlyFeePaymentAsync([FromBody] UserCardInfo userCardInfo)
         {
             if (!ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace BusinessTier.Controllers.FeeControllers
         }
         
         [HttpGet]
-        [Route("Validate")]
+        [Route("Subscription/Valid")]
         public async Task<ActionResult<bool>> CheckSubscriptionAsync([FromQuery] string username)
         {
             try

@@ -62,7 +62,7 @@ public class EventGameListDAO implements EventGameLists
     return game;
   }
 
-  public GameList readAllEventGameList(int eventId) {
+  public GameList getEventGameList(int eventId) {
     gameList.getGameList().clear();
     gameList.getGameList().addAll(helper().map(new GameMapper(), "SELECT * FROM event_game_list l, game g WHERE l.game_id = g.id AND event_id = ?", eventId));
 

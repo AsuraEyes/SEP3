@@ -26,13 +26,11 @@ public class EventGameListEndpoint
   public SOAPEventGameListResponse gameResponse(@RequestPayload SOAPEventGameListRequest request) {
     SOAPEventGameListResponse response = new SOAPEventGameListResponse();
     switch (request.getOperation()) {
-      case GET:
       case CREATE:
         eventGameListDAO.addGameToEventGameList(request.getGameId(), request.getEventId(), request.getUsername());
         break;
-      case UPDATE:
       case GETALL:
-      response.setGameList(eventGameListDAO.readAllEventGameList(request.getEventId()));
+      response.setGameList(eventGameListDAO.getEventGameList(request.getEventId()));
         break;
       case REMOVE:
         eventGameListDAO.removeGameFromEventGameList(request.getGameId(), request.getEventId(), request.getUsername());

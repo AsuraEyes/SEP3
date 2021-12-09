@@ -23,7 +23,7 @@ namespace BusinessTier.Controllers.UserControllers
         }
         
         [HttpPost]
-        [Route("/User")]
+        [Route("Login")]
         public async Task<ActionResult> ValidateUserAsync([FromBody] User user)
         {
             try
@@ -39,7 +39,6 @@ namespace BusinessTier.Controllers.UserControllers
         }
         
         [HttpPost]
-        [Route("/User/CreateAccount")]
         public async Task<ActionResult> CreateAccountAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)
@@ -60,8 +59,7 @@ namespace BusinessTier.Controllers.UserControllers
         }
 
         [HttpGet]
-        [Route("/User/{username}")]
-        public async Task<ActionResult<User>> GetUserByUsernameAsync([FromRoute] string username)
+        public async Task<ActionResult<User>> GetUserByUsernameAsync([FromQuery] string username)
         {
             try
             {
@@ -76,7 +74,7 @@ namespace BusinessTier.Controllers.UserControllers
         }
 
         [HttpPost]
-        [Route("/User/RequestPromotion")]
+        [Route("Promotion")]
         public async Task<ActionResult> RequestPromotionToOrganizerAsync([FromBody] string username)
         {
             if (!ModelState.IsValid)
@@ -110,9 +108,9 @@ namespace BusinessTier.Controllers.UserControllers
             }
         }
         
-        [HttpPost]
-        [Route("/User/AcceptPromotion")]
-        public async Task<ActionResult> AcceptPromotionAsync([FromBody] User user)
+        [HttpPatch]
+        [Route("Promotion")]
+        public async Task<ActionResult> AcceptPromotionAsync([FromBody] string username)
         {
             if (!ModelState.IsValid)
             {
@@ -121,7 +119,7 @@ namespace BusinessTier.Controllers.UserControllers
 
             try
             {
-                await userMiddlePoint.AcceptPromotion(user);
+                await userMiddlePoint.AcceptPromotion(username);
                 return Ok();
             }
             catch (Exception e)
@@ -131,9 +129,9 @@ namespace BusinessTier.Controllers.UserControllers
             }
         }
         
-        [HttpPost]
-        [Route("/User/DeclinePromotion")]
-        public async Task<ActionResult> DeclinePromotionAsync([FromBody] User user)
+        [HttpDelete]
+        [Route("Promotion")]
+        public async Task<ActionResult> DeclinePromotionAsync([FromBody]string username)
         {
             if (!ModelState.IsValid)
             {
@@ -142,7 +140,7 @@ namespace BusinessTier.Controllers.UserControllers
 
             try
             {
-                await userMiddlePoint.DeclinePromotion(user);
+                await userMiddlePoint.DeclinePromotion(username);
                 return Ok();
             }
             catch (Exception e)
@@ -153,7 +151,7 @@ namespace BusinessTier.Controllers.UserControllers
         }
 
         [HttpGet]
-        [Route("/Users")]
+        [Route("All")]
         public async Task<ActionResult<IList<User>>> GetUsersAsync([FromQuery] FilterRest filterRest)
         {
             try
@@ -169,7 +167,6 @@ namespace BusinessTier.Controllers.UserControllers
         }
         
         [HttpPatch]
-        [Route("/User/EditAccount")]
         public async Task<ActionResult> EditAccountAsync([FromBody] User user)
         {
             if (!ModelState.IsValid)

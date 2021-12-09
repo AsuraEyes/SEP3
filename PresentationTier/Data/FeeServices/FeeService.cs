@@ -18,7 +18,7 @@ namespace PresentationTier.Data.FeeServices
             client = new HttpClient();
         }
 
-        public async Task<string> OneTimeFeeAsync(UserCardInfo userCard)
+        public async Task<string> CreateOneTimeFeeAsync(UserCardInfo userCard)
         {
             var userCardJson = JsonSerializer.Serialize(userCard);
             HttpContent content = new StringContent(userCardJson,
@@ -32,7 +32,7 @@ namespace PresentationTier.Data.FeeServices
         public async Task<bool> CheckSubscriptionAsync(string username)
         {
             var query = $"?username={username}";
-            var stringAsync = client.GetStringAsync(uri + $"/Fee/Validate" + query);
+            var stringAsync = client.GetStringAsync(uri + $"/Fee/Subscription/Valid" + query);
             var theString = await stringAsync;
             var message = JsonSerializer.Deserialize<bool>(theString, new JsonSerializerOptions
             {

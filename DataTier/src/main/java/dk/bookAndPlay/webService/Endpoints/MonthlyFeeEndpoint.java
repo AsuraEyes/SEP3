@@ -44,8 +44,6 @@ public class MonthlyFeeEndpoint
           response.getMonthlyFeeList().addAll(monthlyFeeDAO.getMonthlyFeeList(
               request.getUsername()));
           break;
-        case REMOVE:
-          break;
       }
       return response;
     }

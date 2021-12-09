@@ -7,6 +7,6 @@ namespace PresentationTier.Data.EventServices.EventGameLists
     public interface IEventGameListService
     {
         Task<IList<Game>> GetAllEventGameListAsync(int id);
-        Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList);
+        Task EditEventGamesAsync(string username, int gameId, int eventId, bool inList);
     }
 }

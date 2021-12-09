@@ -41,7 +41,7 @@ namespace BusinessTier.Controllers.GameControllers
         }
 
         [HttpGet]
-        [Route("/GGL")]
+        [Route("GGL")]
         public async Task<ActionResult<IList<Game>>> GetLimitedSearchGglAsync([FromQuery] FilterRest filterRest)
         {
             try
@@ -89,6 +89,7 @@ namespace BusinessTier.Controllers.GameControllers
         }
         
         [HttpPost]
+        [Route("/SuggestedGames")]
         public async Task<ActionResult<Game>> SuggestGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)
@@ -109,7 +110,6 @@ namespace BusinessTier.Controllers.GameControllers
             }
         }
         [HttpPost]
-        [Route("/CreateGame")]
         public async Task<ActionResult<Game>> CreateGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)
@@ -131,11 +131,12 @@ namespace BusinessTier.Controllers.GameControllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Game>> UpdateGameApprovalAsync([FromBody] Game game)
+        [Route("Approval")]
+        public async Task<ActionResult<Game>> EditGameApprovalAsync([FromBody] Game game)
         {
             try
             {
-                await gameMiddlePoint.UpdateGameApprovalAsync(game);
+                await gameMiddlePoint.EditGameApprovalAsync(game);
                 return Ok(game);
             }
             catch (Exception e)
@@ -146,7 +147,6 @@ namespace BusinessTier.Controllers.GameControllers
         }
         
         [HttpPatch]
-        [Route("/Game/EditGame")]
         public async Task<ActionResult<Game>> EditGameAsync([FromBody] Game game)
         {
             if (!ModelState.IsValid)

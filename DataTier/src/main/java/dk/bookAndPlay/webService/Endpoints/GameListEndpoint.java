@@ -32,11 +32,6 @@ public class GameListEndpoint
       case CREATE:
         gameListDAO.addGameToUserGameList(request.getUserName(), request.getGameId());
         break;
-      case UPDATE:
-        //gamesDAO.patch(request.getGame());
-        break;
-      case GETALL:
-        break;
       case REMOVE:
         gameListDAO.removeGameFromUserGameList(request.getUserName(), request.getGameId());
         break;

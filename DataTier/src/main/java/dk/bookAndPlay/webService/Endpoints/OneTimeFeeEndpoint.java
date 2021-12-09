@@ -33,13 +33,8 @@ public class OneTimeFeeEndpoint
         case CREATE:
          oneTimeFeeDAO.create(request.getOneTimeFee());
           break;
-        case UPDATE:
-
-          break;
         case GETALL:
           response.getOneTimeFeeList().addAll(oneTimeFeeDAO.getOneTimeFeeList(request.getUsername()));
-          break;
-        case REMOVE:
           break;
       }
       return response;

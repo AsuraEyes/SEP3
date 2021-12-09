@@ -6,8 +6,6 @@ namespace PresentationTier.Data.EventServices.Events
 {
     public interface IEventService
     {
-        Task<IList<Event>> GetEventsAsync();
-
         Task<EventList> GetFilteredEventsAsync(FilterREST filterRest);
         // int GetNumberOfPages(IList<Event> allEvents);
         //
