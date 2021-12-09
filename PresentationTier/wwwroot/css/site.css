@@ -3,6 +3,7 @@
 :root {
     --yellow-color:#AC8E02;
     --violet-color:#18062E;
+    --dark-violet-color: #0e041c;
 }
 
 html, body {
@@ -240,4 +241,22 @@ h3{
     font-variant: small-caps;
     color: var(--yellow-color);
     font-size: 1.7em;
+}
+
+
+/*TABLE*/
+.table{
+    border-top: none;
+    margin-top: 2em;
+}
+thead tr{
+    border-top: none;
+}
+th{
+    font-variant: small-caps;
+    font-weight: normal;
+    font-size: 1.3em;
+}
+.table tbody tr:hover td{
+    background-color: var(--dark-violet-color);
 }

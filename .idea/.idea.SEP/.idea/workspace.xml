@@ -25,10 +25,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="EventInfo.razor finished CSS">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2021_10_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2021_10_22__Changes_.xml" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="GameList.razor css updated">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTests/EventTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/EventTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
     <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/PaymentOverview.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/PaymentOverview.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/GameList.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -198,13 +201,6 @@
       <workItem from="1638961274562" duration="309000" />
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="18191000" />
-    </task>
-    <task id="LOCAL-00010" summary="authentication presentation layer">
-      <created>1637160317844</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1637160317844</updated>
     </task>
     <task id="LOCAL-00011" summary="Authentication done, login done but hard coded users. &#10;Pages in Blazor done without content. &#10;Commented out code from Index.razor that was throwing exceptions">
       <created>1637177164815</created>
@@ -542,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639042990464</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="GameList.razor css updated">
+      <created>1639052940426</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1639052940426</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +569,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="a" />
     <MESSAGE value="fixed game middlepoint" />
     <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
     <MESSAGE value="updated Web Reference based on SOAP wsdl" />
@@ -591,6 +593,7 @@
     <MESSAGE value="packages, packages, namespaces, namespaces............." />
     <MESSAGE value="packages packages java, mm, mm, yummy, uu, aa, ee," />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="GameList.razor css updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="GameList.razor css updated" />
   </component>
 </project>

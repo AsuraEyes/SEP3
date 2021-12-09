@@ -13,12 +13,20 @@
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
-<h3>Edit Game List</h3>
-<p class="actions">
-    <button @onclick="@SuggestGame" class="btn btn-outline-secondary" type="submit">
+<h2>Edit Game List</h2>
+<div class="grid-container-fifty-fifty remove-line-above">
+    <div class="actions">
+        <button @onclick="@SuggestGame" class="button simple-button" type="submit">
             <i class="oi oi-plus"></i> Suggest a new game
-    </button>
-</p>
+        </button>
+    </div>
+    <div>
+        <input class="form-field" type="text" @bind-value="searchName"  style="width: 250px"/>
+        <button @onclick="@SearchGameAsync" class="button simple-button" type="submit">Search</button>
+    </div>
+</div>
+
+
 
 @if (goldenGameList == null)
 {
@@ -34,8 +42,6 @@ else if (!goldenGameList.Any())
 }
 else
 {
-    <input type="text" @bind-value="searchName"  style="width: 250px"/>
-    <button @onclick="@SearchGameAsync" class="btn btn-outline-secondary" type="submit">Search</button>
     <table class="table">
         <thead>
         <tr>
@@ -47,7 +53,7 @@ else
         @foreach (var item in goldenGameList)
         {
             <tr>
-                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
+                <td><a href="#" @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</a></td>
                 <td>
                     <input type="checkbox" checked=@(gameIds.Contains(item.Id)) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
                 </td>
@@ -57,18 +63,11 @@ else
     </table>
     @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
     {
-        <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+        <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
             <i class="oi oi-plus"></i> Load more
         </button>
     }
 }
-
-    
-<p class="actions">
-        <button @onclick="@GoBack" class="btn btn-outline-secondary" type="submit">
-            Go back
-        </button>
-</p>
 
 @code {
     private IList<Game> goldenGameListPage = new List<Game>();
@@ -93,11 +92,6 @@ else
     {
         var inList = arg.Value != null && (bool) arg.Value;
         await gameListService.EditUserGamesAsync(username, id, inList);
-    }
-    
-    private void GoBack()
-    {
-        navigationManager.NavigateTo("GameList");
     }
     
     private void MoreGameInfo(int id)
