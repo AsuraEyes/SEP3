@@ -15,13 +15,13 @@
 <div class="grid-container-fifty-fifty">
     <div>
         <ul>
-                @foreach (var game in games)
-                {
-                    <li>
-                        <p @onclick="@(() => MoreGameInfo(game.Id))"><a href="#" >@game.Name</a></p>
-                    </li>
-                }
-            </ul>
+            @foreach (var game in games)
+            {
+                <li>
+                    <p @onclick="@(() => MoreGameInfo(game.Id))"><a href="#" >@game.Name</a></p>
+                </li>
+            }
+        </ul>
     </div>
     
     <div>
