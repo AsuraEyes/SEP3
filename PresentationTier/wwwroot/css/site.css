@@ -148,10 +148,19 @@ h3{
     border-top: 1.5px solid var(--yellow-color);
     padding: 1rem;
 }
+.grid-container-thirds{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1.5px solid var(--yellow-color);
+    padding: 1rem;
+}
 #payment_overview{
     display: grid;
     grid-template-columns: 1fr 10fr;
     width: 20em;
+}
+.remove-line-above{
+    border-top: none;
 }
 
 

@@ -25,11 +25,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="login css done">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="GGl, GameList.razor, GameApproval.razor done css">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -442,13 +440,6 @@
       <workItem from="1638518842375" duration="8768000" />
       <workItem from="1638802769369" duration="24604000" />
     </task>
-    <task id="LOCAL-00010" summary="authentication presentation layer">
-      <created>1637160317844</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1637160317844</updated>
-    </task>
     <task id="LOCAL-00011" summary="Authentication done, login done but hard coded users. &#10;Pages in Blazor done without content. &#10;Commented out code from Index.razor that was throwing exceptions">
       <created>1637177164815</created>
       <option name="number" value="00011" />
@@ -785,7 +776,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639046803823</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="GGl, GameList.razor, GameApproval.razor done css">
+      <created>1639049022257</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1639049022257</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -824,7 +822,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fixed game middlepoint" />
     <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
     <MESSAGE value="updated Web Reference based on SOAP wsdl" />
     <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
@@ -849,6 +846,7 @@
     <MESSAGE value="MyEvents.razor CSS done, cards styled" />
     <MESSAGE value="MyEvents.razor, ManageAccount.razor css done" />
     <MESSAGE value="login css done" />
-    <option name="LAST_COMMIT_MESSAGE" value="login css done" />
+    <MESSAGE value="GGl, GameList.razor, GameApproval.razor done css" />
+    <option name="LAST_COMMIT_MESSAGE" value="GGl, GameList.razor, GameApproval.razor done css" />
   </component>
 </project>
