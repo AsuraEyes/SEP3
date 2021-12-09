@@ -2,8 +2,6 @@
 
 @using Microsoft.AspNetCore.Components
 @using PresentationTier.Authentication
-@using PresentationTier.Data
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.Games
 @using PresentationTier.Models
 
@@ -11,7 +9,14 @@
 @inject AuthenticationStateProvider stateProvider
 @inject IGameService gameService
 
-<h3>Create Game</h3>
+@if (role == 1)
+{
+    <h3>Create Game</h3>
+}
+else
+{
+    <h3>Suggest Game</h3>
+}
 <EditForm Model="@game" OnValidSubmit="@CreateGameAsync">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -49,18 +54,31 @@
         <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
     </div>
     
-    <p class="actions">
-        <button type="submit" class="button simple-button">Create</button>
-    </p>
+    @if (role == 1)
+    {
+        <p class="actions">
+            <button type="submit" class="button simple-button">Create</button>
+        </p>
+    }
+    else
+    {
+        <p class="actions">
+            <button type="submit" class="button simple-button">Suggest</button>
+        </p>
+    }
 </EditForm>
 
 @code {
     private readonly Game game = new();
     private int role;
     
+    protected override void OnInitialized()
+    {
+        role = Convert.ToInt32(((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value); 
+    }
+    
     private async Task CreateGameAsync()
     {
-        role = Convert.ToInt32(((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
         if (role == 1)
         {
             await gameService.CreateGameAsync(game);
