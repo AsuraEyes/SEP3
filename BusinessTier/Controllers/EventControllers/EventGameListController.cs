@@ -41,7 +41,7 @@ namespace BusinessTier.Controllers.EventControllers
         
         [HttpPost]
         [Route("/UpdateEventGame")]
-        public async Task UpdateUserGamesAsync([FromBody] EventGameListUpdate eventGameListUpdate)
+        public async Task UpdateEventGamesAsync([FromBody] EventGameListUpdate eventGameListUpdate)
         {
             await eventGameListMiddlePoint.EventGameListUpdateAsync(eventGameListUpdate);
         }

@@ -30,7 +30,7 @@ namespace PresentationTier.Data.EventServices.EventGameLists
 
         public async Task UpdateEventGamesAsync(string username, int gameId, int eventId, bool inList)
         {
-            var updateAsJson = JsonSerializer.Serialize(new EventGameListUpdate()
+            var updateAsJson = JsonSerializer.Serialize(new EventGameListUpdate
                 {Username = username, GameId = gameId, EventId = eventId, InList = inList});
             HttpContent content = new StringContent(updateAsJson,
                 Encoding.UTF8,
