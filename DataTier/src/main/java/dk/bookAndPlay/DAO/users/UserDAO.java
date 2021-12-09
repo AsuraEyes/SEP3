@@ -77,6 +77,7 @@ public class UserDAO implements Users {
 
     public void update(User user){
         helper().executeUpdate("UPDATE \"user\" SET first_name = ?, " +
+                "password = ?, " +
                 "last_name = ?, " +
                 "role_id = ?, " +
                 "phone_number = ?," +
@@ -84,6 +85,7 @@ public class UserDAO implements Users {
                 " email_address = ?," +
                 " requested_promotion = ? WHERE username = ?;",
                 user.getFirstName(),
+                user.getPassword(),
                 user.getLastName(),
                 user.getRole(),
                 user.getPhoneNumber(),
