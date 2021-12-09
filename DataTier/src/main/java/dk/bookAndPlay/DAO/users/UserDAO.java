@@ -59,8 +59,6 @@ public class UserDAO implements Users {
 
     public User get(String username) {
         User user = helper().mapSingle(new UserMapper(), "SELECT * FROM \"user\" WHERE username = ?", username);
-        System.out.println(user.getUsername());
-        System.out.println(user.getRole());
         return user;
     }
 
