@@ -37,26 +37,20 @@
 else if (!goldenGameList.Any())
 {
     <p>
-        <em>No games exist. Please suggest some.</em>
+        <em>No such games exist.</em>
     </p>
 }
 else
 {
     <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>In my Game List</th>
-        </tr>
-        </thead>
         <tbody>
         @foreach (var item in goldenGameList)
         {
             <tr>
-                <td><a href="#" @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</a></td>
                 <td>
                     <input type="checkbox" checked=@(gameIds.Contains(item.Id)) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
                 </td>
+                <td><a href="#" @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</a></td>
             </tr>
         }
         </tbody>
