@@ -16,33 +16,43 @@
     </p>
 </AuthorizeView>
 
-<p>
-    Date:
-    <Select class="selectpicker" @oninput="@(FilterByDateAsync)">
-        <option value="false">-- All --</option>
-        <option value="true">All Upcomming</option>
-    </Select>
-    Category:
-    <Select class="selectpicker" @oninput="@(FilterByCategoryAsync)">
-        <option value="0">-- All --</option>
-        @foreach (var category in categories)
-        {
-            <option value=@category.Id>@category.Name</option>
-        }
-    </Select>
-    Available
-    <Select class="selectpicker" @oninput="@(FilterByAvailabilityAsync)">
-        <option value="false">-- All --</option>
-        <option value="true">Available</option>
-    </Select>
-    Results per page
-    <Select class="selectpicker" @oninput="@(ResultsPerPageAsync)">
-        <option value="3">3</option>
-        <option value="6">6</option>
-        <option value="9">9</option>
-        <option value="12">12</option>
-    </Select>
-</p>
+<div class="grid-container-fourths">
+    <span>
+        Date:
+        <Select class="selectpicker" @oninput="@(FilterByDateAsync)">
+            <option value="false">-- All --</option>
+            <option value="true">All Upcomming</option>
+        </Select>
+    </span>
+    <span>
+        Category:
+        <Select class="selectpicker" @oninput="@(FilterByCategoryAsync)">
+            <option value="0">-- All --</option>
+            @foreach (var category in categories)
+            {
+                <option value=@category.Id>@category.Name</option>
+            }
+        </Select>
+    </span>
+    <span>
+        Available
+        <Select class="selectpicker" @oninput="@(FilterByAvailabilityAsync)">
+            <option value="false">-- All --</option>
+            <option value="true">Available</option>
+        </Select>
+    </span>
+    <span>
+        Results per page
+        <Select class="selectpicker" @oninput="@(ResultsPerPageAsync)">
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+            <option value="12">12</option>
+        </Select>
+    </span>
+</div>
+    
+
 
 <div class="card-deck">
     @foreach (var item in eventList)
@@ -68,11 +78,6 @@
                         {
                             <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
                         }
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="button simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
-                            More
-                        </button>
                     </div>
                 </div>
             </div>

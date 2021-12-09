@@ -40,7 +40,7 @@ namespace PresentationTier.Models
         public string Organizer { get; set; }
         
         [Required(ErrorMessage = "Max number of participants field is required.")]
-        [Range(2, int.MaxValue, ErrorMessage = "Please enter a number greater than 1.")]
+        [Range(2, int.MaxValue, ErrorMessage = "Please enter a number of participants greater than 1.")]
         public int MaxNumberOfParticipants{ get; set; }
         
         public int NumberOfParticipants{ get; set; }

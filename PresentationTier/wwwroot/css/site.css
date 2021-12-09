@@ -81,10 +81,15 @@ li{
     color: white;
 }
 ::selection{
+    color: white;
+    background-color: var(--yellow-color);
+}
+::-moz-selection{
+    color: white;
     background-color: var(--yellow-color);
 }
 
-/*LINKS*/
+    /*LINKS*/
 .main a{
     color: white;
     text-decoration: none;
@@ -155,6 +160,11 @@ h3{
 .remove-line-above{
     border-top: none;
 }
+.grid-container-fourths{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 2em;
+}
 
 
 /*BUTTONS*/
@@ -191,6 +201,7 @@ h3{
     outline: 0;
     margin-bottom: 1em;
     border-radius: 0;
+    width: 90%;
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
@@ -288,4 +299,19 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     transform: scale(1);
+}
+
+/*PAGINATION*/
+.page-item{
+   /* background-color: var(--dark-violet-color);*/
+}
+.page-link{
+    background-color: var(--dark-violet-color);
+    color:white
+}
+.page-item:hover .page-link{
+    color: var(--yellow-color);
+}
+.pagination{
+    border-radius: 0;
 }
