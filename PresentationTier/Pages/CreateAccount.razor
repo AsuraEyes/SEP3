@@ -5,21 +5,22 @@
 @inject IUserService userService
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
+@inject IJSRuntime jsRuntime
 
 <h3>Create Account</h3>
 <EditForm Model="@user" OnValidSubmit="@CreateAccountAsync">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
-        Username:<br/>
+        *Username:<br/>
         <InputText @bind-Value="user.Username"/>
     </div>
     <div class="form-group">
-        Password:<br/>
+        *Password:<br/>
         <InputText @bind-Value="user.Password" type="password"/>
     </div>
     <div class="form-group">
-        Confirm Password:<br/>
+        *Confirm Password:<br/>
         <InputText @bind-Value="user.ConfirmPassword" type="password"/>
     </div>
     <div class="form-group">
@@ -40,7 +41,7 @@
     </div>
 
     <p class="actions">
-        <button class="btn btn-outline-success" type="submit">Create</button>
+        <button class="button simple-button" type="submit">Create</button>
     </p>
     @if (!(errorMessage.Equals("") || errorMessage.Equals("success")))
     {
@@ -62,6 +63,7 @@
         errorMessage = await userService.CreateAccountAsync(user);
         if (errorMessage.Equals("success"))
         {
+            await jsRuntime.InvokeVoidAsync("alert", "Successfully created an account");
             navigationManager.NavigateTo("/");
         }
     }

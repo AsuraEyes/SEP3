@@ -1,10 +1,7 @@
 @page "/CreateEvent"
-
-@using PresentationTier.Data
 @using PresentationTier.Models
 @using System.Security.Claims
 @using PresentationTier.Authentication
-@using PresentationTier.Data.EventServices
 @using PresentationTier.Data.EventServices.Categories
 @using PresentationTier.Data.EventServices.Events
 
@@ -21,27 +18,27 @@
     <DataAnnotationsValidator/>
     <ValidationSummary/>
     <div class="form-group">
-        Name:<br/>
+        *Name:<br/>
         <InputText @bind-Value="newEvent.Name"/>
     </div>
     <div class="form-group">
-        Date: <br/>
+        *Date: <br/>
         <InputDate @bind-Value="newEvent.Date"/>
     </div>
     <div class="form-group">
-        Start Time: <br/>
+        *Start Time: <br/>
         <input type="time" required @bind-value="@newEvent.Start"/>
     </div>
     <div class="form-group" aria-disabled="true">
-        End Time:<br/>
+        *End Time:<br/>
         <input type="time" required @bind-value="@newEvent.End">
     </div>
     <div class="form-group">
-        Address Street Name:<br/>
+        *Address Street Name:<br/>
         <InputText @bind-Value="newEvent.AddressStreetName"/>
     </div>
     <div class="form-group">
-        Address Street Number:<br/>
+        *Address Street Number:<br/>
         <InputText @bind-Value="newEvent.AddressStreetNumber"/>
     </div>
     <div class="form-group">
@@ -49,11 +46,11 @@
         <InputText @bind-Value="newEvent.AddressApartmentNumber"/>
     </div>
     <div class="form-group">
-        Max number of participants:<br/>
+        *Max number of participants:<br/>
         <InputNumber @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
     </div>
     <div class="form-group">
-        Event category:<br/>
+        *Event category:<br/>
         <InputSelect @bind-Value="newEvent.EventCategory">
             <option value="0">Select category</option>
             @foreach (var category in categories)
@@ -64,7 +61,7 @@
     </div>
 
     <p class="actions">
-        <button class="btn btn-outline-success" type="submit">Create</button>
+        <button class="button simple-button" type="submit">Create</button>
     </p>
 </EditForm>
 

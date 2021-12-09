@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.GameWebServices.GameLists;
-using BusinessTier.MiddlePoint.GameMiddlePoints;
 using BusinessTier.MiddlePoint.GameMiddlePoints.GameLists;
 using BusinessTier.MiddlePoint.GameMiddlePoints.Games;
 using BusinessTier.Models;

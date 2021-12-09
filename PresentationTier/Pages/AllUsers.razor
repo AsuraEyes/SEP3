@@ -17,7 +17,7 @@ Requested promotion:
 </Select>
 
 <input type="text" @bind-value="searchName"  style="width: 250px"/>
-<button @onclick="@SearchUserAsync" class="btn btn-outline-secondary" type="submit">Search</button>
+<button @onclick="@SearchUserAsync" class="button simple-button" type="submit">Search</button>
 
 <ul>
     @if (requested == false)
@@ -30,7 +30,7 @@ Requested promotion:
         }
         @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
         {
-            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
                 <i class="oi oi-plus"></i> Load more
             </button>
         }
@@ -45,7 +45,7 @@ Requested promotion:
         }
         @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
         {
-            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
+            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
                 <i class="oi oi-plus"></i> Load more
             </button>
         }

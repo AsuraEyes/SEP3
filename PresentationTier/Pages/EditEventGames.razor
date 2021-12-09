@@ -1,12 +1,9 @@
 @page "/EditEventGames/{eventId:int}"
 
 @using PresentationTier.Models
-@using PresentationTier.Data
 @using PresentationTier.Authentication
 @using System.Security.Claims
-@using PresentationTier.Data.EventServices
 @using PresentationTier.Data.EventServices.EventGameLists
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.GameLists
 
 @inject IGameListService gameListService
@@ -14,7 +11,7 @@
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
 
-<h3>Edit Event Games</h3>
+<h2>Edit Event Games</h2>
 
 @if (gameList == null)
 {
@@ -31,20 +28,14 @@ else if (!gameList.Any())
 else
 {
     <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>In my Game List</th>
-        </tr>
-        </thead>
         <tbody>
         @foreach (var item in gameList)
         {
             <tr>
-                <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
                 <td>
                     <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
                 </td>
+                <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
             </tr>
         }
         </tbody>
@@ -52,7 +43,7 @@ else
 }
 
 <p class="actions">
-        <button @onclick="@GoBack" class="btn btn-outline-secondary" type="submit">
+        <button @onclick="@GoBack" class="button simple-button" type="submit">
             Go back
         </button>
 </p>
