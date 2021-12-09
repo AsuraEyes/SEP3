@@ -25,10 +25,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="MyEvents.razor, ManageAccount.razor css done">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="login css done">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Login.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -441,13 +442,6 @@
       <workItem from="1638518842375" duration="8768000" />
       <workItem from="1638802769369" duration="24604000" />
     </task>
-    <task id="LOCAL-00009" summary="c# changes">
-      <created>1636551371863</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1636551371863</updated>
-    </task>
     <task id="LOCAL-00010" summary="authentication presentation layer">
       <created>1637160317844</created>
       <option name="number" value="00010" />
@@ -784,7 +778,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639039428882</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="login css done">
+      <created>1639046803823</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1639046803823</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -823,7 +824,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="a" />
     <MESSAGE value="fixed game middlepoint" />
     <MESSAGE value="business tier/presentation tier GameList and Game - services classes together with methods - created/updated" />
     <MESSAGE value="updated Web Reference based on SOAP wsdl" />
@@ -848,6 +848,7 @@
     <MESSAGE value="links css" />
     <MESSAGE value="MyEvents.razor CSS done, cards styled" />
     <MESSAGE value="MyEvents.razor, ManageAccount.razor css done" />
-    <option name="LAST_COMMIT_MESSAGE" value="MyEvents.razor, ManageAccount.razor css done" />
+    <MESSAGE value="login css done" />
+    <option name="LAST_COMMIT_MESSAGE" value="login css done" />
   </component>
 </project>

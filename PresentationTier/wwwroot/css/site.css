@@ -184,9 +184,13 @@ h3{
     border: none;
     border-bottom: 2px solid white;
     outline: 0;
+    margin-bottom: 1em;
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
+}
+.input-text-area{
+    border: 1px solid white;
 }
 
 

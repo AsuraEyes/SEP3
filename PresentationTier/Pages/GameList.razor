@@ -9,19 +9,27 @@
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
 
-<h3>GameList</h3>
-<ul>
-@foreach (var game in games)
-{
-    <li>
-        <b @onclick="@(() => MoreGameInfo(game.Id))"><a href="#">@game.Name</a></b>
-    </li>
-}
-</ul>
-
-<button @onclick="@Edit" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Edit
+<h2>Game List</h2>
+<div class="grid-container-fifty-fifty">
+    <div>
+        <ul>
+                @foreach (var game in games)
+                {
+                    <li>
+                        <p @onclick="@(() => MoreGameInfo(game.Id))"><a href="#" >@game.Name</a></p>
+                    </li>
+                }
+            </ul>
+    </div>
+    
+    <div>
+        <button @onclick="@Edit" class="button simple-button" type="submit">
+            <i class="oi oi-plus"></i> Edit
         </button>
+    </div>
+    
+</div>
+
 
 @code {
     private IList<Game> games = new List<Game>();
