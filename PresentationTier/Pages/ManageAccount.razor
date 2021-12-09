@@ -23,11 +23,11 @@ else
         <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
     }
     <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
-    @if (user.PhoneNumber != null)
+    @if (!string.IsNullOrEmpty(user.PhoneNumber))
     {
         <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
     }
-    @if (user.EmailAddress != null)
+    @if (!string.IsNullOrEmpty(user.EmailAddress))
     {
         <p>Email: @user.EmailAddress</p>
     }

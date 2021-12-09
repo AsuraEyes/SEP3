@@ -81,10 +81,15 @@ li{
     color: white;
 }
 ::selection{
+    color: white;
+    background-color: var(--yellow-color);
+}
+::-moz-selection{
+    color: white;
     background-color: var(--yellow-color);
 }
 
-/*LINKS*/
+    /*LINKS*/
 .main a{
     color: white;
     text-decoration: none;
@@ -191,6 +196,7 @@ h3{
     outline: 0;
     margin-bottom: 1em;
     border-radius: 0;
+    width: 90%;
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
