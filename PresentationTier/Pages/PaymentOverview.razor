@@ -2,6 +2,7 @@
 @using PresentationTier.Models
 @using PresentationTier.Authentication
 @using System.Security.Claims
+@using PresentationTier.Data
 @using PresentationTier.Data.FeeServices
 
 @inject AuthenticationStateProvider stateProvider
@@ -17,14 +18,14 @@
             @if (monthlyFee != null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
             {
                 <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
-                <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
             }
             else
             {
                 <p>No active subscription</p>
-                <button style="margin-bottom: 3em" class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
+                <button style="margin-bottom: 3em" class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
         
             }
+            <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
     </div>
     
     <div class="grid-item">
