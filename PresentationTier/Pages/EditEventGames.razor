@@ -11,47 +11,59 @@
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
 
-<h2>Edit Event Games</h2>
+<AuthorizeView Policy="Organizer">
+    <Authorized>
+        <h2>Edit Event Games</h2>
 
-@if (gameList == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else if (!gameList.Any())
-{
-    <p>
-        <em>No ToDo items exist. Please add some.</em>
-    </p>
-}
-else
-{
-    <table class="table">
-        <tbody>
-        @foreach (var item in gameList)
+        @if (gameList == null)
         {
-            <tr>
-                <td>
-                    <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
-                </td>
-                <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
-            </tr>
+            <p>
+                <em>Loading...</em>
+            </p>
         }
-        </tbody>
-    </table>
-}
+        else if (!gameList.Any())
+        {
+            <p>
+                <em>No ToDo items exist. Please add some.</em>
+            </p>
+        }
+        else
+        {
+            <table class="table">
+                <tbody>
+                @foreach (var item in gameList)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked=@(gamesInEvent.FirstOrDefault(game => game.Id == item.Id) != null) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                        </td>
+                        <td @onclick="@(() => MoreGameInfo(item.Id))" href="#">@item.Name</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
 
-<p class="actions">
-        <button @onclick="@GoBack" class="button simple-button" type="submit">
-            Go back
-        </button>
-</p>
+        <p class="actions">
+            <button @onclick="@GoBack" class="button simple-button" type="submit">
+                Go back
+            </button>
+        </p>
+
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
+
     [Parameter]
     public int EventId { get; set; }
-    
+
     private IList<Game> gameList;
     private IList<Game> gamesInEvent;
     private string username;
@@ -68,14 +80,20 @@ else
         var inList = arg.Value != null && (bool) arg.Value;
         await eventGameListService.EditEventGamesAsync(username, gameId, EventId, inList);
     }
-    
+
     private void MoreGameInfo(int gameId)
     {
         navigationManager.NavigateTo($"GameInfo/{gameId}");
     }
-    
+
     private void GoBack()
     {
         navigationManager.NavigateTo($"EventInfo/{EventId}");
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

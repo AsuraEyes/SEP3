@@ -10,56 +10,71 @@
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
+<AuthorizeView Policy="PlayerOrOrganizer">
+    <Authorized>
+        <h2>Payment</h2>
+        @if (!errorMessage.Equals("") && !errorMessage.Equals("Approved"))
+        {
+            <div class="alert alert-danger" role="alert">@errorMessage</div>
+        }
 
-<h2>Payment</h2>
 
-@if (!errorMessage.Equals("") && !errorMessage.Equals("Approved"))
-{
-    <div class="alert alert-danger" role="alert">@errorMessage</div>
-}
-
-
-<EditForm style="width: 50%" Model="@userCardInfo" OnValidSubmit="@SubscribeAsync">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="grid-container-payment">
-        <div>
-            <p><label>Card holder name</label></p>
-            <p><label>Card number</label></p>
-            <p><label>CVC</label></p>
-            <p><label>Expiration Date</label></p>
-        </div>
-        <div>
-            <div class="form-group">
-                <InputText class="form-field" @bind-Value="userCardInfo.CardHolderName" size="50"/>
+        <EditForm style="width: 50%" Model="@userCardInfo" OnValidSubmit="@SubscribeAsync" Context="editForm">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            <div class="grid-container-payment">
+                <div>
+                    <p>
+                        <label>Card holder name</label>
+                    </p>
+                    <p>
+                        <label>Card number</label>
+                    </p>
+                    <p>
+                        <label>CVC</label>
+                    </p>
+                    <p>
+                        <label>Expiration Date</label>
+                    </p>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <InputText class="form-field" @bind-Value="userCardInfo.CardHolderName" size="50"/>
+                    </div>
+                    <div class="form-group">
+                        <InputText class="form-field" @bind-Value="userCardInfo.CardNumber" size="50"/>
+                    </div>
+                    <div class="form-group">
+                        <InputText class="form-field" @bind-Value="userCardInfo.CVC"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-field" type="month" @bind-value="userCardInfo.ExpiryDate" size="50"/>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <InputText class="form-field" @bind-Value="userCardInfo.CardNumber"  size="50"/>
-            </div>
-            <div class="form-group">
-                <InputText class="form-field" @bind-Value="userCardInfo.CVC" />
-            </div>
-            <div class="form-group">
-                <input class="form-field" type="month" @bind-value="userCardInfo.ExpiryDate" size="50"/>
-            </div>
-        </div>
-    </div>
-    
-    
 
-    @if (EventId > 0)
-    {
-        <p class="actions">
-            <button class="button simple-button" type="submit">Pay</button>
-        </p>
-    }
-    else
-    {
-        <p class="actions">
-            <button class="button simple-button" type="submit">Subscribe</button>
-        </p>
-    }
-</EditForm>
+
+            @if (EventId > 0)
+            {
+                <p class="actions">
+                    <button class="button simple-button" type="submit">Pay</button>
+                </p>
+            }
+            else
+            {
+                <p class="actions">
+                    <button class="button simple-button" type="submit">Subscribe</button>
+                </p>
+            }
+        </EditForm>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
 
@@ -91,9 +106,9 @@
         }
         else
         {
-           message = await feeService.SubscribeAsync(userCardInfo);
+            message = await feeService.SubscribeAsync(userCardInfo);
         }
-        
+
         if (message.Equals("Approved"))
         {
             navigationManager.NavigateTo(EventId > 0 ? $"EventInfo/{EventId}" : "PaymentOverview");
@@ -103,4 +118,10 @@
             errorMessage = message;
         }
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

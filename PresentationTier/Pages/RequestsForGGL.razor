@@ -5,30 +5,42 @@
 @inject NavigationManager navigationManager
 @inject IGameService gameService
 
-<h2>Requests For GGL</h2>
+<AuthorizeView Policy="Administrator">
+    <Authorized>
+        <h2>Requests For GGL</h2>
 
-@if (gameList == null)
- {
-     <p>
-         <em>Loading...</em>
-     </p>
- }
- else
- {
-     @foreach (var item in gameList)
-         {
-             if (item.Approved == false)
-             {
-                 <ul>
-                     <li @onclick="@(() => MoreGameInfo(item.Id))"><a>@item.Name</a></li>
-                 </ul>
-             }
-         }
- }
+        @if (gameList == null)
+        {
+            <p>
+                <em>Loading...</em>
+            </p>
+        }
+        else
+        {
+            @foreach (var item in gameList)
+            {
+                if (item.Approved == false)
+                {
+                    <ul>
+                        <li @onclick="@(() => MoreGameInfo(item.Id))">
+                            <a>@item.Name</a>
+                        </li>
+                    </ul>
+                }
+            }
+        }
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private IList<Game> gameList;
-    
+
     protected override async Task OnInitializedAsync()
     {
         gameList = await gameService.GetSuggestedGamesAsync();
@@ -38,4 +50,10 @@
     {
         navigationManager.NavigateTo($"GameApproval/{id}");
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

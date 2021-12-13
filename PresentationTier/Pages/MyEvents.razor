@@ -12,104 +12,104 @@
 @inject IOrganizerService organizerService
 @inject IParticipantService participantService
 
-<h2>My Events</h2>
+<AuthorizeView Policy="PlayerOrOrganizer">
+    <Authorized>
+        <h2>My Events</h2>
+        <AuthorizeView Policy="Organizer" Context="additionalAuthentication">
+            <p class="actions">
+                <button @onclick="@CreateEvent" class="button simple-button" type="submit"><i class="oi oi-plus"></i> Create</button>
+            </p>
 
-<AuthorizeView Policy="Organizer">
-    <p class="actions">
-        <button @onclick="@CreateEvent" class="button simple-button" type="submit"><i class="oi oi-plus"></i> Create</button>
-    </p>
-    
-    <h3>Organizer Events</h3>
-    @if (organizersEventList != null)
-    {
-        <div class="card-deck">
-            @foreach (var item in organizersEventList)
+            <h3>Organizer Events</h3>
+            @if (organizersEventList != null)
             {
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col mb-4">
-                        <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Name</h5>
-                                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
-                                {
-                                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
-                                }
-                                else
-                                {
-                                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
-                                }
-                                @if (item.AddressApartmentNumber != null)
-                                {
-                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
-                                }
-                                else
-                                {
-                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
-                                }
+                <div class="card-deck">
+                    @foreach (var item in organizersEventList)
+                    {
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="col mb-4">
+                                <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                                        {
+                                            <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                                        }
+                                        @if (item.AddressApartmentNumber != null)
+                                        {
+                                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                            @*<div class="card-footer text-center">
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>
+                    <i>You are not organizing any events.</i>
+                </p>
+            }
+
+            <h3>Co-organizer Events</h3>
+            @if (coOrganizersEventList != null)
+            {
+                <div class="card-deck">
+                    @foreach (var item in coOrganizersEventList)
+                    {
+                        <div class="row row-cols-1 row-cols-md-3">
+                            <div class="col mb-4">
+                                <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
+                                        {
+                                            <p class="card-text">Time: @item.StartTime.ToString("f")</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
+                                        }
+                                        @if (item.AddressApartmentNumber != null)
+                                        {
+                                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
+                                        }
+                                    </div>
+                                    @*<div class="card-footer text-center">
                                 <button class="simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
                                     More
                                 </button>
                             </div>*@
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p><i>You are not organizing any events.</i></p>
-    }
-    
-    <h3>Co-organizer Events</h3>
-    @if (coOrganizersEventList != null)
-    {
-        <div class="card-deck">
-            @foreach (var item in coOrganizersEventList)
-            {
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col mb-4">
-                        <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Name</h5>
-                                @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
-                                {
-                                    <p class="card-text">Time: @item.StartTime.ToString("f")</p>
-                                }
-                                else
-                                {
-                                    <p class="card-text">Time: @item.StartTime.ToString("f") - @item.EndTime.ToString("t")</p>
-                                }
-                                @if (item.AddressApartmentNumber != null)
-                                {
-                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber, @item.AddressApartmentNumber</p>
-                                }
-                                else
-                                {
-                                    <p class="card-text">@item.AddressStreetName @item.AddressStreetNumber</p>
-                                }
+                                </div>
                             </div>
-                            @*<div class="card-footer text-center">
-                                <button class="simple-button" @onclick="@(() => NavigateToEvent(item.Id))">
-                                    More
-                                </button>
-                            </div>*@
                         </div>
-                    </div>
+                    }
                 </div>
             }
-        </div>
-    }
-    else
-    {
-        <p><i>You are not co-organizing any events.</i></p>
-    }
-</AuthorizeView>
+            else
+            {
+                <p>
+                    <i>You are not co-organizing any events.</i>
+                </p>
+            }
+        </AuthorizeView>
 
-<h3>Participant Events</h3>
-    @if (participantsEventList != null)
+        <h3>Participant Events</h3>
+        @if (participantsEventList != null)
         {
             <div class="card-deck">
                 @foreach (var item in participantsEventList)
@@ -149,8 +149,18 @@
         }
         else
         {
-            <p><i>You are not participating in any events.</i></p>
+            <p>
+                <i>You are not participating in any events.</i>
+            </p>
         }
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private EventList organizersEvents = new();
@@ -181,4 +191,10 @@
     {
         navigationManager.NavigateTo($"EventInfo/{id}");
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

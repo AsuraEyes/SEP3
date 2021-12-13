@@ -6,45 +6,55 @@
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 
-@if (user == null)
-{
-    <p>Loading...</p>
-}
-else
-{
-    <h3>@user.Username</h3>
-    @if (user.FirstName != null && user.LastName != null)
-    {
-        <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
-    }
-    <p>Role: @(user.Role == 3 ? "Organizer" : (user.Role == 2 ? "Player" : "Administrator"))</p>
-    @if (user.PhoneNumber != null)
-    {
-        <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
-    }
-    @if (user.EmailAddress != null)
-    {
-        <p>Email: @user.EmailAddress</p>
-    }
-    
-    <AuthorizeView Policy="Administrator">
-        @if (user.RequestedPromotion)
+<AuthorizeView>
+    <Authorized>
+        @if (user == null)
         {
-            <h3>Request for organizer</h3>
-            <p class="actions">
-                <button class="button simple-button" type="submit" @onclick="@AcceptPromotionAsync">Accept</button>
-            </p>
-            <p class="actions">
-                <button class="button delete-button" type="submit" @onclick="@DeclinePromotionAsync">Decline</button>
-            </p>
+            <p>Loading...</p>
         }
+        else
+        {
+            <h3>@user.Username</h3>
+            @if (user.FirstName != null && user.LastName != null)
+            {
+                <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
+            }
+            <p>Role: @(user.Role == 3 ? "Organizer" : (user.Role == 2 ? "Player" : "Administrator"))</p>
+            @if (user.PhoneNumber != null)
+            {
+                <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
+            }
+            @if (user.EmailAddress != null)
+            {
+                <p>Email: @user.EmailAddress</p>
+            }
+    
+            <AuthorizeView Policy="Administrator" Context="additionalAuthentication1">
+                @if (user.RequestedPromotion)
+                {
+                    <h3>Request for organizer</h3>
+                    <p class="actions">
+                        <button class="button simple-button" type="submit" @onclick="@AcceptPromotionAsync">Accept</button>
+                    </p>
+                    <p class="actions">
+                        <button class="button delete-button" type="submit" @onclick="@DeclinePromotionAsync">Decline</button>
+                    </p>
+                }
 
-    </AuthorizeView>
-}
-<AuthorizeView Policy="Administrator">
-    <p class="actions">
-        <button class="button delete-button" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
-    </p>
+            </AuthorizeView>
+        }
+        <AuthorizeView Policy="Administrator" Context="additionalAuthentication2">
+            <p class="actions">
+                <button class="button delete-button" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
+            </p>
+        </AuthorizeView>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
 </AuthorizeView>
 
 @code {
@@ -79,4 +89,10 @@ else
         await userService.DeleteAccountAsync(Username);
         navigationManager.NavigateTo("/AllUsers");
     }
+    
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

@@ -25,9 +25,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="Checking the CVC is also a number">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/AllUsers.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateEvent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/CreateGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEvent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEventGames.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGame.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditGameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameApproval.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/ManageAccount.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/MyEvents.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Payment.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/RequestsForGGL.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/UserInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +67,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/AllEvents.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/808bc62cfa124ecd8ff9c42e40632cb2a378/3/AuthenticationStateProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Maggie/RiderProjects/SEP3/PresentationTier/Pages/EditGameList.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -82,7 +98,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BankServer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PresentationTier">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -195,13 +211,7 @@
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="18191000" />
       <workItem from="1639055364376" duration="1589000" />
-    </task>
-    <task id="LOCAL-00016" summary="gimme gitignore">
-      <created>1637420482809</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1637420482809</updated>
+      <workItem from="1639381997525" duration="3789000" />
     </task>
     <task id="LOCAL-00017" summary="fixed event.">
       <created>1637505101536</created>
@@ -539,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639329501851</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="AuthorizeView on AllEvents.razor nested working with Context=&quot;&quot;">
+      <created>1639332698789</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1639332698789</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +580,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier" />
     <MESSAGE value="small fix" />
     <MESSAGE value="commit" />
     <MESSAGE value="presentation tier payment service implementation" />
@@ -588,6 +604,7 @@
     <MESSAGE value="CreateAccount.razor, CreateEvent.razor, CreateGame.razor, EditAccount.razor, EditGame.razor css done" />
     <MESSAGE value="AllEvents.razor, AllUsers.razor css done" />
     <MESSAGE value="Checking the CVC is also a number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checking the CVC is also a number" />
+    <MESSAGE value="AuthorizeView on AllEvents.razor nested working with Context=&quot;&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="AuthorizeView on AllEvents.razor nested working with Context=&quot;&quot;" />
   </component>
 </project>

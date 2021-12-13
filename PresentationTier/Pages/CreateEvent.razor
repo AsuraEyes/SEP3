@@ -5,79 +5,88 @@
 @using PresentationTier.Data.EventServices.Categories
 @using PresentationTier.Data.EventServices.Events
 
-@attribute [Authorize(Policy = "Organizer")]
-
 @inject IEventService eventService
 @inject ICategoryService categoryService
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
-<h2>Create Event</h2>
-<EditForm Model="@newEvent" OnValidSubmit="@CreateNewEventAsync">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    
-    <div class="grid-container-thirds">
-        <div>
-            <div class="form-group">
-                *Name:<br/>
-                <InputText class="form-field" @bind-Value="newEvent.Name"/>
+<AuthorizeView Policy="Organizer">
+    <Authorized>
+
+        <h2>Create Event</h2>
+        <EditForm Model="@newEvent" OnValidSubmit="@CreateNewEventAsync" Context="editForm">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+
+            <div class="grid-container-thirds">
+                <div>
+                    <div class="form-group">
+                        *Name:<br/>
+                        <InputText class="form-field" @bind-Value="newEvent.Name"/>
+                    </div>
+                    <div class="form-group">
+                        *Date: <br/>
+                        <InputDate class="form-field" @bind-Value="newEvent.Date"/>
+                    </div>
+                    <div class="form-group">
+                        *Start Time: <br/>
+                        <input class="form-field" type="time" required @bind-value="@newEvent.Start"/>
+                    </div>
+                    <div class="form-group" aria-disabled="true">
+                        *End Time:<br/>
+                        <input class="form-field" type="time" required @bind-value="@newEvent.End">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        *Address Street Name:<br/>
+                        <InputText class="form-field" @bind-Value="newEvent.AddressStreetName"/>
+                    </div>
+                    <div class="form-group">
+                        *Address Street Number:<br/>
+                        <InputText class="form-field" @bind-Value="newEvent.AddressStreetNumber"/>
+                    </div>
+                    <div class="form-group">
+                        Address Apartment Number:<br/>
+                        <InputText class="form-field" @bind-Value="newEvent.AddressApartmentNumber"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        *Max number of participants:<br/>
+                        <InputNumber class="form-field" @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
+                    </div>
+                    <div class="form-group">
+                        *Event category:<br/>
+                        <InputSelect class="form-field" @bind-Value="newEvent.EventCategory">
+                            <option value="0">Select category</option>
+                            @foreach (var category in categories)
+                            {
+                                <option value=@category.Id>@category.Name</option>
+                            }
+                        </InputSelect>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                *Date: <br/>
-                <InputDate class="form-field" @bind-Value="newEvent.Date"/>
-            </div>
-            <div class="form-group">
-                *Start Time: <br/>
-                <input class="form-field" type="time" required @bind-value="@newEvent.Start"/>
-            </div>
-            <div class="form-group" aria-disabled="true">
-                *End Time:<br/>
-                <input class="form-field" type="time" required @bind-value="@newEvent.End">
-            </div>
-        </div>
-        <div>
-            <div class="form-group">
-                *Address Street Name:<br/>
-                <InputText class="form-field" @bind-Value="newEvent.AddressStreetName"/>
-            </div>
-            <div class="form-group">
-                *Address Street Number:<br/>
-                <InputText class="form-field" @bind-Value="newEvent.AddressStreetNumber"/>
-            </div>
-            <div class="form-group">
-                Address Apartment Number:<br/>
-                <InputText class="form-field" @bind-Value="newEvent.AddressApartmentNumber"/>
-            </div>
-        </div>
-        <div>
-            <div class="form-group">
-                *Max number of participants:<br/>
-                <InputNumber class="form-field" @bind-Value="newEvent.MaxNumberOfParticipants" style="width: 75px"/>
-            </div>
-            <div class="form-group">
-                *Event category:<br/>
-                <InputSelect class="form-field" @bind-Value="newEvent.EventCategory">
-                    <option value="0">Select category</option>
-                    @foreach (var category in categories)
-                    {
-                        <option value=@category.Id>@category.Name</option>
-                    }
-                </InputSelect>
-            </div>
-        </div>
-    </div>
-    
-    <p class="actions">
-        <button class="button simple-button" type="submit">Create</button>
-    </p>
-</EditForm>
+
+            <p class="actions">
+                <button class="button simple-button" type="submit">Create</button>
+            </p>
+        </EditForm>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private readonly Event newEvent = new();
     private IList<Category> categories = new List<Category>();
-    
+
     protected override async Task OnInitializedAsync()
     {
         newEvent.Date = DateTime.Today;
@@ -89,12 +98,17 @@
     {
         var newEventOrganizer = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         if (newEventOrganizer != null) newEvent.Organizer = newEventOrganizer;
-        
+
         newEvent.StartTime = newEvent.Date.Add(newEvent.Start.TimeOfDay);
         newEvent.EndTime = newEvent.Date.Add(newEvent.End.TimeOfDay);
         await eventService.CreateEventAsync(newEvent);
         await jsRuntime.InvokeVoidAsync("alert", "Successfully created an event");
         navigationManager.NavigateTo("MyEvents");
+    }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
     }
 
 }
