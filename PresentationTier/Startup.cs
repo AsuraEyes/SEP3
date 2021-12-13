@@ -59,6 +59,14 @@ namespace PresentationTier
                         //2 (Player), 3 (Organizer)
                         return int.Parse(levelClaim.Value) >= 2;
                     }));
+                options.AddPolicy("OrganizerOrAdministrator", a => 
+                    a.RequireAuthenticatedUser().RequireAssertion(context =>
+                    {
+                        Claim levelClaim = context.User.FindFirst(claim => claim.Type.Equals("Level"));
+                        if (levelClaim == null) return false;
+                        //1 (Administrator), 3 (Organizer)
+                        return int.Parse(levelClaim.Value) == 1 || int.Parse(levelClaim.Value) == 3;
+                    }));
             });
         }
 

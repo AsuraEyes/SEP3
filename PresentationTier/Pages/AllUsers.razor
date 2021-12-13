@@ -3,66 +3,73 @@
 @using PresentationTier.Models
 @using PresentationTier.Data.UserServices
 
-@attribute [Authorize(Policy = "Administrator")]
-
 @inject NavigationManager navigationManager
 @inject IUserService userService
 @inject AuthenticationStateProvider stateProvider
 
-<h2>All Users</h2>
-<div class="grid-container-fifty-fifty">
-    <div>
-        <ul>
-            @if (requested == false)
-            {
-                @foreach (var user in allUsers)
-                {
-                    <li>
-                        <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
-                    </li>
-                }
-                @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
-                {
-                    <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
-                        <i class="oi oi-plus"></i> Load more
-                    </button>
-                }
-            }
-            else
-            {
-                @foreach (var user in allUsers.Where(t=> t.RequestedPromotion))
-                {
-                    <li>
-                        <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
-                    </li>
-                }
-                @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
-                {
-                    <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
-                        <i class="oi oi-plus"></i> Load more
-                    </button>
-                }
-            }
-        </ul>
-    </div>
-    <div>
-        <span>Requested promotion:</span>
-        <Select class="selectpicker" @oninput="@(Filter)">
-            <option value="false">-- All --</option>
-            <option value="true">Requested promotion</option>
-        </Select>
-        <br/>
-        
-        <input class="form-field" type="text" @bind-value="searchName"  style="width: 250px"/>
-        <button @onclick="@SearchUserAsync" class="button simple-button" type="submit">Search</button>
+<AuthorizeView Policy="Administrator">
+    <Authorized>
 
-    </div>
-</div>
+        <h2>All Users</h2>
+        <div class="grid-container-fifty-fifty">
+            <div>
+                <ul>
+                    @if (requested == false)
+                    {
+                        @foreach (var user in allUsers)
+                        {
+                            <li>
+                                <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
+                            </li>
+                        }
+                        @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
+                        {
+                            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Load more
+                            </button>
+                        }
+                    }
+                    else
+                    {
+                        @foreach (var user in allUsers.Where(t => t.RequestedPromotion))
+                        {
+                            <li>
+                                <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
+                            </li>
+                        }
+                        @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
+                        {
+                            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Load more
+                            </button>
+                        }
+                    }
+                </ul>
+            </div>
+            <div>
+                <span>Requested promotion:</span>
+                <Select class="selectpicker" @oninput="@(Filter)">
+                    <option value="false">-- All --</option>
+                    <option value="true">Requested promotion</option>
+                </Select>
+                <br/>
 
+                <input class="form-field" type="text" @bind-value="searchName" style="width: 250px"/>
+                <button @onclick="@SearchUserAsync" class="button simple-button" type="submit">Search</button>
 
+            </div>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
-    private List<User> allUsers  = new ();
+    private List<User> allUsers = new();
     private IList<User> allUsersPage = new List<User>();
     private FilterREST filterRest = new();
     private string searchName;
@@ -76,7 +83,7 @@
         initialResultsNumber = allUsersPage.Count;
         allUsers.AddRange(allUsersPage);
     }
-    
+
     private void MoreUserInfo(string username)
     {
         navigationManager.NavigateTo($"UserInfo/{username}");
@@ -93,7 +100,7 @@
             requested = false;
         }
     }
-    
+
     private async Task SearchUserAsync()
     {
         filterRest.Search = searchName;
@@ -110,4 +117,10 @@
         allUsersPage = await userService.GetUsersAsync(filterRest);
         allUsers.AddRange(allUsersPage);
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

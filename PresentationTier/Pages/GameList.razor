@@ -8,27 +8,38 @@
 @inject AuthenticationStateProvider stateProvider
 @inject NavigationManager navigationManager
 
-<h2>Game List</h2>
-<div class="grid-container-fifty-fifty">
-    <div>
-        <ul>
-            @foreach (var game in games)
-            {
-                <li>
-                    <p @onclick="@(() => MoreGameInfo(game.Id))"><a href="#" >@game.Name</a></p>
-                </li>
-            }
-        </ul>
-    </div>
-    
-    <div>
-        <button @onclick="@Edit" class="button simple-button" type="submit">
-            <i class="oi oi-plus"></i> Edit
-        </button>
-    </div>
-    
-</div>
+<AuthorizeView Policy="Organizer">
+    <Authorized>
+        <h2>Game List</h2>
+        <div class="grid-container-fifty-fifty">
+            <div>
+                <ul>
+                    @foreach (var game in games)
+                    {
+                        <li>
+                            <p @onclick="@(() => MoreGameInfo(game.Id))">
+                                <a href="#">@game.Name</a>
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
 
+            <div>
+                <button @onclick="@Edit" class="button simple-button" type="submit">
+                    <i class="oi oi-plus"></i> Edit
+                </button>
+            </div>
+
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private IList<Game> games = new List<Game>();
@@ -38,14 +49,20 @@
         var username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         games = await gameListService.GetUserGamesAsync(username);
     }
-    
+
     private void Edit()
     {
         navigationManager.NavigateTo("EditGameList");
     }
-    
+
     private void MoreGameInfo(int id)
     {
         navigationManager.NavigateTo($"GameInfo/{id}");
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }
