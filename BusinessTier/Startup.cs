@@ -9,7 +9,7 @@ using BusinessTier.Data.FeeWebServices.MonthlyFees;
 using BusinessTier.Data.FeeWebServices.OneTimeFees;
 using BusinessTier.Data.GameWebServices.GameLists;
 using BusinessTier.Data.GameWebServices.Games;
-using BusinessTier.Data.UserWebServices.Users;
+using BusinessTier.Data.UserWebServices;
 using BusinessTier.MiddlePoint.EventMiddlePoints.EventGameLists;
 using BusinessTier.MiddlePoint.EventMiddlePoints.Events;
 using BusinessTier.MiddlePoint.FeeMiddlePoints;

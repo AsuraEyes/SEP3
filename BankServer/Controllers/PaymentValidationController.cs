@@ -17,7 +17,7 @@ namespace BankServer.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<string>> ApprovePaymentAsync([FromBody] UserCardInfo userCard)
+        public ActionResult<string> ApprovePayment([FromBody] UserCardInfo userCard)
         {
             if (!ModelState.IsValid)
             {
@@ -25,7 +25,7 @@ namespace BankServer.Controllers
             }
             try
             {
-                var message = await paymentValidationMiddlePoint.ValidateCard(userCard);
+                var message = paymentValidationMiddlePoint.ValidateCard(userCard);
                 return Ok(message);
             }
             catch (Exception e)

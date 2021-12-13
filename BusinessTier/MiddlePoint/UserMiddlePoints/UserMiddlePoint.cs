@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessTier.Data.UserWebServices.Users;
+using BusinessTier.Data.UserWebServices;
 using BusinessTier.Models;
 
 namespace BusinessTier.MiddlePoint.UserMiddlePoints

@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
+using BusinessTier.Data.UserWebServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BusinessTier.Data.UserWebServices.Users;
 using BusinessTier.MiddlePoint.UserMiddlePoints;
 
 namespace BusinessTierTests
