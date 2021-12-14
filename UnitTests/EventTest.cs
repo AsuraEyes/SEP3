@@ -36,19 +36,16 @@ namespace BusinessTierTests
         }
         
         [TestMethod]
-        public async Task FilterEventsByDateFailAsync()
+        public async Task FilterEventsByDateAsync()
         {
             EventList expectedEvents;
             EventList actualEvents;
             try
             {
-                var allEvents = new Filter
-                {
-                    filter = "byDate"
-                };
+                var allEvents = new Filter();
                 var filterRest = new FilterRest
                 {
-                    ByDate = false
+                    ByDate = true
                 };
             
                 expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
@@ -58,23 +55,20 @@ namespace BusinessTierTests
             {
                 return;
             }
-            Assert.AreNotEqual(expectedEvents, actualEvents);
+            Assert.AreEqual(expectedEvents, actualEvents);
         }
         
         [TestMethod]
-        public async Task FilterEventsByAvailabilityFailAsync()
+        public async Task FilterEventsByAvailabilityAsync()
         {
             EventList expectedEvents;
             EventList actualEvents;
             try
             {
-                var allEvents = new Filter
-                {
-                    filter = "byAvailability",
-                };
+                var allEvents = new Filter();
                 var filterRest = new FilterRest
                 {
-                    ByAvailability = false
+                    ByAvailability = true
                 };
             
                 expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
