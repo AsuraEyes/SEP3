@@ -62,7 +62,7 @@
             {
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col mb-4">
-                        <div class="card h-100" style="width: 22rem;">
+                        <div class="card h-100" @onclick="@(() => NavigateToEvent(item.Id))" style="width: 22rem;">
                             <div class="card-body">
                                 <h5 class="card-title">@item.Name</h5>
                                 @if (item.EndTime.Subtract(item.StartTime).TotalMinutes < 0)
