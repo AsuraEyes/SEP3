@@ -89,7 +89,7 @@ li{
     background-color: var(--yellow-color);
 }
 
-    /*LINKS*/
+/*LINKS*/
 .main a{
     color: white;
     text-decoration: none;
@@ -103,8 +103,6 @@ li{
     display: block;
     background: var(--yellow-color);
     transition: 0.5s;
-    /*border-bottom: 2px solid white;
-    transition: width 0.5s;*/
 }
 .main a:hover::after{
     width: 100%;
@@ -176,9 +174,6 @@ h3{
 }
 .button:hover{
     transition: 0.5s;
-}
-.button:active{
-    
 }
 .simple-button:hover{
     color: var(--yellow-color);
@@ -300,6 +295,7 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
+
 
 /*PAGINATION*/
 .page-item{

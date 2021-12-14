@@ -45,5 +45,7 @@ namespace BusinessTierTests
             
             Assert.AreNotEqual(expectedEvents, actualEvents);
         }
+        
+        //more cases (are equal)
     }
 }
