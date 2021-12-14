@@ -25,9 +25,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="switch my events split dropdown fix">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="join event fixed">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/PaymentOverview.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +53,7 @@
     <setting file="mock://C:/Users/em_du/Documents/SEP3/BusinessTier/Data/FeeWebServices/OneTimeFees/IOneTimeFeeWebService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/EventInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -199,14 +200,7 @@
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
-      <workItem from="1639129385544" duration="28973000" />
-    </task>
-    <task id="LOCAL-00018" summary="fixed validation error">
-      <created>1637505316038</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1637505316038</updated>
+      <workItem from="1639129385544" duration="30232000" />
     </task>
     <task id="LOCAL-00019" summary="fixed">
       <created>1637505365897</created>
@@ -544,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639479284275</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="join event fixed">
+      <created>1639481009026</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1639481009026</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +569,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="small fix" />
     <MESSAGE value="commit" />
     <MESSAGE value="presentation tier payment service implementation" />
     <MESSAGE value="PaymentOverview.razor" />
@@ -593,6 +593,7 @@
     <MESSAGE value="renamed redundant async methods" />
     <MESSAGE value="deleted files" />
     <MESSAGE value="switch my events split dropdown fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch my events split dropdown fix" />
+    <MESSAGE value="join event fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="join event fixed" />
   </component>
 </project>

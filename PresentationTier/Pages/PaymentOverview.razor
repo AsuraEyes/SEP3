@@ -22,7 +22,6 @@
                 else
                 {
                     <p>No active subscription</p>
-                    <button style="margin-bottom: 3em" class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
                 }
                 <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
             </div>
@@ -58,14 +57,19 @@
 
                     @if (oneTimeFees != null)
                     {
+                        var count = 0;
+                        var sum = 0;
                         <div>
                             <h4>Payments</h4>
                             @foreach (var item in oneTimeFees)
                             {
-                                <ul>
-                                    <li>@item.Amount dkk</li>
-                                </ul>
+                                count++;
+                                sum += item.Amount;
                             }
+                            <ul>
+                                <li>Paid for @count events </li>
+                                <li>You spent in total: @sum dkk</li>
+                            </ul>
                         </div>
                     }
                     else
