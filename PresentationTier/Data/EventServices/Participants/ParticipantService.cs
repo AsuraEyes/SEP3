@@ -32,7 +32,7 @@ namespace PresentationTier.Data.EventServices.Participants
         {
             var participantAsJson = JsonSerializer.Serialize(username);
             HttpContent content = new StringContent(participantAsJson, Encoding.UTF8, "application/json");
-            await client.PostAsync(uri+$"/{id}", content);
+            await client.PostAsync(uri+$"/Participant/{id}", content);
         }
         
         public async Task WithdrawEventAsync(int id, string username)
