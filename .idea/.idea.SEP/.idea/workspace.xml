@@ -25,20 +25,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="renamed redundant async methods">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021,_08_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021__08_59__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/Controllers/PaymentValidationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/Controllers/PaymentValidationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/MiddlePoint/IPaymentValidationMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/MiddlePoint/IPaymentValidationMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/MonthlyFees/IMonthlyFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/MonthlyFees/IMonthlyFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/OneTimeFees/IOneTimeFeeWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/FeeWebServices/OneTimeFees/IOneTimeFeeWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/Users/IUserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/IUserWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/Users/UserWebService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Data/UserWebServices/UserWebService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/UserMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/UserMiddlePoints/UserMiddlePoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTests/UserTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/UserTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/resources/countries.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/resources/message.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/countries.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/message.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SEP.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,16 +53,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/BankServer/Controllers/PaymentValidationController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/BankServer/MiddlePoint/PaymentValidationMiddlePoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/BusinessTier/Data/FeeWebServices/OneTimeFees/IOneTimeFeeWebService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/BusinessTier/Controllers/UserControllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/PaymentOverview.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/PaymentOverview.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -91,7 +93,7 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BusinessLayer">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PresentationTier">
     <configuration name="BankServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BankServer/BankServer.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -204,14 +206,7 @@
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
-      <workItem from="1639129385544" duration="11415000" />
-    </task>
-    <task id="LOCAL-00015" summary="Vadlidate username presentation layer connection">
-      <created>1637416018885</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1637416018885</updated>
+      <workItem from="1639129385544" duration="25591000" />
     </task>
     <task id="LOCAL-00016" summary="gimme gitignore">
       <created>1637420482809</created>
@@ -549,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639062127159</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="renamed redundant async methods">
+      <created>1639386633675</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1639386633675</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +575,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="setup for eventLists for different types of users, in java and xsd file" />
     <MESSAGE value="create Fees WebServices, updated Soap reference based on wsdl" />
     <MESSAGE value="Implemented bank server, CRUD methods for One time fee and Monthly fee, validation methods, added services to presentation Tier" />
     <MESSAGE value="small fix" />
@@ -598,6 +599,7 @@
     <MESSAGE value="userdao update" />
     <MESSAGE value="commit PaymentOverview.razor" />
     <MESSAGE value="fixed search bug gamelist for organizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed search bug gamelist for organizer" />
+    <MESSAGE value="renamed redundant async methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed redundant async methods" />
   </component>
 </project>
