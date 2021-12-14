@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.UserWebServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessTier.MiddlePoint.UserMiddlePoints;
+using BusinessTier.Models;
 
 namespace BusinessTierTests
 {
@@ -65,6 +67,26 @@ namespace BusinessTierTests
                 return;
             }
             Assert.AreEqual(newUser, userCheck);
+        }
+        
+        [TestMethod]
+        public async Task GetAllUsersAsync()
+        {
+            IList<User> expectedUsers;
+            IList<User> actualUsers;
+            try
+            {
+                var allUsers = new Filter();
+                var filteredUsers = new FilterRest();
+            
+                expectedUsers = await userMiddlePoint.GetUsersAsync(filteredUsers);
+                actualUsers = await UserWebService.GetUsersAsync(allUsers);
+            }
+            catch (FaultException)
+            {
+                return;
+            }
+            Assert.AreEqual(expectedUsers, actualUsers);
         }
     }
 }
