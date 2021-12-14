@@ -1,4 +1,5 @@
 using System;
+using System.ServiceModel;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.UserWebServices;
@@ -15,11 +16,13 @@ namespace BusinessTierTests
         
 
         [TestMethod]
-        public async Task CreateAccountAsync()
+        public async Task FailCreateAccountAsync()
         {
+            //Fails because the username is already taken
+            User newUser;
             try
             { 
-                var newUser = new User 
+                newUser = new User 
                 {
                 username = "boardgameGeek",
                 password = "1x2y3z"
@@ -30,9 +33,38 @@ namespace BusinessTierTests
             {
                 return;
             }
+            catch (FaultException)
+            {
+                return;
+            }
             Assert.Fail();
         }
         
-        //create for successfull creating a new account
+        [TestMethod]
+        public async Task CreateAccountSuccessfullyAsync()
+        {
+            User newUser;
+            User userCheck;
+            try
+            { 
+                newUser = new User 
+                {
+                    username = "bobson",
+                    password = "1x2y3z"
+                };
+                await userMiddlePoint.CreateAccountAsync(newUser);
+
+                userCheck = await userMiddlePoint.GetUserByUsernameAsync(newUser.username);
+            }
+            catch (AggregateException)
+            {
+                return;
+            }
+            catch (FaultException)
+            {
+                return;
+            }
+            Assert.AreEqual(newUser, userCheck);
+        }
     }
 }
