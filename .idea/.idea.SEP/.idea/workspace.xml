@@ -25,41 +25,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="total one time payment">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2021__12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_05_11_2021__12_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2021_4_50_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2021_4_50_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_11_26_2021_9_27_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2021_8_25_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_12_13__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_18__11__2021_19_49__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021_11_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021_11_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021__16_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_20_11_2021__16_04__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2021__09_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2021__09_16__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_23__11__2021_10_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_23__11__2021_10_09__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/shelf/Uncommitted_changes_before_Update_at_2__11__2021_12_52__Changes_.xml" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="small fixes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99bf3f17-d84b-48e6-a9f4-d97d48e4d5c2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_jws_jakarta_jws_api_2_1_02.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_jws_jakarta_jws_api_2_1_03.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_soap_jakarta_xml_soap_api_1_4_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_ws_jakarta_xml_ws_api_2_3_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_42.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_82.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/UserControllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/bookAndPlay.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO$GameMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO$GameMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/gameLists/GameListDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO$UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO$UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/users/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditAccount.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EditEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EditEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SEP.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,14 +194,7 @@
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
       <workItem from="1639129385544" duration="32218000" />
-      <workItem from="1639570715410" duration="3938000" />
-    </task>
-    <task id="LOCAL-00020" summary="event range changed">
-      <created>1637507618036</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1637507618036</updated>
+      <workItem from="1639570715410" duration="5575000" />
     </task>
     <task id="LOCAL-00021" summary="create event thingies">
       <created>1637510894303</created>
@@ -571,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639482032701</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="small fixes">
+      <created>1639577753385</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1639577753385</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +563,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="presentation tier payment service implementation" />
     <MESSAGE value="PaymentOverview.razor" />
     <MESSAGE value="monthly fee/payment working" />
     <MESSAGE value="payment options work in presentation tier aswell" />
@@ -620,6 +587,7 @@
     <MESSAGE value="switch my events split dropdown fix" />
     <MESSAGE value="join event fixed" />
     <MESSAGE value="total one time payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="total one time payment" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
 </project>
