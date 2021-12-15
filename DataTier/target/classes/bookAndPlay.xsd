@@ -325,7 +325,7 @@
     <xs:complexType name="EventList">
         <xs:sequence>
             <xs:element name="count" type="xs:int"/>
-            <xs:element name="eventList" maxOccurs="unbounded"  type="tns:Event">
+            <xs:element name="eventList" maxOccurs="unbounded" type="tns:Event">
             </xs:element>
         </xs:sequence>
     </xs:complexType>
