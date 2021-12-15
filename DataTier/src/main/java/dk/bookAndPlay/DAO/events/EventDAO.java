@@ -117,7 +117,6 @@ public class EventDAO implements Events {
   }
 
   public EventList getFilteredEvents(Filter filter){
-        eventList.getEventList().clear();
         EventList pagedEventList = new EventList();
         int eventListLength;
 
@@ -147,18 +146,13 @@ public class EventDAO implements Events {
             appendToStatement +=";";
         }
 
-        System.out.println(statement+appendToStatement);
-
         eventListLength = (integerHelper().mapSingle(new IntegerMapper(), statement+appendToStatement));
 
         statement = "SELECT * FROM event "+appendToStatement.substring(0, appendToStatement.length()-1);
-
         statement += " ORDER by id LIMIT "+filter.getLimit()+" OFFSET "+filter.getOffset()+";";
 
         pagedEventList.getEventList().addAll(eventHelper().map(new EventMapper(), statement));
         pagedEventList.setCount((int)Math.ceil(eventListLength/ (float)filter.getLimit()));
-
-        System.out.println(statement);
 
         return pagedEventList;
     }
