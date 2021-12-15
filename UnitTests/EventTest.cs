@@ -78,7 +78,7 @@ namespace BusinessTierTests
             {
                 return;
             }
-            Assert.AreNotEqual(expectedEvents, actualEvents);
+            Assert.AreEqual(expectedEvents, actualEvents);
         }
         
         [TestMethod]
