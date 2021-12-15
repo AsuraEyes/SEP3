@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessTier.Data.UserWebServices.Users;
+using BusinessTier.Data.UserWebServices;
 using BusinessTier.MiddlePoint.UserMiddlePoints;
 using BusinessTier.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +28,7 @@ namespace BusinessTier.Controllers.UserControllers
         {
             try
             {
-                User validateUser = await userMiddlePoint.ValidateUserAsync(user);
+                var validateUser = await userMiddlePoint.ValidateUserAsync(user);
                 return Ok(validateUser);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ namespace BusinessTier.Controllers.UserControllers
         {
             try
             {
-                User user = await userMiddlePoint.GetUserByUsernameAsync(username);
+                var user = await userMiddlePoint.GetUserByUsernameAsync(username);
                 return Ok(user);
             }
             catch (Exception e)
@@ -156,7 +156,7 @@ namespace BusinessTier.Controllers.UserControllers
         {
             try
             {
-                IList<User> users = await userMiddlePoint.GetUsersAsync(filterRest);
+                var users = await userMiddlePoint.GetUsersAsync(filterRest);
                 return Ok(users);
             }
             catch (Exception e)

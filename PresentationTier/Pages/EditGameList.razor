@@ -112,6 +112,7 @@
         filterRest.Search = searchName;
         filterRest.CurrentPage = 1;
         goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        gameIds = await gameListService.GetUserGamesIdsAsync(username);
         goldenGameList.Clear();
         goldenGameList.AddRange(goldenGameListPage);
     }

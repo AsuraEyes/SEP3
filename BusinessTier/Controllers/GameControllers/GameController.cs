@@ -45,7 +45,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<Game> searchGglList = await gameMiddlePoint.GetLimitedSearchGglAsync(filterRest);
+                var searchGglList = await gameMiddlePoint.GetLimitedSearchGglAsync(filterRest);
                 return Ok(searchGglList);
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<Game> games = await gameWebService.GetSuggestedGamesAsync();
+                var games = await gameWebService.GetSuggestedGamesAsync();
                 return Ok(games);
             }
             catch (Exception e)

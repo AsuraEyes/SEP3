@@ -27,7 +27,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                EventList filteredEventsAsync = await eventMiddlePoint.EventFilterAsync(filterRest);
+                var filteredEventsAsync = await eventMiddlePoint.EventFilterAsync(filterRest);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)

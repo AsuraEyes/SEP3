@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 
-namespace BusinessTier.Data.UserWebServices.Users
+namespace BusinessTier.Data.UserWebServices
 {
     public interface IUserWebService
     {

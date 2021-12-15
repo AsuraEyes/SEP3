@@ -15,15 +15,15 @@ namespace BusinessTier.Data.EventWebServices.Events
 
         private async Task<SOAPEventResponse1> GetEventResponseAsync(int id, Operation name, Event ev, Filter filter)
         {
-            SOAPEventRequest soapEventRequest = new SOAPEventRequest
+            var soapEventRequest = new SOAPEventRequest
             {
                 id = id,
                 Operation = name,
                 Event = ev,
                 filter = filter
             };
-            SOAPEventRequest1 soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
-            SOAPEventResponse1 soapEventResponse1 = await port.SOAPEventAsync(soapEventRequest1);
+            var soapEventRequest1 = new SOAPEventRequest1(soapEventRequest);
+            var soapEventResponse1 = await port.SOAPEventAsync(soapEventRequest1);
             return soapEventResponse1;
         }
 

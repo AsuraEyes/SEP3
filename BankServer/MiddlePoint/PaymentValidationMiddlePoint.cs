@@ -7,7 +7,7 @@ namespace BankServer.MiddlePoint
 {
     public class PaymentValidationMiddlePoint: IPaymentValidationMiddlePoint
     {
-        public async Task<string> ValidateCard(UserCardInfo userCard)
+        public string ValidateCard(UserCardInfo userCard)
         {
             Random rand = new Random();
             userCard.AvailableSavings = rand.Next(200); 

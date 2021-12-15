@@ -16,13 +16,12 @@ namespace BusinessTier.Data.EventWebServices.Categories
 
         private async Task<SOAPCategoryResponse1> GetCategoryResponseAsync(Operation name)
         {
-            SOAPCategoryRequest soapCategoryRequest = new SOAPCategoryRequest
+            var soapCategoryRequest = new SOAPCategoryRequest
             {
                 Operation = name
             };
-            SOAPCategoryRequest1 soapRequest1 = new SOAPCategoryRequest1(soapCategoryRequest);
-            SOAPCategoryResponse1 soapResponse1 = new SOAPCategoryResponse1();
-            soapResponse1 = await port.SOAPCategoryAsync(soapRequest1);
+            var soapRequest1 = new SOAPCategoryRequest1(soapCategoryRequest);
+            var soapResponse1 = await port.SOAPCategoryAsync(soapRequest1);
             return soapResponse1;
         }
 

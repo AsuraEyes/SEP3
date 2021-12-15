@@ -58,8 +58,7 @@ public class UserDAO implements Users {
     }
 
     public User get(String username) {
-        User user = helper().mapSingle(new UserMapper(), "SELECT * FROM \"user\" WHERE username = ?", username);
-        return user;
+        return helper().mapSingle(new UserMapper(), "SELECT * FROM \"user\" WHERE username = ?", username);
     }
 
     public void delete(String username){

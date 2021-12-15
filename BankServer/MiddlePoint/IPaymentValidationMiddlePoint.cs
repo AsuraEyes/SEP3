@@ -5,6 +5,6 @@ namespace BankServer.MiddlePoint
 {
     public interface IPaymentValidationMiddlePoint
     {
-        Task<string> ValidateCard(UserCardInfo userCard);
+        string ValidateCard(UserCardInfo userCard);
     }
 }

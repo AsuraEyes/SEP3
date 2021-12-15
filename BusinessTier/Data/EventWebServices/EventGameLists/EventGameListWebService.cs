@@ -17,16 +17,15 @@ namespace BusinessTier.Data.EventWebServices.EventGameLists
 
         private async Task<SOAPEventGameListResponse1> GetEventGameListResponseAsync(int eventId, Operation name, String username, int gameId)
         {
-            SOAPEventGameListRequest soapEventGameListRequest = new SOAPEventGameListRequest
+            var soapEventGameListRequest = new SOAPEventGameListRequest
             {
                 eventId = eventId,
                 Operation = name,
                 username = username,
                 gameId = gameId
             };
-            SOAPEventGameListRequest1 soapRequest1 = new SOAPEventGameListRequest1(soapEventGameListRequest);
-            SOAPEventGameListResponse1 soapResponse1 = new SOAPEventGameListResponse1();
-            soapResponse1 = await port.SOAPEventGameListAsync(soapRequest1);
+            var soapRequest1 = new SOAPEventGameListRequest1(soapEventGameListRequest);
+            var soapResponse1 = await port.SOAPEventGameListAsync(soapRequest1);
             return soapResponse1;
         }
 
