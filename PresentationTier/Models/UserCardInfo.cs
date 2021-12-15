@@ -12,9 +12,9 @@ namespace PresentationTier.Models
         public string CardNumber { get; set; }
         [Required(ErrorMessage = "Card holder name is required.")]
         public string CardHolderName { get; set; }
-        [Required(ErrorMessage = "CVC is required")]
+        [Required(ErrorMessage = "CVC is required.")]
         public string CVC { get; set; }
-        [Required(ErrorMessage = "Expiry date is required")]
+        [Required(ErrorMessage = "Expiry date is required.")]
         public DateTime ExpiryDate { get; set; }
         
         public int AvailableSavings { get; set; }

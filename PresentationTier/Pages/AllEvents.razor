@@ -10,9 +10,7 @@
 
 <AuthorizeView Policy="PlayerOrOrganizer">
     <Authorized>
-        
         <h2>All Events</h2>
-
         <AuthorizeView Policy="Organizer" Context="additionalAuthentication">
             <p class="actions">
                 <button @onclick="@CreateEvent" class="button simple-button" type="submit"><i class="oi oi-plus"></i> Create</button>
@@ -142,7 +140,7 @@
         filterRest.ResultsPerPage = resultsPerPage;
         
         events = await restEvent.GetFilteredEventsAsync(filterRest);
-
+        
         numberOfPages = events.Count;
         eventList = events.ListOfEvents;
         CurrentPage = 1;
