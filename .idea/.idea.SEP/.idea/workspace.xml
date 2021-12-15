@@ -25,7 +25,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="test changed to equals" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="beautification" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +45,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/SEP/BusinessTier/Controllers/EventControllers/CategoryController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -190,14 +191,7 @@
       <workItem from="1639123755263" duration="2350000" />
       <workItem from="1639129385544" duration="30232000" />
       <workItem from="1639486912724" duration="5118000" />
-      <workItem from="1639555372160" duration="293000" />
-    </task>
-    <task id="LOCAL-00023" summary="filtering implementation blazor to database">
-      <created>1637655343894</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1637655343894</updated>
+      <workItem from="1639555372160" duration="851000" />
     </task>
     <task id="LOCAL-00024" summary="added event gameList view java to blazor">
       <created>1637674632032</created>
@@ -535,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639555635312</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="beautification">
+      <created>1639556214785</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1639556214786</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +560,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="payment options work in presentation tier aswell" />
     <MESSAGE value="Delete account implemented" />
     <MESSAGE value="Validate user updated" />
     <MESSAGE value="search/pagination GGL" />
@@ -584,6 +584,7 @@
     <MESSAGE value="test method updated" />
     <MESSAGE value="test method GetAllUsersAsync made" />
     <MESSAGE value="test changed to equals" />
-    <option name="LAST_COMMIT_MESSAGE" value="test changed to equals" />
+    <MESSAGE value="beautification" />
+    <option name="LAST_COMMIT_MESSAGE" value="beautification" />
   </component>
 </project>
