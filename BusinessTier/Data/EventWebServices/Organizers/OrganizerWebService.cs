@@ -16,15 +16,14 @@ namespace BusinessTier.Data.EventWebServices.Organizers
 
         private async Task<SOAPOrganizerResponse1> GetOrganizerResponse(Operation name, int eventId, string organizerName)
         {
-            SOAPOrganizerRequest soapOrganizerRequest = new SOAPOrganizerRequest
+            var soapOrganizerRequest = new SOAPOrganizerRequest
             {
                 Operation = name,
                 username = organizerName,
                 eventId = eventId
             };
-            SOAPOrganizerRequest1 soapRequest1 = new SOAPOrganizerRequest1(soapOrganizerRequest);
-            SOAPOrganizerResponse1 soapResponse1 = new SOAPOrganizerResponse1();
-            soapResponse1 = await port.SOAPOrganizerAsync(soapRequest1);
+            var soapRequest1 = new SOAPOrganizerRequest1(soapOrganizerRequest);
+            var soapResponse1 = await port.SOAPOrganizerAsync(soapRequest1);
             return soapResponse1;
         }
 

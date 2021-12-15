@@ -41,7 +41,7 @@ namespace BusinessTier.MiddlePoint.FeeMiddlePoints
             
             if (message.Equals("Approved"))
             {
-                OneTimeFee oneTimeFee = new OneTimeFee
+                var oneTimeFee = new OneTimeFee
                 {
                     amount = userCardInfo.Fee,
                     eventId = userCardInfo.EventId,
@@ -77,7 +77,7 @@ namespace BusinessTier.MiddlePoint.FeeMiddlePoints
                 {
                     var monthlyFee = await monthlyFeeWebService.GetMonthlyFeeAsync(userCardInfo.Username);
                     
-                    DateTime endDate = monthlyFee.endDate;
+                    var endDate = monthlyFee.endDate;
                     monthlyFee.amount += userCardInfo.Fee;
                     monthlyFee.endDate = endDate.AddDays(30);
                     

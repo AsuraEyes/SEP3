@@ -23,7 +23,7 @@ namespace BusinessTier.MiddlePoint.GameMiddlePoints.Games
         public async Task<IList<Game>> GetLimitedSearchGglAsync(FilterRest filterRest)
         {
             filterRest.ResultsPerPage = resultsPerPage;
-            Filter filter = new Filter();
+            var filter = new Filter();
             if (filterRest.Search != null)
             {
               filter.filter = filterRest.Search;   

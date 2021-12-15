@@ -17,22 +17,21 @@ namespace BusinessTier.Data.UserWebServices
 
         private async Task<SOAPUserResponse1> GetUserResponseAsync(string username, Operation name, User thisUser, Filter filter)
         {
-            SOAPUserRequest soapUserRequest = new SOAPUserRequest
+            var soapUserRequest = new SOAPUserRequest
             {
                 username = username,
                 Operation = name,
                 User = thisUser,
                 Filter = filter
             };
-            SOAPUserRequest1 soapRequest1 = new SOAPUserRequest1(soapUserRequest);
-            SOAPUserResponse1 soapResponse1 = new SOAPUserResponse1();
-            soapResponse1 = await port.SOAPUserAsync(soapRequest1);
+            var soapRequest1 = new SOAPUserRequest1(soapUserRequest);
+            var soapResponse1 = await port.SOAPUserAsync(soapRequest1);
             return soapResponse1;
         }
         public async Task<User> GetUserAsync(string username)
         {
             response = await GetUserResponseAsync(username, Operation.GET, null, null);
-            User user = response.SOAPUserResponse.user;
+            var user = response.SOAPUserResponse.user;
             return  user;
         }
 

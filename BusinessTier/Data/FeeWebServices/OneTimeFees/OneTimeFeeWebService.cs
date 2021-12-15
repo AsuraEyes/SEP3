@@ -16,16 +16,15 @@ namespace BusinessTier.Data.FeeWebServices.OneTimeFees
 
         private async Task<SOAPOneTimeFeeResponse1> getOneTimeFeeResponseAsync(Operation name, int eventId,string username, OneTimeFee oneTimeFee )
         {
-            SOAPOneTimeFeeRequest soapOneTimeFeeRequest = new SOAPOneTimeFeeRequest
+            var soapOneTimeFeeRequest = new SOAPOneTimeFeeRequest
             {
                 Operation = name,
                 username = username,
                 OneTimeFee = oneTimeFee,
                 eventId = eventId
             };
-            SOAPOneTimeFeeRequest1 soapRequest1 = new SOAPOneTimeFeeRequest1(soapOneTimeFeeRequest);
-            SOAPOneTimeFeeResponse1 soapResponse1 = new SOAPOneTimeFeeResponse1();
-            soapResponse1 = await port.SOAPOneTimeFeeAsync(soapRequest1);
+            var soapRequest1 = new SOAPOneTimeFeeRequest1(soapOneTimeFeeRequest);
+            var soapResponse1 = await port.SOAPOneTimeFeeAsync(soapRequest1);
             return soapResponse1;
         }
 

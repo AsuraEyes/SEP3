@@ -16,15 +16,14 @@ namespace BusinessTier.Data.FeeWebServices.MonthlyFees
 
         private async Task<SOAPMonthlyFeeResponse1> GetMonthlyFeeResponseAsync(Operation name, string username, MonthlyFee monthlyFee )
         {
-            SOAPMonthlyFeeRequest soapMonthlyFeeRequest = new SOAPMonthlyFeeRequest
+            var soapMonthlyFeeRequest = new SOAPMonthlyFeeRequest
             {
                 Operation = name,
                 username = username,
                 MonthlyFee = monthlyFee
             };
-            SOAPMonthlyFeeRequest1 soapRequest1 = new SOAPMonthlyFeeRequest1(soapMonthlyFeeRequest);
-            SOAPMonthlyFeeResponse1 soapResponse1 = new SOAPMonthlyFeeResponse1();
-            soapResponse1 = await port.SOAPMonthlyFeeAsync(soapRequest1);
+            var soapRequest1 = new SOAPMonthlyFeeRequest1(soapMonthlyFeeRequest);
+            var soapResponse1 = await port.SOAPMonthlyFeeAsync(soapRequest1);
             return soapResponse1;
         }
 

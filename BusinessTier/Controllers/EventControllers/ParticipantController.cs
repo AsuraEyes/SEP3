@@ -25,7 +25,7 @@ namespace BusinessTier.Controllers.EventControllers
             {
                 try
                 {
-                    IList<string> participants = await participantWebService.GetParticipantsAsync(id);
+                    var participants = await participantWebService.GetParticipantsAsync(id);
                     return Ok(participants);
                 }
                 catch (Exception e)

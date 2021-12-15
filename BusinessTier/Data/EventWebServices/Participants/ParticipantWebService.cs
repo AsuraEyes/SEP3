@@ -16,15 +16,14 @@ namespace BusinessTier.Data.EventWebServices.Participants
 
         private async Task<SOAPParticipantResponse1> GetParticipantResponse(Operation name, int eventId, string username)
         {
-            SOAPParticipantRequest soapParticipantRequest = new SOAPParticipantRequest
+            var soapParticipantRequest = new SOAPParticipantRequest
             {
                 Operation = name,
                 username = username,
                 eventId = eventId
             };
-            SOAPParticipantRequest1 soapRequest1 = new SOAPParticipantRequest1(soapParticipantRequest);
-            SOAPParticipantResponse1 soapResponse1 = new SOAPParticipantResponse1();
-            soapResponse1 = await port.SOAPParticipantAsync(soapRequest1);
+            var soapRequest1 = new SOAPParticipantRequest1(soapParticipantRequest);
+            var soapResponse1 = await port.SOAPParticipantAsync(soapRequest1);
             return soapResponse1;
         }
 

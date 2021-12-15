@@ -28,7 +28,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                IList<Game> allEventGameList = await eventGameListWebService.GetAllEventGameListAsync(id);
+                var allEventGameList = await eventGameListWebService.GetAllEventGameListAsync(id);
                 return Ok(allEventGameList);
             }
             catch (Exception e)

@@ -1,4 +1,3 @@
-using System;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;

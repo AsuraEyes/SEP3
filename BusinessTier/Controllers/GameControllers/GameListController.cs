@@ -31,7 +31,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<Game> adults = await gameListWebService.GetUserGameListAsync(username);
+                var adults = await gameListWebService.GetUserGameListAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)
@@ -54,7 +54,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<int> adults = await gameMiddlePoint.GetUserGamesIdsAsync(username);
+                var adults = await gameMiddlePoint.GetUserGamesIdsAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)
