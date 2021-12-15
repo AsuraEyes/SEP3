@@ -34,10 +34,7 @@ namespace BusinessTier.MiddlePoint.EventMiddlePoints.Events
                     filter = filter.Replace("byAvailability", "");
 
                 if (filterRest.CategoryId != 0)
-                {
                     filter += "byCategory";
-                }
-     
                 else
                     filter = filter.Replace("byCategory", "");
 

@@ -2,8 +2,6 @@
 
 @using Microsoft.AspNetCore.Components
 @using PresentationTier.Authentication
-@using PresentationTier.Data
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.Games
 @using PresentationTier.Models
 
@@ -11,56 +9,97 @@
 @inject AuthenticationStateProvider stateProvider
 @inject IGameService gameService
 
-<h3>Create Game</h3>
-<EditForm Model="@game" OnValidSubmit="@CreateGameAsync">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="form-group">
-        Name:<br/>
-        <InputText @bind-Value="game.Name"/>
-    </div>
-    <div class="form-group">
-        Complexity: 
-        <InputNumber @bind-Value="game.Complexity" style="width: 50px"/>
-    </div>
-    <div class="form-group">
-        Estimated time: 
-        <InputNumber @bind-Value="game.TimeEstimation" style="width: 50px"/>
-    </div>
-    <div class="form-group">
-        Player amount:<br/>
-        Min: <InputNumber @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
-        Max: <InputNumber @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
-    </div>
-    <div class="form-group">Short Description:<br/>
-        <InputTextArea @bind-Value="game.ShortDescription" style="width: 250px"/>
-    </div>
-    <div class="form-group">
-        Needed equipment:<br/>
-        <InputTextArea @bind-Value="game.NeededEquipment" style="width: 250px"/>
-    </div>
-    <div class="form-group">
-        Age range:<br/>
-        Min: <InputNumber @bind-Value="game.MinAge" style="width: 50px"/>
-        Max: <InputNumber @bind-Value="game.MaxAge" style="width: 50px"/>
-    </div>
-    <div class="form-group">
-        Tutorial:<br/> 
-        <InputText @bind-Value="game.Tutorial" style="width: 250px"/>
-    </div>
-    
-    <p class="actions">
-        <button type="submit" class="btn btn-outline-success">Create</button>
-    </p>
-</EditForm>
+<AuthorizeView Policy="OrganizerOrAdministrator">
+    <Authorized>
+
+        @if (role == 1)
+        {
+            <h2>Create Game</h2>
+        }
+        else
+        {
+            <h2>Suggest Game</h2>
+        }
+        <EditForm Model="@game" OnValidSubmit="@CreateGameAsync" Context="editForm">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+
+            <div class="grid-container-fifty-fifty">
+                <div>
+                    <div class="form-group">
+                        *Name:<br/>
+                        <InputText class="form-field" @bind-Value="game.Name"/>
+                    </div>
+                    <div class="form-group">
+                        *Complexity:
+                        <InputNumber class="form-field" @bind-Value="game.Complexity" style="width: 50px"/>
+                    </div>
+                    <div class="form-group">
+                        *Estimated time:
+                        <InputNumber class="form-field" @bind-Value="game.TimeEstimation" style="width: 50px"/>
+                    </div>
+                    <div class="form-group">
+                        *Player amount:<br/>
+                        Min: <InputNumber class="form-field" @bind-Value="game.MinNumberOfPlayers" style="width: 50px"/>
+                        Max: <InputNumber class="form-field" @bind-Value="game.MaxNumberOfPlayers" style="width: 50px"/>
+                    </div>
+                    <div class="form-group">
+                        Short Description:<br/>
+                        <InputTextArea class="input-text-area" @bind-Value="game.ShortDescription" style="width: 250px"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        Needed equipment:<br/>
+                        <InputTextArea class="input-text-area" @bind-Value="game.NeededEquipment" style="width: 250px"/>
+                    </div>
+                    <div class="form-group">
+                        Age range:<br/>
+                        Min: <InputNumber class="form-field" @bind-Value="game.MinAge" style="width: 50px"/>
+                        Max: <InputNumber class="form-field" @bind-Value="game.MaxAge" style="width: 50px"/>
+                    </div>
+                    <div class="form-group">
+                        Tutorial:<br/>
+                        <InputText class="form-field" @bind-Value="game.Tutorial" style="width: 250px"/>
+                    </div>
+                </div>
+            </div>
+
+
+            @if (role == 1)
+            {
+                <p class="actions">
+                    <button type="submit" class="button simple-button">Create</button>
+                </p>
+            }
+            else
+            {
+                <p class="actions">
+                    <button type="submit" class="button simple-button">Suggest</button>
+                </p>
+            }
+        </EditForm>
+
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private readonly Game game = new();
     private int role;
-    
-    private async Task CreateGameAsync()
+
+    protected override void OnInitialized()
     {
         role = Convert.ToInt32(((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals("Level"))?.Value);
+    }
+
+    private async Task CreateGameAsync()
+    {
         if (role == 1)
         {
             await gameService.CreateGameAsync(game);
@@ -71,5 +110,11 @@
             await gameService.SuggestGameAsync(game);
             navigationManager.NavigateTo("EditGameList");
         }
-    } 
+    }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

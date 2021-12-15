@@ -25,7 +25,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                IList<string> organizers = await organizerWebService.GetOrganizersAsync(id);
+                var organizers = await organizerWebService.GetOrganizersAsync(id);
                 return Ok(organizers);
             }
             catch (Exception e)

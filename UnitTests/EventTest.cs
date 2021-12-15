@@ -1,5 +1,6 @@
-using System;
+using System.ServiceModel;
 using System.Threading.Tasks;
+using BookAndPlaySOAP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessTier.Data.EventWebServices.Events;
 using BusinessTier.MiddlePoint.EventMiddlePoints.Events;
@@ -20,29 +21,89 @@ namespace BusinessTierTests
             EventList actualEvents;
             try
             {
-                var allEvents = new FilterRest
-                {
-                    ByDate = false,
-                    ByAvailability = false,
-                    CategoryId = 0
-                };
+                var allEvents = new Filter();
+                var filterRest = new FilterRest();
+            
+                expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
+                actualEvents = await EventWebService.GetFilteredEventsAsync(allEvents);
+            }
+            catch (FaultException)
+            {
+                return;
+            }
+            Assert.AreEqual(expectedEvents, actualEvents);
+        }
+        
+        [TestMethod]
+        public async Task FilterEventsByDateAsync()
+        {
+            EventList expectedEvents;
+            EventList actualEvents;
+            try
+            {
+                var allEvents = new Filter();
                 var filterRest = new FilterRest
                 {
-                    ByDate = true,
-                    ByAvailability = false,
-                    CategoryId = 1
+                    ByDate = true
                 };
             
                 expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
-                actualEvents = await eventMiddlePoint.EventFilterAsync(allEvents);
+                actualEvents = await EventWebService.GetFilteredEventsAsync(allEvents);
             }
-            catch (Exception e)
+            catch (FaultException)
             {
-                Console.WriteLine(e);
-                throw;
+                return;
             }
+            Assert.AreEqual(expectedEvents, actualEvents);
+        }
+        
+        [TestMethod]
+        public async Task FilterEventsByAvailabilityAsync()
+        {
+            EventList expectedEvents;
+            EventList actualEvents;
+            try
+            {
+                var allEvents = new Filter();
+                var filterRest = new FilterRest
+                {
+                    ByAvailability = true
+                };
             
-            Assert.AreNotEqual(expectedEvents, actualEvents);
+                expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
+                actualEvents = await EventWebService.GetFilteredEventsAsync(allEvents);
+            }
+            catch (FaultException)
+            {
+                return;
+            }
+            Assert.AreEqual(expectedEvents, actualEvents);
+        }
+        
+        [TestMethod]
+        public async Task FilterEventsByCategoryAsync()
+        {
+            EventList expectedEvents;
+            EventList actualEvents;
+            try
+            {
+                var allEvents = new Filter
+                {
+                    categoryId = 3
+                };
+                var filterRest = new FilterRest
+                {
+                   CategoryId = 3
+                };
+            
+                expectedEvents = await eventMiddlePoint.EventFilterAsync(filterRest);
+                actualEvents = await EventWebService.GetFilteredEventsAsync(allEvents);
+            }
+            catch (FaultException)
+            {
+                return;
+            }
+            Assert.AreEqual(expectedEvents, actualEvents);
         }
     }
 }

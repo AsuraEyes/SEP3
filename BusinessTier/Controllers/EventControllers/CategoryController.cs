@@ -23,7 +23,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                IList<Category> categories = await categoryWebService.GetCategoriesAsync();
+                var categories = await categoryWebService.GetCategoriesAsync();
                 return Ok(categories);
             }
             catch (Exception e)

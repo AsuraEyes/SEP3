@@ -7,7 +7,7 @@ namespace BankServer.MiddlePoint
 {
     public class PaymentValidationMiddlePoint: IPaymentValidationMiddlePoint
     {
-        public async Task<string> ValidateCard(UserCardInfo userCard)
+        public string ValidateCard(UserCardInfo userCard)
         {
             Random rand = new Random();
             userCard.AvailableSavings = rand.Next(200); 
@@ -25,7 +25,7 @@ namespace BankServer.MiddlePoint
                 return "Not a valid name.";
             }
 
-            if (userCard.CVC.Length !=3)
+            if (userCard.CVC.Length !=3 || !userCard.CVC.All(char.IsDigit))
             {
                 return "Invalid CVC";
             }

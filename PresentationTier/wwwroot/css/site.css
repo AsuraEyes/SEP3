@@ -3,20 +3,11 @@
 :root {
     --yellow-color:#AC8E02;
     --violet-color:#18062E;
+    --dark-violet-color: #0e041c;
 }
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-a, .btn-link {
-    color: #0366d6;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
 }
 
 .content {
@@ -89,7 +80,14 @@ li{
     background-color: var(--violet-color);
     color: white;
 }
-
+::selection{
+    color: white;
+    background-color: var(--yellow-color);
+}
+::-moz-selection{
+    color: white;
+    background-color: var(--yellow-color);
+}
 
 /*LINKS*/
 .main a{
@@ -105,8 +103,6 @@ li{
     display: block;
     background: var(--yellow-color);
     transition: 0.5s;
-    /*border-bottom: 2px solid white;
-    transition: width 0.5s;*/
 }
 .main a:hover::after{
     width: 100%;
@@ -162,6 +158,11 @@ h3{
 .remove-line-above{
     border-top: none;
 }
+.grid-container-fourths{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 2em;
+}
 
 
 /*BUTTONS*/
@@ -194,6 +195,8 @@ h3{
     border-bottom: 2px solid white;
     outline: 0;
     margin-bottom: 1em;
+    border-radius: 0;
+    width: 90%;
 }
 .grid-container-payment .form-field, .grid-container-payment label{
     padding: 0.5em;
@@ -221,7 +224,7 @@ h3{
 
 
 /*TOP ROW*/
-.top-row[b-xp7kt5tolp]{
+.top-row{
     background-color: var(--violet-color) !important;
     height: 5em !important;
 } 
@@ -240,4 +243,71 @@ h3{
     font-variant: small-caps;
     color: var(--yellow-color);
     font-size: 1.7em;
+}
+
+
+/*TABLE*/
+.table{
+    border-top: none;
+    margin-top: 2em;
+}
+tbody tr td:first-child {
+    width: 3em;
+    min-width: 3em;
+    max-width: 3em;
+    word-break: break-all;
+}
+th{
+    font-variant: small-caps;
+    font-weight: normal;
+    font-size: 1.3em;
+}
+.table tbody tr:hover td{
+    background-color: var(--dark-violet-color);
+}
+
+/*Checkbox styling borrowed from:
+https://moderncss.dev/pure-css-custom-checkbox-style/*/
+/*CHECKBOX*/
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid currentColor;
+    /*border-radius: 0.15em;*/
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--violet-color);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+
+/*PAGINATION*/
+.page-item{
+   /* background-color: var(--dark-violet-color);*/
+}
+.page-link{
+    background-color: var(--dark-violet-color);
+    color:white
+}
+.page-item:hover .page-link{
+    color: var(--yellow-color);
+}
+.pagination{
+    border-radius: 0;
 }

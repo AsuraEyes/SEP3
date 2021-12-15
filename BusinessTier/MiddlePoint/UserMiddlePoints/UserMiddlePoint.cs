@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
-using BusinessTier.Data.UserWebServices.Users;
+using BusinessTier.Data.UserWebServices;
 using BusinessTier.Models;
 
 namespace BusinessTier.MiddlePoint.UserMiddlePoints
@@ -9,7 +9,8 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
     public class UserMiddlePoint : IUserMiddlePoint
     {
         private readonly IUserWebService userWebService;
-        private int resultsPerPage = 10;
+        private const int ResultsPerPage = 10;
+
         public UserMiddlePoint(IUserWebService userWebService)
         {
             this.userWebService = userWebService;
@@ -42,7 +43,7 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
 
         public async Task RequestPromotionToOrganizer(string username)
         {
-            User userToBePromoted = await GetUserByUsernameAsync(username);
+            var userToBePromoted = await GetUserByUsernameAsync(username);
             userToBePromoted.requestedPromotion = true;
             await userWebService.UpdateUser(userToBePromoted);
         }
@@ -64,7 +65,7 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
 
         public async Task<IList<User>> GetUsersAsync(FilterRest filterRest)
         {
-            Filter filter = new Filter();
+            var filter = new Filter();
             if (filterRest.Search != null)
             {
                 filter.filter = filterRest.Search;   
@@ -73,8 +74,8 @@ namespace BusinessTier.MiddlePoint.UserMiddlePoints
             {
                 filter.filter = "";
             }
-            filter.limit = resultsPerPage;
-            filter.offset = (filterRest.CurrentPage - 1) * resultsPerPage;
+            filter.limit = ResultsPerPage;
+            filter.offset = (filterRest.CurrentPage - 1) * ResultsPerPage;
             return await userWebService.GetUsersAsync(filter);
         }
     }

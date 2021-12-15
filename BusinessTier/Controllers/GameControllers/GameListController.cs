@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.GameWebServices.GameLists;
-using BusinessTier.MiddlePoint.GameMiddlePoints;
 using BusinessTier.MiddlePoint.GameMiddlePoints.GameLists;
 using BusinessTier.MiddlePoint.GameMiddlePoints.Games;
 using BusinessTier.Models;
@@ -32,7 +31,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<Game> adults = await gameListWebService.GetUserGameListAsync(username);
+                var adults = await gameListWebService.GetUserGameListAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)
@@ -55,7 +54,7 @@ namespace BusinessTier.Controllers.GameControllers
         {
             try
             {
-                IList<int> adults = await gameMiddlePoint.GetUserGamesIdsAsync(username);
+                var adults = await gameMiddlePoint.GetUserGamesIdsAsync(username);
                 return Ok(adults);
             }
             catch (Exception e)

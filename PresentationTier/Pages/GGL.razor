@@ -1,84 +1,99 @@
 @page "/GGL"
 
 @using PresentationTier.Models
-@using PresentationTier.Data
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.Games
 
 @inject NavigationManager navigationManager
 @inject IGameService gameService
 
-<h2>GGL</h2>
-<div class="grid-container-fifty-fifty">
-        <div>
+<AuthorizeView Policy="Administrator">
+    <Authorized>
+        <h2>GGL</h2>
+        <div class="grid-container-fifty-fifty">
+            <div>
                 @foreach (var item in goldenGameList)
                 {
-                        if (item.Approved )
-                        {
-                                <ul>
-                                        <li @onclick="@(() => EditGame(item.Id))"><a href="#">@item.Name</a></li>
-                                </ul>
-                        }
+                    if (item.Approved)
+                    {
+                        <ul>
+                            <li @onclick="@(() => EditGame(item.Id))">
+                                <a href="#">@item.Name</a>
+                            </li>
+                        </ul>
+                    }
                 }
                 @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
                 {
-                        <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
-                                <i class="oi oi-plus"></i> Load more
-                        </button>
-                }   
-        </div>
-        <div>
+                    <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                        <i class="oi oi-plus"></i> Load more
+                    </button>
+                }
+            </div>
+            <div>
                 <input class="form-field" type="text" @bind-value="searchName" style="width: 250px"/>
                 <button @onclick="@SearchGameAsync" class="button simple-button" type="submit">Search</button>
-                      
-                <p class="actions">
-                        <button @onclick="@AddGame" class="button simple-button" type="submit">
-                                <i class="oi oi-plus"></i> Add
-                        </button>
-                </p>
-        </div>
-</div>
 
+                <p class="actions">
+                    <button @onclick="@AddGame" class="button simple-button" type="submit">
+                        <i class="oi oi-plus"></i> Add
+                    </button>
+                </p>
+            </div>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
-        private IList<Game> goldenGameListPage = new List<Game>();
-        private List<Game> goldenGameList = new List<Game>();
-        private FilterREST filterRest = new FilterREST();
-        private string searchName;
-        private int initialResultsNumber;
+    private IList<Game> goldenGameListPage = new List<Game>();
+    private List<Game> goldenGameList = new List<Game>();
+    private FilterREST filterRest = new FilterREST();
+    private string searchName;
+    private int initialResultsNumber;
 
-        protected override async Task OnInitializedAsync()
-        {
-                filterRest.CurrentPage = 1;
-                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
-                initialResultsNumber = goldenGameListPage.Count;
-                goldenGameList.AddRange(goldenGameListPage);
-        }
+    protected override async Task OnInitializedAsync()
+    {
+        filterRest.CurrentPage = 1;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        initialResultsNumber = goldenGameListPage.Count;
+        goldenGameList.AddRange(goldenGameListPage);
+    }
 
-        private void AddGame()
-        {
-                navigationManager.NavigateTo("CreateGame");
-        }
-        
-        private void EditGame(int id)
-        {
-                navigationManager.NavigateTo($"EditGame/{id}");
-        }
+    private void AddGame()
+    {
+        navigationManager.NavigateTo("CreateGame");
+    }
 
-        private async Task SearchGameAsync()
-        {
-                filterRest.Search = searchName;
-                filterRest.CurrentPage = 1;
-                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
-                goldenGameList.Clear();
-                goldenGameList.AddRange(goldenGameListPage);
-        }
+    private void EditGame(int id)
+    {
+        navigationManager.NavigateTo($"EditGame/{id}");
+    }
 
-        private async Task LoadMoreAsync()
-        {
-                filterRest.CurrentPage += 1;
-                filterRest.Search = searchName;
-                goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
-                goldenGameList.AddRange(goldenGameListPage);
-        }
+    private async Task SearchGameAsync()
+    {
+        filterRest.Search = searchName;
+        filterRest.CurrentPage = 1;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        goldenGameList.Clear();
+        goldenGameList.AddRange(goldenGameListPage);
+    }
+
+    private async Task LoadMoreAsync()
+    {
+        filterRest.CurrentPage += 1;
+        filterRest.Search = searchName;
+        goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        goldenGameList.AddRange(goldenGameListPage);
+    }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

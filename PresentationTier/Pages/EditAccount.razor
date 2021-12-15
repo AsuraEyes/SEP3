@@ -7,51 +7,73 @@
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 
-<h3>Edit Account</h3>
-<EditForm Model="@user" OnValidSubmit="@EditAccountAsync">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="form-group">
-        Username:<br/>
-        <InputText @bind-Value="user.Username" disabled/>
-    </div>
-    <div class="form-group">
-        Password:<br/>
-        <InputText @bind-Value="user.Password" type="password"/>
-    </div>
-    <div class="form-group">
-        Confirm Password:<br/>
-        <InputText @bind-Value="user.ConfirmPassword" type="password"/>
-    </div>
-    <div class="form-group">
-        First Name:<br/>
-        <InputText @bind-Value="user.FirstName"/>
-    </div>
-    <div class="form-group">
-        Last Name:<br/>
-        <InputText @bind-Value="user.LastName"/>
-    </div>
-    <div class="form-group">
-        Phone number:<br/>
-        <InputText @bind-Value="user.PhoneCountryCode"  style="width: 50px"/><InputText @bind-Value="user.PhoneNumber"/>
-    </div>
-    <div class="form-group">
-        Email:<br/>
-        <InputText @bind-Value="user.EmailAddress"/>
-    </div>
+<AuthorizeView Policy="PlayerOrOrganizer">
+    <Authorized>
 
-    <p class="actions">
-        <button class="btn btn-outline-success" type="submit">Save</button>
-    </p>
+        <h3>Edit Account</h3>
+        <EditForm Model="@user" OnValidSubmit="@EditAccountAsync" Context="editForm">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
 
-</EditForm>
+            <div class="grid-container-thirds">
+                <div>
+                    <div class="form-group">
+                        Username:<br/>
+                        <InputText class="form-field" @bind-Value="user.Username" disabled/>
+                    </div>
+                    <div class="form-group">
+                        Password:<br/>
+                        <InputText class="form-field" @bind-Value="user.Password" type="password"/>
+                    </div>
+                    <div class="form-group">
+                        Confirm Password:<br/>
+                        <InputText class="form-field" @bind-Value="user.ConfirmPassword" type="password"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        First Name:<br/>
+                        <InputText class="form-field" @bind-Value="user.FirstName"/>
+                    </div>
+                    <div class="form-group">
+                        Last Name:<br/>
+                        <InputText class="form-field" @bind-Value="user.LastName"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        Phone number:<br/>
+                        <InputText class="form-field" @bind-Value="user.PhoneCountryCode" style="width: 50px"/><InputText class="form-field" @bind-Value="user.PhoneNumber"/>
+                    </div>
+                    <div class="form-group">
+                        Email:<br/>
+                        <InputText class="form-field" @bind-Value="user.EmailAddress"/>
+                    </div>
+                </div>
+            </div>
+
+            <p class="actions">
+                <button class="button simple-button" type="submit">Save</button>
+            </p>
+
+        </EditForm>
+
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
+
     [Parameter]
     public string Username { get; set; }
-    
+
     private User user = new();
-    
+
     protected override async Task OnInitializedAsync()
     {
         user = await userService.GetUserByUsernameAsync(Username);
@@ -63,4 +85,10 @@
         await userService.EditAccountAsync(user);
         navigationManager.NavigateTo("/ManageAccount");
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

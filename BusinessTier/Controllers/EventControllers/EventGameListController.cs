@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.EventWebServices.EventGameLists;
-using BusinessTier.MiddlePoint.EventMiddlePoints;
 using BusinessTier.MiddlePoint.EventMiddlePoints.EventGameLists;
 using BusinessTier.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +28,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                IList<Game> allEventGameList = await eventGameListWebService.GetAllEventGameListAsync(id);
+                var allEventGameList = await eventGameListWebService.GetAllEventGameListAsync(id);
                 return Ok(allEventGameList);
             }
             catch (Exception e)

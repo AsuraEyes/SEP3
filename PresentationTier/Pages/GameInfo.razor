@@ -1,45 +1,60 @@
 @page "/GameInfo/{Id:int}"
 @using PresentationTier.Models
-@using PresentationTier.Data
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.Games
 
 @inject NavigationManager navigationManager
 @inject IGameService gameService
 
-<h3>@game.Name</h3>
-<p>Complexity: @game.Complexity</p>
-<p>Playing time: @game.TimeEstimation</p>
-<p>Player amount: @game.MinNumberOfPlayers - @game.MaxNumberOfPlayers</p>
-@if (game.ShortDescription != null)
-{
-    <p>Short Description: @game.ShortDescription</p>
-}
-@if (game.NeededEquipment != null)
-{
-    <p>Needed equipment: @game.NeededEquipment</p>
-}
-@if (game.MaxAge != 0)
-{
-    <p>Age range: @game.MinAge - @game.MaxAge</p>
-}
-else
-{
-    <p>Age range: @game.MinAge+</p>
-}
-@if (game.Tutorial != null)
-{
-    <p>Turtorial: <a href="@game.Tutorial">@game.Tutorial</a></p>
-}
+
+<AuthorizeView>
+    <Authorized>
+        <h3>@game.Name</h3>
+        <p>Complexity: @game.Complexity</p>
+        <p>Playing time: @game.TimeEstimation</p>
+        <p>Player amount: @game.MinNumberOfPlayers - @game.MaxNumberOfPlayers</p>
+        @if (game.ShortDescription != null)
+        {
+            <p>Short Description: @game.ShortDescription</p>
+        }
+        @if (game.NeededEquipment != null)
+        {
+            <p>Needed equipment: @game.NeededEquipment</p>
+        }
+        @if (game.MaxAge != 0)
+        {
+            <p>Age range: @game.MinAge - @game.MaxAge</p>
+        }
+        else
+        {
+            <p>Age range: @game.MinAge+</p>
+        }
+        @if (game.Tutorial != null)
+        {
+            <p>Turtorial: <a href="@game.Tutorial">@game.Tutorial</a></p>
+        }
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
+
     [Parameter]
     public int Id { get; set; }
 
     private Game game = new();
-    
+
     protected override async Task OnInitializedAsync()
     {
         game = await gameService.GetGameAsync(Id);
+    }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
     }
 }

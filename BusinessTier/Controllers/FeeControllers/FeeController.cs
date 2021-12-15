@@ -87,7 +87,7 @@ namespace BusinessTier.Controllers.FeeControllers
         {
             try
             {
-                IList<OneTimeFee> oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeListAsync(username);
+                var oneTimeFees = await oneTimeFeeWebService.GetOneTimeFeeListAsync(username);
                 return Ok(oneTimeFees);
             }
             catch (Exception e)
@@ -103,7 +103,7 @@ namespace BusinessTier.Controllers.FeeControllers
         {
             try
             {
-                IList<MonthlyFee> monthlyFees = await monthlyFeeWebService.GetMonthlyFeeListAsync(username);
+                var monthlyFees = await monthlyFeeWebService.GetMonthlyFeeListAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -119,7 +119,7 @@ namespace BusinessTier.Controllers.FeeControllers
         {
             try
             {
-                MonthlyFee monthlyFees = await monthlyFeeWebService.GetMonthlyFeeAsync(username);
+                var monthlyFees = await monthlyFeeWebService.GetMonthlyFeeAsync(username);
                 return Ok(monthlyFees);
             }
             catch (Exception e)
@@ -134,7 +134,7 @@ namespace BusinessTier.Controllers.FeeControllers
         {
             try
             {
-                OneTimeFee oneTimeFee = await oneTimeFeeWebService.GetOneTimeFeeAsync(username, eventId);
+                var oneTimeFee = await oneTimeFeeWebService.GetOneTimeFeeAsync(username, eventId);
                 return Ok(oneTimeFee);
             }
             catch (Exception e)

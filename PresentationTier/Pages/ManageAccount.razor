@@ -10,43 +10,52 @@
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 
-<h2>Manage Account</h2>
-@if (user == null)
-{
-    <p>Loading...</p>
-}
-else
-{
-    <h3>@user.Username</h3>
-    @if (user.FirstName != null && user.LastName != null)
-    {
-        <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
-    }
-    <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
-    @if (user.PhoneNumber != null)
-    {
-        <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
-    }
-    @if (user.EmailAddress != null)
-    {
-        <p>Email: @user.EmailAddress</p>
-    }
-    <p class="actions">
-        <button class="button simple-button" type="submit" @onclick="@Edit">Edit</button>
-    </p>
+<AuthorizeView Policy="PlayerOrOrganizer">
+    <Authorized>
+        <h2>Manage Account</h2>
+        @if (user == null)
+        {
+            <p>Loading...</p>
+        }
+        else
+        {
+            <h3>@user.Username</h3>
+            @if (user.FirstName != null && user.LastName != null)
+            {
+                <p>Name: @(user.FirstName ?? "") @(user.LastName ?? "")</p>
+            }
+            <p>Role: @(user.Role == 3 ? "Organizer" : "Player")</p>
+            @if (!string.IsNullOrEmpty(user.PhoneNumber))
+            {
+                <p>Phone: @(user.PhoneCountryCode ?? "") @user.PhoneNumber</p>
+            }
+            @if (!string.IsNullOrEmpty(user.EmailAddress))
+            {
+                <p>Email: @user.EmailAddress</p>
+            }
+            <p class="actions">
+                <button class="button simple-button" type="submit" @onclick="@Edit">Edit</button>
+            </p>
 
-    <p class="actions">
-        <button class="button delete-button" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
-    </p>
-}
+            <p class="actions">
+                <button class="button delete-button" type="submit" @onclick="@DeleteAccountAsync">Delete account</button>
+            </p>
+        }
 
-<AuthorizeView Policy="Player">
-    <p class="actions">
-        <button class="btn btn-outline-primary" type="submit" @onclick="@RequestForOrganizerAsync">Request for organizer</button>
-    </p>
-    <p>@confirmationMessage</p>
+        <AuthorizeView Policy="Player" Context="additionalAuthentication">
+            <p class="actions">
+                <button class="button simple-button" type="submit" @onclick="@RequestForOrganizerAsync">Request for organizer</button>
+            </p>
+            <p>@confirmationMessage</p>
+        </AuthorizeView>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
 </AuthorizeView>
-
 
 
 @code {
@@ -59,7 +68,7 @@ else
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         user = await userService.GetUserByUsernameAsync(username);
     }
-    
+
     private async Task RequestForOrganizerAsync()
     {
         await userService.RequestPromotionToOrganizerAsync(username);
@@ -68,7 +77,7 @@ else
 
     private async Task DeleteAccountAsync()
     {
-        if (!await jsRuntime.InvokeAsync<bool>("confirm","Are you sure you want to delete your account?"))
+        if (!await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete your account?"))
             return;
         await userService.DeleteAccountAsync(username);
         await ((CustomAuthenticationStateProvider) stateProvider).Logout();
@@ -78,6 +87,11 @@ else
     private void Edit()
     {
         navigationManager.NavigateTo($"/EditAccount/{username}");
+    }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
     }
 
 }

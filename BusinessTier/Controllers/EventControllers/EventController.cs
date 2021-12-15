@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using BookAndPlaySOAP;
 using BusinessTier.Data.EventWebServices.Events;
-using BusinessTier.MiddlePoint.EventMiddlePoints;
 using BusinessTier.MiddlePoint.EventMiddlePoints.Events;
 using BusinessTier.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +27,7 @@ namespace BusinessTier.Controllers.EventControllers
         {
             try
             {
-                EventList filteredEventsAsync = await eventMiddlePoint.EventFilterAsync(filterRest);
+                var filteredEventsAsync = await eventMiddlePoint.EventFilterAsync(filterRest);
                 return Ok(filteredEventsAsync);
             }
             catch (Exception e)

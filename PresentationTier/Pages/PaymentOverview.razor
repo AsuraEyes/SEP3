@@ -9,80 +9,91 @@
 @inject IFeeService feeService
 @inject NavigationManager navigationManager
 
-
-<h2>Payment Overview</h2>
-
-<div class="grid-container-payment">
-    <div class="grid-item">
-        <h3>Subscription</h3>
-            @if (monthlyFee != null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
-            {
-                <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
+<AuthorizeView Policy="PlayerOrOrganizer">
+    <Authorized>
+        <h2>Payment Overview</h2>
+        <div class="grid-container-payment">
+            <div class="grid-item">
+                <h3>Subscription</h3>
+                @if (monthlyFee != null && monthlyFee.EndDate.CompareTo(DateTime.Today) > 0)
+                {
+                    <p>Active until: @monthlyFee.EndDate.ToLongDateString()</p>
+                }
+                else
+                {
+                    <p>No active subscription</p>
+                }
                 <button class="button simple-button" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
-            }
-            else
-            {
-                <p>No active subscription</p>
-                <button style="margin-bottom: 3em" class="btn btn-outline-success" type="submit" @onclick="@Subscribe">Subscribe Now!</button>
-        
-            }
-    </div>
-    
-    <div class="grid-item">
-        <h3>Payment History</h3>
-        <div class="grid-container-fifty-fifty">
-            
-            @if (monthlyFeeList != null)
-            {
-                <div>
-                    <h4>Subscriptions</h4>
-                    <ul>
-                        @foreach (var item in monthlyFeeList)
-                        {
-                            <div id="payment_overview" style="margin: 1em 0">
-                                <div style="margin-bottom: 3em" class="oi oi-dollar">
-                                </div>
-                                <div>
-                                    <li>@item.Amount dkk</li>
-                                    <li>From: @item.StartDate.ToLongDateString()</li>
-                                    <li>To: @item.EndDate.ToLongDateString()</li>
-                                </div>
-                            </div>
-                        }
-                    </ul>
-                </div>
-            }
-            else
-            {
-                <p>No monthly fees</p>}
+            </div>
 
-            @if (oneTimeFees != null)
-            {
-                <div>
-                    <h4>Payments</h4>
-                    @foreach (var item in oneTimeFees)
+            <div class="grid-item">
+                <h3>Payment History</h3>
+                <div class="grid-container-fifty-fifty">
+
+                    @if (monthlyFeeList != null)
                     {
-                        <ul>
-                            <li>@item.Amount dkk</li>
-                        </ul>
+                        <div>
+                            <h4>Subscriptions</h4>
+                            <ul>
+                                @foreach (var item in monthlyFeeList)
+                                {
+                                    <div id="payment_overview" style="margin: 1em 0">
+                                        <div style="margin-bottom: 3em" class="oi oi-dollar">
+                                        </div>
+                                        <div>
+                                            <li>@item.Amount dkk</li>
+                                            <li>From: @item.StartDate.ToLongDateString()</li>
+                                            <li>To: @item.EndDate.ToLongDateString()</li>
+                                        </div>
+                                    </div>
+                                }
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No monthly fees</p>
+                    }
+
+                    @if (oneTimeFees != null)
+                    {
+                        var count = 0;
+                        var sum = 0;
+                        <div>
+                            <h4>Payments</h4>
+                            @foreach (var item in oneTimeFees)
+                            {
+                                count++;
+                                sum += item.Amount;
+                            }
+                            <ul>
+                                <li>Paid for @count events </li>
+                                <li>You spent in total: @sum dkk</li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No one time fees</p>
                     }
                 </div>
-            
-            }
-            else
-            {
-                <p>No one time fees</p>
-            }
+            </div>
         </div>
-    </div>
-</div>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private MonthlyFee monthlyFee = new();
     private IList<MonthlyFee> monthlyFeeList = new List<MonthlyFee>();
     private IList<OneTimeFee> oneTimeFees = new List<OneTimeFee>();
     private string username;
-    
+
     protected override async Task OnInitializedAsync()
     {
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
@@ -95,5 +106,10 @@
     {
         navigationManager.NavigateTo("Payment");
     }
-    
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

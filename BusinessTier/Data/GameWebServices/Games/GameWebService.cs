@@ -17,34 +17,33 @@ namespace BusinessTier.Data.GameWebServices.Games
 
         private async Task<SOAPGameResponse1> GetGameResponseAsync(int id, Operation name, Game game)
         {
-            SOAPGameRequest soapGameRequest = new SOAPGameRequest
+            var soapGameRequest = new SOAPGameRequest
             {
                 id = id,
                 Operation = name,
                 Game = game
             };
-            SOAPGameRequest1 soapRequest1 = new SOAPGameRequest1(soapGameRequest);
-            SOAPGameResponse1 soapResponse1 = new SOAPGameResponse1();
+            var soapRequest1 = new SOAPGameRequest1(soapGameRequest);
+            var soapResponse1 = new SOAPGameResponse1();
             soapResponse1 = port.SOAPGameAsync(soapRequest1).Result;
             return soapResponse1;
         }
         
         private async Task<SOAPGGLResponse1> GetGglResponseAsync(Operation name,Filter filter)
         {
-            SOAPGGLRequest soapGglRequest = new SOAPGGLRequest
+            var soapGglRequest = new SOAPGGLRequest
             {
                 Operation = name,
                 Filter = filter
             };
-            SOAPGGLRequest1 soapRequest1 = new SOAPGGLRequest1(soapGglRequest);
-            SOAPGGLResponse1 soapResponse1 = new SOAPGGLResponse1();
-            soapResponse1 = await port.SOAPGGLAsync(soapRequest1);
+            var soapRequest1 = new SOAPGGLRequest1(soapGglRequest);
+            var soapResponse1 = await port.SOAPGGLAsync(soapRequest1);
             return soapResponse1;
         }
         public async Task<Game> GetGameAsync(int id)
         {
             response = await GetGameResponseAsync(id, Operation.GET, null);
-            Game game = response.SOAPGameResponse.game;
+            var game = response.SOAPGameResponse.game;
 
             return  game;
         }

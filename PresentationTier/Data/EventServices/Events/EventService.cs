@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -20,7 +19,11 @@ namespace PresentationTier.Data.EventServices.Events
         public async Task<EventList> GetFilteredEventsAsync(FilterREST filterRest)
         {
             var filters =
-                $"?byDate={filterRest.ByDate}&byAvailability={filterRest.ByAvailability}&currentPage={filterRest.CurrentPage}&categoryId={filterRest.CategoryId}&resultsPerPage={filterRest.ResultsPerPage}";
+                $"?byDate={filterRest.ByDate}&" +
+                $"byAvailability={filterRest.ByAvailability}&" +
+                $"currentPage={filterRest.CurrentPage}&" +
+                $"categoryId={filterRest.CategoryId}&" +
+                $"resultsPerPage={filterRest.ResultsPerPage}";
             var stringAsync = client.GetStringAsync(uri + $"/FilteredEvents"+filters);
             var eventList = await stringAsync;
             var events = JsonSerializer.Deserialize<EventList>(eventList, new JsonSerializerOptions

@@ -3,8 +3,6 @@
 @using PresentationTier.Models
 @using System.Security.Claims
 @using PresentationTier.Authentication
-@using PresentationTier.Data
-@using PresentationTier.Data.GameServices
 @using PresentationTier.Data.GameServices.GameLists
 @using PresentationTier.Data.GameServices.Games
 
@@ -13,67 +11,71 @@
 @inject NavigationManager navigationManager
 @inject AuthenticationStateProvider stateProvider
 
-<h3>Edit Game List</h3>
-<p class="actions">
-    <button @onclick="@SuggestGame" class="btn btn-outline-secondary" type="submit">
-            <i class="oi oi-plus"></i> Suggest a new game
-    </button>
-</p>
+<AuthorizeView Policy="Organizer">
+    <Authorized>
+        <h2>Edit Game List</h2>
+        <div class="grid-container-fifty-fifty remove-line-above">
+            <div class="actions">
+                <button @onclick="@SuggestGame" class="button simple-button" type="submit">
+                    <i class="oi oi-plus"></i> Suggest a new game
+                </button>
+            </div>
+            <div>
+                <input class="form-field" type="text" @bind-value="searchName" style="width: 250px"/>
+                <button @onclick="@SearchGameAsync" class="button simple-button" type="submit">Search</button>
+            </div>
+        </div>
 
-@if (goldenGameList == null)
-{
-    <p>
-        <em>Loading...</em>
-    </p>
-}
-else if (!goldenGameList.Any())
-{
-    <p>
-        <em>No games exist. Please suggest some.</em>
-    </p>
-}
-else
-{
-    <input type="text" @bind-value="searchName"  style="width: 250px"/>
-    <button @onclick="@SearchGameAsync" class="btn btn-outline-secondary" type="submit">Search</button>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>In my Game List</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in goldenGameList)
+
+        @if (goldenGameList == null)
         {
-            <tr>
-                <td @onclick="@(() => MoreGameInfo(item.Id))"><a href="#">@item.Name</a></td>
-                <td>
-                    <input type="checkbox" checked=@(gameIds.Contains(item.Id)) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
-                </td>
-            </tr>
+            <p>
+                <em>Loading...</em>
+            </p>
         }
-        </tbody>
-    </table>
-    @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
-    {
-        <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
-            <i class="oi oi-plus"></i> Load more
-        </button>
-    }
-}
-
-    
-<p class="actions">
-        <button @onclick="@GoBack" class="btn btn-outline-secondary" type="submit">
-            Go back
-        </button>
-</p>
+        else if (!goldenGameList.Any())
+        {
+            <p>
+                <em>No such games exist.</em>
+            </p>
+        }
+        else
+        {
+            <table class="table">
+                <tbody>
+                @foreach (var item in goldenGameList)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked=@(gameIds.Contains(item.Id)) @onchange="@(arg => CompletedChangeAsync(arg, item.Id))"/>
+                        </td>
+                        <td>
+                            <a href="#" @onclick="@(() => MoreGameInfo(item.Id))">@item.Name</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            @if (goldenGameListPage != null && goldenGameListPage.Count == initialResultsNumber)
+            {
+                <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                    <i class="oi oi-plus"></i> Load more
+                </button>
+            }
+        }
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
+        }
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private IList<Game> goldenGameListPage = new List<Game>();
-    private List<Game> goldenGameList = new ();
-    private FilterREST filterRest = new ();
+    private List<Game> goldenGameList = new();
+    private FilterREST filterRest = new();
     private IList<int> gameIds;
     private string username;
     private string searchName;
@@ -88,33 +90,29 @@ else
         username = ((CustomAuthenticationStateProvider) stateProvider).GetAuthenticationStateAsync().Result.User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name))?.Value;
         gameIds = await gameListService.GetUserGamesIdsAsync(username);
     }
-    
+
     private async Task CompletedChangeAsync(ChangeEventArgs arg, int id)
     {
         var inList = arg.Value != null && (bool) arg.Value;
         await gameListService.EditUserGamesAsync(username, id, inList);
     }
-    
-    private void GoBack()
-    {
-        navigationManager.NavigateTo("GameList");
-    }
-    
+
     private void MoreGameInfo(int id)
     {
         navigationManager.NavigateTo($"GameInfo/{id}");
     }
-    
+
     private void SuggestGame()
     {
         navigationManager.NavigateTo("CreateGame");
     }
-    
+
     private async Task SearchGameAsync()
     {
         filterRest.Search = searchName;
         filterRest.CurrentPage = 1;
         goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
+        gameIds = await gameListService.GetUserGamesIdsAsync(username);
         goldenGameList.Clear();
         goldenGameList.AddRange(goldenGameListPage);
     }
@@ -126,4 +124,10 @@ else
         goldenGameListPage = await gameService.GetLimitedSearchGGLAsync(filterRest);
         goldenGameList.AddRange(goldenGameListPage);
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }

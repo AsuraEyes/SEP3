@@ -3,57 +3,73 @@
 @using PresentationTier.Models
 @using PresentationTier.Data.UserServices
 
-@attribute [Authorize(Policy = "Administrator")]
-
 @inject NavigationManager navigationManager
 @inject IUserService userService
 @inject AuthenticationStateProvider stateProvider
 
-<h3>All Users</h3>
-Requested promotion:
-<Select class="selectpicker" @oninput="@(Filter)">
-    <option value="false">-- All --</option>
-    <option value="true">Requested promotion</option>
-</Select>
+<AuthorizeView Policy="Administrator">
+    <Authorized>
 
-<input type="text" @bind-value="searchName"  style="width: 250px"/>
-<button @onclick="@SearchUserAsync" class="btn btn-outline-secondary" type="submit">Search</button>
+        <h2>All Users</h2>
+        <div class="grid-container-fifty-fifty">
+            <div>
+                <ul>
+                    @if (requested == false)
+                    {
+                        @foreach (var user in allUsers)
+                        {
+                            <li>
+                                <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
+                            </li>
+                        }
+                        @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
+                        {
+                            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Load more
+                            </button>
+                        }
+                    }
+                    else
+                    {
+                        @foreach (var user in allUsers.Where(t => t.RequestedPromotion))
+                        {
+                            <li>
+                                <a href="#" @onclick="@(() => MoreUserInfo(user.Username))">@user.Username</a>
+                            </li>
+                        }
+                        @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
+                        {
+                            <button @onclick="@LoadMoreAsync" class="button simple-button" type="submit">
+                                <i class="oi oi-plus"></i> Load more
+                            </button>
+                        }
+                    }
+                </ul>
+            </div>
+            <div>
+                <span>Requested promotion:</span>
+                <Select class="selectpicker" @oninput="@(Filter)">
+                    <option value="false">-- All --</option>
+                    <option value="true">Requested promotion</option>
+                </Select>
+                <br/>
 
-<ul>
-    @if (requested == false)
-    {
-        @foreach (var user in allUsers)
-        {
-            <li>
-                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
-            </li>
+                <input class="form-field" type="text" @bind-value="searchName" style="width: 250px"/>
+                <button @onclick="@SearchUserAsync" class="button simple-button" type="submit">Search</button>
+
+            </div>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        @{
+            NavigateHome();
         }
-        @if (allUsersPage != null && allUsersPage.Count == initialResultsNumber)
-        {
-            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Load more
-            </button>
-        }
-    }
-    else
-    {
-        @foreach (var user in allUsers.Where(t=> t.RequestedPromotion))
-        {
-            <li>
-                <b @onclick="@(() => MoreUserInfo(user.Username))"><a href="#">@user.Username</a></b>
-            </li>
-        }
-        @if (allUsersPage != null && allUsers.Count(t => t.RequestedPromotion) == initialResultsNumber)
-        {
-            <button @onclick="@LoadMoreAsync" class="btn btn-outline-secondary" type="submit">
-                <i class="oi oi-plus"></i> Load more
-            </button>
-        }
-    }
-</ul>
+        ;
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
-    private List<User> allUsers  = new ();
+    private List<User> allUsers = new();
     private IList<User> allUsersPage = new List<User>();
     private FilterREST filterRest = new();
     private string searchName;
@@ -67,7 +83,7 @@ Requested promotion:
         initialResultsNumber = allUsersPage.Count;
         allUsers.AddRange(allUsersPage);
     }
-    
+
     private void MoreUserInfo(string username)
     {
         navigationManager.NavigateTo($"UserInfo/{username}");
@@ -84,7 +100,7 @@ Requested promotion:
             requested = false;
         }
     }
-    
+
     private async Task SearchUserAsync()
     {
         filterRest.Search = searchName;
@@ -101,4 +117,10 @@ Requested promotion:
         allUsersPage = await userService.GetUsersAsync(filterRest);
         allUsers.AddRange(allUsersPage);
     }
+
+    private void NavigateHome()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
 }
