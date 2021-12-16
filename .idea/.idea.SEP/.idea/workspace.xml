@@ -25,7 +25,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="beautification" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,15 +45,18 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/879e64150fe442079fadd555ede677aa8f5788/7b/f0cd171c/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/shadow_asura/Documents/VIA/3RD SEMESTER/SEP/SEP/BusinessTier/Controllers/EventControllers/CategoryController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/GameInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/879e64150fe442079fadd555ede677aa8f5788/1D0/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20MIQTBrTj32c53Q7IePqmuSEhm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -189,16 +194,8 @@
       <workItem from="1638961700320" duration="1426000" />
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
-      <workItem from="1639129385544" duration="30232000" />
-      <workItem from="1639486912724" duration="5118000" />
-      <workItem from="1639555372160" duration="851000" />
-    </task>
-    <task id="LOCAL-00024" summary="added event gameList view java to blazor">
-      <created>1637674632032</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1637674632032</updated>
+      <workItem from="1639129385544" duration="32218000" />
+      <workItem from="1639570715410" duration="17055000" />
     </task>
     <task id="LOCAL-00025" summary="r">
       <created>1637674651339</created>
@@ -501,42 +498,49 @@
       <option name="project" value="LOCAL" />
       <updated>1639481009026</updated>
     </task>
-    <task id="LOCAL-00068" summary="more test methods created">
-      <created>1639490540206</created>
+    <task id="LOCAL-00068" summary="total one time payment">
+      <created>1639482032701</created>
       <option name="number" value="00068" />
       <option name="presentableId" value="LOCAL-00068" />
       <option name="project" value="LOCAL" />
-      <updated>1639490540207</updated>
+      <updated>1639482032701</updated>
     </task>
-    <task id="LOCAL-00069" summary="test method updated">
-      <created>1639490712853</created>
+    <task id="LOCAL-00069" summary="small fixes">
+      <created>1639577753385</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1639490712853</updated>
+      <updated>1639577753385</updated>
     </task>
-    <task id="LOCAL-00070" summary="test method GetAllUsersAsync made">
-      <created>1639491044210</created>
+    <task id="LOCAL-00070" summary="stars">
+      <created>1639580517961</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1639491044210</updated>
+      <updated>1639580517961</updated>
     </task>
-    <task id="LOCAL-00071" summary="test changed to equals">
-      <created>1639555635312</created>
+    <task id="LOCAL-00071" summary="fix">
+      <created>1639651764476</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1639555635312</updated>
+      <updated>1639651764476</updated>
     </task>
-    <task id="LOCAL-00072" summary="beautification">
-      <created>1639556214785</created>
+    <task id="LOCAL-00072" summary="renamed method">
+      <created>1639665776719</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1639556214786</updated>
+      <updated>1639665776719</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="update">
+      <created>1639682643076</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1639682643076</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +576,6 @@
     <MESSAGE value="packages packages java, mm, mm, yummy, uu, aa, ee," />
     <MESSAGE value="push" />
     <MESSAGE value="cleaning code(controller uri, some methods naming, parameters, xsd clean)" />
-    <MESSAGE value="update" />
     <MESSAGE value="userdao update" />
     <MESSAGE value="commit PaymentOverview.razor" />
     <MESSAGE value="fixed search bug gamelist for organizer" />
@@ -580,11 +583,12 @@
     <MESSAGE value="deleted files" />
     <MESSAGE value="switch my events split dropdown fix" />
     <MESSAGE value="join event fixed" />
-    <MESSAGE value="more test methods created" />
-    <MESSAGE value="test method updated" />
-    <MESSAGE value="test method GetAllUsersAsync made" />
-    <MESSAGE value="test changed to equals" />
-    <MESSAGE value="beautification" />
-    <option name="LAST_COMMIT_MESSAGE" value="beautification" />
+    <MESSAGE value="total one time payment" />
+    <MESSAGE value="small fixes" />
+    <MESSAGE value="stars" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="renamed method" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

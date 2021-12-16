@@ -131,7 +131,7 @@ namespace BusinessTier.Controllers.UserControllers
         
         [HttpDelete]
         [Route("Promotion")]
-        public async Task<ActionResult> DeclinePromotionAsync([FromBody]string username)
+        public async Task<ActionResult> DeclinePromotionAsync([FromQuery]string username)
         {
             if (!ModelState.IsValid)
             {

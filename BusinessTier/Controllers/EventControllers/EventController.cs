@@ -75,17 +75,16 @@ namespace BusinessTier.Controllers.EventControllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Event>> UpdateEventAsync([FromBody] Event eventToBeUpdated)
+        public async Task UpdateEventAsync([FromBody] Event eventToBeUpdated)
         {
             try
             {
                 await eventWebService.EditEventAsync(eventToBeUpdated);
-                return Ok(eventToBeUpdated);
+               
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return StatusCode(500, e.Message);
             }
         }
         

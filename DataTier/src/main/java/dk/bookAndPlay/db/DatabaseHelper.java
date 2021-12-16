@@ -7,6 +7,9 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+/** class imported from Ole Hougaard's github
+ * Available at: https://github.com/olehougaard/sdj3-a20/blob/master/cars-spring-soap/src/main/java/dk/via/db/DatabaseHelper.java**/
+
 public class DatabaseHelper<T> {
     private final String jdbcURL;
     private final String username;
