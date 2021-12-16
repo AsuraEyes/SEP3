@@ -25,13 +25,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="renamed method">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/Events.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/Events.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,14 +195,7 @@
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
       <workItem from="1639129385544" duration="32218000" />
-      <workItem from="1639570715410" duration="16183000" />
-    </task>
-    <task id="LOCAL-00024" summary="added event gameList view java to blazor">
-      <created>1637674632032</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1637674632032</updated>
+      <workItem from="1639570715410" duration="17055000" />
     </task>
     <task id="LOCAL-00025" summary="r">
       <created>1637674651339</created>
@@ -545,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639665776719</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="update">
+      <created>1639682643076</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1639682643076</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +576,6 @@
     <MESSAGE value="packages packages java, mm, mm, yummy, uu, aa, ee," />
     <MESSAGE value="push" />
     <MESSAGE value="cleaning code(controller uri, some methods naming, parameters, xsd clean)" />
-    <MESSAGE value="update" />
     <MESSAGE value="userdao update" />
     <MESSAGE value="commit PaymentOverview.razor" />
     <MESSAGE value="fixed search bug gamelist for organizer" />
@@ -594,6 +588,7 @@
     <MESSAGE value="stars" />
     <MESSAGE value="fix" />
     <MESSAGE value="renamed method" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed method" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
