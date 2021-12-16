@@ -25,11 +25,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="renamed method">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/OrganizerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/OrganizerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/db/DatabaseHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/db/DatabaseHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$EventMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO$IntegerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/EventDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/Events.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/DAO/events/Events.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/target/classes/dk/bookAndPlay/webService/Endpoints/EventEndpoint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +200,7 @@
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
       <workItem from="1639129385544" duration="32218000" />
-      <workItem from="1639570715410" duration="15525000" />
-    </task>
-    <task id="LOCAL-00023" summary="filtering implementation blazor to database">
-      <created>1637655343894</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1637655343894</updated>
+      <workItem from="1639570715410" duration="16183000" />
     </task>
     <task id="LOCAL-00024" summary="added event gameList view java to blazor">
       <created>1637674632032</created>
@@ -543,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639651764476</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="renamed method">
+      <created>1639665776719</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1639665776719</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +569,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="payment options work in presentation tier aswell" />
     <MESSAGE value="Delete account implemented" />
     <MESSAGE value="Validate user updated" />
     <MESSAGE value="search/pagination GGL" />
@@ -592,6 +593,7 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="stars" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="renamed method" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed method" />
   </component>
 </project>
