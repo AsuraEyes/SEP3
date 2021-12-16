@@ -81,7 +81,7 @@
                             </li>
                         </ul>
                     }
-                    @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username) && participants.Count != selectedEvent.MaxNumberOfParticipants)
+                    @if (!username.Equals(selectedEvent.Organizer) && participants.Contains(username))
                     {
                         <p class="actions">
                             <button class="button delete-button" type="submit" @onclick="@WithdrawEventAsync">Withdraw</button>
@@ -89,9 +89,9 @@
                     }
                     else if (!username.Equals(selectedEvent.Organizer) && participants.Count == selectedEvent.MaxNumberOfParticipants)
                     {
-                        <p class="actions">
+                        @*<p class="actions">
                             <button class="button simple-button" type="submit" disabled>Join</button>
-                        </p>
+                        </p>*@
                     }
                     else if (!username.Equals(selectedEvent.Organizer))
                     {
