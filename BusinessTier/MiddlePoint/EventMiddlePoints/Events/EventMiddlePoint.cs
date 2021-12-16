@@ -25,18 +25,12 @@ namespace BusinessTier.MiddlePoint.EventMiddlePoints.Events
             {
                 if (filterRest.ByDate)
                     filter += "byDate";
-                else 
-                    filter = filter.Replace("byDate", "");
                 
                 if (filterRest.ByAvailability)
                     filter += "byAvailability";
-                else 
-                    filter = filter.Replace("byAvailability", "");
 
                 if (filterRest.CategoryId != 0)
                     filter += "byCategory";
-                else
-                    filter = filter.Replace("byCategory", "");
 
                 filterObject.filter = filter;
                 filterObject.limit = filterRest.ResultsPerPage;

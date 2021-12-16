@@ -25,10 +25,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="EventMiddlePoint removed elses from EventFilterAsync">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/EventInfo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SEP.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/Events/EventMiddlePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/MiddlePoint/EventMiddlePoints/Events/EventMiddlePoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,14 +199,7 @@
       <workItem from="1639486912724" duration="5118000" />
       <workItem from="1639555372160" duration="851000" />
       <workItem from="1639576223121" duration="783000" />
-      <workItem from="1639678030710" duration="2379000" />
-    </task>
-    <task id="LOCAL-00024" summary="added event gameList view java to blazor">
-      <created>1637674632032</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1637674632032</updated>
+      <workItem from="1639678030710" duration="3095000" />
     </task>
     <task id="LOCAL-00025" summary="r">
       <created>1637674651339</created>
@@ -545,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639556214786</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="EventMiddlePoint removed elses from EventFilterAsync">
+      <created>1639689151282</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1639689151282</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +568,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Delete account implemented" />
     <MESSAGE value="Validate user updated" />
     <MESSAGE value="search/pagination GGL" />
     <MESSAGE value="pagination/search GGL" />
@@ -594,6 +592,7 @@
     <MESSAGE value="test method GetAllUsersAsync made" />
     <MESSAGE value="test changed to equals" />
     <MESSAGE value="beautification" />
-    <option name="LAST_COMMIT_MESSAGE" value="beautification" />
+    <MESSAGE value="EventMiddlePoint removed elses from EventFilterAsync" />
+    <option name="LAST_COMMIT_MESSAGE" value="EventMiddlePoint removed elses from EventFilterAsync" />
   </component>
 </project>
