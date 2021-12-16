@@ -78,7 +78,7 @@ public class EventDAO implements Events {
         return event;
     }
 
-    public Event create(Event event){
+    public void create(Event event){
         Timestamp startTime = new Timestamp(event.getStartTime().toGregorianCalendar().getTimeInMillis());
         Timestamp endTime = new Timestamp(event.getEndTime().toGregorianCalendar().getTimeInMillis());
 
@@ -87,7 +87,6 @@ public class EventDAO implements Events {
                 event.getName(), startTime, endTime, event.getAddressStreetName(), event.getAddressStreetNumber(),
                 event.getAddressApartmentNumber(), event.getMaxNumberOfParticipants(), event.getEventCategory(),
                 event.getOrganizer());
-        return event;
     }
 
   public Event get(int id) {
@@ -118,7 +117,6 @@ public class EventDAO implements Events {
 
   public EventList getFilteredEvents(Filter filter){
         eventList.getEventList().clear();
-        EventList pagedEventList = new EventList();
         int eventListLength;
 
         String statement = "SELECT COUNT(*) FROM event ";
@@ -150,10 +148,10 @@ public class EventDAO implements Events {
         eventListLength = (integerHelper().mapSingle(new IntegerMapper(), statement+appendToStatement));
         statement = "SELECT * FROM event "+appendToStatement.substring(0, appendToStatement.length()-1);
         statement += " ORDER by id LIMIT "+filter.getLimit()+" OFFSET "+filter.getOffset()+";";
-        pagedEventList.getEventList().addAll(eventHelper().map(new EventMapper(), statement));
-        pagedEventList.setCount((int)Math.ceil(eventListLength/ (float)filter.getLimit()));
+        eventList.getEventList().addAll(eventHelper().map(new EventMapper(), statement));
+        eventList.setCount((int)Math.ceil(eventListLength/ (float)filter.getLimit()));
 
-        return pagedEventList;
+        return eventList;
     }
 
     private static class IntegerMapper implements DataMapper<Integer> {

@@ -37,7 +37,7 @@ namespace BusinessTier.Controllers.EventControllers
         
         [HttpPost]
         [Route("{id:int}")]
-        public async Task JoinEventResultAsync(int id, [FromBody] string username)
+        public async Task CoOrganizeEventAsync(int id, [FromBody] string username)
         {
             if (!ModelState.IsValid)
             {
