@@ -6,7 +6,7 @@ import dk.bookandplay.web_service.Filter;
 
 public interface Events {
     EventList getFilteredEvents(Filter filter);
-    Event create(Event event);
+    void create(Event event);
     Event get(int id);
     void cancel(int id);
     void edit(Event event);

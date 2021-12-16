@@ -25,9 +25,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="small fixes">
+    <list default="true" id="e68462df-7b5e-47f3-bfde-4a5da6360811" name="Changes" comment="stars">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/PresentationTier/Pages/GameInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessTier/Controllers/EventControllers/EventController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/DataTier/src/main/java/dk/bookAndPlay/DAO/events/Events.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ea42cd3cc1e643d99174ca3a5c8770f22f378/C/MouseEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BusinessTier/Data/EventWebServices/Categories/CategoryWebService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/em_du/Documents/SEP3/PresentationTier/Pages/GameInfo.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blazor/obj/Debug/net5.0/RazorDeclaration/Pages/DetailsGoldenGameList.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
@@ -194,14 +197,7 @@
       <workItem from="1638963768792" duration="26944000" />
       <workItem from="1639123755263" duration="2350000" />
       <workItem from="1639129385544" duration="32218000" />
-      <workItem from="1639570715410" duration="5575000" />
-    </task>
-    <task id="LOCAL-00021" summary="create event thingies">
-      <created>1637510894303</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1637510894303</updated>
+      <workItem from="1639570715410" duration="9928000" />
     </task>
     <task id="LOCAL-00022" summary="Fixed event error messages">
       <created>1637573030655</created>
@@ -539,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639577753385</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="stars">
+      <created>1639580517961</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1639580517961</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +566,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="PaymentOverview.razor" />
     <MESSAGE value="monthly fee/payment working" />
     <MESSAGE value="payment options work in presentation tier aswell" />
     <MESSAGE value="Delete account implemented" />
@@ -588,6 +590,7 @@
     <MESSAGE value="join event fixed" />
     <MESSAGE value="total one time payment" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="stars" />
+    <option name="LAST_COMMIT_MESSAGE" value="stars" />
   </component>
 </project>

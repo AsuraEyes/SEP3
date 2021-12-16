@@ -78,7 +78,7 @@ public class EventDAO implements Events {
         return event;
     }
 
-    public Event create(Event event){
+    public void create(Event event){
         Timestamp startTime = new Timestamp(event.getStartTime().toGregorianCalendar().getTimeInMillis());
         Timestamp endTime = new Timestamp(event.getEndTime().toGregorianCalendar().getTimeInMillis());
 
@@ -87,7 +87,6 @@ public class EventDAO implements Events {
                 event.getName(), startTime, endTime, event.getAddressStreetName(), event.getAddressStreetNumber(),
                 event.getAddressApartmentNumber(), event.getMaxNumberOfParticipants(), event.getEventCategory(),
                 event.getOrganizer());
-        return event;
     }
 
   public Event get(int id) {
